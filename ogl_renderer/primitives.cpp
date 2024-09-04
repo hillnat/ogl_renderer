@@ -1,7 +1,7 @@
 #include "primitives.h"
 #include "renderer.h"
 
-Geometry MakeCube() {
+Mesh MakeCube() {
 	Vertex verts[] = {
 	{ //0 vertex Bottom Left Back
 		{-1.f,-1.f,1.f,1}, //position
@@ -62,9 +62,9 @@ Geometry MakeCube() {
 		2,3,7, 7,3,5,
 		6,4,0, 0,4,1 };
 
-	return MakeGeometry(verts, 8, indices, 24);
+	return MakeMesh(verts, 8, indices, 24);
 }
-Geometry MakeCube2() {
+Mesh MakeCube2() {
 	Vertex verts[] = {
 #pragma region Top Face
 	{ //0 vertex Bottom Right corner
@@ -236,5 +236,5 @@ Geometry MakeCube2() {
 		23,21,20, 20,22,23//Front
 		};
 
-	return MakeGeometry(verts, 24, indices, 36);
+	return MakeMesh(verts, 24, indices, 36);
 }

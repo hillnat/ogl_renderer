@@ -9,6 +9,6 @@ const vec4 CYAN = vec4{ 0.f,1.f,1.f,1.f };
 const vec4 GREY = vec4{ 0.5f,0.5f,0.5f,1.f };
 const vec4 BLACK = vec4{ 1.f,0.f,0.f,1.f };
 const vec4 WHITE = vec4{ 1.f,1.f,1.f,1.f };
-Geometry MakeCube();
-Geometry MakeCube2();
+Mesh MakeCube();
+Mesh MakeCube2();
 

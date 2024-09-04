@@ -17,7 +17,7 @@ struct Vertex {
 	vec3 normal;
 };
 
-struct Geometry {
+struct Mesh {
 	GLuint vao, vbo, ibo;//Vertex Array Object (This is made of the VBO and IBO), Vertex Buffer Object (All the vertices), Index Buffer Object (Index buffer holds the orders for vertices to be turned into tris)
 	GLuint size;//Length of the obj
 };
@@ -29,18 +29,18 @@ struct Texture {
 	unsigned width, height, channels;//image metadata
 };
 struct Light {
-	vec3 color;
-	vec3 direction;
+	vec3 color = vec3{ 1.f,1.f,1.f };
+	vec3 direction = vec3{ 0.5f,0.5f,1.f };
 };
 #pragma endregion
-#pragma region Geometry Functions
-Geometry MakeGeometry(const Vertex* const verts, GLsizei vertCount, const GLuint* indices, GLsizei indexCount);//GLsizei = GL Size Index
+#pragma region Mesh Functions
+Mesh MakeMesh(const Vertex* const verts, GLsizei vertCount, const GLuint* indices, GLsizei indexCount);//GLsizei = GL Size Index
 //Optional, reworded
 //Geometry MakeGeometry(const vector<Vertex> verts, const vector<GLuint> indices);
 
-void FreeGeometry(Geometry& geo);
+void FreeMesh(Mesh& geo);
 
-void DrawGeometry(const Shader& shader, const Geometry& geo);
+void DrawMesh(const Shader& shader, const Mesh& geo);
 #pragma endregion
 #pragma region Shader Functions
 Shader MakeShader(const char* vertShader, const char* fragShader);

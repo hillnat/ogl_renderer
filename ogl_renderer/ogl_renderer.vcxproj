@@ -93,6 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -109,6 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -157,19 +159,25 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="camera.cpp" />
     <ClCompile Include="context.cpp" />
+    <ClCompile Include="gameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="diagnostics.cpp" />
     <ClCompile Include="meshImporter.cpp" />
     <ClCompile Include="primitives.cpp" />
     <ClCompile Include="renderer.cpp" />
+    <ClCompile Include="transform.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="camera.h" />
     <ClInclude Include="context.h" />
     <ClInclude Include="diagnostics.h" />
+    <ClInclude Include="gameObject.h" />
     <ClInclude Include="meshImporter.h" />
     <ClInclude Include="primitives.h" />
     <ClInclude Include="renderer.h" />
+    <ClInclude Include="transform.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

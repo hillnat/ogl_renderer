@@ -6,9 +6,9 @@
 using std::fstream;
 
 #pragma region Geometry Implementation
-Geometry MakeGeometry(const Vertex* const verts, GLsizei vertCount, const GLuint* indices, GLsizei indexCount)
+Mesh MakeMesh(const Vertex* const verts, GLsizei vertCount, const GLuint* indices, GLsizei indexCount)
 {
-	Geometry geo = {};//Zero-initialize
+	Mesh geo = {};//Zero-initialize
 	geo.size = indexCount;//Vertex count
 	//Make bufers
 	glGenVertexArrays(1, &geo.vao);//Make a Vertex Array Object at this Geo's point in memory on the GPU
@@ -85,7 +85,7 @@ Geometry MakeGeometry(const Vertex* const verts, GLsizei vertCount, const GLuint
 /*Geometry MakeGeometry(const vector<Vertex> verts, const vector<GLuint> indices) {//Overload just calls the same func above with different data
 	return MakeGeometry(verts.data(), verts.size(), indices.data(), indices.size());
 }*/
-void FreeGeometry(Geometry& geo) {
+void FreeMesh(Mesh& geo) {
 	//DELETE BUFFERS IN REVERSE ORDER THEY WERE GENERATED
 	glDeleteBuffers(1, &geo.ibo);
 	glDeleteBuffers(1, &geo.vbo);
@@ -93,7 +93,7 @@ void FreeGeometry(Geometry& geo) {
 	//Zero out the geo so its gone from gpu memory
 	geo = {};
 }
-void DrawGeometry(const Shader& shader, const Geometry& geo) {
+void DrawMesh(const Shader& shader, const Mesh& geo) {
 	//Specify which shader to use
 	glUseProgram(shader.program);
 	//Specify which geometry
