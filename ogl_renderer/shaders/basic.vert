@@ -20,6 +20,5 @@ void main(){
 	vCol=color;
 	vUV=uv;
 	vNorm=mat3(model)*normal;
-	//Model view projection matrix
-	gl_Position = proj * view * model * position;
+	gl_Position = proj*view * model * position;
 }
