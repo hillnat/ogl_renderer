@@ -2,6 +2,7 @@
 #include "context.h"
 #include "primitives.h"
 #include "gameObject.h"
+#include "scene.h"
 #include "meshImporter.h"
 #include "camera.h"
 #include "renderer.h"
@@ -17,15 +18,21 @@ int main()
 	context.init(640, 480, "Window");
 	Diagnostics::Environment();
 //Scene Definitions
-	GameObject myGO("MyGo", "meshes/car.obj");
-	Camera mainCamera;
-	Light directionalLight;
+	Scene scene;
+	GameObject myGO("GO1", "meshes/fish2.obj");
+	Transform myPlayer;
+	Camera mainCamera(&myPlayer);
+	Light directionalLight{vec3(1.f), vec3(1.f)};
+	scene.AddToScene(&myGO);
+	scene.AddToScene(&mainCamera);
+	scene.AddToScene(&directionalLight);
+	//Shaders
 	Shader basicShader = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
 	Texture basicTexture = LoadTexture("textures/tex.PNG");
 //
 	
 	//cameraTransform = glm::lookAt(vec3{ cameraTransform[3] }, vec3{ myGeoTransform[3] }, { 0,1,0 });//From 0,0,0 look at 0,0,1 on axis 0,1,0
-	const float SPEED = -5000;
+	const float SPEED = 50;
 	double lastTime = 0;
 	SetUniform(basicShader, 0, mainCamera.ProjectionMatrix);
 	SetUniform(basicShader, 3, basicTexture, 0);
@@ -40,23 +47,20 @@ int main()
 		context.clear();
 
 		//myGO.transform.Rotate(vec3{ 0.f,0.01f,0.f });
-        if (context.A_Pressed()) { mainCamera.transform.LocalTranslate(vec3(-1.f, 0.f, 0.f) * SPEED * deltaTimeF); }
-		else if (context.D_Pressed()) { mainCamera.transform.LocalTranslate( vec3(1.f, 0.f, 0.f) * SPEED * deltaTimeF); }
-		if (context.W_Pressed()) { mainCamera.transform.LocalTranslate( vec3(0.f, 0.f, 1.f) * SPEED * deltaTimeF); }
-		else if (context.S_Pressed()) { mainCamera.transform.LocalTranslate( vec3(0.f, 0.f, -1.f) * SPEED * deltaTimeF); }
-		if (context.Space_Pressed()) { mainCamera.transform.LocalTranslate( vec3(0.f, -1.f, 0.f) * SPEED * deltaTimeF); }
-		else if (context.LCtrl_Pressed()) { mainCamera.transform.LocalTranslate(vec3(0.f, 1.f, 0.f) * SPEED * deltaTimeF); }
+        if (context.A_Pressed()) { mainCamera.transform.LocalParentTranslate(vec3(-1.f, 0.f, 0.f) * SPEED * deltaTimeF); }
+		else if (context.D_Pressed()) { mainCamera.transform.LocalParentTranslate( vec3(1.f, 0.f, 0.f) * SPEED * deltaTimeF); }
+		if (context.W_Pressed()) { mainCamera.transform.LocalParentTranslate( vec3(0.f, 0.f, -1.f) * SPEED * deltaTimeF); }
+		else if (context.S_Pressed()) { mainCamera.transform.LocalParentTranslate( vec3(0.f, 0.f, 1.f) * SPEED * deltaTimeF); }
+		if (context.Space_Pressed()) { mainCamera.transform.LocalParentTranslate( vec3(0.f, 1.f, 0.f) * SPEED * deltaTimeF); }
+		else if (context.LCtrl_Pressed()) { mainCamera.transform.LocalParentTranslate(vec3(0.f, -1.f, 0.f) * SPEED * deltaTimeF); }
 		vec2 mouseDelta = context.GetMouseDelta();
-
 		mouseDelta *= deltaTime;
-		//std::cout << mouseDelta.x << " " << mouseDelta.y << std::endl;
-
-		if (glm::abs(mouseDelta.x) != 0.f || glm::abs(mouseDelta.y) != 0.f) { mainCamera.transform.RotateEuler(vec3{ -mouseDelta.y, -mouseDelta.x, 0.f }); }
+		if (glm::abs(mouseDelta.x) != 0.f || glm::abs(mouseDelta.y) != 0.f) {
+			myPlayer.RotateEuler(vec3{ 0.f, -mouseDelta.x, 0.f });
+			mainCamera.transform.RotateEuler(vec3{ -mouseDelta.y, 0.f, 0.f });
+		}
 		//mainCamera.transform.RotateQuat(-mainCamera.transform.rotation);
-		SetUniform(basicShader, 1, glm::inverse(mainCamera.transform.GetMatrix()));//Camera transform
-		SetUniform(basicShader, 2, myGO.transform.GetMatrix());//Cube transform
-		SetUniform(basicShader, 7, vec3(mainCamera.transform.position));//Cam position for specular. Mat4 to vec3 conversion
-		DrawMesh(basicShader, myGO.mesh);
+		scene.DrawAll(&basicShader);
 	}
 	FreeMesh(myGO.mesh);
 	FreeShader(basicShader);
@@ -64,13 +68,3 @@ int main()
 	context.terminate();
 	return 0;
 }
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

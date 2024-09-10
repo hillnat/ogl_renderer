@@ -11,9 +11,22 @@ class Transform
 {	
 public:
 	Transform(vec3 pos, quat rot, vec3 scale, Transform* parent) {
-		position = vec3(0.f, 0.f, 0.f);
-		rotation = identity<quat>();
-		scale = vec3(1.f, 1.f, 1.f);
+		this->position = pos;
+		this->rotation = rot;
+		this->scale = scale;
+		this->parent = parent;
+	}
+	Transform(Transform* parent) {
+		this->position = vec3(0.f, 0.f, 0.f);
+		this->rotation = identity<quat>();
+		this->scale = vec3(1.f, 1.f, 1.f);
+		this->parent = parent;
+	}
+	Transform() {
+		this->position = vec3(0.f, 0.f, 0.f);
+		this->rotation = identity<quat>();
+		this->scale = vec3(1.f, 1.f, 1.f);
+		this->parent = nullptr;
 	}
 	mat4 GetMatrix();
 	vec3 position = vec3(0.f, 0.f, 0.f);
@@ -21,6 +34,7 @@ public:
 	vec3 scale=vec3(1.f,1.f,1.f);
 	void GlobalTranslate(vec3);
 	void LocalTranslate(vec3);
+	void LocalParentTranslate(vec3);
 	void RotateEuler(vec3);
 	void RotateQuat(quat);
 	Transform* parent=nullptr;

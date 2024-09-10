@@ -24,15 +24,15 @@ Mesh MeshImporter::ImportFromFile(const char* filename)
 		//extract indicies from the first mesh
 		for (int i = 0; i < mesh->mNumFaces; i++)
 		{
-			allIndices.push_back(mesh->mFaces[i].mIndices[0]);
-			allIndices.push_back(mesh->mFaces[i].mIndices[1]);
 			allIndices.push_back(mesh->mFaces[i].mIndices[2]);
+			allIndices.push_back(mesh->mFaces[i].mIndices[1]);
+			allIndices.push_back(mesh->mFaces[i].mIndices[0]);
 			// generate a second triangle for quads
 			if (mesh->mFaces[i].mNumIndices == 4)
 			{
-				allIndices.push_back(mesh->mFaces[i].mIndices[0]);
-				allIndices.push_back(mesh->mFaces[i].mIndices[2]);
 				allIndices.push_back(mesh->mFaces[i].mIndices[3]);
+				allIndices.push_back(mesh->mFaces[i].mIndices[2]);
+				allIndices.push_back(mesh->mFaces[i].mIndices[0]);
 			}
 		}
 		for (int i = 0; i < mesh->mNumVertices; i++)
