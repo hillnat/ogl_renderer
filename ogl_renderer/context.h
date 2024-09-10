@@ -1,4 +1,6 @@
 #pragma once
+#include "glm/ext.hpp"
+
 class Context
 {
 	struct GLFWwindow* window;
@@ -16,5 +18,7 @@ public:
 	bool E_Pressed();
 	bool Space_Pressed();
 	bool LCtrl_Pressed();
+	glm::dvec2 GetMouseDelta();
+	glm::dvec2 lastMousePos=glm::vec2(0.f,0.f);
 };
 

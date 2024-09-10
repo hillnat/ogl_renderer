@@ -3,11 +3,16 @@
 #include "glew/glew.h"//GLEW helps us setup graphics pipeline and interface with hardware
 #include "glfw/glfw3.h"	//GLFW is a Windows API wrapper, allows us to handle window context easily
 #include <random>
+#include "glm/ext.hpp"
+#include <iostream>
 bool Context::init(int width, int height, const char* title){
 	glfwInit();
 	window = glfwCreateWindow(width, height, title, NULL, NULL);
 	glfwMakeContextCurrent(window);
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
 	glewInit();
+
 	//Set flags for opengl featues! OpenGL checks ifdef on these flags
 	glEnable(GL_BLEND);//Enalbe blend
 	glEnable(GL_DEPTH_TEST);//Enable depth
@@ -44,3 +49,11 @@ bool Context::E_Pressed() { return glfwGetKey(window, GLFW_KEY_E); }
 bool Context::Q_Pressed() { return glfwGetKey(window, GLFW_KEY_Q); }
 bool Context::Space_Pressed() { return glfwGetKey(window, GLFW_KEY_SPACE); }
 bool Context::LCtrl_Pressed() { return glfwGetKey(window, GLFW_KEY_LEFT_CONTROL); }
+glm::dvec2 Context::GetMouseDelta(){
+	glm::dvec2 curMousePos(0.f,0.f);
+	glfwGetCursorPos(window, &curMousePos.x, &curMousePos.y);
+	glm::dvec2 toReturn = curMousePos - lastMousePos;
+	//std::cout << toReturn.x << " " << toReturn.y << std::endl;
+	lastMousePos = curMousePos;
+	return toReturn;
+}

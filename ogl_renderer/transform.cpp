@@ -1,13 +1,31 @@
 #include "transform.h"
-void Transform::Translate(vec3 vec) {
-	matrix = glm::translate(matrix, vec);
+/*
+#define GLM_ENABLE_EXPERIMENTAL
+#include <glm/gtx/matrix_decompose.hpp>//For glm::decompose
+*/
+
+void Transform::GlobalTranslate(vec3 pos) {
+	position += pos;
 }
-void Transform::TranslateL(vec3 vec) {
-	matrix = glm::translate(matrix, vec3{ matrix[0][0],matrix[1][1],matrix[2][2], } *vec);
+void Transform::LocalTranslate(vec3 pos) {
+	position += glm::normalize(rotation)*pos;
 }
-void Transform::Rotate(float angle, vec3 axis) {
-	matrix = glm::rotate(matrix, angle, axis);
+
+void Transform::RotateEuler(vec3 eulerAngles) {
+	quat newRotationQuat = glm::quat(glm::radians(eulerAngles));
+	quat finalQuat = rotation * newRotationQuat;
+	rotation = finalQuat;
 }
-void Transform::LookAt(vec3 lookAt, vec3 axis) {
-	matrix = glm::lookAt(vec3{ matrix[3]}, lookAt, axis);
+void Transform::RotateQuat(quat quatRot) {
+	quat newRotationQuat = quatRot;
+	quat finalQuat = rotation * newRotationQuat;
+	rotation = finalQuat;
 }
+mat4 Transform::GetMatrix() {
+	mat4 translationMatrix = translate(mat4(1.0f), position);
+	mat4 rotationMatrix = mat4_cast(rotation);
+	mat4 scaleMatrix = glm::scale(mat4(1.0f), scale);
+	mat4 transformMatrix = translationMatrix * rotationMatrix * scaleMatrix;
+	return transformMatrix;
+}
+ 

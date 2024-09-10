@@ -25,7 +25,7 @@ int main()
 //
 	
 	//cameraTransform = glm::lookAt(vec3{ cameraTransform[3] }, vec3{ myGeoTransform[3] }, { 0,1,0 });//From 0,0,0 look at 0,0,1 on axis 0,1,0
-	const float SPEED = 5000;
+	const float SPEED = -5000;
 	double lastTime = 0;
 	SetUniform(basicShader, 0, mainCamera.ProjectionMatrix);
 	SetUniform(basicShader, 3, basicTexture, 0);
@@ -39,18 +39,23 @@ int main()
 		context.tick();
 		context.clear();
 
-		myGO.transform.Rotate(0.03f, vec3{ 0.f,1.f,0.f });
-        if (context.A_Pressed()) { mainCamera.transform.TranslateL(vec3(-1.f, 0.f, 0.f) * SPEED * deltaTimeF); }
-		else if (context.D_Pressed()) { mainCamera.transform.TranslateL( vec3(1.f, 0.f, 0.f) * SPEED * deltaTimeF); }
-		if (context.W_Pressed()) { mainCamera.transform.TranslateL( vec3(0.f, 0.f, 1.f) * SPEED * deltaTimeF); }
-		else if (context.S_Pressed()) { mainCamera.transform.TranslateL( vec3(0.f, 0.f, -1.f) * SPEED * deltaTimeF); }
-		if (context.Space_Pressed()) { mainCamera.transform.TranslateL( vec3(0.f, -1.f, 0.f) * SPEED * deltaTimeF); }
-		else if (context.LCtrl_Pressed()) { mainCamera.transform.TranslateL(vec3(0.f, 1.f, 0.f) * SPEED * deltaTimeF); }
-		if (context.E_Pressed()) { mainCamera.transform.Rotate(10.f * deltaTimeF, vec3{ 0.f,1.f,0.f }); }
-		else if (context.Q_Pressed()) { mainCamera.transform.Rotate(-10.f* deltaTimeF, vec3{ 0.f,1.f,0.f }); }
-		SetUniform(basicShader, 1, mainCamera.transform.matrix);//Camera transform
-		SetUniform(basicShader, 2, myGO.transform.matrix);//Cube transform
-		SetUniform(basicShader, 7, vec3(mainCamera.transform.matrix[3]));//Cam position for specular. Mat4 to vec3 conversion
+		//myGO.transform.Rotate(vec3{ 0.f,0.01f,0.f });
+        if (context.A_Pressed()) { mainCamera.transform.LocalTranslate(vec3(-1.f, 0.f, 0.f) * SPEED * deltaTimeF); }
+		else if (context.D_Pressed()) { mainCamera.transform.LocalTranslate( vec3(1.f, 0.f, 0.f) * SPEED * deltaTimeF); }
+		if (context.W_Pressed()) { mainCamera.transform.LocalTranslate( vec3(0.f, 0.f, 1.f) * SPEED * deltaTimeF); }
+		else if (context.S_Pressed()) { mainCamera.transform.LocalTranslate( vec3(0.f, 0.f, -1.f) * SPEED * deltaTimeF); }
+		if (context.Space_Pressed()) { mainCamera.transform.LocalTranslate( vec3(0.f, -1.f, 0.f) * SPEED * deltaTimeF); }
+		else if (context.LCtrl_Pressed()) { mainCamera.transform.LocalTranslate(vec3(0.f, 1.f, 0.f) * SPEED * deltaTimeF); }
+		vec2 mouseDelta = context.GetMouseDelta();
+
+		mouseDelta *= deltaTime;
+		//std::cout << mouseDelta.x << " " << mouseDelta.y << std::endl;
+
+		if (glm::abs(mouseDelta.x) != 0.f || glm::abs(mouseDelta.y) != 0.f) { mainCamera.transform.RotateEuler(vec3{ -mouseDelta.y, -mouseDelta.x, 0.f }); }
+		//mainCamera.transform.RotateQuat(-mainCamera.transform.rotation);
+		SetUniform(basicShader, 1, glm::inverse(mainCamera.transform.GetMatrix()));//Camera transform
+		SetUniform(basicShader, 2, myGO.transform.GetMatrix());//Cube transform
+		SetUniform(basicShader, 7, vec3(mainCamera.transform.position));//Cam position for specular. Mat4 to vec3 conversion
 		DrawMesh(basicShader, myGO.mesh);
 	}
 	FreeMesh(myGO.mesh);
