@@ -3,6 +3,7 @@
 using glm::mat4;
 using glm::mat3;
 using glm::vec3;
+using glm::vec2;
 using glm::vec4;
 using glm::quat;
 using glm::identity;
@@ -36,7 +37,7 @@ public:
 	void LocalTranslate(vec3);
 	void LocalParentTranslate(vec3);
 	void RotateEuler(vec3);
-	void RotateQuat(quat);
+	void RotateEulerClamped(vec3,vec2 clamp);
 	Transform* parent=nullptr;
 };
 

@@ -55,6 +55,7 @@ int main()
 		else if (context.LCtrl_Pressed()) { mainCamera.transform.LocalParentTranslate(vec3(0.f, -1.f, 0.f) * SPEED * deltaTimeF); }
 		vec2 mouseDelta = context.GetMouseDelta();
 		mouseDelta *= deltaTime;
+		mouseDelta *= 0.01f;
 		if (glm::abs(mouseDelta.x) != 0.f || glm::abs(mouseDelta.y) != 0.f) {
 			myPlayer.RotateEuler(vec3{ 0.f, -mouseDelta.x, 0.f });
 			mainCamera.transform.RotateEuler(vec3{ -mouseDelta.y, 0.f, 0.f });

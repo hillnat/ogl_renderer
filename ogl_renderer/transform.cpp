@@ -19,11 +19,14 @@ void Transform::LocalParentTranslate(vec3 pos)//Relative to parent rotation
 }
 void Transform::RotateEuler(vec3 eulerAngles) {
 	quat newRotationQuat = glm::quat(glm::radians(eulerAngles));
-	quat finalQuat = rotation * newRotationQuat;
+	quat finalQuat;
+	if (parent != nullptr) { finalQuat = parent->rotation*rotation; }
+	else { finalQuat = rotation; }
+	finalQuat = finalQuat * newRotationQuat;
 	rotation = finalQuat;
 }
-void Transform::RotateQuat(quat quatRot) {
-	quat newRotationQuat = quatRot;
+void Transform::RotateEulerClamped(vec3 eulerAngles, vec2 clamp) {
+	quat newRotationQuat = glm::quat(glm::radians(eulerAngles));
 	quat finalQuat = rotation * newRotationQuat;
 	rotation = finalQuat;
 }
