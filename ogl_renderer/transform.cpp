@@ -1,4 +1,5 @@
 #include "transform.h"
+#include <iostream>
 /*
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/matrix_decompose.hpp>//For glm::decompose
@@ -18,17 +19,17 @@ void Transform::LocalParentTranslate(vec3 pos)//Relative to parent rotation
 	position += glm::normalize(parent->rotation) * pos;
 }
 void Transform::RotateEuler(vec3 eulerAngles) {
-	quat newRotationQuat = glm::quat(glm::radians(eulerAngles));
-	quat finalQuat;
-	if (parent != nullptr) { finalQuat = parent->rotation*rotation; }
-	else { finalQuat = rotation; }
-	finalQuat = finalQuat * newRotationQuat;
-	rotation = finalQuat;
+	quat toRotate = glm::quat(glm::radians(eulerAngles));
+	quat baseQuat;
+	if (parent != nullptr) { baseQuat = parent->rotation* rotation; }
+	else { baseQuat = rotation; }
+	baseQuat = baseQuat * toRotate;
+	rotation = baseQuat;
 }
-void Transform::RotateEulerClamped(vec3 eulerAngles, vec2 clamp) {
-	quat newRotationQuat = glm::quat(glm::radians(eulerAngles));
-	quat finalQuat = rotation * newRotationQuat;
-	rotation = finalQuat;
+void Transform::RotateAround(vec3 axis, float angleDegrees) {
+	float angleRadians = glm::radians(angleDegrees);
+	glm::quat rotationQuat = glm::angleAxis(angleRadians, axis);
+	rotation = rotationQuat * rotation;
 }
 mat4 Transform::GetMatrix() {//Construct matrix and account for parent
 	quat rotationQuat=rotation;

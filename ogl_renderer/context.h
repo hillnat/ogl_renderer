@@ -19,6 +19,6 @@ public:
 	bool Space_Pressed();
 	bool LCtrl_Pressed();
 	glm::dvec2 GetMouseDelta();
-	glm::dvec2 lastMousePos=glm::vec2(0.f,0.f);
+	glm::dvec2 lastMousePos = glm::vec2(0.f, 0.f);
 };
 

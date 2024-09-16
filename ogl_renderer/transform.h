@@ -33,11 +33,14 @@ public:
 	vec3 position = vec3(0.f, 0.f, 0.f);
 	quat rotation = identity<quat>();
 	vec3 scale=vec3(1.f,1.f,1.f);
+	vec3 foward = rotation * vec3{ 0.f,0.f,1.f };
+	vec3 right = vec3(vec4{ 1.f,0.f,0.f,1.f } * rotation);
+	vec3 up = rotation * vec3{ 0.f,1.f,0.f };
 	void GlobalTranslate(vec3);
 	void LocalTranslate(vec3);
 	void LocalParentTranslate(vec3);
 	void RotateEuler(vec3);
-	void RotateEulerClamped(vec3,vec2 clamp);
+	void RotateAround(vec3,float);
 	Transform* parent=nullptr;
 };
 

@@ -17,7 +17,7 @@ Mesh MeshImporter::ImportFromFile(const char* filename)
 	std::vector<Vertex> allVertices;
 	std::vector<GLuint> allIndices;
 	int allVertexCount = 0;
-
+	
 	for (int m = 0; m < scene->mNumMeshes; m++) {
 
 		aiMesh* mesh = scene->mMeshes[m];

@@ -9,7 +9,7 @@ bool Context::init(int width, int height, const char* title){
 	glfwInit();
 	window = glfwCreateWindow(width, height, title, NULL, NULL);
 	glfwMakeContextCurrent(window);
-	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 
 	glewInit();
 
@@ -39,7 +39,7 @@ void Context::terminate(){
 	glfwTerminate();
 }
 bool Context::shouldClose(){
-	return glfwWindowShouldClose(window) || glfwGetKey(window, GLFW_KEY_ESCAPE);
+	return glfwWindowShouldClose(window) || glfwGetKey(window, GLFW_KEY_GRAVE_ACCENT);
 }
 bool Context::W_Pressed() { return glfwGetKey(window, GLFW_KEY_W); }
 bool Context::S_Pressed() { return glfwGetKey(window, GLFW_KEY_S); }
