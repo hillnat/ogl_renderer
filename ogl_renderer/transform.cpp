@@ -5,24 +5,16 @@
 #include <glm/gtx/matrix_decompose.hpp>//For glm::decompose
 */
 
-void Transform::GlobalTranslate(vec3 pos)//Global position
+void Transform::Translate(vec3 pos)//Global position
 {
 	position += pos;
 }
-void Transform::LocalTranslate(vec3 pos)//Relative to rotation
-{
-	position += glm::normalize(rotation)*pos;
-}
-void Transform::LocalParentTranslate(vec3 pos)//Relative to parent rotation
-{
-	if (parent == nullptr) { return; }
-	position += glm::normalize(parent->rotation) * pos;
-}
+
 
 void Transform::RotateEuler(vec3 axis, float angleDegrees) {
 	float angleRadians = glm::radians(angleDegrees);
 	glm::quat rotationQuat = glm::angleAxis(angleRadians, glm::normalize(axis));
-	rotation = rotationQuat * rotation;
+	rotation = glm::normalize(rotationQuat * rotation);
 }
 mat4 Transform::GetMatrix() {//Construct matrix and account for parent
 	//quat rotationQuat = rotation;

@@ -24,6 +24,12 @@ public:
 		this->scale = vec3(1.f, 1.f, 1.f);
 		this->parent = parent;
 	}
+	Transform(vec3 pos) {
+		this->position = pos;
+		this->rotation = identity<quat>();
+		this->scale = vec3(1.f, 1.f, 1.f);
+		this->parent = nullptr;
+	}
 	Transform() {
 		this->position = vec3(0.f, 0.f, 0.f);
 		this->rotation = identity<quat>();
@@ -36,11 +42,11 @@ public:
 	quat rotation = identity<quat>();
 	vec3 scale=vec3(1.f,1.f,1.f);
 #pragma region Axis
-	vec3 right() {return glm::normalize(vec3(VecxQuat(rotation, vec4{ 1.f,0.f,0.f,1.f }))); }
-	vec3 up() { return glm::normalize(vec3(VecxQuat(rotation, vec4{ 0.f,1.f,0.f,1.f }))); }
-	vec3 forward() { return glm::normalize(vec3(VecxQuat(rotation, vec4{ 0.f,0.f,1.f,1.f }))); }
+	vec3 right() {return glm::normalize(vec3(VecxQuat(rotation, glm::normalize(vec4{ 1.f,0.f,0.f,1.f })))); }
+	vec3 up() { return glm::normalize(vec3(VecxQuat(rotation, glm::normalize(vec4{ 0.f,1.f,0.f,1.f })))); }
+	vec3 forward() { return glm::normalize(vec3(VecxQuat(rotation, glm::normalize(vec4{ 0.f,0.f,1.f,1.f })))); }
 #pragma endregion
-	quat GetCombinedRotation() { if (parent != nullptr) { return parent->GetCombinedRotation() * rotation; } else { return rotation; } }//Rotation factoring in our parent if applicable
+	quat GetCombinedRotation() { if (parent != nullptr) { return glm::normalize(parent->GetCombinedRotation() * rotation); } else { return rotation; } }//Rotation factoring in our parent if applicable
 	vec3 GetEulerAngles() {
 		vec3 e = glm::eulerAngles(rotation);//radians by glm default
 		
@@ -48,9 +54,7 @@ public:
 	}
 	mat4 GetMatrix();//Compose matrix from raw vectors and quaternion
 #pragma region Translation and Rotation
-	void GlobalTranslate(vec3);
-	void LocalTranslate(vec3);
-	void LocalParentTranslate(vec3);
+	void Translate(vec3);
 	void RotateEuler(vec3,float);
 #pragma endregion
 #pragma region Utilities
