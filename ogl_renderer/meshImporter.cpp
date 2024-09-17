@@ -65,7 +65,7 @@ Mesh MeshImporter::ImportFromFile(const char* filename)
 	
 	float endTime = glfwGetTime();
 	//std::cout << "Succeeded loading after " << endTime-startTime << " seconds" << std::endl;
-	return MakeMesh(allVertices.data(), allVertexCount, allIndices.data(), allIndices.size());;
+	return MakeMesh(allVertices.data(), allVertexCount, allIndices.data(), allIndices.size());
 	//delete[] vertices;
 	//m_quadMesh.initialiseFromFile("stanford/bunny.obj");
 }

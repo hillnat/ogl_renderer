@@ -8,17 +8,17 @@ using std::fstream;
 #pragma region Geometry Implementation
 Mesh MakeMesh(const Vertex* const verts, GLsizei vertCount, const GLuint* indices, GLsizei indexCount)
 {
-	Mesh geo = {};//Zero-initialize
-	geo.size = indexCount;//Vertex count
+	Mesh mesh = Mesh{};//Zero-initialize
+	mesh.size = indexCount;//Vertex count
 	//Make bufers
-	glGenVertexArrays(1, &geo.vao);//Make a Vertex Array Object at this Geo's point in memory on the GPU
-	glGenBuffers(1, &geo.vbo);//Generate the buffer of vertices
-	glGenBuffers(1, &geo.ibo);//Generate the buffer of vertex indecies
+	glGenVertexArrays(1, &mesh.vao);//Make a Vertex Array Object at this Geo's point in memory on the GPU
+	glGenBuffers(1, &mesh.vbo);//Generate the buffer of vertices
+	glGenBuffers(1, &mesh.ibo);//Generate the buffer of vertex indecies
 	//Note this is generating the buffers "into" the geometry object
 	//Bind the buffers for the task which we want them to do, like an angry spirit - Rob
-	glBindVertexArray(geo.vao);
-	glBindBuffer(GL_ARRAY_BUFFER, geo.vbo);//Bind the buffers
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, geo.ibo);
+	glBindVertexArray(mesh.vao);
+	glBindBuffer(GL_ARRAY_BUFFER, mesh.vbo);//Bind the buffers
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh.ibo);
 
 	//Use vertex data if using vectors... the GPU Manufacterer determines how to draw it
 	glBufferData(GL_ARRAY_BUFFER, vertCount * sizeof(Vertex), verts, GL_STATIC_DRAW);
@@ -72,7 +72,7 @@ Mesh MakeMesh(const Vertex* const verts, GLsizei vertCount, const GLuint* indice
 	glBindBuffer(GL_ARRAY_BUFFER, 0);//Bind the buffers to nothing
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-	return geo;	//Fuck yeah
+	return mesh;	//Fuck yeah
 	// |	 |
 	// \(o.o)/
 	//	  |
@@ -85,23 +85,23 @@ Mesh MakeMesh(const Vertex* const verts, GLsizei vertCount, const GLuint* indice
 /*Geometry MakeGeometry(const vector<Vertex> verts, const vector<GLuint> indices) {//Overload just calls the same func above with different data
 	return MakeGeometry(verts.data(), verts.size(), indices.data(), indices.size());
 }*/
-void FreeMesh(Mesh& geo) {
+void FreeMesh(Mesh& mesh) {
 	//DELETE BUFFERS IN REVERSE ORDER THEY WERE GENERATED
-	glDeleteBuffers(1, &geo.ibo);
-	glDeleteBuffers(1, &geo.vbo);
-	glDeleteVertexArrays(1, &geo.vao);
+	glDeleteBuffers(1, &mesh.ibo);
+	glDeleteBuffers(1, &mesh.vbo);
+	glDeleteVertexArrays(1, &mesh.vao);
 	//Zero out the geo so its gone from gpu memory
-	geo = {};
+	mesh = {};
 }
-void DrawMesh(const Shader& shader, const Mesh& geo) {
+void DrawMesh(const Shader& shader, const Mesh& mesh) {
 	//Specify which shader to use
 	glUseProgram(shader.program);
 	//Specify which geometry
-	glBindVertexArray(geo.vao);
+	glBindVertexArray(mesh.vao);
 	//Actually draw the fucking thing
 	glDrawElements(
 		GL_TRIANGLES,//Which primitive to use. Rob Hint: use something else for drawing lines
-		geo.size,
+		mesh.size,
 		GL_UNSIGNED_INT,
 		nullptr
 	);

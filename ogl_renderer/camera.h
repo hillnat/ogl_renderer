@@ -3,8 +3,11 @@
 class Camera
 {
 public:
-	Camera(vec3 pos, quat rot, vec3 scale, Transform* parent) {
+	Camera(Transform* parent, vec3 pos, quat rot, vec3 scale) {
 		transform = Transform(pos, rot, scale, parent);
+	}
+	Camera(Transform* parent, vec3 pos) {
+		transform = Transform(pos, glm::identity<quat>(), vec3{1.f,1.f,1.f}, nullptr);
 	}
 	Camera(Transform* parent) {
 		transform = Transform(parent);

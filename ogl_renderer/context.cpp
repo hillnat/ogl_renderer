@@ -5,9 +5,9 @@
 #include <random>
 #include "glm/ext.hpp"
 #include <iostream>
-bool Context::init(int width, int height, const char* title){
+bool Context::Initialize(){
 	glfwInit();
-	window = glfwCreateWindow(width, height, title, NULL, NULL);
+	window = glfwCreateWindow((int)TargetWindowSize.x, (int)TargetWindowSize.y, "Window", NULL, NULL);
 	glfwMakeContextCurrent(window);
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
@@ -25,20 +25,29 @@ bool Context::init(int width, int height, const char* title){
 	std::srand(time(nullptr));
 	return true;
 }
-void Context::tick(){
+void Context::Tick(){
 	glfwSwapBuffers(window);
 	glfwPollEvents();//tick polling
+	//Free crosshair
+	if(glfwGetKey(window, GLFW_KEY_MINUS))
+	{
+		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	}
+	if (glfwGetKey(window, GLFW_KEY_EQUAL))
+	{
+		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+	}
 	//glfwSetWindowSize(window, std::rand()%1000, std::rand() % 1000);
 }
-void Context::clear(){
+void Context::Clear(){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//Clear those two buffers every time we call clear
 }
-void Context::terminate(){
+void Context::Terminate(){
 	glfwDestroyWindow(window);
 	window = nullptr;
 	glfwTerminate();
 }
-bool Context::shouldClose(){
+bool Context::ShouldClose(){
 	return glfwWindowShouldClose(window) || glfwGetKey(window, GLFW_KEY_GRAVE_ACCENT);
 }
 bool Context::W_Pressed() { return glfwGetKey(window, GLFW_KEY_W); }

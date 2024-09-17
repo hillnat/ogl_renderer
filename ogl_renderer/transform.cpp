@@ -21,12 +21,12 @@ void Transform::LocalParentTranslate(vec3 pos)//Relative to parent rotation
 
 void Transform::RotateEuler(vec3 axis, float angleDegrees) {
 	float angleRadians = glm::radians(angleDegrees);
-	glm::quat rotationQuat = glm::angleAxis(angleRadians, axis);
+	glm::quat rotationQuat = glm::angleAxis(angleRadians, glm::normalize(axis));
 	rotation = rotationQuat * rotation;
 }
 mat4 Transform::GetMatrix() {//Construct matrix and account for parent
 	//quat rotationQuat = rotation;
-	quat rotationQuat = combinedRotation();
+	quat rotationQuat = GetCombinedRotation();
 	vec3 scaleVec = scale;
 	vec3 posVec = position;
 	if (parent != nullptr) { 

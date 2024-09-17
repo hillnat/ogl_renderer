@@ -1,4 +1,5 @@
 #include "primitives.h"
+/*
 #include "renderer.h"
 
 Mesh MakeCube() {
@@ -237,4 +238,4 @@ Mesh MakeCube2() {
 		};
 
 	return MakeMesh(verts, 24, indices, 36);
-}
+}*/

@@ -9,14 +9,34 @@ void Scene::AddToScene(Camera* cam) {
 void Scene::AddToScene(Light* light) {
 	lights.push_back(light);
 }
-void Scene::DrawAll(Shader* basicShader) {
+void Scene::DrawAll(Shader* shader) {
+	//Handle Camera
 	if (cameras.size() != 0 && cameras[0] != nullptr) {
 		Camera mainCamera = *cameras[0];
-		SetUniform(*basicShader, 1, glm::inverse(mainCamera.transform.GetMatrix()));//Camera transform
-		SetUniform(*basicShader, 7, vec3(mainCamera.transform.position));//Cam position for specular. Mat4 to vec3 conversion
+		SetUniform(*shader, 1, glm::inverse(mainCamera.transform.GetMatrix()));//Camera transform
+		SetUniform(*shader, 0, mainCamera.ProjectionMatrix);
+		SetUniform(*shader, 7, vec3(mainCamera.transform.position));//Cam position for specular. Mat4 to vec3 conversion
 	}
+	//Handle all lights
+	for (int i = 0; i < lights.size(); i++) {
+		SetUniform(*shader, 5, (*lights[i]).color);
+		SetUniform(*shader, 6, (*lights[i]).direction);
+	}
+	//Handle all objects
 	for (int i = 0; i < gameObjects.size(); i++) {
-		SetUniform(*basicShader, 2, (*gameObjects[i]).transform.GetMatrix());//Cube transform
-		DrawMesh(*basicShader, (*gameObjects[i]).mesh);
+		SetUniform(*shader, 2, (*gameObjects[i]).transform.GetMatrix());
+		if (gameObjects[i]->mesh.size !=0) {
+			DrawMesh(*shader, (*gameObjects[i]).mesh);
+		}		
 	}	
+}
+void Scene::SetAllToTestPosition() {
+	for (int i = 0; i < gameObjects.size(); i++) {
+		gameObjects[i]->transform.position = vec3{ 0.f,0.f,5.f };
+		gameObjects[i]->transform.rotation = glm::identity<quat>();
+	}
+	for (int i = 0; i < cameras.size(); i++) {
+		cameras[i]->transform.position = vec3{ 0.f,0.f,0.f };
+		cameras[i]->transform.rotation = glm::identity<quat>();
+	}
 }

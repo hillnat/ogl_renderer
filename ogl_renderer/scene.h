@@ -14,6 +14,7 @@ public:
 	void AddToScene(Camera*);
 	void AddToScene(Light*);
 	void DrawAll(Shader*);
+	void SetAllToTestPosition();
 	std::vector<GameObject*> gameObjects;
 	std::vector<Camera*> cameras;
 	std::vector<Light*> lights;

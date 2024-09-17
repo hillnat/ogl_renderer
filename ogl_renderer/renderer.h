@@ -19,7 +19,7 @@ struct Vertex {
 
 struct Mesh {
 	GLuint vao, vbo, ibo;//Vertex Array Object (This is made of the VBO and IBO), Vertex Buffer Object (All the vertices), Index Buffer Object (Index buffer holds the orders for vertices to be turned into tris)
-	GLuint size;//Length of the obj
+	GLuint size=0;//Length of the obj
 };
 struct Shader {
 	GLuint program;
