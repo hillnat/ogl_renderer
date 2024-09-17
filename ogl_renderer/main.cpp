@@ -56,16 +56,14 @@ int main()
 
 		vec2 mouseDelta = context.GetMouseDelta();
 		mouseDelta *= deltaTime;
-		mouseDelta *= 20;
+		mouseDelta *= 50;
 		if (glm::abs(mouseDelta.x) != 0.f || glm::abs(mouseDelta.y) != 0.f) {
-			myPlayer.RotateAround(myPlayer.up, -mouseDelta.x);
-			mainCamera.transform.RotateAround(mainCamera.transform.right, mouseDelta.y);
+			myPlayer.RotateEuler(myPlayer.up(), mouseDelta.x);
+			mainCamera.transform.RotateEuler(myPlayer.right(), -mouseDelta.y);
 		}
-
-		//vec3 test = vec3{ 1.f,0.f,0.f }*mainCamera.transform.rotation;
-		std::cout <<"Right : " << mainCamera.transform.right.x << " | " << mainCamera.transform.right.y << " | " << mainCamera.transform.right.z << std::endl;
-		//std::cout << test.x << " | " << test.y << " | " << test.z << std::endl;
-		std::cout <<"Rotation : " << mainCamera.transform.rotation.x << " | " << mainCamera.transform.rotation.y << " | " << mainCamera.transform.rotation.z << " | " << mainCamera.transform.rotation.w << std::endl;
+		//std::cout <<"Right : " << myPlayer.right().x << " | " << myPlayer.right().y << " | " << myPlayer.right().z << std::endl;
+		std::cout <<"Euler : " << myPlayer.eulerAngles().x << " | " << myPlayer.eulerAngles().y << " | " << myPlayer.eulerAngles().z << std::endl;
+		//std::cout <<"Rotation : " << mainCamera.transform.rotation.x << " | " << mainCamera.transform.rotation.y << " | " << mainCamera.transform.rotation.z << " | " << mainCamera.transform.rotation.w << std::endl;
 		//std::cout <<"Rotation (Inverse) : " << glm::inverse(mainCamera.transform.rotation).x << " | " << glm::inverse(mainCamera.transform.rotation).y << " | " << glm::inverse(mainCamera.transform.rotation).z << " | " << glm::inverse(mainCamera.transform.rotation).w << std::endl;
 
 		//mainCamera.transform.RotateQuat(-mainCamera.transform.rotation);
