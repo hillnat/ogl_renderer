@@ -20,7 +20,7 @@ bool Context::Initialize(){
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);//Selected blending function
 	glDepthFunc(GL_LEQUAL);//Decide which objects are in front
 	glFrontFace(GL_CCW);//Algorithm for normal. Winding direction for determining normal direction on triangle
-	glCullFace(GL_BACK);
+	glCullFace(GL_FRONT);//Which side should we hide? NOTE : THIS SHOULD BE CULLING BACKFACE BUT ONLY WORKS THIS WAY IDK
 	glClearColor(0.109f, 0.21f, 0.45f, 1);
 	std::srand(time(nullptr));
 	return true;

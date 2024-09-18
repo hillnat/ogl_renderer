@@ -19,7 +19,7 @@ int main()
 	Diagnostics::Environment();
 //Scene Definitions
 	Scene scene;
-	GameObject myPlayer("Player", "meshes/3dplus.obj", vec3(0,0,-50));
+	GameObject myPlayer("Player", "meshes/fish2.obj", vec3(0,0,-50));
 	//Camera mainCamera(&myPlayer.transform, vec3{0.f,5.f,0.f});
 	Camera mainCamera(vec3{0.f,0.f,0.f});
 	Light directionalLight{vec3(1.f), vec3(1.f)};
@@ -45,12 +45,12 @@ int main()
 		context.Clear();
 		if (glfwGetKey(context.window, GLFW_KEY_V)) { scene.SetAllToTestPosition(); }
 		//myGO.transform.Rotate(vec3{ 0.f,0.01f,0.f });
-		if (context.D_Pressed()) { myPlayer.transform.Translate(mainCamera.transform.right() * SPEED * deltaTimeF); }
-		else if (context.A_Pressed()) { myPlayer.transform.Translate(-mainCamera.transform.right() * SPEED * deltaTimeF); }
-		if (context.W_Pressed()) { myPlayer.transform.Translate(mainCamera.transform.forward() * SPEED * deltaTimeF); }
-		else if (context.S_Pressed()) { myPlayer.transform.Translate(-mainCamera.transform.forward() * SPEED * deltaTimeF); }
-		if (context.Space_Pressed()) { myPlayer.transform.Translate(mainCamera.transform.up() * SPEED * deltaTimeF); }
-		else if (context.LCtrl_Pressed()) { myPlayer.transform.Translate(-mainCamera.transform.up() * SPEED * deltaTimeF); }
+		if (context.D_Pressed()) { myPlayer.transform.Translate(myPlayer.transform.right() * SPEED * deltaTimeF); }
+		else if (context.A_Pressed()) { myPlayer.transform.Translate(-myPlayer.transform.right() * SPEED * deltaTimeF); }
+		if (context.W_Pressed()) { myPlayer.transform.Translate(myPlayer.transform.forward() * SPEED * deltaTimeF); }
+		else if (context.S_Pressed()) { myPlayer.transform.Translate(-myPlayer.transform.forward() * SPEED * deltaTimeF); }
+		if (context.Space_Pressed()) { myPlayer.transform.Translate(myPlayer.transform.up() * SPEED * deltaTimeF); }
+		else if (context.LCtrl_Pressed()) { myPlayer.transform.Translate(-myPlayer.transform.up() * SPEED * deltaTimeF); }
 
 		vec2 mouseDelta = context.GetMouseDelta();
 		mouseDelta *= deltaTime;
