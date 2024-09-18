@@ -19,11 +19,11 @@ int main()
 	Diagnostics::Environment();
 //Scene Definitions
 	Scene scene;
-	GameObject myPlayer("Player", "meshes/fish2.obj", vec3(0,0,-50));
-	//Camera mainCamera(&myPlayer.transform, vec3{0.f,5.f,0.f});
+	GameObject obj1("Player", "meshes/fish2.obj", vec3(0,0,-50));
+	//Camera mainCamera(&myPlayer->transform, vec3{0.f,5.f,0.f});
 	Camera mainCamera(vec3{0.f,0.f,0.f});
 	Light directionalLight{vec3(1.f), vec3(1.f)};
-	scene.AddToScene(&myPlayer);
+	scene.AddToScene(&obj1);
 	scene.AddToScene(&mainCamera);
 	scene.AddToScene(&directionalLight);
 	//Shaders
@@ -35,7 +35,8 @@ int main()
 	const float SPEED = 20;
 	double lastTime = 0;
 	SetUniform(basicShader, 3, basicTexture, 0);
-	
+	//Test
+	GameObject* myPlayer = &obj1;
 	while (!context.ShouldClose()) {
 		double nowTime = glfwGetTime();
 		double deltaTime = nowTime - lastTime;
@@ -45,25 +46,25 @@ int main()
 		context.Clear();
 		if (glfwGetKey(context.window, GLFW_KEY_V)) { scene.SetAllToTestPosition(); }
 		//myGO.transform.Rotate(vec3{ 0.f,0.01f,0.f });
-		if (context.D_Pressed()) { myPlayer.transform.Translate(myPlayer.transform.right() * SPEED * deltaTimeF); }
-		else if (context.A_Pressed()) { myPlayer.transform.Translate(-myPlayer.transform.right() * SPEED * deltaTimeF); }
-		if (context.W_Pressed()) { myPlayer.transform.Translate(myPlayer.transform.forward() * SPEED * deltaTimeF); }
-		else if (context.S_Pressed()) { myPlayer.transform.Translate(-myPlayer.transform.forward() * SPEED * deltaTimeF); }
-		if (context.Space_Pressed()) { myPlayer.transform.Translate(myPlayer.transform.up() * SPEED * deltaTimeF); }
-		else if (context.LCtrl_Pressed()) { myPlayer.transform.Translate(-myPlayer.transform.up() * SPEED * deltaTimeF); }
+		if (context.D_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.right() * SPEED * deltaTimeF); }
+		else if (context.A_Pressed()) { myPlayer->transform.Translate(-myPlayer->transform.right() * SPEED * deltaTimeF); }
+		if (context.W_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.forward() * SPEED * deltaTimeF); }
+		else if (context.S_Pressed()) { myPlayer->transform.Translate(-myPlayer->transform.forward() * SPEED * deltaTimeF); }
+		if (context.Space_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.up() * SPEED * deltaTimeF); }
+		else if (context.LCtrl_Pressed()) { myPlayer->transform.Translate(-myPlayer->transform.up() * SPEED * deltaTimeF); }
 
 		vec2 mouseDelta = context.GetMouseDelta();
 		mouseDelta *= deltaTime;
 		mouseDelta *= 20;
 		if (glm::abs(mouseDelta.y) != 0.f) {
-			myPlayer.transform.RotateEuler(vec3{ 1.f,0.f,0 }, -mouseDelta.y);
+			myPlayer->transform.RotateEuler(vec3{ 1.f,0.f,0 }, -mouseDelta.y);
 		}
 		if (glm::abs(mouseDelta.x) != 0.f) {
-			myPlayer.transform.RotateEuler(vec3{0,1.f,0}, mouseDelta.x);
+			myPlayer->transform.RotateEuler(vec3{0,1.f,0}, mouseDelta.x);
 			
 		}
-		//std::cout <<"Right : " << myPlayer.right().x << " | " << myPlayer.right().y << " | " << myPlayer.right().z << std::endl;
-		std::cout <<"Euler myPlayer : " << myPlayer.transform.GetEulerAngles().x << " | " << myPlayer.transform.GetEulerAngles().y << " | " << myPlayer.transform.GetEulerAngles().z << std::endl;
+		//std::cout <<"Right : " << myPlayer->right().x << " | " << myPlayer->right().y << " | " << myPlayer->right().z << std::endl;
+		std::cout <<"Euler myPlayer : " << myPlayer->transform.GetEulerAngles().x << " | " << myPlayer->transform.GetEulerAngles().y << " | " << myPlayer->transform.GetEulerAngles().z << std::endl;
 		//std::cout <<"Euler camera : " << mainCamera.transform.GetEulerAngles().x << " | " << mainCamera.transform.GetEulerAngles().y << " | " << mainCamera.transform.GetEulerAngles().z << std::endl;
 		//std::cout <<"Rotation : " << mainCamera.transform.rotation.x << " | " << mainCamera.transform.rotation.y << " | " << mainCamera.transform.rotation.z << " | " << mainCamera.transform.rotation.w << std::endl;
 		//std::cout <<"Rotation (Inverse) : " << glm::inverse(mainCamera.transform.rotation).x << " | " << glm::inverse(mainCamera.transform.rotation).y << " | " << glm::inverse(mainCamera.transform.rotation).z << " | " << glm::inverse(mainCamera.transform.rotation).w << std::endl;
@@ -71,7 +72,7 @@ int main()
 		//mainCamera.transform.RotateQuat(-mainCamera.transform.rotation);
 		scene.DrawAll(&basicShader);
 	}
-	FreeMesh(myPlayer.mesh);
+	FreeMesh(obj1.mesh);
 	FreeShader(basicShader);
 	FreeTexture(basicTexture);
 	context.Terminate();
