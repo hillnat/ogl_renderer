@@ -42,9 +42,9 @@ public:
 	quat rotation = identity<quat>();
 	vec3 scale=vec3(1.f,1.f,1.f);
 #pragma region Axis
-	vec3 right() {return glm::normalize(vec3(VecxQuat(rotation, glm::normalize(vec4{ 1.f,0.f,0.f,1.f })))); }
-	vec3 up() { return glm::normalize(vec3(VecxQuat(rotation, glm::normalize(vec4{ 0.f,1.f,0.f,1.f })))); }
-	vec3 forward() { return glm::normalize(vec3(VecxQuat(rotation, glm::normalize(vec4{ 0.f,0.f,1.f,1.f })))); }
+	vec3 right() {return glm::normalize(vec3(VecxQuat(   rotation,      vec4{ 1.f,0.f,0.f,1.f }))); }
+	vec3 up() { return glm::normalize(vec3(VecxQuat(     rotation,      vec4{ 0.f,1.f,0.f,1.f }))); }
+	vec3 forward() { return glm::normalize(vec3(VecxQuat(rotation,      vec4{ 0.f,0.f,1.f,1.f }))); }
 #pragma endregion
 	quat GetCombinedRotation() { if (parent != nullptr) { return glm::normalize(parent->GetCombinedRotation() * rotation); } else { return rotation; } }//Rotation factoring in our parent if applicable
 	vec3 GetEulerAngles() {

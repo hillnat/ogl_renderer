@@ -9,7 +9,7 @@ layout (location = 3) uniform sampler2D mainTex;
 
 void main(){
 	//fragColor=vec4(1,1,1,1);
-	//fragColor=vCol;
+	fragColor=vCol;
 	
-	fragColor = texture(mainTex, vUV)*vCol;
+	//fragColor = texture(mainTex, vUV)*vCol;
 } 

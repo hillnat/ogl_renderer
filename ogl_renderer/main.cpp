@@ -19,13 +19,11 @@ int main()
 	Diagnostics::Environment();
 //Scene Definitions
 	Scene scene;
-	GameObject myGO1("myGO1", "meshes/fish2.obj");
-	GameObject myPlayer("Player", "meshes/3dplus.obj", vec3(0,1,0));
+	GameObject myPlayer("Player", "meshes/3dplus.obj", vec3(0,0,-50));
 	//Camera mainCamera(&myPlayer.transform, vec3{0.f,5.f,0.f});
-	Camera mainCamera(vec3{0.f,5.f,0.f});
+	Camera mainCamera(vec3{0.f,0.f,0.f});
 	Light directionalLight{vec3(1.f), vec3(1.f)};
 	scene.AddToScene(&myPlayer);
-	scene.AddToScene(&myGO1);
 	scene.AddToScene(&mainCamera);
 	scene.AddToScene(&directionalLight);
 	//Shaders
@@ -58,10 +56,10 @@ int main()
 		mouseDelta *= deltaTime;
 		mouseDelta *= 20;
 		if (glm::abs(mouseDelta.y) != 0.f) {
-			mainCamera.transform.RotateEuler(myPlayer.transform.right(), -mouseDelta.y);
+			myPlayer.transform.RotateEuler(vec3{ 1.f,0.f,0 }, -mouseDelta.y);
 		}
 		if (glm::abs(mouseDelta.x) != 0.f) {
-			myPlayer.transform.RotateEuler(myPlayer.transform.up(), mouseDelta.x);
+			myPlayer.transform.RotateEuler(vec3{0,1.f,0}, mouseDelta.x);
 			
 		}
 		//std::cout <<"Right : " << myPlayer.right().x << " | " << myPlayer.right().y << " | " << myPlayer.right().z << std::endl;
@@ -73,7 +71,7 @@ int main()
 		//mainCamera.transform.RotateQuat(-mainCamera.transform.rotation);
 		scene.DrawAll(&basicShader);
 	}
-	FreeMesh(myGO1.mesh);
+	FreeMesh(myPlayer.mesh);
 	FreeShader(basicShader);
 	FreeTexture(basicTexture);
 	context.Terminate();

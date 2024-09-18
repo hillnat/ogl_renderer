@@ -11,7 +11,7 @@ void Transform::Translate(vec3 pos)//Global position
 }
 
 
-void Transform::RotateEuler(vec3 axis, float angleDegrees) {
+void Transform::RotateEuler(const vec3 axis, const float angleDegrees) {
 	float angleRadians = glm::radians(angleDegrees);
 	glm::quat rotationQuat = glm::angleAxis(angleRadians, glm::normalize(axis));
 	rotation = glm::normalize(rotationQuat * rotation);
