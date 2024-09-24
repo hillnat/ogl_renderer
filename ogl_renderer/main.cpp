@@ -19,9 +19,9 @@ int main()
 	Diagnostics::Environment();
 //Scene Definitions
 	Scene scene;
-	GameObject obj1("Player", "meshes/fish2.obj", vec3(0,0,-50));
-	//Camera mainCamera(&myPlayer->transform, vec3{0.f,5.f,0.f});
-	Camera mainCamera(vec3{0.f,0.f,0.f});
+	GameObject obj1("Player", "meshes/fish2.obj");
+	obj1.transform.Translate(vec3(0, 0, -5.f));
+	Camera mainCamera{};
 	Light directionalLight{vec3(1.f), vec3(1.f)};
 	scene.AddToScene(&obj1);
 	scene.AddToScene(&mainCamera);
@@ -33,6 +33,7 @@ int main()
 	
 	//cameraTransform = glm::lookAt(vec3{ cameraTransform[3] }, vec3{ myGeoTransform[3] }, { 0,1,0 });//From 0,0,0 look at 0,0,1 on axis 0,1,0
 	const float SPEED = 20;
+	const float MOUSESPEED = 200;
 	double lastTime = 0;
 	SetUniform(basicShader, 3, basicTexture, 0);
 	//Test
@@ -44,32 +45,16 @@ int main()
 		lastTime = nowTime;
 		context.Tick();
 		context.Clear();
-		if (glfwGetKey(context.window, GLFW_KEY_V)) { scene.SetAllToTestPosition(); }
-		//myGO.transform.Rotate(vec3{ 0.f,0.01f,0.f });
-		if (context.D_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.right() * SPEED * deltaTimeF); }
-		else if (context.A_Pressed()) { myPlayer->transform.Translate(-myPlayer->transform.right() * SPEED * deltaTimeF); }
-		if (context.W_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.forward() * SPEED * deltaTimeF); }
-		else if (context.S_Pressed()) { myPlayer->transform.Translate(-myPlayer->transform.forward() * SPEED * deltaTimeF); }
-		if (context.Space_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.up() * SPEED * deltaTimeF); }
-		else if (context.LCtrl_Pressed()) { myPlayer->transform.Translate(-myPlayer->transform.up() * SPEED * deltaTimeF); }
 
-		vec2 mouseDelta = context.GetMouseDelta();
-		mouseDelta *= deltaTime;
-		mouseDelta *= 20;
-		if (glm::abs(mouseDelta.y) != 0.f) {
-			myPlayer->transform.RotateEuler(vec3{ 1.f,0.f,0 }, -mouseDelta.y);
-		}
-		if (glm::abs(mouseDelta.x) != 0.f) {
-			myPlayer->transform.RotateEuler(vec3{0,1.f,0}, mouseDelta.x);
-			
-		}
-		//std::cout <<"Right : " << myPlayer->right().x << " | " << myPlayer->right().y << " | " << myPlayer->right().z << std::endl;
-		std::cout <<"Euler myPlayer : " << myPlayer->transform.GetEulerAngles().x << " | " << myPlayer->transform.GetEulerAngles().y << " | " << myPlayer->transform.GetEulerAngles().z << std::endl;
-		//std::cout <<"Euler camera : " << mainCamera.transform.GetEulerAngles().x << " | " << mainCamera.transform.GetEulerAngles().y << " | " << mainCamera.transform.GetEulerAngles().z << std::endl;
-		//std::cout <<"Rotation : " << mainCamera.transform.rotation.x << " | " << mainCamera.transform.rotation.y << " | " << mainCamera.transform.rotation.z << " | " << mainCamera.transform.rotation.w << std::endl;
-		//std::cout <<"Rotation (Inverse) : " << glm::inverse(mainCamera.transform.rotation).x << " | " << glm::inverse(mainCamera.transform.rotation).y << " | " << glm::inverse(mainCamera.transform.rotation).z << " | " << glm::inverse(mainCamera.transform.rotation).w << std::endl;
+		if (context.D_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Right() * SPEED * deltaTimeF); }
+		else if (context.A_Pressed()) { myPlayer->transform.Translate(-myPlayer->transform.Right() * SPEED * deltaTimeF); }
+		if (context.W_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Forward() * SPEED * deltaTimeF); }
+		else if (context.S_Pressed()) { myPlayer->transform.Translate(-myPlayer->transform.Forward() * SPEED * deltaTimeF); }
+		if (context.Space_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Up() * SPEED * deltaTimeF); }
+		else if (context.LCtrl_Pressed()) { myPlayer->transform.Translate(-myPlayer->transform.Up() * SPEED * deltaTimeF); }
+		if (context.E_Pressed()) { myPlayer->transform.Rotate(myPlayer->transform.Up(), MOUSESPEED * deltaTimeF); }
+		else if (context.Q_Pressed()) { myPlayer->transform.Rotate(myPlayer->transform.Up(), -MOUSESPEED * deltaTimeF); }
 
-		//mainCamera.transform.RotateQuat(-mainCamera.transform.rotation);
 		scene.DrawAll(&basicShader);
 	}
 	FreeMesh(obj1.mesh);
