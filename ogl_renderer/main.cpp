@@ -47,8 +47,8 @@ int main()
 	//Shader basicShader = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
 	Texture basicTexture = LoadTexture("textures/tex.PNG");
 	//cameraTransform = glm::lookAt(vec3{ cameraTransform[3] }, vec3{ myGeoTransform[3] }, { 0,1,0 });//From 0,0,0 look at 0,0,1 on axis 0,1,0
-	const float SPEED = 20.f;
-	const float MOUSESPEED = 1.5f;
+	const float SPEED = 5.f;
+	const float MOUSESPEED = 20.f;
 	double lastTime = 0;
 	SetUniform(basicShader, 3, basicTexture, 0);
 	//Test

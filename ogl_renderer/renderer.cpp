@@ -100,7 +100,7 @@ void DrawMesh(const Shader& shader, const Mesh& mesh) {
 	glBindVertexArray(mesh.vao);
 	//Actually draw the fucking thing
 	glDrawElements(
-		GL_LINES,//GL_TRIANGLES
+		GL_TRIANGLES,//GL_LINES
 		mesh.size,
 		GL_UNSIGNED_INT,
 		nullptr
@@ -143,19 +143,6 @@ Shader MakeShader(const char* vertShader, const char* fragShader) {
 }
 Shader MakeShader(const string& vertShader, const string& fragShader) {//Overload just coverts params
 	return MakeShader(vertShader.c_str(), fragShader.c_str());
-}
-
-string ReadFile(const char* path) {//Allows us to load our shaders from files, poorly.
-	fstream stream(path, std::ios_base::in);//Open the freakstream
-	string source;
-	//TODO: Add error checking and validation if you are reading from a text file
-	while (!stream.eof()) {
-		string thisLine;
-		std::getline(stream, thisLine);
-		source += thisLine + "\n";
-	}
-	stream.close();//Close the freakstream
-	return source;
 }
 Shader LoadShader(const char* vertPath, const char* fragPath) {
 	string vertSource = ReadFile(vertPath);
@@ -237,3 +224,15 @@ Texture LoadTexture(const char* imagePath) {
 	return newTexture;
 }
 #pragma endregion
+string ReadFile(const char* path) {//Allows us to load our shaders from files, poorly.
+	fstream stream(path, std::ios_base::in);//Open the freakstream
+	string source;
+	//TODO: Add error checking and validation if you are reading from a text file
+	while (!stream.eof()) {
+		string thisLine;
+		std::getline(stream, thisLine);
+		source += thisLine + "\n";
+	}
+	stream.close();//Close the freakstream
+	return source;
+}
