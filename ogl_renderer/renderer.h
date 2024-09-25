@@ -17,7 +17,6 @@ struct Vertex {
 	vec2 uv;
 	vec3 normal;
 };
-
 struct Mesh {
 	GLuint vao, vbo, ibo;//Vertex Array Object (This is made of the VBO and IBO), Vertex Buffer Object (All the vertices), Index Buffer Object (Index buffer holds the orders for vertices to be turned into tris)
 	GLuint size = 0;//Length of the obj
@@ -64,5 +63,4 @@ Texture LoadTexture(const char* imagePath);
 #pragma endregion
 string ReadFile(const char* path);
 string ReadFile(string path);
-
 

@@ -27,28 +27,23 @@ int main()
 //Scene Definitions
 	Scene scene;
 	GameObject obj1("Player", "meshes/Pointer.obj");
-	obj1.transform.Translate(vec3(0, 0, -10.f));
+	obj1.transform.Translate(vec3(0, -3, 0));
 	Camera mainCamera{};
-
+	mainCamera.transform.Rotate(vec3(1, 0, 0), 90);
 	scene.AddToScene(&obj1);
 	scene.AddToScene(&mainCamera);
-	vec3 colors[]{ vec3(1,0,0),vec3(0,1,0) ,vec3(0,0,1) };
-	vec3 dirs[]{ vec3(1,0,0),vec3(0,1,0) ,vec3(0,0,1) };
-	Light directionalLight1(colors[0], dirs[0]);
-	Light directionalLight2(colors[1], dirs[1]);
-	Light directionalLight3(colors[2], dirs[2]);
+	Light directionalLight1(vec3(5,5,5), vec3(0, -1, 0));
 	scene.AddToScene(&directionalLight1);
-	scene.AddToScene(&directionalLight2);
-	scene.AddToScene(&directionalLight3);
-	
 
 	//Shaders
-	Shader basicShader = LoadShader("shaders/basic.vert", "shaders/basic.frag");
-	//Shader basicShader = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
+	//Shader basicShader = LoadShader("shaders/basic.vert", "shaders/basic.frag");
+	//Shader lineShader = LoadShader("shaders/lines.vert", "shaders/lines.frag");
+	Shader basicShader = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
 	Texture basicTexture = LoadTexture("textures/tex.PNG");
 	//cameraTransform = glm::lookAt(vec3{ cameraTransform[3] }, vec3{ myGeoTransform[3] }, { 0,1,0 });//From 0,0,0 look at 0,0,1 on axis 0,1,0
-	const float SPEED = 5.f;
-	const float MOUSESPEED = 20.f;
+	const float MOVESPEED = 5.f;
+	const float TURNSPEED = 40.f;
+	const float CAMTURNSPEED = 40.f;
 	double lastTime = 0;
 	SetUniform(basicShader, 3, basicTexture, 0);
 	//Test
@@ -61,14 +56,19 @@ int main()
 		context.Tick();
 		context.Clear();
 
-		if (context.D_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Right() * SPEED * deltaTimeF); }
-		else if (context.A_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Right() * -SPEED * deltaTimeF); }
-		if (context.W_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Forward() * SPEED * deltaTimeF); }
-		else if (context.S_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Forward() * -SPEED * deltaTimeF); }
-		if (context.Space_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Up() * SPEED * deltaTimeF); }
-		else if (context.LCtrl_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Up() * -SPEED * deltaTimeF); }
-		if (context.E_Pressed()) { myPlayer->transform.Rotate(myPlayer->transform.Up(), MOUSESPEED * deltaTimeF); }
-		else if (context.Q_Pressed()) { myPlayer->transform.Rotate(myPlayer->transform.Up(), -MOUSESPEED * deltaTimeF); }
+		if (context.D_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Right() * MOVESPEED * deltaTimeF); }
+		else if (context.A_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Right() * -MOVESPEED * deltaTimeF); }
+		if (context.W_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Forward() * -MOVESPEED * deltaTimeF); }
+		else if (context.S_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Forward() * MOVESPEED * deltaTimeF); }
+		if (context.Space_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Up() * MOVESPEED * deltaTimeF); }
+		else if (context.LCtrl_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Up() * -MOVESPEED * deltaTimeF); }
+		if (context.E_Pressed()) { myPlayer->transform.Rotate(myPlayer->transform.Up(), -TURNSPEED * deltaTimeF); }
+		else if (context.Q_Pressed()) { myPlayer->transform.Rotate(myPlayer->transform.Up(), TURNSPEED * deltaTimeF); }
+
+		if (context.UpArrow_Pressed()) { mainCamera.transform.Rotate(mainCamera.transform.Right(), CAMTURNSPEED * deltaTimeF); }
+		else if (context.DownArrow_Pressed()) { mainCamera.transform.Rotate(mainCamera.transform.Right(), -CAMTURNSPEED * deltaTimeF); }
+		if (context.RightArrow_Pressed()) { mainCamera.transform.Rotate(mainCamera.transform.Up(), -CAMTURNSPEED * deltaTimeF); }
+		else if (context.LeftArrow_Pressed()) { mainCamera.transform.Rotate(mainCamera.transform.Up(), CAMTURNSPEED * deltaTimeF); }
 
 		std::cout << "Forward : " << myPlayer->transform.Forward().x << " | " << myPlayer->transform.Forward().y << " | " << myPlayer->transform.Forward().z << " | " << std::endl;
 		std::cout << "Up      : " << myPlayer->transform.Up().x << " | " << myPlayer->transform.Up().y << " | " << myPlayer->transform.Up().z << " | " << std::endl;

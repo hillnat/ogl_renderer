@@ -25,6 +25,7 @@ void Scene::DrawAll(Shader* shader) {
 	//	lightColors[i] = lights[i]->color;
 	//	lightDirections[i] = lights[i]->direction;
 	//}
+	SetUniform(*shader, 4, vec3(0.2f,0.2f,0.2f));//Set ambient
 	SetUniform(*shader, 5, lights[0]->color);
 	SetUniform(*shader, 6, lights[0]->direction);
 	//SetUniform(*shader, 5, lights[1]->color);

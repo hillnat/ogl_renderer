@@ -58,6 +58,10 @@ bool Context::E_Pressed() { return glfwGetKey(window, GLFW_KEY_E); }
 bool Context::Q_Pressed() { return glfwGetKey(window, GLFW_KEY_Q); }
 bool Context::Space_Pressed() { return glfwGetKey(window, GLFW_KEY_SPACE); }
 bool Context::LCtrl_Pressed() { return glfwGetKey(window, GLFW_KEY_LEFT_CONTROL); }
+bool Context::UpArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_UP); }
+bool Context::RightArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_RIGHT); }
+bool Context::LeftArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_LEFT); }
+bool Context::DownArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_DOWN); }
 glm::dvec2 Context::GetMouseDelta(){
 	glm::dvec2 curMousePos(0.f,0.f);
 	glfwGetCursorPos(window, &curMousePos.x, &curMousePos.y);

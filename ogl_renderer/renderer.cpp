@@ -4,8 +4,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h" //For image loading
 using std::fstream;
-
-#pragma region Geometry Implementation
+#pragma region Meshes
 Mesh MakeMesh(const Vertex* const verts, GLsizei vertCount, const GLuint* indices, GLsizei indexCount)
 {
 	Mesh mesh = Mesh{};//Zero-initialize
@@ -107,7 +106,7 @@ void DrawMesh(const Shader& shader, const Mesh& mesh) {
 	);
 }
 #pragma endregion
-#pragma region Shader Implementations
+#pragma region Shader
 void ReportCompileStatus(GLuint& shaderToReport) {
 	GLint compileStatus = 0;
 	glGetShaderiv(shaderToReport, GL_COMPILE_STATUS, &compileStatus);
@@ -154,7 +153,7 @@ void FreeShader(Shader& shader) {
 	shader = {};//Zero out shader struct
 }
 #pragma endregion
-#pragma region Uniforms Implementations
+#pragma region Uniforms
 void SetUniform(const Shader& shader, GLuint location, const mat4& value) {
 	glProgramUniformMatrix4fv(shader.program, location,1,GL_FALSE, glm::value_ptr(value));
 }
@@ -173,7 +172,7 @@ void SetUniform(const Shader& shader, GLuint location, int count,const vec3& val
 	glProgramUniform3fv(shader.program, location, ((GLsizei)count), glm::value_ptr(value));
 }
 #pragma endregion
-#pragma region Texture Implementations
+#pragma region Texture
 Texture MakeTexture(unsigned width, unsigned height, unsigned channels, const unsigned char* pixels) {
 	GLenum oglFormat = GL_RGBA;
 	switch (channels) {
