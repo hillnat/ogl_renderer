@@ -16,7 +16,7 @@ out vec2 vUV;
 out vec3 vNorm;
 
 void main(){
-	vPos=model*position;
+	vPos=model * position;
 	vCol=color;
 	vUV=uv;
 	vNorm=mat3(model)*normal;

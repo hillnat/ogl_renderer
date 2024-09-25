@@ -1,6 +1,6 @@
-#include "renderer.h"
 #include <fstream> //For file reading
 #include "glm/ext.hpp"
+#include "renderer.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h" //For image loading
 using std::fstream;
@@ -100,7 +100,7 @@ void DrawMesh(const Shader& shader, const Mesh& mesh) {
 	glBindVertexArray(mesh.vao);
 	//Actually draw the fucking thing
 	glDrawElements(
-		GL_TRIANGLES,//Which primitive to use. Rob Hint: use something else for drawing lines
+		GL_LINES,//GL_TRIANGLES
 		mesh.size,
 		GL_UNSIGNED_INT,
 		nullptr
@@ -181,6 +181,9 @@ void SetUniform(const Shader& shader, GLuint location, const vec4& value) {
 }
 void SetUniform(const Shader& shader, GLuint location, const vec3& value) {
 	glProgramUniform3fv(shader.program, location, 1, glm::value_ptr(value));
+}
+void SetUniform(const Shader& shader, GLuint location, int count,const vec3& value) {
+	glProgramUniform3fv(shader.program, location, ((GLsizei)count), glm::value_ptr(value));
 }
 #pragma endregion
 #pragma region Texture Implementations

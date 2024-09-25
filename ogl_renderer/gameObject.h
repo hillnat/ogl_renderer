@@ -10,7 +10,6 @@ public:
 		this->mesh = MeshImporter::ImportFromFile(meshPath);
 		this->transform = Transform();
 	}
-
 	
 	const char* name;
 	Transform transform = Transform();

@@ -1,5 +1,6 @@
 #include "scene.h"
 #include "glm/ext.hpp"
+#include "renderer.h"
 void Scene::AddToScene(GameObject* go) {
 	gameObjects.push_back(go);
 }
@@ -18,10 +19,18 @@ void Scene::DrawAll(Shader* shader) {
 		SetUniform(*shader, 7, vec3(mainCamera.transform.matrix[3]));//Cam position for specular. Mat4 to vec3 conversion
 	}
 	//Handle all lights
-	for (int i = 0; i < lights.size(); i++) {
-		SetUniform(*shader, 5, (*lights[i]).color);
-		SetUniform(*shader, 6, (*lights[i]).direction);
-	}
+	//vec3 lightColors[3];
+	//vec3 lightDirections[3];
+	//for (int i = 0; i < lights.size(); i++) {
+	//	lightColors[i] = lights[i]->color;
+	//	lightDirections[i] = lights[i]->direction;
+	//}
+	SetUniform(*shader, 5, lights[0]->color);
+	SetUniform(*shader, 6, lights[0]->direction);
+	//SetUniform(*shader, 5, lights[1]->color);
+	//SetUniform(*shader, 6, lights[1]->direction);
+	//SetUniform(*shader, 5, lights[2]->color);
+	//SetUniform(*shader, 6, lights[2]->direction);
 	//Handle all objects
 	for (int i = 0; i < gameObjects.size(); i++) {
 		SetUniform(*shader, 2, (*gameObjects[i]).transform.matrix);
