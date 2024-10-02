@@ -16,11 +16,11 @@ out vec2 vUV;
 out vec3 vNorm;
 
 void main(){
-	vCol = abs(position);
+	//vCol = abs(position);
 	vPos=model * position;
-	//vCol=color;
+	vCol=color;
 	vUV=uv;
-	//vNorm=mat3(model)*normal;
+	vNorm=mat3(model)*normal;
 	//Model view projection matrix
 	gl_Position = proj * view * model * position;
 }

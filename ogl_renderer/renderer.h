@@ -14,8 +14,8 @@ using glm::vec2;
 struct Vertex {
 	vec4 pos;
 	vec4 color;//Vertex color, usually unused or used for something else
-	vec2 uv;
 	vec3 normal;
+	vec2 uv;
 };
 struct Mesh {
 	GLuint vao, vbo, ibo;//Vertex Array Object (This is made of the VBO and IBO), Vertex Buffer Object (All the vertices), Index Buffer Object (Index buffer holds the orders for vertices to be turned into tris)
