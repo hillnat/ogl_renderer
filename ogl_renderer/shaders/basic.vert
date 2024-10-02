@@ -20,7 +20,7 @@ void main(){
 	vPos=model * position;
 	//vCol=color;
 	vUV=uv;
-	vNorm=mat3(model)*normal;
+	//vNorm=mat3(model)*normal;
 	//Model view projection matrix
 	gl_Position = proj * view * model * position;
 }

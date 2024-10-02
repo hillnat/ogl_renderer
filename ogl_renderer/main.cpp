@@ -56,19 +56,21 @@ int main()
 		context.Tick();
 		context.Clear();
 
+		if (context.UpArrow_Pressed()) { mainCamera.transform.Rotate(mainCamera.transform.Right(), CAMTURNSPEED * deltaTimeF); }
+		else if (context.DownArrow_Pressed()) { mainCamera.transform.Rotate(mainCamera.transform.Right(), -CAMTURNSPEED * deltaTimeF); }
+		if (context.RightArrow_Pressed()) { mainCamera.transform.Rotate(mainCamera.transform.Up(), -CAMTURNSPEED * deltaTimeF); }
+		else if (context.LeftArrow_Pressed()) { mainCamera.transform.Rotate(mainCamera.transform.Up(), CAMTURNSPEED * deltaTimeF); }         
+		if (context.E_Pressed()) { myPlayer->transform.Rotate(myPlayer->transform.Up(), -TURNSPEED * deltaTimeF); }
+		else if (context.Q_Pressed()) { myPlayer->transform.Rotate(myPlayer->transform.Up(), TURNSPEED * deltaTimeF); }
 		if (context.D_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Right() * MOVESPEED * deltaTimeF); }
 		else if (context.A_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Right() * -MOVESPEED * deltaTimeF); }
 		if (context.W_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Forward() * -MOVESPEED * deltaTimeF); }
 		else if (context.S_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Forward() * MOVESPEED * deltaTimeF); }
 		if (context.Space_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Up() * MOVESPEED * deltaTimeF); }
 		else if (context.LCtrl_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Up() * -MOVESPEED * deltaTimeF); }
-		if (context.E_Pressed()) { myPlayer->transform.Rotate(myPlayer->transform.Up(), -TURNSPEED * deltaTimeF); }
-		else if (context.Q_Pressed()) { myPlayer->transform.Rotate(myPlayer->transform.Up(), TURNSPEED * deltaTimeF); }
+		
 
-		if (context.UpArrow_Pressed()) { mainCamera.transform.Rotate(mainCamera.transform.Right(), CAMTURNSPEED * deltaTimeF); }
-		else if (context.DownArrow_Pressed()) { mainCamera.transform.Rotate(mainCamera.transform.Right(), -CAMTURNSPEED * deltaTimeF); }
-		if (context.RightArrow_Pressed()) { mainCamera.transform.Rotate(mainCamera.transform.Up(), -CAMTURNSPEED * deltaTimeF); }
-		else if (context.LeftArrow_Pressed()) { mainCamera.transform.Rotate(mainCamera.transform.Up(), CAMTURNSPEED * deltaTimeF); }
+		
 
 		std::cout << "Forward : " << myPlayer->transform.Forward().x << " | " << myPlayer->transform.Forward().y << " | " << myPlayer->transform.Forward().z << " | " << std::endl;
 		std::cout << "Up      : " << myPlayer->transform.Up().x << " | " << myPlayer->transform.Up().y << " | " << myPlayer->transform.Up().z << " | " << std::endl;
