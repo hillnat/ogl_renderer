@@ -40,8 +40,8 @@ void main()
     //texColor = clamp(texColor, 0.0, 1.0);
 
     //Calculate the final color
-    //fragColor = (texColor * diffuseLight + ambientLight + vec4(dirLightColor * specularTerm, 1.0));
+    fragColor = (texColor * diffuseLight + ambientLight + vec4(dirLightColor * specularTerm, 1.0));
     //fragColor = clamp(fragColor, 0.0, 1.0);
     
-    fragColor = texColor;
+    //fragColor = texColor;
 }

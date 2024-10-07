@@ -13,7 +13,7 @@ public:
 	void AddToScene(GameObject*);
 	void AddToScene(Camera*);
 	void AddToScene(Light*);
-	void DrawAll(Shader*);
+	void DrawAll(Shader*, float);
 	std::vector<GameObject*> gameObjects;
 	std::vector<Camera*> cameras;
 	std::vector<Light*> lights;

@@ -97,7 +97,7 @@ void DrawMesh(const Shader& shader, const Mesh& mesh) {
 	glUseProgram(shader.program);
 	//Specify which geometry
 	glBindVertexArray(mesh.vao);
-	//Actually draw the fucking thing
+
 	glDrawElements(
 		GL_TRIANGLES,//GL_LINES
 		mesh.size,

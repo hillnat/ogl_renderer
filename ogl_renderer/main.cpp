@@ -69,15 +69,8 @@ int main()
 		if (context.Space_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Up() * MOVESPEED * deltaTimeF); }
 		else if (context.LCtrl_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Up() * -MOVESPEED * deltaTimeF); }
 		
-
-		
-
-		std::cout << "Forward : " << myPlayer->transform.Forward().x << " | " << myPlayer->transform.Forward().y << " | " << myPlayer->transform.Forward().z << " | " << std::endl;
-		std::cout << "Up      : " << myPlayer->transform.Up().x << " | " << myPlayer->transform.Up().y << " | " << myPlayer->transform.Up().z << " | " << std::endl;
-		std::cout << "Right   : " << myPlayer->transform.Right().x << " | " << myPlayer->transform.Right().y << " | " << myPlayer->transform.Right().z << " | " << std::endl;
-		std::cout << "-----------------------------------------------------------------" << std::endl;
-		scene.DrawAll(&basicShader);
-		//checkGLError();
+		scene.DrawAll(&basicShader, deltaTimeF);
+		checkGLError();
 	}
 	FreeMesh(obj1.mesh);
 	FreeShader(basicShader);

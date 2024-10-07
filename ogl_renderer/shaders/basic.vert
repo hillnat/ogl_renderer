@@ -18,7 +18,8 @@ out vec3 vNorm;
 void main(){
 	//vCol = abs(position);
 	vPos=model * position;
-	vCol=color;
+	vCol=vec4(1.0,1.0,1.0,1.0);
+	//vCol=color;
 	vUV=uv;
 	vNorm=mat3(model)*normal;
 	//Model view projection matrix

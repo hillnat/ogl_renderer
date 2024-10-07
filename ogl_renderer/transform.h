@@ -30,5 +30,5 @@ public:
 	void Translate(vec3);
 	void Rotate(vec3,float);
 #pragma endregion
-
+	void LogTransform();
 };

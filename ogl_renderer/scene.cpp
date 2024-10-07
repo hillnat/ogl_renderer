@@ -10,7 +10,9 @@ void Scene::AddToScene(Camera* cam) {
 void Scene::AddToScene(Light* light) {
 	lights.push_back(light);
 }
-void Scene::DrawAll(Shader* shader) {
+float ambientPulse=0;//temp
+bool pulseState = false;
+void Scene::DrawAll(Shader* shader, float deltaTime) {
 	//Handle Camera
 	if (cameras.size() != 0 && cameras[0] != nullptr) {
 		Camera mainCamera = *cameras[0];
@@ -25,7 +27,10 @@ void Scene::DrawAll(Shader* shader) {
 	//	lightColors[i] = lights[i]->color;
 	//	lightDirections[i] = lights[i]->direction;
 	//}
-	SetUniform(*shader, 4, vec3(0.2f,0.2f,0.2f));//Set ambient
+	if (ambientPulse >= 1.f || ambientPulse <= 0.f) { pulseState = !pulseState; }
+	if (pulseState) { ambientPulse += deltaTime; }
+	else { ambientPulse -= deltaTime; }
+	SetUniform(*shader, 4, vec3(0.3f, 0.3f, 0.3f)*ambientPulse );//Set ambient
 	SetUniform(*shader, 5, lights[0]->color);
 	SetUniform(*shader, 6, lights[0]->direction);
 	//SetUniform(*shader, 5, lights[1]->color);
