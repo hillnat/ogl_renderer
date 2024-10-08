@@ -81,9 +81,9 @@ Mesh MakeMesh(const Vertex* const verts, GLsizei vertCount, const GLuint* indice
 	//  d   b
 }
 //Overload, if you dare.
-/*Geometry MakeGeometry(const vector<Vertex> verts, const vector<GLuint> indices) {//Overload just calls the same func above with different data
-	return MakeGeometry(verts.data(), verts.size(), indices.data(), indices.size());
-}*/
+Mesh MakeMesh(const vector<Vertex> verts, const vector<GLuint> indices) {//Overload just calls the same func above with different data
+	return MakeMesh(verts.data(), verts.size(), indices.data(), indices.size());
+}
 void FreeMesh(Mesh& mesh) {
 	//DELETE BUFFERS IN REVERSE ORDER THEY WERE GENERATED
 	glDeleteBuffers(1, &mesh.ibo);
@@ -97,7 +97,6 @@ void DrawMesh(const Shader& shader, const Mesh& mesh) {
 	glUseProgram(shader.program);
 	//Specify which geometry
 	glBindVertexArray(mesh.vao);
-
 	glDrawElements(
 		GL_TRIANGLES,//GL_LINES
 		mesh.size,

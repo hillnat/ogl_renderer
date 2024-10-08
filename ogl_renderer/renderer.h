@@ -12,10 +12,22 @@ using glm::vec2;
 
 #pragma region Struct Definitions
 struct Vertex {
-	vec4 pos;
-	vec4 color;//Vertex color, usually unused or used for something else
-	vec3 normal;
-	vec2 uv;
+	Vertex() {
+		this->pos = vec4(0, 0, 0, 1);
+		this->color = vec4(1, 1, 1, 1);
+		this->normal = vec3(0, 0, 0);
+		this->uv = vec2(0, 0);
+	}
+	Vertex(vec4 pos, vec4 color, vec3 normal, vec2 uv) {
+		this->pos = pos;
+		this->color = color;
+		this->normal = normal;
+		this->uv = uv;
+	}
+	vec4 pos = vec4(0, 0, 0, 1);
+	vec4 color = vec4(1, 1, 1, 1);//Vertex color, usually unused or used for something else
+	vec3 normal = vec3(0, 0, 0);
+	vec2 uv = vec2(0, 0);
 };
 struct Mesh {
 	GLuint vao, vbo, ibo;//Vertex Array Object (This is made of the VBO and IBO), Vertex Buffer Object (All the vertices), Index Buffer Object (Index buffer holds the orders for vertices to be turned into tris)
@@ -39,6 +51,7 @@ struct Light {
 #pragma endregion
 #pragma region Meshes
 Mesh MakeMesh(const Vertex* const verts, GLsizei vertCount, const GLuint* indices, GLsizei indexCount);//GLsizei = GL Size Index
+Mesh MakeMesh(const vector<Vertex> verts, const vector<GLuint> indices);
 //Geometry MakeGeometry(const vector<Vertex> verts, const vector<GLuint> indices);
 void FreeMesh(Mesh& geo);
 void DrawMesh(const Shader& shader, const Mesh& geo);

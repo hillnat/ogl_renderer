@@ -13,7 +13,8 @@ void Transform::Translate(const vec3 axis)
 
 
 void Transform::Rotate(const vec3 axis, const float angleDegrees) {
-	matrix = glm::rotate(matrix, glm::radians(angleDegrees), axis);
+	matrix = glm::rotate(matrix, glm::radians(angleDegrees), glm::normalize(axis));
+
 	LogTransform();
 }
 
