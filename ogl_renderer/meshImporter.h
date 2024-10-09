@@ -2,6 +2,6 @@
 #include "glm/glm.hpp"//Math lib
 #include "renderer.h"
 namespace MeshImporter {
-	Mesh ImportFromFile(const char* filePath);
+	mesh ImportFromFile(const char* filePath);
 }
 

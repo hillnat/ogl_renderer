@@ -5,6 +5,7 @@
 #include "scene.h"
 #include "meshImporter.h"
 #include "camera.h"
+#include "physics.h"
 #include "renderer.h"
 #include "glm/ext.hpp"
 #include "glfw/glfw3.h"	//GLFW is a Windows API wrapper, allows us to handle window context easily
@@ -21,39 +22,52 @@ void checkGLError()
 }
 int main()
 {
+	//Setup
 	Context context;
 	context.Initialize();
 	Diagnostics::Environment();
 //Scene Definitions
-	Scene scene;
-	//GameObject obj1("Player", "meshes/axisPointer.obj");
-	GameObject obj1("Player", MakeSphere());
-	obj1.transform.Translate(vec3(0, 0, -5));
-	Camera mainCamera{};
+	scene scene;
+	physics phys;
+	gameObject obj1("Player", "meshes/axisPointer.obj");
+	//GameObject obj1("Player", MakePlane());
+	obj1.transform.Translate(vec3(0, 0, 5));
+	phys.CreateRigidbody(&obj1.transform);
+	camera mainCamera{};
 	//mainCamera.transform.Rotate(vec3(1, 0, 0), 90.f);
 	scene.AddToScene(&obj1);
 	scene.AddToScene(&mainCamera);
-	Light directionalLight1(vec3(1,1,1), vec3(0, -1, 0));
-	scene.AddToScene(&directionalLight1);
+	light directionallight1(vec3(1,1,1), vec3(0, -1, 0));
+	scene.AddToScene(&directionallight1);
 
-	//Shaders
-	//Shader basicShader = LoadShader("shaders/basic.vert", "shaders/basic.frag");
-	//Shader lineShader = LoadShader("shaders/lines.vert", "shaders/lines.frag");
-	Shader basicShader = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
-	Texture basicTexture = LoadTexture("textures/wood.png");
+	//shaders
+	shader basicshader = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
+	texture basictexture = LoadTexture("textures/noise.png");
 	//cameraTransform = glm::lookAt(vec3{ cameraTransform[3] }, vec3{ myGeoTransform[3] }, { 0,1,0 });//From 0,0,0 look at 0,0,1 on axis 0,1,0
 	const float MOVESPEED = 5.f;
 	const float TURNSPEED = 80.f;
-	const float LIGHTTURNSPEED = 80.f;
-	double lastTime = 0;
-	SetUniform(basicShader, 3, basicTexture, 0);
+	const float lightTURNSPEED = 80.f;
+	SetUniform(basicshader, 3, basictexture, 0);
 	//Test
-	GameObject* myPlayer = &obj1;
+	gameObject* myPlayer = &obj1;
+
+#pragma region Time
+	double lastTime = 0;
+	double fixedDeltaTimeAccum = 0;
+	const double fixedDeltaTimeThreshold = 0.05;
+	const double fixedDeltaTime = (double)1 / fixedDeltaTimeThreshold;
+#pragma endregion
+
+
+
+	//Main Loop
 	while (!context.ShouldClose()) {
-		double nowTime = glfwGetTime();
-		double deltaTime = nowTime - lastTime;
+		double currentTime = glfwGetTime();
+		double deltaTime = currentTime - lastTime;
+		fixedDeltaTimeAccum += deltaTime;
+		while (fixedDeltaTimeAccum > fixedDeltaTimeThreshold) { fixedDeltaTimeAccum -= fixedDeltaTimeThreshold; phys.UpdateAllBodies(); }//Run in a WHILE loop, to allow multiple fixed time steps to happen in the same frame given the delta time is larger than the threshold*2
 		float deltaTimeF = (float)deltaTime;
-		lastTime = nowTime;
+		lastTime = currentTime;
 		context.Tick();
 		context.Clear();
 		vec3 wierdAxis = vec3(0.7f, 0.7f, 0.7f);
@@ -70,13 +84,18 @@ int main()
 		else if (context.S_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Forward() * -1.f * MOVESPEED * deltaTimeF); }
 		if (context.Space_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Up() * MOVESPEED * deltaTimeF); }
 		else if (context.LCtrl_Pressed()) { myPlayer->transform.Translate(myPlayer->transform.Up() * -1.f * MOVESPEED * deltaTimeF); }
-		
-		scene.DrawAll(&basicShader, deltaTimeF);
+
+		if(phys.SphereSphereOverlap(myPlayer->transform.GetPosition(), 0.5f, mainCamera.transform.GetPosition(), 0.5f)){
+			std::cout << "Hit!" << std::endl;
+		}
+
+		scene.RenderAll(&basicshader);
 		checkGLError();
 	}
+	//Program ending
 	FreeMesh(obj1.mesh);
-	FreeShader(basicShader);
-	FreeTexture(basicTexture);
+	FreeShader(basicshader);
+	FreeTexture(basictexture);
 	context.Terminate();
 	return 0;
 }

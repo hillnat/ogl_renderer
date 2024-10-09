@@ -5,45 +5,45 @@
 #include "stb/stb_image.h" //For image loading
 using std::fstream;
 #pragma region Meshes
-Mesh MakeMesh(const Vertex* const verts, GLsizei vertCount, const GLuint* indices, GLsizei indexCount)
+mesh MakeMesh(const vertex* const verts, GLsizei vertCount, const GLuint* indices, GLsizei indexCount)
 {
-	Mesh mesh = Mesh{};//Zero-initialize
-	mesh.size = indexCount;//Vertex count
+	mesh newmesh = mesh{};//Zero-initialize
+	newmesh.size = indexCount;//vertex count
 	//Make bufers
-	glGenVertexArrays(1, &mesh.vao);//Make a Vertex Array Object at this Geo's point in memory on the GPU
-	glGenBuffers(1, &mesh.vbo);//Generate the buffer of vertices
-	glGenBuffers(1, &mesh.ibo);//Generate the buffer of vertex indecies
+	glGenVertexArrays(1, &newmesh.vao);//Make a vertex Array Object at this Geo's point in memory on the GPU
+	glGenBuffers(1, &newmesh.vbo);//Generate the buffer of vertices
+	glGenBuffers(1, &newmesh.ibo);//Generate the buffer of vertex indecies
 	//Note this is generating the buffers "into" the geometry object
 	//Bind the buffers for the task which we want them to do, like an angry spirit - Rob
-	glBindVertexArray(mesh.vao);
-	glBindBuffer(GL_ARRAY_BUFFER, mesh.vbo);//Bind the buffers
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh.ibo);
+	glBindVertexArray(newmesh.vao);
+	glBindBuffer(GL_ARRAY_BUFFER, newmesh.vbo);//Bind the buffers
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, newmesh.ibo);
 
 	//Use vertex data if using vectors... the GPU Manufacterer determines how to draw it
-	glBufferData(GL_ARRAY_BUFFER, vertCount * sizeof(Vertex), verts, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, vertCount * sizeof(vertex), verts, GL_STATIC_DRAW);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexCount * sizeof(GLuint), indices, GL_STATIC_DRAW);
 
-#pragma region Enable Vertex Attributes
+#pragma region Enable vertex Attributes
 	//Describe the buffer
-	//Vertex position, index 0
+	//vertex position, index 0
 	glEnableVertexAttribArray(0);//Attribute of index for enabling position
 	glVertexAttribPointer(
 		0,//Attribute index
 		4,//Component count (4 because Vec4 for position)
 		GL_FLOAT,//Component type, float
 		GL_FALSE,//False for dont normalize. You'd want to normalize if you were treating this as a direction
-		sizeof(Vertex),//Byte size of each vertex position, need to know because its a stream
+		sizeof(vertex),//Byte size of each vertex position, need to know because its a stream
 		(void*)0//Pass in 0 bytes because we dont need to offset the stream yet.
 	);
-	//Vertex color blending, index 1
+	//vertex color blending, index 1
 	glEnableVertexAttribArray(1);//Attribute of index for enabling vertex color
 	glVertexAttribPointer(
 		1,//Attribute index
 		4,//Component count (4 because Vec4 for color)
 		GL_FLOAT,//Component type, also float
 		GL_FALSE,//False for dont normalize.
-		sizeof(Vertex),//Byte size of each vertex position, need to know because its a stream
-		(void*)offsetof(Vertex, color)//Pass in the bye offset between start of Vertex struct and color vec4 within that struct, because we are futher down the stream
+		sizeof(vertex),//Byte size of each vertex position, need to know because its a stream
+		(void*)offsetof(vertex, color)//Pass in the bye offset between start of vertex struct and color vec4 within that struct, because we are futher down the stream
 	);
 	//UV maps, index 2
 	glEnableVertexAttribArray(2);//Attribute of index for enabling UV maps to Vertices
@@ -52,8 +52,8 @@ Mesh MakeMesh(const Vertex* const verts, GLsizei vertCount, const GLuint* indice
 		2,//Component count (2 because Vec2 for UV)
 		GL_FLOAT,//Component type, also float
 		GL_FALSE,//False for dont normalize. UV maps are conventially between 0 and 1, however they can be used past those values, so we arent going to normalize
-		sizeof(Vertex),//Byte size of each vertex position, need to know because its a stream
-		(void*)offsetof(Vertex, uv)//Pass in the bye offset between Vertex and uv, because we are futher down the stream
+		sizeof(vertex),//Byte size of each vertex position, need to know because its a stream
+		(void*)offsetof(vertex, uv)//Pass in the bye offset between vertex and uv, because we are futher down the stream
 	);
 	//Normal maps, index 3
 	glEnableVertexAttribArray(3);//Attribute of index for enabling UV maps to Vertices
@@ -62,8 +62,8 @@ Mesh MakeMesh(const Vertex* const verts, GLsizei vertCount, const GLuint* indice
 		3,//Component count (3 because Vec3 for normal)
 		GL_FLOAT,//Component type, also float
 		GL_FALSE,//False for dont normalize. UV maps are conventially between 0 and 1, however they can be used past those values, so we arent going to normalize
-		sizeof(Vertex),//Byte size of each vertex position, need to know because its a stream
-		(void*)offsetof(Vertex, normal)//Pass in the bye offset between Vertex and uv, because we are futher down the stream
+		sizeof(vertex),//Byte size of each vertex position, need to know because its a stream
+		(void*)offsetof(vertex, normal)//Pass in the bye offset between vertex and uv, because we are futher down the stream
 	);
 #pragma endregion
 	//Unbind the angry spirit, aka bind it to nothing
@@ -71,7 +71,7 @@ Mesh MakeMesh(const Vertex* const verts, GLsizei vertCount, const GLuint* indice
 	glBindBuffer(GL_ARRAY_BUFFER, 0);//Bind the buffers to nothing
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-	return mesh;	//Fuck yeah
+	return newmesh;	//Fuck yeah
 	// |	 |
 	// \(o.o)/
 	//	  |
@@ -81,10 +81,10 @@ Mesh MakeMesh(const Vertex* const verts, GLsizei vertCount, const GLuint* indice
 	//  d   b
 }
 //Overload, if you dare.
-Mesh MakeMesh(const vector<Vertex> verts, const vector<GLuint> indices) {//Overload just calls the same func above with different data
+mesh MakeMesh(const vector<vertex> verts, const vector<GLuint> indices) {//Overload just calls the same func above with different data
 	return MakeMesh(verts.data(), verts.size(), indices.data(), indices.size());
 }
-void FreeMesh(Mesh& mesh) {
+void FreeMesh(mesh& mesh) {
 	//DELETE BUFFERS IN REVERSE ORDER THEY WERE GENERATED
 	glDeleteBuffers(1, &mesh.ibo);
 	glDeleteBuffers(1, &mesh.vbo);
@@ -92,7 +92,7 @@ void FreeMesh(Mesh& mesh) {
 	//Zero out the geo so its gone from gpu memory
 	mesh = {};
 }
-void DrawMesh(const Shader& shader, const Mesh& mesh) {
+void DrawMesh(const shader& shader, const mesh& mesh) {
 	//Specify which shader to use
 	glUseProgram(shader.program);
 	//Specify which geometry
@@ -114,17 +114,17 @@ void ReportCompileStatus(GLuint& shaderToReport) {
 	}
 }
 
-Shader MakeShader(const char* vertShader, const char* fragShader) {
+shader MakeShader(const char* vertshader, const char* fragshader) {
 	//TODO: Add error handling/checking logic to shader process
 	//Make instance of the shader
-	Shader shader = {};
+	shader shader = {};
 	shader.program = glCreateProgram();
 	
 	GLuint vertexPortion = glCreateShader(GL_VERTEX_SHADER);
 	GLuint fragPortion = glCreateShader(GL_FRAGMENT_SHADER);
 	//Load the shader source code onto the GPU
-	glShaderSource(vertexPortion, 1, &vertShader, 0);
-	glShaderSource(fragPortion, 1, &fragShader, 0);
+	glShaderSource(vertexPortion, 1, &vertshader, 0);
+	glShaderSource(fragPortion, 1, &fragshader, 0);
 	//Compile shaders
 	glCompileShader(vertexPortion);
 	glCompileShader(fragPortion);
@@ -139,40 +139,40 @@ Shader MakeShader(const char* vertShader, const char* fragShader) {
 
 	return shader;
 }
-Shader MakeShader(const string& vertShader, const string& fragShader) {//Overload just coverts params
-	return MakeShader(vertShader.c_str(), fragShader.c_str());
+shader MakeShader(const string& vertshader, const string& fragshader) {//Overload just coverts params
+	return MakeShader(vertshader.c_str(), fragshader.c_str());
 }
-Shader LoadShader(const char* vertPath, const char* fragPath) {
+shader LoadShader(const char* vertPath, const char* fragPath) {
 	string vertSource = ReadFile(vertPath);
 	string fragSource = ReadFile(fragPath);
 	return MakeShader(vertSource, fragSource);
 }
-void FreeShader(Shader& shader) {
+void FreeShader(shader& shader) {
 	glDeleteProgram(shader.program);
 	shader = {};//Zero out shader struct
 }
 #pragma endregion
 #pragma region Uniforms
-void SetUniform(const Shader& shader, GLuint location, const mat4& value) {
+void SetUniform(const shader& shader, GLuint location, const mat4& value) {
 	glProgramUniformMatrix4fv(shader.program, location,1,GL_FALSE, glm::value_ptr(value));
 }
-void SetUniform(const Shader& shader, GLuint location, const Texture& value, int textureSlot) {
+void SetUniform(const shader& shader, GLuint location, const texture& value, int textureSlot) {
 	glActiveTexture(GL_TEXTURE0 + textureSlot);
 	glBindTexture(GL_TEXTURE_2D, value.handle);
 	glProgramUniform1i(shader.program, location, textureSlot);
 }
-void SetUniform(const Shader& shader, GLuint location, const vec4& value) {
+void SetUniform(const shader& shader, GLuint location, const vec4& value) {
 	glProgramUniform4fv(shader.program, location, 1, glm::value_ptr(value));
 }
-void SetUniform(const Shader& shader, GLuint location, const vec3& value) {
+void SetUniform(const shader& shader, GLuint location, const vec3& value) {
 	glProgramUniform3fv(shader.program, location, 1, glm::value_ptr(value));
 }
-void SetUniform(const Shader& shader, GLuint location, int count,const vec3& value) {
+void SetUniform(const shader& shader, GLuint location, int count,const vec3& value) {
 	glProgramUniform3fv(shader.program, location, ((GLsizei)count), glm::value_ptr(value));
 }
 #pragma endregion
 #pragma region Texture
-Texture MakeTexture(unsigned width, unsigned height, unsigned channels, const unsigned char* pixels) {
+texture MakeTexture(unsigned width, unsigned height, unsigned channels, const unsigned char* pixels) {
 	GLenum oglFormat = GL_RGBA;
 	switch (channels) {
 	case 1:
@@ -188,7 +188,7 @@ Texture MakeTexture(unsigned width, unsigned height, unsigned channels, const un
 		oglFormat = GL_RGBA;
 		break;
 	}
-	Texture textObj = { 0, width, height, channels };
+	texture textObj = { 0, width, height, channels };
 	glGenTextures(1, &textObj.handle);
 	//bind and buffer texture
 	glBindTexture(GL_TEXTURE_2D, textObj.handle);
@@ -201,25 +201,25 @@ Texture MakeTexture(unsigned width, unsigned height, unsigned channels, const un
 	return textObj;
 }
 
-void FreeTexture(Texture& tex) {
+void FreeTexture(texture& tex) {
 	glDeleteTextures(1, &tex.handle);
 	tex = {};
 }
-Texture LoadTexture(const char* imagePath) {
+texture LoadTexture(const char* imagePath) {
 	//Setup varaibles to store texture data
 	int imageWidth = -1;//-1 for error handling
 	int imageHeight = -1;
 	int imageFormat = -1;
 	unsigned char* imagePixels = nullptr; 
-	Texture newTexture = {};
+	texture newtexture = {};
 	stbi_set_flip_vertically_on_load(true);//Load using OpenGLConventions
 	imagePixels = stbi_load(imagePath, &imageWidth, &imageHeight, &imageFormat, STBI_default);
 	//Note : stdi_load will return a nullptr if it failed to load
 	//Pass the data to OpenGL
-	newTexture = MakeTexture(imageWidth, imageHeight, imageFormat, imagePixels);
+	newtexture = MakeTexture(imageWidth, imageHeight, imageFormat, imagePixels);
 	stbi_image_free(imagePixels);
 	imagePixels = nullptr;
-	return newTexture;
+	return newtexture;
 }
 #pragma endregion
 string ReadFile(const char* path) {//Allows us to load our shaders from files, poorly.

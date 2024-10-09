@@ -12,16 +12,16 @@ in vec3 vNorm;
 out vec4 fragColor;
 
 layout (location = 4) uniform vec3 ambient;
-layout (location = 5) uniform vec3 dirLightColor;
-layout (location = 6) uniform vec3 dirLightDirection;
+layout (location = 5) uniform vec3 dirlightColor;
+layout (location = 6) uniform vec3 dirlightDirection;
 layout (location = 7) uniform vec3 cameraPos;
 
 void main()
 {
-    //Lighting parameters
+    //lighting parameters
     float specularPower = 64.0;
     vec3 normal = normalize(vNorm);
-    vec3 lightDir = normalize(dirLightDirection);
+    vec3 lightDir = normalize(dirlightDirection);
     vec3 viewDir = normalize(cameraPos - vPos.xyz);
     vec3 reflectDir = reflect(-lightDir, normal);
 
@@ -30,17 +30,17 @@ void main()
 
     //Calculate Lambertian diffuse term
     float lambertTerm = max(0.0, dot(normal, -lightDir));
-    vec4 diffuseLight = vec4(lambertTerm * dirLightColor, 1.0);
+    vec4 diffuselight = vec4(lambertTerm * dirlightColor, 1.0);
 
     //Combine ambient light
-    vec4 ambientLight = vec4(ambient.rgb, 1.0);
+    vec4 ambientlight = vec4(ambient.rgb, 1.0);
 
     //Calculate final texture color
     vec4 texColor = texture(mainTex, vUV);
     //texColor = clamp(texColor, 0.0, 1.0);
 
     //Calculate the final color
-    fragColor = (texColor * diffuseLight + ambientLight + vec4(dirLightColor * specularTerm, 1.0));
+    fragColor = (texColor * diffuselight + ambientlight + vec4(dirlightColor * specularTerm, 1.0));
     //fragColor = clamp(fragColor, 0.0, 1.0);
     
     //fragColor = texColor;

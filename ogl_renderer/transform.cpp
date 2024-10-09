@@ -8,16 +8,15 @@
 void Transform::Translate(const vec3 axis)
 {
 	matrix = glm::translate(matrix, axis);
-	LogTransform();
+	//LogTransform();
 }
-
-
 void Transform::Rotate(const vec3 axis, const float angleDegrees) {
 	matrix = glm::rotate(matrix, glm::radians(angleDegrees), glm::normalize(axis));
-
-	LogTransform();
+	//LogTransform();
 }
-
+vec3 Transform::GetPosition() {
+	return vec3(matrix[3]);
+}
 void Transform::LogTransform() {
 	std::cout << "Forward : " << Forward().x << " | " << Forward().y << " | " << Forward().z << " | " << std::endl;
 	std::cout << "Up      : " << Up().x      << " | " << Up().y      << " | " << Up().z      << " | " << std::endl;

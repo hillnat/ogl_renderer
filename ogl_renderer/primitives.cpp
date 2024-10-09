@@ -1,105 +1,142 @@
 #include "primitives.h"
 #include "renderer.h"
 #define PI 3.1415926535897932384626433832795028841971693993
-Mesh MakeSphere() {
-	std::vector<Vertex> verts;
+//constexpr mesh MakeSphere() {
+//
+//	const float radius = 0.5f;
+//	const int longCount = 32;
+//	const int latCount = 16;
+//	vertex verts[(latCount + 1) + (longCount + 1)] = {};
+//
+//	float x=0, y=0, z=0, xy=0, nx=0, ny=0, nz=0, s=0, t=0, longAngle=0, latAngle=0;
+//	const float lengthInv = 1.0f / radius;
+//	const float longStep = 2.0f * PI / longCount;
+//	const float latStep = PI / latCount;
+//
+//	for (int i = 0; i <= latCount; i++) {
+//		latAngle = (float)PI / 2.0f - (float)i * latStep;
+//		xy = radius * cosf(latAngle);
+//		z = radius * sin(latAngle);
+//
+//		for (int j = 0; j <= longCount; j++) {
+//			//From 0 to 2pi
+//			longAngle = j * longStep;
+//			//Vert position
+//			x = xy * cosf(longAngle);
+//			y = xy * sinf(longAngle);
+//
+//			vec4 pos = vec4(x, y, z, 1);
+//			//Normalize vector normal
+//			nx = x * lengthInv;
+//			ny = y * lengthInv;
+//			nz = z * lengthInv;
+//
+//			vec3 normal = vec3(nx, ny, nz);
+//
+//			s = (float)j / longCount;
+//			t = (float)i / latCount;
+//
+//			vec2 uv = vec2(s, t);
+//			verts[i]=vertex(pos,vec4(1,1,1,1),normal,uv);
+//		}
+//	}
+//	std::vector<GLuint> indices;
+//
+//	int k1, k2;
+//	for (int i = 0; i < latCount; ++i) {
+//		k1 = i * (longCount + 1);
+//		k2 = k1 + (longCount + 1);
+//		for (int j = 0; j < longCount; ++j, ++k1, ++k2) {
+//			if (i != 0) {
+//				indices.push_back(k1);
+//				indices.push_back(k2);
+//				indices.push_back(k1+1);
+//			}
+//			if (i != (latCount-1)) {
+//				indices.push_back(k1+1);
+//				indices.push_back(k2);
+//				indices.push_back(k2 + 1);
+//			}
+//		}
+//	}
+//	return MakeMesh(verts, indices);
+//}
+//constexpr mesh MakeCylinder() {
+//	const int sides = 32;
+//	const float height = 1.0f;
+//	const float radius = .5f;
+//	const float sectorStep = 2 * PI / (float)sides;
+//
+//	vec3 unitCircleVertices[sides+1] = {};
+//	for (int i = 0; i <= sides; ++i) {
+//		float sectorAngle = i * sectorStep;
+//		unitCircleVertices[i]=(vec3(cos(sectorAngle), sin(sectorAngle), 0.0f));
+//	}
+//	const int vertCount = (2 * (sides + 1));
+//	vertex verts[vertCount] = {};
+//	
+//	for (int i = 0; i < 2; ++i) {
+//		float h = -height / 2.0f + (float)i * height;
+//		float t = 1.0f - (float)i;
+//		
+//		for (int j = 0, k = 0; j <= sides; ++j, k++) {
+//			float ux = unitCircleVertices[k].x;
+//			float uy = unitCircleVertices[k].y;
+//			float uz = unitCircleVertices[k].z;
+//			
+//			vec4 pos = vec4(ux * radius, uy * radius, h, 1);
+//			vec3 normal = vec3(ux, uy, uz);
+//			vec2 uv = vec2((float)j / sides, t);
+//			verts[i]=(vertex{ pos,vec4(1,1,1,1),normal,uv });
+//		}
+//	}
+//
+//	const int baseCenterIndex = vertCount;
+//	const int topCenterIndex = baseCenterIndex + sides + 1;
+//	//pikcup here
+//}
+//
+mesh MakePlane() {
+	vertex verts[4] = {
+		vertex//top right
+		(
+			vec4(0.5f, 0.0f, 0.5f, 1.0f), //position
+			vec4(1.0f, 1.0f ,1.0f, 1.0f), //color
+			vec3(0.0f, 1.0f, 0.0f),  //normal
+			vec2(1.0f, 1.0f) //uv
+		),
+		vertex//top left
+		(
+			vec4(-0.5f, 0.0f, 0.5f, 1.0f), //position
+			vec4(1.0f, 1.0f ,1.0f, 1.0f), //color
+			vec3(0.0f, 1.0f, 0.0f),  //normal
+			vec2(0.0f, 1.0f) //uv
+		),
+		vertex//bottom right
+		(
+			vec4(0.5f, 0.0f, -0.5f, 1.0f), //position
+			vec4(1.0f, 1.0f ,1.0f, 1.0f), //color
+			vec3(0.0f, 1.0f, 0.0f),  //normal
+			vec2(1.0f, 0.0f) //uv
+		),
+		vertex//bottom left
+		(
+			vec4(-0.5f, 0.0f, -0.5f, 1.0f), //position
+			vec4(1.0f, 1.0f ,1.0f, 1.0f), //color
+			vec3(0.0f, 1.0f, 0.0f),  //normal
+			vec2(0.0f, 0.0f) //uv
+		),
+	};
 
-	float radius = 0.5f;
-	int longCount = 32;
-	int latCount = 16;
+	GLuint indices[] = {
+		0,2,1, 3,1,2
+	};
 
-	float x, y, z, xy, nx, ny, nz, s, t, longAngle, latAngle;
-	float lengthInv = 1.0f / radius;
-	float longStep = 2.0f * PI / longCount;
-	float latStep = PI / latCount;
-	Vertex v;
-
-	for (int i = 0; i <= latCount; i++) {
-		latAngle = (float)PI / 2.0f - (float)i * latStep;
-		xy = radius * cosf(latAngle);
-		z = radius * sin(latAngle);
-
-		for (int j = 0; j <= longCount; j++) {
-			//From 0 to 2pi
-			longAngle = j * longStep;
-			//Vert position
-			x = xy * cosf(longAngle);
-			y = xy * sinf(longAngle);
-
-			v.pos = vec4(x, y, z, 1);
-			//Normalize vector normal
-			nx = x * lengthInv;
-			ny = y * lengthInv;
-			nz = z * lengthInv;
-
-			v.normal = vec3(nx, ny, nz);
-
-			s = (float)j / longCount;
-			t = (float)i / latCount;
-
-			v.uv = vec2(s, t);
-			verts.push_back(v);
-		}
-	}
-	std::vector<GLuint> indices;
-
-	int k1, k2;
-	for (int i = 0; i < latCount; ++i) {
-		k1 = i * (longCount + 1);
-		k2 = k1 + (longCount + 1);
-		for (int j = 0; j < longCount; ++j, ++k1, ++k2) {
-			if (i != 0) {
-				indices.push_back(k1);
-				indices.push_back(k2);
-				indices.push_back(k1+1);
-			}
-			if (i != (latCount-1)) {
-				indices.push_back(k1+1);
-				indices.push_back(k2);
-				indices.push_back(k2 + 1);
-			}
-		}
-	}
-	return MakeMesh(verts, indices);
-}
-Mesh MakeCylinder() {
-	int sides = 32;
-	float height = 1.0f;
-	float radius = .5f;
-	float sectorStep = 2 * PI / (float)sides;
-	float sectorAngle;
-
-	std::vector<vec3> unitCircleVertices;
-	for (int i = 0; i <= sides; ++i) {
-		sectorAngle = i * sectorStep;
-		unitCircleVertices.push_back(vec3(cos(sectorAngle), sin(sectorAngle), 0.0f));
-	}
-
-	std::vector<Vertex> verts;
-	Vertex v;
-	for (int i = 0; i < 2; ++i) {
-		float h = -height / 2.0f + (float)i * height;
-		float t = 1.0f - (float)i;
-
-		for (int j = 0, k = 0; j <= sides; ++j, k++) {
-			float ux = unitCircleVertices[k].x;
-			float uy = unitCircleVertices[k].y;
-			float uz = unitCircleVertices[k].z;
-
-			v.pos = vec4(ux * radius, uy * radius, h, 1);
-			v.normal = vec3(ux, uy, uz);
-			v.uv = vec2((float)j / sides, t);
-			verts.push_back(v);
-		}
-	}
-
-	int baseCenterIndex = (int)verts.size();
-	int topCenterIndex = baseCenterIndex + sides + 1;
-	//pikcup here
+	return MakeMesh(verts, 4, indices, 6);
 }
 //
 //Mesh MakeCube() {
-//	Vertex verts[] = {
+//	vertex verts[] = {
 //	( //0 vertex Bottom Left Back
 //		vec4(-1.f,-1.f,1.f,1), //position
 //		vec4(1,0,0,1), //vertex color
@@ -162,7 +199,7 @@ Mesh MakeCylinder() {
 //	return MakeMesh(verts, 8, indices, 24);
 //}
 //Mesh MakeCube2() {
-//	Vertex verts[] = {
+//	vertex verts[] = {
 //#pragma region Top Face
 //	{ //0 vertex Bottom Right corner
 //		{1.f,  1.f,  1.f,  1}, //position

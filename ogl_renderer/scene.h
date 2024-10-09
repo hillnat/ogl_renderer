@@ -2,20 +2,20 @@
 #include <vector>
 #include "gameObject.h"
 #include "camera.h"
-class Scene
+class scene
 {
 public:
-	Scene() {
+	scene() {
 		gameObjects.clear();
 		cameras.clear();
 		lights.clear();
 	}
-	void AddToScene(GameObject*);
-	void AddToScene(Camera*);
-	void AddToScene(Light*);
-	void DrawAll(Shader*, float);
-	std::vector<GameObject*> gameObjects;
-	std::vector<Camera*> cameras;
-	std::vector<Light*> lights;
+	void AddToScene(gameObject*);
+	void AddToScene(camera*);
+	void AddToScene(light*);
+	void RenderAll(shader*);
+	std::vector<gameObject*> gameObjects;
+	std::vector<camera*> cameras;
+	std::vector<light*> lights;
 };
 

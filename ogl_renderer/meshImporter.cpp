@@ -7,16 +7,16 @@
 #include "glfw/glfw3.h"	//GLFW is a Windows API wrapper, allows us to handle window context easily
 #include <iostream>
 
-Mesh MeshImporter::ImportFromFile(const char* filename)
+mesh MeshImporter::ImportFromFile(const char* filename)
 {
 	//std::cout << "Loading mesh from file path : " << filename << std::endl;
 	// read vertices from the model
 	float startTime = glfwGetTime();
 	const aiScene* scene = aiImportFile(filename, 0);
-	if (scene == NULL) { std::cout << "Fatal error" << std::endl; return Mesh{}; }
-	std::vector<Vertex> allVertices;
+	if (scene == NULL) { std::cout << "Fatal error" << std::endl; return mesh{}; }
+	std::vector<vertex> allVertices;
 	std::vector<GLuint> allIndices;
-	int allVertexCount = 0;
+	int allvertexCount = 0;
 	
 	for (int m = 0; m < scene->mNumMeshes; m++) {
 
@@ -43,7 +43,7 @@ Mesh MeshImporter::ImportFromFile(const char* filename)
 		}
 		for (int i = 0; i < mesh->mNumVertices; i++)
 		{
-			Vertex vertex = {};
+			vertex vertex = {};
 			vertex.pos = glm::vec4(mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z, 1);
 
 			if (mesh->HasVertexColors(i)) {
@@ -55,7 +55,7 @@ Mesh MeshImporter::ImportFromFile(const char* filename)
 			if (mesh->HasNormals()) {
 				vertex.normal = vec3{ mesh->mNormals[i].x,mesh->mNormals[i].y,  mesh->mNormals[i].z };
 			}
-			if (mesh->HasTextureCoords(0)) {//Note pass in 0 for the check, and grab the mTextureCoords from a 2D array
+			if (mesh->HasTextureCoords(0)) {//Note pass in 0 for the check, and grab the mtextureCoords from a 2D array
 				vertex.uv = vec2{ mesh->mTextureCoords[0][i].x, mesh->mTextureCoords[0][i].y };
 			}
 			/*std::cout << "vert index : " << i << std::endl;
@@ -66,12 +66,12 @@ Mesh MeshImporter::ImportFromFile(const char* filename)
 			std::cout << "-------------------------" << std::endl;*/
 			allVertices.push_back(vertex);
 		}
-		allVertexCount += mesh->mNumVertices;
+		allvertexCount += mesh->mNumVertices;
 	}
 	
 	float endTime = glfwGetTime();
 	//std::cout << "Succeeded loading after " << endTime-startTime << " seconds" << std::endl;
-	return MakeMesh(allVertices.data(), allVertexCount, allIndices.data(), allIndices.size());
+	return MakeMesh(allVertices.data(), allvertexCount, allIndices.data(), allIndices.size());
 	//delete[] vertices;
 	//m_quadMesh.initialiseFromFile("stanford/bunny.obj");
 }

@@ -2,15 +2,15 @@
 #include "transform.h"
 #include "renderer.h"
 #include "meshImporter.h"
-class GameObject
+class gameObject
 {
 public:
-	GameObject(const char* name, const char* meshPath) {
+	gameObject(const char* name, const char* meshPath) {
 		this->name = name;
 		this->mesh = MeshImporter::ImportFromFile(meshPath);
 		this->transform = Transform();
 	}
-	GameObject(const char* name, const Mesh mesh) //For creating primitives
+	gameObject(const char* name, const mesh mesh) //For creating primitives
 	{
 		this->name = name;
 		this->mesh = mesh;
@@ -18,6 +18,6 @@ public:
 	}
 	const char* name;
 	Transform transform = Transform();
-	Mesh mesh;
+	mesh mesh;
 };
 

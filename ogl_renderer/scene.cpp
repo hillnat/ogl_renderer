@@ -1,23 +1,23 @@
 #include "scene.h"
 #include "glm/ext.hpp"
 #include "renderer.h"
-void Scene::AddToScene(GameObject* go) {
+void scene::AddToScene(gameObject* go) {
 	gameObjects.push_back(go);
 }
-void Scene::AddToScene(Camera* cam) {
+void scene::AddToScene(camera* cam) {
 	cameras.push_back(cam);
 }
-void Scene::AddToScene(Light* light) {
+void scene::AddToScene(light* light) {
 	lights.push_back(light);
 }
 
-void Scene::DrawAll(Shader* shader, float deltaTime) {
+void scene::RenderAll(shader* shader) {
 	//Handle Camera
 	if (cameras.size() != 0 && cameras[0] != nullptr) {
-		Camera mainCamera = *cameras[0];
-		SetUniform(*shader, 1, mainCamera.transform.matrix);//Camera transform
+		camera mainCamera = *cameras[0];
+		SetUniform(*shader, 1, mainCamera.viewMatrix());
 		SetUniform(*shader, 0, mainCamera.ProjectionMatrix);
-		SetUniform(*shader, 7, vec3(mainCamera.transform.matrix[3]));//Cam position for specular. Mat4 to vec3 conversion
+		SetUniform(*shader, 7, vec3(mainCamera.transform.GetPosition()));//Cam position for specular. Mat4 to vec3 conversion
 	}
 	SetUniform(*shader, 4, vec3(0, 0, 0) );//Set ambient
 	SetUniform(*shader, 5, lights[0]->color);
