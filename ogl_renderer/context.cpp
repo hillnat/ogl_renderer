@@ -5,7 +5,7 @@
 #include <random>
 #include "glm/ext.hpp"
 #include <iostream>
-bool Context::Initialize(){
+bool context::Initialize(){
 	glfwInit();
 	window = glfwCreateWindow((int)TargetWindowSize.x, (int)TargetWindowSize.y, "Window", NULL, NULL);
 	glfwMakeContextCurrent(window);
@@ -25,7 +25,7 @@ bool Context::Initialize(){
 	std::srand(time(nullptr));
 	return true;
 }
-void Context::Tick(){
+void context::Tick(){
 	glfwSwapBuffers(window);
 	glfwPollEvents();//tick polling
 	//Free crosshair
@@ -39,30 +39,30 @@ void Context::Tick(){
 	}
 	//glfwSetWindowSize(window, std::rand()%1000, std::rand() % 1000);
 }
-void Context::Clear(){
+void context::Clear(){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//Clear those two buffers every time we call clear
 }
-void Context::Terminate(){
+void context::Terminate(){
 	glfwDestroyWindow(window);
 	window = nullptr;
 	glfwTerminate();
 }
-bool Context::ShouldClose(){
+bool context::ShouldClose(){
 	return glfwWindowShouldClose(window) || glfwGetKey(window, GLFW_KEY_GRAVE_ACCENT);
 }
-bool Context::W_Pressed() { return glfwGetKey(window, GLFW_KEY_W); }
-bool Context::S_Pressed() { return glfwGetKey(window, GLFW_KEY_S); }
-bool Context::D_Pressed() { return glfwGetKey(window, GLFW_KEY_D); }
-bool Context::A_Pressed() { return glfwGetKey(window, GLFW_KEY_A); }
-bool Context::E_Pressed() { return glfwGetKey(window, GLFW_KEY_E); }
-bool Context::Q_Pressed() { return glfwGetKey(window, GLFW_KEY_Q); }
-bool Context::Space_Pressed() { return glfwGetKey(window, GLFW_KEY_SPACE); }
-bool Context::LCtrl_Pressed() { return glfwGetKey(window, GLFW_KEY_LEFT_CONTROL); }
-bool Context::UpArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_UP); }
-bool Context::RightArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_RIGHT); }
-bool Context::LeftArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_LEFT); }
-bool Context::DownArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_DOWN); }
-glm::dvec2 Context::GetMouseDelta(){
+bool context::W_Pressed() { return glfwGetKey(window, GLFW_KEY_W); }
+bool context::S_Pressed() { return glfwGetKey(window, GLFW_KEY_S); }
+bool context::D_Pressed() { return glfwGetKey(window, GLFW_KEY_D); }
+bool context::A_Pressed() { return glfwGetKey(window, GLFW_KEY_A); }
+bool context::E_Pressed() { return glfwGetKey(window, GLFW_KEY_E); }
+bool context::Q_Pressed() { return glfwGetKey(window, GLFW_KEY_Q); }
+bool context::Space_Pressed() { return glfwGetKey(window, GLFW_KEY_SPACE); }
+bool context::LCtrl_Pressed() { return glfwGetKey(window, GLFW_KEY_LEFT_CONTROL); }
+bool context::UpArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_UP); }
+bool context::RightArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_RIGHT); }
+bool context::LeftArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_LEFT); }
+bool context::DownArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_DOWN); }
+glm::dvec2 context::GetMouseDelta(){
 	glm::dvec2 curMousePos(0.f,0.f);
 	glfwGetCursorPos(window, &curMousePos.x, &curMousePos.y);
 	glm::dvec2 toReturn = curMousePos - lastMousePos;

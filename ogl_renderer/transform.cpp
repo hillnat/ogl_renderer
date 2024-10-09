@@ -14,8 +14,16 @@ void Transform::Rotate(const vec3 axis, const float angleDegrees) {
 	matrix = glm::rotate(matrix, glm::radians(angleDegrees), glm::normalize(axis));
 	//LogTransform();
 }
+void Transform::SetRotation(const vec3 axis, const float angleDegrees) {
+	matrix = glm::rotate(glm::identity<mat4>(), glm::radians(angleDegrees), glm::normalize(axis));
+	//LogTransform();
+}
 vec3 Transform::GetPosition() {
 	return vec3(matrix[3]);
+}
+void Transform::LookAt(vec3 pos) {
+	matrix = glm::lookAt(GetPosition(), pos, vec3(0, 1, 0));
+	Rotate(vec3(0, 1, 0), 180);
 }
 void Transform::LogTransform() {
 	std::cout << "Forward : " << Forward().x << " | " << Forward().y << " | " << Forward().z << " | " << std::endl;

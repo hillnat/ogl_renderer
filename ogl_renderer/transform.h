@@ -29,7 +29,9 @@ public:
 #pragma region Translation and Rotation
 	void Translate(vec3);
 	void Rotate(vec3,float);
+	void SetRotation(vec3,float);
 	vec3 GetPosition();
+	void LookAt(vec3 pos);
 #pragma endregion
 	void LogTransform();
 };

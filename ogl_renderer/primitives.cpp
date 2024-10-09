@@ -1,66 +1,67 @@
 #include "primitives.h"
 #include "renderer.h"
 #define PI 3.1415926535897932384626433832795028841971693993
-//constexpr mesh MakeSphere() {
-//
-//	const float radius = 0.5f;
-//	const int longCount = 32;
-//	const int latCount = 16;
-//	vertex verts[(latCount + 1) + (longCount + 1)] = {};
-//
-//	float x=0, y=0, z=0, xy=0, nx=0, ny=0, nz=0, s=0, t=0, longAngle=0, latAngle=0;
-//	const float lengthInv = 1.0f / radius;
-//	const float longStep = 2.0f * PI / longCount;
-//	const float latStep = PI / latCount;
-//
-//	for (int i = 0; i <= latCount; i++) {
-//		latAngle = (float)PI / 2.0f - (float)i * latStep;
-//		xy = radius * cosf(latAngle);
-//		z = radius * sin(latAngle);
-//
-//		for (int j = 0; j <= longCount; j++) {
-//			//From 0 to 2pi
-//			longAngle = j * longStep;
-//			//Vert position
-//			x = xy * cosf(longAngle);
-//			y = xy * sinf(longAngle);
-//
-//			vec4 pos = vec4(x, y, z, 1);
-//			//Normalize vector normal
-//			nx = x * lengthInv;
-//			ny = y * lengthInv;
-//			nz = z * lengthInv;
-//
-//			vec3 normal = vec3(nx, ny, nz);
-//
-//			s = (float)j / longCount;
-//			t = (float)i / latCount;
-//
-//			vec2 uv = vec2(s, t);
-//			verts[i]=vertex(pos,vec4(1,1,1,1),normal,uv);
-//		}
-//	}
-//	std::vector<GLuint> indices;
-//
-//	int k1, k2;
-//	for (int i = 0; i < latCount; ++i) {
-//		k1 = i * (longCount + 1);
-//		k2 = k1 + (longCount + 1);
-//		for (int j = 0; j < longCount; ++j, ++k1, ++k2) {
-//			if (i != 0) {
-//				indices.push_back(k1);
-//				indices.push_back(k2);
-//				indices.push_back(k1+1);
-//			}
-//			if (i != (latCount-1)) {
-//				indices.push_back(k1+1);
-//				indices.push_back(k2);
-//				indices.push_back(k2 + 1);
-//			}
-//		}
-//	}
-//	return MakeMesh(verts, indices);
-//}
+mesh MakeSphere() {
+
+	const float radius = 0.5f;
+	const int longCount = 12;
+	const int latCount = 6;
+	const int vertCount = (latCount + 1) + (longCount + 1);
+	std::vector<vertex> verts;
+
+	float x=0, y=0, z=0, xy=0, nx=0, ny=0, nz=0, s=0, t=0, longAngle=0, latAngle=0;
+	const float lengthInv = 1.0f / radius;
+	const float longStep = 2.0f * PI / longCount;
+	const float latStep = PI / latCount;
+
+	for (int i = 0; i <= latCount; i++) {
+		latAngle = (float)PI / 2.0f - (float)i * latStep;
+		xy = radius * cosf(latAngle);
+		z = radius * sin(latAngle);
+
+		for (int j = 0; j <= longCount; j++) {
+			//From 0 to 2pi
+			longAngle = j * longStep;
+			//Vert position
+			x = xy * cosf(longAngle);
+			y = xy * sinf(longAngle);
+
+			vec4 pos = vec4(x, y, z, 1);
+			//Normalize vector normal
+			nx = x * lengthInv;
+			ny = y * lengthInv;
+			nz = z * lengthInv;
+
+			vec3 normal = vec3(nx, ny, nz);
+
+			s = (float)j / longCount;
+			t = (float)i / latCount;
+
+			vec2 uv = vec2(s, t);
+			verts.push_back(vertex(pos,vec4(1,1,1,1),normal,uv));
+		}
+	}
+	std::vector<GLuint> indices;
+
+	int k1, k2;
+	for (int i = 0; i < latCount; ++i) {
+		k1 = i * (longCount + 1);
+		k2 = k1 + (longCount + 1);
+		for (int j = 0; j < longCount; ++j, ++k1, ++k2) {
+			if (i != 0) {
+				indices.push_back(k1);
+				indices.push_back(k2);
+				indices.push_back(k1+1);
+			}
+			if (i != (latCount-1)) {
+				indices.push_back(k1+1);
+				indices.push_back(k2);
+				indices.push_back(k2 + 1);
+			}
+		}
+	}
+	return MakeMesh(verts, indices);
+}
 //constexpr mesh MakeCylinder() {
 //	const int sides = 32;
 //	const float height = 1.0f;
@@ -95,7 +96,6 @@
 //	const int topCenterIndex = baseCenterIndex + sides + 1;
 //	//pikcup here
 //}
-//
 mesh MakePlane() {
 	vertex verts[4] = {
 		vertex//top right

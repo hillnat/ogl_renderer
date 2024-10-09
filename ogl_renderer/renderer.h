@@ -51,7 +51,7 @@ struct light {
 };
 #pragma endregion
 #pragma region Meshes
-mesh MakeMesh(const vertex* const verts, GLsizei vertCount, const GLuint* indices, GLsizei indexCount);//GLsizei = GL Size Index
+mesh MakeMesh(const vertex* const verts, GLsizei vertCount, const GLuint* indices, const GLsizei indexCount);//GLsizei = GL Size Index
 mesh MakeMesh(const vector<vertex> verts, const vector<GLuint> indices);
 //Geometry MakeGeometry(const vector<vertex> verts, const vector<GLuint> indices);
 void FreeMesh(mesh& geo);

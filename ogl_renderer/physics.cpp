@@ -18,5 +18,5 @@ bool physics::SphereSphereOverlap(const vec3 posA, const float radA, const vec3 
 		abs(posA.y - posB.y) + 
 		abs(posA.z - posB.z)) 
 		/ 3.f);//Average distance apart
-	return ((radA > radB ? radA : radB) > dist);//Return if the 
+	return ((radA + radB) > dist);//Return if the 
 }

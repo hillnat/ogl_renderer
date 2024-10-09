@@ -1,6 +1,6 @@
 #pragma once
 namespace Diagnostics
 {
-	void Environment();
+	void LogHardware();
 };
 

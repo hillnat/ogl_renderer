@@ -1,7 +1,7 @@
 #pragma once
 #include "glm/ext.hpp"
 
-class Context
+class context
 {
 public:
 	struct GLFWwindow* window;
