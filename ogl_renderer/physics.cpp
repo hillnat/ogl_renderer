@@ -13,6 +13,10 @@ void physics::UpdateAllBodies() {
 	}
 }
 bool physics::SphereSphereOverlap(const vec3 posA, const float radA, const vec3 posB, const float radB) {
-	float dist = abs(((posA.x - posB.x) + (posA.y - posB.y) + (posA.z - posB.z)) / 6.f);//Average distance apart
+	float dist = abs((
+		abs(posA.x - posB.x) + 
+		abs(posA.y - posB.y) + 
+		abs(posA.z - posB.z)) 
+		/ 3.f);//Average distance apart
 	return ((radA > radB ? radA : radB) > dist);//Return if the 
 }

@@ -54,7 +54,7 @@ int main()
 #pragma region Time
 	double lastTime = 0;
 	double fixedDeltaTimeAccum = 0;
-	const double fixedDeltaTimeThreshold = 0.05;
+	const double fixedDeltaTimeThreshold = 0.01;
 	const double fixedDeltaTime = (double)1 / fixedDeltaTimeThreshold;
 #pragma endregion
 
