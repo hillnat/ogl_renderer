@@ -23,7 +23,7 @@ vec3 Transform::GetPosition() {
 }
 void Transform::LookAt(vec3 pos) {
 	matrix = glm::lookAt(GetPosition(), pos, vec3(0, 1, 0));
-	Rotate(vec3(0, 1, 0), 180);
+	//Rotate(vec3(0, 1, 0), 180);
 }
 void Transform::LogTransform() {
 	std::cout << "Forward : " << Forward().x << " | " << Forward().y << " | " << Forward().z << " | " << std::endl;

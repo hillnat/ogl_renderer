@@ -62,6 +62,7 @@ bool context::UpArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_UP); }
 bool context::RightArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_RIGHT); }
 bool context::LeftArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_LEFT); }
 bool context::DownArrow_Pressed() { return glfwGetKey(window, GLFW_KEY_DOWN); }
+bool context::Mouse1_Pressed() { return glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_1); }
 glm::dvec2 context::GetMouseDelta(){
 	glm::dvec2 curMousePos(0.f,0.f);
 	glfwGetCursorPos(window, &curMousePos.x, &curMousePos.y);

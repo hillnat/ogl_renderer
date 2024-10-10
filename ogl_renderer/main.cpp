@@ -28,10 +28,17 @@ int main()
 	context.Initialize();
 #pragma endregion
 #pragma region Object Setup
-	gameObject obj1("Player", MakeSphere());
-	light testDirLight(vec3(1, 1, 1), vec3(0, -1, 0));
+	gameObject obj1("obj1", MakeSphere());
+	gameObject obj2("obj2", MakePlane());
 	camera testCamera{};
+
+	obj2.transform.Translate(vec3(-2, 0, 0));
+	obj1.transform.Translate(vec3(2, 0, 0));
+	obj2.transform.Rotate(vec3(1, 0, 0), -105);
+
 	testCamera.transform.Translate(vec3(0, 1, -5));
+
+	light testDirLight(vec3(1, 1, 1), vec3(0, 1, 0));
 #pragma endregion
 #pragma region Shaders / Textures
 	shader basicshader = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
@@ -45,6 +52,7 @@ int main()
 #pragma region Scene
 	scene scene;
 	scene.AddToScene(&obj1);
+	scene.AddToScene(&obj2);
 	scene.AddToScene(&testCamera);
 	scene.AddToScene(&testDirLight);
 #pragma endregion
@@ -56,8 +64,8 @@ int main()
 #pragma endregion
 	//Test
 	gameObject* testObject = &obj1;
-	const float moveSpeed = 15.f;
-	const float sensitivity = 10.f;
+	float moveSpeed = 15.f;
+	float sensitivity = 30.f;
 	Diagnostics::LogHardware();
 #pragma endregion
 	//Main Loop
@@ -79,15 +87,18 @@ int main()
 
 		vec2 mouseDelta = context.GetMouseDelta();
 
-		if (mouseDelta.x!=0)		{ testCamera.transform.Rotate(vec3(0, 1, 0), -mouseDelta.x * sensitivity * deltaTimeF); }
-		if (mouseDelta.y!=0)		{ testCamera.transform.Rotate(vec3(1, 0, 0), mouseDelta.y * sensitivity * deltaTimeF); }
+		if (context.Mouse1_Pressed() && mouseDelta.x!=0)		{ testCamera.transform.Rotate(vec3(0, 1, 0), -mouseDelta.x * sensitivity * deltaTimeF); }
+		if (context.Mouse1_Pressed() && mouseDelta.y!=0)		{ testCamera.transform.Rotate(vec3(1, 0, 0), mouseDelta.y * sensitivity * deltaTimeF); }
 
 		if (context.W_Pressed())		{ testCamera.transform.Translate(vec3(0, 0, 1) * deltaTimeF * moveSpeed); }
 		else if (context.S_Pressed())	{ testCamera.transform.Translate(vec3(0, 0, -1) * deltaTimeF * moveSpeed); }
 		if (context.D_Pressed())		{ testCamera.transform.Translate(vec3(-1, 0, 0) * deltaTimeF * moveSpeed); }
 		else if (context.A_Pressed())	{ testCamera.transform.Translate(vec3(1, 0, 0) * deltaTimeF * moveSpeed); }
 		if (context.Space_Pressed()) { testCamera.transform.LookAt(testObject->transform.GetPosition()); }
-
+		if (context.UpArrow_Pressed()) { sensitivity += 10.f; }
+		else if (context.DownArrow_Pressed()) { sensitivity -= 10.f; }
+		if (context.RightArrow_Pressed()) { moveSpeed += 5.f; }
+		else if (context.LeftArrow_Pressed()) { moveSpeed -= 5.f; }
 		if(phys.SphereSphereOverlap(testObject->transform.GetPosition(), 0.5f, testCamera.transform.GetPosition(), 0.5f)){
 			std::cout << "Hit!" << std::endl;
 		}

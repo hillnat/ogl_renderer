@@ -29,7 +29,7 @@ void main()
     float specularTerm = pow(max(0.0, dot(reflectDir, viewDir)), specularPower);
 
     //Calculate Lambertian diffuse term
-    float lambertTerm = max(0.0, dot(normal, -lightDir));
+    float lambertTerm = max(0.0, dot(normal, lightDir));
     vec4 diffuselight = vec4(lambertTerm * dirlightColor, 1.0);
 
     //Combine ambient light
