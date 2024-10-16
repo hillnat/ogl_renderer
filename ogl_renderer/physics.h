@@ -5,15 +5,16 @@
 //const vec3 gravity = vec3(0, -9.807f, 0);//Earth gravity
 const vec3 gravity = vec3(0, -0.01f, 0);//Earth gravity
 
-class physics
+class Physics
 {
 public:
-	physics() {
+	Physics() {
 		activeBodies.clear();
 	}
-	std::vector<rigidbody*> activeBodies{};
-	rigidbody CreateRigidbody(Transform* attachedBody);
-	void UpdateAllBodies();
-	bool SphereSphereOverlap(vec3 posA, float radA, vec3 posB, float radB);
+	std::vector<Rigidbody*> activeBodies{};
+	Rigidbody CreateRigidbody(Transform* attachedBody, vec3 baseForce, bool useGravity, float mass);
+	void UpdateAllBodies(float fixedDeltaTime);
+	bool Sphere2Overlap(vec3 posA, float radA, vec3 posB, float radB);
+	void ResolveSphereSphere(Rigidbody* rba, Rigidbody* rbb);
 };
 

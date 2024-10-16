@@ -30,19 +30,19 @@ struct vertex {
 	vec3 normal = vec3(0, 0, 0);
 	vec2 uv = vec2(0, 0);
 };
-struct mesh {
+struct Mesh {
 	GLuint vao, vbo, ibo;//vertex Array Object (This is made of the VBO and IBO), vertex Buffer Object (All the vertices), Index Buffer Object (Index buffer holds the orders for vertices to be turned into tris)
 	GLuint size = 0;//Length of the obj
 };
-struct shader {
+struct Shader {
 	GLuint program;
 };
-struct texture {
+struct Texture {
 	GLuint handle;//OpenGL texture name
 	unsigned width, height, channels;//image metadata
 };
-struct light {
-	light(vec3 color, vec3 direction) {
+struct Light {
+	Light(vec3 color, vec3 direction) {
 		this->color = color;
 		this->direction = direction;
 	}
@@ -51,29 +51,29 @@ struct light {
 };
 #pragma endregion
 #pragma region Meshes
-mesh MakeMesh(const vertex* const verts, GLsizei vertCount, const GLuint* indices, const GLsizei indexCount);//GLsizei = GL Size Index
-mesh MakeMesh(const vector<vertex> verts, const vector<GLuint> indices);
+Mesh MakeMesh(const vertex* const verts, GLsizei vertCount, const GLuint* indices, const GLsizei indexCount);//GLsizei = GL Size Index
+Mesh MakeMesh(const vector<vertex> verts, const vector<GLuint> indices);
 //Geometry MakeGeometry(const vector<vertex> verts, const vector<GLuint> indices);
-void FreeMesh(mesh& geo);
-void DrawMesh(const shader& shader, const mesh& geo);
+void FreeMesh(Mesh& geo);
+void DrawMesh(const Shader& shader, const Mesh& geo);
 #pragma endregion
 #pragma region shader Functions
-shader MakeShader(const char* vertshader, const char* fragshader);
-shader MakeShader(const string& vertshader, const string& fragshader);
-shader LoadShader(const char* vertPath, const char* fragPath);
-void FreeShader(shader& shader);
+Shader MakeShader(const char* vertshader, const char* fragshader);
+Shader MakeShader(const string& vertshader, const string& fragshader);
+Shader LoadShader(const char* vertPath, const char* fragPath);
+void FreeShader(Shader& shader);
 #pragma endregion
 #pragma region Uniform Functions
-void SetUniform(const shader& shader, GLuint location, const mat4& value);//For transforms
-void SetUniform(const shader& shader, GLuint location, const texture& value, int textureSlot);
-void SetUniform(const shader& shader, GLuint location, const vec4& value);//For color and quaternions
-void SetUniform(const shader& shader, GLuint location, const vec3& value);//For rgb color and positions
-void SetUniform(const shader& shader, GLuint location, int count, const vec3& values);//For rgb color and positions arrays
+void SetUniform(const Shader& shader, GLuint location, const mat4& value);//For transforms
+void SetUniform(const Shader& shader, GLuint location, const Texture& value, int textureSlot);
+void SetUniform(const Shader& shader, GLuint location, const vec4& value);//For color and quaternions
+void SetUniform(const Shader& shader, GLuint location, const vec3& value);//For rgb color and positions
+void SetUniform(const Shader& shader, GLuint location, int count, const vec3& values);//For rgb color and positions arrays
 #pragma endregion
 #pragma region texture Functions
-texture MakeTexture(unsigned width, unsigned height, unsigned channels, const unsigned char* pixels);
-void FreeTexture(texture& tex);
-texture LoadTexture(const char* imagePath);
+Texture MakeTexture(unsigned width, unsigned height, unsigned channels, const unsigned char* pixels);
+void FreeTexture(Texture& tex);
+Texture LoadTexture(const char* imagePath);
 #pragma endregion
 string ReadFile(const char* path);
 string ReadFile(string path);

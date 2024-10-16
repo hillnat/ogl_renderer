@@ -39,7 +39,7 @@ void context::Tick(){
 	}
 	//glfwSetWindowSize(window, std::rand()%1000, std::rand() % 1000);
 }
-void context::Clear(){
+void context::ClearScreen(){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//Clear those two buffers every time we call clear
 }
 void context::Terminate(){

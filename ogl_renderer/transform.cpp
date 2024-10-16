@@ -5,9 +5,17 @@
 #include <glm/gtx/matrix_decompose.hpp>//For glm::decompose
 */
 
-void Transform::Translate(const vec3 axis)
+void Transform::TranslateLocal(const vec3 axis)
 {
 	matrix = glm::translate(matrix, axis);
+	//LogTransform();
+}
+void Transform::TranslateGlobal(const vec3 axis)
+{
+	matrix[3].x += axis.x;
+	matrix[3].y += axis.y;
+	matrix[3].z += axis.z;
+
 	//LogTransform();
 }
 void Transform::Rotate(const vec3 axis, const float angleDegrees) {

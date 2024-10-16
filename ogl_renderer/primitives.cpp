@@ -1,11 +1,11 @@
 #include "primitives.h"
 #include "renderer.h"
 #define PI 3.1415926535897932384626433832795028841971693993
-mesh MakeSphere() {
+Mesh MakeSphere() {
 
 	const float radius = 0.5f;
-	const int longCount = 12;
-	const int latCount = 6;
+	const int longCount = 100;
+	const int latCount = longCount*0.5f;
 	const int vertCount = (latCount + 1) + (longCount + 1);
 	std::vector<vertex> verts;
 
@@ -96,7 +96,7 @@ mesh MakeSphere() {
 //	const int topCenterIndex = baseCenterIndex + sides + 1;
 //	//pikcup here
 //}
-mesh MakePlane() {
+Mesh MakePlane() {
 	vertex verts[4] = {
 		vertex//top right
 		(

@@ -7,7 +7,7 @@ public:
 	struct GLFWwindow* window;
 	bool Initialize();
 	void Tick();//Update for the window
-	void Clear();//Clear the window
+	void ClearScreen();//Clear the window
 	void Terminate();
 	bool ShouldClose();
 	bool W_Pressed();
