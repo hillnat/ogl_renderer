@@ -37,12 +37,17 @@ int main()
 	Material basicMaterial2 = Material(&basicShader2);
 #pragma endregion
 #pragma region Object Setup
-	GameObject obj1("obj1", MakeSphere(), &basicMaterial);
-	GameObject obj2("obj2", MakeSphere(), &basicMaterial2);
+	GameObject obj1("obj1", MakeSphere(), &basicMaterial2);
+	GameObject obj2("obj2", MakeSphere(), &basicMaterial);
+	GameObject obj3("obj3", MakeSphere(), &basicMaterial);
+	GameObject obj4("obj4", MakeSphere(), &basicMaterial);
+	GameObject obj5("obj5", MakeSphere(), &basicMaterial);
+	GameObject obj6("obj6", MakeSphere(), &basicMaterial);
+	GameObject obj7("obj7", MakeSphere(), &basicMaterial2);
 	Camera testCamera{};
 
-	obj2.transform.TranslateLocal(vec3(-3, 0, 0));
-	obj1.transform.TranslateLocal(vec3(3, 0, 0));
+	obj1.transform.TranslateLocal(vec3(0, 0, 0));
+
 
 	testCamera.cameraTransform.TranslateLocal(vec3(0, 1, -5));
 
@@ -50,20 +55,19 @@ int main()
 #pragma endregion
 #pragma region Physics
 	Physics phys;
-	phys.CreateRigidbody(&obj1.transform, vec3(-2,0,0), false, 1.f);
-	phys.CreateRigidbody(&obj2.transform, vec3(2, 0, 0), false, 1.f);
+	phys.AddRigidbody(Rigidbody(&obj1.transform, vec3(0, 0, 0), false, true,1.f));
+
 #pragma endregion
 #pragma region Scene
 	Scene scene;
 	scene.AddToScene(&obj1);
-	scene.AddToScene(&obj2);
 	scene.AddToScene(&testCamera);
 	scene.AddToScene(&testDirLight);
 #pragma endregion
 #pragma region Time
 	float lastTime = glfwGetTime();
 	float fixedDeltaTimeAccum = 0;
-	const float fixedTimeStepsPerSec = 200;
+	const float fixedTimeStepsPerSec = 5000;
 	const float fixedDeltaTime = 1.f / fixedTimeStepsPerSec;
 #pragma endregion
 	//Test
@@ -92,8 +96,8 @@ int main()
 		context.ClearScreen();
 #pragma endregion
 		//Rotate random stuff for testing
-		obj1.transform.Rotate(vec3(1, 1, 1), 25 * deltaTime);
-		obj2.transform.Rotate(vec3(1, 1, 1), 25 * deltaTime);
+		//obj1.transform.Rotate(vec3(1, 1, 1), 25 * deltaTime);
+		//obj2.transform.Rotate(vec3(1, 1, 1), 25 * deltaTime);
 		
 		vec2 mouseDelta = context.GetMouseDelta();
 
