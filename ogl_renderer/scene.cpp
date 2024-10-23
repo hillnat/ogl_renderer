@@ -10,7 +10,11 @@ void Scene::AddToScene(Camera* cam) {
 void Scene::AddToScene(Light* light) {
 	lights.push_back(light);
 }
-
+void Scene::FreeAllMeshes() {
+	for (int i = 0; i < gameObjects.size(); i++) {
+		FreeMesh(gameObjects[i]->mesh);
+	}
+}
 void Scene::RenderAll() {
 	std::vector<Material*> uniqueMaterials;
 	//Get all unique materials gameobjects
@@ -42,7 +46,7 @@ void Scene::RenderAll() {
 			SetUniform(*shader, 0, mainCamera.projectionMatrix);
 			SetUniform(*shader, 7, vec3(mainCamera.cameraTransform.GetPosition()));//Cam position for specular. Mat4 to vec3 conversion
 		}
-		SetUniform(*shader, 4, vec3(0.3f, 0.3f, 0.3f));//Set ambient
+		SetUniform(*shader, 4, vec3(0.1f, 0.1f, 0.1f));//Set ambient
 		SetUniform(*shader, 5, lights[0]->color);
 		SetUniform(*shader, 6, lights[0]->direction);
 	}

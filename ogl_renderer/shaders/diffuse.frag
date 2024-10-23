@@ -5,7 +5,7 @@ layout (location = 3) uniform sampler2D mainTex;
 
 
 in vec4 vPos;
-in vec4 vCol;    // Not used; consider removing if unnecessary
+in vec4 vCol;
 in vec2 vUV;
 in vec3 vNorm;
 

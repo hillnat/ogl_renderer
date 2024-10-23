@@ -372,3 +372,71 @@ Mesh MakePlane() {
 //
 //	return MakeMesh(verts, 24, indices, 36);
 //}
+Mesh MakeLine() {
+	//Just a skinny double sided plane
+	vertex verts[8] = {
+		vertex//top right
+		(
+			vec4(0.05f, 0.0f, 1.0f, 1.0f), //position
+			vec4(1.0f, 1.0f ,1.0f, 1.0f), //color
+			vec3(0.0f, 1.0f, 0.0f),  //normal
+			vec2(1.0f, 1.0f) //uv
+		),
+		vertex//top left
+		(
+			vec4(-0.05f, 0.0f, 1.0f, 1.0f), //position
+			vec4(1.0f, 1.0f ,1.0f, 1.0f), //color
+			vec3(0.0f, 1.0f, 0.0f),  //normal
+			vec2(0.0f, 1.0f) //uv
+		),
+		vertex//bottom right
+		(
+			vec4(0.05f, 0.0f, 0.0f, 1.0f), //position
+			vec4(1.0f, 1.0f ,1.0f, 1.0f), //color
+			vec3(0.0f, 1.0f, 0.0f),  //normal
+			vec2(1.0f, 0.0f) //uv
+		),
+		vertex//bottom left
+		(
+			vec4(-0.05f, 0.0f, 0.0f, 1.0f), //position
+			vec4(1.0f, 1.0f ,1.0f, 1.0f), //color
+			vec3(0.0f, 1.0f, 0.0f),  //normal
+			vec2(0.0f, 0.0f) //uv
+		),
+		vertex//top right
+		(
+			vec4(0.05f, 0.0f, 1.0f, 1.0f), //position
+			vec4(1.0f, 1.0f ,1.0f, 1.0f), //color
+			vec3(0.0f, -1.0f, 0.0f),  //normal
+			vec2(1.0f, 1.0f) //uv
+		),
+		vertex//top left
+		(
+			vec4(-0.05f, 0.0f, 1.0f, 1.0f), //position
+			vec4(1.0f, 1.0f ,1.0f, 1.0f), //color
+			vec3(0.0f, -1.0f, 0.0f),  //normal
+			vec2(0.0f, 1.0f) //uv
+		),
+		vertex//bottom right
+		(
+			vec4(0.05f, 0.0f, 0.0f, 1.0f), //position
+			vec4(1.0f, 1.0f ,1.0f, 1.0f), //color
+			vec3(0.0f, -1.0f, 0.0f),  //normal
+			vec2(1.0f, 0.0f) //uv
+		),
+		vertex//bottom left
+		(
+			vec4(-0.05f, 0.0f, 0.0f, 1.0f), //position
+			vec4(1.0f, 1.0f ,1.0f, 1.0f), //color
+			vec3(0.0f, -1.0f, 0.0f),  //normal
+			vec2(0.0f, 0.0f) //uv
+		)
+	};
+
+	GLuint indices[] = {
+		0,2,1, 3,1,2,
+		4,5,6, 7,6,5
+	};
+
+	return MakeMesh(verts, 8, indices, 12);
+}

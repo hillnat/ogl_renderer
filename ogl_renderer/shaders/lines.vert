@@ -10,9 +10,8 @@ layout (location = 2) uniform mat4 model; //worldspace ie transform
 
 out vec4 vCol;
 
-
 void main(){
-	vPos=model * position;
+	vPos= model * position;
 	vCol=color;
 	//Model view projection matrix
 	gl_Position = proj * view * model * position;

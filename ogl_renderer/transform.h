@@ -32,6 +32,7 @@ public:
 	void Rotate(vec3,float);
 	void SetRotation(vec3,float);
 	vec3 GetPosition();
+	void ChangeScale(vec3 scalar);
 	void LookAt(vec3 pos);
 #pragma endregion
 	void LogTransform();

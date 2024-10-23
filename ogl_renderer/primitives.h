@@ -1,14 +1,5 @@
 #pragma once
 #include "renderer.h"
-enum ShapeType {
-	Empty = -1,
-	Plane = 0,
-	Line = 1,
-	Box = 2,
-	Cylinder = 3,
-	Capsule = 4,
-	Sphere = 5
-};
 const vec4 RED = vec4{ 1.f,0.f,0.f,1.f };
 const vec4 BLUE = vec4{ 0.f,0.f,1.f,1.f };
 const vec4 GREEN = vec4{ 0.f,1.f,0.f,1.f };
@@ -23,4 +14,5 @@ Mesh MakeCube();
 Mesh MakeSphere();
 Mesh MakeCylinder();
 Mesh MakePlane();
+Mesh MakeLine();
 

@@ -18,6 +18,10 @@ void Transform::TranslateGlobal(const vec3 axis)
 
 	//LogTransform();
 }
+void Transform::ChangeScale(const vec3 scalar) {
+	matrix = glm::scale(matrix, scalar);
+	//LogTransform();
+}
 void Transform::Rotate(const vec3 axis, const float angleDegrees) {
 	matrix = glm::rotate(matrix, glm::radians(angleDegrees), glm::normalize(axis));
 	//LogTransform();

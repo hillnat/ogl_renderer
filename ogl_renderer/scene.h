@@ -13,6 +13,7 @@ public:
 	void AddToScene(GameObject*);
 	void AddToScene(Camera*);
 	void AddToScene(Light*);
+	void FreeAllMeshes();
 	void RenderAll();
 	std::vector<GameObject*> gameObjects;
 	std::vector<Camera*> cameras;

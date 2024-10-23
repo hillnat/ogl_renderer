@@ -1,5 +1,7 @@
 #pragma once
 #include "transform.h"
+#include "ColliderShapes.h"
+
 class Rigidbody
 {
 public:
@@ -26,6 +28,7 @@ public:
 	float mass=1;
 	bool isStatic = false;
 	void UpdateBody(float fixedDeltaTime);
-	void ApplyVelocity(vec3 force);
+	void AddForce(vec3 force);
+	void AddForcePure(vec3 pureForce);
 };
 

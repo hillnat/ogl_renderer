@@ -13,7 +13,7 @@
 #include <string>
 using glm::mat4;
 using glm::vec3;
-void checkGLError()
+void CheckGLError()
 {
 	GLenum err;
 	while ((err = glGetError()) != GL_NO_ERROR) {
@@ -24,55 +24,54 @@ int main()
 {
 #pragma region Setup
 #pragma region Context
-	context context;
+	Context context;
 	context.Initialize();
 #pragma endregion
 
 #pragma region Shaders / Textures / Materials
-	Shader basicShader = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
-	Shader basicShader2 = LoadShader("shaders/basic.vert", "shaders/basic.frag");
-	Texture basictexture = LoadTexture("textures/noise.png");
-	SetUniform(basicShader, 3, basictexture, 0);
-	Material basicMaterial = Material(&basicShader);
-	Material basicMaterial2 = Material(&basicShader2);
+	Shader basicShader1 = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
+	//Shader basicShader2 = LoadShader("shaders/basic.vert", "shaders/basic.frag");
+	//Shader lineShader = LoadShader("shaders/basic.vert", "shaders/lines.frag");
+	//Texture basictexture = LoadTexture("textures/noise.png");
+	Texture karambitTexture = LoadTexture("textures/karambitUV.png");
+	SetUniform(basicShader1, 3, karambitTexture, 0);
+	Material basicMaterial1 = Material(&basicShader1);
+	//Material lineMaterial = Material(&lineShader);
 #pragma endregion
 #pragma region Object Setup
-	GameObject obj1("obj1", MakeSphere(), &basicMaterial2);
-	GameObject obj2("obj2", MakeSphere(), &basicMaterial);
-	GameObject obj3("obj3", MakeSphere(), &basicMaterial);
-	GameObject obj4("obj4", MakeSphere(), &basicMaterial);
-	GameObject obj5("obj5", MakeSphere(), &basicMaterial);
-	GameObject obj6("obj6", MakeSphere(), &basicMaterial);
-	GameObject obj7("obj7", MakeSphere(), &basicMaterial2);
+	GameObject karambitObj("obj1", "meshes/karambit.obj", &basicMaterial1);
+
+
 	Camera testCamera{};
 
-	obj1.transform.TranslateLocal(vec3(0, 0, 0));
+	testCamera.cameraTransform.TranslateLocal(vec3(0, 0.25f, -3));
 
-
-	testCamera.cameraTransform.TranslateLocal(vec3(0, 1, -5));
-
-	Light testDirLight(vec3(1, 1, 1), vec3(0, 1, 0));
+	Light testDirLight(vec3(1, 1, 1)/2.f, vec3(-0.5f, -1, -0.5f));
 #pragma endregion
 #pragma region Physics
 	Physics phys;
-	phys.AddRigidbody(Rigidbody(&obj1.transform, vec3(0, 0, 0), false, true,1.f));
+	//Collider col1 = Collider(ColliderShapes::Sphere);
+	//Rigidbody rb1 = Rigidbody(&sphere1.transform, vec3(0, 0, 0), true, false, 1.f);
+	//ColRbPair crp1 = ColRbPair(&col1, &rb1);
+	//phys.AddColRbPair(&crp1);
+	karambitObj.transform.Rotate(vec3(1, 0, 0), 85);
 
 #pragma endregion
 #pragma region Scene
 	Scene scene;
-	scene.AddToScene(&obj1);
+	scene.AddToScene(&karambitObj);
 	scene.AddToScene(&testCamera);
 	scene.AddToScene(&testDirLight);
 #pragma endregion
 #pragma region Time
 	float lastTime = glfwGetTime();
 	float fixedDeltaTimeAccum = 0;
-	const float fixedTimeStepsPerSec = 5000;
+	const float fixedTimeStepsPerSec = 100;
 	const float fixedDeltaTime = 1.f / fixedTimeStepsPerSec;
 #pragma endregion
 	//Test
-	GameObject* testObject = &obj1;
 	float moveSpeed = 15.f;
+	float spinSpeed = 0;
 	float sensitivity = 30.f;
 	Diagnostics::LogHardware();
 	std::cout << "Fixed Delta Time : " << fixedDeltaTime << std::endl;
@@ -96,9 +95,7 @@ int main()
 		context.ClearScreen();
 #pragma endregion
 		//Rotate random stuff for testing
-		//obj1.transform.Rotate(vec3(1, 1, 1), 25 * deltaTime);
-		//obj2.transform.Rotate(vec3(1, 1, 1), 25 * deltaTime);
-		
+		karambitObj.transform.Rotate(vec3(0,0,1), spinSpeed * deltaTime);
 		vec2 mouseDelta = context.GetMouseDelta();
 
 		if (context.Mouse1_Pressed() && mouseDelta.x!=0)		{ testCamera.cameraTransform.Rotate(vec3(0, 1, 0), -mouseDelta.x * sensitivity * deltaTime); }
@@ -108,19 +105,20 @@ int main()
 		else if (context.S_Pressed())	{ testCamera.cameraTransform.TranslateLocal(vec3(0, 0, -1) * deltaTime * moveSpeed); }
 		if (context.D_Pressed())		{ testCamera.cameraTransform.TranslateLocal(vec3(-1, 0, 0) * deltaTime * moveSpeed); }
 		else if (context.A_Pressed())	{ testCamera.cameraTransform.TranslateLocal(vec3(1, 0, 0) * deltaTime * moveSpeed); }
+
+
 		if (context.UpArrow_Pressed()) { sensitivity += 10.f; }
 		else if (context.DownArrow_Pressed()) { sensitivity -= 10.f; }
-		if (context.RightArrow_Pressed()) { moveSpeed += 5.f; }
-		else if (context.LeftArrow_Pressed()) { moveSpeed -= 5.f; }
-
+		if (context.RightArrow_Pressed()) { spinSpeed += 5.f; }
+		else if (context.LeftArrow_Pressed()) { spinSpeed -= 5.f; }
 
 		scene.RenderAll();
-		checkGLError();
+		CheckGLError();
 	}
 	//Program ending
-	FreeMesh(obj1.mesh);
-	FreeShader(basicShader);
-	FreeTexture(basictexture);
+	scene.FreeAllMeshes();
+	//Refactor freeing of mats and textures
+	//FreeTexture(basictexture);
 	context.Terminate();
 	return 0;
 }

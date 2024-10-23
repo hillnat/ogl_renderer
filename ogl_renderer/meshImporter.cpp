@@ -16,7 +16,7 @@ Mesh MeshImporter::ImportFromFile(const char* filename)
 	if (scene == NULL) { std::cout << "Fatal error" << std::endl; return Mesh{}; }
 	std::vector<vertex> allVertices;
 	std::vector<GLuint> allIndices;
-	int allvertexCount = 0;
+	int allVertexCount = 0;
 	
 	for (int m = 0; m < scene->mNumMeshes; m++) {
 
@@ -66,12 +66,12 @@ Mesh MeshImporter::ImportFromFile(const char* filename)
 			std::cout << "-------------------------" << std::endl;*/
 			allVertices.push_back(vertex);
 		}
-		allvertexCount += mesh->mNumVertices;
+		allVertexCount += mesh->mNumVertices;//Add num of vertices found in submesh to total vert count
 	}
 	
 	float endTime = glfwGetTime();
-	//std::cout << "Succeeded loading after " << endTime-startTime << " seconds" << std::endl;
-	return MakeMesh(allVertices.data(), allvertexCount, allIndices.data(), allIndices.size());
+	std::cout << "Succeeded loading "<< allVertexCount<< " vertices after " << endTime-startTime << "s elapsed." << std::endl;
+	return MakeMesh(allVertices.data(), allVertexCount, allIndices.data(), allIndices.size());
 	//delete[] vertices;
 	//m_quadMesh.initialiseFromFile("stanford/bunny.obj");
 }
