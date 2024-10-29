@@ -4,7 +4,7 @@
 
 void Rigidbody::UpdateBody(float fixedDeltaTime) {
 	if(useGravity){
-		AddForcePure(vec3(0, -4.9035f, 0);
+		AddForcePure(vec3(0, -4.9035f, 0));
 	}
 	attachedBody->TranslateGlobal(velocity* fixedDeltaTime);
 }
