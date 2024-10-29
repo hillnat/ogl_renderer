@@ -3,6 +3,7 @@
 #include "renderer.h"
 #include "material.h"
 #include "meshImporter.h"
+#include "AABB.h"
 class GameObject
 {
 public:

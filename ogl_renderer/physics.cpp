@@ -31,12 +31,12 @@ void Physics::UpdateAllBodies(float fixedDeltaTime) {
 				case ColliderShapes::Sphere:
 					switch (colB->colliderShape) {
 						case ColliderShapes::Sphere:
-							if (Sphere2Overlap(colRbPairs[i]->rigidbody->attachedBody->GetPosition(), 0.5f, colRbPairs[k]->rigidbody->attachedBody->GetPosition(), 0.5f)) {
+							if (OverlapSphereSphere(colRbPairs[i]->rigidbody->attachedBody->GetPosition(), 0.5f, colRbPairs[k]->rigidbody->attachedBody->GetPosition(), 0.5f)) {
 								ResolveSphereSphere(colRbPairs[i]->rigidbody, colRbPairs[k]->rigidbody);
 							}
 							break;
 						case ColliderShapes::Plane:
-							if (Sphere2Overlap(colRbPairs[i]->rigidbody->attachedBody->GetPosition(), 0.5f, colRbPairs[k]->rigidbody->attachedBody->GetPosition(), 0.5f)) {
+							if (OverlapSphereSphere(colRbPairs[i]->rigidbody->attachedBody->GetPosition(), 0.5f, colRbPairs[k]->rigidbody->attachedBody->GetPosition(), 0.5f)) {
 								ResolveSphereSphere(colRbPairs[i]->rigidbody, colRbPairs[k]->rigidbody);
 							}
 							break;
@@ -51,14 +51,16 @@ void Physics::UpdateAllBodies(float fixedDeltaTime) {
 	}
 }
 #pragma region Collision Detection
-bool Physics::Sphere2Overlap(const vec3 posA, const float radA, const vec3 posB, const float radB) {
+bool Physics::OverlapSphereSphere(const vec3 posA, const float radA, const vec3 posB, const float radB) {
 	float dist = sqrtf(
 		(posA.x - posB.x) * (posA.x - posB.x) +
 		(posA.y - posB.y) * (posA.y - posB.y) +
 		(posA.z - posB.z) * (posA.z - posB.z));
 	return ((radA + radB) > dist);
 }
-bool Physics::SpherePlaneOverlap(const vec3 spherePos, const float sphereRadius, const vec3 planePos, const vec3 planeNormal) {
+bool Physics::OverlapSpherePlane(const vec3 spherePos, const float sphereRadius, const vec3 planePos, const vec3 planeNormal) {
+	//Collision between a sphere and an infinite-depth plane
+
 	vec3 dist = vec3(
 		(spherePos.x - planePos.x),
 		(spherePos.y - planePos.y),
@@ -67,25 +69,34 @@ bool Physics::SpherePlaneOverlap(const vec3 spherePos, const float sphereRadius,
 	float mag = distNorm.x + distNorm.y + distNorm.z;
 	return (mag <sphereRadius);
 }
+bool Physics::OverlapSphereAABB(const vec3 spherePos, const float sphereRadius, const AABB aabb) {
+	//Get point on edge of AABB
+	vec3 point = GetClosestPointToAABB(spherePos, aabb);
+	//Sphere to (point = sphere where r=0)
+	return OverlapSphereSphere(spherePos, sphereRadius, point, 0);
+}
 #pragma endregion
+
 #pragma region Collision Resolution
-void Physics::ResolveSphereSphere(Rigidbody* rba, Rigidbody* rbb) {
-	if (rba->isStatic || rbb->isStatic) {
+//Resolve collision between two RBs assumed as spheres.
+void Physics::ResolveSphereSphere(Rigidbody* sphereA, Rigidbody* sphereB) {
+	if (sphereA->isStatic || sphereB->isStatic) {
 		//If either are static, set flip vel of whichever is not static
-		if (!rba->isStatic) { rba->velocity *= -1.F; }
-		if (!rbb->isStatic) { rbb->velocity *= -1.F; }
+		if (!sphereA->isStatic) { sphereA->velocity *= -1.F; }
+		if (!sphereB->isStatic) { sphereB->velocity *= -1.F; }
 		return;
 	}
-	vec3 relVel = rba->velocity - rbb->velocity;
-	vec3 colNorm = normalize(rba->attachedBody->GetPosition() - rbb->attachedBody->GetPosition());
+	vec3 relVel = sphereA->velocity - sphereB->velocity;
+	vec3 colNorm = normalize(sphereA->attachedBody->GetPosition() - sphereB->attachedBody->GetPosition());
 	//float elastFactor = 1;
-	//float elasticity = -(1 + elastFactor);
-	float scaledMassSum = ((1.f / rba->mass) + (1.f / rbb->mass));
+	//float elasticity = -(1 + elastFactor); 
+	float scaledMassSum = ((1.f / sphereA->mass) + (1.f / sphereB->mass));
 	float joules = dot(2.f * relVel, colNorm) / dot(colNorm, colNorm * scaledMassSum);
 
-	rba->AddForce(-joules * colNorm);
-	rbb->AddForce(joules * colNorm);
+	sphereA->AddForce(-joules * colNorm);
+	sphereB->AddForce(joules * colNorm);
 }
+//Resolve collision between an assumed sphere RB, and a assumed plane RB
 void Physics::ResolveSpherePlane(Rigidbody* sphere, Rigidbody* plane) {
 	if (sphere->isStatic || plane->isStatic) {
 		//If either are static, set flip vel of whichever is not static
@@ -102,5 +113,36 @@ void Physics::ResolveSpherePlane(Rigidbody* sphere, Rigidbody* plane) {
 	sphere->AddForce(-joules * colNorm);
 	plane->AddForce(joules * colNorm);
 }
+#pragma endregion
+#pragma region Point Checks
+vec3 Physics::GetClosestPointToSphere(vec3 spherePos, float sphereRadius, vec3 targetPoint) {//Direction from sphere center to target point, times sphere radius
+	vec3 dir = glm::normalize(targetPoint - spherePos);
+	return spherePos + (dir * sphereRadius);//Return the position of the sphere, plus our direction times radius
+}
+vec3 Physics::GetClosestPointToAABB(vec3 targetPoint, AABB aabb) {
+	//Returns a point laying on the edge of the AABB in the direction of the targetPoint.
+	vec3 output = targetPoint;
 
+	if (targetPoint.x > aabb.pos.x + (aabb.size.x / 2.F)) {
+		output.x = aabb.pos.x + (aabb.size.x / 2.F);
+	}
+	else {
+		output.x = targetPoint.x;
+	}
+
+	if (targetPoint.y > aabb.pos.y + (aabb.size.y / 2.F)) {
+		output.y = aabb.pos.y + (aabb.size.y / 2.F);
+	}
+	else {
+		output.y = targetPoint.y;
+	}
+
+	if (targetPoint.z > aabb.pos.z + (aabb.size.z / 2.F)) {
+		output.z = aabb.pos.z + (aabb.size.z / 2.F);
+	}
+	else {
+		output.z = targetPoint.z;
+	}
+	return output;
+}
 #pragma endregion
