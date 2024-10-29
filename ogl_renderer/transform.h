@@ -1,6 +1,6 @@
 #pragma once
 #include "glm/ext.hpp"
-#include "AABB.h"
+#include "physics/AABB.h"
 using glm::mat4;
 using glm::mat3;
 using glm::vec3;

@@ -5,12 +5,12 @@
 #include "scene.h"
 #include "meshImporter.h"
 #include "camera.h"
-#include "physics.h"
 #include "renderer.h"
 #include "glm/ext.hpp" //GLM provides us with matrices and math functions
 #include "glfw/glfw3.h"	//GLFW is a Windows API wrapper, allows us to handle window context easily
 #include <iostream>
 #include <string>
+#include "physics/Physics.h"
 using glm::mat4;
 using glm::vec3;
 void CheckGLError()
@@ -49,7 +49,7 @@ int main()
 	Light testDirLight(vec3(1, 1, 1)/2.f, vec3(-0.5f, -1, -0.5f));
 #pragma endregion
 #pragma region Physics
-	Physics phys;
+	Physics* phys = new Physics();
 	//Collider col1 = Collider(ColliderShapes::Sphere);
 	//Rigidbody rb1 = Rigidbody(&sphere1.transform, vec3(0, 0, 0), true, false, 1.f);
 	//ColRbPair crp1 = ColRbPair(&col1, &rb1);
@@ -87,7 +87,7 @@ int main()
 #pragma region Handle Fixed Timestep
 		while (fixedDeltaTimeAccum > fixedDeltaTime) { 
 			fixedDeltaTimeAccum -= fixedDeltaTime;
-			phys.UpdateAllBodies(fixedDeltaTime);
+			phys->UpdateAllBodies(fixedDeltaTime);
 		}//Run in a WHILE loop, to allow multiple fixed time steps to happen in the same frame given the delta time is larger than the threshold*2
 #pragma endregion
 #pragma region Handle Context
