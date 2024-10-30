@@ -1,40 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="context.cpp" />
+    <ClCompile Include="engine\Context.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="diagnostics.cpp" />
-    <ClCompile Include="meshImporter.cpp" />
-    <ClCompile Include="primitives.cpp" />
-    <ClCompile Include="renderer.cpp" />
-    <ClCompile Include="transform.cpp" />
-    <ClCompile Include="gameObject.cpp" />
-    <ClCompile Include="camera.cpp" />
-    <ClCompile Include="scene.cpp" />
-    <ClCompile Include="physics.cpp" />
-    <ClCompile Include="rigidbody.cpp" />
-    <ClCompile Include="Material.cpp" />
-    <ClCompile Include="Collider.cpp" />
+    <ClCompile Include="engine\Diagnostics.cpp" />
+    <ClCompile Include="engine\Primitives.cpp" />
+    <ClCompile Include="engine\Transform.cpp" />
+    <ClCompile Include="engine\GameObject.cpp" />
+    <ClCompile Include="engine\Scene.cpp" />
+    <ClCompile Include="physics\Collider.cpp" />
+    <ClCompile Include="physics\Physics.cpp" />
+    <ClCompile Include="physics\Rigidbody.cpp" />
+    <ClCompile Include="physics\Physics.h" />
+    <ClCompile Include="renderer\camera.cpp" />
+    <ClCompile Include="renderer\Material.cpp" />
+    <ClCompile Include="renderer\MeshImporter.cpp" />
+    <ClCompile Include="renderer\Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="context.h" />
-    <ClInclude Include="diagnostics.h" />
-    <ClInclude Include="meshImporter.h" />
-    <ClInclude Include="primitives.h" />
-    <ClInclude Include="renderer.h" />
-    <ClInclude Include="transform.h" />
-    <ClInclude Include="gameObject.h" />
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="scene.h" />
-    <ClInclude Include="physics.h" />
-    <ClInclude Include="rigidbody.h" />
-    <ClInclude Include="Material.h" />
-    <ClInclude Include="Collider.h" />
-    <ClInclude Include="ColliderShapes.h" />
-    <ClInclude Include="ColRbPair.h" />
-    <ClInclude Include="AABB.h" />
+    <ClInclude Include="engine\Context.h" />
+    <ClInclude Include="engine\Diagnostics.h" />
+    <ClInclude Include="engine\Primitives.h" />
+    <ClInclude Include="engine\Transform.h" />
+    <ClInclude Include="engine\GameObject.h" />
+    <ClInclude Include="engine\Scene.h" />
+    <ClInclude Include="physics\AABB.h" />
+    <ClInclude Include="physics\Collider.h" />
+    <ClInclude Include="physics\ColliderShapes.h" />
+    <ClInclude Include="physics\ColRbPair.h" />
+    <ClInclude Include="physics\Rigidbody.h" />
+    <ClInclude Include="renderer\camera.h" />
+    <ClInclude Include="renderer\Material.h" />
+    <ClInclude Include="renderer\MeshImporter.h" />
+    <ClInclude Include="renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <Natvis Include="glm.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\karambitUV.png" />
+    <Image Include="textures\karambitUV_Base.png" />
+    <Image Include="textures\marble.png" />
+    <Image Include="textures\noise.png" />
+    <Image Include="textures\uv.png" />
+    <Image Include="textures\wood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CppProperties.json" />
+    <None Include="ogl_renderer.vcxproj.bak" />
+    <None Include="shaders\basic.frag" />
+    <None Include="shaders\basic.vert" />
+    <None Include="shaders\basic.vert.bak" />
+    <None Include="shaders\diffuse.frag" />
+    <None Include="shaders\diffuse.frag.bak" />
+    <None Include="shaders\lines.frag" />
+    <None Include="shaders\lines.frag.bak" />
+    <None Include="shaders\lines.vert" />
+    <None Include="shaders\lines.vert.bak" />
   </ItemGroup>
 </Project>

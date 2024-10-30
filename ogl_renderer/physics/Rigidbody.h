@@ -1,7 +1,6 @@
 #pragma once
-#include "../transform.h"
+#include "../engine/Transform.h"
 #include "ColliderShapes.h"
-#include "Physics.h"
 
 class Rigidbody
 {

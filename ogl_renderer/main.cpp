@@ -1,11 +1,11 @@
-#include "diagnostics.h"
-#include "context.h"
-#include "primitives.h"
-#include "gameObject.h"
-#include "scene.h"
-#include "meshImporter.h"
-#include "camera.h"
-#include "renderer.h"
+#include "engine/diagnostics.h"
+#include "engine/context.h"
+#include "engine/primitives.h"
+#include "engine/gameObject.h"
+#include "engine/scene.h"
+#include "renderer/meshImporter.h"
+#include "renderer/camera.h"
+#include "renderer/renderer.h"
 #include "glm/ext.hpp" //GLM provides us with matrices and math functions
 #include "glfw/glfw3.h"	//GLFW is a Windows API wrapper, allows us to handle window context easily
 #include <iostream>

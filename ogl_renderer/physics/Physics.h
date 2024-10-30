@@ -2,10 +2,9 @@
 #include <vector>
 #include "Rigidbody.h"
 #include "ColRbPair.h"
-#include "../transform.h"
+#include "../engine/Transform.h"
 #include "glm/ext.hpp" //GLM provides us with matrices and math functions
 //const vec3 gravity = vec3(0, -9.807f, 0);//Earth gravity
-class Rigidbody;
 
 class Physics {
 public:
