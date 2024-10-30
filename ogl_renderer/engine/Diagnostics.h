@@ -2,5 +2,6 @@
 namespace Diagnostics
 {
 	void LogHardware();
+	void CheckGLError();
 };
 

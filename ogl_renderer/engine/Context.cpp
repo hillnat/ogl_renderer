@@ -21,7 +21,7 @@ bool Context::Initialize(){
 	glDepthFunc(GL_LEQUAL);//Decide which objects are in front
 	glFrontFace(GL_CCW);//Algorithm for normal. Winding direction for determining normal direction on triangle
 	glCullFace(GL_BACK);//Which side should we hide? NOTE : THIS SHOULD BE CULLING BACKFACE (GL_BACK)
-	glClearColor(0.109f, 0.21f, 0.45f, 1);
+	glClearColor(0.757F, 0.714F, 0.91F, 1);
 	std::srand(time(nullptr));
 	return true;
 }

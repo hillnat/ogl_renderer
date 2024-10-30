@@ -9,4 +9,11 @@ namespace Diagnostics {
 		cout << "GLSL Version   : " << (const char*)glGetString(GL_SHADING_LANGUAGE_VERSION) << endl;
 		cout << "GPU (Active)   : " << (const char*)glGetString(GL_RENDERER) << endl;
 	}
+	void CheckGLError()
+	{
+		GLenum err;
+		while ((err = glGetError()) != GL_NO_ERROR) {
+			std::cout << err << std::endl;
+		}
+	}
 }

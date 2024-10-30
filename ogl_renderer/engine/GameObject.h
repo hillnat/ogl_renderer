@@ -13,10 +13,24 @@ public:
 		this->transform = Transform();
 		this->material = material;
 	}
-	GameObject(const char* name, const Mesh mesh, Material* material) //For creating primitives
+	GameObject(const char* name, const Mesh mesh, Material* material)
 	{
 		this->name = name;
 		this->mesh = mesh;
+		this->transform = Transform();
+		this->material = material;
+	}
+	GameObject(const Mesh mesh, Material* material)
+	{
+		this->name = "GameObject";
+		this->mesh = mesh;
+		this->transform = Transform();
+		this->material = material;
+	}
+	GameObject(const char* meshPath, Material* material)
+	{
+		this->name = "GameObject";
+		this->mesh = MeshImporter::ImportFromFile(meshPath);
 		this->transform = Transform();
 		this->material = material;
 	}

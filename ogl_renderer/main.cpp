@@ -1,11 +1,11 @@
-#include "engine/diagnostics.h"
-#include "engine/context.h"
-#include "engine/primitives.h"
-#include "engine/gameObject.h"
-#include "engine/scene.h"
-#include "renderer/meshImporter.h"
-#include "renderer/camera.h"
-#include "renderer/renderer.h"
+#include "engine/Diagnostics.h"
+#include "engine/Context.h"
+#include "engine/Primitives.h"
+#include "engine/GameObject.h"
+#include "engine/Scene.h"
+#include "renderer/MeshImporter.h"
+#include "renderer/Camera.h"
+#include "renderer/Renderer.h"
 #include "glm/ext.hpp" //GLM provides us with matrices and math functions
 #include "glfw/glfw3.h"	//GLFW is a Windows API wrapper, allows us to handle window context easily
 #include <iostream>
@@ -13,112 +13,111 @@
 #include "physics/Physics.h"
 using glm::mat4;
 using glm::vec3;
-void CheckGLError()
-{
-	GLenum err;
-	while ((err = glGetError()) != GL_NO_ERROR) {
-		std::cout << err << std::endl;
-	}
-}
-int main()
-{
-#pragma region Setup
-#pragma region Context
-	Context context;
-	context.Initialize();
-#pragma endregion
 
-#pragma region Shaders / Textures / Materials
-	Shader basicShader1 = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
-	//Shader basicShader2 = LoadShader("shaders/basic.vert", "shaders/basic.frag");
-	//Shader lineShader = LoadShader("shaders/basic.vert", "shaders/lines.frag");
-	//Texture basictexture = LoadTexture("textures/noise.png");
-	Texture karambitTexture = LoadTexture("textures/karambitUV.png");
-	SetUniform(basicShader1, 3, karambitTexture, 0);
-	Material basicMaterial1 = Material(&basicShader1);
-	//Material lineMaterial = Material(&lineShader);
-#pragma endregion
-#pragma region Object Setup
-	GameObject karambitObj("obj1", "meshes/karambit.obj", &basicMaterial1);
+int main(){
+	Context* context = new Context();
+	context->Initialize();
 
+// Shaders / Textures / Materials Setup
+	Shader diffuseShader = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
+	Shader diffuseShader2 = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
+	Shader basicShader = LoadShader("shaders/basic.vert", "shaders/basic.frag");
+	Texture marbleTexture = LoadTexture("textures/marble.png");
+	Texture metalTexture = LoadTexture("textures/metal.png");
+	Material diffuseMaterial = Material(&diffuseShader);
+	Material diffuseMaterial2 = Material(&diffuseShader2);
+	Material basicMaterial = Material(&basicShader);
+	SetUniform(diffuseShader, 3, marbleTexture, 0);//Attach texture to shader
+	SetUniform(diffuseShader2, 3, metalTexture, 0);//Attach texture to shader
+// Object Setup
+	GameObject obj1(Primitives::MakeSphere(), &diffuseMaterial);
+	GameObject obj3(Primitives::MakeSphere(), &diffuseMaterial2);
+	GameObject obj2(Primitives::MakePlane(), &basicMaterial);
 
 	Camera testCamera{};
 
-	testCamera.cameraTransform.TranslateLocal(vec3(0, 0.25f, -3));
+	testCamera.cameraTransform.TranslateLocal(vec3(0, 0, -6));
+	obj2.transform.TranslateLocal(vec3(0,-4,0));
+	obj1.transform.TranslateLocal(vec3(0,2,0));
+	obj3.transform.TranslateLocal(vec3(0,4,0));
 
-	Light testDirLight(vec3(1, 1, 1)/2.f, vec3(-0.5f, -1, -0.5f));
-#pragma endregion
-#pragma region Physics
+	Light testDirLight(vec3(1, 1, 1) / 2.f, vec3(-0.5f, 1, -0.5f));
+//Physics Setup
 	Physics* phys = new Physics();
-	//Collider col1 = Collider(ColliderShapes::Sphere);
-	//Rigidbody rb1 = Rigidbody(&sphere1.transform, vec3(0, 0, 0), true, false, 1.f);
-	//ColRbPair crp1 = ColRbPair(&col1, &rb1);
-	//phys.AddColRbPair(&crp1);
-	karambitObj.transform.Rotate(vec3(1, 0, 0), 85);
+	Collider col1 = Collider(ColliderShapes::Sphere);
+	Rigidbody rb1 = Rigidbody(&obj1.transform, vec3(0, 0, 0), false, false, 1.f);
+	ColRbPair crp1 = ColRbPair(&col1, &rb1);
+	phys->AddColRbPair(&crp1);
+	Collider col2 = Collider(ColliderShapes::Plane);
+	Rigidbody rb2 = Rigidbody(&obj2.transform, vec3(0, 0, 0), false, false, 1.f);
+	ColRbPair crp2 = ColRbPair(&col2, &rb2);
+	phys->AddColRbPair(&crp2);
+	Collider col3 = Collider(ColliderShapes::Sphere);
+	Rigidbody rb3 = Rigidbody(&obj3.transform, vec3(0, -0.7f, 0), false, false, 3.f);
+	ColRbPair crp3 = ColRbPair(&col3, &rb3);
+	phys->AddColRbPair(&crp3);
 
-#pragma endregion
-#pragma region Scene
-	Scene scene;
-	scene.AddToScene(&karambitObj);
-	scene.AddToScene(&testCamera);
-	scene.AddToScene(&testDirLight);
-#pragma endregion
-#pragma region Time
+	Scene* scene = new Scene();
+	scene->AddToScene(&obj1);
+	scene->AddToScene(&obj2);
+	scene->AddToScene(&obj3);
+	scene->AddToScene(&testCamera);
+	scene->AddToScene(&testDirLight);
+
 	float lastTime = glfwGetTime();
 	float fixedDeltaTimeAccum = 0;
 	const float fixedTimeStepsPerSec = 100;
 	const float fixedDeltaTime = 1.f / fixedTimeStepsPerSec;
-#pragma endregion
+
 	//Test
 	float moveSpeed = 15.f;
 	float spinSpeed = 0;
 	float sensitivity = 30.f;
 	Diagnostics::LogHardware();
-	std::cout << "Fixed Delta Time : " << fixedDeltaTime << std::endl;
-#pragma endregion
 	//Main Loop
-	while (!context.ShouldClose()) {
-#pragma region Handle Time
+	while (!context->ShouldClose()) {
+		//Get delta times
 		float currentTime = glfwGetTime();
 		float deltaTime = currentTime - lastTime;
 		fixedDeltaTimeAccum += deltaTime;
 		lastTime = currentTime;
-#pragma endregion
-#pragma region Handle Fixed Timestep
+		//Physics Timestep
 		while (fixedDeltaTimeAccum > fixedDeltaTime) { 
 			fixedDeltaTimeAccum -= fixedDeltaTime;
 			phys->UpdateAllBodies(fixedDeltaTime);
 		}//Run in a WHILE loop, to allow multiple fixed time steps to happen in the same frame given the delta time is larger than the threshold*2
-#pragma endregion
-#pragma region Handle Context
-		context.Tick();
-		context.ClearScreen();
-#pragma endregion
+		//Tick context
+		context->Tick();
+		context->ClearScreen();
+
 		//Rotate random stuff for testing
-		karambitObj.transform.Rotate(vec3(0,0,1), spinSpeed * deltaTime);
-		vec2 mouseDelta = context.GetMouseDelta();
+		obj1.transform.Rotate(vec3(0,0,1), spinSpeed * deltaTime);
+		vec2 mouseDelta = context->GetMouseDelta();
 
-		if (context.Mouse1_Pressed() && mouseDelta.x!=0)		{ testCamera.cameraTransform.Rotate(vec3(0, 1, 0), -mouseDelta.x * sensitivity * deltaTime); }
-		if (context.Mouse1_Pressed() && mouseDelta.y!=0)		{ testCamera.cameraTransform.Rotate(vec3(1, 0, 0), mouseDelta.y * sensitivity * deltaTime); }
+		if (context->Mouse1_Pressed() && mouseDelta.x!=0)		{ testCamera.cameraTransform.Rotate(vec3(0, 1, 0), -mouseDelta.x * sensitivity * deltaTime); }
+		if (context->Mouse1_Pressed() && mouseDelta.y!=0)		{ testCamera.cameraTransform.Rotate(vec3(1, 0, 0), mouseDelta.y * sensitivity * deltaTime); }
 
-		if (context.W_Pressed())		{ testCamera.cameraTransform.TranslateLocal(vec3(0, 0, 1) * deltaTime * moveSpeed); }
-		else if (context.S_Pressed())	{ testCamera.cameraTransform.TranslateLocal(vec3(0, 0, -1) * deltaTime * moveSpeed); }
-		if (context.D_Pressed())		{ testCamera.cameraTransform.TranslateLocal(vec3(-1, 0, 0) * deltaTime * moveSpeed); }
-		else if (context.A_Pressed())	{ testCamera.cameraTransform.TranslateLocal(vec3(1, 0, 0) * deltaTime * moveSpeed); }
+		if (context->W_Pressed())		{ testCamera.cameraTransform.TranslateLocal(vec3(0, 0, 1) * deltaTime * moveSpeed); }
+		else if (context->S_Pressed())	{ testCamera.cameraTransform.TranslateLocal(vec3(0, 0, -1) * deltaTime * moveSpeed); }
+		if (context->D_Pressed())		{ testCamera.cameraTransform.TranslateLocal(vec3(-1, 0, 0) * deltaTime * moveSpeed); }
+		else if (context->A_Pressed())	{ testCamera.cameraTransform.TranslateLocal(vec3(1, 0, 0) * deltaTime * moveSpeed); }
 
+		if (context->UpArrow_Pressed()) { sensitivity += 10.f; }
+		else if (context->DownArrow_Pressed()) { sensitivity -= 10.f; }
+		if (context->RightArrow_Pressed()) { spinSpeed += 5.f; }
+		else if (context->LeftArrow_Pressed()) { spinSpeed -= 5.f; }
 
-		if (context.UpArrow_Pressed()) { sensitivity += 10.f; }
-		else if (context.DownArrow_Pressed()) { sensitivity -= 10.f; }
-		if (context.RightArrow_Pressed()) { spinSpeed += 5.f; }
-		else if (context.LeftArrow_Pressed()) { spinSpeed -= 5.f; }
-
-		scene.RenderAll();
-		CheckGLError();
+		scene->RenderAll();
+		Diagnostics::CheckGLError();
 	}
 	//Program ending
-	scene.FreeAllMeshes();
+	scene->FreeAllMeshes();
+	delete(scene);
+	delete(phys);
 	//Refactor freeing of mats and textures
 	//FreeTexture(basictexture);
-	context.Terminate();
+	context->Terminate();
+	delete(context);
+
 	return 0;
 }
