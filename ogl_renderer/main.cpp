@@ -20,47 +20,42 @@ int main(){
 
 // Shaders / Textures / Materials Setup
 	Shader diffuseShader = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
-	Shader diffuseShader2 = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
-	Shader basicShader = LoadShader("shaders/basic.vert", "shaders/basic.frag");
-	Texture marbleTexture = LoadTexture("textures/marble.png");
-	Texture metalTexture = LoadTexture("textures/metal.png");
+	Texture treeTexture = LoadTexture("textures/treetex.png");
 	Material diffuseMaterial = Material(&diffuseShader);
-	Material diffuseMaterial2 = Material(&diffuseShader2);
-	Material basicMaterial = Material(&basicShader);
-	SetUniform(diffuseShader, 3, marbleTexture, 0);//Attach texture to shader
-	SetUniform(diffuseShader2, 3, metalTexture, 0);//Attach texture to shader
+	SetUniform(diffuseShader, 3, treeTexture, 0);//Attach texture to shader
 // Object Setup
-	GameObject obj1(Primitives::MakeSphere(), &diffuseMaterial);
-	GameObject obj3(Primitives::MakeSphere(), &diffuseMaterial2);
-	GameObject obj2(Primitives::MakePlane(), &basicMaterial);
+	//GameObject obj1(Primitives::MakeSphere(), &diffuseMaterial);
+	GameObject obj1("meshes/tree.obj", &diffuseMaterial);
+	//GameObject obj3(Primitives::MakeSphere(), &diffuseMaterial2);
+	//GameObject obj2(Primitives::MakePlane(), &basicMaterial);
 
 	Camera testCamera{};
 
 	testCamera.cameraTransform.TranslateLocal(vec3(0, 0, -6));
-	obj2.transform.TranslateLocal(vec3(0,-4,0));
-	obj1.transform.TranslateLocal(vec3(0,2,0));
-	obj3.transform.TranslateLocal(vec3(0,4,0));
+	//obj2.transform.TranslateLocal(vec3(0,-4,0));
+	//obj1.transform.TranslateLocal(vec3(0,2,0));
+	//obj3.transform.TranslateLocal(vec3(0,4,0));
 
 	Light testDirLight(vec3(1, 1, 1) / 2.f, vec3(-0.5f, 1, -0.5f));
 //Physics Setup
 	Physics* phys = new Physics();
-	Collider col1 = Collider(ColliderShapes::Sphere);
-	Rigidbody rb1 = Rigidbody(&obj1.transform, vec3(0, 0, 0), false, false, 1.f);
-	ColRbPair crp1 = ColRbPair(&col1, &rb1);
-	phys->AddColRbPair(&crp1);
-	Collider col2 = Collider(ColliderShapes::Plane);
-	Rigidbody rb2 = Rigidbody(&obj2.transform, vec3(0, 0, 0), false, false, 1.f);
-	ColRbPair crp2 = ColRbPair(&col2, &rb2);
-	phys->AddColRbPair(&crp2);
-	Collider col3 = Collider(ColliderShapes::Sphere);
-	Rigidbody rb3 = Rigidbody(&obj3.transform, vec3(0, -0.7f, 0), false, false, 3.f);
-	ColRbPair crp3 = ColRbPair(&col3, &rb3);
-	phys->AddColRbPair(&crp3);
+	//Collider col1 = Collider(ColliderShapes::Sphere);
+	//Rigidbody rb1 = Rigidbody(&obj1.transform, vec3(0, 0, 0), false, false, 1.f);
+	//ColRbPair crp1 = ColRbPair(&col1, &rb1);
+	//phys->AddColRbPair(&crp1);
+	//Collider col2 = Collider(ColliderShapes::Plane);
+	//Rigidbody rb2 = Rigidbody(&obj2.transform, vec3(0, 0, 0), false, false, 1.f);
+	//ColRbPair crp2 = ColRbPair(&col2, &rb2);
+	//phys->AddColRbPair(&crp2);
+	//Collider col3 = Collider(ColliderShapes::Sphere);
+	//Rigidbody rb3 = Rigidbody(&obj3.transform, vec3(0, -0.7f, 0), false, false, 3.f);
+	//ColRbPair crp3 = ColRbPair(&col3, &rb3);
+	//phys->AddColRbPair(&crp3);
 
 	Scene* scene = new Scene();
 	scene->AddToScene(&obj1);
-	scene->AddToScene(&obj2);
-	scene->AddToScene(&obj3);
+	//scene->AddToScene(&obj2);
+	//scene->AddToScene(&obj3);
 	scene->AddToScene(&testCamera);
 	scene->AddToScene(&testDirLight);
 

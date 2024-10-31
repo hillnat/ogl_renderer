@@ -19,7 +19,8 @@ layout (location = 7) uniform vec3 cameraPos;
 void main()
 {
     //Higher specular power = smaller specular
-    float specularPower = 0.001;
+    //float specularPower = 0.001;
+    float specularPower = 32;
     vec3 normal = normalize(vNorm);
     vec3 lightDir = normalize(dirlightDirection);
     vec3 viewDir = normalize(cameraPos - vPos.xyz);
