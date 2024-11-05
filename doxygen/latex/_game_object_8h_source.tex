@@ -1,0 +1,51 @@
+\hypertarget{_game_object_8h_source}{}\doxysection{Game\+Object.\+h}
+\label{_game_object_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/ogl\_renderer/engine/GameObject.h@{C:/Users/s239074/Documents/ogl\_renderer/ogl\_renderer/engine/GameObject.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Transform.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}../renderer/Renderer.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}../renderer/Material.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}../renderer/MeshImporter.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../physics/AABB.h"{}}}
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_object}{GameObject}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9 \textcolor{keyword}{public}:}
+\DoxyCodeLine{10     \mbox{\hyperlink{class_game_object}{GameObject}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* meshPath, \mbox{\hyperlink{class_material}{Material}}* material) \{}
+\DoxyCodeLine{11         this-\/>name = name;}
+\DoxyCodeLine{12         this-\/>mesh = MeshImporter::ImportFromFile(meshPath);}
+\DoxyCodeLine{13         this-\/>transform = \mbox{\hyperlink{class_transform}{Transform}}();}
+\DoxyCodeLine{14         this-\/>material = material;}
+\DoxyCodeLine{15     \}}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_game_object}{GameObject}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keyword}{const} \mbox{\hyperlink{struct_mesh}{Mesh}} mesh, \mbox{\hyperlink{class_material}{Material}}* material)}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         this-\/>name = name;}
+\DoxyCodeLine{19         this-\/>mesh = mesh;}
+\DoxyCodeLine{20         this-\/>transform = \mbox{\hyperlink{class_transform}{Transform}}();}
+\DoxyCodeLine{21         this-\/>material = material;}
+\DoxyCodeLine{22     \}}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_game_object}{GameObject}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_mesh}{Mesh}} mesh, \mbox{\hyperlink{class_material}{Material}}* material)}
+\DoxyCodeLine{24     \{}
+\DoxyCodeLine{25         this-\/>name = \textcolor{stringliteral}{"{}GameObject"{}};}
+\DoxyCodeLine{26         this-\/>mesh = mesh;}
+\DoxyCodeLine{27         this-\/>transform = \mbox{\hyperlink{class_transform}{Transform}}();}
+\DoxyCodeLine{28         this-\/>material = material;}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_game_object}{GameObject}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* meshPath, \mbox{\hyperlink{class_material}{Material}}* material)}
+\DoxyCodeLine{31     \{}
+\DoxyCodeLine{32         this-\/>name = \textcolor{stringliteral}{"{}GameObject"{}};}
+\DoxyCodeLine{33         this-\/>mesh = MeshImporter::ImportFromFile(meshPath);}
+\DoxyCodeLine{34         this-\/>transform = \mbox{\hyperlink{class_transform}{Transform}}();}
+\DoxyCodeLine{35         this-\/>material = material;}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37     \mbox{\hyperlink{class_game_object}{\string~GameObject}}() \{}
+\DoxyCodeLine{38         std::cout << name << \textcolor{stringliteral}{"{}is deconstructing"{}} << std::endl;}
+\DoxyCodeLine{39     \}}
+\DoxyCodeLine{40     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* name;}
+\DoxyCodeLine{41     \mbox{\hyperlink{class_transform}{Transform}} transform = \mbox{\hyperlink{class_transform}{Transform}}();}
+\DoxyCodeLine{42     \mbox{\hyperlink{struct_mesh}{Mesh}} mesh;}
+\DoxyCodeLine{43     \mbox{\hyperlink{class_material}{Material}}* material;}
+\DoxyCodeLine{44 \};}
+\DoxyCodeLine{45 }
+
+\end{DoxyCode}

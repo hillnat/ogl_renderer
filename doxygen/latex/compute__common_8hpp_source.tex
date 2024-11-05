@@ -1,0 +1,56 @@
+\hypertarget{compute__common_8hpp_source}{}\doxysection{compute\+\_\+common.\+hpp}
+\label{compute__common_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/detail/compute\_common.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/detail/compute\_common.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}setup.hpp"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }detail}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genFIType, \textcolor{keywordtype}{bool} \textcolor{comment}{/*signed*/}>}
+\DoxyCodeLine{10     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1compute__abs}{compute\_abs}}}
+\DoxyCodeLine{11     \{\};}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genFIType>}
+\DoxyCodeLine{14     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1compute__abs}{compute\_abs}}<genFIType, true>}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         GLM\_FUNC\_QUALIFIER GLM\_CONSTEXPR \textcolor{keyword}{static} genFIType call(genFIType x)}
+\DoxyCodeLine{17         \{}
+\DoxyCodeLine{18             GLM\_STATIC\_ASSERT(}
+\DoxyCodeLine{19                 std::numeric\_limits<genFIType>::is\_iec559 || GLM\_CONFIG\_UNRESTRICTED\_FLOAT || std::numeric\_limits<genFIType>::is\_signed,}
+\DoxyCodeLine{20                 \textcolor{stringliteral}{"{}'abs' only accept floating-\/point and integer scalar or vector inputs"{}});}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22             \textcolor{keywordflow}{return} x >= genFIType(0) ? x : -\/x;}
+\DoxyCodeLine{23             \textcolor{comment}{// TODO, perf comp with: *(((int *) \&x) + 1) \&= 0x7fffffff;}}
+\DoxyCodeLine{24         \}}
+\DoxyCodeLine{25     \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#if (GLM\_COMPILER \& GLM\_COMPILER\_CUDA) || (GLM\_COMPILER \& GLM\_COMPILER\_HIP)}}
+\DoxyCodeLine{28     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{29     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1compute__abs}{compute\_abs}}<float, true>}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         GLM\_FUNC\_QUALIFIER \textcolor{keyword}{static} \textcolor{keywordtype}{float} call(\textcolor{keywordtype}{float} x)}
+\DoxyCodeLine{32         \{}
+\DoxyCodeLine{33             \textcolor{keywordflow}{return} fabsf(x);}
+\DoxyCodeLine{34         \}}
+\DoxyCodeLine{35     \};}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genFIType>}
+\DoxyCodeLine{39     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1compute__abs}{compute\_abs}}<genFIType, false>}
+\DoxyCodeLine{40     \{}
+\DoxyCodeLine{41         GLM\_FUNC\_QUALIFIER GLM\_CONSTEXPR \textcolor{keyword}{static} genFIType call(genFIType x)}
+\DoxyCodeLine{42         \{}
+\DoxyCodeLine{43             GLM\_STATIC\_ASSERT(}
+\DoxyCodeLine{44                 (!std::numeric\_limits<genFIType>::is\_signed \&\& std::numeric\_limits<genFIType>::is\_integer),}
+\DoxyCodeLine{45                 \textcolor{stringliteral}{"{}'abs' only accept floating-\/point and integer scalar or vector inputs"{}});}
+\DoxyCodeLine{46             \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{47         \}}
+\DoxyCodeLine{48     \};}
+\DoxyCodeLine{49 \}\textcolor{comment}{//namespace detail}}
+\DoxyCodeLine{50 \}\textcolor{comment}{//namespace glm}}
+
+\end{DoxyCode}

@@ -1,0 +1,124 @@
+\hypertarget{out_2install_2x64-_release_2include_2assimp_2_s_g_spatial_sort_8h_source}{}\doxysection{SGSpatial\+Sort.\+h}
+\label{out_2install_2x64-_release_2include_2assimp_2_s_g_spatial_sort_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/SGSpatialSort.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/SGSpatialSort.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{10 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{11 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{14 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{15 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{18 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{19 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{20 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{21 \textcolor{comment}{}}
+\DoxyCodeLine{22 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{23 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{24 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{25 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{26 \textcolor{comment}{}}
+\DoxyCodeLine{27 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{28 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{29 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{30 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{31 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{32 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{33 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{34 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{35 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{36 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{37 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{38 \textcolor{comment}{}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#ifndef AI\_D3DSSPATIALSORT\_H\_INC}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define AI\_D3DSSPATIALSORT\_H\_INC}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include <assimp/types.h>}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}}    \{}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{64 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{65 \textcolor{keyword}{class }ASSIMP\_API SGSpatialSort \{}
+\DoxyCodeLine{66 \textcolor{keyword}{public}:}
+\DoxyCodeLine{67     SGSpatialSort();}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{73 \textcolor{comment}{}    \textcolor{keyword}{explicit} \mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_a03c330e8cdf61d8b33e6de8893e235e6}{SGSpatialSort}}(\textcolor{keyword}{const} std::vector<aiVector3D>\& vPositions);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{81 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_adfe82e1689fc782166019d8f7f9b35a5}{Add}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}}\& vPosition, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index,}
+\DoxyCodeLine{82         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} smoothingGroup);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{87 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_aeccf2ea7b7b5b0e2b3d22ff366c5fc59}{Prepare}}();}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{90     \mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_a66c432d51e9f027df1ee04d52ca1f5ad}{\string~SGSpatialSort}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{105 \textcolor{comment}{}    \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{106     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_ab06ebf9fdf866149666dbb5206111e87}{FindPositions}}( \textcolor{keyword}{const} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}}\& pPosition, uint32\_t pSG,}
+\DoxyCodeLine{107         \textcolor{keywordtype}{float} pRadius, std::vector<unsigned int>\& poResults,}
+\DoxyCodeLine{108         \textcolor{keywordtype}{bool} exactMatch = \textcolor{keyword}{false}) \textcolor{keyword}{const};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{112     \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} mPlaneNormal;}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{118 \textcolor{comment}{}    \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{119     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry}{Entry}} \{}
+\DoxyCodeLine{120         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mIndex;    }
+\DoxyCodeLine{121         \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} mPosition;   }
+\DoxyCodeLine{122         uint32\_t mSmoothGroups;}
+\DoxyCodeLine{123         \textcolor{keywordtype}{float} mDistance;        }
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125         \mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry}{Entry}}() AI\_NO\_EXCEPT}
+\DoxyCodeLine{126         : mIndex(0)}
+\DoxyCodeLine{127         , mPosition()}
+\DoxyCodeLine{128         , mSmoothGroups(0)}
+\DoxyCodeLine{129         , mDistance(0.0f) \{}
+\DoxyCodeLine{130             \textcolor{comment}{// empty}}
+\DoxyCodeLine{131         \}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133         Entry( \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pIndex, \textcolor{keyword}{const} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}}\& pPosition, \textcolor{keywordtype}{float} pDistance,uint32\_t pSG)}
+\DoxyCodeLine{134         : mIndex( pIndex)}
+\DoxyCodeLine{135         , mPosition( pPosition)}
+\DoxyCodeLine{136         , mSmoothGroups(pSG)}
+\DoxyCodeLine{137         , mDistance( pDistance) \{}
+\DoxyCodeLine{138             \textcolor{comment}{// empty}}
+\DoxyCodeLine{139         \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141         \textcolor{keywordtype}{bool} operator < (\textcolor{keyword}{const} Entry\& e)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{142             \textcolor{keywordflow}{return} mDistance < e.mDistance;}
+\DoxyCodeLine{143         \}}
+\DoxyCodeLine{144     \};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \textcolor{comment}{// all positions, sorted by distance to the sorting plane}}
+\DoxyCodeLine{147     std::vector<Entry> mPositions;}
+\DoxyCodeLine{148 \};}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \} \textcolor{comment}{// end of namespace Assimp}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_SPATIALSORT\_H\_INC}}
+
+\end{DoxyCode}

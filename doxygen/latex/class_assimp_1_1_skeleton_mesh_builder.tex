@@ -1,0 +1,172 @@
+\hypertarget{class_assimp_1_1_skeleton_mesh_builder}{}\doxysection{Assimp\+::Skeleton\+Mesh\+Builder Class Reference}
+\label{class_assimp_1_1_skeleton_mesh_builder}\index{Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}}
+
+
+{\ttfamily \#include $<$Skeleton\+Mesh\+Builder.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a4b10beaafb523e6b5e838f8a979a9759}{Skeleton\+Mesh\+Builder}} (\mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$p\+Scene, \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$root=nullptr, bool b\+Knobs\+Only=false)
+\item 
+\mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a4b10beaafb523e6b5e838f8a979a9759}{Skeleton\+Mesh\+Builder}} (\mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$p\+Scene, \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$root=nullptr, bool b\+Knobs\+Only=false)
+\item 
+\mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a4b10beaafb523e6b5e838f8a979a9759}{Skeleton\+Mesh\+Builder}} (\mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$p\+Scene, \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$root=nullptr, bool b\+Knobs\+Only=false)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_acd4f082475e9fe7c0d6f76025d961908}{Create\+Geometry}} (const \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$p\+Node)
+\item 
+\mbox{\hyperlink{structai_mesh}{ai\+Mesh}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a25f00032c6427bbb5045d0791ed03ddb}{Create\+Mesh}} ()
+\item 
+\mbox{\hyperlink{structai_material}{ai\+Material}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a4f3b0826232d2ae440c1fe3b278a4466}{Create\+Material}} ()
+\item 
+void \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_acd4f082475e9fe7c0d6f76025d961908}{Create\+Geometry}} (const \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$p\+Node)
+\item 
+\mbox{\hyperlink{structai_mesh}{ai\+Mesh}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a25f00032c6427bbb5045d0791ed03ddb}{Create\+Mesh}} ()
+\item 
+\mbox{\hyperlink{structai_material}{ai\+Material}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a4f3b0826232d2ae440c1fe3b278a4466}{Create\+Material}} ()
+\item 
+void \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_acd4f082475e9fe7c0d6f76025d961908}{Create\+Geometry}} (const \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$p\+Node)
+\item 
+\mbox{\hyperlink{structai_mesh}{ai\+Mesh}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a25f00032c6427bbb5045d0791ed03ddb}{Create\+Mesh}} ()
+\item 
+\mbox{\hyperlink{structai_material}{ai\+Material}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a4f3b0826232d2ae440c1fe3b278a4466}{Create\+Material}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This little helper class constructs a dummy mesh for a given scene the resembles the node hierarchy. This is useful for file formats that don\textquotesingle{}t carry any mesh data but only animation data. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_skeleton_mesh_builder_a4b10beaafb523e6b5e838f8a979a9759}\label{class_assimp_1_1_skeleton_mesh_builder_a4b10beaafb523e6b5e838f8a979a9759}} 
+\index{Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}!SkeletonMeshBuilder@{SkeletonMeshBuilder}}
+\index{SkeletonMeshBuilder@{SkeletonMeshBuilder}!Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}}
+\doxysubsubsection{\texorpdfstring{SkeletonMeshBuilder()}{SkeletonMeshBuilder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Assimp\+::\+Skeleton\+Mesh\+Builder\+::\+Skeleton\+Mesh\+Builder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$}]{p\+Scene,  }\item[{\mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$}]{root = {\ttfamily nullptr},  }\item[{bool}]{b\+Knobs\+Only = {\ttfamily false} }\end{DoxyParamCaption})}
+
+The constructor processes the given scene and adds a mesh there.
+
+Does nothing if the scene already has mesh data. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Scene} & The scene for which a skeleton mesh should be constructed. \\
+\hline
+{\em root} & The node to start with. nullptr is the scene root \\
+\hline
+{\em b\+Knobs\+Only} & Set this to true if you don\textquotesingle{}t want the connectors between the knobs representing the nodes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_skeleton_mesh_builder_a4b10beaafb523e6b5e838f8a979a9759}\label{class_assimp_1_1_skeleton_mesh_builder_a4b10beaafb523e6b5e838f8a979a9759}} 
+\index{Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}!SkeletonMeshBuilder@{SkeletonMeshBuilder}}
+\index{SkeletonMeshBuilder@{SkeletonMeshBuilder}!Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}}
+\doxysubsubsection{\texorpdfstring{SkeletonMeshBuilder()}{SkeletonMeshBuilder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Assimp\+::\+Skeleton\+Mesh\+Builder\+::\+Skeleton\+Mesh\+Builder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$}]{p\+Scene,  }\item[{\mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$}]{root = {\ttfamily nullptr},  }\item[{bool}]{b\+Knobs\+Only = {\ttfamily false} }\end{DoxyParamCaption})}
+
+The constructor processes the given scene and adds a mesh there.
+
+Does nothing if the scene already has mesh data. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Scene} & The scene for which a skeleton mesh should be constructed. \\
+\hline
+{\em root} & The node to start with. nullptr is the scene root \\
+\hline
+{\em b\+Knobs\+Only} & Set this to true if you don\textquotesingle{}t want the connectors between the knobs representing the nodes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_skeleton_mesh_builder_a4b10beaafb523e6b5e838f8a979a9759}\label{class_assimp_1_1_skeleton_mesh_builder_a4b10beaafb523e6b5e838f8a979a9759}} 
+\index{Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}!SkeletonMeshBuilder@{SkeletonMeshBuilder}}
+\index{SkeletonMeshBuilder@{SkeletonMeshBuilder}!Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}}
+\doxysubsubsection{\texorpdfstring{SkeletonMeshBuilder()}{SkeletonMeshBuilder()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Assimp\+::\+Skeleton\+Mesh\+Builder\+::\+Skeleton\+Mesh\+Builder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$}]{p\+Scene,  }\item[{\mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$}]{root = {\ttfamily nullptr},  }\item[{bool}]{b\+Knobs\+Only = {\ttfamily false} }\end{DoxyParamCaption})}
+
+The constructor processes the given scene and adds a mesh there.
+
+Does nothing if the scene already has mesh data. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Scene} & The scene for which a skeleton mesh should be constructed. \\
+\hline
+{\em root} & The node to start with. nullptr is the scene root \\
+\hline
+{\em b\+Knobs\+Only} & Set this to true if you don\textquotesingle{}t want the connectors between the knobs representing the nodes. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_skeleton_mesh_builder_acd4f082475e9fe7c0d6f76025d961908}\label{class_assimp_1_1_skeleton_mesh_builder_acd4f082475e9fe7c0d6f76025d961908}} 
+\index{Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}!CreateGeometry@{CreateGeometry}}
+\index{CreateGeometry@{CreateGeometry}!Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}}
+\doxysubsubsection{\texorpdfstring{CreateGeometry()}{CreateGeometry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Skeleton\+Mesh\+Builder\+::\+Create\+Geometry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$}]{p\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Recursively builds a simple mesh representation for the given node and also creates a joint for the node that affects this part of the mesh. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Node} & The node to build geometry for. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_skeleton_mesh_builder_acd4f082475e9fe7c0d6f76025d961908}\label{class_assimp_1_1_skeleton_mesh_builder_acd4f082475e9fe7c0d6f76025d961908}} 
+\index{Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}!CreateGeometry@{CreateGeometry}}
+\index{CreateGeometry@{CreateGeometry}!Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}}
+\doxysubsubsection{\texorpdfstring{CreateGeometry()}{CreateGeometry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Skeleton\+Mesh\+Builder\+::\+Create\+Geometry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$}]{p\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Recursively builds a simple mesh representation for the given node and also creates a joint for the node that affects this part of the mesh. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Node} & The node to build geometry for. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_skeleton_mesh_builder_acd4f082475e9fe7c0d6f76025d961908}\label{class_assimp_1_1_skeleton_mesh_builder_acd4f082475e9fe7c0d6f76025d961908}} 
+\index{Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}!CreateGeometry@{CreateGeometry}}
+\index{CreateGeometry@{CreateGeometry}!Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}}
+\doxysubsubsection{\texorpdfstring{CreateGeometry()}{CreateGeometry()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Skeleton\+Mesh\+Builder\+::\+Create\+Geometry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$}]{p\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Recursively builds a simple mesh representation for the given node and also creates a joint for the node that affects this part of the mesh. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Node} & The node to build geometry for. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_skeleton_mesh_builder_a4f3b0826232d2ae440c1fe3b278a4466}\label{class_assimp_1_1_skeleton_mesh_builder_a4f3b0826232d2ae440c1fe3b278a4466}} 
+\index{Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}!CreateMaterial@{CreateMaterial}}
+\index{CreateMaterial@{CreateMaterial}!Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}}
+\doxysubsubsection{\texorpdfstring{CreateMaterial()}{CreateMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structai_material}{ai\+Material}} $\ast$ Assimp\+::\+Skeleton\+Mesh\+Builder\+::\+Create\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Creates a dummy material and returns it. \mbox{\Hypertarget{class_assimp_1_1_skeleton_mesh_builder_a4f3b0826232d2ae440c1fe3b278a4466}\label{class_assimp_1_1_skeleton_mesh_builder_a4f3b0826232d2ae440c1fe3b278a4466}} 
+\index{Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}!CreateMaterial@{CreateMaterial}}
+\index{CreateMaterial@{CreateMaterial}!Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}}
+\doxysubsubsection{\texorpdfstring{CreateMaterial()}{CreateMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structai_material}{ai\+Material}} $\ast$ Assimp\+::\+Skeleton\+Mesh\+Builder\+::\+Create\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Creates a dummy material and returns it. \mbox{\Hypertarget{class_assimp_1_1_skeleton_mesh_builder_a4f3b0826232d2ae440c1fe3b278a4466}\label{class_assimp_1_1_skeleton_mesh_builder_a4f3b0826232d2ae440c1fe3b278a4466}} 
+\index{Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}!CreateMaterial@{CreateMaterial}}
+\index{CreateMaterial@{CreateMaterial}!Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}}
+\doxysubsubsection{\texorpdfstring{CreateMaterial()}{CreateMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structai_material}{ai\+Material}} $\ast$ Assimp\+::\+Skeleton\+Mesh\+Builder\+::\+Create\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Creates a dummy material and returns it. \mbox{\Hypertarget{class_assimp_1_1_skeleton_mesh_builder_a25f00032c6427bbb5045d0791ed03ddb}\label{class_assimp_1_1_skeleton_mesh_builder_a25f00032c6427bbb5045d0791ed03ddb}} 
+\index{Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}!CreateMesh@{CreateMesh}}
+\index{CreateMesh@{CreateMesh}!Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}}
+\doxysubsubsection{\texorpdfstring{CreateMesh()}{CreateMesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structai_mesh}{ai\+Mesh}} $\ast$ Assimp\+::\+Skeleton\+Mesh\+Builder\+::\+Create\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Creates the mesh from the internally accumulated stuff and returns it. \mbox{\Hypertarget{class_assimp_1_1_skeleton_mesh_builder_a25f00032c6427bbb5045d0791ed03ddb}\label{class_assimp_1_1_skeleton_mesh_builder_a25f00032c6427bbb5045d0791ed03ddb}} 
+\index{Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}!CreateMesh@{CreateMesh}}
+\index{CreateMesh@{CreateMesh}!Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}}
+\doxysubsubsection{\texorpdfstring{CreateMesh()}{CreateMesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structai_mesh}{ai\+Mesh}} $\ast$ Assimp\+::\+Skeleton\+Mesh\+Builder\+::\+Create\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Creates the mesh from the internally accumulated stuff and returns it. \mbox{\Hypertarget{class_assimp_1_1_skeleton_mesh_builder_a25f00032c6427bbb5045d0791ed03ddb}\label{class_assimp_1_1_skeleton_mesh_builder_a25f00032c6427bbb5045d0791ed03ddb}} 
+\index{Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}!CreateMesh@{CreateMesh}}
+\index{CreateMesh@{CreateMesh}!Assimp::SkeletonMeshBuilder@{Assimp::SkeletonMeshBuilder}}
+\doxysubsubsection{\texorpdfstring{CreateMesh()}{CreateMesh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structai_mesh}{ai\+Mesh}} $\ast$ Assimp\+::\+Skeleton\+Mesh\+Builder\+::\+Create\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Creates the mesh from the internally accumulated stuff and returns it. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/\mbox{\hyperlink{include_2assimp_2_skeleton_mesh_builder_8h}{Skeleton\+Mesh\+Builder.\+h}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Debug/include/assimp/\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_skeleton_mesh_builder_8h}{Skeleton\+Mesh\+Builder.\+h}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Release/include/assimp/\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_skeleton_mesh_builder_8h}{Skeleton\+Mesh\+Builder.\+h}}\end{DoxyCompactItemize}

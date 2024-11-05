@@ -1,0 +1,534 @@
+\hypertarget{out_2install_2x64-_debug_2include_2assimp_2metadata_8h_source}{}\doxysection{metadata.\+h}
+\label{out_2install_2x64-_debug_2include_2assimp_2metadata_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/metadata.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/metadata.h}}
+\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2metadata_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{12 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{17 \textcolor{comment}{}}
+\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{27 \textcolor{comment}{}}
+\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef AI\_METADATA\_H\_INC}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define AI\_METADATA\_H\_INC}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#if defined(\_MSC\_VER) \&\& (\_MSC\_VER <= 1500)}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include "{}Compiler/pstdint.h"{}}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#include <assimp/quaternion.h>}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{65 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{66 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{include_2assimp_2metadata_8h_aa910906c37416da57bb36335a4d04232}{aiMetadataType}} \{}
+\DoxyCodeLine{67     AI\_BOOL = 0,}
+\DoxyCodeLine{68     AI\_INT32 = 1,}
+\DoxyCodeLine{69     AI\_UINT64 = 2,}
+\DoxyCodeLine{70     AI\_FLOAT = 3,}
+\DoxyCodeLine{71     AI\_DOUBLE = 4,}
+\DoxyCodeLine{72     AI\_AISTRING = 5,}
+\DoxyCodeLine{73     AI\_AIVECTOR3D = 6,}
+\DoxyCodeLine{74     AI\_AIMETADATA = 7,}
+\DoxyCodeLine{75     AI\_INT64 = 8,}
+\DoxyCodeLine{76     AI\_UINT32 = 9,}
+\DoxyCodeLine{77     AI\_META\_MAX = 10,}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{80     FORCE\_32BIT = INT\_MAX}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{82 \} \mbox{\hyperlink{include_2assimp_2metadata_8h_aa910906c37416da57bb36335a4d04232}{aiMetadataType}};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{90 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{91 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_metadata_entry}{aiMetadataEntry}} \{}
+\DoxyCodeLine{92     \mbox{\hyperlink{include_2assimp_2metadata_8h_aa910906c37416da57bb36335a4d04232}{aiMetadataType}} mType;}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} *mData;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{96     \mbox{\hyperlink{structai_metadata_entry}{aiMetadataEntry}}() :}
+\DoxyCodeLine{97             mType(AI\_META\_MAX),}
+\DoxyCodeLine{98             mData( \textcolor{keyword}{nullptr} ) \{}
+\DoxyCodeLine{99         \textcolor{comment}{// empty}}
+\DoxyCodeLine{100     \}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{102 \};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_metadata}{aiMetadata}};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{114 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{keyword}{inline} \mbox{\hyperlink{include_2assimp_2metadata_8h_aa910906c37416da57bb36335a4d04232}{aiMetadataType}} GetAiType(\textcolor{keyword}{const} \textcolor{keywordtype}{bool} \&) \{}
+\DoxyCodeLine{117     \textcolor{keywordflow}{return} AI\_BOOL;}
+\DoxyCodeLine{118 \}}
+\DoxyCodeLine{119 \textcolor{keyword}{inline} \mbox{\hyperlink{include_2assimp_2metadata_8h_aa910906c37416da57bb36335a4d04232}{aiMetadataType}} GetAiType(int32\_t) \{}
+\DoxyCodeLine{120     \textcolor{keywordflow}{return} AI\_INT32;}
+\DoxyCodeLine{121 \}}
+\DoxyCodeLine{122 \textcolor{keyword}{inline} \mbox{\hyperlink{include_2assimp_2metadata_8h_aa910906c37416da57bb36335a4d04232}{aiMetadataType}} GetAiType(\textcolor{keyword}{const} uint64\_t \&) \{}
+\DoxyCodeLine{123     \textcolor{keywordflow}{return} AI\_UINT64;}
+\DoxyCodeLine{124 \}}
+\DoxyCodeLine{125 \textcolor{keyword}{inline} \mbox{\hyperlink{include_2assimp_2metadata_8h_aa910906c37416da57bb36335a4d04232}{aiMetadataType}} GetAiType(\textcolor{keyword}{const} \textcolor{keywordtype}{float} \&) \{}
+\DoxyCodeLine{126     \textcolor{keywordflow}{return} AI\_FLOAT;}
+\DoxyCodeLine{127 \}}
+\DoxyCodeLine{128 \textcolor{keyword}{inline} \mbox{\hyperlink{include_2assimp_2metadata_8h_aa910906c37416da57bb36335a4d04232}{aiMetadataType}} GetAiType(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \&) \{}
+\DoxyCodeLine{129     \textcolor{keywordflow}{return} AI\_DOUBLE;}
+\DoxyCodeLine{130 \}}
+\DoxyCodeLine{131 \textcolor{keyword}{inline} \mbox{\hyperlink{include_2assimp_2metadata_8h_aa910906c37416da57bb36335a4d04232}{aiMetadataType}} GetAiType(\textcolor{keyword}{const} \mbox{\hyperlink{structai_string}{aiString}} \&) \{}
+\DoxyCodeLine{132     \textcolor{keywordflow}{return} AI\_AISTRING;}
+\DoxyCodeLine{133 \}}
+\DoxyCodeLine{134 \textcolor{keyword}{inline} \mbox{\hyperlink{include_2assimp_2metadata_8h_aa910906c37416da57bb36335a4d04232}{aiMetadataType}} GetAiType(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} \&) \{}
+\DoxyCodeLine{135     \textcolor{keywordflow}{return} AI\_AIVECTOR3D;}
+\DoxyCodeLine{136 \}}
+\DoxyCodeLine{137 \textcolor{keyword}{inline} \mbox{\hyperlink{include_2assimp_2metadata_8h_aa910906c37416da57bb36335a4d04232}{aiMetadataType}} GetAiType(\textcolor{keyword}{const} \mbox{\hyperlink{structai_metadata}{aiMetadata}} \&) \{}
+\DoxyCodeLine{138     \textcolor{keywordflow}{return} AI\_AIMETADATA;}
+\DoxyCodeLine{139 \}}
+\DoxyCodeLine{140 \textcolor{keyword}{inline} \mbox{\hyperlink{include_2assimp_2metadata_8h_aa910906c37416da57bb36335a4d04232}{aiMetadataType}} GetAiType(\textcolor{keyword}{const} int64\_t \&) \{}
+\DoxyCodeLine{141     \textcolor{keywordflow}{return} AI\_INT64;}
+\DoxyCodeLine{142 \}}
+\DoxyCodeLine{143 \textcolor{keyword}{inline} \mbox{\hyperlink{include_2assimp_2metadata_8h_aa910906c37416da57bb36335a4d04232}{aiMetadataType}} GetAiType(\textcolor{keyword}{const} uint32\_t \&) \{}
+\DoxyCodeLine{144     \textcolor{keywordflow}{return} AI\_UINT32;}
+\DoxyCodeLine{145 \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{155 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{156 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_metadata}{aiMetadata}} \{}
+\DoxyCodeLine{158     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}};}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{161     C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} *\mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}};}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{165     C\_STRUCT \mbox{\hyperlink{structai_metadata_entry}{aiMetadataEntry}} *\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}};}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{172     \mbox{\hyperlink{structai_metadata}{aiMetadata}}() AI\_NO\_EXCEPT}
+\DoxyCodeLine{173             : \mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}(0),}
+\DoxyCodeLine{174               \mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}}(\textcolor{keywordtype}{nullptr}),}
+\DoxyCodeLine{175               \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}(\textcolor{keywordtype}{nullptr}) \{}
+\DoxyCodeLine{176         \textcolor{comment}{// empty}}
+\DoxyCodeLine{177     \}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179     \mbox{\hyperlink{structai_metadata}{aiMetadata}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_metadata}{aiMetadata}} \&rhs) :}
+\DoxyCodeLine{180             \mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}(rhs.\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}), \mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}}(nullptr), \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}(nullptr) \{}
+\DoxyCodeLine{181         \mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}} = \textcolor{keyword}{new} \mbox{\hyperlink{structai_string}{aiString}}[\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}];}
+\DoxyCodeLine{182         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < static\_cast<size\_t>(\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}); ++i) \{}
+\DoxyCodeLine{183             \mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}}[i] = rhs.\mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}}[i];}
+\DoxyCodeLine{184         \}}
+\DoxyCodeLine{185         \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}} = \textcolor{keyword}{new} \mbox{\hyperlink{structai_metadata_entry}{aiMetadataEntry}}[\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}];}
+\DoxyCodeLine{186         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < static\_cast<size\_t>(\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}); ++i) \{}
+\DoxyCodeLine{187             \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mType = rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mType;}
+\DoxyCodeLine{188             \textcolor{keywordflow}{switch} (rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mType) \{}
+\DoxyCodeLine{189             \textcolor{keywordflow}{case} AI\_BOOL:}
+\DoxyCodeLine{190                 \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData = \textcolor{keyword}{new} bool;}
+\DoxyCodeLine{191                 ::memcpy(\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData, rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{bool}));}
+\DoxyCodeLine{192                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{193             \textcolor{keywordflow}{case} AI\_INT32: \{}
+\DoxyCodeLine{194                 \mbox{\hyperlink{group__gtc__type__precision_gab870c0eb6f525b0c8c4716762e0fc3a8}{int32\_t}} v;}
+\DoxyCodeLine{195                 ::memcpy(\&v, rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData, \textcolor{keyword}{sizeof}(int32\_t));}
+\DoxyCodeLine{196                 \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData = \textcolor{keyword}{new} \mbox{\hyperlink{group__gtc__type__precision_gab870c0eb6f525b0c8c4716762e0fc3a8}{int32\_t}}(v);}
+\DoxyCodeLine{197             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{198             \textcolor{keywordflow}{case} AI\_UINT64: \{}
+\DoxyCodeLine{199                 \mbox{\hyperlink{group__gtc__type__precision_ga058f57c19e1befdcf12498944bd73e69}{uint64\_t}} v;}
+\DoxyCodeLine{200                 ::memcpy(\&v, rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData, \textcolor{keyword}{sizeof}(uint64\_t));}
+\DoxyCodeLine{201                 \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData = \textcolor{keyword}{new} \mbox{\hyperlink{group__gtc__type__precision_ga058f57c19e1befdcf12498944bd73e69}{uint64\_t}}(v);}
+\DoxyCodeLine{202             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{203             \textcolor{keywordflow}{case} AI\_FLOAT: \{}
+\DoxyCodeLine{204                 \textcolor{keywordtype}{float} v;}
+\DoxyCodeLine{205                 ::memcpy(\&v, rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}));}
+\DoxyCodeLine{206                 \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData = \textcolor{keyword}{new} float(v);}
+\DoxyCodeLine{207             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{208             \textcolor{keywordflow}{case} AI\_DOUBLE: \{}
+\DoxyCodeLine{209                 \textcolor{keywordtype}{double} v;}
+\DoxyCodeLine{210                 ::memcpy(\&v, rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{211                 \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData = \textcolor{keyword}{new} double(v);}
+\DoxyCodeLine{212             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{213             \textcolor{keywordflow}{case} AI\_AISTRING: \{}
+\DoxyCodeLine{214                 \mbox{\hyperlink{structai_string}{aiString}} v;}
+\DoxyCodeLine{215                 rhs.Get<\mbox{\hyperlink{structai_string}{aiString}}>(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(i), v);}
+\DoxyCodeLine{216                 \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData = \textcolor{keyword}{new} \mbox{\hyperlink{structai_string}{aiString}}(v);}
+\DoxyCodeLine{217             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{218             \textcolor{keywordflow}{case} AI\_AIVECTOR3D: \{}
+\DoxyCodeLine{219                 \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} v;}
+\DoxyCodeLine{220                 rhs.Get<\mbox{\hyperlink{structai_vector3_d}{aiVector3D}}>(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(i), v);}
+\DoxyCodeLine{221                 \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData = \textcolor{keyword}{new} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}}(v);}
+\DoxyCodeLine{222             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{223             \textcolor{keywordflow}{case} AI\_AIMETADATA: \{}
+\DoxyCodeLine{224                 \mbox{\hyperlink{structai_metadata}{aiMetadata}} v;}
+\DoxyCodeLine{225                 rhs.Get<\mbox{\hyperlink{structai_metadata}{aiMetadata}}>(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(i), v);}
+\DoxyCodeLine{226                 \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData = \textcolor{keyword}{new} \mbox{\hyperlink{structai_metadata}{aiMetadata}}(v);}
+\DoxyCodeLine{227             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{228             \textcolor{keywordflow}{case} AI\_INT64: \{}
+\DoxyCodeLine{229                 \mbox{\hyperlink{group__gtc__type__precision_ga6abb23fbf4e39c50ec5341160b5da5ab}{int64\_t}} v;}
+\DoxyCodeLine{230                 ::memcpy(\&v, rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData, \textcolor{keyword}{sizeof}(int64\_t));}
+\DoxyCodeLine{231                 \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData = \textcolor{keyword}{new} \mbox{\hyperlink{group__gtc__type__precision_ga6abb23fbf4e39c50ec5341160b5da5ab}{int64\_t}}(v);}
+\DoxyCodeLine{232             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{233             \textcolor{keywordflow}{case} AI\_UINT32: \{}
+\DoxyCodeLine{234                 \mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}} v;}
+\DoxyCodeLine{235                 ::memcpy(\&v, rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData, \textcolor{keyword}{sizeof}(uint32\_t));}
+\DoxyCodeLine{236                 \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData = \textcolor{keyword}{new} \mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}}(v);}
+\DoxyCodeLine{237             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{239             \textcolor{keywordflow}{case} FORCE\_32BIT:}
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{241             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{242                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{243             \}}
+\DoxyCodeLine{244         \}}
+\DoxyCodeLine{245     \}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247     \mbox{\hyperlink{structai_metadata}{aiMetadata}} \&operator=(\mbox{\hyperlink{structai_metadata}{aiMetadata}} rhs) \{}
+\DoxyCodeLine{248         \textcolor{keyword}{using }std::swap;}
+\DoxyCodeLine{249         swap(\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}, rhs.\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}});}
+\DoxyCodeLine{250         swap(\mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}}, rhs.\mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}});}
+\DoxyCodeLine{251         swap(\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}, rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}});}
+\DoxyCodeLine{252         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{253     \}}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{258     \mbox{\hyperlink{structai_metadata}{\string~aiMetadata}}() \{}
+\DoxyCodeLine{259         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}};}
+\DoxyCodeLine{260         \mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{261         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}) \{}
+\DoxyCodeLine{262             \textcolor{comment}{// Delete each metadata entry}}
+\DoxyCodeLine{263             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0; i < \mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}; ++i) \{}
+\DoxyCodeLine{264                 \textcolor{keywordtype}{void} *data = \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData;}
+\DoxyCodeLine{265                 \textcolor{keywordflow}{switch} (\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mType) \{}
+\DoxyCodeLine{266                 \textcolor{keywordflow}{case} AI\_BOOL:}
+\DoxyCodeLine{267                     \textcolor{keyword}{delete} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool} *\textcolor{keyword}{>}(data);}
+\DoxyCodeLine{268                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{269                 \textcolor{keywordflow}{case} AI\_INT32:}
+\DoxyCodeLine{270                     \textcolor{keyword}{delete} \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{group__gtc__type__precision_gab870c0eb6f525b0c8c4716762e0fc3a8}{int32\_t}} *\textcolor{keyword}{>}(data);}
+\DoxyCodeLine{271                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{272                 \textcolor{keywordflow}{case} AI\_UINT64:}
+\DoxyCodeLine{273                     \textcolor{keyword}{delete} \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{group__gtc__type__precision_ga058f57c19e1befdcf12498944bd73e69}{uint64\_t}} *\textcolor{keyword}{>}(data);}
+\DoxyCodeLine{274                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{275                 \textcolor{keywordflow}{case} AI\_FLOAT:}
+\DoxyCodeLine{276                     \textcolor{keyword}{delete} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float} *\textcolor{keyword}{>}(data);}
+\DoxyCodeLine{277                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{278                 \textcolor{keywordflow}{case} AI\_DOUBLE:}
+\DoxyCodeLine{279                     \textcolor{keyword}{delete} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double} *\textcolor{keyword}{>}(data);}
+\DoxyCodeLine{280                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{281                 \textcolor{keywordflow}{case} AI\_AISTRING:}
+\DoxyCodeLine{282                     \textcolor{keyword}{delete} \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{structai_string}{aiString}} *\textcolor{keyword}{>}(data);}
+\DoxyCodeLine{283                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{284                 \textcolor{keywordflow}{case} AI\_AIVECTOR3D:}
+\DoxyCodeLine{285                     \textcolor{keyword}{delete} \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\textcolor{keyword}{>}(data);}
+\DoxyCodeLine{286                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{287                 \textcolor{keywordflow}{case} AI\_AIMETADATA:}
+\DoxyCodeLine{288                     \textcolor{keyword}{delete} \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{structai_metadata}{aiMetadata}} *\textcolor{keyword}{>}(data);}
+\DoxyCodeLine{289                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{290                 \textcolor{keywordflow}{case} AI\_INT64:}
+\DoxyCodeLine{291                     \textcolor{keyword}{delete} \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{group__gtc__type__precision_ga6abb23fbf4e39c50ec5341160b5da5ab}{int64\_t}} *\textcolor{keyword}{>}(data);}
+\DoxyCodeLine{292                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{293                 \textcolor{keywordflow}{case} AI\_UINT32:}
+\DoxyCodeLine{294                     \textcolor{keyword}{delete} \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}} *\textcolor{keyword}{>}(data);}
+\DoxyCodeLine{295                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{297                 \textcolor{keywordflow}{case} FORCE\_32BIT:}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{299                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{300                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{301                 \}}
+\DoxyCodeLine{302             \}}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304             \textcolor{comment}{// Delete the metadata array}}
+\DoxyCodeLine{305             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}};}
+\DoxyCodeLine{306             \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{307         \}}
+\DoxyCodeLine{308     \}}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{314     \textcolor{keyword}{static} \textcolor{keyword}{inline} \mbox{\hyperlink{structai_metadata}{aiMetadata}} *Alloc(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} numProperties) \{}
+\DoxyCodeLine{315         \textcolor{keywordflow}{if} (0 == numProperties) \{}
+\DoxyCodeLine{316             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{317         \}}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319         \mbox{\hyperlink{structai_metadata}{aiMetadata}} *data = \textcolor{keyword}{new} \mbox{\hyperlink{structai_metadata}{aiMetadata}};}
+\DoxyCodeLine{320         data-\/>\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}} = numProperties;}
+\DoxyCodeLine{321         data-\/>\mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}} = \textcolor{keyword}{new} \mbox{\hyperlink{structai_string}{aiString}}[data-\/>\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}]();}
+\DoxyCodeLine{322         data-\/>\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}} = \textcolor{keyword}{new} \mbox{\hyperlink{structai_metadata_entry}{aiMetadataEntry}}[data-\/>\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}]();}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324         \textcolor{keywordflow}{return} data;}
+\DoxyCodeLine{325     \}}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{330     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} Dealloc(\mbox{\hyperlink{structai_metadata}{aiMetadata}} *metadata) \{}
+\DoxyCodeLine{331         \textcolor{keyword}{delete} metadata;}
+\DoxyCodeLine{332     \}}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{335     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} Add(\textcolor{keyword}{const} std::string \&key, \textcolor{keyword}{const} T \&value) \{}
+\DoxyCodeLine{336         \mbox{\hyperlink{structai_string}{aiString}} *new\_keys = \textcolor{keyword}{new} \mbox{\hyperlink{structai_string}{aiString}}[\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}} + 1];}
+\DoxyCodeLine{337         \mbox{\hyperlink{structai_metadata_entry}{aiMetadataEntry}} *new\_values = \textcolor{keyword}{new} \mbox{\hyperlink{structai_metadata_entry}{aiMetadataEntry}}[\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}} + 1];}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}; ++i) \{}
+\DoxyCodeLine{340             new\_keys[i] = \mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}}[i];}
+\DoxyCodeLine{341             new\_values[i] = \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i];}
+\DoxyCodeLine{342         \}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}};}
+\DoxyCodeLine{345         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}};}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{347         \mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}} = new\_keys;}
+\DoxyCodeLine{348         \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}} = new\_values;}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350         \mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}++;}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{352         Set(\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}} -\/ 1, key, value);}
+\DoxyCodeLine{353     \}}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{356     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} Set(\textcolor{keywordtype}{unsigned} index, \textcolor{keyword}{const} std::string \&key, \textcolor{keyword}{const} T \&value) \{}
+\DoxyCodeLine{357         \textcolor{comment}{// In range assertion}}
+\DoxyCodeLine{358         \textcolor{keywordflow}{if} (index >= \mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}) \{}
+\DoxyCodeLine{359             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{360         \}}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362         \textcolor{comment}{// Ensure that we have a valid key.}}
+\DoxyCodeLine{363         \textcolor{keywordflow}{if} (key.empty()) \{}
+\DoxyCodeLine{364             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{365         \}}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367         \textcolor{comment}{// Set metadata key}}
+\DoxyCodeLine{368         \mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}}[index] = key;}
+\DoxyCodeLine{369 }
+\DoxyCodeLine{370         \textcolor{comment}{// Set metadata type}}
+\DoxyCodeLine{371         \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[index].mType = GetAiType(value);}
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373         \textcolor{comment}{// Copy the given value to the dynamic storage}}
+\DoxyCodeLine{374         \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} != \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[index].mData \&\& AI\_AIMETADATA != \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[index].mType) \{}
+\DoxyCodeLine{375             ::memcpy(\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[index].mData, \&value, \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{376         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} != \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[index].mData \&\& AI\_AIMETADATA == \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[index].mType) \{}
+\DoxyCodeLine{377             *\textcolor{keyword}{static\_cast<}T *\textcolor{keyword}{>}(\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[index].mData) = value;}
+\DoxyCodeLine{378         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{379             \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} != \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[index].mData) \{}
+\DoxyCodeLine{380                 \textcolor{keyword}{delete} \textcolor{keyword}{static\_cast<}T *\textcolor{keyword}{>}(\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[index].mData);}
+\DoxyCodeLine{381                 \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[index].mData = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{382             \}}
+\DoxyCodeLine{383             \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[index].mData = \textcolor{keyword}{new} T(value);}
+\DoxyCodeLine{384         \}}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{386         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{387     \}}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{390     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} Set(\textcolor{keyword}{const} std::string \&key, \textcolor{keyword}{const} T \&value) \{}
+\DoxyCodeLine{391         \textcolor{keywordflow}{if} (key.empty()) \{}
+\DoxyCodeLine{392             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{393         \}}
+\DoxyCodeLine{394 }
+\DoxyCodeLine{395         \textcolor{keywordtype}{bool} result = \textcolor{keyword}{false};}
+\DoxyCodeLine{396         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}; ++i) \{}
+\DoxyCodeLine{397             \textcolor{keywordflow}{if} (key == \mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}}[i].C\_Str()) \{}
+\DoxyCodeLine{398                 Set(i, key, value);}
+\DoxyCodeLine{399                 result = \textcolor{keyword}{true};}
+\DoxyCodeLine{400                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{401             \}}
+\DoxyCodeLine{402         \}}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{405     \}}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{408     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} Get(\textcolor{keywordtype}{unsigned} index, T \&value)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{409         \textcolor{comment}{// In range assertion}}
+\DoxyCodeLine{410         \textcolor{keywordflow}{if} (index >= \mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}) \{}
+\DoxyCodeLine{411             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{412         \}}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414         \textcolor{comment}{// Return false if the output data type does}}
+\DoxyCodeLine{415         \textcolor{comment}{// not match the found value's data type}}
+\DoxyCodeLine{416         \textcolor{keywordflow}{if} (GetAiType(value) != \mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[index].mType) \{}
+\DoxyCodeLine{417             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{418         \}}
+\DoxyCodeLine{419 }
+\DoxyCodeLine{420         \textcolor{comment}{// Otherwise, output the found value and}}
+\DoxyCodeLine{421         \textcolor{comment}{// return true}}
+\DoxyCodeLine{422         value = *\textcolor{keyword}{static\_cast<}T *\textcolor{keyword}{>}(\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[index].mData);}
+\DoxyCodeLine{423 }
+\DoxyCodeLine{424         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{425     \}}
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{428     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} Get(\textcolor{keyword}{const} \mbox{\hyperlink{structai_string}{aiString}} \&key, T \&value)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{429         \textcolor{comment}{// Search for the given key}}
+\DoxyCodeLine{430         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}; ++i) \{}
+\DoxyCodeLine{431             \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}}[i] == key) \{}
+\DoxyCodeLine{432                 \textcolor{keywordflow}{return} Get(i, value);}
+\DoxyCodeLine{433             \}}
+\DoxyCodeLine{434         \}}
+\DoxyCodeLine{435         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{436     \}}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{438     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{439     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} Get(\textcolor{keyword}{const} std::string \&key, T \&value)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{440         \textcolor{keywordflow}{return} Get(\mbox{\hyperlink{structai_string}{aiString}}(key), value);}
+\DoxyCodeLine{441     \}}
+\DoxyCodeLine{442 }
+\DoxyCodeLine{448     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} Get(\textcolor{keywordtype}{size\_t} index, \textcolor{keyword}{const} \mbox{\hyperlink{structai_string}{aiString}} *\&key, \textcolor{keyword}{const} \mbox{\hyperlink{structai_metadata_entry}{aiMetadataEntry}} *\&entry)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{449         \textcolor{keywordflow}{if} (index >= \mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}) \{}
+\DoxyCodeLine{450             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{451         \}}
+\DoxyCodeLine{452 }
+\DoxyCodeLine{453         key = \&\mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}}[index];}
+\DoxyCodeLine{454         entry = \&\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[index];}
+\DoxyCodeLine{455 }
+\DoxyCodeLine{456         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{457     \}}
+\DoxyCodeLine{458 }
+\DoxyCodeLine{461     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} HasKey(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *key)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{462         \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == key) \{}
+\DoxyCodeLine{463             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{464         \}}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{466         \textcolor{comment}{// Search for the given key}}
+\DoxyCodeLine{467         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}; ++i) \{}
+\DoxyCodeLine{468             \textcolor{keywordflow}{if} (0 == strncmp(\mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}}[i].C\_Str(), key, \mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}}[i].length)) \{}
+\DoxyCodeLine{469                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{470             \}}
+\DoxyCodeLine{471         \}}
+\DoxyCodeLine{472         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{473     \}}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475     \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} CompareKeys(\textcolor{keyword}{const} \mbox{\hyperlink{structai_metadata}{aiMetadata}} \&lhs, \textcolor{keyword}{const} \mbox{\hyperlink{structai_metadata}{aiMetadata}} \&rhs) \{}
+\DoxyCodeLine{476         \textcolor{keywordflow}{if} (lhs.\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}} != rhs.\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}) \{}
+\DoxyCodeLine{477             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{478         \}}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < lhs.\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}; ++i) \{}
+\DoxyCodeLine{481             \textcolor{keywordflow}{if} (lhs.\mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}}[i] != rhs.\mbox{\hyperlink{structai_metadata_a7e35ba6bd06869df68b0cbf95fa236c2}{mKeys}}[i]) \{}
+\DoxyCodeLine{482                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{483             \}}
+\DoxyCodeLine{484         \}}
+\DoxyCodeLine{485         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{486     \}}
+\DoxyCodeLine{487 }
+\DoxyCodeLine{488     \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} CompareValues(\textcolor{keyword}{const} \mbox{\hyperlink{structai_metadata}{aiMetadata}} \&lhs, \textcolor{keyword}{const} \mbox{\hyperlink{structai_metadata}{aiMetadata}} \&rhs) \{}
+\DoxyCodeLine{489         \textcolor{keywordflow}{if} (lhs.\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}} != rhs.\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}) \{}
+\DoxyCodeLine{490             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{491         \}}
+\DoxyCodeLine{492 }
+\DoxyCodeLine{493         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < lhs.\mbox{\hyperlink{structai_metadata_a32c4587c53dd402a5878ffc94088e528}{mNumProperties}}; ++i) \{}
+\DoxyCodeLine{494             \textcolor{keywordflow}{if} (lhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mType != rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mType) \{}
+\DoxyCodeLine{495                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{496             \}}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498             \textcolor{keywordflow}{switch} (lhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mType) \{}
+\DoxyCodeLine{499             \textcolor{keywordflow}{case} AI\_BOOL: \{}
+\DoxyCodeLine{500                 \textcolor{keywordflow}{if} (*\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool} *\textcolor{keyword}{>}(lhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData) != *\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool} *\textcolor{keyword}{>}(rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData)) \{}
+\DoxyCodeLine{501                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{502                 \}}
+\DoxyCodeLine{503             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{504             \textcolor{keywordflow}{case} AI\_INT32: \{}
+\DoxyCodeLine{505                 \textcolor{keywordflow}{if} (*\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{group__gtc__type__precision_gab870c0eb6f525b0c8c4716762e0fc3a8}{int32\_t}} *\textcolor{keyword}{>}(lhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData) != *\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{group__gtc__type__precision_gab870c0eb6f525b0c8c4716762e0fc3a8}{int32\_t}} *\textcolor{keyword}{>}(rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData)) \{}
+\DoxyCodeLine{506                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{507                 \}}
+\DoxyCodeLine{508             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{509             \textcolor{keywordflow}{case} AI\_UINT64: \{}
+\DoxyCodeLine{510                 \textcolor{keywordflow}{if} (*\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{group__gtc__type__precision_ga058f57c19e1befdcf12498944bd73e69}{uint64\_t}} *\textcolor{keyword}{>}(lhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData) != *\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{group__gtc__type__precision_ga058f57c19e1befdcf12498944bd73e69}{uint64\_t}} *\textcolor{keyword}{>}(rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData)) \{}
+\DoxyCodeLine{511                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{512                 \}}
+\DoxyCodeLine{513             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{514             \textcolor{keywordflow}{case} AI\_FLOAT: \{}
+\DoxyCodeLine{515                 \textcolor{keywordflow}{if} (*\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float} *\textcolor{keyword}{>}(lhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData) != *\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float} *\textcolor{keyword}{>}(rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData)) \{}
+\DoxyCodeLine{516                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{517                 \}}
+\DoxyCodeLine{518             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{519             \textcolor{keywordflow}{case} AI\_DOUBLE: \{}
+\DoxyCodeLine{520                 \textcolor{keywordflow}{if} (*\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double} *\textcolor{keyword}{>}(lhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData) != *\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double} *\textcolor{keyword}{>}(rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData)) \{}
+\DoxyCodeLine{521                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{522                 \}}
+\DoxyCodeLine{523             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{524             \textcolor{keywordflow}{case} AI\_AISTRING: \{}
+\DoxyCodeLine{525                 \textcolor{keywordflow}{if} (*\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{structai_string}{aiString}} *\textcolor{keyword}{>}(lhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData) != *\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{structai_string}{aiString}} *\textcolor{keyword}{>}(rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData)) \{}
+\DoxyCodeLine{526                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{527                 \}}
+\DoxyCodeLine{528             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{529             \textcolor{keywordflow}{case} AI\_AIVECTOR3D: \{}
+\DoxyCodeLine{530                 \textcolor{keywordflow}{if} (*\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\textcolor{keyword}{>}(lhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData) != *\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\textcolor{keyword}{>}(rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData)) \{}
+\DoxyCodeLine{531                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{532                 \}}
+\DoxyCodeLine{533             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{534             \textcolor{keywordflow}{case} AI\_AIMETADATA: \{}
+\DoxyCodeLine{535                 \textcolor{keywordflow}{if} (*\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{structai_metadata}{aiMetadata}} *\textcolor{keyword}{>}(lhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData) != *\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{structai_metadata}{aiMetadata}} *\textcolor{keyword}{>}(rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData)) \{}
+\DoxyCodeLine{536                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{537                 \}}
+\DoxyCodeLine{538             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{539             \textcolor{keywordflow}{case} AI\_INT64: \{}
+\DoxyCodeLine{540                 \textcolor{keywordflow}{if} (*\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{group__gtc__type__precision_ga6abb23fbf4e39c50ec5341160b5da5ab}{int64\_t}} *\textcolor{keyword}{>}(lhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData) != *\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{group__gtc__type__precision_ga6abb23fbf4e39c50ec5341160b5da5ab}{int64\_t}} *\textcolor{keyword}{>}(rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData)) \{}
+\DoxyCodeLine{541                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{542                 \}}
+\DoxyCodeLine{543             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{544             \textcolor{keywordflow}{case} AI\_UINT32: \{}
+\DoxyCodeLine{545                 \textcolor{keywordflow}{if} (*\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}} *\textcolor{keyword}{>}(lhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData) != *\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}} *\textcolor{keyword}{>}(rhs.\mbox{\hyperlink{structai_metadata_a1993c41d93b8c22e1fc8985172d2cc3e}{mValues}}[i].mData)) \{}
+\DoxyCodeLine{546                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{547                 \}}
+\DoxyCodeLine{548             \} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{549 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{550             \textcolor{keywordflow}{case} FORCE\_32BIT:}
+\DoxyCodeLine{551 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{552             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{553                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{554             \}}
+\DoxyCodeLine{555         \}}
+\DoxyCodeLine{556 }
+\DoxyCodeLine{557         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{558     \}}
+\DoxyCodeLine{559 }
+\DoxyCodeLine{560     \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{structai_metadata}{aiMetadata}} \&lhs, \textcolor{keyword}{const} \mbox{\hyperlink{structai_metadata}{aiMetadata}} \&rhs) \{}
+\DoxyCodeLine{561         \textcolor{keywordflow}{return} CompareKeys(lhs, rhs) \&\& CompareValues(lhs, rhs);}
+\DoxyCodeLine{562     \}}
+\DoxyCodeLine{563 }
+\DoxyCodeLine{564     \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{structai_metadata}{aiMetadata}} \&lhs, \textcolor{keyword}{const} \mbox{\hyperlink{structai_metadata}{aiMetadata}} \&rhs) \{}
+\DoxyCodeLine{565         \textcolor{keywordflow}{return} !(lhs == rhs);}
+\DoxyCodeLine{566     \}}
+\DoxyCodeLine{567 }
+\DoxyCodeLine{568 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{569 \};}
+\DoxyCodeLine{570 }
+\DoxyCodeLine{571 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_METADATA\_H\_INC}}
+
+\end{DoxyCode}

@@ -1,0 +1,74 @@
+\hypertarget{type__float_8hpp_source}{}\doxysection{type\+\_\+float.\+hpp}
+\label{type__float_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/detail/type\_float.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/detail/type\_float.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}setup.hpp"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#if GLM\_COMPILER == GLM\_COMPILER\_VC12}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#   pragma warning(push)}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#   pragma warning(disable: 4512) }\textcolor{comment}{// assignment operator could not be generated}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }detail}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{14     \textcolor{keyword}{union }\mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}}
+\DoxyCodeLine{15     \{\};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{comment}{// https://randomascii.wordpress.com/2012/02/25/comparing-\/floating-\/point-\/numbers-\/2012-\/edition/}}
+\DoxyCodeLine{18     \textcolor{keyword}{template} <>}
+\DoxyCodeLine{19     \textcolor{keyword}{union }\mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}<float>}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21         \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} int\_type;}
+\DoxyCodeLine{22         \textcolor{keyword}{typedef} \textcolor{keywordtype}{float} float\_type;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         GLM\_CONSTEXPR \mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}(float\_type Num = 0.0f) : f(Num) \{\}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         GLM\_CONSTEXPR \mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}\& operator=(\mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}} \textcolor{keyword}{const}\& x)}
+\DoxyCodeLine{27         \{}
+\DoxyCodeLine{28             f = x.f;}
+\DoxyCodeLine{29             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{30         \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{comment}{// Portable extraction of components.}}
+\DoxyCodeLine{33         GLM\_CONSTEXPR \textcolor{keywordtype}{bool} negative()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} i < 0; \}}
+\DoxyCodeLine{34         GLM\_CONSTEXPR int\_type mantissa()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} i \& ((1 << 23) -\/ 1); \}}
+\DoxyCodeLine{35         GLM\_CONSTEXPR int\_type exponent()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} (i >> 23) \& ((1 << 8) -\/ 1); \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         int\_type i;}
+\DoxyCodeLine{38         float\_type f;}
+\DoxyCodeLine{39     \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keyword}{template} <>}
+\DoxyCodeLine{42     \textcolor{keyword}{union }\mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}<double>}
+\DoxyCodeLine{43     \{}
+\DoxyCodeLine{44         \textcolor{keyword}{typedef} detail::int64 int\_type;}
+\DoxyCodeLine{45         \textcolor{keyword}{typedef} \textcolor{keywordtype}{double} float\_type;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         GLM\_CONSTEXPR \mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}(float\_type Num = \textcolor{keyword}{static\_cast<}float\_type\textcolor{keyword}{>}(0)) : f(Num) \{\}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         GLM\_CONSTEXPR \mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}\& operator=(\mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}} \textcolor{keyword}{const}\& x)}
+\DoxyCodeLine{50         \{}
+\DoxyCodeLine{51             f = x.f;}
+\DoxyCodeLine{52             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{53         \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \textcolor{comment}{// Portable extraction of components.}}
+\DoxyCodeLine{56         GLM\_CONSTEXPR \textcolor{keywordtype}{bool} negative()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} i < 0; \}}
+\DoxyCodeLine{57         GLM\_CONSTEXPR int\_type mantissa()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} i \& ((int\_type(1) << 52) -\/ 1); \}}
+\DoxyCodeLine{58         GLM\_CONSTEXPR int\_type exponent()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} (i >> 52) \& ((int\_type(1) << 11) -\/ 1); \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         int\_type i;}
+\DoxyCodeLine{61         float\_type f;}
+\DoxyCodeLine{62     \};}
+\DoxyCodeLine{63 \}\textcolor{comment}{//namespace detail}}
+\DoxyCodeLine{64 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#if GLM\_COMPILER == GLM\_COMPILER\_VC12}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#   pragma warning(pop)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

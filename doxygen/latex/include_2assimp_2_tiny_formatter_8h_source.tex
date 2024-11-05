@@ -1,0 +1,173 @@
+\hypertarget{include_2assimp_2_tiny_formatter_8h_source}{}\doxysection{Tiny\+Formatter.\+h}
+\label{include_2assimp_2_tiny_formatter_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/TinyFormatter.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/TinyFormatter.h}}
+\mbox{\hyperlink{include_2assimp_2_tiny_formatter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{12 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{17 \textcolor{comment}{}}
+\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{27 \textcolor{comment}{}}
+\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{39 \textcolor{comment}{}}
+\DoxyCodeLine{40 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{41 \textcolor{comment}{*/}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifndef INCLUDED\_TINY\_FORMATTER\_H}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define INCLUDED\_TINY\_FORMATTER\_H}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{59 \textcolor{keyword}{namespace }Formatter \{}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{71 \textcolor{comment}{}\textcolor{keyword}{template} < \textcolor{keyword}{typename} T,}
+\DoxyCodeLine{72     \textcolor{keyword}{typename} CharTraits = std::char\_traits<T>,}
+\DoxyCodeLine{73     \textcolor{keyword}{typename} Allocator  = std::allocator<T> >}
+\DoxyCodeLine{74 \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}} \{}
+\DoxyCodeLine{75 \textcolor{keyword}{public}:}
+\DoxyCodeLine{76     \textcolor{keyword}{typedef} \textcolor{keyword}{class }std::basic\_string<T,CharTraits,Allocator> string;}
+\DoxyCodeLine{77     \textcolor{keyword}{typedef} \textcolor{keyword}{class }std::basic\_ostringstream<T,CharTraits,Allocator> stringstream;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}() \{}
+\DoxyCodeLine{80         \textcolor{comment}{// empty}}
+\DoxyCodeLine{81     \}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{comment}{/* Allow basic\_formatter<T>'s to be used almost interchangeably}}
+\DoxyCodeLine{84 \textcolor{comment}{     * with std::(w)string or const (w)char* arguments because the}}
+\DoxyCodeLine{85 \textcolor{comment}{     * conversion c'tor is called implicitly. */}}
+\DoxyCodeLine{86     \textcolor{keyword}{template} <\textcolor{keyword}{typename} TT>}
+\DoxyCodeLine{87     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}(\textcolor{keyword}{const} TT\& sin)  \{}
+\DoxyCodeLine{88         underlying << sin;}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{comment}{// Same problem as the copy constructor below, but with root cause is that stream move}}
+\DoxyCodeLine{92     \textcolor{comment}{// is not permitted on older GCC versions. Small performance impact on those platforms.}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#if defined(\_\_GNUC\_\_) \&\& (\_\_GNUC\_\_ == 4 \&\& \_\_GNUC\_MINOR\_\_ <= 9)}}
+\DoxyCodeLine{94     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}(\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}\&\& other) \{}
+\DoxyCodeLine{95         underlying << (string)other;}
+\DoxyCodeLine{96     \}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{98     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}(\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}\&\& other)}
+\DoxyCodeLine{99         : underlying(std::move(other.underlying)) \{}
+\DoxyCodeLine{100     \}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{comment}{// The problem described here:}}
+\DoxyCodeLine{104     \textcolor{comment}{// https://sourceforge.net/tracker/?func=detail\&atid=1067632\&aid=3358562\&group\_id=226462}}
+\DoxyCodeLine{105     \textcolor{comment}{// can also cause trouble here. Apparently, older gcc versions sometimes copy temporaries}}
+\DoxyCodeLine{106     \textcolor{comment}{// being bound to const ref\& function parameters. Copying streams is not permitted, though.}}
+\DoxyCodeLine{107     \textcolor{comment}{// This workaround avoids this by manually specifying a copy ctor.}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#if !defined(\_\_GNUC\_\_) || !defined(\_\_APPLE\_\_) || \_\_GNUC\_\_ > 4 || (\_\_GNUC\_\_ == 4 \&\& \_\_GNUC\_MINOR\_\_ >= 6)}}
+\DoxyCodeLine{109     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}\& other) \{}
+\DoxyCodeLine{110         underlying << (string)other;}
+\DoxyCodeLine{111     \}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{keyword}{operator} string ()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{115         \textcolor{keywordflow}{return} underlying.str();}
+\DoxyCodeLine{116     \}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{comment}{/* note -\/ this is declared const because binding temporaries does only}}
+\DoxyCodeLine{119 \textcolor{comment}{     * work for const references, so many function prototypes will}}
+\DoxyCodeLine{120 \textcolor{comment}{     * include const basic\_formatter<T>\& s but might still want to}}
+\DoxyCodeLine{121 \textcolor{comment}{     * modify the formatted string without the need for a full copy.*/}}
+\DoxyCodeLine{122     template <typename TToken, typename std::enable\_if<!std::is\_base\_of<std::exception, TToken>::value>::type * = \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{123     \textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}} \&operator<<(\textcolor{keyword}{const} TToken \&s)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{124         underlying << s;}
+\DoxyCodeLine{125         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{126     \}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     template <typename TToken, typename std::enable\_if<std::is\_base\_of<std::exception, TToken>::value>::type * = \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{129     \textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}} \&operator<<(\textcolor{keyword}{const} TToken \&s)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{130         underlying << s.what();}
+\DoxyCodeLine{131         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{132     \}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     template <typename TToken, typename std::enable\_if<!std::is\_base\_of<std::exception, TToken>::value>::type * = \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{135     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}} \&operator<<(\textcolor{keyword}{const} TToken \&s) \{}
+\DoxyCodeLine{136         underlying << s;}
+\DoxyCodeLine{137         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{138     \}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     template <typename TToken, typename std::enable\_if<std::is\_base\_of<std::exception, TToken>::value>::type * = \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{141     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}} \&operator<<(\textcolor{keyword}{const} TToken \&s) \{}
+\DoxyCodeLine{142         underlying << s.what();}
+\DoxyCodeLine{143         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{144     \}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{comment}{// comma operator overloaded as well, choose your preferred way.}}
+\DoxyCodeLine{148     \textcolor{keyword}{template} <\textcolor{keyword}{typename} TToken>}
+\DoxyCodeLine{149     \textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}\& operator, (\textcolor{keyword}{const} TToken\& s)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{150         *\textcolor{keyword}{this} << s;}
+\DoxyCodeLine{151         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{152     \}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     \textcolor{keyword}{template} <\textcolor{keyword}{typename} TToken>}
+\DoxyCodeLine{155     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}\& operator, (\textcolor{keyword}{const} TToken\& s) \{}
+\DoxyCodeLine{156         *\textcolor{keyword}{this} << s;}
+\DoxyCodeLine{157         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{158     \}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{comment}{// Fix for MSVC8}}
+\DoxyCodeLine{161     \textcolor{comment}{// See https://sourceforge.net/projects/assimp/forums/forum/817654/topic/4372824}}
+\DoxyCodeLine{162     \textcolor{keyword}{template} <\textcolor{keyword}{typename} TToken>}
+\DoxyCodeLine{163     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}\& operator, (TToken\& s) \{}
+\DoxyCodeLine{164         *\textcolor{keyword}{this} << s;}
+\DoxyCodeLine{165         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{166     \}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{keyword}{private}:}
+\DoxyCodeLine{170     \textcolor{keyword}{mutable} stringstream underlying;}
+\DoxyCodeLine{171 \};}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 \textcolor{keyword}{typedef} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter< char >}} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{format}};}
+\DoxyCodeLine{175 \textcolor{keyword}{typedef} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter< wchar\_t >}} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{wformat}};}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \} \textcolor{comment}{// ! namespace Formatter}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \} \textcolor{comment}{// ! namespace Assimp}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

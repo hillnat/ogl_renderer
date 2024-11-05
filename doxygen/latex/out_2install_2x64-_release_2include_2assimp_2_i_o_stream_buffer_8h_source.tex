@@ -1,0 +1,324 @@
+\hypertarget{out_2install_2x64-_release_2include_2assimp_2_i_o_stream_buffer_8h_source}{}\doxysection{IOStream\+Buffer.\+h}
+\label{out_2install_2x64-_release_2include_2assimp_2_i_o_stream_buffer_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/IOStreamBuffer.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/IOStreamBuffer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{10 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{11 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{14 \textcolor{comment}{copyright notice, this list of conditions and the}}
+\DoxyCodeLine{15 \textcolor{comment}{following disclaimer.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{18 \textcolor{comment}{copyright notice, this list of conditions and the}}
+\DoxyCodeLine{19 \textcolor{comment}{following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{20 \textcolor{comment}{materials provided with the distribution.}}
+\DoxyCodeLine{21 \textcolor{comment}{}}
+\DoxyCodeLine{22 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{23 \textcolor{comment}{contributors may be used to endorse or promote products}}
+\DoxyCodeLine{24 \textcolor{comment}{derived from this software without specific prior}}
+\DoxyCodeLine{25 \textcolor{comment}{written permission of the assimp team.}}
+\DoxyCodeLine{26 \textcolor{comment}{}}
+\DoxyCodeLine{27 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{28 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{29 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{30 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{31 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{32 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{33 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{34 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{35 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{36 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{37 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{38 \textcolor{comment}{}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#ifndef AI\_IOSTREAMBUFFER\_H\_INC}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define AI\_IOSTREAMBUFFER\_H\_INC}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#include <assimp/ParsingUtils.h>}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#include <assimp/types.h>}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include <assimp/IOStream.hpp>}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{62 \textcolor{comment}{}\textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{63 \textcolor{keyword}{class }IOStreamBuffer \{}
+\DoxyCodeLine{64 \textcolor{keyword}{public}:}
+\DoxyCodeLine{66     \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_aab0bb03fb370f47326122facd24d0c40}{IOStreamBuffer}}(\textcolor{keywordtype}{size\_t} cache = 4096 * 4096);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{69     \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a5daa0917cf948bb2cd8500864e822abc}{\string~IOStreamBuffer}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{74     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a109aef606101c5dd293f463979e5fd91}{open}}(\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} *stream);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{78     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a583904a599f6fcd16fec708f3d8acad6}{close}}();}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{82     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a7c869c41abd7d33bcce59813b58bc0ba}{size}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{86     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_ab82ffc1a3aac15f848e6198636443d6a}{cacheSize}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{90     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a8ba73b5ea05de640d58ecf9f70bc4297}{readNextBlock}}();}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{94     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_aa1d83ef42e385e70cfad5f4df57add4a}{getNumBlocks}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{98     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a503f2433451043f73d6635b95dd289b6}{getCurrentBlockIndex}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{102     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a09c0c4089edfe306116499f93479216a}{getFilePos}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{107     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_af5d1dcd344faa2aa449c652ee6f3e969}{getNextDataLine}}(std::vector<T> \&buffer, T continuationToken);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{112     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a39202109e37a8893980fc2d4cb2c42d6}{getNextLine}}(std::vector<T> \&buffer);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{117     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a1688702fcfabf892f5ede62aed4d9158}{getNextBlock}}(std::vector<T> \&buffer);}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{keyword}{private}:}
+\DoxyCodeLine{120     \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} *m\_stream;}
+\DoxyCodeLine{121     \textcolor{keywordtype}{size\_t} m\_filesize;}
+\DoxyCodeLine{122     \textcolor{keywordtype}{size\_t} m\_cacheSize;}
+\DoxyCodeLine{123     \textcolor{keywordtype}{size\_t} m\_numBlocks;}
+\DoxyCodeLine{124     \textcolor{keywordtype}{size\_t} m\_blockIdx;}
+\DoxyCodeLine{125     std::vector<T> m\_cache;}
+\DoxyCodeLine{126     \textcolor{keywordtype}{size\_t} m\_cachePos;}
+\DoxyCodeLine{127     \textcolor{keywordtype}{size\_t} m\_filePos;}
+\DoxyCodeLine{128 \};}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{131 AI\_FORCE\_INLINE \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_ad360ca023c5112f6f8f25ded92c3c9f6}{IOStreamBuffer<T>::IOStreamBuffer}}(\textcolor{keywordtype}{size\_t} cache) :}
+\DoxyCodeLine{132         m\_stream(nullptr),}
+\DoxyCodeLine{133         m\_filesize(0),}
+\DoxyCodeLine{134         m\_cacheSize(cache),}
+\DoxyCodeLine{135         m\_numBlocks(0),}
+\DoxyCodeLine{136         m\_blockIdx(0),}
+\DoxyCodeLine{137         m\_cachePos(0),}
+\DoxyCodeLine{138         m\_filePos(0) \{}
+\DoxyCodeLine{139     m\_cache.resize(cache);}
+\DoxyCodeLine{140     std::fill(m\_cache.begin(), m\_cache.end(), \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{141 \}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{144 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a66c14bc6c35b33bf470be66c470e7a8f}{IOStreamBuffer<T>::open}}(IOStream *stream) \{}
+\DoxyCodeLine{145     \textcolor{comment}{//  file still opened!}}
+\DoxyCodeLine{146     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} != m\_stream) \{}
+\DoxyCodeLine{147         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{148     \}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \textcolor{comment}{//  Invalid stream pointer}}
+\DoxyCodeLine{151     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == stream) \{}
+\DoxyCodeLine{152         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{153     \}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     m\_stream = stream;}
+\DoxyCodeLine{156     m\_filesize = m\_stream-\/>FileSize();}
+\DoxyCodeLine{157     \textcolor{keywordflow}{if} (m\_filesize == 0) \{}
+\DoxyCodeLine{158         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{159     \}}
+\DoxyCodeLine{160     \textcolor{keywordflow}{if} (m\_filesize < m\_cacheSize) \{}
+\DoxyCodeLine{161         m\_cacheSize = m\_filesize;}
+\DoxyCodeLine{162     \}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164     m\_numBlocks = m\_filesize / m\_cacheSize;}
+\DoxyCodeLine{165     \textcolor{keywordflow}{if} ((m\_filesize \% m\_cacheSize) > 0) \{}
+\DoxyCodeLine{166         m\_numBlocks++;}
+\DoxyCodeLine{167     \}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{170 \}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{173 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a37d88ec985f715f926f1b37052893922}{IOStreamBuffer<T>::close}}() \{}
+\DoxyCodeLine{174     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == m\_stream) \{}
+\DoxyCodeLine{175         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{176     \}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178     \textcolor{comment}{// init counters and state vars}}
+\DoxyCodeLine{179     m\_stream = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{180     m\_filesize = 0;}
+\DoxyCodeLine{181     m\_numBlocks = 0;}
+\DoxyCodeLine{182     m\_blockIdx = 0;}
+\DoxyCodeLine{183     m\_cachePos = 0;}
+\DoxyCodeLine{184     m\_filePos = 0;}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{187 \}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{190 AI\_FORCE\_INLINE}
+\DoxyCodeLine{191         \textcolor{keywordtype}{size\_t}}
+\DoxyCodeLine{192         \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_abe0e9a33241889b300000424935957d7}{IOStreamBuffer<T>::size}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{193     \textcolor{keywordflow}{return} m\_filesize;}
+\DoxyCodeLine{194 \}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{197 AI\_FORCE\_INLINE}
+\DoxyCodeLine{198         \textcolor{keywordtype}{size\_t}}
+\DoxyCodeLine{199         \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a9bc1e05e0c6d26151b9185ba0f949756}{IOStreamBuffer<T>::cacheSize}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{200     \textcolor{keywordflow}{return} m\_cacheSize;}
+\DoxyCodeLine{201 \}}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{204 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a79cade42575d01ca83103c4c6ef999e3}{IOStreamBuffer<T>::readNextBlock}}() \{}
+\DoxyCodeLine{205     m\_stream-\/>Seek(m\_filePos, \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786a94a44e681b6c891e39767c518b64b56f}{aiOrigin\_SET}});}
+\DoxyCodeLine{206     \textcolor{keywordtype}{size\_t} readLen = m\_stream-\/>Read(\&m\_cache[0], \textcolor{keyword}{sizeof}(T), m\_cacheSize);}
+\DoxyCodeLine{207     \textcolor{keywordflow}{if} (readLen == 0) \{}
+\DoxyCodeLine{208         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{209     \}}
+\DoxyCodeLine{210     \textcolor{keywordflow}{if} (readLen < m\_cacheSize) \{}
+\DoxyCodeLine{211         m\_cacheSize = readLen;}
+\DoxyCodeLine{212     \}}
+\DoxyCodeLine{213     m\_filePos += m\_cacheSize;}
+\DoxyCodeLine{214     m\_cachePos = 0;}
+\DoxyCodeLine{215     m\_blockIdx++;}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{218 \}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{221 AI\_FORCE\_INLINE \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_aa94a8c9a0c831793c95f08297bfd2333}{IOStreamBuffer<T>::getNumBlocks}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{222     \textcolor{keywordflow}{return} m\_numBlocks;}
+\DoxyCodeLine{223 \}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{226 AI\_FORCE\_INLINE \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a6d2b4c96f23ef78f912389195efe974d}{IOStreamBuffer<T>::getCurrentBlockIndex}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{227     \textcolor{keywordflow}{return} m\_blockIdx;}
+\DoxyCodeLine{228 \}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{231 AI\_FORCE\_INLINE \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_a7e830d938c2e8eae737e1151e0b72f4f}{IOStreamBuffer<T>::getFilePos}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{232     \textcolor{keywordflow}{return} m\_filePos;}
+\DoxyCodeLine{233 \}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{236 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_adaa7761b2120cf17f8ac802bf732baf6}{IOStreamBuffer<T>::getNextDataLine}}(std::vector<T> \&buffer, T continuationToken) \{}
+\DoxyCodeLine{237     buffer.resize(m\_cacheSize);}
+\DoxyCodeLine{238     \textcolor{keywordflow}{if} (m\_cachePos >= m\_cacheSize || 0 == m\_filePos) \{}
+\DoxyCodeLine{239         \textcolor{keywordflow}{if} (!readNextBlock()) \{}
+\DoxyCodeLine{240             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{241         \}}
+\DoxyCodeLine{242     \}}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244     \textcolor{keywordtype}{size\_t} i = 0;}
+\DoxyCodeLine{245     \textcolor{keywordflow}{for} (;;) \{}
+\DoxyCodeLine{246         \textcolor{keywordflow}{if} (continuationToken == m\_cache[m\_cachePos] \&\& IsLineEnd(m\_cache[m\_cachePos + 1])) \{}
+\DoxyCodeLine{247             ++m\_cachePos;}
+\DoxyCodeLine{248             \textcolor{keywordflow}{while} (m\_cache[m\_cachePos] != \textcolor{charliteral}{'\(\backslash\)n'}) \{}
+\DoxyCodeLine{249                 ++m\_cachePos;}
+\DoxyCodeLine{250             \}}
+\DoxyCodeLine{251             ++m\_cachePos;}
+\DoxyCodeLine{252         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (IsLineEnd(m\_cache[m\_cachePos])) \{}
+\DoxyCodeLine{253             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{254         \}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256         buffer[i] = m\_cache[m\_cachePos];}
+\DoxyCodeLine{257         ++m\_cachePos;}
+\DoxyCodeLine{258         ++i;}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260         \textcolor{keywordflow}{if}(i == buffer.size()) \{}
+\DoxyCodeLine{261             buffer.resize(buffer.size() * 2);}
+\DoxyCodeLine{262         \}}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264         \textcolor{keywordflow}{if} (m\_cachePos >= size()) \{}
+\DoxyCodeLine{265             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{266         \}}
+\DoxyCodeLine{267         \textcolor{keywordflow}{if} (m\_cachePos >= m\_cacheSize) \{}
+\DoxyCodeLine{268             \textcolor{keywordflow}{if} (!readNextBlock()) \{}
+\DoxyCodeLine{269                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{270             \}}
+\DoxyCodeLine{271         \}}
+\DoxyCodeLine{272     \}}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274     buffer[i] = \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{275     ++m\_cachePos;}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{278 \}}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280 \textcolor{keyword}{static} AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} isEndOfCache(\textcolor{keywordtype}{size\_t} pos, \textcolor{keywordtype}{size\_t} cacheSize) \{}
+\DoxyCodeLine{281     \textcolor{keywordflow}{return} (pos == cacheSize);}
+\DoxyCodeLine{282 \}}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{285 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_ad25f465cec695363c75b218ab21d9d08}{IOStreamBuffer<T>::getNextLine}}(std::vector<T> \&buffer) \{}
+\DoxyCodeLine{286     buffer.resize(m\_cacheSize);}
+\DoxyCodeLine{287     \textcolor{keywordflow}{if} (m\_cachePos >= m\_cacheSize || 0 == m\_filePos) \{}
+\DoxyCodeLine{288         \textcolor{keywordflow}{if} (!readNextBlock()) \{}
+\DoxyCodeLine{289             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{290         \}}
+\DoxyCodeLine{291     \}}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293     \textcolor{keywordflow}{if} (IsLineEnd(m\_cache[m\_cachePos])) \{}
+\DoxyCodeLine{294         \textcolor{comment}{// skip line end}}
+\DoxyCodeLine{295         \textcolor{keywordflow}{while} (m\_cache[m\_cachePos] != \textcolor{charliteral}{'\(\backslash\)n'}) \{}
+\DoxyCodeLine{296             ++m\_cachePos;}
+\DoxyCodeLine{297         \}}
+\DoxyCodeLine{298         ++m\_cachePos;}
+\DoxyCodeLine{299         \textcolor{keywordflow}{if} (isEndOfCache(m\_cachePos, m\_cacheSize)) \{}
+\DoxyCodeLine{300             \textcolor{keywordflow}{if} (!readNextBlock()) \{}
+\DoxyCodeLine{301                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{302             \}}
+\DoxyCodeLine{303         \}}
+\DoxyCodeLine{304     \}}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306     \textcolor{keywordtype}{size\_t} i(0);}
+\DoxyCodeLine{307     \textcolor{keywordflow}{while} (!IsLineEnd(m\_cache[m\_cachePos])) \{}
+\DoxyCodeLine{308         buffer[i] = m\_cache[m\_cachePos];}
+\DoxyCodeLine{309         ++m\_cachePos;}
+\DoxyCodeLine{310         ++i;}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312         \textcolor{keywordflow}{if}(i == buffer.size()) \{}
+\DoxyCodeLine{313             buffer.resize(buffer.size() * 2);}
+\DoxyCodeLine{314         \}}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316         \textcolor{keywordflow}{if} (m\_cachePos >= m\_cacheSize) \{}
+\DoxyCodeLine{317             \textcolor{keywordflow}{if} (!readNextBlock()) \{}
+\DoxyCodeLine{318                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{319             \}}
+\DoxyCodeLine{320         \}}
+\DoxyCodeLine{321     \}}
+\DoxyCodeLine{322     buffer[i] = \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{323     \textcolor{keywordflow}{while} (m\_cachePos < m\_cacheSize \&\& (m\_cache[m\_cachePos] == \textcolor{charliteral}{'\(\backslash\)r'} || m\_cache[m\_cachePos] == \textcolor{charliteral}{'\(\backslash\)n'})) \{}
+\DoxyCodeLine{324         ++m\_cachePos;}
+\DoxyCodeLine{325     \}}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{328 \}}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{331 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_i_o_stream_buffer_ae4e4be6dd4284644f9b99e11b95a66a4}{IOStreamBuffer<T>::getNextBlock}}(std::vector<T> \&buffer) \{}
+\DoxyCodeLine{332     \textcolor{comment}{// Return the last block-\/value if getNextLine was used before}}
+\DoxyCodeLine{333     \textcolor{keywordflow}{if} (0 != m\_cachePos) \{}
+\DoxyCodeLine{334         buffer = std::vector<T>(m\_cache.begin() + m\_cachePos, m\_cache.end());}
+\DoxyCodeLine{335         m\_cachePos = 0;}
+\DoxyCodeLine{336     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{337         \textcolor{keywordflow}{if} (!readNextBlock()) \{}
+\DoxyCodeLine{338             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{339         \}}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341         buffer = std::vector<T>(m\_cache.begin(), m\_cache.end());}
+\DoxyCodeLine{342     \}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{345 \}}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{347 \} \textcolor{comment}{// namespace Assimp}}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_IOSTREAMBUFFER\_H\_INC}}
+
+\end{DoxyCode}

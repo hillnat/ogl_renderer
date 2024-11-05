@@ -1,0 +1,47 @@
+\hypertarget{include_2assimp_2cfileio_8h}{}\doxysection{C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/cfileio.h File Reference}
+\label{include_2assimp_2cfileio_8h}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/cfileio.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/cfileio.h}}
+
+
+Defines generic C routines to access memory-\/mapped files.  
+
+
+{\ttfamily \#include $<$assimp/types.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}}
+\begin{DoxyCompactList}\small\item\em C-\/\+API\+: File system callbacks. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structai_file}{ai\+File}}
+\begin{DoxyCompactList}\small\item\em C-\/\+API\+: File callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a21d0825136cd8be942613ff77479045d}\label{include_2assimp_2cfileio_8h_a21d0825136cd8be942613ff77479045d}} 
+typedef size\+\_\+t($\ast$ {\bfseries ai\+File\+Write\+Proc}) (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$, const char $\ast$, size\+\_\+t, size\+\_\+t)
+\item 
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a482e6ebea846d515ef23556d0f1717f4}\label{include_2assimp_2cfileio_8h_a482e6ebea846d515ef23556d0f1717f4}} 
+typedef size\+\_\+t($\ast$ {\bfseries ai\+File\+Read\+Proc}) (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$, char $\ast$, size\+\_\+t, size\+\_\+t)
+\item 
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a30d575ddf8f46426ecb12c95f92b1686}\label{include_2assimp_2cfileio_8h_a30d575ddf8f46426ecb12c95f92b1686}} 
+typedef size\+\_\+t($\ast$ {\bfseries ai\+File\+Tell\+Proc}) (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$)
+\item 
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a49a7a4a25167c7aa03dfe80ae5bdd959}\label{include_2assimp_2cfileio_8h_a49a7a4a25167c7aa03dfe80ae5bdd959}} 
+typedef void($\ast$ {\bfseries ai\+File\+Flush\+Proc}) (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$)
+\item 
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a9d44e516b1ce6ef3da4295045d6ec217}\label{include_2assimp_2cfileio_8h_a9d44e516b1ce6ef3da4295045d6ec217}} 
+typedef C\+\_\+\+ENUM \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{ai\+Return}}($\ast$ {\bfseries ai\+File\+Seek}) (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$, size\+\_\+t, C\+\_\+\+ENUM \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786}{ai\+Origin}})
+\item 
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_acf147febf5749700fdbca46189ef66c0}\label{include_2assimp_2cfileio_8h_acf147febf5749700fdbca46189ef66c0}} 
+typedef C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$($\ast$ {\bfseries ai\+File\+Open\+Proc}) (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}} $\ast$, const char $\ast$, const char $\ast$)
+\item 
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_ab6e7f26b63f2d1ed9655e97bd4ebd38c}\label{include_2assimp_2cfileio_8h_ab6e7f26b63f2d1ed9655e97bd4ebd38c}} 
+typedef void($\ast$ {\bfseries ai\+File\+Close\+Proc}) (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}} $\ast$, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$)
+\item 
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a176132d0cd51c96302089ff3f8a8ee1c}\label{include_2assimp_2cfileio_8h_a176132d0cd51c96302089ff3f8a8ee1c}} 
+typedef char $\ast$ {\bfseries ai\+User\+Data}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines generic C routines to access memory-\/mapped files. 
+

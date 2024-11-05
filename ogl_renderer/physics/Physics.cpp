@@ -7,33 +7,33 @@ void Physics::UpdateAllBodies(float fixedDeltaTime) {
 	//Tell RBs to apply their velocity
 	if (colRbPairs.size() == 0) { return; }
 	for (int i = 0; i < colRbPairs.size(); i++) {
-		if ((*colRbPairs[i]).rigidbody==nullptr) { continue; }
-		if ((*colRbPairs[i]).rigidbody->isStatic) { continue; }
-		(*colRbPairs[i]).rigidbody->UpdateBody(fixedDeltaTime);
+		if ((*colRbPairs[i]).attachedRigidbody==nullptr) { continue; }
+		if ((*colRbPairs[i]).attachedRigidbody->isStatic) { continue; }
+		(*colRbPairs[i]).attachedRigidbody->UpdateBody(fixedDeltaTime);
 	}
 	//Collision checks
 	for (int i = 0; i < colRbPairs.size()-1; i++) {//Loop with logic to avoid double checking
 
-		Collider* colA = colRbPairs[i]->collider;
+		Collider* colA = colRbPairs[i]->attachedCollider;
 		if (colA == nullptr) { continue; }
 
 		for (int k = i+1; k < colRbPairs.size(); k++) {
 			if (i == k) { continue; }//Cant collide with self
 
-			Collider* colB = colRbPairs[k]->collider;
+			Collider* colB = colRbPairs[k]->attachedCollider;
 			if (colB == nullptr) { continue; }
 			
 			switch (colA->colliderShape) {
 				case ColliderShapes::Sphere:
 					switch (colB->colliderShape) {
 						case ColliderShapes::Sphere:
-							if (OverlapSphereSphere(colRbPairs[i]->rigidbody->attachedBody->GetPosition(), 0.5f, colRbPairs[k]->rigidbody->attachedBody->GetPosition(), 0.5f)) {
-								ResolveSphereSphere(colRbPairs[i]->rigidbody, colRbPairs[k]->rigidbody);
+							if (OverlapSphereSphere(colRbPairs[i]->attachedRigidbody->attachedTransform->GetPosition(), 0.5f, colRbPairs[k]->attachedRigidbody->attachedTransform->GetPosition(), 0.5f)) {
+								ResolveSphereSphere(colRbPairs[i]->attachedRigidbody, colRbPairs[k]->attachedRigidbody);
 							}
 							break;
 						case ColliderShapes::Plane:
-							if (OverlapSpherePlane(colRbPairs[i]->rigidbody->attachedBody->GetPosition(), 0.5f, colRbPairs[k]->rigidbody->attachedBody->GetPosition(), colRbPairs[k]->rigidbody->attachedBody->Up(), *colRbPairs[i]->rigidbody)) {
-								ResolveSpherePlane(colRbPairs[i]->rigidbody, colRbPairs[k]->rigidbody);
+							if (OverlapSpherePlane(colRbPairs[i]->attachedRigidbody->attachedTransform->GetPosition(), 0.5f, colRbPairs[k]->attachedRigidbody->attachedTransform->GetPosition(), colRbPairs[k]->attachedRigidbody->attachedTransform->Up(), *colRbPairs[i]->attachedRigidbody)) {
+								ResolveSpherePlane(colRbPairs[i]->attachedRigidbody, colRbPairs[k]->attachedRigidbody);
 							}
 							break;
 						default:
@@ -78,9 +78,9 @@ bool Physics::OverlapSpherePlane(const vec3 spherePos, const float sphereRadius,
 	bool isPenetrating = (mag < sphereRadius);
 	if (isPenetrating) {
 		float penAmount = sphereRadius - mag;
-		vec3 oldPos = rbToDepenetrate.attachedBody->GetPosition();
-		rbToDepenetrate.attachedBody->TranslateGlobal(planeNormal * penAmount);
-		vec3 newPos = rbToDepenetrate.attachedBody->GetPosition();
+		vec3 oldPos = rbToDepenetrate.attachedTransform->GetPosition();
+		rbToDepenetrate.attachedTransform->TranslateGlobal(planeNormal * penAmount);
+		vec3 newPos = rbToDepenetrate.attachedTransform->GetPosition();
 		std::cout << "Depenetrated | X : " << abs(oldPos.x - newPos.x) << " Y : " << abs(oldPos.y - newPos.y) << " Z : " << abs(oldPos.z - newPos.z) << std::endl;
 	}
 	return isPenetrating;
@@ -105,7 +105,7 @@ void Physics::ResolveSphereSphere(Rigidbody* sphereA, Rigidbody* sphereB) {
 		return;
 	}
 	vec3 relVel = sphereA->velocity - sphereB->velocity;
-	vec3 colNorm = normalize(sphereA->attachedBody->GetPosition() - sphereB->attachedBody->GetPosition());
+	vec3 colNorm = normalize(sphereA->attachedTransform->GetPosition() - sphereB->attachedTransform->GetPosition());
 
 	float scaledMassSum = ((1.f / sphereA->mass) + (1.f / sphereB->mass));
 	float joules = dot(2.f * relVel, colNorm) / dot(colNorm, colNorm * scaledMassSum);
@@ -124,7 +124,7 @@ void Physics::ResolveSpherePlane(Rigidbody* sphere, Rigidbody* plane) {
 		return;
 	}
 	vec3 relVel = sphere->velocity - plane->velocity;
-	vec3 colNorm = normalize(sphere->attachedBody->GetPosition() - plane->attachedBody->GetPosition());
+	vec3 colNorm = normalize(sphere->attachedTransform->GetPosition() - plane->attachedTransform->GetPosition());
 
 	float scaledMassSum = ((1.f / sphere->mass) + (1.f / plane->mass));
 	float joules = dot(2.f * relVel, colNorm) / dot(colNorm, colNorm * scaledMassSum);

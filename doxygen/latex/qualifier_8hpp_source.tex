@@ -1,0 +1,234 @@
+\hypertarget{qualifier_8hpp_source}{}\doxysection{qualifier.\+hpp}
+\label{qualifier_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/detail/qualifier.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/detail/qualifier.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}setup.hpp"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{8     \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}}}
+\DoxyCodeLine{9     \{}
+\DoxyCodeLine{10         \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25a8e8791ee77fe079b1291f710d88031bf}{packed\_highp}}, }
+\DoxyCodeLine{11         \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25a9604654c3b137cd7898689fd34b25bc0}{packed\_mediump}}, }
+\DoxyCodeLine{12         \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25ac36a4bd74559be2c0b65bc48e5953b8b}{packed\_lowp}}, }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#       if GLM\_CONFIG\_ALIGNED\_GENTYPES == GLM\_ENABLE}}
+\DoxyCodeLine{15             aligned\_highp, }
+\DoxyCodeLine{16             aligned\_mediump, }
+\DoxyCodeLine{17             aligned\_lowp, \textcolor{comment}{// ///< Typed data is aligned in memory allowing SIMD optimizations and operations are executed with high precision in term of ULPs to maximize performance}}
+\DoxyCodeLine{18             aligned = aligned\_highp, }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25ac6f7eab42eacbb10d59a58e95e362074}{highp}} = \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25a8e8791ee77fe079b1291f710d88031bf}{packed\_highp}}, }
+\DoxyCodeLine{22         \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25a6416f3ea0c9025fb21ed50c4d6620482}{mediump}} = \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25a9604654c3b137cd7898689fd34b25bc0}{packed\_mediump}}, }
+\DoxyCodeLine{23         \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25ae161af3fc695e696ce3bf69f7332bc2d}{lowp}} = \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25ac36a4bd74559be2c0b65bc48e5953b8b}{packed\_lowp}}, }
+\DoxyCodeLine{24         \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25a9a2c3bbb01d18bc598bcee54f9638989}{packed}} = \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25a8e8791ee77fe079b1291f710d88031bf}{packed\_highp}}, }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#       if GLM\_CONFIG\_ALIGNED\_GENTYPES == GLM\_ENABLE \&\& defined(GLM\_FORCE\_DEFAULT\_ALIGNED\_GENTYPES)}}
+\DoxyCodeLine{27             defaultp = aligned\_highp}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#       else}}
+\DoxyCodeLine{29             defaultp = \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25ac6f7eab42eacbb10d59a58e95e362074}{highp}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{31     \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keyword}{typedef} \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} precision;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keyword}{template}<length\_t L, \textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1vec}{vec}};}
+\DoxyCodeLine{36     \textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1mat}{mat}};}
+\DoxyCodeLine{37     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1qua}{qua}};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#   if GLM\_HAS\_TEMPLATE\_ALIASES}}
+\DoxyCodeLine{40         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{using }tvec1 = \mbox{\hyperlink{structglm_1_1vec}{vec<1, T, Q>}};}
+\DoxyCodeLine{41         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{using }tvec2 = \mbox{\hyperlink{structglm_1_1vec}{vec<2, T, Q>}};}
+\DoxyCodeLine{42         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{using }tvec3 = \mbox{\hyperlink{structglm_1_1vec}{vec<3, T, Q>}};}
+\DoxyCodeLine{43         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{using }tvec4 = \mbox{\hyperlink{structglm_1_1vec}{vec<4, T, Q>}};}
+\DoxyCodeLine{44         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{using }tmat2x2 = \mbox{\hyperlink{structglm_1_1mat}{mat<2, 2, T, Q>}};}
+\DoxyCodeLine{45         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{using }tmat2x3 = \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}};}
+\DoxyCodeLine{46         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{using }tmat2x4 = \mbox{\hyperlink{structglm_1_1mat}{mat<2, 4, T, Q>}};}
+\DoxyCodeLine{47         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{using }tmat3x2 = \mbox{\hyperlink{structglm_1_1mat}{mat<3, 2, T, Q>}};}
+\DoxyCodeLine{48         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{using }tmat3x3 = \mbox{\hyperlink{structglm_1_1mat}{mat<3, 3, T, Q>}};}
+\DoxyCodeLine{49         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{using }tmat3x4 = \mbox{\hyperlink{structglm_1_1mat}{mat<3, 4, T, Q>}};}
+\DoxyCodeLine{50         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{using }tmat4x2 = \mbox{\hyperlink{structglm_1_1mat}{mat<4, 2, T, Q>}};}
+\DoxyCodeLine{51         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{using }tmat4x3 = \mbox{\hyperlink{structglm_1_1mat}{mat<4, 3, T, Q>}};}
+\DoxyCodeLine{52         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{using }tmat4x4 = \mbox{\hyperlink{structglm_1_1mat}{mat<4, 4, T, Q>}};}
+\DoxyCodeLine{53         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, qualifier Q = defaultp> \textcolor{keyword}{using }tquat = \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}};}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{namespace }detail}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58     \textcolor{keyword}{template}<glm::qualifier P>}
+\DoxyCodeLine{59     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1is__aligned}{is\_aligned}}}
+\DoxyCodeLine{60     \{}
+\DoxyCodeLine{61         \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{bool} value = \textcolor{keyword}{false};}
+\DoxyCodeLine{62     \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#   if GLM\_CONFIG\_ALIGNED\_GENTYPES == GLM\_ENABLE}}
+\DoxyCodeLine{65         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{66         \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1is__aligned}{is\_aligned}}<\mbox{\hyperlink{namespaceglm}{glm}}::aligned\_lowp>}
+\DoxyCodeLine{67         \{}
+\DoxyCodeLine{68             \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{bool} value = \textcolor{keyword}{true};}
+\DoxyCodeLine{69         \};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{72         \textcolor{keyword}{struct }is\_aligned<\mbox{\hyperlink{namespaceglm}{glm}}::aligned\_mediump>}
+\DoxyCodeLine{73         \{}
+\DoxyCodeLine{74             \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{bool} value = \textcolor{keyword}{true};}
+\DoxyCodeLine{75         \};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77         \textcolor{keyword}{template}<>}
+\DoxyCodeLine{78         \textcolor{keyword}{struct }is\_aligned<\mbox{\hyperlink{namespaceglm}{glm}}::aligned\_highp>}
+\DoxyCodeLine{79         \{}
+\DoxyCodeLine{80             \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{bool} value = \textcolor{keyword}{true};}
+\DoxyCodeLine{81         \};}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{keyword}{template}<length\_t L, \textcolor{keyword}{typename} T, \textcolor{keywordtype}{bool} is\_aligned>}
+\DoxyCodeLine{85     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1storage}{storage}}}
+\DoxyCodeLine{86     \{}
+\DoxyCodeLine{87         \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1storage_1_1type}{type}} \{}
+\DoxyCodeLine{88             T data[L];}
+\DoxyCodeLine{89         \} \mbox{\hyperlink{structglm_1_1detail_1_1storage_1_1type}{type}};}
+\DoxyCodeLine{90     \};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#   if GLM\_HAS\_ALIGNOF}}
+\DoxyCodeLine{93         \textcolor{keyword}{template}<length\_t L, \textcolor{keyword}{typename} T>}
+\DoxyCodeLine{94         \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1storage}{storage}}<L, T, true>}
+\DoxyCodeLine{95         \{}
+\DoxyCodeLine{96             \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\textcolor{keyword}{alignas}(L * sizeof(T)) \mbox{\hyperlink{structglm_1_1type}{type}} \{}
+\DoxyCodeLine{97                 T data[L];}
+\DoxyCodeLine{98             \} \mbox{\hyperlink{structglm_1_1type}{type}};}
+\DoxyCodeLine{99         \};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{102         \textcolor{keyword}{struct }storage<3, T, true>}
+\DoxyCodeLine{103         \{}
+\DoxyCodeLine{104             \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\textcolor{keyword}{alignas}(4 * sizeof(T)) type \{}
+\DoxyCodeLine{105                 T data[4];}
+\DoxyCodeLine{106             \} type;}
+\DoxyCodeLine{107         \};}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#   if GLM\_ARCH \& GLM\_ARCH\_SSE2\_BIT}}
+\DoxyCodeLine{111     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{112     \textcolor{keyword}{struct }storage<4, float, true>}
+\DoxyCodeLine{113     \{}
+\DoxyCodeLine{114         \textcolor{keyword}{typedef} glm\_f32vec4 type;}
+\DoxyCodeLine{115     \};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{118     \textcolor{keyword}{struct }storage<4, int, true>}
+\DoxyCodeLine{119     \{}
+\DoxyCodeLine{120         \textcolor{keyword}{typedef} glm\_i32vec4 type;}
+\DoxyCodeLine{121     \};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{124     \textcolor{keyword}{struct }storage<4, unsigned int, true>}
+\DoxyCodeLine{125     \{}
+\DoxyCodeLine{126         \textcolor{keyword}{typedef} glm\_u32vec4 type;}
+\DoxyCodeLine{127     \};}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{130     \textcolor{keyword}{struct }storage<2, double, true>}
+\DoxyCodeLine{131     \{}
+\DoxyCodeLine{132         \textcolor{keyword}{typedef} glm\_f64vec2 type;}
+\DoxyCodeLine{133     \};}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{136     \textcolor{keyword}{struct }storage<2, detail::int64, true>}
+\DoxyCodeLine{137     \{}
+\DoxyCodeLine{138         \textcolor{keyword}{typedef} glm\_i64vec2 type;}
+\DoxyCodeLine{139     \};}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{142     \textcolor{keyword}{struct }storage<2, detail::uint64, true>}
+\DoxyCodeLine{143     \{}
+\DoxyCodeLine{144         \textcolor{keyword}{typedef} glm\_u64vec2 type;}
+\DoxyCodeLine{145     \};}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#   if (GLM\_ARCH \& GLM\_ARCH\_AVX\_BIT)}}
+\DoxyCodeLine{148     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{149     \textcolor{keyword}{struct }storage<4, double, true>}
+\DoxyCodeLine{150     \{}
+\DoxyCodeLine{151         \textcolor{keyword}{typedef} glm\_f64vec4 type;}
+\DoxyCodeLine{152     \};}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#   if (GLM\_ARCH \& GLM\_ARCH\_AVX2\_BIT)}}
+\DoxyCodeLine{156     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{157     \textcolor{keyword}{struct }storage<4, detail::int64, true>}
+\DoxyCodeLine{158     \{}
+\DoxyCodeLine{159         \textcolor{keyword}{typedef} glm\_i64vec4 type;}
+\DoxyCodeLine{160     \};}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{163     \textcolor{keyword}{struct }storage<4, detail::uint64, true>}
+\DoxyCodeLine{164     \{}
+\DoxyCodeLine{165         \textcolor{keyword}{typedef} glm\_u64vec4 type;}
+\DoxyCodeLine{166     \};}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#   if GLM\_ARCH \& GLM\_ARCH\_NEON\_BIT}}
+\DoxyCodeLine{170     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{171     \textcolor{keyword}{struct }storage<4, float, true>}
+\DoxyCodeLine{172     \{}
+\DoxyCodeLine{173         \textcolor{keyword}{typedef} glm\_f32vec4 type;}
+\DoxyCodeLine{174     \};}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{177     \textcolor{keyword}{struct }storage<4, int, true>}
+\DoxyCodeLine{178     \{}
+\DoxyCodeLine{179         \textcolor{keyword}{typedef} glm\_i32vec4 type;}
+\DoxyCodeLine{180     \};}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{183     \textcolor{keyword}{struct }storage<4, unsigned int, true>}
+\DoxyCodeLine{184     \{}
+\DoxyCodeLine{185         \textcolor{keyword}{typedef} glm\_u32vec4 type;}
+\DoxyCodeLine{186     \};}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189     \textcolor{keyword}{enum} genTypeEnum}
+\DoxyCodeLine{190     \{}
+\DoxyCodeLine{191         GENTYPE\_VEC,}
+\DoxyCodeLine{192         GENTYPE\_MAT,}
+\DoxyCodeLine{193         GENTYPE\_QUAT}
+\DoxyCodeLine{194     \};}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genType>}
+\DoxyCodeLine{197     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1gen_type_trait}{genTypeTrait}}}
+\DoxyCodeLine{198     \{\};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200     \textcolor{keyword}{template} <length\_t C, length\_t R, \textcolor{keyword}{typename} T>}
+\DoxyCodeLine{201     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1gen_type_trait}{genTypeTrait}}<\mbox{\hyperlink{structglm_1_1mat}{mat}}<C, R, T> >}
+\DoxyCodeLine{202     \{}
+\DoxyCodeLine{203         \textcolor{keyword}{static} \textcolor{keyword}{const} genTypeEnum GENTYPE = GENTYPE\_MAT;}
+\DoxyCodeLine{204     \};}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genType, genTypeEnum type>}
+\DoxyCodeLine{207     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1init__gentype}{init\_gentype}}}
+\DoxyCodeLine{208     \{}
+\DoxyCodeLine{209     \};}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genType>}
+\DoxyCodeLine{212     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1init__gentype}{init\_gentype}}<genType, GENTYPE\_QUAT>}
+\DoxyCodeLine{213     \{}
+\DoxyCodeLine{214         GLM\_FUNC\_QUALIFIER GLM\_CONSTEXPR \textcolor{keyword}{static} genType \mbox{\hyperlink{group__ext__matrix__transform_ga81696f2b8d1db02ea1aff8da8f269314}{identity}}()}
+\DoxyCodeLine{215         \{}
+\DoxyCodeLine{216             \textcolor{keywordflow}{return} genType(1, 0, 0, 0);}
+\DoxyCodeLine{217         \}}
+\DoxyCodeLine{218     \};}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genType>}
+\DoxyCodeLine{221     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1init__gentype}{init\_gentype}}<genType, GENTYPE\_MAT>}
+\DoxyCodeLine{222     \{}
+\DoxyCodeLine{223         GLM\_FUNC\_QUALIFIER GLM\_CONSTEXPR \textcolor{keyword}{static} genType \mbox{\hyperlink{group__ext__matrix__transform_ga81696f2b8d1db02ea1aff8da8f269314}{identity}}()}
+\DoxyCodeLine{224         \{}
+\DoxyCodeLine{225             \textcolor{keywordflow}{return} genType(1);}
+\DoxyCodeLine{226         \}}
+\DoxyCodeLine{227     \};}
+\DoxyCodeLine{228 \}\textcolor{comment}{//namespace detail}}
+\DoxyCodeLine{229 \}\textcolor{comment}{//namespace glm}}
+
+\end{DoxyCode}

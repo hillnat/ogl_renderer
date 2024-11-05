@@ -1,0 +1,87 @@
+\hypertarget{__noise_8hpp_source}{}\doxysection{\+\_\+noise.\+hpp}
+\label{__noise_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/detail/\_noise.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/detail/\_noise.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}../common.hpp"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }detail}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{9     GLM\_FUNC\_QUALIFIER T mod289(T \textcolor{keyword}{const}\& x)}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         \textcolor{keywordflow}{return} x -\/ \mbox{\hyperlink{group__core__func__common_gac433646923ab80af6d9964f1570855d5}{floor}}(x * (\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1.0) / \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(289.0))) * \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(289.0);}
+\DoxyCodeLine{12     \}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{15     GLM\_FUNC\_QUALIFIER T permute(T \textcolor{keyword}{const}\& x)}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         \textcolor{keywordflow}{return} mod289(((x * \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(34)) + \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)) * x);}
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{21     GLM\_FUNC\_QUALIFIER vec<2, T, Q> permute(vec<2, T, Q> \textcolor{keyword}{const}\& x)}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23         \textcolor{keywordflow}{return} mod289(((x * \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(34)) + \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)) * x);}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{27     GLM\_FUNC\_QUALIFIER vec<3, T, Q> permute(vec<3, T, Q> \textcolor{keyword}{const}\& x)}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29         \textcolor{keywordflow}{return} mod289(((x * \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(34)) + \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)) * x);}
+\DoxyCodeLine{30     \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{33     GLM\_FUNC\_QUALIFIER vec<4, T, Q> permute(vec<4, T, Q> \textcolor{keyword}{const}\& x)}
+\DoxyCodeLine{34     \{}
+\DoxyCodeLine{35         \textcolor{keywordflow}{return} mod289(((x * \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(34)) + \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)) * x);}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{39     GLM\_FUNC\_QUALIFIER T taylorInvSqrt(T \textcolor{keyword}{const}\& r)}
+\DoxyCodeLine{40     \{}
+\DoxyCodeLine{41         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1.79284291400159) -\/ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.85373472095314) * r;}
+\DoxyCodeLine{42     \}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{45     GLM\_FUNC\_QUALIFIER vec<2, T, Q> taylorInvSqrt(vec<2, T, Q> \textcolor{keyword}{const}\& r)}
+\DoxyCodeLine{46     \{}
+\DoxyCodeLine{47         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1.79284291400159) -\/ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.85373472095314) * r;}
+\DoxyCodeLine{48     \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{51     GLM\_FUNC\_QUALIFIER vec<3, T, Q> taylorInvSqrt(vec<3, T, Q> \textcolor{keyword}{const}\& r)}
+\DoxyCodeLine{52     \{}
+\DoxyCodeLine{53         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1.79284291400159) -\/ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.85373472095314) * r;}
+\DoxyCodeLine{54     \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{57     GLM\_FUNC\_QUALIFIER vec<4, T, Q> taylorInvSqrt(vec<4, T, Q> \textcolor{keyword}{const}\& r)}
+\DoxyCodeLine{58     \{}
+\DoxyCodeLine{59         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1.79284291400159) -\/ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.85373472095314) * r;}
+\DoxyCodeLine{60     \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{63     GLM\_FUNC\_QUALIFIER vec<2, T, Q> fade(vec<2, T, Q> \textcolor{keyword}{const}\& t)}
+\DoxyCodeLine{64     \{}
+\DoxyCodeLine{65         \textcolor{keywordflow}{return} (t * t * t) * (t * (t * \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(6) -\/ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(15)) + \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(10));}
+\DoxyCodeLine{66     \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{69     GLM\_FUNC\_QUALIFIER vec<3, T, Q> fade(vec<3, T, Q> \textcolor{keyword}{const}\& t)}
+\DoxyCodeLine{70     \{}
+\DoxyCodeLine{71         \textcolor{keywordflow}{return} (t * t * t) * (t * (t * \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(6) -\/ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(15)) + \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(10));}
+\DoxyCodeLine{72     \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{75     GLM\_FUNC\_QUALIFIER vec<4, T, Q> fade(vec<4, T, Q> \textcolor{keyword}{const}\& t)}
+\DoxyCodeLine{76     \{}
+\DoxyCodeLine{77         \textcolor{keywordflow}{return} (t * t * t) * (t * (t * \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(6) -\/ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(15)) + \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(10));}
+\DoxyCodeLine{78     \}}
+\DoxyCodeLine{79 \}\textcolor{comment}{//namespace detail}}
+\DoxyCodeLine{80 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{81 }
+
+\end{DoxyCode}

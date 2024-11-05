@@ -1,0 +1,240 @@
+\hypertarget{out_2install_2x64-_release_2include_2assimp_2_i_o_system_8hpp_source}{}\doxysection{IOSystem.\+hpp}
+\label{out_2install_2x64-_release_2include_2assimp_2_i_o_system_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/IOSystem.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/IOSystem.hpp}}
+\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_i_o_system_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{12 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{17 \textcolor{comment}{}}
+\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{27 \textcolor{comment}{}}
+\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifndef AI\_IOSYSTEM\_H\_INC}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define AI\_IOSYSTEM\_H\_INC}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#ifndef \_\_cplusplus}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#   error This header requires C++ to be used. aiFileIO.h is the \(\backslash\)}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{    corresponding C interface.}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2types_8h}{types.h}}"{}}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#   include <direct.h>}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#   include <cstdlib>}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#   include <cstdio>}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#   include <sys/stat.h>}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#   include <sys/types.h>}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#   include <unistd.h>}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_WIN32}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}}    \{}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{keyword}{class }IOStream;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{87 \textcolor{comment}{}\textcolor{keyword}{class }ASSIMP\_API IOSystem}
+\DoxyCodeLine{88 \#ifndef SWIG}
+\DoxyCodeLine{89     : \textcolor{keyword}{public} Intern::AllocateFromAssimpHeap}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{91 \{}
+\DoxyCodeLine{92 \textcolor{keyword}{public}:}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{100 \textcolor{comment}{}    \mbox{\hyperlink{class_assimp_1_1_i_o_system_a023615aecc7a609a4d7743b743bb4c62}{IOSystem}}() AI\_NO\_EXCEPT = default;}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{108 \textcolor{comment}{}    virtual \string~\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}}() = default;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{114 \textcolor{comment}{}    AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} Exists( const std::\textcolor{keywordtype}{string}\& pFile) const;}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{122 \textcolor{comment}{}    virtual \textcolor{keywordtype}{bool} Exists( const \textcolor{keywordtype}{char}* pFile) const = 0;}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{128 \textcolor{comment}{}    virtual \textcolor{keywordtype}{char} getOsSeparator() const = 0;}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{145 \textcolor{comment}{}    virtual \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}* Open(const \textcolor{keywordtype}{char}* pFile,}
+\DoxyCodeLine{146         const \textcolor{keywordtype}{char}* pMode = "{}rb"{}) = 0;}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{152 \textcolor{comment}{}    inline \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}* Open(const std::\textcolor{keywordtype}{string}\& pFile,}
+\DoxyCodeLine{153         const std::\textcolor{keywordtype}{string}\& pMode = std::\textcolor{keywordtype}{string}("{}rb"{}));}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{160 \textcolor{comment}{}    virtual \textcolor{keywordtype}{void} Close( \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}* pFile) = 0;}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{175 \textcolor{comment}{}    virtual \textcolor{keywordtype}{bool} ComparePaths (const \textcolor{keywordtype}{char}* one,}
+\DoxyCodeLine{176         const \textcolor{keywordtype}{char}* second) const;}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{182 \textcolor{comment}{}    inline \textcolor{keywordtype}{bool} ComparePaths (const std::\textcolor{keywordtype}{string}\& one,}
+\DoxyCodeLine{183         const std::\textcolor{keywordtype}{string}\& second) const;}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{190 \textcolor{comment}{}    virtual \textcolor{keywordtype}{bool} PushDirectory( const std::\textcolor{keywordtype}{string} \&path );}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{197 \textcolor{comment}{}    virtual const std::\textcolor{keywordtype}{string} \&CurrentDirectory() const;}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{203 \textcolor{comment}{}    virtual \textcolor{keywordtype}{size\_t} StackSize() const;}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{210 \textcolor{comment}{}    virtual \textcolor{keywordtype}{bool} PopDirectory();}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{218 \textcolor{comment}{}    virtual \textcolor{keywordtype}{bool} CreateDirectory( const std::\textcolor{keywordtype}{string} \&path );}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{225 \textcolor{comment}{}    virtual \textcolor{keywordtype}{bool} ChangeDirectory( const std::\textcolor{keywordtype}{string} \&path );}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{233 \textcolor{comment}{}    virtual \textcolor{keywordtype}{bool} DeleteFile(const std::\textcolor{keywordtype}{string} \&file);}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 private:}
+\DoxyCodeLine{236     std::vector<std::\textcolor{keywordtype}{string}> m\_pathStack;}
+\DoxyCodeLine{237 \};}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{240 \textcolor{comment}{// For compatibility, the interface of some functions taking a std::string was}}
+\DoxyCodeLine{241 \textcolor{comment}{// changed to const char* to avoid crashes between binary incompatible STL}}
+\DoxyCodeLine{242 \textcolor{comment}{// versions. This code her is inlined,  so it shouldn't cause any problems.}}
+\DoxyCodeLine{243 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{246 AI\_FORCE\_INLINE \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}* \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}}::Open(const std::\textcolor{keywordtype}{string}\& pFile, const std::\textcolor{keywordtype}{string}\& pMode) \{}
+\DoxyCodeLine{247     \textcolor{comment}{// NOTE:}}
+\DoxyCodeLine{248     \textcolor{comment}{// For compatibility, interface was changed to const char* to}}
+\DoxyCodeLine{249     \textcolor{comment}{// avoid crashes between binary incompatible STL versions}}
+\DoxyCodeLine{250     \textcolor{keywordflow}{return} Open(pFile.c\_str(),pMode.c\_str());}
+\DoxyCodeLine{251 \}}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{254 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IOSystem::Exists( \textcolor{keyword}{const} std::string\& pFile)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{255     \textcolor{comment}{// NOTE:}}
+\DoxyCodeLine{256     \textcolor{comment}{// For compatibility, interface was changed to const char* to}}
+\DoxyCodeLine{257     \textcolor{comment}{// avoid crashes between binary incompatible STL versions}}
+\DoxyCodeLine{258     \textcolor{keywordflow}{return} Exists(pFile.c\_str());}
+\DoxyCodeLine{259 \}}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{262 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IOSystem::ComparePaths(\textcolor{keyword}{const} std::string\& one, \textcolor{keyword}{const} std::string\& second)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{263     \textcolor{comment}{// NOTE:}}
+\DoxyCodeLine{264     \textcolor{comment}{// For compatibility, interface was changed to const char* to}}
+\DoxyCodeLine{265     \textcolor{comment}{// avoid crashes between binary incompatible STL versions}}
+\DoxyCodeLine{266     \textcolor{keywordflow}{return} ComparePaths(one.c\_str(),second.c\_str());}
+\DoxyCodeLine{267 \}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{270 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IOSystem::PushDirectory( \textcolor{keyword}{const} std::string \&path ) \{}
+\DoxyCodeLine{271     \textcolor{keywordflow}{if} ( path.empty() ) \{}
+\DoxyCodeLine{272         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{273     \}}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275     m\_pathStack.push\_back( path );}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{278 \}}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{281 AI\_FORCE\_INLINE \textcolor{keywordtype}{size\_t} IOSystem::StackSize()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{282     \textcolor{keywordflow}{return} m\_pathStack.size();}
+\DoxyCodeLine{283 \}}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{286 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IOSystem::PopDirectory() \{}
+\DoxyCodeLine{287     \textcolor{keywordflow}{if} ( m\_pathStack.empty() ) \{}
+\DoxyCodeLine{288         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{289     \}}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291     m\_pathStack.pop\_back();}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{294 \}}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{297 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IOSystem::CreateDirectory( \textcolor{keyword}{const} std::string \&path ) \{}
+\DoxyCodeLine{298     \textcolor{keywordflow}{if} ( path.empty() ) \{}
+\DoxyCodeLine{299         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{300     \}}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{303     \textcolor{keywordflow}{return} 0 != ::\_mkdir( path.c\_str() );}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{305     \textcolor{keywordflow}{return} 0 != ::mkdir( path.c\_str(), 0777 );}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_WIN32}}
+\DoxyCodeLine{307 \}}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{310 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IOSystem::ChangeDirectory( \textcolor{keyword}{const} std::string \&path ) \{}
+\DoxyCodeLine{311     \textcolor{keywordflow}{if} ( path.empty() ) \{}
+\DoxyCodeLine{312         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{313     \}}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{316     \textcolor{keywordflow}{return} 0 != ::\_chdir( path.c\_str() );}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{318     \textcolor{keywordflow}{return} 0 != ::chdir( path.c\_str() );}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_WIN32}}
+\DoxyCodeLine{320 \}}
+\DoxyCodeLine{321 }
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{324 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IOSystem::DeleteFile( \textcolor{keyword}{const} std::string \&file ) \{}
+\DoxyCodeLine{325     \textcolor{keywordflow}{if} ( file.empty() ) \{}
+\DoxyCodeLine{326         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{327     \}}
+\DoxyCodeLine{328     \textcolor{keyword}{const} \textcolor{keywordtype}{int} retCode( ::remove( file.c\_str() ) );}
+\DoxyCodeLine{329     \textcolor{keywordflow}{return} ( 0 == retCode );}
+\DoxyCodeLine{330 \}}
+\DoxyCodeLine{331 \} }
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//AI\_IOSYSTEM\_H\_INC}}
+
+\end{DoxyCode}

@@ -1,0 +1,90 @@
+\hypertarget{out_2install_2x64-_debug_2include_2assimp_2_log_stream_8hpp_source}{}\doxysection{Log\+Stream.\+hpp}
+\label{out_2install_2x64-_debug_2include_2assimp_2_log_stream_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/LogStream.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/LogStream.hpp}}
+\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_log_stream_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{10 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{11 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{14 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{15 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{18 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{19 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{20 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{21 \textcolor{comment}{}}
+\DoxyCodeLine{22 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{23 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{24 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{25 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{26 \textcolor{comment}{}}
+\DoxyCodeLine{27 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{28 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{29 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{30 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{31 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{32 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{33 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{34 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{35 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{36 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{37 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{38 \textcolor{comment}{}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef INCLUDED\_AI\_LOGSTREAM\_H}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define INCLUDED\_AI\_LOGSTREAM\_H}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2types_8h}{types.h}}"{}}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{class }IOSystem;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{65 \textcolor{comment}{}\textcolor{keyword}{class }ASSIMP\_API LogStream}
+\DoxyCodeLine{66 \#ifndef SWIG}
+\DoxyCodeLine{67         : \textcolor{keyword}{public} Intern::AllocateFromAssimpHeap}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{69 \{}
+\DoxyCodeLine{70 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{72     \mbox{\hyperlink{class_assimp_1_1_log_stream_aca07b1b2d95a8ffd4c3704e033facb26}{LogStream}}() AI\_NO\_EXCEPT;}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 public:}
+\DoxyCodeLine{76     virtual \string~\mbox{\hyperlink{class_assimp_1_1_log_stream}{LogStream}}();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{87 \textcolor{comment}{}    virtual \textcolor{keywordtype}{void} write(const \textcolor{keywordtype}{char} *message) = 0;}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{96 \textcolor{comment}{}    static \mbox{\hyperlink{class_assimp_1_1_log_stream}{LogStream}} *createDefaultStream(\mbox{\hyperlink{include_2assimp_2types_8h_ae4271f61a7c06cd4770fc3e11f58f9c6}{aiDefaultLogStream}} stream,}
+\DoxyCodeLine{97             const \textcolor{keywordtype}{char} *name = "{}AssimpLog.txt"{},}
+\DoxyCodeLine{98             \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} *io = \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \}; \textcolor{comment}{// !class LogStream}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 inline \mbox{\hyperlink{class_assimp_1_1_log_stream}{LogStream}}::\mbox{\hyperlink{class_assimp_1_1_log_stream}{LogStream}}() AI\_NO\_EXCEPT = default;}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 inline \mbox{\hyperlink{class_assimp_1_1_log_stream}{LogStream}}::\string~\mbox{\hyperlink{class_assimp_1_1_log_stream}{LogStream}}() = default;}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \} \textcolor{comment}{// Namespace Assimp}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INCLUDED\_AI\_LOGSTREAM\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,89 @@
+\hypertarget{range_8hpp_source}{}\doxysection{range.\+hpp}
+\label{range_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/gtx/range.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/gtx/range.hpp}}
+\mbox{\hyperlink{range_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{// Dependencies}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}../detail/setup.hpp"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#   error "{}GLM: GLM\_GTX\_range is an experimental extension and may change in the future. Use \#define GLM\_ENABLE\_EXPERIMENTAL before including it, if you really want to use it."{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#elif GLM\_MESSAGES == GLM\_ENABLE \&\& !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_GTX\_range extension included"{}})}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}../gtc/type\_ptr.hpp"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}../gtc/vec1.hpp"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#   if GLM\_COMPILER \& GLM\_COMPILER\_VC}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#       pragma warning(push)}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#       pragma warning(disable : 4100) }\textcolor{comment}{// unreferenced formal parameter}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{38     \textcolor{keyword}{inline} length\_t components(vec<1, T, Q> \textcolor{keyword}{const}\& v)}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40         \textcolor{keywordflow}{return} v.length();}
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{44     \textcolor{keyword}{inline} length\_t components(vec<2, T, Q> \textcolor{keyword}{const}\& v)}
+\DoxyCodeLine{45     \{}
+\DoxyCodeLine{46         \textcolor{keywordflow}{return} v.length();}
+\DoxyCodeLine{47     \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{50     \textcolor{keyword}{inline} length\_t components(vec<3, T, Q> \textcolor{keyword}{const}\& v)}
+\DoxyCodeLine{51     \{}
+\DoxyCodeLine{52         \textcolor{keywordflow}{return} v.length();}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{56     \textcolor{keyword}{inline} length\_t components(vec<4, T, Q> \textcolor{keyword}{const}\& v)}
+\DoxyCodeLine{57     \{}
+\DoxyCodeLine{58         \textcolor{keywordflow}{return} v.length();}
+\DoxyCodeLine{59     \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genType>}
+\DoxyCodeLine{62     \textcolor{keyword}{inline} length\_t components(genType \textcolor{keyword}{const}\& m)}
+\DoxyCodeLine{63     \{}
+\DoxyCodeLine{64         \textcolor{keywordflow}{return} m.length() * m[0].length();}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genType>}
+\DoxyCodeLine{68     \textcolor{keyword}{inline} \textcolor{keyword}{typename} genType::value\_type \textcolor{keyword}{const} * begin(genType \textcolor{keyword}{const}\& v)}
+\DoxyCodeLine{69     \{}
+\DoxyCodeLine{70         \textcolor{keywordflow}{return} \mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{value\_ptr}}(v);}
+\DoxyCodeLine{71     \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genType>}
+\DoxyCodeLine{74     \textcolor{keyword}{inline} \textcolor{keyword}{typename} genType::value\_type \textcolor{keyword}{const} * end(genType \textcolor{keyword}{const}\& v)}
+\DoxyCodeLine{75     \{}
+\DoxyCodeLine{76         \textcolor{keywordflow}{return} begin(v) + components(v);}
+\DoxyCodeLine{77     \}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genType>}
+\DoxyCodeLine{80     \textcolor{keyword}{inline} \textcolor{keyword}{typename} genType::value\_type * begin(genType\& v)}
+\DoxyCodeLine{81     \{}
+\DoxyCodeLine{82         \textcolor{keywordflow}{return} \mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{value\_ptr}}(v);}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genType>}
+\DoxyCodeLine{86     \textcolor{keyword}{inline} \textcolor{keyword}{typename} genType::value\_type * end(genType\& v)}
+\DoxyCodeLine{87     \{}
+\DoxyCodeLine{88         \textcolor{keywordflow}{return} begin(v) + components(v);}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#   if GLM\_COMPILER \& GLM\_COMPILER\_VC}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#       pragma warning(pop)}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{96 \}\textcolor{comment}{//namespace glm}}
+
+\end{DoxyCode}

@@ -1,0 +1,178 @@
+\hypertarget{out_2install_2x64-_release_2include_2assimp_2matrix4x4_8h_source}{}\doxysection{matrix4x4.\+h}
+\label{out_2install_2x64-_release_2include_2assimp_2matrix4x4_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/matrix4x4.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/matrix4x4.h}}
+\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2matrix4x4_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{13 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{14 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{15 \textcolor{comment}{}}
+\DoxyCodeLine{16 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{17 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{18 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{19 \textcolor{comment}{}}
+\DoxyCodeLine{20 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{21 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{22 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{23 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{24 \textcolor{comment}{}}
+\DoxyCodeLine{25 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{26 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{27 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{28 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{29 \textcolor{comment}{}}
+\DoxyCodeLine{30 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{31 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{32 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{33 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{34 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{35 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{36 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{37 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{38 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{39 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{40 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{41 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{42 \textcolor{comment}{*/}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#ifndef AI\_MATRIX4X4\_H\_INC}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define AI\_MATRIX4X4\_H\_INC}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <assimp/vector3.h>}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <assimp/defs.h>}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <assimp/config.h>}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{template}<\textcolor{keyword}{typename} TReal> \textcolor{keyword}{class }aiMatrix3x3t;}
+\DoxyCodeLine{61 \textcolor{keyword}{template}<\textcolor{keyword}{typename} TReal> \textcolor{keyword}{class }aiQuaterniont;}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{73 \textcolor{comment}{}\textcolor{keyword}{template}<\textcolor{keyword}{typename} TReal>}
+\DoxyCodeLine{74 \textcolor{keyword}{class }aiMatrix4x4t \{}
+\DoxyCodeLine{75 \textcolor{keyword}{public}:}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78     aiMatrix4x4t() AI\_NO\_EXCEPT;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81     aiMatrix4x4t (  TReal \_a1, TReal \_a2, TReal \_a3, TReal \_a4,}
+\DoxyCodeLine{82                     TReal \_b1, TReal \_b2, TReal \_b3, TReal \_b4,}
+\DoxyCodeLine{83                     TReal \_c1, TReal \_c2, TReal \_c3, TReal \_c4,}
+\DoxyCodeLine{84                     TReal \_d1, TReal \_d2, TReal \_d3, TReal \_d4);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{88     explicit aiMatrix4x4t( const aiMatrix3x3t<TReal>\& m);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{95     aiMatrix4x4t(const aiVector3t<TReal>\& scaling, const aiQuaterniont<TReal>\& rotation,}
+\DoxyCodeLine{96         const aiVector3t<TReal>\& position);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{comment}{// array access operators}}
+\DoxyCodeLine{103 \textcolor{comment}{}    TReal* operator[]       (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} p\_iIndex);}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{108     const TReal* operator[] (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} p\_iIndex) const;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{comment}{// comparison operators}}
+\DoxyCodeLine{111     \textcolor{keywordtype}{bool} operator== (const aiMatrix4x4t\& m) const;}
+\DoxyCodeLine{112     \textcolor{keywordtype}{bool} operator!= (const aiMatrix4x4t\& m) const;}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{keywordtype}{bool} Equal(const aiMatrix4x4t \&m, TReal epsilon = ai\_epsilon) const;}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{comment}{// matrix multiplication.}}
+\DoxyCodeLine{117     aiMatrix4x4t\& operator *= (const aiMatrix4x4t\& m);}
+\DoxyCodeLine{118     aiMatrix4x4t  operator *  (const aiMatrix4x4t\& m) const;}
+\DoxyCodeLine{119     aiMatrix4x4t operator * (const TReal\& aFloat) const;}
+\DoxyCodeLine{120     aiMatrix4x4t operator + (const aiMatrix4x4t\& aMatrix) const;}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     template <typename TOther>}
+\DoxyCodeLine{123     operator aiMatrix4x4t<TOther> () const;}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{127 \textcolor{comment}{}    aiMatrix4x4t\& Transpose();}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{134 \textcolor{comment}{}    aiMatrix4x4t\& Inverse();}
+\DoxyCodeLine{135     TReal Determinant() const;}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{145 \textcolor{comment}{}    inline \textcolor{keywordtype}{bool} IsIdentity(const TReal}
+\DoxyCodeLine{146             epsilon = AI\_CONFIG\_CHECK\_IDENTITY\_MATRIX\_EPSILON\_DEFAULT) const;}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{155 \textcolor{comment}{}    \textcolor{keywordtype}{void} Decompose (aiVector3t<TReal>\& scaling, aiQuaterniont<TReal>\& rotation,}
+\DoxyCodeLine{156         aiVector3t<TReal>\& position) const;}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{166 \textcolor{comment}{}    \textcolor{keywordtype}{void} Decompose(aiVector3t<TReal>\& pScaling, aiVector3t<TReal>\& pRotation, aiVector3t<TReal>\& pPosition) const;}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{177 \textcolor{comment}{}    \textcolor{keywordtype}{void} Decompose(aiVector3t<TReal>\& pScaling, aiVector3t<TReal>\& pRotationAxis, TReal\& pRotationAngle, aiVector3t<TReal>\& pPosition) const;}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{186 \textcolor{comment}{}    \textcolor{keywordtype}{void} DecomposeNoScaling (aiQuaterniont<TReal>\& rotation,}
+\DoxyCodeLine{187         aiVector3t<TReal>\& position) const;}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{195 \textcolor{comment}{}    aiMatrix4x4t\& FromEulerAnglesXYZ(TReal x, TReal y, TReal z);}
+\DoxyCodeLine{196     aiMatrix4x4t\& FromEulerAnglesXYZ(const aiVector3t<TReal>\& blubb);}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{204 \textcolor{comment}{}    static aiMatrix4x4t\& RotationX(TReal a, aiMatrix4x4t\& out);}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{212 \textcolor{comment}{}    static aiMatrix4x4t\& RotationY(TReal a, aiMatrix4x4t\& out);}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{220 \textcolor{comment}{}    static aiMatrix4x4t\& RotationZ(TReal a, aiMatrix4x4t\& out);}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{229 \textcolor{comment}{}    static aiMatrix4x4t\& Rotation(TReal a, const aiVector3t<TReal>\& axis,}
+\DoxyCodeLine{230             aiMatrix4x4t\& out);}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{238 \textcolor{comment}{}    static aiMatrix4x4t\& Translation( const aiVector3t<TReal>\& v,}
+\DoxyCodeLine{239             aiMatrix4x4t\& out);}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{247 \textcolor{comment}{}    static aiMatrix4x4t\& Scaling( const aiVector3t<TReal>\& v, aiMatrix4x4t\& out);}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{258 \textcolor{comment}{}    static aiMatrix4x4t\& FromToMatrix(const aiVector3t<TReal>\& from,}
+\DoxyCodeLine{259             const aiVector3t<TReal>\& to, aiMatrix4x4t\& out);}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261     TReal a1, a2, a3, a4;}
+\DoxyCodeLine{262     TReal b1, b2, b3, b4;}
+\DoxyCodeLine{263     TReal c1, c2, c3, c4;}
+\DoxyCodeLine{264     TReal d1, d2, d3, d4;}
+\DoxyCodeLine{265 \};}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267 typedef aiMatrix4x4t<ai\_real> \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}};}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} \{}
+\DoxyCodeLine{272     ai\_real a1, a2, a3, a4;}
+\DoxyCodeLine{273     ai\_real b1, b2, b3, b4;}
+\DoxyCodeLine{274     ai\_real c1, c2, c3, c4;}
+\DoxyCodeLine{275     ai\_real d1, d2, d3, d4;}
+\DoxyCodeLine{276 \};}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_MATRIX4X4\_H\_INC}}
+
+\end{DoxyCode}

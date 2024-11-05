@@ -1,0 +1,504 @@
+\hypertarget{build_2x64-_release_2include_2assimp_2config_8h_source}{}\doxysection{config.\+h}
+\label{build_2x64-_release_2include_2assimp_2config_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/build/x64-\/Release/include/assimp/config.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/build/x64-\/Release/include/assimp/config.h}}
+\mbox{\hyperlink{build_2x64-_release_2include_2assimp_2config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{12 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{17 \textcolor{comment}{}}
+\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{27 \textcolor{comment}{}}
+\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#ifndef AI\_CONFIG\_H\_INC}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define AI\_CONFIG\_H\_INC}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{comment}{// \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{63 \textcolor{comment}{// LIBRARY SETTINGS}}
+\DoxyCodeLine{64 \textcolor{comment}{// General, global settings}}
+\DoxyCodeLine{65 \textcolor{comment}{// \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{77 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_GLOB\_MEASURE\_TIME  \(\backslash\)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{    "{}GLOB\_MEASURE\_TIME"{}}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{87 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_NO\_SKELETON\_MESHES \(\backslash\)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{    "{}IMPORT\_NO\_SKELETON\_MESHES"{}}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{comment}{// \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{92 \textcolor{comment}{// POST PROCESSING SETTINGS}}
+\DoxyCodeLine{93 \textcolor{comment}{// Various stuff to fine-\/tune the behavior of a specific post processing step.}}
+\DoxyCodeLine{94 \textcolor{comment}{// \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{104 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_SBBC\_MAX\_BONES \(\backslash\)}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{    "{}PP\_SBBC\_MAX\_BONES"{}}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{comment}{// default limit for bone count}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#if (!defined AI\_SBBC\_DEFAULT\_MAX\_BONES)}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#   define AI\_SBBC\_DEFAULT\_MAX\_BONES        60}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{121 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_CT\_MAX\_SMOOTHING\_ANGLE \(\backslash\)}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{    "{}PP\_CT\_MAX\_SMOOTHING\_ANGLE"{}}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{130 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_CT\_TEXTURE\_CHANNEL\_INDEX \(\backslash\)}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{    "{}PP\_CT\_TEXTURE\_CHANNEL\_INDEX"{}}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{146 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_GSN\_MAX\_SMOOTHING\_ANGLE \(\backslash\)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{    "{}PP\_GSN\_MAX\_SMOOTHING\_ANGLE"{}}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{159 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MDL\_COLORMAP       \(\backslash\)}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{    "{}IMPORT\_MDL\_COLORMAP"{}}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{181 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_RRM\_EXCLUDE\_LIST   \(\backslash\)}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{    "{}PP\_RRM\_EXCLUDE\_LIST"{}}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{196 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_PTV\_KEEP\_HIERARCHY     \(\backslash\)}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{    "{}PP\_PTV\_KEEP\_HIERARCHY"{}}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{206 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_PTV\_NORMALIZE  \(\backslash\)}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{    "{}PP\_PTV\_NORMALIZE"{}}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{215 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_PTV\_ADD\_ROOT\_TRANSFORMATION    \(\backslash\)}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{    "{}PP\_PTV\_ADD\_ROOT\_TRANSFORMATION"{}}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{225 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_PTV\_ROOT\_TRANSFORMATION    \(\backslash\)}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{    "{}PP\_PTV\_ROOT\_TRANSFORMATION"{}}}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{235 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_CHECK\_IDENTITY\_MATRIX\_EPSILON \(\backslash\)}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{    "{}CHECK\_IDENTITY\_MATRIX\_EPSILON"{}}}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238 \textcolor{comment}{// default value for AI\_CONFIG\_CHECK\_IDENTITY\_MATRIX\_EPSILON}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{\#if (!defined AI\_CONFIG\_CHECK\_IDENTITY\_MATRIX\_EPSILON\_DEFAULT)}}
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#   define AI\_CONFIG\_CHECK\_IDENTITY\_MATRIX\_EPSILON\_DEFAULT 10e-\/3f}}
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{253 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_FD\_REMOVE \(\backslash\)}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{    "{}PP\_FD\_REMOVE"{}}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{262 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_FD\_CHECKAREA \(\backslash\)}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{    "{}PP\_FD\_CHECKAREA"{}}}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{283 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_OG\_EXCLUDE\_LIST    \(\backslash\)}}
+\DoxyCodeLine{284 \textcolor{preprocessor}{    "{}PP\_OG\_EXCLUDE\_LIST"{}}}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{294 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_SLM\_TRIANGLE\_LIMIT \(\backslash\)}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{    "{}PP\_SLM\_TRIANGLE\_LIMIT"{}}}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297 \textcolor{comment}{// default value for AI\_CONFIG\_PP\_SLM\_TRIANGLE\_LIMIT}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#if (!defined AI\_SLM\_DEFAULT\_MAX\_TRIANGLES)}}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#   define AI\_SLM\_DEFAULT\_MAX\_TRIANGLES     1000000}}
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{310 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_SLM\_VERTEX\_LIMIT \(\backslash\)}}
+\DoxyCodeLine{311 \textcolor{preprocessor}{    "{}PP\_SLM\_VERTEX\_LIMIT"{}}}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 \textcolor{comment}{// default value for AI\_CONFIG\_PP\_SLM\_VERTEX\_LIMIT}}
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#if (!defined AI\_SLM\_DEFAULT\_MAX\_VERTICES)}}
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#   define AI\_SLM\_DEFAULT\_MAX\_VERTICES      1000000}}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{324 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_LBW\_MAX\_WEIGHTS    \(\backslash\)}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{    "{}PP\_LBW\_MAX\_WEIGHTS"{}}}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327 \textcolor{comment}{// default value for AI\_CONFIG\_PP\_LBW\_MAX\_WEIGHTS}}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#if (!defined AI\_LMW\_MAX\_WEIGHTS)}}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#   define AI\_LMW\_MAX\_WEIGHTS   0x4}}
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_LMW\_MAX\_WEIGHTS}}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{338 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_DB\_THRESHOLD \(\backslash\)}}
+\DoxyCodeLine{339 \textcolor{preprocessor}{    "{}PP\_DB\_THRESHOLD"{}}}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341 \textcolor{comment}{// default value for AI\_CONFIG\_PP\_LBW\_MAX\_WEIGHTS}}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#if (!defined AI\_DEBONE\_THRESHOLD)}}
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#   define AI\_DEBONE\_THRESHOLD  1.0f}}
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_DEBONE\_THRESHOLD}}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{352 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_DB\_ALL\_OR\_NONE \(\backslash\)}}
+\DoxyCodeLine{353 \textcolor{preprocessor}{    "{}PP\_DB\_ALL\_OR\_NONE"{}}}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#ifndef PP\_ICL\_PTCACHE\_SIZE}}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#   define PP\_ICL\_PTCACHE\_SIZE 12}}
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{360 }
+\DoxyCodeLine{361 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{372 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_ICL\_PTCACHE\_SIZE   "{}PP\_ICL\_PTCACHE\_SIZE"{}}}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{374 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{380 \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3}{aiComponent}}}
+\DoxyCodeLine{381 \{}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#ifdef SWIG}}
+\DoxyCodeLine{384     \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3a041f3a06b4266389628bbf6d7c972e16}{aiComponent\_NORMALS}} = 0x2,}
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{386     \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3a041f3a06b4266389628bbf6d7c972e16}{aiComponent\_NORMALS}} = 0x2u,}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#ifdef SWIG}}
+\DoxyCodeLine{391     \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3a3735667dae4d12e0573b049be86158af}{aiComponent\_TANGENTS\_AND\_BITANGENTS}} = 0x4,}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{393     \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3a3735667dae4d12e0573b049be86158af}{aiComponent\_TANGENTS\_AND\_BITANGENTS}} = 0x4u,}
+\DoxyCodeLine{394 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{398     \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3a66f2439356e377d9182a34e4d11b89aa}{aiComponent\_COLORS}} = 0x8,}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{402     \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3a119bc187db7e081af2e5b9732060623d}{aiComponent\_TEXCOORDS}} = 0x10,}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{407     \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3ad37e83da41d8e9b17c2634bacc42925c}{aiComponent\_BONEWEIGHTS}} = 0x20,}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{412     \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3a8affaed18f69210bcbf20adeba16050a}{aiComponent\_ANIMATIONS}} = 0x40,}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{415     \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3ab6bcf49132356c2034491b6bf367d328}{aiComponent\_TEXTURES}} = 0x80,}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{420     \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3a9764d42f6546101a555a9e2d87c3b3d9}{aiComponent\_LIGHTS}} = 0x100,}
+\DoxyCodeLine{421 }
+\DoxyCodeLine{425     \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3aa4741bd21f4259301bb326e3b74dce29}{aiComponent\_CAMERAS}} = 0x200,}
+\DoxyCodeLine{426 }
+\DoxyCodeLine{428     \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3a297ca9db243a718dc3bfb3502cfc9b7a}{aiComponent\_MESHES}} = 0x400,}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{432     \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3a842d010d9211947c65eed564672677ed}{aiComponent\_MATERIALS}} = 0x800,}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434 }
+\DoxyCodeLine{437 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{438     \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a97ac2ef7a3967402a223f3da2640b2b3a45b57c0405db34d9394193232abb1762}{\_aiComponent\_Force32Bit}} = 0x9fffffff}
+\DoxyCodeLine{439 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{440 \};}
+\DoxyCodeLine{441 }
+\DoxyCodeLine{442 \textcolor{comment}{// Remove a specific color channel 'n'}}
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#define aiComponent\_COLORSn(n) (1u << (n+20u))}}
+\DoxyCodeLine{444 }
+\DoxyCodeLine{445 \textcolor{comment}{// Remove a specific UV channel 'n'}}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define aiComponent\_TEXCOORDSn(n) (1u << (n+25u))}}
+\DoxyCodeLine{447 }
+\DoxyCodeLine{448 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{460 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_RVC\_FLAGS              \(\backslash\)}}
+\DoxyCodeLine{461 \textcolor{preprocessor}{    "{}PP\_RVC\_FLAGS"{}}}
+\DoxyCodeLine{462 }
+\DoxyCodeLine{463 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{472 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_SBP\_REMOVE             \(\backslash\)}}
+\DoxyCodeLine{473 \textcolor{preprocessor}{    "{}PP\_SBP\_REMOVE"{}}}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{484 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_FID\_ANIM\_ACCURACY              \(\backslash\)}}
+\DoxyCodeLine{485 \textcolor{preprocessor}{    "{}PP\_FID\_ANIM\_ACCURACY"{}}}
+\DoxyCodeLine{486 }
+\DoxyCodeLine{487 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{492 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_FID\_IGNORE\_TEXTURECOORDS        \(\backslash\)}}
+\DoxyCodeLine{493 \textcolor{preprocessor}{    "{}PP\_FID\_IGNORE\_TEXTURECOORDS"{}}}
+\DoxyCodeLine{494 }
+\DoxyCodeLine{495 \textcolor{comment}{// TransformUVCoords evaluates UV scalings}}
+\DoxyCodeLine{496 \textcolor{preprocessor}{\#define AI\_UVTRAFO\_SCALING 0x1}}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498 \textcolor{comment}{// TransformUVCoords evaluates UV rotations}}
+\DoxyCodeLine{499 \textcolor{preprocessor}{\#define AI\_UVTRAFO\_ROTATION 0x2}}
+\DoxyCodeLine{500 }
+\DoxyCodeLine{501 \textcolor{comment}{// TransformUVCoords evaluates UV translation}}
+\DoxyCodeLine{502 \textcolor{preprocessor}{\#define AI\_UVTRAFO\_TRANSLATION 0x4}}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504 \textcolor{comment}{// Everything baked together -\/> default value}}
+\DoxyCodeLine{505 \textcolor{preprocessor}{\#define AI\_UVTRAFO\_ALL (AI\_UVTRAFO\_SCALING | AI\_UVTRAFO\_ROTATION | AI\_UVTRAFO\_TRANSLATION)}}
+\DoxyCodeLine{506 }
+\DoxyCodeLine{507 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{515 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_PP\_TUV\_EVALUATE               \(\backslash\)}}
+\DoxyCodeLine{516 \textcolor{preprocessor}{    "{}PP\_TUV\_EVALUATE"{}}}
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{527 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_FAVOUR\_SPEED              \(\backslash\)}}
+\DoxyCodeLine{528 \textcolor{preprocessor}{ "{}FAVOUR\_SPEED"{}}}
+\DoxyCodeLine{529 }
+\DoxyCodeLine{530 \textcolor{comment}{// \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{531 \textcolor{comment}{// IMPORTER SETTINGS}}
+\DoxyCodeLine{532 \textcolor{comment}{// Various stuff to fine-\/tune the behaviour of specific importer plugins.}}
+\DoxyCodeLine{533 \textcolor{comment}{// \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{534 }
+\DoxyCodeLine{535 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{542 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_SCHEMA\_DOCUMENT\_PROVIDER \(\backslash\)}}
+\DoxyCodeLine{543 \textcolor{preprocessor}{    "{}IMPORT\_SCHEMA\_DOCUMENT\_PROVIDER"{}}}
+\DoxyCodeLine{544 }
+\DoxyCodeLine{545 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{552 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_FBX\_READ\_ALL\_GEOMETRY\_LAYERS \(\backslash\)}}
+\DoxyCodeLine{553 \textcolor{preprocessor}{    "{}IMPORT\_FBX\_READ\_ALL\_GEOMETRY\_LAYERS"{}}}
+\DoxyCodeLine{554 }
+\DoxyCodeLine{555 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{564 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_FBX\_READ\_ALL\_MATERIALS \(\backslash\)}}
+\DoxyCodeLine{565 \textcolor{preprocessor}{    "{}IMPORT\_FBX\_READ\_ALL\_MATERIALS"{}}}
+\DoxyCodeLine{566 }
+\DoxyCodeLine{567 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{573 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_FBX\_READ\_MATERIALS \(\backslash\)}}
+\DoxyCodeLine{574 \textcolor{preprocessor}{    "{}IMPORT\_FBX\_READ\_MATERIALS"{}}}
+\DoxyCodeLine{575 }
+\DoxyCodeLine{576 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{582 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_FBX\_READ\_TEXTURES \(\backslash\)}}
+\DoxyCodeLine{583 \textcolor{preprocessor}{    "{}IMPORT\_FBX\_READ\_TEXTURES"{}}}
+\DoxyCodeLine{584 }
+\DoxyCodeLine{585 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{591 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_FBX\_READ\_CAMERAS \(\backslash\)}}
+\DoxyCodeLine{592 \textcolor{preprocessor}{    "{}IMPORT\_FBX\_READ\_CAMERAS"{}}}
+\DoxyCodeLine{593 }
+\DoxyCodeLine{594 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{600 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_FBX\_READ\_LIGHTS \(\backslash\)}}
+\DoxyCodeLine{601 \textcolor{preprocessor}{    "{}IMPORT\_FBX\_READ\_LIGHTS"{}}}
+\DoxyCodeLine{602 }
+\DoxyCodeLine{603 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{609 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_FBX\_READ\_ANIMATIONS \(\backslash\)}}
+\DoxyCodeLine{610 \textcolor{preprocessor}{    "{}IMPORT\_FBX\_READ\_ANIMATIONS"{}}}
+\DoxyCodeLine{611 }
+\DoxyCodeLine{612 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{618 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_FBX\_READ\_WEIGHTS \(\backslash\)}}
+\DoxyCodeLine{619 \textcolor{preprocessor}{    "{}IMPORT\_FBX\_READ\_WEIGHTS"{}}}
+\DoxyCodeLine{620 }
+\DoxyCodeLine{621 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{630 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_FBX\_STRICT\_MODE \(\backslash\)}}
+\DoxyCodeLine{631 \textcolor{preprocessor}{    "{}IMPORT\_FBX\_STRICT\_MODE"{}}}
+\DoxyCodeLine{632 }
+\DoxyCodeLine{633 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{641 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_FBX\_PRESERVE\_PIVOTS \(\backslash\)}}
+\DoxyCodeLine{642 \textcolor{preprocessor}{    "{}IMPORT\_FBX\_PRESERVE\_PIVOTS"{}}}
+\DoxyCodeLine{643 }
+\DoxyCodeLine{644 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{652 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_FBX\_OPTIMIZE\_EMPTY\_ANIMATION\_CURVES \(\backslash\)}}
+\DoxyCodeLine{653 \textcolor{preprocessor}{    "{}IMPORT\_FBX\_OPTIMIZE\_EMPTY\_ANIMATION\_CURVES"{}}}
+\DoxyCodeLine{654 }
+\DoxyCodeLine{655 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{661 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_FBX\_EMBEDDED\_TEXTURES\_LEGACY\_NAMING \(\backslash\)}}
+\DoxyCodeLine{662 \textcolor{preprocessor}{    "{}AI\_CONFIG\_IMPORT\_FBX\_EMBEDDED\_TEXTURES\_LEGACY\_NAMING"{}}}
+\DoxyCodeLine{663 }
+\DoxyCodeLine{664 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{669 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_REMOVE\_EMPTY\_BONES \(\backslash\)}}
+\DoxyCodeLine{670 \textcolor{preprocessor}{    "{}AI\_CONFIG\_IMPORT\_REMOVE\_EMPTY\_BONES"{}}}
+\DoxyCodeLine{671 }
+\DoxyCodeLine{672 }
+\DoxyCodeLine{673 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{676 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_FBX\_CONVERT\_TO\_M \(\backslash\)}}
+\DoxyCodeLine{677 \textcolor{preprocessor}{    "{}AI\_CONFIG\_FBX\_CONVERT\_TO\_M"{}}}
+\DoxyCodeLine{678 }
+\DoxyCodeLine{679 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{685 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_FBX\_USE\_SKELETON\_BONE\_CONTAINER \(\backslash\)}}
+\DoxyCodeLine{686 \textcolor{preprocessor}{    "{}AI\_CONFIG\_FBX\_USE\_SKELETON\_BONE\_CONTAINER"{}}}
+\DoxyCodeLine{687 }
+\DoxyCodeLine{688 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{701 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_GLOBAL\_KEYFRAME    "{}IMPORT\_GLOBAL\_KEYFRAME"{}}}
+\DoxyCodeLine{702 }
+\DoxyCodeLine{703 \textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MD3\_KEYFRAME       "{}IMPORT\_MD3\_KEYFRAME"{}}}
+\DoxyCodeLine{704 \textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MD2\_KEYFRAME       "{}IMPORT\_MD2\_KEYFRAME"{}}}
+\DoxyCodeLine{705 \textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MDL\_KEYFRAME       "{}IMPORT\_MDL\_KEYFRAME"{}}}
+\DoxyCodeLine{706 \textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MDC\_KEYFRAME       "{}IMPORT\_MDC\_KEYFRAME"{}}}
+\DoxyCodeLine{707 \textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_SMD\_KEYFRAME       "{}IMPORT\_SMD\_KEYFRAME"{}}}
+\DoxyCodeLine{708 \textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_UNREAL\_KEYFRAME    "{}IMPORT\_UNREAL\_KEYFRAME"{}}}
+\DoxyCodeLine{709 }
+\DoxyCodeLine{710 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{716 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MDL\_HL1\_READ\_ANIMATIONS "{}IMPORT\_MDL\_HL1\_READ\_ANIMATIONS"{}}}
+\DoxyCodeLine{717 }
+\DoxyCodeLine{718 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{725 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MDL\_HL1\_READ\_ANIMATION\_EVENTS "{}IMPORT\_MDL\_HL1\_READ\_ANIMATION\_EVENTS"{}}}
+\DoxyCodeLine{726 }
+\DoxyCodeLine{727 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{732 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MDL\_HL1\_TRANSFORM\_COORD\_SYSTEM "{}TRANSFORM COORDSYSTEM FOR HS! MODELS"{}}}
+\DoxyCodeLine{733 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{740 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MDL\_HL1\_READ\_BLEND\_CONTROLLERS "{}IMPORT\_MDL\_HL1\_READ\_BLEND\_CONTROLLERS"{}}}
+\DoxyCodeLine{741 }
+\DoxyCodeLine{742 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{749 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MDL\_HL1\_READ\_SEQUENCE\_TRANSITIONS "{}IMPORT\_MDL\_HL1\_READ\_SEQUENCE\_TRANSITIONS"{}}}
+\DoxyCodeLine{750 }
+\DoxyCodeLine{751 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{757 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MDL\_HL1\_READ\_ATTACHMENTS "{}IMPORT\_MDL\_HL1\_READ\_ATTACHMENTS"{}}}
+\DoxyCodeLine{758 }
+\DoxyCodeLine{759 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{765 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MDL\_HL1\_READ\_BONE\_CONTROLLERS "{}IMPORT\_MDL\_HL1\_READ\_BONE\_CONTROLLERS"{}}}
+\DoxyCodeLine{766 }
+\DoxyCodeLine{767 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{773 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MDL\_HL1\_READ\_HITBOXES "{}IMPORT\_MDL\_HL1\_READ\_HITBOXES"{}}}
+\DoxyCodeLine{774 }
+\DoxyCodeLine{775 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{781 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MDL\_HL1\_READ\_MISC\_GLOBAL\_INFO "{}IMPORT\_MDL\_HL1\_READ\_MISC\_GLOBAL\_INFO"{}}}
+\DoxyCodeLine{782 }
+\DoxyCodeLine{783 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{788 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_SMD\_LOAD\_ANIMATION\_LIST "{}IMPORT\_SMD\_LOAD\_ANIMATION\_LIST"{}}}
+\DoxyCodeLine{789 }
+\DoxyCodeLine{790 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{796 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_AC\_SEPARATE\_BFCULL \(\backslash\)}}
+\DoxyCodeLine{797 \textcolor{preprocessor}{    "{}IMPORT\_AC\_SEPARATE\_BFCULL"{}}}
+\DoxyCodeLine{798 }
+\DoxyCodeLine{799 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{807 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_AC\_EVAL\_SUBDIVISION    \(\backslash\)}}
+\DoxyCodeLine{808 \textcolor{preprocessor}{    "{}IMPORT\_AC\_EVAL\_SUBDIVISION"{}}}
+\DoxyCodeLine{809 }
+\DoxyCodeLine{810 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{816 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_UNREAL\_HANDLE\_FLAGS \(\backslash\)}}
+\DoxyCodeLine{817 \textcolor{preprocessor}{    "{}UNREAL\_HANDLE\_FLAGS"{}}}
+\DoxyCodeLine{818 }
+\DoxyCodeLine{819 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{829 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_TER\_MAKE\_UVS \(\backslash\)}}
+\DoxyCodeLine{830 \textcolor{preprocessor}{    "{}IMPORT\_TER\_MAKE\_UVS"{}}}
+\DoxyCodeLine{831 }
+\DoxyCodeLine{832 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{839 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_ASE\_RECONSTRUCT\_NORMALS    \(\backslash\)}}
+\DoxyCodeLine{840 \textcolor{preprocessor}{    "{}IMPORT\_ASE\_RECONSTRUCT\_NORMALS"{}}}
+\DoxyCodeLine{841 }
+\DoxyCodeLine{842 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{851 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MD3\_HANDLE\_MULTIPART \(\backslash\)}}
+\DoxyCodeLine{852 \textcolor{preprocessor}{    "{}IMPORT\_MD3\_HANDLE\_MULTIPART"{}}}
+\DoxyCodeLine{853 }
+\DoxyCodeLine{854 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{863 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MD3\_SKIN\_NAME \(\backslash\)}}
+\DoxyCodeLine{864 \textcolor{preprocessor}{    "{}IMPORT\_MD3\_SKIN\_NAME"{}}}
+\DoxyCodeLine{865 }
+\DoxyCodeLine{866 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{872 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MD3\_LOAD\_SHADERS \(\backslash\)}}
+\DoxyCodeLine{873 \textcolor{preprocessor}{    "{}IMPORT\_MD3\_LOAD\_SHADERS"{}}}
+\DoxyCodeLine{874 }
+\DoxyCodeLine{875 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{890 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MD3\_SHADER\_SRC \(\backslash\)}}
+\DoxyCodeLine{891 \textcolor{preprocessor}{    "{}IMPORT\_MD3\_SHADER\_SRC"{}}}
+\DoxyCodeLine{892 }
+\DoxyCodeLine{893 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{904 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_LWO\_ONE\_LAYER\_ONLY         \(\backslash\)}}
+\DoxyCodeLine{905 \textcolor{preprocessor}{    "{}IMPORT\_LWO\_ONE\_LAYER\_ONLY"{}}}
+\DoxyCodeLine{906 }
+\DoxyCodeLine{907 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{918 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_MD5\_NO\_ANIM\_AUTOLOAD           \(\backslash\)}}
+\DoxyCodeLine{919 \textcolor{preprocessor}{    "{}IMPORT\_MD5\_NO\_ANIM\_AUTOLOAD"{}}}
+\DoxyCodeLine{920 }
+\DoxyCodeLine{921 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{937 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_LWS\_ANIM\_START         \(\backslash\)}}
+\DoxyCodeLine{938 \textcolor{preprocessor}{    "{}IMPORT\_LWS\_ANIM\_START"{}}}
+\DoxyCodeLine{939 \textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_LWS\_ANIM\_END           \(\backslash\)}}
+\DoxyCodeLine{940 \textcolor{preprocessor}{    "{}IMPORT\_LWS\_ANIM\_END"{}}}
+\DoxyCodeLine{941 }
+\DoxyCodeLine{942 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{950 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_IRR\_ANIM\_FPS               \(\backslash\)}}
+\DoxyCodeLine{951 \textcolor{preprocessor}{    "{}IMPORT\_IRR\_ANIM\_FPS"{}}}
+\DoxyCodeLine{952 }
+\DoxyCodeLine{953 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{963 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_OGRE\_MATERIAL\_FILE \(\backslash\)}}
+\DoxyCodeLine{964 \textcolor{preprocessor}{    "{}IMPORT\_OGRE\_MATERIAL\_FILE"{}}}
+\DoxyCodeLine{965 }
+\DoxyCodeLine{966 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{983 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_OGRE\_TEXTURETYPE\_FROM\_FILENAME \(\backslash\)}}
+\DoxyCodeLine{984 \textcolor{preprocessor}{    "{}IMPORT\_OGRE\_TEXTURETYPE\_FROM\_FILENAME"{}}}
+\DoxyCodeLine{985 }
+\DoxyCodeLine{992 \textcolor{preprocessor}{ \#define AI\_CONFIG\_ANDROID\_JNI\_ASSIMP\_MANAGER\_SUPPORT "{}AI\_CONFIG\_ANDROID\_JNI\_ASSIMP\_MANAGER\_SUPPORT"{}}}
+\DoxyCodeLine{993 }
+\DoxyCodeLine{994 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1001 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_IFC\_SKIP\_SPACE\_REPRESENTATIONS "{}IMPORT\_IFC\_SKIP\_SPACE\_REPRESENTATIONS"{}}}
+\DoxyCodeLine{1002 }
+\DoxyCodeLine{1003 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1016 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_IFC\_CUSTOM\_TRIANGULATION "{}IMPORT\_IFC\_CUSTOM\_TRIANGULATION"{}}}
+\DoxyCodeLine{1017 }
+\DoxyCodeLine{1018 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1027 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_IFC\_SMOOTHING\_ANGLE "{}IMPORT\_IFC\_SMOOTHING\_ANGLE"{}}}
+\DoxyCodeLine{1028 }
+\DoxyCodeLine{1029 \textcolor{comment}{// default value for AI\_CONFIG\_IMPORT\_IFC\_SMOOTHING\_ANGLE}}
+\DoxyCodeLine{1030 \textcolor{preprocessor}{\#if (!defined AI\_IMPORT\_IFC\_DEFAULT\_SMOOTHING\_ANGLE)}}
+\DoxyCodeLine{1031 \textcolor{preprocessor}{\#   define AI\_IMPORT\_IFC\_DEFAULT\_SMOOTHING\_ANGLE 10.0f}}
+\DoxyCodeLine{1032 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1033 }
+\DoxyCodeLine{1034 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1043 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_IFC\_CYLINDRICAL\_TESSELLATION "{}IMPORT\_IFC\_CYLINDRICAL\_TESSELLATION"{}}}
+\DoxyCodeLine{1044 }
+\DoxyCodeLine{1045 \textcolor{comment}{// default value for AI\_CONFIG\_IMPORT\_IFC\_CYLINDRICAL\_TESSELLATION}}
+\DoxyCodeLine{1046 \textcolor{preprocessor}{\#if (!defined AI\_IMPORT\_IFC\_DEFAULT\_CYLINDRICAL\_TESSELLATION)}}
+\DoxyCodeLine{1047 \textcolor{preprocessor}{\#   define AI\_IMPORT\_IFC\_DEFAULT\_CYLINDRICAL\_TESSELLATION 32}}
+\DoxyCodeLine{1048 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1049 }
+\DoxyCodeLine{1050 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1057 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_COLLADA\_IGNORE\_UP\_DIRECTION "{}IMPORT\_COLLADA\_IGNORE\_UP\_DIRECTION"{}}}
+\DoxyCodeLine{1058 }
+\DoxyCodeLine{1059 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1066 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_COLLADA\_IGNORE\_UNIT\_SIZE "{}IMPORT\_COLLADA\_IGNORE\_UNIT\_SIZE"{}}}
+\DoxyCodeLine{1067 }
+\DoxyCodeLine{1068 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1076 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_CONFIG\_IMPORT\_COLLADA\_USE\_COLLADA\_NAMES "{}IMPORT\_COLLADA\_USE\_COLLADA\_NAMES"{}}}
+\DoxyCodeLine{1077 }
+\DoxyCodeLine{1078 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ All the Export defines -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1079 }
+\DoxyCodeLine{1085 \textcolor{preprocessor}{\#define AI\_CONFIG\_EXPORT\_XFILE\_64BIT "{}EXPORT\_XFILE\_64BIT"{}}}
+\DoxyCodeLine{1086 }
+\DoxyCodeLine{1096 \textcolor{preprocessor}{\#define AI\_CONFIG\_EXPORT\_POINT\_CLOUDS "{}EXPORT\_POINT\_CLOUDS"{}}}
+\DoxyCodeLine{1097 }
+\DoxyCodeLine{1107 \textcolor{preprocessor}{\#define AI\_CONFIG\_USE\_GLTF\_PBR\_SPECULAR\_GLOSSINESS "{}USE\_GLTF\_PBR\_SPECULAR\_GLOSSINESS"{}}}
+\DoxyCodeLine{1108 }
+\DoxyCodeLine{1119 \textcolor{preprocessor}{\#define AI\_CONFIG\_EXPORT\_GLTF\_UNLIMITED\_SKINNING\_BONES\_PER\_VERTEX \(\backslash\)}}
+\DoxyCodeLine{1120 \textcolor{preprocessor}{        "{}USE\_UNLIMITED\_BONES\_PER VERTEX"{}}}
+\DoxyCodeLine{1121 }
+\DoxyCodeLine{1129 \textcolor{preprocessor}{\#define AI\_CONFIG\_EXPORT\_FBX\_TRANSPARENCY\_FACTOR\_REFER\_TO\_OPACITY \(\backslash\)}}
+\DoxyCodeLine{1130 \textcolor{preprocessor}{        "{}EXPORT\_FBX\_TRANSPARENCY\_FACTOR\_REFER\_TO\_OPACITY"{}}}
+\DoxyCodeLine{1131 }
+\DoxyCodeLine{1147 \textcolor{preprocessor}{\#define AI\_CONFIG\_EXPORT\_BLOB\_NAME "{}EXPORT\_BLOB\_NAME"{}}}
+\DoxyCodeLine{1148 }
+\DoxyCodeLine{1152 \textcolor{preprocessor}{\#define AI\_CONFIG\_GLOBAL\_SCALE\_FACTOR\_KEY "{}GLOBAL\_SCALE\_FACTOR"{}}}
+\DoxyCodeLine{1153 }
+\DoxyCodeLine{1154 \textcolor{preprocessor}{\#if (!defined AI\_CONFIG\_GLOBAL\_SCALE\_FACTOR\_DEFAULT)}}
+\DoxyCodeLine{1155 \textcolor{preprocessor}{\#   define AI\_CONFIG\_GLOBAL\_SCALE\_FACTOR\_DEFAULT  1.0f}}
+\DoxyCodeLine{1156 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_DEBONE\_THRESHOLD}}
+\DoxyCodeLine{1157 }
+\DoxyCodeLine{1158 \textcolor{preprocessor}{\#define AI\_CONFIG\_APP\_SCALE\_KEY "{}APP\_SCALE\_FACTOR"{}}}
+\DoxyCodeLine{1159 }
+\DoxyCodeLine{1160 \textcolor{preprocessor}{\#if (!defined AI\_CONFIG\_APP\_SCALE\_KEY)}}
+\DoxyCodeLine{1161 \textcolor{preprocessor}{\#   define AI\_CONFIG\_APP\_SCALE\_KEY 1.0}}
+\DoxyCodeLine{1162 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_CONFIG\_APP\_SCALE\_KEY}}
+\DoxyCodeLine{1163 }
+\DoxyCodeLine{1164 }
+\DoxyCodeLine{1165 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ All the Build/Compile-\/time defines -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1166 }
+\DoxyCodeLine{1172 \textcolor{comment}{/* \#undef ASSIMP\_DOUBLE\_PRECISION */}}
+\DoxyCodeLine{1173 }
+\DoxyCodeLine{1174 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_CONFIG\_H\_INC}}
+
+\end{DoxyCode}

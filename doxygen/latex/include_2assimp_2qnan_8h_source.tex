@@ -1,0 +1,140 @@
+\hypertarget{include_2assimp_2qnan_8h_source}{}\doxysection{qnan.\+h}
+\label{include_2assimp_2qnan_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/qnan.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/qnan.h}}
+\mbox{\hyperlink{include_2assimp_2qnan_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{11 \textcolor{comment}{}}
+\DoxyCodeLine{12 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{13 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{14 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{15 \textcolor{comment}{}}
+\DoxyCodeLine{16 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{17 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{18 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{19 \textcolor{comment}{}}
+\DoxyCodeLine{20 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{21 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{22 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{23 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{24 \textcolor{comment}{}}
+\DoxyCodeLine{25 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{26 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{27 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{28 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{29 \textcolor{comment}{}}
+\DoxyCodeLine{30 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{31 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{32 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{33 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{34 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{35 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{36 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{37 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{38 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{39 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{40 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{41 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{42 \textcolor{comment}{*/}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#ifndef AI\_QNAN\_H\_INCLUDED}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define AI\_QNAN\_H\_INCLUDED}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#include <assimp/defs.h>}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{69 \textcolor{comment}{}\textcolor{keyword}{union }\mbox{\hyperlink{union___i_e_e_e_single}{\_IEEESingle}} \{}
+\DoxyCodeLine{70     \textcolor{keywordtype}{float} Float;}
+\DoxyCodeLine{71     \textcolor{keyword}{struct}}
+\DoxyCodeLine{72     \{}
+\DoxyCodeLine{73         uint32\_t Frac : 23;}
+\DoxyCodeLine{74         uint32\_t Exp  : 8;}
+\DoxyCodeLine{75         uint32\_t Sign : 1;}
+\DoxyCodeLine{76     \} IEEE;}
+\DoxyCodeLine{77 \};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{82 \textcolor{comment}{}\textcolor{keyword}{union }\mbox{\hyperlink{union___i_e_e_e_double}{\_IEEEDouble}} \{}
+\DoxyCodeLine{83     \textcolor{keywordtype}{double} Double;}
+\DoxyCodeLine{84     \textcolor{keyword}{struct}}
+\DoxyCodeLine{85     \{}
+\DoxyCodeLine{86         uint64\_t Frac : 52;}
+\DoxyCodeLine{87         uint64\_t Exp  : 11;}
+\DoxyCodeLine{88         uint64\_t Sign : 1;}
+\DoxyCodeLine{89     \} IEEE;}
+\DoxyCodeLine{90 \};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{95 \textcolor{comment}{}AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} \mbox{\hyperlink{include_2assimp_2qnan_8h_aba07171feddf4c9513c2424a630b03a5}{is\_qnan}}(\textcolor{keywordtype}{float} in) \{}
+\DoxyCodeLine{96     \textcolor{comment}{// the straightforward solution does not work:}}
+\DoxyCodeLine{97     \textcolor{comment}{//   return (in != in);}}
+\DoxyCodeLine{98     \textcolor{comment}{// compiler generates code like this}}
+\DoxyCodeLine{99     \textcolor{comment}{//   load <in> to <register-\/with-\/different-\/width>}}
+\DoxyCodeLine{100     \textcolor{comment}{//   compare <register-\/with-\/different-\/width> against <in>}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{comment}{// FIXME: Use <float> stuff instead? I think fpclassify needs C99}}
+\DoxyCodeLine{103     \mbox{\hyperlink{union___i_e_e_e_single}{\_IEEESingle}} temp;}
+\DoxyCodeLine{104     memcpy(\&temp, \&in, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}));}
+\DoxyCodeLine{105     \textcolor{keywordflow}{return} (temp.IEEE.Exp == (1u << 8)-\/1 \&\&}
+\DoxyCodeLine{106         temp.IEEE.Frac);}
+\DoxyCodeLine{107 \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{112 \textcolor{comment}{}AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} \mbox{\hyperlink{include_2assimp_2qnan_8h_aba07171feddf4c9513c2424a630b03a5}{is\_qnan}}(\textcolor{keywordtype}{double} in) \{}
+\DoxyCodeLine{113     \textcolor{comment}{// the straightforward solution does not work:}}
+\DoxyCodeLine{114     \textcolor{comment}{//   return (in != in);}}
+\DoxyCodeLine{115     \textcolor{comment}{// compiler generates code like this}}
+\DoxyCodeLine{116     \textcolor{comment}{//   load <in> to <register-\/with-\/different-\/width>}}
+\DoxyCodeLine{117     \textcolor{comment}{//   compare <register-\/with-\/different-\/width> against <in>}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{// FIXME: Use <float> stuff instead? I think fpclassify needs C99}}
+\DoxyCodeLine{120     \mbox{\hyperlink{union___i_e_e_e_double}{\_IEEEDouble}} temp;}
+\DoxyCodeLine{121     memcpy(\&temp, \&in, \textcolor{keyword}{sizeof}(in));}
+\DoxyCodeLine{122     \textcolor{keywordflow}{return} (temp.IEEE.Exp == (1u << 11)-\/1 \&\&}
+\DoxyCodeLine{123         temp.IEEE.Frac);}
+\DoxyCodeLine{124 \}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{131 \textcolor{comment}{}AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} \mbox{\hyperlink{include_2assimp_2qnan_8h_ae81ad0f99eba1f73bad78e48a16df827}{is\_special\_float}}(\textcolor{keywordtype}{float} in) \{}
+\DoxyCodeLine{132     \mbox{\hyperlink{union___i_e_e_e_single}{\_IEEESingle}} temp;}
+\DoxyCodeLine{133     memcpy(\&temp, \&in, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}));}
+\DoxyCodeLine{134     \textcolor{keywordflow}{return} (temp.IEEE.Exp == (1u << 8)-\/1);}
+\DoxyCodeLine{135 \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{142 \textcolor{comment}{}AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} \mbox{\hyperlink{include_2assimp_2qnan_8h_ae81ad0f99eba1f73bad78e48a16df827}{is\_special\_float}}(\textcolor{keywordtype}{double} in) \{}
+\DoxyCodeLine{143    \mbox{\hyperlink{union___i_e_e_e_single}{\_IEEESingle}} temp;}
+\DoxyCodeLine{144     memcpy(\&temp, \&in, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}));}
+\DoxyCodeLine{145     \textcolor{keywordflow}{return} (temp.IEEE.Exp == (1u << 11)-\/1);}
+\DoxyCodeLine{146 \}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{151 \textcolor{comment}{}\textcolor{keyword}{template}<\textcolor{keyword}{class} TReal>}
+\DoxyCodeLine{152 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} \mbox{\hyperlink{include_2assimp_2qnan_8h_a4b93a2d042b065c5b0c068626dc54ed2}{is\_not\_qnan}}(TReal in) \{}
+\DoxyCodeLine{153     \textcolor{keywordflow}{return} !\mbox{\hyperlink{include_2assimp_2qnan_8h_aba07171feddf4c9513c2424a630b03a5}{is\_qnan}}(in);}
+\DoxyCodeLine{154 \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{158 \textcolor{comment}{}AI\_FORCE\_INLINE ai\_real \mbox{\hyperlink{include_2assimp_2qnan_8h_a1563bfa01954df98282cbaaf632dc95a}{get\_qnan}}() \{}
+\DoxyCodeLine{159     \textcolor{keywordflow}{return} std::numeric\_limits<ai\_real>::quiet\_NaN();}
+\DoxyCodeLine{160 \}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_QNAN\_H\_INCLUDED}}
+
+\end{DoxyCode}

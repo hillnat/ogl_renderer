@@ -1,0 +1,218 @@
+\hypertarget{include_2assimp_2_logger_8hpp_source}{}\doxysection{Logger.\+hpp}
+\label{include_2assimp_2_logger_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/Logger.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/Logger.hpp}}
+\mbox{\hyperlink{include_2assimp_2_logger_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{10 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{11 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{14 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{15 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{18 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{19 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{20 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{21 \textcolor{comment}{}}
+\DoxyCodeLine{22 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{23 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{24 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{25 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{26 \textcolor{comment}{}}
+\DoxyCodeLine{27 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{28 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{29 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{30 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{31 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{32 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{33 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{34 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{35 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{36 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{37 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{38 \textcolor{comment}{}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef INCLUDED\_AI\_LOGGER\_H}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define INCLUDED\_AI\_LOGGER\_H}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include <assimp/types.h>}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#include <assimp/TinyFormatter.h>}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{class }LogStream;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{comment}{// Maximum length of a log message. Longer messages are rejected.}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define MAX\_LOG\_MESSAGE\_LENGTH 1024u}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{64 \textcolor{comment}{}\textcolor{keyword}{class }ASSIMP\_API \mbox{\hyperlink{class_assimp_1_1_logger}{Logger}}}
+\DoxyCodeLine{65 \#ifndef SWIG}
+\DoxyCodeLine{66     : \textcolor{keyword}{public} Intern::AllocateFromAssimpHeap}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69 \textcolor{keyword}{public}:}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{75 \textcolor{comment}{}    \textcolor{keyword}{enum} \mbox{\hyperlink{class_assimp_1_1_logger_a8b6248a0fd062431e8572556350d29e6}{LogSeverity}} \{}
+\DoxyCodeLine{76         \mbox{\hyperlink{class_assimp_1_1_logger_a8b6248a0fd062431e8572556350d29e6a3bc91952c98d7ca18720d32a6e3a29d8}{NORMAL}},     }
+\DoxyCodeLine{77         \mbox{\hyperlink{class_assimp_1_1_logger_a8b6248a0fd062431e8572556350d29e6aac1018ab1c31e71bd6b1d8625bdda8b3}{DEBUGGING}},  }
+\DoxyCodeLine{78         VERBOSE     }
+\DoxyCodeLine{79     \};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{89 \textcolor{comment}{}    \textcolor{keyword}{enum} \mbox{\hyperlink{class_assimp_1_1_logger_acd0b52a87d6fc11e957ed2c6e2ad75b6}{ErrorSeverity}} \{}
+\DoxyCodeLine{90         Debugging   = 1,    }
+\DoxyCodeLine{91         Info        = 2,    }
+\DoxyCodeLine{92         Warn        = 4,    }
+\DoxyCodeLine{93         Err         = 8     }
+\DoxyCodeLine{94     \};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{97     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_assimp_1_1_logger_a27dd2bd4fd3b9cde0635ed22aad687c3}{\string~Logger}}();}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{102 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_logger_a3b10454ab4c0949f251062376d9c4161}{debug}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{keyword}{template}<\textcolor{keyword}{typename}... T>}
+\DoxyCodeLine{105     \textcolor{keywordtype}{void} debug(T\&\&... args) \{}
+\DoxyCodeLine{106         debug(formatMessage(std::forward<T>(args)...).c\_str());}
+\DoxyCodeLine{107     \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{112 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_logger_a44c1da5be64b31741facfafa3ae6d8ef}{verboseDebug}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{keyword}{template}<\textcolor{keyword}{typename}... T>}
+\DoxyCodeLine{115     \textcolor{keywordtype}{void} verboseDebug(T\&\&... args) \{}
+\DoxyCodeLine{116         verboseDebug(formatMessage(std::forward<T>(args)...).c\_str());}
+\DoxyCodeLine{117     \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{122 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_logger_a12b8a125083c47ac0bb6056f00761e52}{info}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124     \textcolor{keyword}{template}<\textcolor{keyword}{typename}... T>}
+\DoxyCodeLine{125     \textcolor{keywordtype}{void} info(T\&\&... args) \{}
+\DoxyCodeLine{126         info(formatMessage(std::forward<T>(args)...).c\_str());}
+\DoxyCodeLine{127     \}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{132 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_logger_a32bc5ee4b23df13551b83b925907f1b1}{warn}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message);}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \textcolor{keyword}{template}<\textcolor{keyword}{typename}... T>}
+\DoxyCodeLine{135     \textcolor{keywordtype}{void} warn(T\&\&... args) \{}
+\DoxyCodeLine{136         warn(formatMessage(std::forward<T>(args)...).c\_str());}
+\DoxyCodeLine{137     \}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{142 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_logger_aa8b7c3f56dc4cecfdacc8bb36ba3fac1}{error}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message);}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144     \textcolor{keyword}{template}<\textcolor{keyword}{typename}... T>}
+\DoxyCodeLine{145     \textcolor{keywordtype}{void} error(T\&\&... args) \{}
+\DoxyCodeLine{146         error(formatMessage(std::forward<T>(args)...).c\_str());}
+\DoxyCodeLine{147     \}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{152 \textcolor{comment}{}    \textcolor{keywordtype}{void} setLogSeverity(LogSeverity log\_severity);}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{156 \textcolor{comment}{}    LogSeverity getLogSeverity() \textcolor{keyword}{const};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{170 \textcolor{comment}{}    \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_logger_aaf32a42b02a7e227076013d01e349871}{attachStream}}(\mbox{\hyperlink{class_assimp_1_1_log_stream}{LogStream}} *pStream,}
+\DoxyCodeLine{171         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} severity = Debugging | Err | Warn | Info) = 0;}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{182 \textcolor{comment}{}    \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_logger_a04168fe42b575cb37e71478ee0411d24}{detachStream}}(\mbox{\hyperlink{class_assimp_1_1_log_stream}{LogStream}} *pStream,}
+\DoxyCodeLine{183         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} severity = Debugging | Err | Warn | Info) = 0;}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{189     \mbox{\hyperlink{class_assimp_1_1_logger}{Logger}}() AI\_NO\_EXCEPT;}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{194     explicit \mbox{\hyperlink{class_assimp_1_1_logger}{Logger}}(\mbox{\hyperlink{class_assimp_1_1_logger_a8b6248a0fd062431e8572556350d29e6}{LogSeverity}} severity);}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{204 \textcolor{comment}{}    virtual \textcolor{keywordtype}{void} OnDebug(const \textcolor{keywordtype}{char}* message)= 0;}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{214 \textcolor{comment}{}    virtual \textcolor{keywordtype}{void} OnVerboseDebug(const \textcolor{keywordtype}{char} *message) = 0;}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{224 \textcolor{comment}{}    virtual \textcolor{keywordtype}{void} OnInfo(const \textcolor{keywordtype}{char}* message) = 0;}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{234 \textcolor{comment}{}    virtual \textcolor{keywordtype}{void} OnWarn(const \textcolor{keywordtype}{char}* essage) = 0;}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{244 \textcolor{comment}{}    virtual \textcolor{keywordtype}{void} OnError(const \textcolor{keywordtype}{char}* message) = 0;}
+\DoxyCodeLine{245 protected:}
+\DoxyCodeLine{246     std::\textcolor{keywordtype}{string} formatMessage(\mbox{\hyperlink{namespace_assimp}{Assimp}}::Formatter::format f) \{}
+\DoxyCodeLine{247         \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{248     \}}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250     \textcolor{keyword}{template}<\textcolor{keyword}{typename}... T, \textcolor{keyword}{typename} U>}
+\DoxyCodeLine{251     std::string formatMessage(\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{Assimp::Formatter::format}} f, U\&\& u, T\&\&... args) \{}
+\DoxyCodeLine{252         \textcolor{keywordflow}{return} formatMessage(std::move(f << std::forward<U>(u)), std::forward<T>(args)...);}
+\DoxyCodeLine{253     \}}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{256     LogSeverity m\_Severity;}
+\DoxyCodeLine{257 \};}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{260 \textcolor{keyword}{inline} \mbox{\hyperlink{class_assimp_1_1_logger_a17f4cbc042c26935e16eb204ca77c2c1}{Logger::Logger}}() AI\_NO\_EXCEPT :}
+\DoxyCodeLine{261         m\_Severity(NORMAL) \{}
+\DoxyCodeLine{262     \textcolor{comment}{// empty}}
+\DoxyCodeLine{263 \}}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{266 \textcolor{keyword}{inline} \mbox{\hyperlink{class_assimp_1_1_logger_a27dd2bd4fd3b9cde0635ed22aad687c3}{Logger::\string~Logger}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{269 \textcolor{keyword}{inline} \mbox{\hyperlink{class_assimp_1_1_logger_a17f4cbc042c26935e16eb204ca77c2c1}{Logger::Logger}}(\mbox{\hyperlink{class_assimp_1_1_logger_a8b6248a0fd062431e8572556350d29e6}{LogSeverity}} severity) :}
+\DoxyCodeLine{270         m\_Severity(severity) \{}
+\DoxyCodeLine{271     \textcolor{comment}{// empty}}
+\DoxyCodeLine{272 \}}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{275 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_logger_a8fb4fa4c2c329a36ac39bc9c743925f1}{Logger::setLogSeverity}}(\mbox{\hyperlink{class_assimp_1_1_logger_a8b6248a0fd062431e8572556350d29e6}{LogSeverity}} log\_severity)\{}
+\DoxyCodeLine{276     m\_Severity = log\_severity;}
+\DoxyCodeLine{277 \}}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{280 \textcolor{comment}{// Log severity getter}}
+\DoxyCodeLine{281 \textcolor{keyword}{inline} \mbox{\hyperlink{class_assimp_1_1_logger_a8b6248a0fd062431e8572556350d29e6}{Logger::LogSeverity}} \mbox{\hyperlink{class_assimp_1_1_logger_a4b565acf3a82915c35bb18e2a85ab43d}{Logger::getLogSeverity}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{282     \textcolor{keywordflow}{return} m\_Severity;}
+\DoxyCodeLine{283 \}}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285 \} \textcolor{comment}{// Namespace Assimp}}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#define ASSIMP\_LOG\_WARN(...) \(\backslash\)}}
+\DoxyCodeLine{289 \textcolor{preprocessor}{    Assimp::DefaultLogger::get()-\/>warn(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#define ASSIMP\_LOG\_ERROR(...) \(\backslash\)}}
+\DoxyCodeLine{292 \textcolor{preprocessor}{    Assimp::DefaultLogger::get()-\/>error(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#define ASSIMP\_LOG\_DEBUG(...) \(\backslash\)}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{    Assimp::DefaultLogger::get()-\/>debug(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#define ASSIMP\_LOG\_VERBOSE\_DEBUG(...) \(\backslash\)}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{    Assimp::DefaultLogger::get()-\/>verboseDebug(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#define ASSIMP\_LOG\_INFO(...) \(\backslash\)}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{    Assimp::DefaultLogger::get()-\/>info(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! INCLUDED\_AI\_LOGGER\_H}}
+
+\end{DoxyCode}

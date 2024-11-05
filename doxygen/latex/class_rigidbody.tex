@@ -1,0 +1,92 @@
+\hypertarget{class_rigidbody}{}\doxysection{Rigidbody Class Reference}
+\label{class_rigidbody}\index{Rigidbody@{Rigidbody}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_rigidbody_ae6a187f538fa44de1ee3cf9d5f503779}\label{class_rigidbody_ae6a187f538fa44de1ee3cf9d5f503779}} 
+{\bfseries Rigidbody} (\mbox{\hyperlink{class_transform}{Transform}} $\ast$attached\+Body)
+\item 
+\mbox{\Hypertarget{class_rigidbody_abd75f0b2e6363b4ac78f627dab091c51}\label{class_rigidbody_abd75f0b2e6363b4ac78f627dab091c51}} 
+{\bfseries Rigidbody} (\mbox{\hyperlink{class_transform}{Transform}} $\ast$attached\+Body, vec3 vel, float gravity\+Scale, bool is\+Static, float mass)
+\item 
+void \mbox{\hyperlink{class_rigidbody_a3489a4d160049331712e71179e7ecebd}{Update\+Body}} (float fixed\+Delta\+Time)
+\begin{DoxyCompactList}\small\item\em Executes a physics tick on this object  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2}{Add\+Force}} (vec3 force)
+\begin{DoxyCompactList}\small\item\em Adds force, factoring in mass  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rigidbody_ab633f234942f4142cb4128883c6c9aa6}{Add\+Force\+Pure}} (vec3 pure\+Force)
+\begin{DoxyCompactList}\small\item\em Adds force, ignoring mass  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_rigidbody_ae72c531ed1c6b56f60ed4f62c7870f90}\label{class_rigidbody_ae72c531ed1c6b56f60ed4f62c7870f90}} 
+\mbox{\hyperlink{class_transform}{Transform}} $\ast$ {\bfseries attached\+Transform}
+\item 
+\mbox{\Hypertarget{class_rigidbody_a258caa3707f50201ba6b30923384fa43}\label{class_rigidbody_a258caa3707f50201ba6b30923384fa43}} 
+float {\bfseries gravity\+Scale} = 0
+\item 
+\mbox{\Hypertarget{class_rigidbody_a4e7b75373c2a77e70cad1864c3dfd830}\label{class_rigidbody_a4e7b75373c2a77e70cad1864c3dfd830}} 
+vec3 {\bfseries velocity} = vec3(0, 0, 0)
+\item 
+\mbox{\Hypertarget{class_rigidbody_a0ff47d17bcd8629f60b5b36de8a5357c}\label{class_rigidbody_a0ff47d17bcd8629f60b5b36de8a5357c}} 
+float {\bfseries mass} =1
+\item 
+\mbox{\Hypertarget{class_rigidbody_aac501b7f51395b8ec3204b0353c91db0}\label{class_rigidbody_aac501b7f51395b8ec3204b0353c91db0}} 
+bool {\bfseries is\+Static} = false
+\item 
+\mbox{\Hypertarget{class_rigidbody_a161f81a10b39514161d0f1fb473bcd8a}\label{class_rigidbody_a161f81a10b39514161d0f1fb473bcd8a}} 
+bool {\bfseries is\+Resting} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2}\label{class_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2}} 
+\index{Rigidbody@{Rigidbody}!AddForce@{AddForce}}
+\index{AddForce@{AddForce}!Rigidbody@{Rigidbody}}
+\doxysubsubsection{\texorpdfstring{AddForce()}{AddForce()}}
+{\footnotesize\ttfamily void Rigidbody\+::\+Add\+Force (\begin{DoxyParamCaption}\item[{vec3}]{force }\end{DoxyParamCaption})}
+
+
+
+Adds force, factoring in mass  
+
+
+\begin{DoxyParams}{Parameters}
+{\em force} & Amount of force to apply\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rigidbody_ab633f234942f4142cb4128883c6c9aa6}\label{class_rigidbody_ab633f234942f4142cb4128883c6c9aa6}} 
+\index{Rigidbody@{Rigidbody}!AddForcePure@{AddForcePure}}
+\index{AddForcePure@{AddForcePure}!Rigidbody@{Rigidbody}}
+\doxysubsubsection{\texorpdfstring{AddForcePure()}{AddForcePure()}}
+{\footnotesize\ttfamily void Rigidbody\+::\+Add\+Force\+Pure (\begin{DoxyParamCaption}\item[{vec3}]{pure\+Force }\end{DoxyParamCaption})}
+
+
+
+Adds force, ignoring mass  
+
+
+\begin{DoxyParams}{Parameters}
+{\em pure\+Force} & Amount of force to apply\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rigidbody_a3489a4d160049331712e71179e7ecebd}\label{class_rigidbody_a3489a4d160049331712e71179e7ecebd}} 
+\index{Rigidbody@{Rigidbody}!UpdateBody@{UpdateBody}}
+\index{UpdateBody@{UpdateBody}!Rigidbody@{Rigidbody}}
+\doxysubsubsection{\texorpdfstring{UpdateBody()}{UpdateBody()}}
+{\footnotesize\ttfamily void Rigidbody\+::\+Update\+Body (\begin{DoxyParamCaption}\item[{float}]{fixed\+Delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Executes a physics tick on this object  
+
+
+\begin{DoxyParams}{Parameters}
+{\em fixed\+Delta\+Time} & The current fixed delta time\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/ogl\+\_\+renderer/physics/Rigidbody.\+h\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/ogl\+\_\+renderer/physics/Rigidbody.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,48 @@
+\hypertarget{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp}{}\doxysection{C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Release/include/assimp/\+Logger.hpp File Reference}
+\label{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/Logger.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/Logger.hpp}}
+
+
+Abstract base class \textquotesingle{}Logger\textquotesingle{}, base of the logging system.  
+
+
+{\ttfamily \#include $<$assimp/types.\+h$>$}\newline
+{\ttfamily \#include $<$assimp/\+Tiny\+Formatter.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_assimp_1_1_logger}{Assimp\+::\+Logger}}
+\begin{DoxyCompactList}\small\item\em CPP-\/\+API\+: Abstract interface for logger implementations. \mbox{\hyperlink{namespace_assimp}{Assimp}} provides a default implementation and uses it for almost all logging stuff (\textquotesingle{}\mbox{\hyperlink{class_assimp_1_1_default_logger}{Default\+Logger}}\textquotesingle{}). This class defines just basic logging behavior and is not of interest for you. Instead, take a look at \#\+Default\+Logger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_assimp}{Assimp}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp_a404415b2c267becf36fc1efab88a9bac}\label{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp_a404415b2c267becf36fc1efab88a9bac}} 
+\#define {\bfseries INCLUDED\+\_\+\+AI\+\_\+\+LOGGER\+\_\+H}
+\item 
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp_a3adf7dc8e9dcfe1da6e33aa8043a80c3}\label{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp_a3adf7dc8e9dcfe1da6e33aa8043a80c3}} 
+\#define {\bfseries MAX\+\_\+\+LOG\+\_\+\+MESSAGE\+\_\+\+LENGTH}~1024u
+\item 
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp_ae2042ef82dfa543c7f03ae9766067552}\label{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp_ae2042ef82dfa543c7f03ae9766067552}} 
+\#define {\bfseries ASSIMP\+\_\+\+LOG\+\_\+\+WARN}(...)~ \mbox{\hyperlink{class_assimp_1_1_default_logger_a4b6ac25541ce63973f7fb0bf1b8bcb44}{Assimp\+::\+Default\+Logger\+::get}}()-\/$>$warn(\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp_af9c5f9debd2b062dec87a32121cf12dd}\label{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp_af9c5f9debd2b062dec87a32121cf12dd}} 
+\#define {\bfseries ASSIMP\+\_\+\+LOG\+\_\+\+ERROR}(...)~ \mbox{\hyperlink{class_assimp_1_1_default_logger_a4b6ac25541ce63973f7fb0bf1b8bcb44}{Assimp\+::\+Default\+Logger\+::get}}()-\/$>$error(\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp_a1a20dc2c2ad4ba28557c1c53375589c9}\label{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp_a1a20dc2c2ad4ba28557c1c53375589c9}} 
+\#define {\bfseries ASSIMP\+\_\+\+LOG\+\_\+\+DEBUG}(...)~ \mbox{\hyperlink{class_assimp_1_1_default_logger_a4b6ac25541ce63973f7fb0bf1b8bcb44}{Assimp\+::\+Default\+Logger\+::get}}()-\/$>$debug(\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp_a2e93a38394c31960fa5a2f51a7c32da9}\label{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp_a2e93a38394c31960fa5a2f51a7c32da9}} 
+\#define {\bfseries ASSIMP\+\_\+\+LOG\+\_\+\+VERBOSE\+\_\+\+DEBUG}(...)~ \mbox{\hyperlink{class_assimp_1_1_default_logger_a4b6ac25541ce63973f7fb0bf1b8bcb44}{Assimp\+::\+Default\+Logger\+::get}}()-\/$>$verbose\+Debug(\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp_a02b8b6684736711bfc07e74805d314bd}\label{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp_a02b8b6684736711bfc07e74805d314bd}} 
+\#define {\bfseries ASSIMP\+\_\+\+LOG\+\_\+\+INFO}(...)~ \mbox{\hyperlink{class_assimp_1_1_default_logger_a4b6ac25541ce63973f7fb0bf1b8bcb44}{Assimp\+::\+Default\+Logger\+::get}}()-\/$>$info(\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class \textquotesingle{}Logger\textquotesingle{}, base of the logging system. 
+

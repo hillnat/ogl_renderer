@@ -1,0 +1,320 @@
+\hypertarget{out_2install_2x64-_debug_2include_2assimp_2defs_8h_source}{}\doxysection{defs.\+h}
+\label{out_2install_2x64-_debug_2include_2assimp_2defs_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/defs.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/defs.h}}
+\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2defs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{12 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{17 \textcolor{comment}{}}
+\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{27 \textcolor{comment}{}}
+\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifndef AI\_DEFINES\_H\_INC}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define AI\_DEFINES\_H\_INC}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <assimp/config.h>}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58 \textcolor{comment}{/* Define ASSIMP\_BUILD\_NO\_XX\_IMPORTER to disable a specific}}
+\DoxyCodeLine{59 \textcolor{comment}{ * file format loader. The loader is be excluded from the}}
+\DoxyCodeLine{60 \textcolor{comment}{ * build in this case. 'XX' stands for the most common file}}
+\DoxyCodeLine{61 \textcolor{comment}{ * extension of the file format. E.g.:}}
+\DoxyCodeLine{62 \textcolor{comment}{ * ASSIMP\_BUILD\_NO\_X\_IMPORTER disables the X loader.}}
+\DoxyCodeLine{63 \textcolor{comment}{ *}}
+\DoxyCodeLine{64 \textcolor{comment}{ * If you're unsure about that, take a look at the implementation of the}}
+\DoxyCodeLine{65 \textcolor{comment}{ * import plugin you wish to disable. You'll find the right define in the}}
+\DoxyCodeLine{66 \textcolor{comment}{ * first lines of the corresponding unit.}}
+\DoxyCodeLine{67 \textcolor{comment}{ *}}
+\DoxyCodeLine{68 \textcolor{comment}{ * Other (mixed) configuration switches are listed here:}}
+\DoxyCodeLine{69 \textcolor{comment}{ *    ASSIMP\_BUILD\_NO\_COMPRESSED\_X}}
+\DoxyCodeLine{70 \textcolor{comment}{ *      -\/ Disable support for compressed X files (zip)}}
+\DoxyCodeLine{71 \textcolor{comment}{ *    ASSIMP\_BUILD\_NO\_COMPRESSED\_BLEND}}
+\DoxyCodeLine{72 \textcolor{comment}{ *      -\/ Disable support for compressed Blender files (zip)}}
+\DoxyCodeLine{73 \textcolor{comment}{ *    ASSIMP\_BUILD\_NO\_COMPRESSED\_IFC}}
+\DoxyCodeLine{74 \textcolor{comment}{ *      -\/ Disable support for IFCZIP files (unzip)}}
+\DoxyCodeLine{75 \textcolor{comment}{ */}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#ifndef ASSIMP\_BUILD\_NO\_COMPRESSED\_X}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define ASSIMP\_BUILD\_NEED\_Z\_INFLATE}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#ifndef ASSIMP\_BUILD\_NO\_COMPRESSED\_BLEND}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define ASSIMP\_BUILD\_NEED\_Z\_INFLATE}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#ifndef ASSIMP\_BUILD\_NO\_COMPRESSED\_IFC}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define ASSIMP\_BUILD\_NEED\_Z\_INFLATE}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define ASSIMP\_BUILD\_NEED\_UNZIP}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#ifndef ASSIMP\_BUILD\_NO\_Q3BSP\_IMPORTER}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define ASSIMP\_BUILD\_NEED\_Z\_INFLATE}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define ASSIMP\_BUILD\_NEED\_UNZIP}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{comment}{// We need those constants, workaround for any platforms where nobody defined them yet}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#if (!defined SIZE\_MAX)}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define SIZE\_MAX (\string~((size\_t)0))}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{comment}{/*\#if (!defined UINT\_MAX)}}
+\DoxyCodeLine{102 \textcolor{comment}{\#define UINT\_MAX (\string~((unsigned int)0))}}
+\DoxyCodeLine{103 \textcolor{comment}{\#endif*/}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{106 \textcolor{comment}{/* Define ASSIMP\_BUILD\_NO\_XX\_PROCESS to disable a specific}}
+\DoxyCodeLine{107 \textcolor{comment}{ * post processing step. This is the current list of process names ('XX'):}}
+\DoxyCodeLine{108 \textcolor{comment}{ * CALCTANGENTS}}
+\DoxyCodeLine{109 \textcolor{comment}{ * JOINVERTICES}}
+\DoxyCodeLine{110 \textcolor{comment}{ * TRIANGULATE}}
+\DoxyCodeLine{111 \textcolor{comment}{ * DROPFACENORMALS}}
+\DoxyCodeLine{112 \textcolor{comment}{ * GENFACENORMALS}}
+\DoxyCodeLine{113 \textcolor{comment}{ * GENVERTEXNORMALS}}
+\DoxyCodeLine{114 \textcolor{comment}{ * REMOVEVC}}
+\DoxyCodeLine{115 \textcolor{comment}{ * SPLITLARGEMESHES}}
+\DoxyCodeLine{116 \textcolor{comment}{ * PRETRANSFORMVERTICES}}
+\DoxyCodeLine{117 \textcolor{comment}{ * LIMITBONEWEIGHTS}}
+\DoxyCodeLine{118 \textcolor{comment}{ * VALIDATEDS}}
+\DoxyCodeLine{119 \textcolor{comment}{ * IMPROVECACHELOCALITY}}
+\DoxyCodeLine{120 \textcolor{comment}{ * FIXINFACINGNORMALS}}
+\DoxyCodeLine{121 \textcolor{comment}{ * REMOVE\_REDUNDANTMATERIALS}}
+\DoxyCodeLine{122 \textcolor{comment}{ * OPTIMIZEGRAPH}}
+\DoxyCodeLine{123 \textcolor{comment}{ * SORTBYPTYPE}}
+\DoxyCodeLine{124 \textcolor{comment}{ * FINDINVALIDDATA}}
+\DoxyCodeLine{125 \textcolor{comment}{ * TRANSFORMTEXCOORDS}}
+\DoxyCodeLine{126 \textcolor{comment}{ * GENUVCOORDS}}
+\DoxyCodeLine{127 \textcolor{comment}{ * ENTITYMESHBUILDER}}
+\DoxyCodeLine{128 \textcolor{comment}{ * EMBEDTEXTURES}}
+\DoxyCodeLine{129 \textcolor{comment}{ * MAKELEFTHANDED}}
+\DoxyCodeLine{130 \textcolor{comment}{ * FLIPUVS}}
+\DoxyCodeLine{131 \textcolor{comment}{ * FLIPWINDINGORDER}}
+\DoxyCodeLine{132 \textcolor{comment}{ * OPTIMIZEMESHES}}
+\DoxyCodeLine{133 \textcolor{comment}{ * OPTIMIZEANIMS}}
+\DoxyCodeLine{134 \textcolor{comment}{ * OPTIMIZEGRAPH}}
+\DoxyCodeLine{135 \textcolor{comment}{ * GENENTITYMESHES}}
+\DoxyCodeLine{136 \textcolor{comment}{ * FIXTEXTUREPATHS}}
+\DoxyCodeLine{137 \textcolor{comment}{ * GENBOUNDINGBOXES */}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#undef ASSIMP\_API}}
+\DoxyCodeLine{143 \textcolor{comment}{/* Define 'ASSIMP\_BUILD\_DLL\_EXPORT' to build a DLL of the library */}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#ifdef ASSIMP\_BUILD\_DLL\_EXPORT}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define ASSIMP\_API \_\_declspec(dllexport)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define ASSIMP\_API\_WINONLY \_\_declspec(dllexport)}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{150 \textcolor{comment}{/* Define 'ASSIMP\_DLL' before including Assimp to link to ASSIMP in}}
+\DoxyCodeLine{151 \textcolor{comment}{     * an external DLL under Windows. Default is static linkage. */}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#elif (defined ASSIMP\_DLL)}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define ASSIMP\_API \_\_declspec(dllimport)}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define ASSIMP\_API\_WINONLY \_\_declspec(dllimport)}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define ASSIMP\_API}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define ASSIMP\_API\_WINONLY}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#elif defined(SWIG)}}
+\DoxyCodeLine{161 \textcolor{comment}{/* Do nothing, the relevant defines are all in AssimpSwigPort.i */}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define ASSIMP\_API \_\_attribute\_\_((visibility("{}default"{}})))}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define ASSIMP\_API\_WINONLY}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_WIN32}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{    \#pragma warning(disable : 4521 4512 4714 4127 4351 4510)}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{    \#ifdef ASSIMP\_BUILD\_DLL\_EXPORT}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{        \#pragma warning(disable : 4251)}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{172     \textcolor{comment}{/* Force the compiler to inline a function, if possible */}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{    \#define AI\_FORCE\_INLINE inline}}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175     \textcolor{comment}{/* Tells the compiler that a function never returns. Used in code analysis}}
+\DoxyCodeLine{176 \textcolor{comment}{    * to skip dead paths (e.g. after an assertion evaluated to false). */}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{    \#define AI\_WONT\_RETURN \_\_declspec(noreturn)}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#elif defined(SWIG)}}
+\DoxyCodeLine{179   \textcolor{comment}{/* Do nothing, the relevant defines are all in AssimpSwigPort.i */}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{    \#define AI\_WONT\_RETURN}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{    \#define AI\_FORCE\_INLINE inline}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// (defined \_MSC\_VER)}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#   define AI\_WONT\_RETURN\_SUFFIX \_\_attribute\_\_((noreturn))}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#elif \_MSC\_VER}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#if defined(\_\_clang\_\_)}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#   define AI\_WONT\_RETURN\_SUFFIX \_\_attribute\_\_((noreturn))}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#   define AI\_WONT\_RETURN\_SUFFIX}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#   define AI\_WONT\_RETURN\_SUFFIX}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// (defined \_\_clang\_\_)}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{198 \textcolor{comment}{/* No explicit 'struct' and 'enum' tags for C++, this keeps showing up}}
+\DoxyCodeLine{199 \textcolor{comment}{ * in doxydocs. */}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define C\_STRUCT}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define C\_ENUM}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{204 \textcolor{comment}{/* To build the documentation, make sure ASSIMP\_DOXYGEN\_BUILD}}
+\DoxyCodeLine{205 \textcolor{comment}{ * is defined by Doxygen's preprocessor. The corresponding}}
+\DoxyCodeLine{206 \textcolor{comment}{ * entries in the DOXYFILE are: */}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{209     ENABLE\_PREPROCESSING   = YES}
+\DoxyCodeLine{210     MACRO\_EXPANSION        = YES}
+\DoxyCodeLine{211     EXPAND\_ONLY\_PREDEF     = YES}
+\DoxyCodeLine{212     SEARCH\_INCLUDES        = YES}
+\DoxyCodeLine{213     INCLUDE\_PATH           =}
+\DoxyCodeLine{214     INCLUDE\_FILE\_PATTERNS  =}
+\DoxyCodeLine{215     PREDEFINED             = ASSIMP\_DOXYGEN\_BUILD=1}
+\DoxyCodeLine{216     EXPAND\_AS\_DEFINED      = C\_STRUCT C\_ENUM}
+\DoxyCodeLine{217     SKIP\_FUNCTION\_MACROS   = YES}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{220 \textcolor{comment}{/* Doxygen gets confused if we use c-\/struct typedefs to avoid}}
+\DoxyCodeLine{221 \textcolor{comment}{     * the explicit 'struct' notation. This trick here has the same}}
+\DoxyCodeLine{222 \textcolor{comment}{     * effect as the TYPEDEF\_HIDES\_STRUCT option, but we don't need}}
+\DoxyCodeLine{223 \textcolor{comment}{     * to typedef all structs/enums. */}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#if (defined ASSIMP\_DOXYGEN\_BUILD)}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define C\_STRUCT}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define C\_ENUM}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#define C\_STRUCT struct}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#define C\_ENUM enum}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#if (defined(\_\_BORLANDC\_\_) || defined(\_\_BCPLUSPLUS\_\_))}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#error Currently, Borland is unsupported. Feel free to port Assimp.}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{239 \textcolor{comment}{/* Define ASSIMP\_BUILD\_SINGLETHREADED to compile assimp}}
+\DoxyCodeLine{240 \textcolor{comment}{     * without threading support. The library doesn't utilize}}
+\DoxyCodeLine{241 \textcolor{comment}{     * threads then and is itself not threadsafe. */}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#ifndef ASSIMP\_BUILD\_SINGLETHREADED}}
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#define ASSIMP\_BUILD\_SINGLETHREADED}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#if defined(\_DEBUG) || !defined(NDEBUG)}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#define ASSIMP\_BUILD\_DEBUG}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{252 \textcolor{comment}{/* Define ASSIMP\_DOUBLE\_PRECISION to compile assimp}}
+\DoxyCodeLine{253 \textcolor{comment}{ * with double precision support (64-\/bit). */}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#ifdef ASSIMP\_DOUBLE\_PRECISION}}
+\DoxyCodeLine{257 \textcolor{keyword}{typedef} \textcolor{keywordtype}{double} ai\_real;}
+\DoxyCodeLine{258 \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} ai\_int;}
+\DoxyCodeLine{259 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} ai\_uint;}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#ifndef ASSIMP\_AI\_REAL\_TEXT\_PRECISION}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#define ASSIMP\_AI\_REAL\_TEXT\_PRECISION 17}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// ASSIMP\_AI\_REAL\_TEXT\_PRECISION}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#else }\textcolor{comment}{// ASSIMP\_DOUBLE\_PRECISION}}
+\DoxyCodeLine{264 \textcolor{keyword}{typedef} \textcolor{keywordtype}{float} ai\_real;}
+\DoxyCodeLine{265 \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{int} ai\_int;}
+\DoxyCodeLine{266 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ai\_uint;}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#ifndef ASSIMP\_AI\_REAL\_TEXT\_PRECISION}}
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#define ASSIMP\_AI\_REAL\_TEXT\_PRECISION 9}}
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// ASSIMP\_AI\_REAL\_TEXT\_PRECISION}}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// ASSIMP\_DOUBLE\_PRECISION}}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{273 \textcolor{comment}{/* Useful constants */}}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276 \textcolor{comment}{/* This is PI. Hi PI. */}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#define AI\_MATH\_PI (3.141592653589793238462643383279)}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#define AI\_MATH\_TWO\_PI (AI\_MATH\_PI * 2.0)}}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#define AI\_MATH\_HALF\_PI (AI\_MATH\_PI * 0.5)}}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281 \textcolor{comment}{/* And this is to avoid endless casts to float */}}
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#define AI\_MATH\_PI\_F (3.1415926538f)}}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#define AI\_MATH\_TWO\_PI\_F (AI\_MATH\_PI\_F * 2.0f)}}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#define AI\_MATH\_HALF\_PI\_F (AI\_MATH\_PI\_F * 0.5f)}}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286 \textcolor{comment}{/* Tiny macro to convert from radians to degrees and back */}}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#define AI\_DEG\_TO\_RAD(x) ((x) * (ai\_real) 0.0174532925)}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#define AI\_RAD\_TO\_DEG(x) ((x) * (ai\_real) 57.2957795)}}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \textcolor{comment}{/* Numerical limits */}}
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{292 \textcolor{keyword}{constexpr} ai\_real ai\_epsilon = (ai\_real) 1e-\/6;}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#define ai\_epsilon ((ai\_real)1e-\/6)}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297 \textcolor{comment}{/* Support for big-\/endian builds */}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#if defined(\_\_BYTE\_ORDER\_\_)}}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#if (\_\_BYTE\_ORDER\_\_ == \_\_ORDER\_BIG\_ENDIAN\_\_)}}
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#if !defined(\_\_BIG\_ENDIAN\_\_)}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#define \_\_BIG\_ENDIAN\_\_}}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#else }\textcolor{comment}{/* little endian */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#if defined(\_\_BIG\_ENDIAN\_\_)}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#undef \_\_BIG\_ENDIAN\_\_}}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{308 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#if defined(\_\_BIG\_ENDIAN\_\_)}}
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#define AI\_BUILD\_BIG\_ENDIAN}}
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#define AI\_MAX\_ALLOC(type) ((256U * 1024 * 1024) / sizeof(type))}}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#ifndef \_MSC\_VER}}
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#if \_\_cplusplus >= 201103L }\textcolor{comment}{// C++11}}
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#define AI\_NO\_EXCEPT noexcept}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#define AI\_NO\_EXCEPT}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{327 \textcolor{preprocessor}{\#if (\_MSC\_VER >= 1915)}}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#define AI\_NO\_EXCEPT noexcept}}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#define AI\_NO\_EXCEPT}}
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{332 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_MSC\_VER}}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#if (defined ASSIMP\_BUILD\_DEBUG)}}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#define AI\_DEBUG\_INVALIDATE\_PTR(x) x = NULL;}}
+\DoxyCodeLine{339 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{340 \textcolor{preprocessor}{\#define AI\_DEBUG\_INVALIDATE\_PTR(x)}}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#define AI\_COUNT\_OF(X) (sizeof(X) / sizeof((X)[0]))}}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_DEFINES\_H\_INC}}
+
+\end{DoxyCode}

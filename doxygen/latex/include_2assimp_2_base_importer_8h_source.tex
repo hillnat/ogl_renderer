@@ -1,0 +1,236 @@
+\hypertarget{include_2assimp_2_base_importer_8h_source}{}\doxysection{Base\+Importer.\+h}
+\label{include_2assimp_2_base_importer_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/BaseImporter.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/BaseImporter.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{10 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{11 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{14 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{15 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{18 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{19 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{20 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{21 \textcolor{comment}{}}
+\DoxyCodeLine{22 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{23 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{24 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{25 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{26 \textcolor{comment}{}}
+\DoxyCodeLine{27 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{28 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{29 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{30 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{31 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{32 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{33 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{34 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{35 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{36 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{37 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{38 \textcolor{comment}{}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#ifndef INCLUDED\_AI\_BASEIMPORTER\_H}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define INCLUDED\_AI\_BASEIMPORTER\_H}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include "{}Exceptional.h"{}}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <assimp/types.h>}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <assimp/ProgressHandler.hpp>}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <exception>}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_scene}{aiScene}};}
+\DoxyCodeLine{62 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_importer_desc}{aiImporterDesc}};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{// Forward declarations}}
+\DoxyCodeLine{67 \textcolor{keyword}{class }Importer;}
+\DoxyCodeLine{68 \textcolor{keyword}{class }IOSystem;}
+\DoxyCodeLine{69 \textcolor{keyword}{class }BaseProcess;}
+\DoxyCodeLine{70 \textcolor{keyword}{class }SharedPostProcessInfo;}
+\DoxyCodeLine{71 \textcolor{keyword}{class }IOStream;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{comment}{// utility to do char4 to uint32 in a portable manner}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define AI\_MAKE\_MAGIC(string) ((uint32\_t)((string[0] << 24) + \(\backslash\)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{                                          (string[1] << 16) + (string[2] << 8) + string[3]))}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{keyword}{using }UByteBuffer = std::vector<uint8\_t>;}
+\DoxyCodeLine{78 \textcolor{keyword}{using }ByteBuffer = std::vector<int8\_t>;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{90 \textcolor{comment}{}\textcolor{keyword}{class }ASSIMP\_API \mbox{\hyperlink{class_assimp_1_1_base_importer}{BaseImporter}} \{}
+\DoxyCodeLine{91     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_importer}{Importer}};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{keyword}{public}:}
+\DoxyCodeLine{95     \mbox{\hyperlink{class_assimp_1_1_base_importer_a699aebae893f17b5a5dd415ae7bee7f0}{BaseImporter}}() AI\_NO\_EXCEPT;}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{98     virtual \string~\mbox{\hyperlink{class_assimp_1_1_base_importer}{BaseImporter}}() = default;}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{113 \textcolor{comment}{}    virtual \textcolor{keywordtype}{bool} CanRead(}
+\DoxyCodeLine{114             const std::\textcolor{keywordtype}{string} \&pFile,}
+\DoxyCodeLine{115             \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} *pIOHandler,}
+\DoxyCodeLine{116             \textcolor{keywordtype}{bool} checkSig) const = 0;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{137 \textcolor{comment}{}    \mbox{\hyperlink{structai_scene}{aiScene}} *ReadFile(}
+\DoxyCodeLine{138             \mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} *pImp,}
+\DoxyCodeLine{139             const std::\textcolor{keywordtype}{string} \&pFile,}
+\DoxyCodeLine{140             \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} *pIOHandler);}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{149 \textcolor{comment}{}    const std::\textcolor{keywordtype}{string} \&GetErrorText()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{150         \textcolor{keywordflow}{return} m\_ErrorText;}
+\DoxyCodeLine{151     \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{159 \textcolor{comment}{}    \textcolor{keyword}{const} std::exception\_ptr\& \mbox{\hyperlink{class_assimp_1_1_base_importer_a27198204f4ef728968df429880564d60}{GetException}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{160         \textcolor{keywordflow}{return} m\_Exception;}
+\DoxyCodeLine{161     \}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{169 \textcolor{comment}{}    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_base_importer_ac076d9136745e898d43d9ea8f0d0c586}{SetupProperties}}(}
+\DoxyCodeLine{170             \textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} *pImp);}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{175 \textcolor{comment}{}    \textcolor{keyword}{virtual} \textcolor{keyword}{const} \mbox{\hyperlink{structai_importer_desc}{aiImporterDesc}} *\mbox{\hyperlink{class_assimp_1_1_base_importer_aea402563e886993c7b5c0d489288fa4c}{GetInfo}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{180     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_base_importer_a11b61c90b472d900d4f7e2d2f2219dac}{SetFileScale}}(\textcolor{keywordtype}{double} scale) \{}
+\DoxyCodeLine{181         fileScale = scale;}
+\DoxyCodeLine{182     \}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{189 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_base_importer_a7a658f1192a37e336ba98fe701918b31}{GetExtensionList}}(std::set<std::string> \&extensions);}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{192     \textcolor{keywordtype}{double} importerScale = 1.0;}
+\DoxyCodeLine{193     \textcolor{keywordtype}{double} fileScale = 1.0;}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{239 \textcolor{comment}{}    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}{InternReadFile}}(}
+\DoxyCodeLine{240             \textcolor{keyword}{const} std::string \&pFile,}
+\DoxyCodeLine{241             \mbox{\hyperlink{structai_scene}{aiScene}} *pScene,}
+\DoxyCodeLine{242             \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} *pIOHandler) = 0;}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244 \textcolor{keyword}{public}: \textcolor{comment}{// static utilities}}
+\DoxyCodeLine{245     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{259 \textcolor{comment}{}    \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_base_importer_abae9dd2ae64d8fbac94fa8702848f133}{SearchFileHeaderForToken}}(}
+\DoxyCodeLine{260             \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} *pIOSystem,}
+\DoxyCodeLine{261             \textcolor{keyword}{const} std::string \&file,}
+\DoxyCodeLine{262             \textcolor{keyword}{const} \textcolor{keywordtype}{char} **tokens,}
+\DoxyCodeLine{263             std::size\_t numTokens,}
+\DoxyCodeLine{264             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} searchBytes = 200,}
+\DoxyCodeLine{265             \textcolor{keywordtype}{bool} tokensSol = \textcolor{keyword}{false},}
+\DoxyCodeLine{266             \textcolor{keywordtype}{bool} noGraphBeforeTokens = \textcolor{keyword}{false});}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{276 \textcolor{comment}{}    \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_base_importer_a329d0bf67681c92d07fafbb5c327a2f9}{SimpleExtensionCheck}}(}
+\DoxyCodeLine{277             \textcolor{keyword}{const} std::string \&pFile,}
+\DoxyCodeLine{278             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *ext0,}
+\DoxyCodeLine{279             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *ext1 = \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{280             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *ext2 = \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{281             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *ext3 = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{289 \textcolor{comment}{}    \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_base_importer_a4d3456d16f59cd28f456b79eabe206b0}{HasExtension}}(}
+\DoxyCodeLine{290             \textcolor{keyword}{const} std::string \&pFile,}
+\DoxyCodeLine{291             \textcolor{keyword}{const} std::set<std::string> \&extensions);}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{298 \textcolor{comment}{}    \textcolor{keyword}{static} std::string \mbox{\hyperlink{class_assimp_1_1_base_importer_a25edd42695863af078d2bab65077ce6c}{GetExtension}}(}
+\DoxyCodeLine{299             \textcolor{keyword}{const} std::string \&pFile);}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{315 \textcolor{comment}{}    \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_base_importer_a6b42085bed85c180f080daab395e8832}{CheckMagicToken}}(}
+\DoxyCodeLine{316             \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} *pIOHandler,}
+\DoxyCodeLine{317             \textcolor{keyword}{const} std::string \&pFile,}
+\DoxyCodeLine{318             \textcolor{keyword}{const} \textcolor{keywordtype}{void} *magic,}
+\DoxyCodeLine{319             std::size\_t num,}
+\DoxyCodeLine{320             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} offset = 0,}
+\DoxyCodeLine{321             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} size = 4);}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{329 \textcolor{comment}{}    \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_base_importer_afc318aa0eb85b73f501156a50f3eb703}{ConvertToUTF8}}(}
+\DoxyCodeLine{330             std::vector<char> \&data);}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{338 \textcolor{comment}{}    \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_base_importer_af36cd260cc2e756e95ee89d06d7c76d5}{ConvertUTF8toISO8859\_1}}(}
+\DoxyCodeLine{339             std::string \&data);}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{343 \textcolor{comment}{}    \textcolor{keyword}{enum} \mbox{\hyperlink{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}{TextFileMode}} \{}
+\DoxyCodeLine{344         ALLOW\_EMPTY,}
+\DoxyCodeLine{345         FORBID\_EMPTY}
+\DoxyCodeLine{346     \};}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{357 \textcolor{comment}{}    \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_base_importer_a3a82f762127d9cb823276491fa701e3f}{TextFileToBuffer}}(}
+\DoxyCodeLine{358             \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} *stream,}
+\DoxyCodeLine{359             std::vector<char> \&data,}
+\DoxyCodeLine{360             \mbox{\hyperlink{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}{TextFileMode}} mode = FORBID\_EMPTY);}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{367 \textcolor{comment}{}    \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{368     AI\_FORCE\_INLINE \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_base_importer_abc1067a6780d7d6dbe457fef8abdb66a}{CopyVector}}(}
+\DoxyCodeLine{369             std::vector<T> \&vec,}
+\DoxyCodeLine{370             T *\&out,}
+\DoxyCodeLine{371             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&outLength) \{}
+\DoxyCodeLine{372         outLength = unsigned(vec.size());}
+\DoxyCodeLine{373         \textcolor{keywordflow}{if} (outLength) \{}
+\DoxyCodeLine{374             out = \textcolor{keyword}{new} T[outLength];}
+\DoxyCodeLine{375             std::swap\_ranges(vec.begin(), vec.end(), out);}
+\DoxyCodeLine{376         \}}
+\DoxyCodeLine{377     \}}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{384 \textcolor{comment}{}    \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{385     AI\_FORCE\_INLINE \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_base_importer_a3ce01553ca65d8cc8f1efc2174845d67}{CopyVector}}(}
+\DoxyCodeLine{386             std::vector<std::unique\_ptr<T> > \&vec,}
+\DoxyCodeLine{387             T **\&out,}
+\DoxyCodeLine{388             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&outLength) \{}
+\DoxyCodeLine{389         outLength = unsigned(vec.size());}
+\DoxyCodeLine{390         \textcolor{keywordflow}{if} (outLength) \{}
+\DoxyCodeLine{391             out = \textcolor{keyword}{new} T*[outLength];}
+\DoxyCodeLine{392             T** outPtr = out;}
+\DoxyCodeLine{393             std::for\_each(vec.begin(), vec.end(), [\&outPtr](std::unique\_ptr<T>\& uPtr)\{*outPtr = uPtr.release(); ++outPtr; \});}
+\DoxyCodeLine{394         \}}
+\DoxyCodeLine{395     \}}
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397 \textcolor{keyword}{private}:}
+\DoxyCodeLine{398     \textcolor{comment}{/* Pushes state into importer for the importer scale */}}
+\DoxyCodeLine{399     \textcolor{keywordtype}{void} UpdateImporterScale(\mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} *pImp);}
+\DoxyCodeLine{400 }
+\DoxyCodeLine{401 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{403     std::string \mbox{\hyperlink{class_assimp_1_1_base_importer_abd2c9b86479c0c165e5d84d733e53373}{m\_ErrorText}};}
+\DoxyCodeLine{405     std::exception\_ptr \mbox{\hyperlink{class_assimp_1_1_base_importer_a7bf84fb733992558272add378e7d9525}{m\_Exception}};}
+\DoxyCodeLine{407     \mbox{\hyperlink{class_assimp_1_1_progress_handler}{ProgressHandler}} *\mbox{\hyperlink{class_assimp_1_1_base_importer_ada6abefe7b87ef1f548b6a03dcbd941a}{m\_progress}};}
+\DoxyCodeLine{408 \};}
+\DoxyCodeLine{409 }
+\DoxyCodeLine{410 \} \textcolor{comment}{// end of namespace Assimp}}
+\DoxyCodeLine{411 }
+\DoxyCodeLine{412 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_BASEIMPORTER\_H\_INC}}
+
+\end{DoxyCode}

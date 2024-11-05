@@ -1,0 +1,627 @@
+\hypertarget{class_assimp_1_1_memory_i_o_system}{}\doxysection{Assimp\+::Memory\+IOSystem Class Reference}
+\label{class_assimp_1_1_memory_i_o_system}\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+
+
+Dummy IO system to read from a memory buffer.  
+
+
+
+
+{\ttfamily \#include $<$Memory\+IOWrapper.\+h$>$}
+
+Inheritance diagram for Assimp\+::Memory\+IOSystem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.298851cm]{class_assimp_1_1_memory_i_o_system}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a23e2c3f41bfb7401985f64d697f74b2b}\label{class_assimp_1_1_memory_i_o_system_a23e2c3f41bfb7401985f64d697f74b2b}} 
+{\bfseries Memory\+IOSystem} (const uint8\+\_\+t $\ast$buff, size\+\_\+t len, \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$io)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_af52944ba23c0fd16c96ab041d6697459}\label{class_assimp_1_1_memory_i_o_system_af52944ba23c0fd16c96ab041d6697459}} 
+{\bfseries $\sim$\+Memory\+IOSystem} () override=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}{Exists}} (const char $\ast$p\+File) const override
+\begin{DoxyCompactList}\small\item\em Tests for the existence of a file at the given path. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}{get\+Os\+Separator}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the directory separator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}{Open}} (const char $\ast$p\+File, const char $\ast$p\+Mode=\char`\"{}rb\char`\"{}) override
+\begin{DoxyCompactList}\small\item\em Open a new file with a given path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}{Close}} (\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$p\+File) override
+\begin{DoxyCompactList}\small\item\em Closes the given file and releases all resources associated with it. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}{Compare\+Paths}} (const char $\ast$one, const char $\ast$second) const override
+\begin{DoxyCompactList}\small\item\em Compare two paths. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}{Push\+Directory}} (const std\+::string \&path) override
+\begin{DoxyCompactList}\small\item\em Will push the directory. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}{Current\+Directory}} () const override
+\begin{DoxyCompactList}\small\item\em Will return the current directory from the stack top. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}{Stack\+Size}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the stack size. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}{Pop\+Directory}} () override
+\begin{DoxyCompactList}\small\item\em Will pop the upper directory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}{Create\+Directory}} (const std\+::string \&path) override
+\begin{DoxyCompactList}\small\item\em Will create the directory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}{Change\+Directory}} (const std\+::string \&path) override
+\begin{DoxyCompactList}\small\item\em Will change the directory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}{Delete\+File}} (const std\+::string \&file) override
+\begin{DoxyCompactList}\small\item\em Will delete the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a23e2c3f41bfb7401985f64d697f74b2b}\label{class_assimp_1_1_memory_i_o_system_a23e2c3f41bfb7401985f64d697f74b2b}} 
+{\bfseries Memory\+IOSystem} (const uint8\+\_\+t $\ast$buff, size\+\_\+t len, \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$io)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_af52944ba23c0fd16c96ab041d6697459}\label{class_assimp_1_1_memory_i_o_system_af52944ba23c0fd16c96ab041d6697459}} 
+{\bfseries $\sim$\+Memory\+IOSystem} () override=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}{Exists}} (const char $\ast$p\+File) const override
+\begin{DoxyCompactList}\small\item\em Tests for the existence of a file at the given path. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}{get\+Os\+Separator}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the directory separator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}{Open}} (const char $\ast$p\+File, const char $\ast$p\+Mode=\char`\"{}rb\char`\"{}) override
+\begin{DoxyCompactList}\small\item\em Open a new file with a given path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}{Close}} (\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$p\+File) override
+\begin{DoxyCompactList}\small\item\em Closes the given file and releases all resources associated with it. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}{Compare\+Paths}} (const char $\ast$one, const char $\ast$second) const override
+\begin{DoxyCompactList}\small\item\em Compare two paths. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}{Push\+Directory}} (const std\+::string \&path) override
+\begin{DoxyCompactList}\small\item\em Will push the directory. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}{Current\+Directory}} () const override
+\begin{DoxyCompactList}\small\item\em Will return the current directory from the stack top. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}{Stack\+Size}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the stack size. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}{Pop\+Directory}} () override
+\begin{DoxyCompactList}\small\item\em Will pop the upper directory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}{Create\+Directory}} (const std\+::string \&path) override
+\begin{DoxyCompactList}\small\item\em Will create the directory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}{Change\+Directory}} (const std\+::string \&path) override
+\begin{DoxyCompactList}\small\item\em Will change the directory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}{Delete\+File}} (const std\+::string \&file) override
+\begin{DoxyCompactList}\small\item\em Will delete the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a23e2c3f41bfb7401985f64d697f74b2b}\label{class_assimp_1_1_memory_i_o_system_a23e2c3f41bfb7401985f64d697f74b2b}} 
+{\bfseries Memory\+IOSystem} (const uint8\+\_\+t $\ast$buff, size\+\_\+t len, \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$io)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_af52944ba23c0fd16c96ab041d6697459}\label{class_assimp_1_1_memory_i_o_system_af52944ba23c0fd16c96ab041d6697459}} 
+{\bfseries $\sim$\+Memory\+IOSystem} () override=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}{Exists}} (const char $\ast$p\+File) const override
+\begin{DoxyCompactList}\small\item\em Tests for the existence of a file at the given path. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}{get\+Os\+Separator}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the directory separator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}{Open}} (const char $\ast$p\+File, const char $\ast$p\+Mode=\char`\"{}rb\char`\"{}) override
+\begin{DoxyCompactList}\small\item\em Open a new file with a given path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}{Close}} (\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$p\+File) override
+\begin{DoxyCompactList}\small\item\em Closes the given file and releases all resources associated with it. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}{Compare\+Paths}} (const char $\ast$one, const char $\ast$second) const override
+\begin{DoxyCompactList}\small\item\em Compare two paths. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}{Push\+Directory}} (const std\+::string \&path) override
+\begin{DoxyCompactList}\small\item\em Will push the directory. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}{Current\+Directory}} () const override
+\begin{DoxyCompactList}\small\item\em Will return the current directory from the stack top. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}{Stack\+Size}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the stack size. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}{Pop\+Directory}} () override
+\begin{DoxyCompactList}\small\item\em Will pop the upper directory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}{Create\+Directory}} (const std\+::string \&path) override
+\begin{DoxyCompactList}\small\item\em Will create the directory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}{Change\+Directory}} (const std\+::string \&path) override
+\begin{DoxyCompactList}\small\item\em Will change the directory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}{Delete\+File}} (const std\+::string \&file) override
+\begin{DoxyCompactList}\small\item\em Will delete the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dummy IO system to read from a memory buffer. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}\label{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!ChangeDirectory@{ChangeDirectory}}
+\index{ChangeDirectory@{ChangeDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{ChangeDirectory()}{ChangeDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Change\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will change the directory. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a93e80760bd5d5239ba8eab3bd31efa6b}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}\label{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!ChangeDirectory@{ChangeDirectory}}
+\index{ChangeDirectory@{ChangeDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{ChangeDirectory()}{ChangeDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Change\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will change the directory. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a93e80760bd5d5239ba8eab3bd31efa6b}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}\label{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!ChangeDirectory@{ChangeDirectory}}
+\index{ChangeDirectory@{ChangeDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{ChangeDirectory()}{ChangeDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Change\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will change the directory. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a93e80760bd5d5239ba8eab3bd31efa6b}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}\label{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!Close@{Close}}
+\index{Close@{Close}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Memory\+IOSystem\+::\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$}]{p\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Closes the given file and releases all resources associated with it. 
+
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}\label{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!Close@{Close}}
+\index{Close@{Close}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Memory\+IOSystem\+::\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$}]{p\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Closes the given file and releases all resources associated with it. 
+
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}\label{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!Close@{Close}}
+\index{Close@{Close}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Memory\+IOSystem\+::\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$}]{p\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Closes the given file and releases all resources associated with it. 
+
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}\label{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!ComparePaths@{ComparePaths}}
+\index{ComparePaths@{ComparePaths}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{ComparePaths()}{ComparePaths()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Compare\+Paths (\begin{DoxyParamCaption}\item[{const char $\ast$}]{one,  }\item[{const char $\ast$}]{second }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compare two paths. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a670ddf0f9ea5c8ee05dce03a89259077}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}\label{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!ComparePaths@{ComparePaths}}
+\index{ComparePaths@{ComparePaths}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{ComparePaths()}{ComparePaths()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Compare\+Paths (\begin{DoxyParamCaption}\item[{const char $\ast$}]{one,  }\item[{const char $\ast$}]{second }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compare two paths. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a670ddf0f9ea5c8ee05dce03a89259077}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}\label{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!ComparePaths@{ComparePaths}}
+\index{ComparePaths@{ComparePaths}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{ComparePaths()}{ComparePaths()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Compare\+Paths (\begin{DoxyParamCaption}\item[{const char $\ast$}]{one,  }\item[{const char $\ast$}]{second }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compare two paths. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a670ddf0f9ea5c8ee05dce03a89259077}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}\label{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!CreateDirectory@{CreateDirectory}}
+\index{CreateDirectory@{CreateDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{CreateDirectory()}{CreateDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Create\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will create the directory. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a3fc1316fdb4168cde052c95f96364d41}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}\label{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!CreateDirectory@{CreateDirectory}}
+\index{CreateDirectory@{CreateDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{CreateDirectory()}{CreateDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Create\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will create the directory. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a3fc1316fdb4168cde052c95f96364d41}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}\label{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!CreateDirectory@{CreateDirectory}}
+\index{CreateDirectory@{CreateDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{CreateDirectory()}{CreateDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Create\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will create the directory. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a3fc1316fdb4168cde052c95f96364d41}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}\label{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!CurrentDirectory@{CurrentDirectory}}
+\index{CurrentDirectory@{CurrentDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{CurrentDirectory()}{CurrentDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily const std\+::string \& Assimp\+::\+Memory\+IOSystem\+::\+Current\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will return the current directory from the stack top. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a9cfaf118a329da14726b33c4b5089740}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}\label{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!CurrentDirectory@{CurrentDirectory}}
+\index{CurrentDirectory@{CurrentDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{CurrentDirectory()}{CurrentDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily const std\+::string \& Assimp\+::\+Memory\+IOSystem\+::\+Current\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will return the current directory from the stack top. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a9cfaf118a329da14726b33c4b5089740}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}\label{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!CurrentDirectory@{CurrentDirectory}}
+\index{CurrentDirectory@{CurrentDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{CurrentDirectory()}{CurrentDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily const std\+::string \& Assimp\+::\+Memory\+IOSystem\+::\+Current\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will return the current directory from the stack top. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a9cfaf118a329da14726b33c4b5089740}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}\label{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!DeleteFile@{DeleteFile}}
+\index{DeleteFile@{DeleteFile}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{DeleteFile()}{DeleteFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Delete\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will delete the file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_abdfad399fdbdc9bbf2ffd193f4107bf2}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}\label{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!DeleteFile@{DeleteFile}}
+\index{DeleteFile@{DeleteFile}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{DeleteFile()}{DeleteFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Delete\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will delete the file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_abdfad399fdbdc9bbf2ffd193f4107bf2}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}\label{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!DeleteFile@{DeleteFile}}
+\index{DeleteFile@{DeleteFile}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{DeleteFile()}{DeleteFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Delete\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will delete the file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_abdfad399fdbdc9bbf2ffd193f4107bf2}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}\label{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!Exists@{Exists}}
+\index{Exists@{Exists}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{Exists()}{Exists()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Exists (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+File }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Tests for the existence of a file at the given path. 
+
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}\label{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!Exists@{Exists}}
+\index{Exists@{Exists}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{Exists()}{Exists()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Exists (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+File }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Tests for the existence of a file at the given path. 
+
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}\label{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!Exists@{Exists}}
+\index{Exists@{Exists}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{Exists()}{Exists()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Exists (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+File }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Tests for the existence of a file at the given path. 
+
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}\label{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!getOsSeparator@{getOsSeparator}}
+\index{getOsSeparator@{getOsSeparator}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{getOsSeparator()}{getOsSeparator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily char Assimp\+::\+Memory\+IOSystem\+::get\+Os\+Separator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the directory separator. 
+
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}\label{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!getOsSeparator@{getOsSeparator}}
+\index{getOsSeparator@{getOsSeparator}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{getOsSeparator()}{getOsSeparator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily char Assimp\+::\+Memory\+IOSystem\+::get\+Os\+Separator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the directory separator. 
+
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}\label{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!getOsSeparator@{getOsSeparator}}
+\index{getOsSeparator@{getOsSeparator}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{getOsSeparator()}{getOsSeparator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily char Assimp\+::\+Memory\+IOSystem\+::get\+Os\+Separator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the directory separator. 
+
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}\label{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!Open@{Open}}
+\index{Open@{Open}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ Assimp\+::\+Memory\+IOSystem\+::\+Open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+File,  }\item[{const char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}rb\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Open a new file with a given path. 
+
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}\label{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!Open@{Open}}
+\index{Open@{Open}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ Assimp\+::\+Memory\+IOSystem\+::\+Open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+File,  }\item[{const char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}rb\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Open a new file with a given path. 
+
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}\label{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!Open@{Open}}
+\index{Open@{Open}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ Assimp\+::\+Memory\+IOSystem\+::\+Open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+File,  }\item[{const char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}rb\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Open a new file with a given path. 
+
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}\label{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!PopDirectory@{PopDirectory}}
+\index{PopDirectory@{PopDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{PopDirectory()}{PopDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Pop\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will pop the upper directory. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_aa00f3ee1c44576364e8ce00206fb9dd2}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}\label{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!PopDirectory@{PopDirectory}}
+\index{PopDirectory@{PopDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{PopDirectory()}{PopDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Pop\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will pop the upper directory. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_aa00f3ee1c44576364e8ce00206fb9dd2}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}\label{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!PopDirectory@{PopDirectory}}
+\index{PopDirectory@{PopDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{PopDirectory()}{PopDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Pop\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will pop the upper directory. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_aa00f3ee1c44576364e8ce00206fb9dd2}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}\label{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!PushDirectory@{PushDirectory}}
+\index{PushDirectory@{PushDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{PushDirectory()}{PushDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Push\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will push the directory. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a07c2c93fac300df44c756174fcea71e8}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}\label{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!PushDirectory@{PushDirectory}}
+\index{PushDirectory@{PushDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{PushDirectory()}{PushDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Push\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will push the directory. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a07c2c93fac300df44c756174fcea71e8}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}\label{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!PushDirectory@{PushDirectory}}
+\index{PushDirectory@{PushDirectory}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{PushDirectory()}{PushDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Memory\+IOSystem\+::\+Push\+Directory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will push the directory. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a07c2c93fac300df44c756174fcea71e8}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}\label{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!StackSize@{StackSize}}
+\index{StackSize@{StackSize}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{StackSize()}{StackSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily size\+\_\+t Assimp\+::\+Memory\+IOSystem\+::\+Stack\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the stack size. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a1f3180cefbb447b4b8c628dcaf95fc69}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}\label{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!StackSize@{StackSize}}
+\index{StackSize@{StackSize}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{StackSize()}{StackSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily size\+\_\+t Assimp\+::\+Memory\+IOSystem\+::\+Stack\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the stack size. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a1f3180cefbb447b4b8c628dcaf95fc69}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}\label{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}} 
+\index{Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}!StackSize@{StackSize}}
+\index{StackSize@{StackSize}!Assimp::MemoryIOSystem@{Assimp::MemoryIOSystem}}
+\doxysubsubsection{\texorpdfstring{StackSize()}{StackSize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily size\+\_\+t Assimp\+::\+Memory\+IOSystem\+::\+Stack\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the stack size. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_assimp_1_1_i_o_system_a1f3180cefbb447b4b8c628dcaf95fc69}{Assimp\+::\+IOSystem}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/\mbox{\hyperlink{include_2assimp_2_memory_i_o_wrapper_8h}{Memory\+IOWrapper.\+h}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Debug/include/assimp/\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_memory_i_o_wrapper_8h}{Memory\+IOWrapper.\+h}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Release/include/assimp/\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_memory_i_o_wrapper_8h}{Memory\+IOWrapper.\+h}}\end{DoxyCompactItemize}

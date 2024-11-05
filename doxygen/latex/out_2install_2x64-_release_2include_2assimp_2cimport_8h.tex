@@ -1,0 +1,1793 @@
+\hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h}{}\doxysection{C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Release/include/assimp/cimport.h File Reference}
+\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/cimport.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/cimport.h}}
+
+
+Defines the C-\/\+API to the Open Asset Import Library.  
+
+
+{\ttfamily \#include $<$assimp/importerdesc.\+h$>$}\newline
+{\ttfamily \#include $<$assimp/types.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structai_log_stream}{ai\+Log\+Stream}}
+\item 
+struct \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6f2221d62659a3d47b96a871afc7855e}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6f2221d62659a3d47b96a871afc7855e}} 
+\#define {\bfseries AI\+\_\+\+ASSIMP\+\_\+\+H\+\_\+\+INC}
+\item 
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a39bd8dc9e68cf3d9238e0e2ad7cd0138}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a39bd8dc9e68cf3d9238e0e2ad7cd0138}} 
+\#define {\bfseries AI\+\_\+\+FALSE}~0
+\item 
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6b4fb3c6aa04e2e3b45a7fbd9f9f9d19}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6b4fb3c6aa04e2e3b45a7fbd9f9f9d19}} 
+\#define {\bfseries AI\+\_\+\+TRUE}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a8de903c645dbd8b4f4446c62afa4101b}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a8de903c645dbd8b4f4446c62afa4101b}} 
+typedef void($\ast$ {\bfseries ai\+Log\+Stream\+Callback}) (const char $\ast$, char $\ast$)
+\item 
+typedef int \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aaf9b3b6ed742722b3d0bbff0f4621691}{ai\+Bool}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a5b07b5b6589ad33033c2d456cd95da2b}{ai\+Import\+File}} (const char $\ast$p\+File, unsigned int p\+Flags)
+\item 
+ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a5345c1c24a0e4b71fff9b485adb11e00}{ai\+Import\+File\+Ex}} (const char $\ast$p\+File, unsigned int p\+Flags, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}} $\ast$p\+FS)
+\item 
+ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a7060b00dbb8a17fa117526f9e0daa139}{ai\+Import\+File\+Ex\+With\+Properties}} (const char $\ast$p\+File, unsigned int p\+Flags, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}} $\ast$p\+FS, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$p\+Props)
+\item 
+ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ae6c501bf96d364eec7105560787105ff}{ai\+Import\+File\+From\+Memory}} (const char $\ast$p\+Buffer, unsigned int p\+Length, unsigned int p\+Flags, const char $\ast$p\+Hint)
+\item 
+ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a5d8236ae1116d5140a40b65bfd01a145}{ai\+Import\+File\+From\+Memory\+With\+Properties}} (const char $\ast$p\+Buffer, unsigned int p\+Length, unsigned int p\+Flags, const char $\ast$p\+Hint, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$p\+Props)
+\item 
+ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_af18a83214bad29e8582c7d2ac7be3f14}{ai\+Apply\+Post\+Processing}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$p\+Scene, unsigned int p\+Flags)
+\item 
+ASSIMP\+\_\+\+API C\+\_\+\+STRUCT \mbox{\hyperlink{structai_log_stream}{ai\+Log\+Stream}} \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ad7e375d7b134ec590e812ad1f50eab94}{ai\+Get\+Predefined\+Log\+Stream}} (C\+\_\+\+ENUM \mbox{\hyperlink{include_2assimp_2types_8h_ae4271f61a7c06cd4770fc3e11f58f9c6}{ai\+Default\+Log\+Stream}} p\+Streams, const char $\ast$file)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a75c5aa6027cb059e63b3dda005c9c149}{ai\+Attach\+Log\+Stream}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_log_stream}{ai\+Log\+Stream}} $\ast$stream)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a54a7485c9422348b2f20adcbd192ed64}{ai\+Enable\+Verbose\+Logging}} (\mbox{\hyperlink{include_2assimp_2cimport_8h_aaf9b3b6ed742722b3d0bbff0f4621691}{ai\+Bool}} d)
+\item 
+ASSIMP\+\_\+\+API C\+\_\+\+ENUM \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{ai\+Return}} \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a98ad05bb95e8f8157a97c133812a1597}{ai\+Detach\+Log\+Stream}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_log_stream}{ai\+Log\+Stream}} $\ast$stream)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a8f1fe2e8ccc5f93484098114ae7071bf}{ai\+Detach\+All\+Log\+Streams}} (void)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9d360f95be3deb87f40abf25d4c047dc}{ai\+Release\+Import}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$p\+Scene)
+\item 
+ASSIMP\+\_\+\+API const char $\ast$ \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a512bfa5aca8613168d8c5246e09b3935}{ai\+Get\+Error\+String}} (void)
+\item 
+ASSIMP\+\_\+\+API \mbox{\hyperlink{include_2assimp_2cimport_8h_aaf9b3b6ed742722b3d0bbff0f4621691}{ai\+Bool}} \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_adf7ad488ca981fc8800e48e35ddc49e9}{ai\+Is\+Extension\+Supported}} (const char $\ast$sz\+Extension)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a99cec86f7950963c0c9ecda87a2e07e2}{ai\+Get\+Extension\+List}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_string}{ai\+String}} $\ast$sz\+Out)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_acf5b67b3700dc01b5f847ad077895e59}{ai\+Get\+Memory\+Requirements}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$p\+In, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_memory_info}{ai\+Memory\+Info}} $\ast$in)
+\item 
+ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_texture}{ai\+Texture}} $\ast$ \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a159f30a3b33f236ebb5b44cad5a2686e}{ai\+Get\+Embedded\+Texture}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$p\+In, const char $\ast$filename)
+\item 
+ASSIMP\+\_\+\+API C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$ \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a1c142eb7bcb709482d97a63d4ce6f809}{ai\+Create\+Property\+Store}} (void)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a579dddd75dbba5621c235df780ffc3e6}{ai\+Release\+Property\+Store}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$p)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a77fe5bf63f5b7811b10fb1ea072cd995}{ai\+Set\+Import\+Property\+Integer}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$store, const char $\ast$sz\+Name, int value)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a7a3fdb2a587ce72c66182b87465d664d}{ai\+Set\+Import\+Property\+Float}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$store, const char $\ast$sz\+Name, ai\+\_\+real value)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a0c6f78241e9ec7b2470d193858baf22d}{ai\+Set\+Import\+Property\+String}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$store, const char $\ast$sz\+Name, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_string}{ai\+String}} $\ast$st)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9c55a41ee04a8bf624d2a735eebf4c87}{ai\+Set\+Import\+Property\+Matrix}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$store, const char $\ast$sz\+Name, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6fa70de0a410d942b75102d605d700f3}{ai\+Create\+Quaternion\+From\+Matrix}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$quat, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a59f68c25251aefbd560582cfe39b9287}{ai\+Decompose\+Matrix}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$scaling, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$rotation, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$position)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a884f06d627cc76df36c9b4ba67801997}{ai\+Transpose\+Matrix4}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_af4b7283f4fab57fe71d5ba2efa65e620}{ai\+Transpose\+Matrix3}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a3b4fbac8311e9a41c558a0d0798a3e04}{ai\+Transform\+Vec\+By\+Matrix3}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$vec, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ae5fedd4e5296d335c3afd51cca4f180e}{ai\+Transform\+Vec\+By\+Matrix4}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$vec, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_addcc9b42dd7afac376679bc66a98fb4e}{ai\+Multiply\+Matrix4}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$dst, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$src)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a756317f04e6b1f1fdbda294a0fc9d8b2}{ai\+Multiply\+Matrix3}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$dst, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$src)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a1e1bf11ec19f8be587c767f3910384ee}{ai\+Identity\+Matrix3}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ae7af650c79ce312146d55c46f3484508}{ai\+Identity\+Matrix4}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API size\+\_\+t \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a0052bf974030e06a5f6b2a4c5d2c5d0d}{ai\+Get\+Import\+Format\+Count}} (void)
+\item 
+ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_importer_desc}{ai\+Importer\+Desc}} $\ast$ \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_adcab8dc8878d51852201153fe6ee3e23}{ai\+Get\+Import\+Format\+Description}} (size\+\_\+t p\+Index)
+\item 
+ASSIMP\+\_\+\+API int \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_afdacb5f39a783fd63acb60f662aea88f}{ai\+Vector2\+Are\+Equal}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$a, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$b)
+\item 
+ASSIMP\+\_\+\+API int \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a303ee3d48123b4db9c2d3cdcf290d9dd}{ai\+Vector2\+Are\+Equal\+Epsilon}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$a, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$b, const float epsilon)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aa19faec79505e0b382d43744d0422787}{ai\+Vector2\+Add}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$dst, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$src)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a960a22e7f4332ef0d2821c50c2a546e0}{ai\+Vector2\+Subtract}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$dst, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$src)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ab87d1ab7266e612681ce68cbbbdc742b}{ai\+Vector2\+Scale}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$dst, const float s)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6590a0c15d493f42328252794552957a}{ai\+Vector2\+Sym\+Mul}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$dst, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$other)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ac5745147ee76fa3e9b328d3e07d3c02e}{ai\+Vector2\+Divide\+By\+Scalar}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$dst, const float s)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a4860e0daf82b2258ed9981a1daf054d9}{ai\+Vector2\+Divide\+By\+Vector}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$dst, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$v)
+\item 
+ASSIMP\+\_\+\+API ai\+\_\+real \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ab72abfec7b02146e7970cc50e9d9156f}{ai\+Vector2\+Length}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$v)
+\item 
+ASSIMP\+\_\+\+API ai\+\_\+real \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9963060107b6048021954f2a331754ad}{ai\+Vector2\+Square\+Length}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$v)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a435e92ce27e5b2dd702757d498d61259}{ai\+Vector2\+Negate}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$dst)
+\item 
+ASSIMP\+\_\+\+API ai\+\_\+real \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aa868413041def06cc38da3c2be3a4f8c}{ai\+Vector2\+Dot\+Product}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$a, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$b)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a2cf329d38b545ad0d792fc59443720f7}{ai\+Vector2\+Normalize}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$v)
+\item 
+ASSIMP\+\_\+\+API int \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a82b300cfbfa90e0313e3c502367d2cd0}{ai\+Vector3\+Are\+Equal}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$a, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$b)
+\item 
+ASSIMP\+\_\+\+API int \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a8ccc11c2632f826405646bd7c428633e}{ai\+Vector3\+Are\+Equal\+Epsilon}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$a, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$b, const float epsilon)
+\item 
+ASSIMP\+\_\+\+API int \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ab039f7f0231af6cf973344f2b9071345}{ai\+Vector3\+Less\+Than}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$a, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$b)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a043069a04f234039695b248c904f710d}{ai\+Vector3\+Add}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$dst, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$src)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_addbab9671fbac4f81ec07dad443e725f}{ai\+Vector3\+Subtract}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$dst, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$src)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a465a1c389160c99113e9250b8b5b0fc4}{ai\+Vector3\+Scale}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$dst, const float s)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a71009f6853344a64199d3ccc2be523d2}{ai\+Vector3\+Sym\+Mul}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$dst, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$other)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aba79aeb9d678f5a5f175565cd3bd8997}{ai\+Vector3\+Divide\+By\+Scalar}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$dst, const float s)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_abdec89c729a8f85be791af243b4d1c52}{ai\+Vector3\+Divide\+By\+Vector}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$dst, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$v)
+\item 
+ASSIMP\+\_\+\+API ai\+\_\+real \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aa5abee7090fb692ab65487ed096c33e9}{ai\+Vector3\+Length}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$v)
+\item 
+ASSIMP\+\_\+\+API ai\+\_\+real \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ad00a60b197aef18e7adf8b04704578ae}{ai\+Vector3\+Square\+Length}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$v)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a8f6e6d6b4a4596775dfe165e2b32dcdc}{ai\+Vector3\+Negate}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$dst)
+\item 
+ASSIMP\+\_\+\+API ai\+\_\+real \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aea8b4c38e2a1eb3ced3381c1e813040d}{ai\+Vector3\+Dot\+Product}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$a, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$b)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a2a14800504f7548ee93ca406025e187b}{ai\+Vector3\+Cross\+Product}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$dst, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$a, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$b)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_abcdd1e68af302f6505d6cb2c0063b158}{ai\+Vector3\+Normalize}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$v)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a623783417aac17ea9e1453d05f3f06b0}{ai\+Vector3\+Normalize\+Safe}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$v)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9a50bb28963ae12b229b1a0e2e8f72fe}{ai\+Vector3\+Rotate\+By\+Quaternion}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$v, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$q)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a3c08715c4cff3156db831d1c168ad75c}{ai\+Matrix3\+From\+Matrix4}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$dst, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a210e38de6e4840f51df0b4609d9e6f3b}{ai\+Matrix3\+From\+Quaternion}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$mat, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$q)
+\item 
+ASSIMP\+\_\+\+API int \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a110da1b8c6b45f2b3952608e22accf95}{ai\+Matrix3\+Are\+Equal}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$a, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$b)
+\item 
+ASSIMP\+\_\+\+API int \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a4aa00973c551b9e152796e4f366beefb}{ai\+Matrix3\+Are\+Equal\+Epsilon}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$a, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$b, const float epsilon)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a908df55e96d0325cdc11cb4046b3924e}{ai\+Matrix3\+Inverse}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API ai\+\_\+real \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a68866eaafe94c5e7ceb0314d23abb0b9}{ai\+Matrix3\+Determinant}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ab92b0b84fe56833684bf0a6daa09375a}{ai\+Matrix3\+RotationZ}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$mat, const float angle)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_af9aa9c1b191f70daedf197830f3ebceb}{ai\+Matrix3\+From\+Rotation\+Around\+Axis}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$mat, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$axis, const float angle)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a629bb259d1fb0d1642bca1ad193a1a15}{ai\+Matrix3\+Translation}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$mat, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$translation)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6cbf731a617e671036daf330b8a24d11}{ai\+Matrix3\+From\+To}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$mat, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$from, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$to)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aff9e67a646bcbee082a04f3263c3b370}{ai\+Matrix4\+From\+Matrix3}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$dst, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6862bf926075ef8f31d30bb7deebadb7}{ai\+Matrix4\+From\+Scaling\+Quaternion\+Position}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$scaling, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$rotation, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$position)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ac776cef5575489668b3a6d9dc4b5b9bb}{ai\+Matrix4\+Add}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$dst, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$src)
+\item 
+ASSIMP\+\_\+\+API int \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ade5fc9bc42ce480302bbc46dca0a1f71}{ai\+Matrix4\+Are\+Equal}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$a, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$b)
+\item 
+ASSIMP\+\_\+\+API int \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a1cb3dc49cf49438e3e119f749ebbb89a}{ai\+Matrix4\+Are\+Equal\+Epsilon}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$a, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$b, const float epsilon)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9f56eae7a0ff03b6959cc3e8f49c5471}{ai\+Matrix4\+Inverse}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API ai\+\_\+real \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aef8704f1b79ab42481e3dd379056c915}{ai\+Matrix4\+Determinant}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API int \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a614bf7c554b73ac4fb017232e9733f7c}{ai\+Matrix4\+Is\+Identity}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_acde8a130e1ceddfed3f6aaef9cfbc202}{ai\+Matrix4\+Decompose\+Into\+Scaling\+Euler\+Angles\+Position}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$scaling, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$rotation, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$position)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9b9e8095af73bbcb7ece6522d1e5afab}{ai\+Matrix4\+Decompose\+Into\+Scaling\+Axis\+Angle\+Position}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$scaling, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$axis, ai\+\_\+real $\ast$angle, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$position)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a1088673571a5d1ac3f0d350b1ec64eee}{ai\+Matrix4\+Decompose\+No\+Scaling}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$rotation, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$position)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a614f4e244dcf3675caff5e58e622c724}{ai\+Matrix4\+From\+Euler\+Angles}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat, float x, float y, float z)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_abd32525a685798f943c0d0879c6803f2}{ai\+Matrix4\+RotationX}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat, const float angle)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a32ee0305287cd9acb71aee20a9f7dc26}{ai\+Matrix4\+RotationY}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat, const float angle)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a522a8d4f06df87bad085a0ca52ae9b3a}{ai\+Matrix4\+RotationZ}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat, const float angle)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a55c1f4c9f5a9e390be747e4d32ea01bd}{ai\+Matrix4\+From\+Rotation\+Around\+Axis}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$axis, const float angle)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_acf1e51b238c89a591697b7c7b042a3e5}{ai\+Matrix4\+Translation}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$translation)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ad817fd02b90bc03d272bbf70d1c475be}{ai\+Matrix4\+Scaling}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$scaling)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_adca34cb6c417e5f93facb179ee15b792}{ai\+Matrix4\+From\+To}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$mat, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$from, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$to)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a5b91f777352483e071565305439ddc58}{ai\+Quaternion\+From\+Euler\+Angles}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$q, float x, float y, float z)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a4905af66bbbc89a94b8ecd991404f27a}{ai\+Quaternion\+From\+Axis\+Angle}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$q, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$axis, const float angle)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a40f1e286c016046d93b898a615a50d1d}{ai\+Quaternion\+From\+Normalized\+Quaternion}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$q, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$normalized)
+\item 
+ASSIMP\+\_\+\+API int \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ac0c4d303f2bc7a2c709c77b37ff8642e}{ai\+Quaternion\+Are\+Equal}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$a, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$b)
+\item 
+ASSIMP\+\_\+\+API int \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_acfe60c5a39046c23735f56efb3fd2599}{ai\+Quaternion\+Are\+Equal\+Epsilon}} (const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$a, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$b, const float epsilon)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a688b5b7f8c0ea71ee69cca9760363b85}{ai\+Quaternion\+Normalize}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$q)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a7f95379c84b89a71039ef7d2f1f48ade}{ai\+Quaternion\+Conjugate}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$q)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a68b266354ba787b887edbb2197d5ec38}{ai\+Quaternion\+Multiply}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$dst, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$q)
+\item 
+ASSIMP\+\_\+\+API void \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a737dbdbfe30cf5cde4cd7ff52bd5e0ad}{ai\+Quaternion\+Interpolate}} (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$dst, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$start, const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$end, const float factor)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the C-\/\+API to the Open Asset Import Library. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aaf9b3b6ed742722b3d0bbff0f4621691}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aaf9b3b6ed742722b3d0bbff0f4621691}} 
+\index{cimport.h@{cimport.h}!aiBool@{aiBool}}
+\index{aiBool@{aiBool}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiBool}{aiBool}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{include_2assimp_2cimport_8h_aaf9b3b6ed742722b3d0bbff0f4621691}{ai\+Bool}}}
+
+Our own C boolean type 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_af18a83214bad29e8582c7d2ac7be3f14}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_af18a83214bad29e8582c7d2ac7be3f14}} 
+\index{cimport.h@{cimport.h}!aiApplyPostProcessing@{aiApplyPostProcessing}}
+\index{aiApplyPostProcessing@{aiApplyPostProcessing}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiApplyPostProcessing()}{aiApplyPostProcessing()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ ai\+Apply\+Post\+Processing (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$}]{p\+Scene,  }\item[{unsigned int}]{p\+Flags }\end{DoxyParamCaption})}
+
+Apply post-\/processing to an already-\/imported scene.
+
+This is strictly equivalent to calling \mbox{\hyperlink{include_2assimp_2cimport_8h_a5b07b5b6589ad33033c2d456cd95da2b}{ai\+Import\+File()}}/\mbox{\hyperlink{include_2assimp_2cimport_8h_a5345c1c24a0e4b71fff9b485adb11e00}{ai\+Import\+File\+Ex}} with the same flags. However, you can use this separate function to inspect the imported scene first to fine-\/tune your post-\/processing setup. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Scene} & \mbox{\hyperlink{class_scene}{Scene}} to work on. \\
+\hline
+{\em p\+Flags} & Provide a bitwise combination of the \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410}{ai\+Post\+Process\+Steps}} flags. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the post-\/processed data. Post processing is done in-\/place, meaning this is still the same \mbox{\hyperlink{structai_scene}{ai\+Scene}} which you passed for p\+Scene. However, {\itshape if} post-\/processing failed, the scene could now be NULL. That\textquotesingle{}s quite a rare case, post processing steps are not really designed to \textquotesingle{}fail\textquotesingle{}. To be exact, the \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa}{ai\+Process\+\_\+\+Validate\+Data\+Structure}} flag is currently the only post processing step which can actually cause the scene to be reset to NULL. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a75c5aa6027cb059e63b3dda005c9c149}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a75c5aa6027cb059e63b3dda005c9c149}} 
+\index{cimport.h@{cimport.h}!aiAttachLogStream@{aiAttachLogStream}}
+\index{aiAttachLogStream@{aiAttachLogStream}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiAttachLogStream()}{aiAttachLogStream()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Attach\+Log\+Stream (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_log_stream}{ai\+Log\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Attach a custom log stream to the libraries\textquotesingle{} logging system.
+
+Attaching a log stream can slightly reduce \mbox{\hyperlink{namespace_assimp}{Assimp}}\textquotesingle{}s overall import performance. Multiple log-\/streams can be attached. 
+\begin{DoxyParams}{Parameters}
+{\em stream} & Describes the new log stream. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+To ensure proper destruction of the logging system, you need to manually call \mbox{\hyperlink{include_2assimp_2cimport_8h_a98ad05bb95e8f8157a97c133812a1597}{ai\+Detach\+Log\+Stream()}} on every single log stream you attach. Alternatively (for the lazy folks) \mbox{\hyperlink{include_2assimp_2cimport_8h_a8f1fe2e8ccc5f93484098114ae7071bf}{ai\+Detach\+All\+Log\+Streams}} is provided. 
+\end{DoxyNote}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a1c142eb7bcb709482d97a63d4ce6f809}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a1c142eb7bcb709482d97a63d4ce6f809}} 
+\index{cimport.h@{cimport.h}!aiCreatePropertyStore@{aiCreatePropertyStore}}
+\index{aiCreatePropertyStore@{aiCreatePropertyStore}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiCreatePropertyStore()}{aiCreatePropertyStore()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$ ai\+Create\+Property\+Store (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Create an empty property store. Property stores are used to collect import settings. \begin{DoxyReturn}{Returns}
+New property store. Property stores need to be manually destroyed using the \mbox{\hyperlink{include_2assimp_2cimport_8h_a579dddd75dbba5621c235df780ffc3e6}{ai\+Release\+Property\+Store}} API function. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6fa70de0a410d942b75102d605d700f3}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6fa70de0a410d942b75102d605d700f3}} 
+\index{cimport.h@{cimport.h}!aiCreateQuaternionFromMatrix@{aiCreateQuaternionFromMatrix}}
+\index{aiCreateQuaternionFromMatrix@{aiCreateQuaternionFromMatrix}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiCreateQuaternionFromMatrix()}{aiCreateQuaternionFromMatrix()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Create\+Quaternion\+From\+Matrix (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{quat,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Construct a quaternion from a 3x3 rotation matrix. 
+\begin{DoxyParams}{Parameters}
+{\em quat} & Receives the output quaternion. \\
+\hline
+{\em mat} & Matrix to \textquotesingle{}quaternionize\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structai_quaternion}{ai\+Quaternion(const ai\+Matrix3x3\& p\+Rot\+Matrix)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a59f68c25251aefbd560582cfe39b9287}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a59f68c25251aefbd560582cfe39b9287}} 
+\index{cimport.h@{cimport.h}!aiDecomposeMatrix@{aiDecomposeMatrix}}
+\index{aiDecomposeMatrix@{aiDecomposeMatrix}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiDecomposeMatrix()}{aiDecomposeMatrix()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Decompose\+Matrix (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{scaling,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{rotation,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{position }\end{DoxyParamCaption})}
+
+Decompose a transformation matrix into its rotational, translational and scaling components.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrix to decompose \\
+\hline
+{\em scaling} & Receives the scaling component \\
+\hline
+{\em rotation} & Receives the rotational component \\
+\hline
+{\em position} & Receives the translational component. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+ai\+Matrix4x4\+::\+Decompose (\mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}}\&, \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}}\&, \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}}\&) const; 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a8f1fe2e8ccc5f93484098114ae7071bf}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a8f1fe2e8ccc5f93484098114ae7071bf}} 
+\index{cimport.h@{cimport.h}!aiDetachAllLogStreams@{aiDetachAllLogStreams}}
+\index{aiDetachAllLogStreams@{aiDetachAllLogStreams}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiDetachAllLogStreams()}{aiDetachAllLogStreams()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Detach\+All\+Log\+Streams (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Detach all active log streams from the libraries\textquotesingle{} logging system. This ensures that the logging system is terminated properly and all resources allocated by it are actually freed. If you attached a stream, don\textquotesingle{}t forget to detach it again. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{include_2assimp_2cimport_8h_a75c5aa6027cb059e63b3dda005c9c149}{ai\+Attach\+Log\+Stream}} 
+
+\mbox{\hyperlink{include_2assimp_2cimport_8h_a98ad05bb95e8f8157a97c133812a1597}{ai\+Detach\+Log\+Stream}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a98ad05bb95e8f8157a97c133812a1597}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a98ad05bb95e8f8157a97c133812a1597}} 
+\index{cimport.h@{cimport.h}!aiDetachLogStream@{aiDetachLogStream}}
+\index{aiDetachLogStream@{aiDetachLogStream}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiDetachLogStream()}{aiDetachLogStream()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API C\+\_\+\+ENUM \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{ai\+Return}} ai\+Detach\+Log\+Stream (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_log_stream}{ai\+Log\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Detach a custom log stream from the libraries\textquotesingle{} logging system.
+
+This is the counterpart of \mbox{\hyperlink{include_2assimp_2cimport_8h_a75c5aa6027cb059e63b3dda005c9c149}{ai\+Attach\+Log\+Stream}}. If you attached a stream, don\textquotesingle{}t forget to detach it again. 
+\begin{DoxyParams}{Parameters}
+{\em stream} & The log stream to be detached. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+AI\+\_\+\+SUCCESS if the log stream has been detached successfully. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{include_2assimp_2cimport_8h_a8f1fe2e8ccc5f93484098114ae7071bf}{ai\+Detach\+All\+Log\+Streams}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a54a7485c9422348b2f20adcbd192ed64}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a54a7485c9422348b2f20adcbd192ed64}} 
+\index{cimport.h@{cimport.h}!aiEnableVerboseLogging@{aiEnableVerboseLogging}}
+\index{aiEnableVerboseLogging@{aiEnableVerboseLogging}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiEnableVerboseLogging()}{aiEnableVerboseLogging()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Enable\+Verbose\+Logging (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{include_2assimp_2cimport_8h_aaf9b3b6ed742722b3d0bbff0f4621691}{ai\+Bool}}}]{d }\end{DoxyParamCaption})}
+
+Enable verbose logging. Verbose logging includes debug-\/related stuff and detailed import statistics. This can have severe impact on import performance and memory consumption. However, it might be useful to find out why a file didn\textquotesingle{}t read correctly. 
+\begin{DoxyParams}{Parameters}
+{\em d} & AI\+\_\+\+TRUE or AI\+\_\+\+FALSE, your decision. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a159f30a3b33f236ebb5b44cad5a2686e}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a159f30a3b33f236ebb5b44cad5a2686e}} 
+\index{cimport.h@{cimport.h}!aiGetEmbeddedTexture@{aiGetEmbeddedTexture}}
+\index{aiGetEmbeddedTexture@{aiGetEmbeddedTexture}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiGetEmbeddedTexture()}{aiGetEmbeddedTexture()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_texture}{ai\+Texture}} $\ast$ ai\+Get\+Embedded\+Texture (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$}]{p\+In,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+Returns an embedded texture, or nullptr. 
+\begin{DoxyParams}{Parameters}
+{\em p\+In} & Input asset. \\
+\hline
+{\em filename} & \mbox{\hyperlink{struct_texture}{Texture}} path extracted from ai\+Get\+Material\+String. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a512bfa5aca8613168d8c5246e09b3935}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a512bfa5aca8613168d8c5246e09b3935}} 
+\index{cimport.h@{cimport.h}!aiGetErrorString@{aiGetErrorString}}
+\index{aiGetErrorString@{aiGetErrorString}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiGetErrorString()}{aiGetErrorString()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API const char $\ast$ ai\+Get\+Error\+String (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns the error text of the last failed import process.
+
+\begin{DoxyReturn}{Returns}
+A textual description of the error that occurred at the last import process. NULL if there was no error. There can\textquotesingle{}t be an error if you got a non-\/\+NULL \mbox{\hyperlink{structai_scene}{ai\+Scene}} from \mbox{\hyperlink{include_2assimp_2cimport_8h_a5b07b5b6589ad33033c2d456cd95da2b}{ai\+Import\+File}}/\mbox{\hyperlink{include_2assimp_2cimport_8h_a5345c1c24a0e4b71fff9b485adb11e00}{ai\+Import\+File\+Ex}}/\mbox{\hyperlink{include_2assimp_2cimport_8h_af18a83214bad29e8582c7d2ac7be3f14}{ai\+Apply\+Post\+Processing}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a99cec86f7950963c0c9ecda87a2e07e2}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a99cec86f7950963c0c9ecda87a2e07e2}} 
+\index{cimport.h@{cimport.h}!aiGetExtensionList@{aiGetExtensionList}}
+\index{aiGetExtensionList@{aiGetExtensionList}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiGetExtensionList()}{aiGetExtensionList()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Get\+Extension\+List (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_string}{ai\+String}} $\ast$}]{sz\+Out }\end{DoxyParamCaption})}
+
+Get a list of all file extensions supported by ASSIMP.
+
+If a file extension is contained in the list this does, of course, not mean that ASSIMP is able to load all files with this extension. 
+\begin{DoxyParams}{Parameters}
+{\em sz\+Out} & String to receive the extension list. Format of the list\+: \char`\"{}$\ast$.\+3ds;$\ast$.\+obj;$\ast$.\+dae\char`\"{}. NULL is not a valid parameter. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a0052bf974030e06a5f6b2a4c5d2c5d0d}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a0052bf974030e06a5f6b2a4c5d2c5d0d}} 
+\index{cimport.h@{cimport.h}!aiGetImportFormatCount@{aiGetImportFormatCount}}
+\index{aiGetImportFormatCount@{aiGetImportFormatCount}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiGetImportFormatCount()}{aiGetImportFormatCount()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API size\+\_\+t ai\+Get\+Import\+Format\+Count (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns the number of import file formats available in the current \mbox{\hyperlink{namespace_assimp}{Assimp}} build. Use \mbox{\hyperlink{include_2assimp_2cimport_8h_adcab8dc8878d51852201153fe6ee3e23}{ai\+Get\+Import\+Format\+Description()}} to retrieve infos of a specific import format. \mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_adcab8dc8878d51852201153fe6ee3e23}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_adcab8dc8878d51852201153fe6ee3e23}} 
+\index{cimport.h@{cimport.h}!aiGetImportFormatDescription@{aiGetImportFormatDescription}}
+\index{aiGetImportFormatDescription@{aiGetImportFormatDescription}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiGetImportFormatDescription()}{aiGetImportFormatDescription()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_importer_desc}{ai\+Importer\+Desc}} $\ast$ ai\+Get\+Import\+Format\+Description (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{p\+Index }\end{DoxyParamCaption})}
+
+Returns a description of the nth import file format. Use \mbox{\hyperlink{include_2assimp_2cimport_8h_a0052bf974030e06a5f6b2a4c5d2c5d0d}{ai\+Get\+Import\+Format\+Count()}} to learn how many import formats are supported. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Index} & Index of the import format to retrieve information for. Valid range is 0 to \mbox{\hyperlink{include_2assimp_2cimport_8h_a0052bf974030e06a5f6b2a4c5d2c5d0d}{ai\+Get\+Import\+Format\+Count()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A description of that specific import format. NULL if p\+Index is out of range. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_acf5b67b3700dc01b5f847ad077895e59}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_acf5b67b3700dc01b5f847ad077895e59}} 
+\index{cimport.h@{cimport.h}!aiGetMemoryRequirements@{aiGetMemoryRequirements}}
+\index{aiGetMemoryRequirements@{aiGetMemoryRequirements}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiGetMemoryRequirements()}{aiGetMemoryRequirements()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Get\+Memory\+Requirements (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$}]{p\+In,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_memory_info}{ai\+Memory\+Info}} $\ast$}]{in }\end{DoxyParamCaption})}
+
+Get the approximated storage required by an imported asset 
+\begin{DoxyParams}{Parameters}
+{\em p\+In} & Input asset. \\
+\hline
+{\em in} & Data structure to be filled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ad7e375d7b134ec590e812ad1f50eab94}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ad7e375d7b134ec590e812ad1f50eab94}} 
+\index{cimport.h@{cimport.h}!aiGetPredefinedLogStream@{aiGetPredefinedLogStream}}
+\index{aiGetPredefinedLogStream@{aiGetPredefinedLogStream}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiGetPredefinedLogStream()}{aiGetPredefinedLogStream()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API C\+\_\+\+STRUCT \mbox{\hyperlink{structai_log_stream}{ai\+Log\+Stream}} ai\+Get\+Predefined\+Log\+Stream (\begin{DoxyParamCaption}\item[{C\+\_\+\+ENUM \mbox{\hyperlink{include_2assimp_2types_8h_ae4271f61a7c06cd4770fc3e11f58f9c6}{ai\+Default\+Log\+Stream}}}]{p\+Streams,  }\item[{const char $\ast$}]{file }\end{DoxyParamCaption})}
+
+Get one of the predefine log streams. This is the quick\textquotesingle{}n\textquotesingle{}easy solution to access \mbox{\hyperlink{namespace_assimp}{Assimp}}\textquotesingle{}s log system. Attaching a log stream can slightly reduce \mbox{\hyperlink{namespace_assimp}{Assimp}}\textquotesingle{}s overall import performance.
+
+Usage is rather simple (this will stream the log to a file, named log.\+txt, and the stdout stream of the process\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{struct }\mbox{\hyperlink{structai_log_stream}{aiLogStream}} c;}
+\DoxyCodeLine{c = \mbox{\hyperlink{include_2assimp_2cimport_8h_ad7e375d7b134ec590e812ad1f50eab94}{aiGetPredefinedLogStream}}(\mbox{\hyperlink{include_2assimp_2types_8h_ae4271f61a7c06cd4770fc3e11f58f9c6a53f81f9d36437ced72e67b297dc17815}{aiDefaultLogStream\_FILE}},\textcolor{stringliteral}{"{}log.txt"{}});}
+\DoxyCodeLine{\mbox{\hyperlink{include_2assimp_2cimport_8h_a75c5aa6027cb059e63b3dda005c9c149}{aiAttachLogStream}}(\&c);}
+\DoxyCodeLine{c = \mbox{\hyperlink{include_2assimp_2cimport_8h_ad7e375d7b134ec590e812ad1f50eab94}{aiGetPredefinedLogStream}}(\mbox{\hyperlink{include_2assimp_2types_8h_ae4271f61a7c06cd4770fc3e11f58f9c6a215b1796e410eed0b7ce1944ac54e72e}{aiDefaultLogStream\_STDOUT}},NULL);}
+\DoxyCodeLine{\mbox{\hyperlink{include_2assimp_2cimport_8h_a75c5aa6027cb059e63b3dda005c9c149}{aiAttachLogStream}}(\&c);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Streams} & One of the \mbox{\hyperlink{include_2assimp_2types_8h_ae4271f61a7c06cd4770fc3e11f58f9c6}{ai\+Default\+Log\+Stream}} enumerated values. \\
+\hline
+{\em file} & Solely for the \mbox{\hyperlink{include_2assimp_2types_8h_ae4271f61a7c06cd4770fc3e11f58f9c6a53f81f9d36437ced72e67b297dc17815}{ai\+Default\+Log\+Stream\+\_\+\+FILE}} flag\+: specifies the file to write to. Pass NULL for all other flags. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The log stream. callback is set to NULL if something went wrong. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a1e1bf11ec19f8be587c767f3910384ee}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a1e1bf11ec19f8be587c767f3910384ee}} 
+\index{cimport.h@{cimport.h}!aiIdentityMatrix3@{aiIdentityMatrix3}}
+\index{aiIdentityMatrix3@{aiIdentityMatrix3}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiIdentityMatrix3()}{aiIdentityMatrix3()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Identity\+Matrix3 (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Get a 3x3 identity matrix. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrix to receive its personal identity \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ae7af650c79ce312146d55c46f3484508}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ae7af650c79ce312146d55c46f3484508}} 
+\index{cimport.h@{cimport.h}!aiIdentityMatrix4@{aiIdentityMatrix4}}
+\index{aiIdentityMatrix4@{aiIdentityMatrix4}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiIdentityMatrix4()}{aiIdentityMatrix4()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Identity\+Matrix4 (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Get a 4x4 identity matrix. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrix to receive its personal identity \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a5b07b5b6589ad33033c2d456cd95da2b}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a5b07b5b6589ad33033c2d456cd95da2b}} 
+\index{cimport.h@{cimport.h}!aiImportFile@{aiImportFile}}
+\index{aiImportFile@{aiImportFile}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiImportFile()}{aiImportFile()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ ai\+Import\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+File,  }\item[{unsigned int}]{p\+Flags }\end{DoxyParamCaption})}
+
+Reads the given file and returns its content.
+
+If the call succeeds, the imported data is returned in an \mbox{\hyperlink{structai_scene}{ai\+Scene}} structure. The data is intended to be read-\/only, it stays property of the ASSIMP library and will be stable until \mbox{\hyperlink{include_2assimp_2cimport_8h_a9d360f95be3deb87f40abf25d4c047dc}{ai\+Release\+Import()}} is called. After you\textquotesingle{}re done with it, call \mbox{\hyperlink{include_2assimp_2cimport_8h_a9d360f95be3deb87f40abf25d4c047dc}{ai\+Release\+Import()}} to free the resources associated with this file. If the import fails, NULL is returned instead. Call \mbox{\hyperlink{include_2assimp_2cimport_8h_a512bfa5aca8613168d8c5246e09b3935}{ai\+Get\+Error\+String()}} to retrieve a human-\/readable error text. 
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path and filename of the file to be imported, expected to be a null-\/terminated c-\/string. NULL is not a valid value. \\
+\hline
+{\em p\+Flags} & Optional post processing steps to be executed after a successful import. Provide a bitwise combination of the \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410}{ai\+Post\+Process\+Steps}} flags. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the imported data or NULL if the import failed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a5345c1c24a0e4b71fff9b485adb11e00}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a5345c1c24a0e4b71fff9b485adb11e00}} 
+\index{cimport.h@{cimport.h}!aiImportFileEx@{aiImportFileEx}}
+\index{aiImportFileEx@{aiImportFileEx}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiImportFileEx()}{aiImportFileEx()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ ai\+Import\+File\+Ex (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+File,  }\item[{unsigned int}]{p\+Flags,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}} $\ast$}]{p\+FS }\end{DoxyParamCaption})}
+
+Reads the given file using user-\/defined I/O functions and returns its content.
+
+If the call succeeds, the imported data is returned in an \mbox{\hyperlink{structai_scene}{ai\+Scene}} structure. The data is intended to be read-\/only, it stays property of the ASSIMP library and will be stable until \mbox{\hyperlink{include_2assimp_2cimport_8h_a9d360f95be3deb87f40abf25d4c047dc}{ai\+Release\+Import()}} is called. After you\textquotesingle{}re done with it, call \mbox{\hyperlink{include_2assimp_2cimport_8h_a9d360f95be3deb87f40abf25d4c047dc}{ai\+Release\+Import()}} to free the resources associated with this file. If the import fails, NULL is returned instead. Call \mbox{\hyperlink{include_2assimp_2cimport_8h_a512bfa5aca8613168d8c5246e09b3935}{ai\+Get\+Error\+String()}} to retrieve a human-\/readable error text. 
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path and filename of the file to be imported, expected to be a null-\/terminated c-\/string. NULL is not a valid value. \\
+\hline
+{\em p\+Flags} & Optional post processing steps to be executed after a successful import. Provide a bitwise combination of the \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410}{ai\+Post\+Process\+Steps}} flags. \\
+\hline
+{\em p\+FS} & \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}} structure. Will be used to open the model file itself and any other files the loader needs to open. Pass NULL to use the default implementation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the imported data or NULL if the import failed. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Include \texorpdfstring{$<$}{<}ai\+File\+IO.\+h\texorpdfstring{$>$}{>} for the definition of \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a7060b00dbb8a17fa117526f9e0daa139}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a7060b00dbb8a17fa117526f9e0daa139}} 
+\index{cimport.h@{cimport.h}!aiImportFileExWithProperties@{aiImportFileExWithProperties}}
+\index{aiImportFileExWithProperties@{aiImportFileExWithProperties}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiImportFileExWithProperties()}{aiImportFileExWithProperties()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ ai\+Import\+File\+Ex\+With\+Properties (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+File,  }\item[{unsigned int}]{p\+Flags,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}} $\ast$}]{p\+FS,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$}]{p\+Props }\end{DoxyParamCaption})}
+
+Same as \mbox{\hyperlink{include_2assimp_2cimport_8h_a5345c1c24a0e4b71fff9b485adb11e00}{ai\+Import\+File\+Ex}}, but adds an extra parameter containing importer settings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path and filename of the file to be imported, expected to be a null-\/terminated c-\/string. NULL is not a valid value. \\
+\hline
+{\em p\+Flags} & Optional post processing steps to be executed after a successful import. Provide a bitwise combination of the \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410}{ai\+Post\+Process\+Steps}} flags. \\
+\hline
+{\em p\+FS} & \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}} structure. Will be used to open the model file itself and any other files the loader needs to open. Pass NULL to use the default implementation. \\
+\hline
+{\em p\+Props} & \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} instance containing import settings. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the imported data or NULL if the import failed. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Include \texorpdfstring{$<$}{<}ai\+File\+IO.\+h\texorpdfstring{$>$}{>} for the definition of \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}}. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{include_2assimp_2cimport_8h_a5345c1c24a0e4b71fff9b485adb11e00}{ai\+Import\+File\+Ex}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ae6c501bf96d364eec7105560787105ff}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ae6c501bf96d364eec7105560787105ff}} 
+\index{cimport.h@{cimport.h}!aiImportFileFromMemory@{aiImportFileFromMemory}}
+\index{aiImportFileFromMemory@{aiImportFileFromMemory}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiImportFileFromMemory()}{aiImportFileFromMemory()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ ai\+Import\+File\+From\+Memory (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+Buffer,  }\item[{unsigned int}]{p\+Length,  }\item[{unsigned int}]{p\+Flags,  }\item[{const char $\ast$}]{p\+Hint }\end{DoxyParamCaption})}
+
+Reads the given file from a given memory buffer,
+
+If the call succeeds, the contents of the file are returned as a pointer to an \mbox{\hyperlink{structai_scene}{ai\+Scene}} object. The returned data is intended to be read-\/only, the importer keeps ownership of the data and will destroy it upon destruction. If the import fails, NULL is returned. A human-\/readable error description can be retrieved by calling \mbox{\hyperlink{include_2assimp_2cimport_8h_a512bfa5aca8613168d8c5246e09b3935}{ai\+Get\+Error\+String()}}. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Buffer} & Pointer to the file data \\
+\hline
+{\em p\+Length} & Length of p\+Buffer, in bytes \\
+\hline
+{\em p\+Flags} & Optional post processing steps to be executed after a successful import. Provide a bitwise combination of the \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410}{ai\+Post\+Process\+Steps}} flags. If you wish to inspect the imported scene first in order to fine-\/tune your post-\/processing setup, consider to use \mbox{\hyperlink{include_2assimp_2cimport_8h_af18a83214bad29e8582c7d2ac7be3f14}{ai\+Apply\+Post\+Processing()}}. \\
+\hline
+{\em p\+Hint} & An additional hint to the library. If this is a non empty string, the library looks for a loader to support the file extension specified by p\+Hint and passes the file to the first matching loader. If this loader is unable to completely the request, the library continues and tries to determine the file format on its own, a task that may or may not be successful. Check the return value, and you\textquotesingle{}ll know ... \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the imported data, NULL if the import failed.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This is a straightforward way to decode models from memory buffers, but it doesn\textquotesingle{}t handle model formats that spread their data across multiple files or even directories. Examples include OBJ or MD3, which outsource parts of their material info into external scripts. If you need full functionality, provide a custom IOSystem to make \mbox{\hyperlink{namespace_assimp}{Assimp}} find these files and use the regular \mbox{\hyperlink{include_2assimp_2cimport_8h_a5345c1c24a0e4b71fff9b485adb11e00}{ai\+Import\+File\+Ex()}}/ai\+Import\+File\+Ex\+With\+Properties() API. 
+\end{DoxyNote}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a5d8236ae1116d5140a40b65bfd01a145}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a5d8236ae1116d5140a40b65bfd01a145}} 
+\index{cimport.h@{cimport.h}!aiImportFileFromMemoryWithProperties@{aiImportFileFromMemoryWithProperties}}
+\index{aiImportFileFromMemoryWithProperties@{aiImportFileFromMemoryWithProperties}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiImportFileFromMemoryWithProperties()}{aiImportFileFromMemoryWithProperties()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ ai\+Import\+File\+From\+Memory\+With\+Properties (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+Buffer,  }\item[{unsigned int}]{p\+Length,  }\item[{unsigned int}]{p\+Flags,  }\item[{const char $\ast$}]{p\+Hint,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$}]{p\+Props }\end{DoxyParamCaption})}
+
+Same as \mbox{\hyperlink{include_2assimp_2cimport_8h_ae6c501bf96d364eec7105560787105ff}{ai\+Import\+File\+From\+Memory}}, but adds an extra parameter containing importer settings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Buffer} & Pointer to the file data \\
+\hline
+{\em p\+Length} & Length of p\+Buffer, in bytes \\
+\hline
+{\em p\+Flags} & Optional post processing steps to be executed after a successful import. Provide a bitwise combination of the \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410}{ai\+Post\+Process\+Steps}} flags. If you wish to inspect the imported scene first in order to fine-\/tune your post-\/processing setup, consider to use \mbox{\hyperlink{include_2assimp_2cimport_8h_af18a83214bad29e8582c7d2ac7be3f14}{ai\+Apply\+Post\+Processing()}}. \\
+\hline
+{\em p\+Hint} & An additional hint to the library. If this is a non empty string, the library looks for a loader to support the file extension specified by p\+Hint and passes the file to the first matching loader. If this loader is unable to completely the request, the library continues and tries to determine the file format on its own, a task that may or may not be successful. Check the return value, and you\textquotesingle{}ll know ... \\
+\hline
+{\em p\+Props} & \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} instance containing import settings. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the imported data, NULL if the import failed.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This is a straightforward way to decode models from memory buffers, but it doesn\textquotesingle{}t handle model formats that spread their data across multiple files or even directories. Examples include OBJ or MD3, which outsource parts of their material info into external scripts. If you need full functionality, provide a custom IOSystem to make \mbox{\hyperlink{namespace_assimp}{Assimp}} find these files and use the regular \mbox{\hyperlink{include_2assimp_2cimport_8h_a5345c1c24a0e4b71fff9b485adb11e00}{ai\+Import\+File\+Ex()}}/ai\+Import\+File\+Ex\+With\+Properties() API. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{include_2assimp_2cimport_8h_ae6c501bf96d364eec7105560787105ff}{ai\+Import\+File\+From\+Memory}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_adf7ad488ca981fc8800e48e35ddc49e9}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_adf7ad488ca981fc8800e48e35ddc49e9}} 
+\index{cimport.h@{cimport.h}!aiIsExtensionSupported@{aiIsExtensionSupported}}
+\index{aiIsExtensionSupported@{aiIsExtensionSupported}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiIsExtensionSupported()}{aiIsExtensionSupported()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API \mbox{\hyperlink{include_2assimp_2cimport_8h_aaf9b3b6ed742722b3d0bbff0f4621691}{ai\+Bool}} ai\+Is\+Extension\+Supported (\begin{DoxyParamCaption}\item[{const char $\ast$}]{sz\+Extension }\end{DoxyParamCaption})}
+
+Returns whether a given file extension is supported by ASSIMP
+
+
+\begin{DoxyParams}{Parameters}
+{\em sz\+Extension} & Extension for which the function queries support for. Must include a leading dot \textquotesingle{}.\textquotesingle{}. Example\+: \char`\"{}.\+3ds\char`\"{}, \char`\"{}.\+md3\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+AI\+\_\+\+TRUE if the file extension is supported. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a110da1b8c6b45f2b3952608e22accf95}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a110da1b8c6b45f2b3952608e22accf95}} 
+\index{cimport.h@{cimport.h}!aiMatrix3AreEqual@{aiMatrix3AreEqual}}
+\index{aiMatrix3AreEqual@{aiMatrix3AreEqual}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix3AreEqual()}{aiMatrix3AreEqual()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API int ai\+Matrix3\+Are\+Equal (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{a,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+Check if 3x3 matrices are equal. 
+\begin{DoxyParams}{Parameters}
+{\em a} & First matrix to compare \\
+\hline
+{\em b} & Second matrix to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the matrices are equal 
+
+0 if the matrices are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a4aa00973c551b9e152796e4f366beefb}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a4aa00973c551b9e152796e4f366beefb}} 
+\index{cimport.h@{cimport.h}!aiMatrix3AreEqualEpsilon@{aiMatrix3AreEqualEpsilon}}
+\index{aiMatrix3AreEqualEpsilon@{aiMatrix3AreEqualEpsilon}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix3AreEqualEpsilon()}{aiMatrix3AreEqualEpsilon()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API int ai\+Matrix3\+Are\+Equal\+Epsilon (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{a,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{b,  }\item[{const float}]{epsilon }\end{DoxyParamCaption})}
+
+Check if 3x3 matrices are equal. 
+\begin{DoxyParams}{Parameters}
+{\em a} & First matrix to compare \\
+\hline
+{\em b} & Second matrix to compare \\
+\hline
+{\em epsilon} & Epsilon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the matrices are equal 
+
+0 if the matrices are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a68866eaafe94c5e7ceb0314d23abb0b9}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a68866eaafe94c5e7ceb0314d23abb0b9}} 
+\index{cimport.h@{cimport.h}!aiMatrix3Determinant@{aiMatrix3Determinant}}
+\index{aiMatrix3Determinant@{aiMatrix3Determinant}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix3Determinant()}{aiMatrix3Determinant()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API ai\+\_\+real ai\+Matrix3\+Determinant (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Get the determinant of a 3x3 matrix. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrix to get the determinant from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a3c08715c4cff3156db831d1c168ad75c}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a3c08715c4cff3156db831d1c168ad75c}} 
+\index{cimport.h@{cimport.h}!aiMatrix3FromMatrix4@{aiMatrix3FromMatrix4}}
+\index{aiMatrix3FromMatrix4@{aiMatrix3FromMatrix4}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix3FromMatrix4()}{aiMatrix3FromMatrix4()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix3\+From\+Matrix4 (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{dst,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Construct a 3x3 matrix from a 4x4 matrix. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & Receives the output matrix \\
+\hline
+{\em mat} & The 4x4 matrix to use \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a210e38de6e4840f51df0b4609d9e6f3b}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a210e38de6e4840f51df0b4609d9e6f3b}} 
+\index{cimport.h@{cimport.h}!aiMatrix3FromQuaternion@{aiMatrix3FromQuaternion}}
+\index{aiMatrix3FromQuaternion@{aiMatrix3FromQuaternion}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix3FromQuaternion()}{aiMatrix3FromQuaternion()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix3\+From\+Quaternion (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{mat,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+Construct a 3x3 matrix from a quaternion. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Receives the output matrix \\
+\hline
+{\em q} & The quaternion matrix to use \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_af9aa9c1b191f70daedf197830f3ebceb}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_af9aa9c1b191f70daedf197830f3ebceb}} 
+\index{cimport.h@{cimport.h}!aiMatrix3FromRotationAroundAxis@{aiMatrix3FromRotationAroundAxis}}
+\index{aiMatrix3FromRotationAroundAxis@{aiMatrix3FromRotationAroundAxis}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix3FromRotationAroundAxis()}{aiMatrix3FromRotationAroundAxis()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix3\+From\+Rotation\+Around\+Axis (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{mat,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{axis,  }\item[{const float}]{angle }\end{DoxyParamCaption})}
+
+Returns a 3x3 rotation matrix for a rotation around an arbitrary axis. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Receives the output matrix \\
+\hline
+{\em axis} & Rotation axis, should be a normalized vector \\
+\hline
+{\em angle} & Rotation angle, in radians \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6cbf731a617e671036daf330b8a24d11}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6cbf731a617e671036daf330b8a24d11}} 
+\index{cimport.h@{cimport.h}!aiMatrix3FromTo@{aiMatrix3FromTo}}
+\index{aiMatrix3FromTo@{aiMatrix3FromTo}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix3FromTo()}{aiMatrix3FromTo()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix3\+From\+To (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{mat,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{from,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{to }\end{DoxyParamCaption})}
+
+Create a 3x3 matrix that rotates one vector to another vector. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Receives the output matrix \\
+\hline
+{\em from} & Vector to rotate from \\
+\hline
+{\em to} & Vector to rotate to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a908df55e96d0325cdc11cb4046b3924e}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a908df55e96d0325cdc11cb4046b3924e}} 
+\index{cimport.h@{cimport.h}!aiMatrix3Inverse@{aiMatrix3Inverse}}
+\index{aiMatrix3Inverse@{aiMatrix3Inverse}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix3Inverse()}{aiMatrix3Inverse()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix3\+Inverse (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Invert a 3x3 matrix. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrix to invert \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ab92b0b84fe56833684bf0a6daa09375a}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ab92b0b84fe56833684bf0a6daa09375a}} 
+\index{cimport.h@{cimport.h}!aiMatrix3RotationZ@{aiMatrix3RotationZ}}
+\index{aiMatrix3RotationZ@{aiMatrix3RotationZ}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix3RotationZ()}{aiMatrix3RotationZ()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix3\+RotationZ (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{mat,  }\item[{const float}]{angle }\end{DoxyParamCaption})}
+
+Get a 3x3 rotation matrix around the Z axis. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Receives the output matrix \\
+\hline
+{\em angle} & Rotation angle, in radians \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a629bb259d1fb0d1642bca1ad193a1a15}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a629bb259d1fb0d1642bca1ad193a1a15}} 
+\index{cimport.h@{cimport.h}!aiMatrix3Translation@{aiMatrix3Translation}}
+\index{aiMatrix3Translation@{aiMatrix3Translation}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix3Translation()}{aiMatrix3Translation()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix3\+Translation (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{mat,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{translation }\end{DoxyParamCaption})}
+
+Get a 3x3 translation matrix. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Receives the output matrix \\
+\hline
+{\em translation} & The translation vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ac776cef5575489668b3a6d9dc4b5b9bb}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ac776cef5575489668b3a6d9dc4b5b9bb}} 
+\index{cimport.h@{cimport.h}!aiMatrix4Add@{aiMatrix4Add}}
+\index{aiMatrix4Add@{aiMatrix4Add}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4Add()}{aiMatrix4Add()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+Add (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{dst,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+Add 4x4 matrices. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & First addend, receives result. \\
+\hline
+{\em src} & Matrix to be added to \textquotesingle{}dst\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ade5fc9bc42ce480302bbc46dca0a1f71}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ade5fc9bc42ce480302bbc46dca0a1f71}} 
+\index{cimport.h@{cimport.h}!aiMatrix4AreEqual@{aiMatrix4AreEqual}}
+\index{aiMatrix4AreEqual@{aiMatrix4AreEqual}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4AreEqual()}{aiMatrix4AreEqual()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API int ai\+Matrix4\+Are\+Equal (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{a,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+Check if 4x4 matrices are equal. 
+\begin{DoxyParams}{Parameters}
+{\em a} & First matrix to compare \\
+\hline
+{\em b} & Second matrix to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the matrices are equal 
+
+0 if the matrices are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a1cb3dc49cf49438e3e119f749ebbb89a}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a1cb3dc49cf49438e3e119f749ebbb89a}} 
+\index{cimport.h@{cimport.h}!aiMatrix4AreEqualEpsilon@{aiMatrix4AreEqualEpsilon}}
+\index{aiMatrix4AreEqualEpsilon@{aiMatrix4AreEqualEpsilon}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4AreEqualEpsilon()}{aiMatrix4AreEqualEpsilon()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API int ai\+Matrix4\+Are\+Equal\+Epsilon (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{a,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{b,  }\item[{const float}]{epsilon }\end{DoxyParamCaption})}
+
+Check if 4x4 matrices are equal. 
+\begin{DoxyParams}{Parameters}
+{\em a} & First matrix to compare \\
+\hline
+{\em b} & Second matrix to compare \\
+\hline
+{\em epsilon} & Epsilon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the matrices are equal 
+
+0 if the matrices are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9b9e8095af73bbcb7ece6522d1e5afab}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9b9e8095af73bbcb7ece6522d1e5afab}} 
+\index{cimport.h@{cimport.h}!aiMatrix4DecomposeIntoScalingAxisAnglePosition@{aiMatrix4DecomposeIntoScalingAxisAnglePosition}}
+\index{aiMatrix4DecomposeIntoScalingAxisAnglePosition@{aiMatrix4DecomposeIntoScalingAxisAnglePosition}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4DecomposeIntoScalingAxisAnglePosition()}{aiMatrix4DecomposeIntoScalingAxisAnglePosition()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+Decompose\+Into\+Scaling\+Axis\+Angle\+Position (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{scaling,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{axis,  }\item[{ai\+\_\+real $\ast$}]{angle,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{position }\end{DoxyParamCaption})}
+
+Decompose a transformation matrix into its scaling, rotational split into an axis and rotational angle, and it\textquotesingle{}s translational components.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrix to decompose \\
+\hline
+{\em rotation} & Receives the rotational component \\
+\hline
+{\em axis} & Receives the output rotation axis \\
+\hline
+{\em angle} & Receives the output rotation angle \\
+\hline
+{\em position} & Receives the output position for the x,y,z axes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_acde8a130e1ceddfed3f6aaef9cfbc202}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_acde8a130e1ceddfed3f6aaef9cfbc202}} 
+\index{cimport.h@{cimport.h}!aiMatrix4DecomposeIntoScalingEulerAnglesPosition@{aiMatrix4DecomposeIntoScalingEulerAnglesPosition}}
+\index{aiMatrix4DecomposeIntoScalingEulerAnglesPosition@{aiMatrix4DecomposeIntoScalingEulerAnglesPosition}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4DecomposeIntoScalingEulerAnglesPosition()}{aiMatrix4DecomposeIntoScalingEulerAnglesPosition()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+Decompose\+Into\+Scaling\+Euler\+Angles\+Position (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{scaling,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{rotation,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{position }\end{DoxyParamCaption})}
+
+Decompose a transformation matrix into its scaling, rotational as euler angles, and translational components.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrix to decompose \\
+\hline
+{\em scaling} & Receives the output scaling for the x,y,z axes \\
+\hline
+{\em rotation} & Receives the output rotation as a Euler angles \\
+\hline
+{\em position} & Receives the output position for the x,y,z axes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a1088673571a5d1ac3f0d350b1ec64eee}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a1088673571a5d1ac3f0d350b1ec64eee}} 
+\index{cimport.h@{cimport.h}!aiMatrix4DecomposeNoScaling@{aiMatrix4DecomposeNoScaling}}
+\index{aiMatrix4DecomposeNoScaling@{aiMatrix4DecomposeNoScaling}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4DecomposeNoScaling()}{aiMatrix4DecomposeNoScaling()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+Decompose\+No\+Scaling (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{rotation,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{position }\end{DoxyParamCaption})}
+
+Decompose a transformation matrix into its rotational and translational components.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrix to decompose \\
+\hline
+{\em rotation} & Receives the rotational component \\
+\hline
+{\em position} & Receives the translational component. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aef8704f1b79ab42481e3dd379056c915}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aef8704f1b79ab42481e3dd379056c915}} 
+\index{cimport.h@{cimport.h}!aiMatrix4Determinant@{aiMatrix4Determinant}}
+\index{aiMatrix4Determinant@{aiMatrix4Determinant}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4Determinant()}{aiMatrix4Determinant()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API ai\+\_\+real ai\+Matrix4\+Determinant (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Get the determinant of a 4x4 matrix. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrix to get the determinant from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The determinant of the matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a614f4e244dcf3675caff5e58e622c724}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a614f4e244dcf3675caff5e58e622c724}} 
+\index{cimport.h@{cimport.h}!aiMatrix4FromEulerAngles@{aiMatrix4FromEulerAngles}}
+\index{aiMatrix4FromEulerAngles@{aiMatrix4FromEulerAngles}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4FromEulerAngles()}{aiMatrix4FromEulerAngles()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+From\+Euler\+Angles (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+Creates a 4x4 matrix from a set of euler angles. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Receives the output matrix \\
+\hline
+{\em x} & Rotation angle for the x-\/axis, in radians \\
+\hline
+{\em y} & Rotation angle for the y-\/axis, in radians \\
+\hline
+{\em z} & Rotation angle for the z-\/axis, in radians \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aff9e67a646bcbee082a04f3263c3b370}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aff9e67a646bcbee082a04f3263c3b370}} 
+\index{cimport.h@{cimport.h}!aiMatrix4FromMatrix3@{aiMatrix4FromMatrix3}}
+\index{aiMatrix4FromMatrix3@{aiMatrix4FromMatrix3}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4FromMatrix3()}{aiMatrix4FromMatrix3()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+From\+Matrix3 (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{dst,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Construct a 4x4 matrix from a 3x3 matrix. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & Receives the output matrix \\
+\hline
+{\em mat} & The 3x3 matrix to use \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a55c1f4c9f5a9e390be747e4d32ea01bd}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a55c1f4c9f5a9e390be747e4d32ea01bd}} 
+\index{cimport.h@{cimport.h}!aiMatrix4FromRotationAroundAxis@{aiMatrix4FromRotationAroundAxis}}
+\index{aiMatrix4FromRotationAroundAxis@{aiMatrix4FromRotationAroundAxis}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4FromRotationAroundAxis()}{aiMatrix4FromRotationAroundAxis()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+From\+Rotation\+Around\+Axis (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{axis,  }\item[{const float}]{angle }\end{DoxyParamCaption})}
+
+Returns a 4x4 rotation matrix for a rotation around an arbitrary axis. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Receives the output matrix \\
+\hline
+{\em axis} & Rotation axis, should be a normalized vector \\
+\hline
+{\em angle} & Rotation angle, in radians \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6862bf926075ef8f31d30bb7deebadb7}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6862bf926075ef8f31d30bb7deebadb7}} 
+\index{cimport.h@{cimport.h}!aiMatrix4FromScalingQuaternionPosition@{aiMatrix4FromScalingQuaternionPosition}}
+\index{aiMatrix4FromScalingQuaternionPosition@{aiMatrix4FromScalingQuaternionPosition}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4FromScalingQuaternionPosition()}{aiMatrix4FromScalingQuaternionPosition()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+From\+Scaling\+Quaternion\+Position (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{scaling,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{rotation,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{position }\end{DoxyParamCaption})}
+
+Construct a 4x4 matrix from scaling, rotation and position. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Receives the output matrix. \\
+\hline
+{\em scaling} & The scaling for the x,y,z axes \\
+\hline
+{\em rotation} & The rotation as a hamilton quaternion \\
+\hline
+{\em position} & The position for the x,y,z axes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_adca34cb6c417e5f93facb179ee15b792}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_adca34cb6c417e5f93facb179ee15b792}} 
+\index{cimport.h@{cimport.h}!aiMatrix4FromTo@{aiMatrix4FromTo}}
+\index{aiMatrix4FromTo@{aiMatrix4FromTo}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4FromTo()}{aiMatrix4FromTo()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+From\+To (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{from,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{to }\end{DoxyParamCaption})}
+
+Create a 4x4 matrix that rotates one vector to another vector. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Receives the output matrix \\
+\hline
+{\em from} & Vector to rotate from \\
+\hline
+{\em to} & Vector to rotate to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9f56eae7a0ff03b6959cc3e8f49c5471}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9f56eae7a0ff03b6959cc3e8f49c5471}} 
+\index{cimport.h@{cimport.h}!aiMatrix4Inverse@{aiMatrix4Inverse}}
+\index{aiMatrix4Inverse@{aiMatrix4Inverse}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4Inverse()}{aiMatrix4Inverse()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+Inverse (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Invert a 4x4 matrix. 
+\begin{DoxyParams}{Parameters}
+{\em result} & Matrix to invert \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a614bf7c554b73ac4fb017232e9733f7c}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a614bf7c554b73ac4fb017232e9733f7c}} 
+\index{cimport.h@{cimport.h}!aiMatrix4IsIdentity@{aiMatrix4IsIdentity}}
+\index{aiMatrix4IsIdentity@{aiMatrix4IsIdentity}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4IsIdentity()}{aiMatrix4IsIdentity()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API int ai\+Matrix4\+Is\+Identity (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Returns true of the matrix is the identity matrix. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrix to get the determinant from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if {\ttfamily mat} is an identity matrix. 
+
+0 if {\ttfamily mat} is not an identity matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_abd32525a685798f943c0d0879c6803f2}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_abd32525a685798f943c0d0879c6803f2}} 
+\index{cimport.h@{cimport.h}!aiMatrix4RotationX@{aiMatrix4RotationX}}
+\index{aiMatrix4RotationX@{aiMatrix4RotationX}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4RotationX()}{aiMatrix4RotationX()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+RotationX (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat,  }\item[{const float}]{angle }\end{DoxyParamCaption})}
+
+Get a 4x4 rotation matrix around the X axis. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Receives the output matrix \\
+\hline
+{\em angle} & Rotation angle, in radians \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a32ee0305287cd9acb71aee20a9f7dc26}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a32ee0305287cd9acb71aee20a9f7dc26}} 
+\index{cimport.h@{cimport.h}!aiMatrix4RotationY@{aiMatrix4RotationY}}
+\index{aiMatrix4RotationY@{aiMatrix4RotationY}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4RotationY()}{aiMatrix4RotationY()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+RotationY (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat,  }\item[{const float}]{angle }\end{DoxyParamCaption})}
+
+Get a 4x4 rotation matrix around the Y axis. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Receives the output matrix \\
+\hline
+{\em angle} & Rotation angle, in radians \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a522a8d4f06df87bad085a0ca52ae9b3a}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a522a8d4f06df87bad085a0ca52ae9b3a}} 
+\index{cimport.h@{cimport.h}!aiMatrix4RotationZ@{aiMatrix4RotationZ}}
+\index{aiMatrix4RotationZ@{aiMatrix4RotationZ}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4RotationZ()}{aiMatrix4RotationZ()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+RotationZ (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat,  }\item[{const float}]{angle }\end{DoxyParamCaption})}
+
+Get a 4x4 rotation matrix around the Z axis. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Receives the output matrix \\
+\hline
+{\em angle} & Rotation angle, in radians \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ad817fd02b90bc03d272bbf70d1c475be}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ad817fd02b90bc03d272bbf70d1c475be}} 
+\index{cimport.h@{cimport.h}!aiMatrix4Scaling@{aiMatrix4Scaling}}
+\index{aiMatrix4Scaling@{aiMatrix4Scaling}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4Scaling()}{aiMatrix4Scaling()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+Scaling (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{scaling }\end{DoxyParamCaption})}
+
+Get a 4x4 scaling matrix. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Receives the output matrix \\
+\hline
+{\em scaling} & The scaling vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_acf1e51b238c89a591697b7c7b042a3e5}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_acf1e51b238c89a591697b7c7b042a3e5}} 
+\index{cimport.h@{cimport.h}!aiMatrix4Translation@{aiMatrix4Translation}}
+\index{aiMatrix4Translation@{aiMatrix4Translation}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMatrix4Translation()}{aiMatrix4Translation()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Matrix4\+Translation (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{translation }\end{DoxyParamCaption})}
+
+Get a 4x4 translation matrix. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Receives the output matrix \\
+\hline
+{\em translation} & The translation vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a756317f04e6b1f1fdbda294a0fc9d8b2}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a756317f04e6b1f1fdbda294a0fc9d8b2}} 
+\index{cimport.h@{cimport.h}!aiMultiplyMatrix3@{aiMultiplyMatrix3}}
+\index{aiMultiplyMatrix3@{aiMultiplyMatrix3}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMultiplyMatrix3()}{aiMultiplyMatrix3()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Multiply\+Matrix3 (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{dst,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+Multiply two 3x3 matrices. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & First factor, receives result. \\
+\hline
+{\em src} & Matrix to be multiplied with \textquotesingle{}dst\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_addcc9b42dd7afac376679bc66a98fb4e}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_addcc9b42dd7afac376679bc66a98fb4e}} 
+\index{cimport.h@{cimport.h}!aiMultiplyMatrix4@{aiMultiplyMatrix4}}
+\index{aiMultiplyMatrix4@{aiMultiplyMatrix4}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiMultiplyMatrix4()}{aiMultiplyMatrix4()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Multiply\+Matrix4 (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{dst,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+Multiply two 4x4 matrices. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & First factor, receives result. \\
+\hline
+{\em src} & Matrix to be multiplied with \textquotesingle{}dst\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ac0c4d303f2bc7a2c709c77b37ff8642e}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ac0c4d303f2bc7a2c709c77b37ff8642e}} 
+\index{cimport.h@{cimport.h}!aiQuaternionAreEqual@{aiQuaternionAreEqual}}
+\index{aiQuaternionAreEqual@{aiQuaternionAreEqual}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiQuaternionAreEqual()}{aiQuaternionAreEqual()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API int ai\+Quaternion\+Are\+Equal (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{a,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+Check if quaternions are equal. 
+\begin{DoxyParams}{Parameters}
+{\em a} & First quaternion to compare \\
+\hline
+{\em b} & Second quaternion to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the quaternions are equal 
+
+0 if the quaternions are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_acfe60c5a39046c23735f56efb3fd2599}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_acfe60c5a39046c23735f56efb3fd2599}} 
+\index{cimport.h@{cimport.h}!aiQuaternionAreEqualEpsilon@{aiQuaternionAreEqualEpsilon}}
+\index{aiQuaternionAreEqualEpsilon@{aiQuaternionAreEqualEpsilon}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiQuaternionAreEqualEpsilon()}{aiQuaternionAreEqualEpsilon()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API int ai\+Quaternion\+Are\+Equal\+Epsilon (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{a,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{b,  }\item[{const float}]{epsilon }\end{DoxyParamCaption})}
+
+Check if quaternions are equal using epsilon. 
+\begin{DoxyParams}{Parameters}
+{\em a} & First quaternion to compare \\
+\hline
+{\em b} & Second quaternion to compare \\
+\hline
+{\em epsilon} & Epsilon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the quaternions are equal 
+
+0 if the quaternions are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a7f95379c84b89a71039ef7d2f1f48ade}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a7f95379c84b89a71039ef7d2f1f48ade}} 
+\index{cimport.h@{cimport.h}!aiQuaternionConjugate@{aiQuaternionConjugate}}
+\index{aiQuaternionConjugate@{aiQuaternionConjugate}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiQuaternionConjugate()}{aiQuaternionConjugate()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Quaternion\+Conjugate (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+Compute quaternion conjugate. 
+\begin{DoxyParams}{Parameters}
+{\em q} & Quaternion to compute conjugate, receives the output quaternion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a4905af66bbbc89a94b8ecd991404f27a}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a4905af66bbbc89a94b8ecd991404f27a}} 
+\index{cimport.h@{cimport.h}!aiQuaternionFromAxisAngle@{aiQuaternionFromAxisAngle}}
+\index{aiQuaternionFromAxisAngle@{aiQuaternionFromAxisAngle}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiQuaternionFromAxisAngle()}{aiQuaternionFromAxisAngle()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Quaternion\+From\+Axis\+Angle (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{q,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{axis,  }\item[{const float}]{angle }\end{DoxyParamCaption})}
+
+Create a Quaternion from an axis angle pair. 
+\begin{DoxyParams}{Parameters}
+{\em q} & Receives the output quaternion \\
+\hline
+{\em axis} & The orientation axis \\
+\hline
+{\em angle} & The rotation angle, in radians \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a5b91f777352483e071565305439ddc58}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a5b91f777352483e071565305439ddc58}} 
+\index{cimport.h@{cimport.h}!aiQuaternionFromEulerAngles@{aiQuaternionFromEulerAngles}}
+\index{aiQuaternionFromEulerAngles@{aiQuaternionFromEulerAngles}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiQuaternionFromEulerAngles()}{aiQuaternionFromEulerAngles()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Quaternion\+From\+Euler\+Angles (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{q,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+Create a Quaternion from euler angles. 
+\begin{DoxyParams}{Parameters}
+{\em q} & Receives the output quaternion \\
+\hline
+{\em x} & Rotation angle for the x-\/axis, in radians \\
+\hline
+{\em y} & Rotation angle for the y-\/axis, in radians \\
+\hline
+{\em z} & Rotation angle for the z-\/axis, in radians \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a40f1e286c016046d93b898a615a50d1d}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a40f1e286c016046d93b898a615a50d1d}} 
+\index{cimport.h@{cimport.h}!aiQuaternionFromNormalizedQuaternion@{aiQuaternionFromNormalizedQuaternion}}
+\index{aiQuaternionFromNormalizedQuaternion@{aiQuaternionFromNormalizedQuaternion}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiQuaternionFromNormalizedQuaternion()}{aiQuaternionFromNormalizedQuaternion()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Quaternion\+From\+Normalized\+Quaternion (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{q,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{normalized }\end{DoxyParamCaption})}
+
+Create a Quaternion from a normalized quaternion stored in a 3D vector. 
+\begin{DoxyParams}{Parameters}
+{\em q} & Receives the output quaternion \\
+\hline
+{\em normalized} & The vector that stores the quaternion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a737dbdbfe30cf5cde4cd7ff52bd5e0ad}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a737dbdbfe30cf5cde4cd7ff52bd5e0ad}} 
+\index{cimport.h@{cimport.h}!aiQuaternionInterpolate@{aiQuaternionInterpolate}}
+\index{aiQuaternionInterpolate@{aiQuaternionInterpolate}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiQuaternionInterpolate()}{aiQuaternionInterpolate()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Quaternion\+Interpolate (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{dst,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{start,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{end,  }\item[{const float}]{factor }\end{DoxyParamCaption})}
+
+Performs a spherical interpolation between two quaternions. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & Receives the quaternion resulting from the interpolation. \\
+\hline
+{\em start} & Quaternion when factor == 0 \\
+\hline
+{\em end} & Quaternion when factor == 1 \\
+\hline
+{\em factor} & Interpolation factor between 0 and 1 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a68b266354ba787b887edbb2197d5ec38}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a68b266354ba787b887edbb2197d5ec38}} 
+\index{cimport.h@{cimport.h}!aiQuaternionMultiply@{aiQuaternionMultiply}}
+\index{aiQuaternionMultiply@{aiQuaternionMultiply}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiQuaternionMultiply()}{aiQuaternionMultiply()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Quaternion\+Multiply (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{dst,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+Multiply quaternions. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & First quaternion, receives the output quaternion \\
+\hline
+{\em q} & Second quaternion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a688b5b7f8c0ea71ee69cca9760363b85}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a688b5b7f8c0ea71ee69cca9760363b85}} 
+\index{cimport.h@{cimport.h}!aiQuaternionNormalize@{aiQuaternionNormalize}}
+\index{aiQuaternionNormalize@{aiQuaternionNormalize}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiQuaternionNormalize()}{aiQuaternionNormalize()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Quaternion\+Normalize (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+Normalize a quaternion. 
+\begin{DoxyParams}{Parameters}
+{\em q} & Quaternion to normalize \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9d360f95be3deb87f40abf25d4c047dc}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9d360f95be3deb87f40abf25d4c047dc}} 
+\index{cimport.h@{cimport.h}!aiReleaseImport@{aiReleaseImport}}
+\index{aiReleaseImport@{aiReleaseImport}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiReleaseImport()}{aiReleaseImport()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Release\+Import (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$}]{p\+Scene }\end{DoxyParamCaption})}
+
+Releases all resources associated with the given import process.
+
+Call this function after you\textquotesingle{}re done with the imported data. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Scene} & The imported data to release. NULL is a valid value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a579dddd75dbba5621c235df780ffc3e6}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a579dddd75dbba5621c235df780ffc3e6}} 
+\index{cimport.h@{cimport.h}!aiReleasePropertyStore@{aiReleasePropertyStore}}
+\index{aiReleasePropertyStore@{aiReleasePropertyStore}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiReleasePropertyStore()}{aiReleasePropertyStore()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Release\+Property\+Store (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+Delete a property store. 
+\begin{DoxyParams}{Parameters}
+{\em p} & Property store to be deleted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a7a3fdb2a587ce72c66182b87465d664d}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a7a3fdb2a587ce72c66182b87465d664d}} 
+\index{cimport.h@{cimport.h}!aiSetImportPropertyFloat@{aiSetImportPropertyFloat}}
+\index{aiSetImportPropertyFloat@{aiSetImportPropertyFloat}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiSetImportPropertyFloat()}{aiSetImportPropertyFloat()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Set\+Import\+Property\+Float (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$}]{store,  }\item[{const char $\ast$}]{sz\+Name,  }\item[{ai\+\_\+real}]{value }\end{DoxyParamCaption})}
+
+Set a floating-\/point property.
+
+This is the C-\/version of \mbox{\hyperlink{class_assimp_1_1_importer_ad38af78d6fe4b1f132d2534d8a84deea}{Assimp\+::\+Importer\+::\+Set\+Property\+Float()}}. In the C interface, properties are always shared by all imports. It is not possible to specify them per import.
+
+
+\begin{DoxyParams}{Parameters}
+{\em store} & Store to modify. Use \mbox{\hyperlink{include_2assimp_2cimport_8h_a1c142eb7bcb709482d97a63d4ce6f809}{ai\+Create\+Property\+Store}} to obtain a store. \\
+\hline
+{\em sz\+Name} & Name of the configuration property to be set. All supported public properties are defined in the config.\+h header file (AI\+\_\+\+CONFIG\+\_\+\+XXX). \\
+\hline
+{\em value} & New value for the property \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a77fe5bf63f5b7811b10fb1ea072cd995}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a77fe5bf63f5b7811b10fb1ea072cd995}} 
+\index{cimport.h@{cimport.h}!aiSetImportPropertyInteger@{aiSetImportPropertyInteger}}
+\index{aiSetImportPropertyInteger@{aiSetImportPropertyInteger}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiSetImportPropertyInteger()}{aiSetImportPropertyInteger()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Set\+Import\+Property\+Integer (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$}]{store,  }\item[{const char $\ast$}]{sz\+Name,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+Set an integer property.
+
+This is the C-\/version of \mbox{\hyperlink{class_assimp_1_1_importer_a2542eed3d5f491025c4095b4e55fa068}{Assimp\+::\+Importer\+::\+Set\+Property\+Integer()}}. In the C interface, properties are always shared by all imports. It is not possible to specify them per import.
+
+
+\begin{DoxyParams}{Parameters}
+{\em store} & Store to modify. Use \mbox{\hyperlink{include_2assimp_2cimport_8h_a1c142eb7bcb709482d97a63d4ce6f809}{ai\+Create\+Property\+Store}} to obtain a store. \\
+\hline
+{\em sz\+Name} & Name of the configuration property to be set. All supported public properties are defined in the config.\+h header file (AI\+\_\+\+CONFIG\+\_\+\+XXX). \\
+\hline
+{\em value} & New value for the property \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9c55a41ee04a8bf624d2a735eebf4c87}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9c55a41ee04a8bf624d2a735eebf4c87}} 
+\index{cimport.h@{cimport.h}!aiSetImportPropertyMatrix@{aiSetImportPropertyMatrix}}
+\index{aiSetImportPropertyMatrix@{aiSetImportPropertyMatrix}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiSetImportPropertyMatrix()}{aiSetImportPropertyMatrix()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Set\+Import\+Property\+Matrix (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$}]{store,  }\item[{const char $\ast$}]{sz\+Name,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Set a matrix property.
+
+This is the C-\/version of \mbox{\hyperlink{class_assimp_1_1_importer_acd128e5fb5777ef238b8bd1454a9c3ad}{Assimp\+::\+Importer\+::\+Set\+Property\+Matrix()}}. In the C interface, properties are always shared by all imports. It is not possible to specify them per import.
+
+
+\begin{DoxyParams}{Parameters}
+{\em store} & Store to modify. Use \mbox{\hyperlink{include_2assimp_2cimport_8h_a1c142eb7bcb709482d97a63d4ce6f809}{ai\+Create\+Property\+Store}} to obtain a store. \\
+\hline
+{\em sz\+Name} & Name of the configuration property to be set. All supported public properties are defined in the config.\+h header file (AI\+\_\+\+CONFIG\+\_\+\+XXX). \\
+\hline
+{\em mat} & New value for the property \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a0c6f78241e9ec7b2470d193858baf22d}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a0c6f78241e9ec7b2470d193858baf22d}} 
+\index{cimport.h@{cimport.h}!aiSetImportPropertyString@{aiSetImportPropertyString}}
+\index{aiSetImportPropertyString@{aiSetImportPropertyString}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiSetImportPropertyString()}{aiSetImportPropertyString()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Set\+Import\+Property\+String (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_property_store}{ai\+Property\+Store}} $\ast$}]{store,  }\item[{const char $\ast$}]{sz\+Name,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_string}{ai\+String}} $\ast$}]{st }\end{DoxyParamCaption})}
+
+Set a string property.
+
+This is the C-\/version of \mbox{\hyperlink{class_assimp_1_1_importer_a854087b213981108e3e464cf4d293fed}{Assimp\+::\+Importer\+::\+Set\+Property\+String()}}. In the C interface, properties are always shared by all imports. It is not possible to specify them per import.
+
+
+\begin{DoxyParams}{Parameters}
+{\em store} & Store to modify. Use \mbox{\hyperlink{include_2assimp_2cimport_8h_a1c142eb7bcb709482d97a63d4ce6f809}{ai\+Create\+Property\+Store}} to obtain a store. \\
+\hline
+{\em sz\+Name} & Name of the configuration property to be set. All supported public properties are defined in the config.\+h header file (AI\+\_\+\+CONFIG\+\_\+\+XXX). \\
+\hline
+{\em st} & New value for the property \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a3b4fbac8311e9a41c558a0d0798a3e04}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a3b4fbac8311e9a41c558a0d0798a3e04}} 
+\index{cimport.h@{cimport.h}!aiTransformVecByMatrix3@{aiTransformVecByMatrix3}}
+\index{aiTransformVecByMatrix3@{aiTransformVecByMatrix3}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiTransformVecByMatrix3()}{aiTransformVecByMatrix3()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Transform\+Vec\+By\+Matrix3 (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{vec,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_transform}{Transform}} a vector by a 3x3 matrix 
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector to be transformed. \\
+\hline
+{\em mat} & Matrix to transform the vector with. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ae5fedd4e5296d335c3afd51cca4f180e}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ae5fedd4e5296d335c3afd51cca4f180e}} 
+\index{cimport.h@{cimport.h}!aiTransformVecByMatrix4@{aiTransformVecByMatrix4}}
+\index{aiTransformVecByMatrix4@{aiTransformVecByMatrix4}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiTransformVecByMatrix4()}{aiTransformVecByMatrix4()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Transform\+Vec\+By\+Matrix4 (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{vec,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_transform}{Transform}} a vector by a 4x4 matrix 
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector to be transformed. \\
+\hline
+{\em mat} & Matrix to transform the vector with. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_af4b7283f4fab57fe71d5ba2efa65e620}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_af4b7283f4fab57fe71d5ba2efa65e620}} 
+\index{cimport.h@{cimport.h}!aiTransposeMatrix3@{aiTransposeMatrix3}}
+\index{aiTransposeMatrix3@{aiTransposeMatrix3}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiTransposeMatrix3()}{aiTransposeMatrix3()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Transpose\+Matrix3 (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix3x3}{ai\+Matrix3x3}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Transpose a 3x3 matrix. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Pointer to the matrix to be transposed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a884f06d627cc76df36c9b4ba67801997}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a884f06d627cc76df36c9b4ba67801997}} 
+\index{cimport.h@{cimport.h}!aiTransposeMatrix4@{aiTransposeMatrix4}}
+\index{aiTransposeMatrix4@{aiTransposeMatrix4}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiTransposeMatrix4()}{aiTransposeMatrix4()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Transpose\+Matrix4 (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+Transpose a 4x4 matrix. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Pointer to the matrix to be transposed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aa19faec79505e0b382d43744d0422787}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aa19faec79505e0b382d43744d0422787}} 
+\index{cimport.h@{cimport.h}!aiVector2Add@{aiVector2Add}}
+\index{aiVector2Add@{aiVector2Add}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector2Add()}{aiVector2Add()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector2\+Add (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{dst,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+Add 2D vectors. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & First addend, receives result. \\
+\hline
+{\em src} & Vector to be added to \textquotesingle{}dst\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_afdacb5f39a783fd63acb60f662aea88f}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_afdacb5f39a783fd63acb60f662aea88f}} 
+\index{cimport.h@{cimport.h}!aiVector2AreEqual@{aiVector2AreEqual}}
+\index{aiVector2AreEqual@{aiVector2AreEqual}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector2AreEqual()}{aiVector2AreEqual()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API int ai\+Vector2\+Are\+Equal (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{a,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+Check if 2D vectors are equal. 
+\begin{DoxyParams}{Parameters}
+{\em a} & First vector to compare \\
+\hline
+{\em b} & Second vector to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the vectors are equal 
+
+0 if the vectors are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a303ee3d48123b4db9c2d3cdcf290d9dd}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a303ee3d48123b4db9c2d3cdcf290d9dd}} 
+\index{cimport.h@{cimport.h}!aiVector2AreEqualEpsilon@{aiVector2AreEqualEpsilon}}
+\index{aiVector2AreEqualEpsilon@{aiVector2AreEqualEpsilon}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector2AreEqualEpsilon()}{aiVector2AreEqualEpsilon()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API int ai\+Vector2\+Are\+Equal\+Epsilon (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{a,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{b,  }\item[{const float}]{epsilon }\end{DoxyParamCaption})}
+
+Check if 2D vectors are equal using epsilon. 
+\begin{DoxyParams}{Parameters}
+{\em a} & First vector to compare \\
+\hline
+{\em b} & Second vector to compare \\
+\hline
+{\em epsilon} & Epsilon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the vectors are equal 
+
+0 if the vectors are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ac5745147ee76fa3e9b328d3e07d3c02e}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ac5745147ee76fa3e9b328d3e07d3c02e}} 
+\index{cimport.h@{cimport.h}!aiVector2DivideByScalar@{aiVector2DivideByScalar}}
+\index{aiVector2DivideByScalar@{aiVector2DivideByScalar}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector2DivideByScalar()}{aiVector2DivideByScalar()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector2\+Divide\+By\+Scalar (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{dst,  }\item[{const float}]{s }\end{DoxyParamCaption})}
+
+Divide a 2D vector by a scalar. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & Vector to be divided by {\ttfamily s} \\
+\hline
+{\em s} & Scalar divisor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a4860e0daf82b2258ed9981a1daf054d9}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a4860e0daf82b2258ed9981a1daf054d9}} 
+\index{cimport.h@{cimport.h}!aiVector2DivideByVector@{aiVector2DivideByVector}}
+\index{aiVector2DivideByVector@{aiVector2DivideByVector}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector2DivideByVector()}{aiVector2DivideByVector()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector2\+Divide\+By\+Vector (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{dst,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+Divide each component of a 2D vector by the components of another vector. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & Vector as the dividend \\
+\hline
+{\em v} & Vector as the divisor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aa868413041def06cc38da3c2be3a4f8c}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aa868413041def06cc38da3c2be3a4f8c}} 
+\index{cimport.h@{cimport.h}!aiVector2DotProduct@{aiVector2DotProduct}}
+\index{aiVector2DotProduct@{aiVector2DotProduct}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector2DotProduct()}{aiVector2DotProduct()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API ai\+\_\+real ai\+Vector2\+Dot\+Product (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{a,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+Get the dot product of 2D vectors. 
+\begin{DoxyParams}{Parameters}
+{\em a} & First vector \\
+\hline
+{\em b} & Second vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product of vectors 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ab72abfec7b02146e7970cc50e9d9156f}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ab72abfec7b02146e7970cc50e9d9156f}} 
+\index{cimport.h@{cimport.h}!aiVector2Length@{aiVector2Length}}
+\index{aiVector2Length@{aiVector2Length}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector2Length()}{aiVector2Length()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API ai\+\_\+real ai\+Vector2\+Length (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+Get the length of a 2D vector. \begin{DoxyReturn}{Returns}
+v Vector to evaluate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a435e92ce27e5b2dd702757d498d61259}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a435e92ce27e5b2dd702757d498d61259}} 
+\index{cimport.h@{cimport.h}!aiVector2Negate@{aiVector2Negate}}
+\index{aiVector2Negate@{aiVector2Negate}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector2Negate()}{aiVector2Negate()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector2\+Negate (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{dst }\end{DoxyParamCaption})}
+
+Negate a 2D vector. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & Vector to be negated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a2cf329d38b545ad0d792fc59443720f7}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a2cf329d38b545ad0d792fc59443720f7}} 
+\index{cimport.h@{cimport.h}!aiVector2Normalize@{aiVector2Normalize}}
+\index{aiVector2Normalize@{aiVector2Normalize}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector2Normalize()}{aiVector2Normalize()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector2\+Normalize (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+Normalize a 2D vector. 
+\begin{DoxyParams}{Parameters}
+{\em v} & Vector to normalize \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ab87d1ab7266e612681ce68cbbbdc742b}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ab87d1ab7266e612681ce68cbbbdc742b}} 
+\index{cimport.h@{cimport.h}!aiVector2Scale@{aiVector2Scale}}
+\index{aiVector2Scale@{aiVector2Scale}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector2Scale()}{aiVector2Scale()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector2\+Scale (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{dst,  }\item[{const float}]{s }\end{DoxyParamCaption})}
+
+Multiply a 2D vector by a scalar. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & Vector to be scaled by {\ttfamily s} \\
+\hline
+{\em s} & Scale factor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9963060107b6048021954f2a331754ad}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9963060107b6048021954f2a331754ad}} 
+\index{cimport.h@{cimport.h}!aiVector2SquareLength@{aiVector2SquareLength}}
+\index{aiVector2SquareLength@{aiVector2SquareLength}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector2SquareLength()}{aiVector2SquareLength()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API ai\+\_\+real ai\+Vector2\+Square\+Length (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+Get the squared length of a 2D vector. \begin{DoxyReturn}{Returns}
+v Vector to evaluate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a960a22e7f4332ef0d2821c50c2a546e0}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a960a22e7f4332ef0d2821c50c2a546e0}} 
+\index{cimport.h@{cimport.h}!aiVector2Subtract@{aiVector2Subtract}}
+\index{aiVector2Subtract@{aiVector2Subtract}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector2Subtract()}{aiVector2Subtract()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector2\+Subtract (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{dst,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+Subtract 2D vectors. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & Minuend, receives result. \\
+\hline
+{\em src} & Vector to be subtracted from \textquotesingle{}dst\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6590a0c15d493f42328252794552957a}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a6590a0c15d493f42328252794552957a}} 
+\index{cimport.h@{cimport.h}!aiVector2SymMul@{aiVector2SymMul}}
+\index{aiVector2SymMul@{aiVector2SymMul}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector2SymMul()}{aiVector2SymMul()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector2\+Sym\+Mul (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{dst,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector2_d}{ai\+Vector2D}} $\ast$}]{other }\end{DoxyParamCaption})}
+
+Multiply each component of a 2D vector with the components of another vector. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & First vector, receives result \\
+\hline
+{\em other} & Second vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a043069a04f234039695b248c904f710d}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a043069a04f234039695b248c904f710d}} 
+\index{cimport.h@{cimport.h}!aiVector3Add@{aiVector3Add}}
+\index{aiVector3Add@{aiVector3Add}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3Add()}{aiVector3Add()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector3\+Add (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{dst,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+Add 3D vectors. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & First addend, receives result. \\
+\hline
+{\em src} & Vector to be added to \textquotesingle{}dst\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a82b300cfbfa90e0313e3c502367d2cd0}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a82b300cfbfa90e0313e3c502367d2cd0}} 
+\index{cimport.h@{cimport.h}!aiVector3AreEqual@{aiVector3AreEqual}}
+\index{aiVector3AreEqual@{aiVector3AreEqual}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3AreEqual()}{aiVector3AreEqual()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API int ai\+Vector3\+Are\+Equal (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{a,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+Check if 3D vectors are equal. 
+\begin{DoxyParams}{Parameters}
+{\em a} & First vector to compare \\
+\hline
+{\em b} & Second vector to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the vectors are equal 
+
+0 if the vectors are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a8ccc11c2632f826405646bd7c428633e}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a8ccc11c2632f826405646bd7c428633e}} 
+\index{cimport.h@{cimport.h}!aiVector3AreEqualEpsilon@{aiVector3AreEqualEpsilon}}
+\index{aiVector3AreEqualEpsilon@{aiVector3AreEqualEpsilon}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3AreEqualEpsilon()}{aiVector3AreEqualEpsilon()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API int ai\+Vector3\+Are\+Equal\+Epsilon (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{a,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{b,  }\item[{const float}]{epsilon }\end{DoxyParamCaption})}
+
+Check if 3D vectors are equal using epsilon. 
+\begin{DoxyParams}{Parameters}
+{\em a} & First vector to compare \\
+\hline
+{\em b} & Second vector to compare \\
+\hline
+{\em epsilon} & Epsilon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the vectors are equal 
+
+0 if the vectors are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a2a14800504f7548ee93ca406025e187b}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a2a14800504f7548ee93ca406025e187b}} 
+\index{cimport.h@{cimport.h}!aiVector3CrossProduct@{aiVector3CrossProduct}}
+\index{aiVector3CrossProduct@{aiVector3CrossProduct}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3CrossProduct()}{aiVector3CrossProduct()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector3\+Cross\+Product (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{dst,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{a,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+Get cross product of 3D vectors. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & Vector to receive the result. \\
+\hline
+{\em a} & First vector \\
+\hline
+{\em b} & Second vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product of vectors 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aba79aeb9d678f5a5f175565cd3bd8997}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aba79aeb9d678f5a5f175565cd3bd8997}} 
+\index{cimport.h@{cimport.h}!aiVector3DivideByScalar@{aiVector3DivideByScalar}}
+\index{aiVector3DivideByScalar@{aiVector3DivideByScalar}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3DivideByScalar()}{aiVector3DivideByScalar()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector3\+Divide\+By\+Scalar (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{dst,  }\item[{const float}]{s }\end{DoxyParamCaption})}
+
+Divide a 3D vector by a scalar. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & Vector to be divided by {\ttfamily s} \\
+\hline
+{\em s} & Scalar divisor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_abdec89c729a8f85be791af243b4d1c52}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_abdec89c729a8f85be791af243b4d1c52}} 
+\index{cimport.h@{cimport.h}!aiVector3DivideByVector@{aiVector3DivideByVector}}
+\index{aiVector3DivideByVector@{aiVector3DivideByVector}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3DivideByVector()}{aiVector3DivideByVector()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector3\+Divide\+By\+Vector (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{dst,  }\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+Divide each component of a 3D vector by the components of another vector. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & Vector as the dividend \\
+\hline
+{\em v} & Vector as the divisor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aea8b4c38e2a1eb3ced3381c1e813040d}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aea8b4c38e2a1eb3ced3381c1e813040d}} 
+\index{cimport.h@{cimport.h}!aiVector3DotProduct@{aiVector3DotProduct}}
+\index{aiVector3DotProduct@{aiVector3DotProduct}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3DotProduct()}{aiVector3DotProduct()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API ai\+\_\+real ai\+Vector3\+Dot\+Product (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{a,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+Get the dot product of 3D vectors. 
+\begin{DoxyParams}{Parameters}
+{\em a} & First vector \\
+\hline
+{\em b} & Second vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product of vectors 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aa5abee7090fb692ab65487ed096c33e9}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_aa5abee7090fb692ab65487ed096c33e9}} 
+\index{cimport.h@{cimport.h}!aiVector3Length@{aiVector3Length}}
+\index{aiVector3Length@{aiVector3Length}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3Length()}{aiVector3Length()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API ai\+\_\+real ai\+Vector3\+Length (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+Get the length of a 3D vector. \begin{DoxyReturn}{Returns}
+v Vector to evaluate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ab039f7f0231af6cf973344f2b9071345}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ab039f7f0231af6cf973344f2b9071345}} 
+\index{cimport.h@{cimport.h}!aiVector3LessThan@{aiVector3LessThan}}
+\index{aiVector3LessThan@{aiVector3LessThan}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3LessThan()}{aiVector3LessThan()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API int ai\+Vector3\+Less\+Than (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{a,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+Check if vector {\ttfamily a} is less than vector {\ttfamily b}. 
+\begin{DoxyParams}{Parameters}
+{\em a} & First vector to compare \\
+\hline
+{\em b} & Second vector to compare \\
+\hline
+{\em epsilon} & Epsilon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if {\ttfamily a} is less than {\ttfamily b} 
+
+0 if {\ttfamily a} is equal or greater than {\ttfamily b} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a8f6e6d6b4a4596775dfe165e2b32dcdc}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a8f6e6d6b4a4596775dfe165e2b32dcdc}} 
+\index{cimport.h@{cimport.h}!aiVector3Negate@{aiVector3Negate}}
+\index{aiVector3Negate@{aiVector3Negate}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3Negate()}{aiVector3Negate()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector3\+Negate (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{dst }\end{DoxyParamCaption})}
+
+Negate a 3D vector. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & Vector to be negated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_abcdd1e68af302f6505d6cb2c0063b158}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_abcdd1e68af302f6505d6cb2c0063b158}} 
+\index{cimport.h@{cimport.h}!aiVector3Normalize@{aiVector3Normalize}}
+\index{aiVector3Normalize@{aiVector3Normalize}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3Normalize()}{aiVector3Normalize()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector3\+Normalize (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+Normalize a 3D vector. 
+\begin{DoxyParams}{Parameters}
+{\em v} & Vector to normalize \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a623783417aac17ea9e1453d05f3f06b0}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a623783417aac17ea9e1453d05f3f06b0}} 
+\index{cimport.h@{cimport.h}!aiVector3NormalizeSafe@{aiVector3NormalizeSafe}}
+\index{aiVector3NormalizeSafe@{aiVector3NormalizeSafe}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3NormalizeSafe()}{aiVector3NormalizeSafe()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector3\+Normalize\+Safe (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+Check for division by zero and normalize a 3D vector. 
+\begin{DoxyParams}{Parameters}
+{\em v} & Vector to normalize \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9a50bb28963ae12b229b1a0e2e8f72fe}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a9a50bb28963ae12b229b1a0e2e8f72fe}} 
+\index{cimport.h@{cimport.h}!aiVector3RotateByQuaternion@{aiVector3RotateByQuaternion}}
+\index{aiVector3RotateByQuaternion@{aiVector3RotateByQuaternion}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3RotateByQuaternion()}{aiVector3RotateByQuaternion()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector3\+Rotate\+By\+Quaternion (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{v,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_quaternion}{ai\+Quaternion}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+Rotate a 3D vector by a quaternion. 
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to rotate by {\ttfamily q} \\
+\hline
+{\em q} & Quaternion to use to rotate {\ttfamily v} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a465a1c389160c99113e9250b8b5b0fc4}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a465a1c389160c99113e9250b8b5b0fc4}} 
+\index{cimport.h@{cimport.h}!aiVector3Scale@{aiVector3Scale}}
+\index{aiVector3Scale@{aiVector3Scale}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3Scale()}{aiVector3Scale()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector3\+Scale (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{dst,  }\item[{const float}]{s }\end{DoxyParamCaption})}
+
+Multiply a 3D vector by a scalar. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & Vector to be scaled by {\ttfamily s} \\
+\hline
+{\em s} & Scale factor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ad00a60b197aef18e7adf8b04704578ae}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_ad00a60b197aef18e7adf8b04704578ae}} 
+\index{cimport.h@{cimport.h}!aiVector3SquareLength@{aiVector3SquareLength}}
+\index{aiVector3SquareLength@{aiVector3SquareLength}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3SquareLength()}{aiVector3SquareLength()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API ai\+\_\+real ai\+Vector3\+Square\+Length (\begin{DoxyParamCaption}\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+Get the squared length of a 3D vector. \begin{DoxyReturn}{Returns}
+v Vector to evaluate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_addbab9671fbac4f81ec07dad443e725f}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_addbab9671fbac4f81ec07dad443e725f}} 
+\index{cimport.h@{cimport.h}!aiVector3Subtract@{aiVector3Subtract}}
+\index{aiVector3Subtract@{aiVector3Subtract}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3Subtract()}{aiVector3Subtract()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector3\+Subtract (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{dst,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+Subtract 3D vectors. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & Minuend, receives result. \\
+\hline
+{\em src} & Vector to be subtracted from \textquotesingle{}dst\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a71009f6853344a64199d3ccc2be523d2}\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_a71009f6853344a64199d3ccc2be523d2}} 
+\index{cimport.h@{cimport.h}!aiVector3SymMul@{aiVector3SymMul}}
+\index{aiVector3SymMul@{aiVector3SymMul}!cimport.h@{cimport.h}}
+\doxysubsubsection{\texorpdfstring{aiVector3SymMul()}{aiVector3SymMul()}}
+{\footnotesize\ttfamily ASSIMP\+\_\+\+API void ai\+Vector3\+Sym\+Mul (\begin{DoxyParamCaption}\item[{C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{dst,  }\item[{const C\+\_\+\+STRUCT \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $\ast$}]{other }\end{DoxyParamCaption})}
+
+Multiply each component of a 3D vector with the components of another vector. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & First vector, receives result \\
+\hline
+{\em other} & Second vector \\
+\hline
+\end{DoxyParams}

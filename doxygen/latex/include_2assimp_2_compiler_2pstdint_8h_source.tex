@@ -1,0 +1,918 @@
+\hypertarget{include_2assimp_2_compiler_2pstdint_8h_source}{}\doxysection{pstdint.\+h}
+\label{include_2assimp_2_compiler_2pstdint_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/Compiler/pstdint.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/Compiler/pstdint.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*  A portable stdint.h}}
+\DoxyCodeLine{2 \textcolor{comment}{ ****************************************************************************}}
+\DoxyCodeLine{3 \textcolor{comment}{ *  BSD License:}}
+\DoxyCodeLine{4 \textcolor{comment}{ ****************************************************************************}}
+\DoxyCodeLine{5 \textcolor{comment}{ *}}
+\DoxyCodeLine{6 \textcolor{comment}{ *  Copyright (c) 2005-\/2016 Paul Hsieh}}
+\DoxyCodeLine{7 \textcolor{comment}{ *  All rights reserved.}}
+\DoxyCodeLine{8 \textcolor{comment}{ *}}
+\DoxyCodeLine{9 \textcolor{comment}{ *  Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{10 \textcolor{comment}{ *  modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{11 \textcolor{comment}{ *  are met:}}
+\DoxyCodeLine{12 \textcolor{comment}{ *}}
+\DoxyCodeLine{13 \textcolor{comment}{ *  1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{14 \textcolor{comment}{ *     notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{15 \textcolor{comment}{ *  2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{16 \textcolor{comment}{ *     notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{17 \textcolor{comment}{ *     documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{18 \textcolor{comment}{ *  3. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{19 \textcolor{comment}{ *     derived from this software without specific prior written permission.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ *  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{22 \textcolor{comment}{ *  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES}}
+\DoxyCodeLine{23 \textcolor{comment}{ *  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.}}
+\DoxyCodeLine{24 \textcolor{comment}{ *  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{25 \textcolor{comment}{ *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT}}
+\DoxyCodeLine{26 \textcolor{comment}{ *  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{27 \textcolor{comment}{ *  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{28 \textcolor{comment}{ *  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{29 \textcolor{comment}{ *  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{30 \textcolor{comment}{ *  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{31 \textcolor{comment}{ *}}
+\DoxyCodeLine{32 \textcolor{comment}{ ****************************************************************************}}
+\DoxyCodeLine{33 \textcolor{comment}{ *}}
+\DoxyCodeLine{34 \textcolor{comment}{ *  Version 0.1.15.4}}
+\DoxyCodeLine{35 \textcolor{comment}{ *}}
+\DoxyCodeLine{36 \textcolor{comment}{ *  The ANSI C standard committee, for the C99 standard, specified the}}
+\DoxyCodeLine{37 \textcolor{comment}{ *  inclusion of a new standard include file called stdint.h.  This is}}
+\DoxyCodeLine{38 \textcolor{comment}{ *  a very useful and long desired include file which contains several}}
+\DoxyCodeLine{39 \textcolor{comment}{ *  very precise definitions for integer scalar types that is}}
+\DoxyCodeLine{40 \textcolor{comment}{ *  critically important for making portable several classes of}}
+\DoxyCodeLine{41 \textcolor{comment}{ *  applications including cryptography, hashing, variable length}}
+\DoxyCodeLine{42 \textcolor{comment}{ *  integer libraries and so on.  But for most developers its likely}}
+\DoxyCodeLine{43 \textcolor{comment}{ *  useful just for programming sanity.}}
+\DoxyCodeLine{44 \textcolor{comment}{ *}}
+\DoxyCodeLine{45 \textcolor{comment}{ *  The problem is that some compiler vendors chose to ignore the C99}}
+\DoxyCodeLine{46 \textcolor{comment}{ *  standard and some older compilers have no opportunity to be updated.}}
+\DoxyCodeLine{47 \textcolor{comment}{ *  Because of this situation, simply including stdint.h in your code}}
+\DoxyCodeLine{48 \textcolor{comment}{ *  makes it unportable.}}
+\DoxyCodeLine{49 \textcolor{comment}{ *}}
+\DoxyCodeLine{50 \textcolor{comment}{ *  So that's what this file is all about.  Its an attempt to build a}}
+\DoxyCodeLine{51 \textcolor{comment}{ *  single universal include file that works on as many platforms as}}
+\DoxyCodeLine{52 \textcolor{comment}{ *  possible to deliver what stdint.h is supposed to.  Even compilers}}
+\DoxyCodeLine{53 \textcolor{comment}{ *  that already come with stdint.h can use this file instead without}}
+\DoxyCodeLine{54 \textcolor{comment}{ *  any loss of functionality.  A few things that should be noted about}}
+\DoxyCodeLine{55 \textcolor{comment}{ *  this file:}}
+\DoxyCodeLine{56 \textcolor{comment}{ *}}
+\DoxyCodeLine{57 \textcolor{comment}{ *    1) It is not guaranteed to be portable and/or present an identical}}
+\DoxyCodeLine{58 \textcolor{comment}{ *       interface on all platforms.  The extreme variability of the}}
+\DoxyCodeLine{59 \textcolor{comment}{ *       ANSI C standard makes this an impossibility right from the}}
+\DoxyCodeLine{60 \textcolor{comment}{ *       very get go. Its really only meant to be useful for the vast}}
+\DoxyCodeLine{61 \textcolor{comment}{ *       majority of platforms that possess the capability of}}
+\DoxyCodeLine{62 \textcolor{comment}{ *       implementing usefully and precisely defined, standard sized}}
+\DoxyCodeLine{63 \textcolor{comment}{ *       integer scalars.  Systems which are not intrinsically 2s}}
+\DoxyCodeLine{64 \textcolor{comment}{ *       complement may produce invalid constants.}}
+\DoxyCodeLine{65 \textcolor{comment}{ *}}
+\DoxyCodeLine{66 \textcolor{comment}{ *    2) There is an unavoidable use of non-\/reserved symbols.}}
+\DoxyCodeLine{67 \textcolor{comment}{ *}}
+\DoxyCodeLine{68 \textcolor{comment}{ *    3) Other standard include files are invoked.}}
+\DoxyCodeLine{69 \textcolor{comment}{ *}}
+\DoxyCodeLine{70 \textcolor{comment}{ *    4) This file may come in conflict with future platforms that do}}
+\DoxyCodeLine{71 \textcolor{comment}{ *       include stdint.h.  The hope is that one or the other can be}}
+\DoxyCodeLine{72 \textcolor{comment}{ *       used with no real difference.}}
+\DoxyCodeLine{73 \textcolor{comment}{ *}}
+\DoxyCodeLine{74 \textcolor{comment}{ *    5) In the current version, if your platform can't represent}}
+\DoxyCodeLine{75 \textcolor{comment}{ *       int32\_t, int16\_t and int8\_t, it just dumps out with a compiler}}
+\DoxyCodeLine{76 \textcolor{comment}{ *       error.}}
+\DoxyCodeLine{77 \textcolor{comment}{ *}}
+\DoxyCodeLine{78 \textcolor{comment}{ *    6) 64 bit integers may or may not be defined.  Test for their}}
+\DoxyCodeLine{79 \textcolor{comment}{ *       presence with the test: \#ifdef INT64\_MAX or \#ifdef UINT64\_MAX.}}
+\DoxyCodeLine{80 \textcolor{comment}{ *       Note that this is different from the C99 specification which}}
+\DoxyCodeLine{81 \textcolor{comment}{ *       requires the existence of 64 bit support in the compiler.  If}}
+\DoxyCodeLine{82 \textcolor{comment}{ *       this is not defined for your platform, yet it is capable of}}
+\DoxyCodeLine{83 \textcolor{comment}{ *       dealing with 64 bits then it is because this file has not yet}}
+\DoxyCodeLine{84 \textcolor{comment}{ *       been extended to cover all of your system's capabilities.}}
+\DoxyCodeLine{85 \textcolor{comment}{ *}}
+\DoxyCodeLine{86 \textcolor{comment}{ *    7) (u)intptr\_t may or may not be defined.  Test for its presence}}
+\DoxyCodeLine{87 \textcolor{comment}{ *       with the test: \#ifdef PTRDIFF\_MAX.  If this is not defined}}
+\DoxyCodeLine{88 \textcolor{comment}{ *       for your platform, then it is because this file has not yet}}
+\DoxyCodeLine{89 \textcolor{comment}{ *       been extended to cover all of your system's capabilities, not}}
+\DoxyCodeLine{90 \textcolor{comment}{ *       because its optional.}}
+\DoxyCodeLine{91 \textcolor{comment}{ *}}
+\DoxyCodeLine{92 \textcolor{comment}{ *    8) The following might not been defined even if your platform is}}
+\DoxyCodeLine{93 \textcolor{comment}{ *       capable of defining it:}}
+\DoxyCodeLine{94 \textcolor{comment}{ *}}
+\DoxyCodeLine{95 \textcolor{comment}{ *       WCHAR\_MIN}}
+\DoxyCodeLine{96 \textcolor{comment}{ *       WCHAR\_MAX}}
+\DoxyCodeLine{97 \textcolor{comment}{ *       (u)int64\_t}}
+\DoxyCodeLine{98 \textcolor{comment}{ *       PTRDIFF\_MIN}}
+\DoxyCodeLine{99 \textcolor{comment}{ *       PTRDIFF\_MAX}}
+\DoxyCodeLine{100 \textcolor{comment}{ *       (u)intptr\_t}}
+\DoxyCodeLine{101 \textcolor{comment}{ *}}
+\DoxyCodeLine{102 \textcolor{comment}{ *    9) The following have not been defined:}}
+\DoxyCodeLine{103 \textcolor{comment}{ *}}
+\DoxyCodeLine{104 \textcolor{comment}{ *       WINT\_MIN}}
+\DoxyCodeLine{105 \textcolor{comment}{ *       WINT\_MAX}}
+\DoxyCodeLine{106 \textcolor{comment}{ *}}
+\DoxyCodeLine{107 \textcolor{comment}{ *   10) The criteria for defining (u)int\_least(*)\_t isn't clear,}}
+\DoxyCodeLine{108 \textcolor{comment}{ *       except for systems which don't have a type that precisely}}
+\DoxyCodeLine{109 \textcolor{comment}{ *       defined 8, 16, or 32 bit types (which this include file does}}
+\DoxyCodeLine{110 \textcolor{comment}{ *       not support anyways). Default definitions have been given.}}
+\DoxyCodeLine{111 \textcolor{comment}{ *}}
+\DoxyCodeLine{112 \textcolor{comment}{ *   11) The criteria for defining (u)int\_fast(*)\_t isn't something I}}
+\DoxyCodeLine{113 \textcolor{comment}{ *       would trust to any particular compiler vendor or the ANSI C}}
+\DoxyCodeLine{114 \textcolor{comment}{ *       committee.  It is well known that "{}compatible systems"{} are}}
+\DoxyCodeLine{115 \textcolor{comment}{ *       commonly created that have very different performance}}
+\DoxyCodeLine{116 \textcolor{comment}{ *       characteristics from the systems they are compatible with,}}
+\DoxyCodeLine{117 \textcolor{comment}{ *       especially those whose vendors make both the compiler and the}}
+\DoxyCodeLine{118 \textcolor{comment}{ *       system.  Default definitions have been given, but its strongly}}
+\DoxyCodeLine{119 \textcolor{comment}{ *       recommended that users never use these definitions for any}}
+\DoxyCodeLine{120 \textcolor{comment}{ *       reason (they do *NOT* deliver any serious guarantee of}}
+\DoxyCodeLine{121 \textcolor{comment}{ *       improved performance -\/-\/ not in this file, nor any vendor's}}
+\DoxyCodeLine{122 \textcolor{comment}{ *       stdint.h).}}
+\DoxyCodeLine{123 \textcolor{comment}{ *}}
+\DoxyCodeLine{124 \textcolor{comment}{ *   12) The following macros:}}
+\DoxyCodeLine{125 \textcolor{comment}{ *}}
+\DoxyCodeLine{126 \textcolor{comment}{ *       PRINTF\_INTMAX\_MODIFIER}}
+\DoxyCodeLine{127 \textcolor{comment}{ *       PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{128 \textcolor{comment}{ *       PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{129 \textcolor{comment}{ *       PRINTF\_INT16\_MODIFIER}}
+\DoxyCodeLine{130 \textcolor{comment}{ *       PRINTF\_LEAST64\_MODIFIER}}
+\DoxyCodeLine{131 \textcolor{comment}{ *       PRINTF\_LEAST32\_MODIFIER}}
+\DoxyCodeLine{132 \textcolor{comment}{ *       PRINTF\_LEAST16\_MODIFIER}}
+\DoxyCodeLine{133 \textcolor{comment}{ *       PRINTF\_INTPTR\_MODIFIER}}
+\DoxyCodeLine{134 \textcolor{comment}{ *}}
+\DoxyCodeLine{135 \textcolor{comment}{ *       are strings which have been defined as the modifiers required}}
+\DoxyCodeLine{136 \textcolor{comment}{ *       for the "{}d"{}, "{}u"{} and "{}x"{} printf formats to correctly output}}
+\DoxyCodeLine{137 \textcolor{comment}{ *       (u)intmax\_t, (u)int64\_t, (u)int32\_t, (u)int16\_t, (u)least64\_t,}}
+\DoxyCodeLine{138 \textcolor{comment}{ *       (u)least32\_t, (u)least16\_t and (u)intptr\_t types respectively.}}
+\DoxyCodeLine{139 \textcolor{comment}{ *       PRINTF\_INTPTR\_MODIFIER is not defined for some systems which}}
+\DoxyCodeLine{140 \textcolor{comment}{ *       provide their own stdint.h.  PRINTF\_INT64\_MODIFIER is not}}
+\DoxyCodeLine{141 \textcolor{comment}{ *       defined if INT64\_MAX is not defined.  These are an extension}}
+\DoxyCodeLine{142 \textcolor{comment}{ *       beyond what C99 specifies must be in stdint.h.}}
+\DoxyCodeLine{143 \textcolor{comment}{ *}}
+\DoxyCodeLine{144 \textcolor{comment}{ *       In addition, the following macros are defined:}}
+\DoxyCodeLine{145 \textcolor{comment}{ *}}
+\DoxyCodeLine{146 \textcolor{comment}{ *       PRINTF\_INTMAX\_HEX\_WIDTH}}
+\DoxyCodeLine{147 \textcolor{comment}{ *       PRINTF\_INT64\_HEX\_WIDTH}}
+\DoxyCodeLine{148 \textcolor{comment}{ *       PRINTF\_INT32\_HEX\_WIDTH}}
+\DoxyCodeLine{149 \textcolor{comment}{ *       PRINTF\_INT16\_HEX\_WIDTH}}
+\DoxyCodeLine{150 \textcolor{comment}{ *       PRINTF\_INT8\_HEX\_WIDTH}}
+\DoxyCodeLine{151 \textcolor{comment}{ *       PRINTF\_INTMAX\_DEC\_WIDTH}}
+\DoxyCodeLine{152 \textcolor{comment}{ *       PRINTF\_INT64\_DEC\_WIDTH}}
+\DoxyCodeLine{153 \textcolor{comment}{ *       PRINTF\_INT32\_DEC\_WIDTH}}
+\DoxyCodeLine{154 \textcolor{comment}{ *       PRINTF\_INT16\_DEC\_WIDTH}}
+\DoxyCodeLine{155 \textcolor{comment}{ *       PRINTF\_UINT8\_DEC\_WIDTH}}
+\DoxyCodeLine{156 \textcolor{comment}{ *       PRINTF\_UINTMAX\_DEC\_WIDTH}}
+\DoxyCodeLine{157 \textcolor{comment}{ *       PRINTF\_UINT64\_DEC\_WIDTH}}
+\DoxyCodeLine{158 \textcolor{comment}{ *       PRINTF\_UINT32\_DEC\_WIDTH}}
+\DoxyCodeLine{159 \textcolor{comment}{ *       PRINTF\_UINT16\_DEC\_WIDTH}}
+\DoxyCodeLine{160 \textcolor{comment}{ *       PRINTF\_UINT8\_DEC\_WIDTH}}
+\DoxyCodeLine{161 \textcolor{comment}{ *}}
+\DoxyCodeLine{162 \textcolor{comment}{ *       Which specifies the maximum number of characters required to}}
+\DoxyCodeLine{163 \textcolor{comment}{ *       print the number of that type in either hexadecimal or decimal.}}
+\DoxyCodeLine{164 \textcolor{comment}{ *       These are an extension beyond what C99 specifies must be in}}
+\DoxyCodeLine{165 \textcolor{comment}{ *       stdint.h.}}
+\DoxyCodeLine{166 \textcolor{comment}{ *}}
+\DoxyCodeLine{167 \textcolor{comment}{ *  Compilers tested (all with 0 warnings at their highest respective}}
+\DoxyCodeLine{168 \textcolor{comment}{ *  settings): Borland Turbo C 2.0, WATCOM C/C++ 11.0 (16 bits and 32}}
+\DoxyCodeLine{169 \textcolor{comment}{ *  bits), Microsoft Visual C++ 6.0 (32 bit), Microsoft Visual Studio}}
+\DoxyCodeLine{170 \textcolor{comment}{ *  .net (VC7), Intel C++ 4.0, GNU gcc v3.3.3}}
+\DoxyCodeLine{171 \textcolor{comment}{ *}}
+\DoxyCodeLine{172 \textcolor{comment}{ *  This file should be considered a work in progress.  Suggestions for}}
+\DoxyCodeLine{173 \textcolor{comment}{ *  improvements, especially those which increase coverage are strongly}}
+\DoxyCodeLine{174 \textcolor{comment}{ *  encouraged.}}
+\DoxyCodeLine{175 \textcolor{comment}{ *}}
+\DoxyCodeLine{176 \textcolor{comment}{ *  Acknowledgements}}
+\DoxyCodeLine{177 \textcolor{comment}{ *}}
+\DoxyCodeLine{178 \textcolor{comment}{ *  The following people have made significant contributions to the}}
+\DoxyCodeLine{179 \textcolor{comment}{ *  development and testing of this file:}}
+\DoxyCodeLine{180 \textcolor{comment}{ *}}
+\DoxyCodeLine{181 \textcolor{comment}{ *  Chris Howie}}
+\DoxyCodeLine{182 \textcolor{comment}{ *  John Steele Scott}}
+\DoxyCodeLine{183 \textcolor{comment}{ *  Dave Thorup}}
+\DoxyCodeLine{184 \textcolor{comment}{ *  John Dill}}
+\DoxyCodeLine{185 \textcolor{comment}{ *  Florian Wobbe}}
+\DoxyCodeLine{186 \textcolor{comment}{ *  Christopher Sean Morrison}}
+\DoxyCodeLine{187 \textcolor{comment}{ *  Mikkel Fahnoe Jorgensen}}
+\DoxyCodeLine{188 \textcolor{comment}{ *}}
+\DoxyCodeLine{189 \textcolor{comment}{ */}}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#include <stddef.h>}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#include <limits.h>}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#include <signal.h>}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{comment}{/*}}
+\DoxyCodeLine{196 \textcolor{comment}{ *  For gcc with \_STDINT\_H, fill in the PRINTF\_INT*\_MODIFIER macros, and}}
+\DoxyCodeLine{197 \textcolor{comment}{ *  do nothing else.  On the Mac OS X version of gcc this is \_STDINT\_H\_.}}
+\DoxyCodeLine{198 \textcolor{comment}{ */}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#if ((defined(\_\_SUNPRO\_C) \&\& \_\_SUNPRO\_C >= 0x570) || (defined(\_MSC\_VER) \&\& \_MSC\_VER >= 1600) || (defined(\_\_STDC\_\_) \&\& \_\_STDC\_\_ \&\& defined(\_\_STDC\_VERSION\_\_) \&\& \_\_STDC\_VERSION\_\_ >= 199901L) || (defined (\_\_WATCOMC\_\_) \&\& (defined (\_STDINT\_H\_INCLUDED) || \_\_WATCOMC\_\_ >= 1250)) || (defined(\_\_GNUC\_\_) \&\& (\_\_GNUC\_\_ > 3 || defined(\_STDINT\_H) || defined(\_STDINT\_H\_) || defined (\_\_UINT\_FAST64\_TYPE\_\_)) )) \&\& !defined (\_PSTDINT\_H\_INCLUDED)}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define \_PSTDINT\_H\_INCLUDED}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\# if defined(\_\_GNUC\_\_) \&\& (defined(\_\_x86\_64\_\_) || defined(\_\_ppc64\_\_)) \&\& !(defined(\_\_APPLE\_\_) \&\& defined(\_\_MACH\_\_))}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#   define PRINTF\_INT64\_MODIFIER "{}l"{}}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#   define PRINTF\_INT32\_MODIFIER "{}"{}}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\# else}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#   define PRINTF\_INT64\_MODIFIER "{}ll"{}}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#   if (UINT\_MAX == UINT32\_MAX)}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#    define PRINTF\_INT32\_MODIFIER "{}"{}}}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#   else}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#    define PRINTF\_INT32\_MODIFIER "{}l"{}}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\# ifndef PRINTF\_INT16\_MODIFIER}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#  define PRINTF\_INT16\_MODIFIER "{}h"{}}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_MODIFIER}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#  define PRINTF\_INTMAX\_MODIFIER PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\# ifndef PRINTF\_INT64\_HEX\_WIDTH}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#  define PRINTF\_INT64\_HEX\_WIDTH "{}16"{}}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT64\_HEX\_WIDTH}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#  define PRINTF\_UINT64\_HEX\_WIDTH "{}16"{}}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{234 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_HEX\_WIDTH}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_HEX\_WIDTH "{}8"{}}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT32\_HEX\_WIDTH}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#  define PRINTF\_UINT32\_HEX\_WIDTH "{}8"{}}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{240 \textcolor{preprocessor}{\# ifndef PRINTF\_INT16\_HEX\_WIDTH}}
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#  define PRINTF\_INT16\_HEX\_WIDTH "{}4"{}}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT16\_HEX\_WIDTH}}
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#  define PRINTF\_UINT16\_HEX\_WIDTH "{}4"{}}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\# ifndef PRINTF\_INT8\_HEX\_WIDTH}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#  define PRINTF\_INT8\_HEX\_WIDTH "{}2"{}}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT8\_HEX\_WIDTH}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#  define PRINTF\_UINT8\_HEX\_WIDTH "{}2"{}}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\# ifndef PRINTF\_INT64\_DEC\_WIDTH}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#  define PRINTF\_INT64\_DEC\_WIDTH "{}19"{}}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT64\_DEC\_WIDTH}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#  define PRINTF\_UINT64\_DEC\_WIDTH "{}20"{}}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_DEC\_WIDTH}}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_DEC\_WIDTH "{}10"{}}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT32\_DEC\_WIDTH}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#  define PRINTF\_UINT32\_DEC\_WIDTH "{}10"{}}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{264 \textcolor{preprocessor}{\# ifndef PRINTF\_INT16\_DEC\_WIDTH}}
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#  define PRINTF\_INT16\_DEC\_WIDTH "{}5"{}}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT16\_DEC\_WIDTH}}
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#  define PRINTF\_UINT16\_DEC\_WIDTH "{}5"{}}}
+\DoxyCodeLine{269 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\# ifndef PRINTF\_INT8\_DEC\_WIDTH}}
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#  define PRINTF\_INT8\_DEC\_WIDTH "{}3"{}}}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT8\_DEC\_WIDTH}}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#  define PRINTF\_UINT8\_DEC\_WIDTH "{}3"{}}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_HEX\_WIDTH}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#  define PRINTF\_INTMAX\_HEX\_WIDTH PRINTF\_UINT64\_HEX\_WIDTH}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\# ifndef PRINTF\_UINTMAX\_HEX\_WIDTH}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#  define PRINTF\_UINTMAX\_HEX\_WIDTH PRINTF\_UINT64\_HEX\_WIDTH}}
+\DoxyCodeLine{281 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{282 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_DEC\_WIDTH}}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#  define PRINTF\_INTMAX\_DEC\_WIDTH PRINTF\_UINT64\_DEC\_WIDTH}}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{285 \textcolor{preprocessor}{\# ifndef PRINTF\_UINTMAX\_DEC\_WIDTH}}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#  define PRINTF\_UINTMAX\_DEC\_WIDTH PRINTF\_UINT64\_DEC\_WIDTH}}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289 \textcolor{comment}{/*}}
+\DoxyCodeLine{290 \textcolor{comment}{ *  Something really weird is going on with Open Watcom.  Just pull some of}}
+\DoxyCodeLine{291 \textcolor{comment}{ *  these duplicated definitions from Open Watcom's stdint.h file for now.}}
+\DoxyCodeLine{292 \textcolor{comment}{ */}}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294 \textcolor{preprocessor}{\# if defined (\_\_WATCOMC\_\_) \&\& \_\_WATCOMC\_\_ >= 1250}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#  if !defined (INT64\_C)}}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#   define INT64\_C(x)   (x + (INT64\_MAX -\/ INT64\_MAX))}}
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#  if !defined (UINT64\_C)}}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#   define UINT64\_C(x)  (x + (UINT64\_MAX -\/ UINT64\_MAX))}}
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#  if !defined (INT32\_C)}}
+\DoxyCodeLine{302 \textcolor{preprocessor}{\#   define INT32\_C(x)   (x + (INT32\_MAX -\/ INT32\_MAX))}}
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#  if !defined (UINT32\_C)}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#   define UINT32\_C(x)  (x + (UINT32\_MAX -\/ UINT32\_MAX))}}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#  if !defined (INT16\_C)}}
+\DoxyCodeLine{308 \textcolor{preprocessor}{\#   define INT16\_C(x)   (x)}}
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#  if !defined (UINT16\_C)}}
+\DoxyCodeLine{311 \textcolor{preprocessor}{\#   define UINT16\_C(x)  (x)}}
+\DoxyCodeLine{312 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#  if !defined (INT8\_C)}}
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#   define INT8\_C(x)   (x)}}
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#  if !defined (UINT8\_C)}}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#   define UINT8\_C(x)  (x)}}
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#  if !defined (UINT64\_MAX)}}
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#   define UINT64\_MAX  18446744073709551615ULL}}
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#  if !defined (INT64\_MAX)}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#   define INT64\_MAX  9223372036854775807LL}}
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#  if !defined (UINT32\_MAX)}}
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#   define UINT32\_MAX  4294967295UL}}
+\DoxyCodeLine{327 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#  if !defined (INT32\_MAX)}}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#   define INT32\_MAX  2147483647L}}
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#  if !defined (INTMAX\_MAX)}}
+\DoxyCodeLine{332 \textcolor{preprocessor}{\#   define INTMAX\_MAX INT64\_MAX}}
+\DoxyCodeLine{333 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{334 \textcolor{preprocessor}{\#  if !defined (INTMAX\_MIN)}}
+\DoxyCodeLine{335 \textcolor{preprocessor}{\#   define INTMAX\_MIN INT64\_MIN}}
+\DoxyCodeLine{336 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{337 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340 \textcolor{comment}{/*}}
+\DoxyCodeLine{341 \textcolor{comment}{ *  I have no idea what is the truly correct thing to do on older Solaris.}}
+\DoxyCodeLine{342 \textcolor{comment}{ *  From some online discussions, this seems to be what is being}}
+\DoxyCodeLine{343 \textcolor{comment}{ *  recommended.  For people who actually are developing on older Solaris,}}
+\DoxyCodeLine{344 \textcolor{comment}{ *  what I would like to know is, does this define all of the relevant}}
+\DoxyCodeLine{345 \textcolor{comment}{ *  macros of a complete stdint.h?  Remember, in pstdint.h 64 bit is}}
+\DoxyCodeLine{346 \textcolor{comment}{ *  considered optional.}}
+\DoxyCodeLine{347 \textcolor{comment}{ */}}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#if (defined(\_\_SUNPRO\_C) \&\& \_\_SUNPRO\_C >= 0x420) \&\& !defined(\_PSTDINT\_H\_INCLUDED)}}
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#include <sys/inttypes.h>}}
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#define \_PSTDINT\_H\_INCLUDED}}
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#ifndef \_PSTDINT\_H\_INCLUDED}}
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define \_PSTDINT\_H\_INCLUDED}}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#ifndef SIZE\_MAX}}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\# define SIZE\_MAX (\string~(size\_t)0)}}
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{360 }
+\DoxyCodeLine{361 \textcolor{comment}{/*}}
+\DoxyCodeLine{362 \textcolor{comment}{ *  Deduce the type assignments from limits.h under the assumption that}}
+\DoxyCodeLine{363 \textcolor{comment}{ *  integer sizes in bits are powers of 2, and follow the ANSI}}
+\DoxyCodeLine{364 \textcolor{comment}{ *  definitions.}}
+\DoxyCodeLine{365 \textcolor{comment}{ */}}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#ifndef UINT8\_MAX}}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\# define UINT8\_MAX 0xff}}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#if !defined(uint8\_t) \&\& !defined(\_UINT8\_T) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{371 \textcolor{preprocessor}{\# if (UCHAR\_MAX == UINT8\_MAX) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{372     \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{group__gtc__type__precision_ga93adf6dd9803408f3e3aaf9dedda352b}{uint8\_t}};}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#   define UINT8\_C(v) ((uint8\_t) v)}}
+\DoxyCodeLine{374 \textcolor{preprocessor}{\# else}}
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#   error "{}Platform not supported"{}}}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{377 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#ifndef INT8\_MAX}}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\# define INT8\_MAX 0x7f}}
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{382 \textcolor{preprocessor}{\#ifndef INT8\_MIN}}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\# define INT8\_MIN INT8\_C(0x80)}}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#if !defined(int8\_t) \&\& !defined(\_INT8\_T) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\# if (SCHAR\_MAX == INT8\_MAX) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{387     \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{char} \mbox{\hyperlink{group__gtc__type__precision_ga673898d450b2a91186f3c4f40c5f8633}{int8\_t}};}
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#   define INT8\_C(v) ((int8\_t) v)}}
+\DoxyCodeLine{389 \textcolor{preprocessor}{\# else}}
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#   error "{}Platform not supported"{}}}
+\DoxyCodeLine{391 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{393 }
+\DoxyCodeLine{394 \textcolor{preprocessor}{\#ifndef UINT16\_MAX}}
+\DoxyCodeLine{395 \textcolor{preprocessor}{\# define UINT16\_MAX 0xffff}}
+\DoxyCodeLine{396 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#if !defined(uint16\_t) \&\& !defined(\_UINT16\_T) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{398 \textcolor{preprocessor}{\#if (UINT\_MAX == UINT16\_MAX) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{399   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{group__gtc__type__precision_gac4eb4f43cae8129b00086dc234d3b8fc}{uint16\_t}};}
+\DoxyCodeLine{400 \textcolor{preprocessor}{\# ifndef PRINTF\_INT16\_MODIFIER}}
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#  define PRINTF\_INT16\_MODIFIER "{}"{}}}
+\DoxyCodeLine{402 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{403 \textcolor{preprocessor}{\# define UINT16\_C(v) ((uint16\_t) (v))}}
+\DoxyCodeLine{404 \textcolor{preprocessor}{\#elif (USHRT\_MAX == UINT16\_MAX)}}
+\DoxyCodeLine{405   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{group__gtc__type__precision_gac4eb4f43cae8129b00086dc234d3b8fc}{uint16\_t}};}
+\DoxyCodeLine{406 \textcolor{preprocessor}{\# define UINT16\_C(v) ((uint16\_t) (v))}}
+\DoxyCodeLine{407 \textcolor{preprocessor}{\# ifndef PRINTF\_INT16\_MODIFIER}}
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#  define PRINTF\_INT16\_MODIFIER "{}h"{}}}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{410 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#error "{}Platform not supported"{}}}
+\DoxyCodeLine{412 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{415 \textcolor{preprocessor}{\#ifndef INT16\_MAX}}
+\DoxyCodeLine{416 \textcolor{preprocessor}{\# define INT16\_MAX 0x7fff}}
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{418 \textcolor{preprocessor}{\#ifndef INT16\_MIN}}
+\DoxyCodeLine{419 \textcolor{preprocessor}{\# define INT16\_MIN INT16\_C(0x8000)}}
+\DoxyCodeLine{420 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{421 \textcolor{preprocessor}{\#if !defined(int16\_t) \&\& !defined(\_INT16\_T) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{422 \textcolor{preprocessor}{\#if (INT\_MAX == INT16\_MAX) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{423   \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{int} \mbox{\hyperlink{group__gtc__type__precision_gaf89ee61e0d34aa4a462104b7ae7f2da6}{int16\_t}};}
+\DoxyCodeLine{424 \textcolor{preprocessor}{\# define INT16\_C(v) ((int16\_t) (v))}}
+\DoxyCodeLine{425 \textcolor{preprocessor}{\# ifndef PRINTF\_INT16\_MODIFIER}}
+\DoxyCodeLine{426 \textcolor{preprocessor}{\#  define PRINTF\_INT16\_MODIFIER "{}"{}}}
+\DoxyCodeLine{427 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{428 \textcolor{preprocessor}{\#elif (SHRT\_MAX == INT16\_MAX)}}
+\DoxyCodeLine{429   \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{short} \mbox{\hyperlink{group__gtc__type__precision_gaf89ee61e0d34aa4a462104b7ae7f2da6}{int16\_t}};}
+\DoxyCodeLine{430 \textcolor{preprocessor}{\# define INT16\_C(v) ((int16\_t) (v))}}
+\DoxyCodeLine{431 \textcolor{preprocessor}{\# ifndef PRINTF\_INT16\_MODIFIER}}
+\DoxyCodeLine{432 \textcolor{preprocessor}{\#  define PRINTF\_INT16\_MODIFIER "{}h"{}}}
+\DoxyCodeLine{433 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{434 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#error "{}Platform not supported"{}}}
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{437 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{438 }
+\DoxyCodeLine{439 \textcolor{preprocessor}{\#ifndef UINT32\_MAX}}
+\DoxyCodeLine{440 \textcolor{preprocessor}{\# define UINT32\_MAX (0xffffffffUL)}}
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{442 \textcolor{preprocessor}{\#if !defined(uint32\_t) \&\& !defined(\_UINT32\_T) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#if (ULONG\_MAX == UINT32\_MAX) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{444   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}};}
+\DoxyCodeLine{445 \textcolor{preprocessor}{\# define UINT32\_C(v) v \#\# UL}}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_MODIFIER "{}l"{}}}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#elif (UINT\_MAX == UINT32\_MAX)}}
+\DoxyCodeLine{450   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}};}
+\DoxyCodeLine{451 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_MODIFIER "{}"{}}}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\# define UINT32\_C(v) v \#\# U}}
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#elif (USHRT\_MAX == UINT32\_MAX)}}
+\DoxyCodeLine{456   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}};}
+\DoxyCodeLine{457 \textcolor{preprocessor}{\# define UINT32\_C(v) ((unsigned short) (v))}}
+\DoxyCodeLine{458 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{459 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_MODIFIER "{}"{}}}
+\DoxyCodeLine{460 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{461 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#error "{}Platform not supported"{}}}
+\DoxyCodeLine{463 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{464 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{466 \textcolor{preprocessor}{\#ifndef INT32\_MAX}}
+\DoxyCodeLine{467 \textcolor{preprocessor}{\# define INT32\_MAX (0x7fffffffL)}}
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{469 \textcolor{preprocessor}{\#ifndef INT32\_MIN}}
+\DoxyCodeLine{470 \textcolor{preprocessor}{\# define INT32\_MIN INT32\_C(0x80000000)}}
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{472 \textcolor{preprocessor}{\#if !defined(int32\_t) \&\& !defined(\_INT32\_T) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{473 \textcolor{preprocessor}{\#if (LONG\_MAX == INT32\_MAX) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{474   \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{long} \mbox{\hyperlink{group__gtc__type__precision_gab870c0eb6f525b0c8c4716762e0fc3a8}{int32\_t}};}
+\DoxyCodeLine{475 \textcolor{preprocessor}{\# define INT32\_C(v) v \#\# L}}
+\DoxyCodeLine{476 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_MODIFIER "{}l"{}}}
+\DoxyCodeLine{478 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{479 \textcolor{preprocessor}{\#elif (INT\_MAX == INT32\_MAX)}}
+\DoxyCodeLine{480   \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{int} \mbox{\hyperlink{group__gtc__type__precision_gab870c0eb6f525b0c8c4716762e0fc3a8}{int32\_t}};}
+\DoxyCodeLine{481 \textcolor{preprocessor}{\# define INT32\_C(v) v}}
+\DoxyCodeLine{482 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{483 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_MODIFIER "{}"{}}}
+\DoxyCodeLine{484 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{485 \textcolor{preprocessor}{\#elif (SHRT\_MAX == INT32\_MAX)}}
+\DoxyCodeLine{486   \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{short} \mbox{\hyperlink{group__gtc__type__precision_gab870c0eb6f525b0c8c4716762e0fc3a8}{int32\_t}};}
+\DoxyCodeLine{487 \textcolor{preprocessor}{\# define INT32\_C(v) ((short) (v))}}
+\DoxyCodeLine{488 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{489 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_MODIFIER "{}"{}}}
+\DoxyCodeLine{490 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{491 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{492 \textcolor{preprocessor}{\#error "{}Platform not supported"{}}}
+\DoxyCodeLine{493 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{494 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{495 }
+\DoxyCodeLine{496 \textcolor{comment}{/*}}
+\DoxyCodeLine{497 \textcolor{comment}{ *  The macro stdint\_int64\_defined is temporarily used to record}}
+\DoxyCodeLine{498 \textcolor{comment}{ *  whether or not 64 integer support is available.  It must be}}
+\DoxyCodeLine{499 \textcolor{comment}{ *  defined for any 64 integer extensions for new platforms that are}}
+\DoxyCodeLine{500 \textcolor{comment}{ *  added.}}
+\DoxyCodeLine{501 \textcolor{comment}{ */}}
+\DoxyCodeLine{502 }
+\DoxyCodeLine{503 \textcolor{preprocessor}{\#undef stdint\_int64\_defined}}
+\DoxyCodeLine{504 \textcolor{preprocessor}{\#if (defined(\_\_STDC\_\_) \&\& defined(\_\_STDC\_VERSION\_\_)) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{505 \textcolor{preprocessor}{\# if (\_\_STDC\_\_ \&\& \_\_STDC\_VERSION\_\_ >= 199901L) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{506 \textcolor{preprocessor}{\#  define stdint\_int64\_defined}}
+\DoxyCodeLine{507    \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{group__gtc__type__precision_ga6abb23fbf4e39c50ec5341160b5da5ab}{int64\_t}};}
+\DoxyCodeLine{508    \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{group__gtc__type__precision_ga058f57c19e1befdcf12498944bd73e69}{uint64\_t}};}
+\DoxyCodeLine{509 \textcolor{preprocessor}{\#  define UINT64\_C(v) v \#\# ULL}}
+\DoxyCodeLine{510 \textcolor{preprocessor}{\#  define  INT64\_C(v) v \#\# LL}}
+\DoxyCodeLine{511 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{512 \textcolor{preprocessor}{\#   define PRINTF\_INT64\_MODIFIER "{}ll"{}}}
+\DoxyCodeLine{513 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{514 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{515 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{516 }
+\DoxyCodeLine{517 \textcolor{preprocessor}{\#if !defined (stdint\_int64\_defined)}}
+\DoxyCodeLine{518 \textcolor{preprocessor}{\# if defined(\_\_GNUC\_\_) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{519 \textcolor{preprocessor}{\#  define stdint\_int64\_defined}}
+\DoxyCodeLine{520    \_\_extension\_\_ \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{group__gtc__type__precision_ga6abb23fbf4e39c50ec5341160b5da5ab}{int64\_t}};}
+\DoxyCodeLine{521    \_\_extension\_\_ \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{group__gtc__type__precision_ga058f57c19e1befdcf12498944bd73e69}{uint64\_t}};}
+\DoxyCodeLine{522 \textcolor{preprocessor}{\#  define UINT64\_C(v) v \#\# ULL}}
+\DoxyCodeLine{523 \textcolor{preprocessor}{\#  define  INT64\_C(v) v \#\# LL}}
+\DoxyCodeLine{524 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{525 \textcolor{preprocessor}{\#   define PRINTF\_INT64\_MODIFIER "{}ll"{}}}
+\DoxyCodeLine{526 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{527 \textcolor{preprocessor}{\# elif defined(\_\_MWERKS\_\_) || defined (\_\_SUNPRO\_C) || defined (\_\_SUNPRO\_CC) || defined (\_\_APPLE\_CC\_\_) || defined (\_LONG\_LONG) || defined (\_CRAYC) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{528 \textcolor{preprocessor}{\#  define stdint\_int64\_defined}}
+\DoxyCodeLine{529    \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{group__gtc__type__precision_ga6abb23fbf4e39c50ec5341160b5da5ab}{int64\_t}};}
+\DoxyCodeLine{530    \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{group__gtc__type__precision_ga058f57c19e1befdcf12498944bd73e69}{uint64\_t}};}
+\DoxyCodeLine{531 \textcolor{preprocessor}{\#  define UINT64\_C(v) v \#\# ULL}}
+\DoxyCodeLine{532 \textcolor{preprocessor}{\#  define  INT64\_C(v) v \#\# LL}}
+\DoxyCodeLine{533 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{534 \textcolor{preprocessor}{\#   define PRINTF\_INT64\_MODIFIER "{}ll"{}}}
+\DoxyCodeLine{535 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{536 \textcolor{preprocessor}{\# elif (defined(\_\_WATCOMC\_\_) \&\& defined(\_\_WATCOM\_INT64\_\_)) || (defined(\_MSC\_VER) \&\& \_INTEGRAL\_MAX\_BITS >= 64) || (defined (\_\_BORLANDC\_\_) \&\& \_\_BORLANDC\_\_ > 0x460) || defined (\_\_alpha) || defined (\_\_DECC)}}
+\DoxyCodeLine{537 \textcolor{preprocessor}{\#  define stdint\_int64\_defined}}
+\DoxyCodeLine{538    \textcolor{keyword}{typedef} \_\_int64 \mbox{\hyperlink{group__gtc__type__precision_ga6abb23fbf4e39c50ec5341160b5da5ab}{int64\_t}};}
+\DoxyCodeLine{539    \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \_\_int64 \mbox{\hyperlink{group__gtc__type__precision_ga058f57c19e1befdcf12498944bd73e69}{uint64\_t}};}
+\DoxyCodeLine{540 \textcolor{preprocessor}{\#  define UINT64\_C(v) v \#\# UI64}}
+\DoxyCodeLine{541 \textcolor{preprocessor}{\#  define  INT64\_C(v) v \#\# I64}}
+\DoxyCodeLine{542 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{543 \textcolor{preprocessor}{\#   define PRINTF\_INT64\_MODIFIER "{}I64"{}}}
+\DoxyCodeLine{544 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{545 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{546 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{547 }
+\DoxyCodeLine{548 \textcolor{preprocessor}{\#if !defined (LONG\_LONG\_MAX) \&\& defined (INT64\_C)}}
+\DoxyCodeLine{549 \textcolor{preprocessor}{\# define LONG\_LONG\_MAX INT64\_C (9223372036854775807)}}
+\DoxyCodeLine{550 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{551 \textcolor{preprocessor}{\#ifndef ULONG\_LONG\_MAX}}
+\DoxyCodeLine{552 \textcolor{preprocessor}{\# define ULONG\_LONG\_MAX UINT64\_C (18446744073709551615)}}
+\DoxyCodeLine{553 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{554 }
+\DoxyCodeLine{555 \textcolor{preprocessor}{\#if !defined (INT64\_MAX) \&\& defined (INT64\_C)}}
+\DoxyCodeLine{556 \textcolor{preprocessor}{\# define INT64\_MAX INT64\_C (9223372036854775807)}}
+\DoxyCodeLine{557 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{558 \textcolor{preprocessor}{\#if !defined (INT64\_MIN) \&\& defined (INT64\_C)}}
+\DoxyCodeLine{559 \textcolor{preprocessor}{\# define INT64\_MIN INT64\_C (-\/9223372036854775808)}}
+\DoxyCodeLine{560 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{561 \textcolor{preprocessor}{\#if !defined (UINT64\_MAX) \&\& defined (INT64\_C)}}
+\DoxyCodeLine{562 \textcolor{preprocessor}{\# define UINT64\_MAX UINT64\_C (18446744073709551615)}}
+\DoxyCodeLine{563 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{564 }
+\DoxyCodeLine{565 \textcolor{comment}{/*}}
+\DoxyCodeLine{566 \textcolor{comment}{ *  Width of hexadecimal for number field.}}
+\DoxyCodeLine{567 \textcolor{comment}{ */}}
+\DoxyCodeLine{568 }
+\DoxyCodeLine{569 \textcolor{preprocessor}{\#ifndef PRINTF\_INT64\_HEX\_WIDTH}}
+\DoxyCodeLine{570 \textcolor{preprocessor}{\# define PRINTF\_INT64\_HEX\_WIDTH "{}16"{}}}
+\DoxyCodeLine{571 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{572 \textcolor{preprocessor}{\#ifndef PRINTF\_INT32\_HEX\_WIDTH}}
+\DoxyCodeLine{573 \textcolor{preprocessor}{\# define PRINTF\_INT32\_HEX\_WIDTH "{}8"{}}}
+\DoxyCodeLine{574 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{575 \textcolor{preprocessor}{\#ifndef PRINTF\_INT16\_HEX\_WIDTH}}
+\DoxyCodeLine{576 \textcolor{preprocessor}{\# define PRINTF\_INT16\_HEX\_WIDTH "{}4"{}}}
+\DoxyCodeLine{577 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{578 \textcolor{preprocessor}{\#ifndef PRINTF\_INT8\_HEX\_WIDTH}}
+\DoxyCodeLine{579 \textcolor{preprocessor}{\# define PRINTF\_INT8\_HEX\_WIDTH "{}2"{}}}
+\DoxyCodeLine{580 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{581 \textcolor{preprocessor}{\#ifndef PRINTF\_INT64\_DEC\_WIDTH}}
+\DoxyCodeLine{582 \textcolor{preprocessor}{\# define PRINTF\_INT64\_DEC\_WIDTH "{}19"{}}}
+\DoxyCodeLine{583 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{584 \textcolor{preprocessor}{\#ifndef PRINTF\_INT32\_DEC\_WIDTH}}
+\DoxyCodeLine{585 \textcolor{preprocessor}{\# define PRINTF\_INT32\_DEC\_WIDTH "{}10"{}}}
+\DoxyCodeLine{586 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{587 \textcolor{preprocessor}{\#ifndef PRINTF\_INT16\_DEC\_WIDTH}}
+\DoxyCodeLine{588 \textcolor{preprocessor}{\# define PRINTF\_INT16\_DEC\_WIDTH "{}5"{}}}
+\DoxyCodeLine{589 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{590 \textcolor{preprocessor}{\#ifndef PRINTF\_INT8\_DEC\_WIDTH}}
+\DoxyCodeLine{591 \textcolor{preprocessor}{\# define PRINTF\_INT8\_DEC\_WIDTH "{}3"{}}}
+\DoxyCodeLine{592 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{593 \textcolor{preprocessor}{\#ifndef PRINTF\_UINT64\_DEC\_WIDTH}}
+\DoxyCodeLine{594 \textcolor{preprocessor}{\# define PRINTF\_UINT64\_DEC\_WIDTH "{}20"{}}}
+\DoxyCodeLine{595 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{596 \textcolor{preprocessor}{\#ifndef PRINTF\_UINT32\_DEC\_WIDTH}}
+\DoxyCodeLine{597 \textcolor{preprocessor}{\# define PRINTF\_UINT32\_DEC\_WIDTH "{}10"{}}}
+\DoxyCodeLine{598 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{599 \textcolor{preprocessor}{\#ifndef PRINTF\_UINT16\_DEC\_WIDTH}}
+\DoxyCodeLine{600 \textcolor{preprocessor}{\# define PRINTF\_UINT16\_DEC\_WIDTH "{}5"{}}}
+\DoxyCodeLine{601 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{602 \textcolor{preprocessor}{\#ifndef PRINTF\_UINT8\_DEC\_WIDTH}}
+\DoxyCodeLine{603 \textcolor{preprocessor}{\# define PRINTF\_UINT8\_DEC\_WIDTH "{}3"{}}}
+\DoxyCodeLine{604 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{605 }
+\DoxyCodeLine{606 \textcolor{comment}{/*}}
+\DoxyCodeLine{607 \textcolor{comment}{ *  Ok, lets not worry about 128 bit integers for now.  Moore's law says}}
+\DoxyCodeLine{608 \textcolor{comment}{ *  we don't need to worry about that until about 2040 at which point}}
+\DoxyCodeLine{609 \textcolor{comment}{ *  we'll have bigger things to worry about.}}
+\DoxyCodeLine{610 \textcolor{comment}{ */}}
+\DoxyCodeLine{611 }
+\DoxyCodeLine{612 \textcolor{preprocessor}{\#ifdef stdint\_int64\_defined}}
+\DoxyCodeLine{613   \textcolor{keyword}{typedef} \mbox{\hyperlink{group__gtc__type__precision_ga6abb23fbf4e39c50ec5341160b5da5ab}{int64\_t}} intmax\_t;}
+\DoxyCodeLine{614   \textcolor{keyword}{typedef} \mbox{\hyperlink{group__gtc__type__precision_ga058f57c19e1befdcf12498944bd73e69}{uint64\_t}} uintmax\_t;}
+\DoxyCodeLine{615 \textcolor{preprocessor}{\# define  INTMAX\_MAX   INT64\_MAX}}
+\DoxyCodeLine{616 \textcolor{preprocessor}{\# define  INTMAX\_MIN   INT64\_MIN}}
+\DoxyCodeLine{617 \textcolor{preprocessor}{\# define UINTMAX\_MAX  UINT64\_MAX}}
+\DoxyCodeLine{618 \textcolor{preprocessor}{\# define UINTMAX\_C(v) UINT64\_C(v)}}
+\DoxyCodeLine{619 \textcolor{preprocessor}{\# define  INTMAX\_C(v)  INT64\_C(v)}}
+\DoxyCodeLine{620 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_MODIFIER}}
+\DoxyCodeLine{621 \textcolor{preprocessor}{\#   define PRINTF\_INTMAX\_MODIFIER PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{622 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{623 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_HEX\_WIDTH}}
+\DoxyCodeLine{624 \textcolor{preprocessor}{\#  define PRINTF\_INTMAX\_HEX\_WIDTH PRINTF\_INT64\_HEX\_WIDTH}}
+\DoxyCodeLine{625 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{626 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_DEC\_WIDTH}}
+\DoxyCodeLine{627 \textcolor{preprocessor}{\#  define PRINTF\_INTMAX\_DEC\_WIDTH PRINTF\_INT64\_DEC\_WIDTH}}
+\DoxyCodeLine{628 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{629 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{630   \textcolor{keyword}{typedef} \mbox{\hyperlink{group__gtc__type__precision_gab870c0eb6f525b0c8c4716762e0fc3a8}{int32\_t}} intmax\_t;}
+\DoxyCodeLine{631   \textcolor{keyword}{typedef} \mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}} uintmax\_t;}
+\DoxyCodeLine{632 \textcolor{preprocessor}{\# define  INTMAX\_MAX   INT32\_MAX}}
+\DoxyCodeLine{633 \textcolor{preprocessor}{\# define UINTMAX\_MAX  UINT32\_MAX}}
+\DoxyCodeLine{634 \textcolor{preprocessor}{\# define UINTMAX\_C(v) UINT32\_C(v)}}
+\DoxyCodeLine{635 \textcolor{preprocessor}{\# define  INTMAX\_C(v)  INT32\_C(v)}}
+\DoxyCodeLine{636 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_MODIFIER}}
+\DoxyCodeLine{637 \textcolor{preprocessor}{\#   define PRINTF\_INTMAX\_MODIFIER PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{638 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{639 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_HEX\_WIDTH}}
+\DoxyCodeLine{640 \textcolor{preprocessor}{\#  define PRINTF\_INTMAX\_HEX\_WIDTH PRINTF\_INT32\_HEX\_WIDTH}}
+\DoxyCodeLine{641 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{642 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_DEC\_WIDTH}}
+\DoxyCodeLine{643 \textcolor{preprocessor}{\#  define PRINTF\_INTMAX\_DEC\_WIDTH PRINTF\_INT32\_DEC\_WIDTH}}
+\DoxyCodeLine{644 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{645 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{646 }
+\DoxyCodeLine{647 \textcolor{comment}{/*}}
+\DoxyCodeLine{648 \textcolor{comment}{ *  Because this file currently only supports platforms which have}}
+\DoxyCodeLine{649 \textcolor{comment}{ *  precise powers of 2 as bit sizes for the default integers, the}}
+\DoxyCodeLine{650 \textcolor{comment}{ *  least definitions are all trivial.  Its possible that a future}}
+\DoxyCodeLine{651 \textcolor{comment}{ *  version of this file could have different definitions.}}
+\DoxyCodeLine{652 \textcolor{comment}{ */}}
+\DoxyCodeLine{653 }
+\DoxyCodeLine{654 \textcolor{preprocessor}{\#ifndef stdint\_least\_defined}}
+\DoxyCodeLine{655   \textcolor{keyword}{typedef}   \mbox{\hyperlink{group__gtc__type__precision_ga673898d450b2a91186f3c4f40c5f8633}{int8\_t}}   int\_least8\_t;}
+\DoxyCodeLine{656   \textcolor{keyword}{typedef}  \mbox{\hyperlink{group__gtc__type__precision_ga93adf6dd9803408f3e3aaf9dedda352b}{uint8\_t}}  uint\_least8\_t;}
+\DoxyCodeLine{657   \textcolor{keyword}{typedef}  \mbox{\hyperlink{group__gtc__type__precision_gaf89ee61e0d34aa4a462104b7ae7f2da6}{int16\_t}}  int\_least16\_t;}
+\DoxyCodeLine{658   \textcolor{keyword}{typedef} \mbox{\hyperlink{group__gtc__type__precision_gac4eb4f43cae8129b00086dc234d3b8fc}{uint16\_t}} uint\_least16\_t;}
+\DoxyCodeLine{659   \textcolor{keyword}{typedef}  \mbox{\hyperlink{group__gtc__type__precision_gab870c0eb6f525b0c8c4716762e0fc3a8}{int32\_t}}  int\_least32\_t;}
+\DoxyCodeLine{660   \textcolor{keyword}{typedef} \mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}} uint\_least32\_t;}
+\DoxyCodeLine{661 \textcolor{preprocessor}{\# define PRINTF\_LEAST32\_MODIFIER PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{662 \textcolor{preprocessor}{\# define PRINTF\_LEAST16\_MODIFIER PRINTF\_INT16\_MODIFIER}}
+\DoxyCodeLine{663 \textcolor{preprocessor}{\# define  UINT\_LEAST8\_MAX  UINT8\_MAX}}
+\DoxyCodeLine{664 \textcolor{preprocessor}{\# define   INT\_LEAST8\_MAX   INT8\_MAX}}
+\DoxyCodeLine{665 \textcolor{preprocessor}{\# define UINT\_LEAST16\_MAX UINT16\_MAX}}
+\DoxyCodeLine{666 \textcolor{preprocessor}{\# define  INT\_LEAST16\_MAX  INT16\_MAX}}
+\DoxyCodeLine{667 \textcolor{preprocessor}{\# define UINT\_LEAST32\_MAX UINT32\_MAX}}
+\DoxyCodeLine{668 \textcolor{preprocessor}{\# define  INT\_LEAST32\_MAX  INT32\_MAX}}
+\DoxyCodeLine{669 \textcolor{preprocessor}{\# define   INT\_LEAST8\_MIN   INT8\_MIN}}
+\DoxyCodeLine{670 \textcolor{preprocessor}{\# define  INT\_LEAST16\_MIN  INT16\_MIN}}
+\DoxyCodeLine{671 \textcolor{preprocessor}{\# define  INT\_LEAST32\_MIN  INT32\_MIN}}
+\DoxyCodeLine{672 \textcolor{preprocessor}{\# ifdef stdint\_int64\_defined}}
+\DoxyCodeLine{673     \textcolor{keyword}{typedef}  \mbox{\hyperlink{group__gtc__type__precision_ga6abb23fbf4e39c50ec5341160b5da5ab}{int64\_t}}  int\_least64\_t;}
+\DoxyCodeLine{674     \textcolor{keyword}{typedef} \mbox{\hyperlink{group__gtc__type__precision_ga058f57c19e1befdcf12498944bd73e69}{uint64\_t}} uint\_least64\_t;}
+\DoxyCodeLine{675 \textcolor{preprocessor}{\#   define PRINTF\_LEAST64\_MODIFIER PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{676 \textcolor{preprocessor}{\#   define UINT\_LEAST64\_MAX UINT64\_MAX}}
+\DoxyCodeLine{677 \textcolor{preprocessor}{\#   define  INT\_LEAST64\_MAX  INT64\_MAX}}
+\DoxyCodeLine{678 \textcolor{preprocessor}{\#   define  INT\_LEAST64\_MIN  INT64\_MIN}}
+\DoxyCodeLine{679 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{680 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{681 \textcolor{preprocessor}{\#undef stdint\_least\_defined}}
+\DoxyCodeLine{682 }
+\DoxyCodeLine{683 \textcolor{comment}{/*}}
+\DoxyCodeLine{684 \textcolor{comment}{ *  The ANSI C committee pretending to know or specify anything about}}
+\DoxyCodeLine{685 \textcolor{comment}{ *  performance is the epitome of misguided arrogance.  The mandate of}}
+\DoxyCodeLine{686 \textcolor{comment}{ *  this file is to *ONLY* ever support that absolute minimum}}
+\DoxyCodeLine{687 \textcolor{comment}{ *  definition of the fast integer types, for compatibility purposes.}}
+\DoxyCodeLine{688 \textcolor{comment}{ *  No extensions, and no attempt to suggest what may or may not be a}}
+\DoxyCodeLine{689 \textcolor{comment}{ *  faster integer type will ever be made in this file.  Developers are}}
+\DoxyCodeLine{690 \textcolor{comment}{ *  warned to stay away from these types when using this or any other}}
+\DoxyCodeLine{691 \textcolor{comment}{ *  stdint.h.}}
+\DoxyCodeLine{692 \textcolor{comment}{ */}}
+\DoxyCodeLine{693 }
+\DoxyCodeLine{694 \textcolor{keyword}{typedef}   int\_least8\_t   int\_fast8\_t;}
+\DoxyCodeLine{695 \textcolor{keyword}{typedef}  uint\_least8\_t  uint\_fast8\_t;}
+\DoxyCodeLine{696 \textcolor{keyword}{typedef}  int\_least16\_t  int\_fast16\_t;}
+\DoxyCodeLine{697 \textcolor{keyword}{typedef} uint\_least16\_t uint\_fast16\_t;}
+\DoxyCodeLine{698 \textcolor{keyword}{typedef}  int\_least32\_t  int\_fast32\_t;}
+\DoxyCodeLine{699 \textcolor{keyword}{typedef} uint\_least32\_t uint\_fast32\_t;}
+\DoxyCodeLine{700 \textcolor{preprocessor}{\#define  UINT\_FAST8\_MAX  UINT\_LEAST8\_MAX}}
+\DoxyCodeLine{701 \textcolor{preprocessor}{\#define   INT\_FAST8\_MAX   INT\_LEAST8\_MAX}}
+\DoxyCodeLine{702 \textcolor{preprocessor}{\#define UINT\_FAST16\_MAX UINT\_LEAST16\_MAX}}
+\DoxyCodeLine{703 \textcolor{preprocessor}{\#define  INT\_FAST16\_MAX  INT\_LEAST16\_MAX}}
+\DoxyCodeLine{704 \textcolor{preprocessor}{\#define UINT\_FAST32\_MAX UINT\_LEAST32\_MAX}}
+\DoxyCodeLine{705 \textcolor{preprocessor}{\#define  INT\_FAST32\_MAX  INT\_LEAST32\_MAX}}
+\DoxyCodeLine{706 \textcolor{preprocessor}{\#define   INT\_FAST8\_MIN   INT\_LEAST8\_MIN}}
+\DoxyCodeLine{707 \textcolor{preprocessor}{\#define  INT\_FAST16\_MIN  INT\_LEAST16\_MIN}}
+\DoxyCodeLine{708 \textcolor{preprocessor}{\#define  INT\_FAST32\_MIN  INT\_LEAST32\_MIN}}
+\DoxyCodeLine{709 \textcolor{preprocessor}{\#ifdef stdint\_int64\_defined}}
+\DoxyCodeLine{710   \textcolor{keyword}{typedef}  int\_least64\_t  int\_fast64\_t;}
+\DoxyCodeLine{711   \textcolor{keyword}{typedef} uint\_least64\_t uint\_fast64\_t;}
+\DoxyCodeLine{712 \textcolor{preprocessor}{\# define UINT\_FAST64\_MAX UINT\_LEAST64\_MAX}}
+\DoxyCodeLine{713 \textcolor{preprocessor}{\# define  INT\_FAST64\_MAX  INT\_LEAST64\_MAX}}
+\DoxyCodeLine{714 \textcolor{preprocessor}{\# define  INT\_FAST64\_MIN  INT\_LEAST64\_MIN}}
+\DoxyCodeLine{715 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{716 }
+\DoxyCodeLine{717 \textcolor{preprocessor}{\#undef stdint\_int64\_defined}}
+\DoxyCodeLine{718 }
+\DoxyCodeLine{719 \textcolor{comment}{/*}}
+\DoxyCodeLine{720 \textcolor{comment}{ *  Whatever piecemeal, per compiler thing we can do about the wchar\_t}}
+\DoxyCodeLine{721 \textcolor{comment}{ *  type limits.}}
+\DoxyCodeLine{722 \textcolor{comment}{ */}}
+\DoxyCodeLine{723 }
+\DoxyCodeLine{724 \textcolor{preprocessor}{\#if defined(\_\_WATCOMC\_\_) || defined(\_MSC\_VER) || defined (\_\_GNUC\_\_) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{725 \textcolor{preprocessor}{\# include <wchar.h>}}
+\DoxyCodeLine{726 \textcolor{preprocessor}{\# ifndef WCHAR\_MIN}}
+\DoxyCodeLine{727 \textcolor{preprocessor}{\#  define WCHAR\_MIN 0}}
+\DoxyCodeLine{728 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{729 \textcolor{preprocessor}{\# ifndef WCHAR\_MAX}}
+\DoxyCodeLine{730 \textcolor{preprocessor}{\#  define WCHAR\_MAX ((wchar\_t)-\/1)}}
+\DoxyCodeLine{731 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{732 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{733 }
+\DoxyCodeLine{734 \textcolor{comment}{/*}}
+\DoxyCodeLine{735 \textcolor{comment}{ *  Whatever piecemeal, per compiler/platform thing we can do about the}}
+\DoxyCodeLine{736 \textcolor{comment}{ *  (u)intptr\_t types and limits.}}
+\DoxyCodeLine{737 \textcolor{comment}{ */}}
+\DoxyCodeLine{738 }
+\DoxyCodeLine{739 \textcolor{preprocessor}{\#if (defined (\_MSC\_VER) \&\& defined (\_UINTPTR\_T\_DEFINED)) || defined (\_UINTPTR\_T)}}
+\DoxyCodeLine{740 \textcolor{preprocessor}{\# define STDINT\_H\_UINTPTR\_T\_DEFINED}}
+\DoxyCodeLine{741 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{742 }
+\DoxyCodeLine{743 \textcolor{preprocessor}{\#ifndef STDINT\_H\_UINTPTR\_T\_DEFINED}}
+\DoxyCodeLine{744 \textcolor{preprocessor}{\# if defined (\_\_alpha\_\_) || defined (\_\_ia64\_\_) || defined (\_\_x86\_64\_\_) || defined (\_WIN64) || defined (\_\_ppc64\_\_)}}
+\DoxyCodeLine{745 \textcolor{preprocessor}{\#  define stdint\_intptr\_bits 64}}
+\DoxyCodeLine{746 \textcolor{preprocessor}{\# elif defined (\_\_WATCOMC\_\_) || defined (\_\_TURBOC\_\_)}}
+\DoxyCodeLine{747 \textcolor{preprocessor}{\#  if defined(\_\_TINY\_\_) || defined(\_\_SMALL\_\_) || defined(\_\_MEDIUM\_\_)}}
+\DoxyCodeLine{748 \textcolor{preprocessor}{\#    define stdint\_intptr\_bits 16}}
+\DoxyCodeLine{749 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{750 \textcolor{preprocessor}{\#    define stdint\_intptr\_bits 32}}
+\DoxyCodeLine{751 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{752 \textcolor{preprocessor}{\# elif defined (\_\_i386\_\_) || defined (\_WIN32) || defined (WIN32) || defined (\_\_ppc64\_\_)}}
+\DoxyCodeLine{753 \textcolor{preprocessor}{\#  define stdint\_intptr\_bits 32}}
+\DoxyCodeLine{754 \textcolor{preprocessor}{\# elif defined (\_\_INTEL\_COMPILER)}}
+\DoxyCodeLine{755 \textcolor{comment}{/* TODO -\/-\/ what did Intel do about x86-\/64? */}}
+\DoxyCodeLine{756 \textcolor{preprocessor}{\# else}}
+\DoxyCodeLine{757 \textcolor{comment}{/* \#error "{}This platform might not be supported yet"{} */}}
+\DoxyCodeLine{758 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{759 }
+\DoxyCodeLine{760 \textcolor{preprocessor}{\# ifdef stdint\_intptr\_bits}}
+\DoxyCodeLine{761 \textcolor{preprocessor}{\#  define stdint\_intptr\_glue3\_i(a,b,c)  a\#\#b\#\#c}}
+\DoxyCodeLine{762 \textcolor{preprocessor}{\#  define stdint\_intptr\_glue3(a,b,c)    stdint\_intptr\_glue3\_i(a,b,c)}}
+\DoxyCodeLine{763 \textcolor{preprocessor}{\#  ifndef PRINTF\_INTPTR\_MODIFIER}}
+\DoxyCodeLine{764 \textcolor{preprocessor}{\#    define PRINTF\_INTPTR\_MODIFIER      stdint\_intptr\_glue3(PRINTF\_INT,stdint\_intptr\_bits,\_MODIFIER)}}
+\DoxyCodeLine{765 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{766 \textcolor{preprocessor}{\#  ifndef PTRDIFF\_MAX}}
+\DoxyCodeLine{767 \textcolor{preprocessor}{\#    define PTRDIFF\_MAX                 stdint\_intptr\_glue3(INT,stdint\_intptr\_bits,\_MAX)}}
+\DoxyCodeLine{768 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{769 \textcolor{preprocessor}{\#  ifndef PTRDIFF\_MIN}}
+\DoxyCodeLine{770 \textcolor{preprocessor}{\#    define PTRDIFF\_MIN                 stdint\_intptr\_glue3(INT,stdint\_intptr\_bits,\_MIN)}}
+\DoxyCodeLine{771 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{772 \textcolor{preprocessor}{\#  ifndef UINTPTR\_MAX}}
+\DoxyCodeLine{773 \textcolor{preprocessor}{\#    define UINTPTR\_MAX                 stdint\_intptr\_glue3(UINT,stdint\_intptr\_bits,\_MAX)}}
+\DoxyCodeLine{774 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{775 \textcolor{preprocessor}{\#  ifndef INTPTR\_MAX}}
+\DoxyCodeLine{776 \textcolor{preprocessor}{\#    define INTPTR\_MAX                  stdint\_intptr\_glue3(INT,stdint\_intptr\_bits,\_MAX)}}
+\DoxyCodeLine{777 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{778 \textcolor{preprocessor}{\#  ifndef INTPTR\_MIN}}
+\DoxyCodeLine{779 \textcolor{preprocessor}{\#    define INTPTR\_MIN                  stdint\_intptr\_glue3(INT,stdint\_intptr\_bits,\_MIN)}}
+\DoxyCodeLine{780 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{781 \textcolor{preprocessor}{\#  ifndef INTPTR\_C}}
+\DoxyCodeLine{782 \textcolor{preprocessor}{\#    define INTPTR\_C(x)                 stdint\_intptr\_glue3(INT,stdint\_intptr\_bits,\_C)(x)}}
+\DoxyCodeLine{783 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{784 \textcolor{preprocessor}{\#  ifndef UINTPTR\_C}}
+\DoxyCodeLine{785 \textcolor{preprocessor}{\#    define UINTPTR\_C(x)                stdint\_intptr\_glue3(UINT,stdint\_intptr\_bits,\_C)(x)}}
+\DoxyCodeLine{786 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{787   \textcolor{keyword}{typedef} stdint\_intptr\_glue3(uint,stdint\_intptr\_bits,\_t) uintptr\_t;}
+\DoxyCodeLine{788   \textcolor{keyword}{typedef} stdint\_intptr\_glue3( \textcolor{keywordtype}{int},stdint\_intptr\_bits,\_t)  intptr\_t;}
+\DoxyCodeLine{789 \textcolor{preprocessor}{\# else}}
+\DoxyCodeLine{790 \textcolor{comment}{/* TODO -\/-\/ This following is likely wrong for some platforms, and does}}
+\DoxyCodeLine{791 \textcolor{comment}{   nothing for the definition of uintptr\_t. */}}
+\DoxyCodeLine{792   \textcolor{keyword}{typedef} ptrdiff\_t intptr\_t;}
+\DoxyCodeLine{793 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{794 \textcolor{preprocessor}{\# define STDINT\_H\_UINTPTR\_T\_DEFINED}}
+\DoxyCodeLine{795 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{796 }
+\DoxyCodeLine{797 \textcolor{comment}{/*}}
+\DoxyCodeLine{798 \textcolor{comment}{ *  Assumes sig\_atomic\_t is signed and we have a 2s complement machine.}}
+\DoxyCodeLine{799 \textcolor{comment}{ */}}
+\DoxyCodeLine{800 }
+\DoxyCodeLine{801 \textcolor{preprocessor}{\#ifndef SIG\_ATOMIC\_MAX}}
+\DoxyCodeLine{802 \textcolor{preprocessor}{\# define SIG\_ATOMIC\_MAX ((((sig\_atomic\_t) 1) << (sizeof (sig\_atomic\_t)*CHAR\_BIT-\/1)) -\/ 1)}}
+\DoxyCodeLine{803 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{804 }
+\DoxyCodeLine{805 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{806 }
+\DoxyCodeLine{807 \textcolor{preprocessor}{\#if defined (\_\_TEST\_PSTDINT\_FOR\_CORRECTNESS)}}
+\DoxyCodeLine{808 }
+\DoxyCodeLine{809 \textcolor{comment}{/*}}
+\DoxyCodeLine{810 \textcolor{comment}{ *  Please compile with the maximum warning settings to make sure macros are}}
+\DoxyCodeLine{811 \textcolor{comment}{ *  not defined more than once.}}
+\DoxyCodeLine{812 \textcolor{comment}{ */}}
+\DoxyCodeLine{813 }
+\DoxyCodeLine{814 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{815 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{816 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{817 }
+\DoxyCodeLine{818 \textcolor{preprocessor}{\#define glue3\_aux(x,y,z) x \#\# y \#\# z}}
+\DoxyCodeLine{819 \textcolor{preprocessor}{\#define glue3(x,y,z) glue3\_aux(x,y,z)}}
+\DoxyCodeLine{820 }
+\DoxyCodeLine{821 \textcolor{preprocessor}{\#define DECLU(bits) glue3(uint,bits,\_t) glue3(u,bits,) = glue3(UINT,bits,\_C) (0);}}
+\DoxyCodeLine{822 \textcolor{preprocessor}{\#define DECLI(bits) glue3(int,bits,\_t) glue3(i,bits,) = glue3(INT,bits,\_C) (0);}}
+\DoxyCodeLine{823 }
+\DoxyCodeLine{824 \textcolor{preprocessor}{\#define DECL(us,bits) glue3(DECL,us,) (bits)}}
+\DoxyCodeLine{825 }
+\DoxyCodeLine{826 \textcolor{preprocessor}{\#define TESTUMAX(bits) glue3(u,bits,) = \string~glue3(u,bits,); if (glue3(UINT,bits,\_MAX) != glue3(u,bits,)) printf ("{}Something wrong with UINT\%d\_MAX\(\backslash\)n"{}}, bits)}
+\DoxyCodeLine{827 }
+\DoxyCodeLine{828 \textcolor{preprocessor}{\#define REPORTERROR(msg) \{ err\_n++; if (err\_first <= 0) err\_first = \_\_LINE\_\_; printf msg; \}}}
+\DoxyCodeLine{829 }
+\DoxyCodeLine{830 \textcolor{keywordtype}{int} main () \{}
+\DoxyCodeLine{831     \textcolor{keywordtype}{int} err\_n = 0;}
+\DoxyCodeLine{832     \textcolor{keywordtype}{int} err\_first = 0;}
+\DoxyCodeLine{833     DECL(I,8)}
+\DoxyCodeLine{834     DECL(U,8)}
+\DoxyCodeLine{835     DECL(I,16)}
+\DoxyCodeLine{836     DECL(U,16)}
+\DoxyCodeLine{837     DECL(I,32)}
+\DoxyCodeLine{838     DECL(U,32)}
+\DoxyCodeLine{839 \textcolor{preprocessor}{\#ifdef INT64\_MAX}}
+\DoxyCodeLine{840     DECL(I,64)}
+\DoxyCodeLine{841     DECL(U,64)}
+\DoxyCodeLine{842 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{843     intmax\_t imax = INTMAX\_C(0);}
+\DoxyCodeLine{844     uintmax\_t umax = UINTMAX\_C(0);}
+\DoxyCodeLine{845     \textcolor{keywordtype}{char} str0[256], str1[256];}
+\DoxyCodeLine{846 }
+\DoxyCodeLine{847     sprintf (str0, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INT32\_MODIFIER \textcolor{stringliteral}{"{}d"{}}, INT32\_C(2147483647));}
+\DoxyCodeLine{848     \textcolor{keywordflow}{if} (0 != strcmp (str0, \textcolor{stringliteral}{"{}2147483647"{}})) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_INT32\_MODIFIER : \%s\(\backslash\)n"{}}, str0));}
+\DoxyCodeLine{849     \textcolor{keywordflow}{if} (atoi(PRINTF\_INT32\_DEC\_WIDTH) != (\textcolor{keywordtype}{int}) strlen(str0)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_INT32\_DEC\_WIDTH : \%s\(\backslash\)n"{}}, PRINTF\_INT32\_DEC\_WIDTH));}
+\DoxyCodeLine{850     sprintf (str0, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INT32\_MODIFIER \textcolor{stringliteral}{"{}u"{}}, UINT32\_C(4294967295));}
+\DoxyCodeLine{851     \textcolor{keywordflow}{if} (0 != strcmp (str0, \textcolor{stringliteral}{"{}4294967295"{}})) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_INT32\_MODIFIER : \%s\(\backslash\)n"{}}, str0));}
+\DoxyCodeLine{852     \textcolor{keywordflow}{if} (atoi(PRINTF\_UINT32\_DEC\_WIDTH) != (\textcolor{keywordtype}{int}) strlen(str0)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_UINT32\_DEC\_WIDTH : \%s\(\backslash\)n"{}}, PRINTF\_UINT32\_DEC\_WIDTH));}
+\DoxyCodeLine{853 \textcolor{preprocessor}{\#ifdef INT64\_MAX}}
+\DoxyCodeLine{854     sprintf (str1, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INT64\_MODIFIER \textcolor{stringliteral}{"{}d"{}}, INT64\_C(9223372036854775807));}
+\DoxyCodeLine{855     \textcolor{keywordflow}{if} (0 != strcmp (str1, \textcolor{stringliteral}{"{}9223372036854775807"{}})) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_INT32\_MODIFIER : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{856     \textcolor{keywordflow}{if} (atoi(PRINTF\_INT64\_DEC\_WIDTH) != (\textcolor{keywordtype}{int}) strlen(str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_INT64\_DEC\_WIDTH : \%s, \%d\(\backslash\)n"{}}, PRINTF\_INT64\_DEC\_WIDTH, (\textcolor{keywordtype}{int}) strlen(str1)));}
+\DoxyCodeLine{857     sprintf (str1, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INT64\_MODIFIER \textcolor{stringliteral}{"{}u"{}}, UINT64\_C(18446744073709550591));}
+\DoxyCodeLine{858     \textcolor{keywordflow}{if} (0 != strcmp (str1, \textcolor{stringliteral}{"{}18446744073709550591"{}})) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_INT32\_MODIFIER : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{859     \textcolor{keywordflow}{if} (atoi(PRINTF\_UINT64\_DEC\_WIDTH) != (\textcolor{keywordtype}{int}) strlen(str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_UINT64\_DEC\_WIDTH : \%s, \%d\(\backslash\)n"{}}, PRINTF\_UINT64\_DEC\_WIDTH, (\textcolor{keywordtype}{int}) strlen(str1)));}
+\DoxyCodeLine{860 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{861 }
+\DoxyCodeLine{862     sprintf (str0, \textcolor{stringliteral}{"{}\%d \%x\(\backslash\)n"{}}, 0, \string~0);}
+\DoxyCodeLine{863 }
+\DoxyCodeLine{864     sprintf (str1, \textcolor{stringliteral}{"{}\%d \%x\(\backslash\)n"{}},  i8, \string~0);}
+\DoxyCodeLine{865     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with i8 : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{866     sprintf (str1, \textcolor{stringliteral}{"{}\%u \%x\(\backslash\)n"{}},  u8, \string~0);}
+\DoxyCodeLine{867     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with u8 : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{868     sprintf (str1, \textcolor{stringliteral}{"{}\%d \%x\(\backslash\)n"{}},  i16, \string~0);}
+\DoxyCodeLine{869     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with i16 : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{870     sprintf (str1, \textcolor{stringliteral}{"{}\%u \%x\(\backslash\)n"{}},  u16, \string~0);}
+\DoxyCodeLine{871     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with u16 : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{872     sprintf (str1, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INT32\_MODIFIER \textcolor{stringliteral}{"{}d \%x\(\backslash\)n"{}},  i32, \string~0);}
+\DoxyCodeLine{873     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with i32 : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{874     sprintf (str1, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INT32\_MODIFIER \textcolor{stringliteral}{"{}u \%x\(\backslash\)n"{}},  u32, \string~0);}
+\DoxyCodeLine{875     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with u32 : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{876 \textcolor{preprocessor}{\#ifdef INT64\_MAX}}
+\DoxyCodeLine{877     sprintf (str1, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INT64\_MODIFIER \textcolor{stringliteral}{"{}d \%x\(\backslash\)n"{}},  i64, \string~0);}
+\DoxyCodeLine{878     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with i64 : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{879 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{880     sprintf (str1, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INTMAX\_MODIFIER \textcolor{stringliteral}{"{}d \%x\(\backslash\)n"{}},  imax, \string~0);}
+\DoxyCodeLine{881     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with imax : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{882     sprintf (str1, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INTMAX\_MODIFIER \textcolor{stringliteral}{"{}u \%x\(\backslash\)n"{}},  umax, \string~0);}
+\DoxyCodeLine{883     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with umax : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{884 }
+\DoxyCodeLine{885     TESTUMAX(8);}
+\DoxyCodeLine{886     TESTUMAX(16);}
+\DoxyCodeLine{887     TESTUMAX(32);}
+\DoxyCodeLine{888 \textcolor{preprocessor}{\#ifdef INT64\_MAX}}
+\DoxyCodeLine{889     TESTUMAX(64);}
+\DoxyCodeLine{890 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{891 }
+\DoxyCodeLine{892 \textcolor{preprocessor}{\#define STR(v) \#v}}
+\DoxyCodeLine{893 \textcolor{preprocessor}{\#define Q(v) printf ("{}sizeof "{}} STR(v) "{} = \%u\(\backslash\)n"{}, (unsigned) sizeof (v));}
+\DoxyCodeLine{894     \textcolor{keywordflow}{if} (err\_n) \{}
+\DoxyCodeLine{895         printf (\textcolor{stringliteral}{"{}pstdint.h is not correct.  Please use sizes below to correct it:\(\backslash\)n"{}});}
+\DoxyCodeLine{896     \}}
+\DoxyCodeLine{897 }
+\DoxyCodeLine{898     Q(\textcolor{keywordtype}{int})}
+\DoxyCodeLine{899     Q(\textcolor{keywordtype}{unsigned})}
+\DoxyCodeLine{900     Q(\textcolor{keywordtype}{long} \textcolor{keywordtype}{int})}
+\DoxyCodeLine{901     Q(\textcolor{keywordtype}{short} \textcolor{keywordtype}{int})}
+\DoxyCodeLine{902     Q(int8\_t)}
+\DoxyCodeLine{903     Q(int16\_t)}
+\DoxyCodeLine{904     Q(int32\_t)}
+\DoxyCodeLine{905 \textcolor{preprocessor}{\#ifdef INT64\_MAX}}
+\DoxyCodeLine{906     Q(int64\_t)}
+\DoxyCodeLine{907 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{908 }
+\DoxyCodeLine{909     \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{910 \}}
+\DoxyCodeLine{911 }
+\DoxyCodeLine{912 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

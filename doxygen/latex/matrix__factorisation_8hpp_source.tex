@@ -1,0 +1,43 @@
+\hypertarget{matrix__factorisation_8hpp_source}{}\doxysection{matrix\+\_\+factorisation.\+hpp}
+\label{matrix__factorisation_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/gtx/matrix\_factorisation.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/gtx/matrix\_factorisation.hpp}}
+\mbox{\hyperlink{matrix__factorisation_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{// Dependency:}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}../glm.hpp"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#   error "{}GLM: GLM\_GTX\_matrix\_factorisation is an experimental extension and may change in the future. Use \#define GLM\_ENABLE\_EXPERIMENTAL before including it, if you really want to use it."{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#elif GLM\_MESSAGES == GLM\_ENABLE \&\& !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_GTX\_matrix\_factorisation extension included"{}})}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*}}
+\DoxyCodeLine{25 \textcolor{comment}{Suggestions:}}
+\DoxyCodeLine{26 \textcolor{comment}{ -\/ Move helper functions flipud and fliplr to another file: They may be helpful in more general circumstances.}}
+\DoxyCodeLine{27 \textcolor{comment}{ -\/ Implement other types of matrix factorisation, such as: QL and LQ, L(D)U, eigendecompositions, etc...}}
+\DoxyCodeLine{28 \textcolor{comment}{*/}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{38     \textcolor{keyword}{template} <length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{39     GLM\_FUNC\_DECL mat<C, R, T, Q> \mbox{\hyperlink{group__gtx__matrix__factorisation_ga904aa227f3fc40a3ae08fe0f6810b5ad}{flipud}}(mat<C, R, T, Q> \textcolor{keyword}{const}\& in);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{44     \textcolor{keyword}{template} <length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{45     GLM\_FUNC\_DECL mat<C, R, T, Q> \mbox{\hyperlink{group__gtx__matrix__factorisation_gaf44ef34db04c55013bc3d9eee990b80c}{fliplr}}(mat<C, R, T, Q> \textcolor{keyword}{const}\& in);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{52     \textcolor{keyword}{template} <length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{53     GLM\_FUNC\_DISCARD\_DECL \textcolor{keywordtype}{void} \mbox{\hyperlink{group__gtx__matrix__factorisation_ga2b88704e76f42a8894072e73101a56c3}{qr\_decompose}}(mat<C, R, T, Q> \textcolor{keyword}{const}\& in, mat<(C < R ? C : R), R, T, Q>\& q, mat<C, (C < R ? C : R), T, Q>\& r);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{61     \textcolor{keyword}{template} <length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{62     GLM\_FUNC\_DISCARD\_DECL \textcolor{keywordtype}{void} \mbox{\hyperlink{group__gtx__matrix__factorisation_ga90ce5524aa7390a722817f6c9342e360}{rq\_decompose}}(mat<C, R, T, Q> \textcolor{keyword}{const}\& in, mat<(C < R ? C : R), R, T, Q>\& r, mat<C, (C < R ? C : R), T, Q>\& q);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65 \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#include "{}matrix\_factorisation.inl"{}}}
+
+\end{DoxyCode}

@@ -1,0 +1,20 @@
+\hypertarget{ogl__renderer_2renderer_2_camera_8h_source}{}\doxysection{Camera.\+h}
+\label{ogl__renderer_2renderer_2_camera_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/ogl\_renderer/renderer/Camera.h@{C:/Users/s239074/Documents/ogl\_renderer/ogl\_renderer/renderer/Camera.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}../engine/Transform.h"{}}}
+\DoxyCodeLine{3 \textcolor{keyword}{class }\mbox{\hyperlink{class_camera}{Camera}}}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5 \textcolor{keyword}{public}:}
+\DoxyCodeLine{6     \mbox{\hyperlink{class_camera}{Camera}}() \{}
+\DoxyCodeLine{7         this-\/>cameraTransform = \mbox{\hyperlink{class_transform}{Transform}}();}
+\DoxyCodeLine{8     \}}
+\DoxyCodeLine{9     \mbox{\hyperlink{class_transform}{Transform}} cameraTransform;}
+\DoxyCodeLine{10     \textcolor{keyword}{const} mat4 projectionMatrix = \mbox{\hyperlink{group__ext__matrix__clip__space_ga9e13be491fd69a438c8fda440cf0156e}{glm::perspective}}(glm::radians(90.f), 1600.f / 900.f, 0.01f, 50000.f);}
+\DoxyCodeLine{15     mat4 \mbox{\hyperlink{class_camera_ade59c8e9e1ccf81c92d69722ed070718}{viewMatrix}}() \{}
+\DoxyCodeLine{16         \textcolor{keywordflow}{return} \mbox{\hyperlink{group__ext__matrix__transform_ga894735fbf8f3d25628c127712d0285f7}{glm::lookAt}}(cameraTransform.\mbox{\hyperlink{class_transform_a482ec8a49b08f224b2ec513dc27f47b5}{GetPosition}}(), cameraTransform.\mbox{\hyperlink{class_transform_a482ec8a49b08f224b2ec513dc27f47b5}{GetPosition}}() + cameraTransform.\mbox{\hyperlink{class_transform_a3fbf814bbd069c57d1b3579a56893b3e}{Forward}}(), cameraTransform.\mbox{\hyperlink{class_transform_ae0ce3a189b726c18e21c2eb1990f4464}{Up}}());\textcolor{comment}{//Generate rotation matrix representing looking forward}}
+\DoxyCodeLine{17     \}}
+\DoxyCodeLine{18 \};}
+
+\end{DoxyCode}

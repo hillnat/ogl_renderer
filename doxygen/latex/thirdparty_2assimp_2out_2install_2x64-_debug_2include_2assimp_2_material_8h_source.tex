@@ -1,0 +1,1075 @@
+\hypertarget{thirdparty_2assimp_2out_2install_2x64-_debug_2include_2assimp_2_material_8h_source}{}\doxysection{material.\+h}
+\label{thirdparty_2assimp_2out_2install_2x64-_debug_2include_2assimp_2_material_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/material.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/material.h}}
+\mbox{\hyperlink{thirdparty_2assimp_2out_2install_2x64-_debug_2include_2assimp_2_material_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{12 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{17 \textcolor{comment}{}}
+\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{27 \textcolor{comment}{}}
+\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef AI\_MATERIAL\_H\_INC}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define AI\_MATERIAL\_H\_INC}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <assimp/types.h>}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{56 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{// Name for default materials (2nd is used if meshes have UV coords)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define AI\_DEFAULT\_MATERIAL\_NAME "{}DefaultMaterial"{}}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{81 \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_afcd3096d69affba13114cedfc6f9ee6b}{aiTextureOp}} \{}
+\DoxyCodeLine{83     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_afcd3096d69affba13114cedfc6f9ee6ba4b4cf98920571bc5b5cdf333d1642759}{aiTextureOp\_Multiply}} = 0x0,}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{86     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_afcd3096d69affba13114cedfc6f9ee6ba38c643dc19bdb5dad544c54829129d14}{aiTextureOp\_Add}} = 0x1,}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{89     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_afcd3096d69affba13114cedfc6f9ee6bac20a0da785e4670500e7338bc59a0793}{aiTextureOp\_Subtract}} = 0x2,}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{92     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_afcd3096d69affba13114cedfc6f9ee6bac15b6232b50780f509edf0a6b39af72c}{aiTextureOp\_Divide}} = 0x3,}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{95     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_afcd3096d69affba13114cedfc6f9ee6ba174eaa1b84bdcc131febea53da22aa4a}{aiTextureOp\_SmoothAdd}} = 0x4,}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{98     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_afcd3096d69affba13114cedfc6f9ee6babe30ac3d3c7bff0fe1d69c70fbd646ff}{aiTextureOp\_SignedAdd}} = 0x5,}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{101     \_aiTextureOp\_Force32Bit = INT\_MAX}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{103 \};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{110 \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6cbe56056751aa80e8dd714632a49de0}{aiTextureMapMode}} \{}
+\DoxyCodeLine{113     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6cbe56056751aa80e8dd714632a49de0a39bee4a4d7222d7f21fc093cacac2bcf}{aiTextureMapMode\_Wrap}} = 0x0,}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{118     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6cbe56056751aa80e8dd714632a49de0a809e31ce25b28e9fb7dba0a362293ace}{aiTextureMapMode\_Clamp}} = 0x1,}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{123     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6cbe56056751aa80e8dd714632a49de0a36bdbb449ea382cf7d3ecd7ccbd9c3e8}{aiTextureMapMode\_Decal}} = 0x3,}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{128     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6cbe56056751aa80e8dd714632a49de0ae0105c73fb2e7e6d10e80395b6995337}{aiTextureMapMode\_Mirror}} = 0x2,}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{131     \_aiTextureMapMode\_Force32Bit = INT\_MAX}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{133 \};}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{144 \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6186e909f1ae28133ab10f1b4635b0f9}{aiTextureMapping}} \{}
+\DoxyCodeLine{151     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6186e909f1ae28133ab10f1b4635b0f9afe4af8e2f0303198ff2c51edf3039277}{aiTextureMapping\_UV}} = 0x0,}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{154     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6186e909f1ae28133ab10f1b4635b0f9ada83cfca5e55fc99dc89e0e94c91cdb5}{aiTextureMapping\_SPHERE}} = 0x1,}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{157     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6186e909f1ae28133ab10f1b4635b0f9a1f3e2bcbdb450f19666b9b0730bad9ae}{aiTextureMapping\_CYLINDER}} = 0x2,}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{160     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6186e909f1ae28133ab10f1b4635b0f9ac680b16f3be94f101132982afd003fee}{aiTextureMapping\_BOX}} = 0x3,}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{163     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6186e909f1ae28133ab10f1b4635b0f9acbb0fa22c77e4c8936c1071fcacd1a64}{aiTextureMapping\_PLANE}} = 0x4,}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{166     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6186e909f1ae28133ab10f1b4635b0f9a585fb9423e1e77a52c9096fc0b907881}{aiTextureMapping\_OTHER}} = 0x5,}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{169     \_aiTextureMapping\_Force32Bit = INT\_MAX}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{171 \};}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{188 \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0}{aiTextureType}} \{}
+\DoxyCodeLine{195     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a29933480f8f018b381ae8be57435a435}{aiTextureType\_NONE}} = 0,}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{208     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a3027af56603d5babd7e2efcf5ed1debd}{aiTextureType\_DIFFUSE}} = 1,}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{215     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a0fdc17eca73119fe7c4e7d17043aba6b}{aiTextureType\_SPECULAR}} = 2,}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{220     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a88d7fc7cc800d2641fd481067eca0dc4}{aiTextureType\_AMBIENT}} = 3,}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{225     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a9a8cd97191328740f68e0e77e83ac485}{aiTextureType\_EMISSIVE}} = 4,}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{232     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a5cff2209ef767617b00c2875afe7d5a7}{aiTextureType\_HEIGHT}} = 5,}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{240     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0aaf9089ae800fe4b3d97bc88d7686bab0}{aiTextureType\_NORMALS}} = 6,}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{249     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a8675306af91180469f7e98a438125b89}{aiTextureType\_SHININESS}} = 7,}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{256     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a68e7f8f7485bb00142a25df18e1ff148}{aiTextureType\_OPACITY}} = 8,}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{263     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a929ae2ac33faa1ffe15978933c29337e}{aiTextureType\_DISPLACEMENT}} = 9,}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{272     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a86e356815b137cd584336cab11e72820}{aiTextureType\_LIGHTMAP}} = 10,}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{279     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0aa675f72b81148c5c260d408e122de7f8}{aiTextureType\_REFLECTION}} = 11,}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{288     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a5d752b64d94439eadbb815e8a35d4fc0}{aiTextureType\_BASE\_COLOR}} = 12,}
+\DoxyCodeLine{289     aiTextureType\_NORMAL\_CAMERA = 13,}
+\DoxyCodeLine{290     aiTextureType\_EMISSION\_COLOR = 14,}
+\DoxyCodeLine{291     aiTextureType\_METALNESS = 15,}
+\DoxyCodeLine{292     aiTextureType\_DIFFUSE\_ROUGHNESS = 16,}
+\DoxyCodeLine{293     aiTextureType\_AMBIENT\_OCCLUSION = 17,}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{301     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a435cc5adea69c96c0c3205a2bde21cce}{aiTextureType\_UNKNOWN}} = 18,}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{314     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a2534326d369dc2b340ac0c23a9405c0a}{aiTextureType\_SHEEN}} = 19,}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{321     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a4c8443070acff2892a377aeb022e273f}{aiTextureType\_CLEARCOAT}} = 20,}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{327     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0a5012d291ed3b5fc6f4ebba375b5fa74a}{aiTextureType\_TRANSMISSION}} = 21,}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{332     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0acac50bb46d50162209a97374010b1e72}{aiTextureType\_MAYA\_BASE}} = 22,}
+\DoxyCodeLine{333     aiTextureType\_MAYA\_SPECULAR = 23,}
+\DoxyCodeLine{334     aiTextureType\_MAYA\_SPECULAR\_COLOR = 24,}
+\DoxyCodeLine{335     aiTextureType\_MAYA\_SPECULAR\_ROUGHNESS = 25,}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{338     \_aiTextureType\_Force32Bit = INT\_MAX}
+\DoxyCodeLine{339 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{340 \};}
+\DoxyCodeLine{341 }
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#define AI\_TEXTURE\_TYPE\_MAX aiTextureType\_MAYA\_SPECULAR\_ROUGHNESS}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{351 \textcolor{comment}{}ASSIMP\_API \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a68fe8857ca972dc8a221bf7bd533df7b}{aiTextureTypeToString}}(\textcolor{keyword}{enum} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0}{aiTextureType}} in);}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{368 \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a93e23e0201d6ed86fb4287e15218e4cf}{aiShadingMode}} \{}
+\DoxyCodeLine{372     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a93e23e0201d6ed86fb4287e15218e4cfa59fa2c27721e28dadd58cbd39cd46782}{aiShadingMode\_Flat}} = 0x1,}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{376     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a93e23e0201d6ed86fb4287e15218e4cfa8a20ae47f38c01554ef467c324c27431}{aiShadingMode\_Gouraud}} = 0x2,}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{380     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a93e23e0201d6ed86fb4287e15218e4cfafe5e89f846a9657232077c224fd1a914}{aiShadingMode\_Phong}} = 0x3,}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{384     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a93e23e0201d6ed86fb4287e15218e4cfaccd4aca098e73986e50c7566efd6ca1f}{aiShadingMode\_Blinn}} = 0x4,}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{390     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a93e23e0201d6ed86fb4287e15218e4cfa85c7b6a3c243a1991f4b17125a28a54c}{aiShadingMode\_Toon}} = 0x5,}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{397     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a93e23e0201d6ed86fb4287e15218e4cfab2243130ec0bdb25a26ce829d486e55a}{aiShadingMode\_OrenNayar}} = 0x6,}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{404     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a93e23e0201d6ed86fb4287e15218e4cfa0947dbe335c16766da43fe1b992af4fb}{aiShadingMode\_Minnaert}} = 0x7,}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{410     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a93e23e0201d6ed86fb4287e15218e4cfa36519b85cbfbba437bfe1c504d3dbd6d}{aiShadingMode\_CookTorrance}} = 0x8,}
+\DoxyCodeLine{411 }
+\DoxyCodeLine{415     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a93e23e0201d6ed86fb4287e15218e4cfa625d6dc1a678985000a1e3a9c7da1e3f}{aiShadingMode\_NoShading}} = 0x9,}
+\DoxyCodeLine{416     aiShadingMode\_Unlit = \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a93e23e0201d6ed86fb4287e15218e4cfa625d6dc1a678985000a1e3a9c7da1e3f}{aiShadingMode\_NoShading}}, \textcolor{comment}{// Alias}}
+\DoxyCodeLine{417 }
+\DoxyCodeLine{420     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a93e23e0201d6ed86fb4287e15218e4cfab2f24381f6f4f21cee9cef32c1fd4d5f}{aiShadingMode\_Fresnel}} = 0xa,}
+\DoxyCodeLine{421 }
+\DoxyCodeLine{433     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a93e23e0201d6ed86fb4287e15218e4cfa0b3fe30914cb8961c68b0faa888a8be1}{aiShadingMode\_PBR\_BRDF}} = 0xb,}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{436     \_aiShadingMode\_Force32Bit = INT\_MAX}
+\DoxyCodeLine{437 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{438 \};}
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{452 \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6d003e078617e4e80d1313a6250b2dfd}{aiTextureFlags}} \{}
+\DoxyCodeLine{455     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6d003e078617e4e80d1313a6250b2dfda2d22809697f40ef1969a491a8d3278ff}{aiTextureFlags\_Invert}} = 0x1,}
+\DoxyCodeLine{456 }
+\DoxyCodeLine{466     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6d003e078617e4e80d1313a6250b2dfda5712da7264ec0c6e90b45580e5badbe0}{aiTextureFlags\_UseAlpha}} = 0x2,}
+\DoxyCodeLine{467 }
+\DoxyCodeLine{473     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6d003e078617e4e80d1313a6250b2dfda78f2667e8304213210c2508b7af47499}{aiTextureFlags\_IgnoreAlpha}} = 0x4,}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{476     \_aiTextureFlags\_Force32Bit = INT\_MAX}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{478 \};}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{497 \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_ae1236da1ccfbf4f23bb490287a4d61ac}{aiBlendMode}} \{}
+\DoxyCodeLine{504     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_ae1236da1ccfbf4f23bb490287a4d61aca2df47d5d42d73938d3d273a75db671b0}{aiBlendMode\_Default}} = 0x0,}
+\DoxyCodeLine{505 }
+\DoxyCodeLine{513     \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_ae1236da1ccfbf4f23bb490287a4d61aca60eb5958c8fd4147bafd9098edf54e1e}{aiBlendMode\_Additive}} = 0x1,}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{515 \textcolor{comment}{// we don't need more for the moment, but we might need them}}
+\DoxyCodeLine{516 \textcolor{comment}{// in future versions ...}}
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{519     \_aiBlendMode\_Force32Bit = INT\_MAX}
+\DoxyCodeLine{520 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{521 \};}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523 \textcolor{preprocessor}{\#include "{}./Compiler/pushpack1.h"{}}}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{525 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{536 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_u_v_transform}{aiUVTransform}} \{}
+\DoxyCodeLine{541     C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} \mbox{\hyperlink{structai_u_v_transform_a8c7f35959aa342bf0cef670246fbb813}{mTranslation}};}
+\DoxyCodeLine{542 }
+\DoxyCodeLine{547     C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} \mbox{\hyperlink{structai_u_v_transform_a89429a027cbf914e7212e48149a957c8}{mScaling}};}
+\DoxyCodeLine{548 }
+\DoxyCodeLine{555     ai\_real \mbox{\hyperlink{structai_u_v_transform_a157005aadfdd145a56c7831c7b24f1ea}{mRotation}};}
+\DoxyCodeLine{556 }
+\DoxyCodeLine{557 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{558     \mbox{\hyperlink{structai_u_v_transform}{aiUVTransform}}() AI\_NO\_EXCEPT}
+\DoxyCodeLine{559             : \mbox{\hyperlink{structai_u_v_transform_a8c7f35959aa342bf0cef670246fbb813}{mTranslation}}(0.0, 0.0),}
+\DoxyCodeLine{560               \mbox{\hyperlink{structai_u_v_transform_a89429a027cbf914e7212e48149a957c8}{mScaling}}(1.0, 1.0),}
+\DoxyCodeLine{561               \mbox{\hyperlink{structai_u_v_transform_a157005aadfdd145a56c7831c7b24f1ea}{mRotation}}(0.0) \{}
+\DoxyCodeLine{562         \textcolor{comment}{// nothing to be done here ...}}
+\DoxyCodeLine{563     \}}
+\DoxyCodeLine{564 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{565 \};}
+\DoxyCodeLine{566 }
+\DoxyCodeLine{567 \textcolor{preprocessor}{\#include "{}./Compiler/poppack1.h"{}}}
+\DoxyCodeLine{568 }
+\DoxyCodeLine{570 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{574 \textcolor{comment}{}\textcolor{keyword}{enum} aiPropertyTypeInfo \{}
+\DoxyCodeLine{581     aiPTI\_Float = 0x1,}
+\DoxyCodeLine{582 }
+\DoxyCodeLine{589     aiPTI\_Double = 0x2,}
+\DoxyCodeLine{590 }
+\DoxyCodeLine{596     aiPTI\_String = 0x3,}
+\DoxyCodeLine{597 }
+\DoxyCodeLine{604     aiPTI\_Integer = 0x4,}
+\DoxyCodeLine{605 }
+\DoxyCodeLine{608     aiPTI\_Buffer = 0x5,}
+\DoxyCodeLine{609 }
+\DoxyCodeLine{613 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{614     \_aiPTI\_Force32Bit = INT\_MAX}
+\DoxyCodeLine{615 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{616 \};}
+\DoxyCodeLine{617 }
+\DoxyCodeLine{618 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{638 \textcolor{comment}{}\textcolor{keyword}{struct }aiMaterialProperty \{}
+\DoxyCodeLine{642     C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} mKey;}
+\DoxyCodeLine{643 }
+\DoxyCodeLine{648     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mSemantic;}
+\DoxyCodeLine{649 }
+\DoxyCodeLine{653     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mIndex;}
+\DoxyCodeLine{654 }
+\DoxyCodeLine{658     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mDataLength;}
+\DoxyCodeLine{659 }
+\DoxyCodeLine{667     C\_ENUM aiPropertyTypeInfo mType;}
+\DoxyCodeLine{668 }
+\DoxyCodeLine{672     \textcolor{keywordtype}{char} *mData;}
+\DoxyCodeLine{673 }
+\DoxyCodeLine{674 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{675 }
+\DoxyCodeLine{676     aiMaterialProperty() AI\_NO\_EXCEPT}
+\DoxyCodeLine{677             : mSemantic(0),}
+\DoxyCodeLine{678               mIndex(0),}
+\DoxyCodeLine{679               mDataLength(0),}
+\DoxyCodeLine{680               mType(aiPTI\_Float),}
+\DoxyCodeLine{681               mData(\textcolor{keywordtype}{nullptr}) \{}
+\DoxyCodeLine{682         \textcolor{comment}{// empty}}
+\DoxyCodeLine{683     \}}
+\DoxyCodeLine{684 }
+\DoxyCodeLine{685     \string~aiMaterialProperty() \{}
+\DoxyCodeLine{686         \textcolor{keyword}{delete}[] mData;}
+\DoxyCodeLine{687         mData = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{688     \}}
+\DoxyCodeLine{689 }
+\DoxyCodeLine{690 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{691 \};}
+\DoxyCodeLine{693 }
+\DoxyCodeLine{694 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{695 \} \textcolor{comment}{// We need to leave the "{}C"{} block here to allow template member functions}}
+\DoxyCodeLine{696 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{697 }
+\DoxyCodeLine{698 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{707 \textcolor{comment}{}\textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{708 \textcolor{keyword}{struct }ASSIMP\_API \mbox{\hyperlink{structai_material}{aiMaterial}}}
+\DoxyCodeLine{709 \#else}
+\DoxyCodeLine{710 struct \mbox{\hyperlink{structai_material}{aiMaterial}}}
+\DoxyCodeLine{711 \#endif}
+\DoxyCodeLine{712 \{}
+\DoxyCodeLine{713 }
+\DoxyCodeLine{714 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{715 }
+\DoxyCodeLine{716 \textcolor{keyword}{public}:}
+\DoxyCodeLine{720     \mbox{\hyperlink{structai_material}{aiMaterial}}();}
+\DoxyCodeLine{721 }
+\DoxyCodeLine{725     \mbox{\hyperlink{structai_material}{\string~aiMaterial}}();}
+\DoxyCodeLine{726 }
+\DoxyCodeLine{727     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{732 \textcolor{comment}{}    \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{733     \mbox{\hyperlink{structai_string}{aiString}} GetName() \textcolor{keyword}{const};}
+\DoxyCodeLine{734 }
+\DoxyCodeLine{735     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{747 \textcolor{comment}{}    \textcolor{keyword}{template} <\textcolor{keyword}{typename} Type>}
+\DoxyCodeLine{748     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} Get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{749             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx, Type *pOut, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *pMax) \textcolor{keyword}{const};}
+\DoxyCodeLine{750 }
+\DoxyCodeLine{751     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} Get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{752             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx, \textcolor{keywordtype}{int} *pOut, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *pMax) \textcolor{keyword}{const};}
+\DoxyCodeLine{753 }
+\DoxyCodeLine{754     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} Get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{755             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx, ai\_real *pOut, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *pMax) \textcolor{keyword}{const};}
+\DoxyCodeLine{756 }
+\DoxyCodeLine{757     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{767 \textcolor{comment}{}    \textcolor{keyword}{template} <\textcolor{keyword}{typename} Type>}
+\DoxyCodeLine{768     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} Get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{769             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx, Type \&pOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{770 }
+\DoxyCodeLine{771     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} Get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{772             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx, \textcolor{keywordtype}{int} \&pOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{773 }
+\DoxyCodeLine{774     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} Get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{775             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx, ai\_real \&pOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{776 }
+\DoxyCodeLine{777     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} Get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{778             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx, \mbox{\hyperlink{structai_string}{aiString}} \&pOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{779 }
+\DoxyCodeLine{780     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} Get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{781             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx, \mbox{\hyperlink{structai_color3_d}{aiColor3D}} \&pOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{782 }
+\DoxyCodeLine{783     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} Get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{784             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx, \mbox{\hyperlink{structai_color4_d}{aiColor4D}} \&pOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{785 }
+\DoxyCodeLine{786     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} Get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{787             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx, \mbox{\hyperlink{structai_u_v_transform}{aiUVTransform}} \&pOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{788 }
+\DoxyCodeLine{789     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{794 \textcolor{comment}{}    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetTextureCount(\mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0}{aiTextureType}} type) \textcolor{keyword}{const};}
+\DoxyCodeLine{795 }
+\DoxyCodeLine{796     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{826 \textcolor{comment}{}    \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{827     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} GetTexture(\mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0}{aiTextureType}} type,}
+\DoxyCodeLine{828             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index,}
+\DoxyCodeLine{829             C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} *path,}
+\DoxyCodeLine{830             \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6186e909f1ae28133ab10f1b4635b0f9}{aiTextureMapping}} *mapping = NULL,}
+\DoxyCodeLine{831             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *uvindex = NULL,}
+\DoxyCodeLine{832             ai\_real *blend = NULL,}
+\DoxyCodeLine{833             \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_afcd3096d69affba13114cedfc6f9ee6b}{aiTextureOp}} *op = NULL,}
+\DoxyCodeLine{834             \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6cbe56056751aa80e8dd714632a49de0}{aiTextureMapMode}} *mapmode = NULL) \textcolor{keyword}{const};}
+\DoxyCodeLine{835 }
+\DoxyCodeLine{836     \textcolor{comment}{// Setters}}
+\DoxyCodeLine{837 }
+\DoxyCodeLine{838     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{848 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} AddBinaryProperty(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *pInput,}
+\DoxyCodeLine{849             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pSizeInBytes,}
+\DoxyCodeLine{850             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{851             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{852             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index,}
+\DoxyCodeLine{853             aiPropertyTypeInfo pType);}
+\DoxyCodeLine{854 }
+\DoxyCodeLine{855     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{863 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} AddProperty(\textcolor{keyword}{const} \mbox{\hyperlink{structai_string}{aiString}} *pInput,}
+\DoxyCodeLine{864             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{865             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type = 0,}
+\DoxyCodeLine{866             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index = 0);}
+\DoxyCodeLine{867 }
+\DoxyCodeLine{868     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{875 \textcolor{comment}{}    \textcolor{keyword}{template} <\textcolor{keyword}{class} TYPE>}
+\DoxyCodeLine{876     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} AddProperty(\textcolor{keyword}{const} TYPE *pInput,}
+\DoxyCodeLine{877             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pNumValues,}
+\DoxyCodeLine{878             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{879             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type = 0,}
+\DoxyCodeLine{880             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index = 0);}
+\DoxyCodeLine{881 }
+\DoxyCodeLine{882     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} AddProperty(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *pInput,}
+\DoxyCodeLine{883             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pNumValues,}
+\DoxyCodeLine{884             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{885             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type = 0,}
+\DoxyCodeLine{886             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index = 0);}
+\DoxyCodeLine{887 }
+\DoxyCodeLine{888     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} AddProperty(\textcolor{keyword}{const} \mbox{\hyperlink{structai_color3_d}{aiColor3D}} *pInput,}
+\DoxyCodeLine{889             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pNumValues,}
+\DoxyCodeLine{890             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{891             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type = 0,}
+\DoxyCodeLine{892             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index = 0);}
+\DoxyCodeLine{893 }
+\DoxyCodeLine{894     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} AddProperty(\textcolor{keyword}{const} \mbox{\hyperlink{structai_color4_d}{aiColor4D}} *pInput,}
+\DoxyCodeLine{895             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pNumValues,}
+\DoxyCodeLine{896             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{897             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type = 0,}
+\DoxyCodeLine{898             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index = 0);}
+\DoxyCodeLine{899 }
+\DoxyCodeLine{900     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} AddProperty(\textcolor{keyword}{const} \textcolor{keywordtype}{int} *pInput,}
+\DoxyCodeLine{901             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pNumValues,}
+\DoxyCodeLine{902             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{903             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type = 0,}
+\DoxyCodeLine{904             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index = 0);}
+\DoxyCodeLine{905 }
+\DoxyCodeLine{906     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} AddProperty(\textcolor{keyword}{const} \textcolor{keywordtype}{float} *pInput,}
+\DoxyCodeLine{907             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pNumValues,}
+\DoxyCodeLine{908             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{909             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type = 0,}
+\DoxyCodeLine{910             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index = 0);}
+\DoxyCodeLine{911 }
+\DoxyCodeLine{912     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} AddProperty(\textcolor{keyword}{const} \textcolor{keywordtype}{double} *pInput,}
+\DoxyCodeLine{913             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pNumValues,}
+\DoxyCodeLine{914             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{915             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type = 0,}
+\DoxyCodeLine{916             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index = 0);}
+\DoxyCodeLine{917 }
+\DoxyCodeLine{918     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} AddProperty(\textcolor{keyword}{const} \mbox{\hyperlink{structai_u_v_transform}{aiUVTransform}} *pInput,}
+\DoxyCodeLine{919             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pNumValues,}
+\DoxyCodeLine{920             \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{921             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type = 0,}
+\DoxyCodeLine{922             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index = 0);}
+\DoxyCodeLine{923 }
+\DoxyCodeLine{924     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{931 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} RemoveProperty(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{932             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type = 0,}
+\DoxyCodeLine{933             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index = 0);}
+\DoxyCodeLine{934 }
+\DoxyCodeLine{935     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{939 \textcolor{comment}{}    \textcolor{keywordtype}{void} Clear();}
+\DoxyCodeLine{940 }
+\DoxyCodeLine{941     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{946 \textcolor{comment}{}    \textcolor{keyword}{static} \textcolor{keywordtype}{void} CopyPropertyList(\mbox{\hyperlink{structai_material}{aiMaterial}} *pcDest,}
+\DoxyCodeLine{947             \textcolor{keyword}{const} \mbox{\hyperlink{structai_material}{aiMaterial}} *pcSrc);}
+\DoxyCodeLine{948 }
+\DoxyCodeLine{949 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{950 }
+\DoxyCodeLine{952     C\_STRUCT aiMaterialProperty **mProperties;}
+\DoxyCodeLine{953 }
+\DoxyCodeLine{955     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumProperties;}
+\DoxyCodeLine{956 }
+\DoxyCodeLine{958     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumAllocated;}
+\DoxyCodeLine{959 \};}
+\DoxyCodeLine{960 }
+\DoxyCodeLine{961 \textcolor{comment}{// Go back to extern "{}C"{} again}}
+\DoxyCodeLine{962 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{963 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{964 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{965 }
+\DoxyCodeLine{966 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{967 \textcolor{preprocessor}{\#define AI\_MATKEY\_NAME "{}?mat.name"{}}, 0, 0}
+\DoxyCodeLine{968 \textcolor{preprocessor}{\#define AI\_MATKEY\_TWOSIDED "{}\$mat.twosided"{}}, 0, 0}
+\DoxyCodeLine{969 \textcolor{preprocessor}{\#define AI\_MATKEY\_SHADING\_MODEL "{}\$mat.shadingm"{}}, 0, 0}
+\DoxyCodeLine{970 \textcolor{preprocessor}{\#define AI\_MATKEY\_ENABLE\_WIREFRAME "{}\$mat.wireframe"{}}, 0, 0}
+\DoxyCodeLine{971 \textcolor{preprocessor}{\#define AI\_MATKEY\_BLEND\_FUNC "{}\$mat.blend"{}}, 0, 0}
+\DoxyCodeLine{972 \textcolor{preprocessor}{\#define AI\_MATKEY\_OPACITY "{}\$mat.opacity"{}}, 0, 0}
+\DoxyCodeLine{973 \textcolor{preprocessor}{\#define AI\_MATKEY\_TRANSPARENCYFACTOR "{}\$mat.transparencyfactor"{}}, 0, 0}
+\DoxyCodeLine{974 \textcolor{preprocessor}{\#define AI\_MATKEY\_BUMPSCALING "{}\$mat.bumpscaling"{}}, 0, 0}
+\DoxyCodeLine{975 \textcolor{preprocessor}{\#define AI\_MATKEY\_SHININESS "{}\$mat.shininess"{}}, 0, 0}
+\DoxyCodeLine{976 \textcolor{preprocessor}{\#define AI\_MATKEY\_REFLECTIVITY "{}\$mat.reflectivity"{}}, 0, 0}
+\DoxyCodeLine{977 \textcolor{preprocessor}{\#define AI\_MATKEY\_SHININESS\_STRENGTH "{}\$mat.shinpercent"{}}, 0, 0}
+\DoxyCodeLine{978 \textcolor{preprocessor}{\#define AI\_MATKEY\_REFRACTI "{}\$mat.refracti"{}}, 0, 0}
+\DoxyCodeLine{979 \textcolor{preprocessor}{\#define AI\_MATKEY\_COLOR\_DIFFUSE "{}\$clr.diffuse"{}}, 0, 0}
+\DoxyCodeLine{980 \textcolor{preprocessor}{\#define AI\_MATKEY\_COLOR\_AMBIENT "{}\$clr.ambient"{}}, 0, 0}
+\DoxyCodeLine{981 \textcolor{preprocessor}{\#define AI\_MATKEY\_COLOR\_SPECULAR "{}\$clr.specular"{}}, 0, 0}
+\DoxyCodeLine{982 \textcolor{preprocessor}{\#define AI\_MATKEY\_COLOR\_EMISSIVE "{}\$clr.emissive"{}}, 0, 0}
+\DoxyCodeLine{983 \textcolor{preprocessor}{\#define AI\_MATKEY\_COLOR\_TRANSPARENT "{}\$clr.transparent"{}}, 0, 0}
+\DoxyCodeLine{984 \textcolor{preprocessor}{\#define AI\_MATKEY\_COLOR\_REFLECTIVE "{}\$clr.reflective"{}}, 0, 0}
+\DoxyCodeLine{985 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLOBAL\_BACKGROUND\_IMAGE "{}?bg.global"{}}, 0, 0}
+\DoxyCodeLine{986 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLOBAL\_SHADERLANG "{}?sh.lang"{}}, 0, 0}
+\DoxyCodeLine{987 \textcolor{preprocessor}{\#define AI\_MATKEY\_SHADER\_VERTEX "{}?sh.vs"{}}, 0, 0}
+\DoxyCodeLine{988 \textcolor{preprocessor}{\#define AI\_MATKEY\_SHADER\_FRAGMENT "{}?sh.fs"{}}, 0, 0}
+\DoxyCodeLine{989 \textcolor{preprocessor}{\#define AI\_MATKEY\_SHADER\_GEO "{}?sh.gs"{}}, 0, 0}
+\DoxyCodeLine{990 \textcolor{preprocessor}{\#define AI\_MATKEY\_SHADER\_TESSELATION "{}?sh.ts"{}}, 0, 0}
+\DoxyCodeLine{991 \textcolor{preprocessor}{\#define AI\_MATKEY\_SHADER\_PRIMITIVE "{}?sh.ps"{}}, 0, 0}
+\DoxyCodeLine{992 \textcolor{preprocessor}{\#define AI\_MATKEY\_SHADER\_COMPUTE "{}?sh.cs"{}}, 0, 0}
+\DoxyCodeLine{993 }
+\DoxyCodeLine{994 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{995 \textcolor{comment}{// PBR material support}}
+\DoxyCodeLine{996 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{997 \textcolor{comment}{// Properties defining PBR rendering techniques}}
+\DoxyCodeLine{998 \textcolor{preprocessor}{\#define AI\_MATKEY\_USE\_COLOR\_MAP "{}\$mat.useColorMap"{}}, 0, 0}
+\DoxyCodeLine{999 }
+\DoxyCodeLine{1000 \textcolor{comment}{// Metallic/Roughness Workflow}}
+\DoxyCodeLine{1001 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1002 \textcolor{comment}{// Base RGBA color factor. Will be multiplied by final base color texture values if extant}}
+\DoxyCodeLine{1003 \textcolor{comment}{// Note: Importers may choose to copy this into AI\_MATKEY\_COLOR\_DIFFUSE for compatibility}}
+\DoxyCodeLine{1004 \textcolor{comment}{// with renderers and formats that do not support Metallic/Roughness PBR}}
+\DoxyCodeLine{1005 \textcolor{preprocessor}{\#define AI\_MATKEY\_BASE\_COLOR "{}\$clr.base"{}}, 0, 0}
+\DoxyCodeLine{1006 \textcolor{preprocessor}{\#define AI\_MATKEY\_BASE\_COLOR\_TEXTURE aiTextureType\_BASE\_COLOR, 0}}
+\DoxyCodeLine{1007 \textcolor{preprocessor}{\#define AI\_MATKEY\_USE\_METALLIC\_MAP "{}\$mat.useMetallicMap"{}}, 0, 0}
+\DoxyCodeLine{1008 \textcolor{comment}{// Metallic factor. 0.0 = Full Dielectric, 1.0 = Full Metal}}
+\DoxyCodeLine{1009 \textcolor{preprocessor}{\#define AI\_MATKEY\_METALLIC\_FACTOR "{}\$mat.metallicFactor"{}}, 0, 0}
+\DoxyCodeLine{1010 \textcolor{preprocessor}{\#define AI\_MATKEY\_METALLIC\_TEXTURE aiTextureType\_METALNESS, 0}}
+\DoxyCodeLine{1011 \textcolor{preprocessor}{\#define AI\_MATKEY\_USE\_ROUGHNESS\_MAP "{}\$mat.useRoughnessMap"{}}, 0, 0}
+\DoxyCodeLine{1012 \textcolor{comment}{// Roughness factor. 0.0 = Perfectly Smooth, 1.0 = Completely Rough}}
+\DoxyCodeLine{1013 \textcolor{preprocessor}{\#define AI\_MATKEY\_ROUGHNESS\_FACTOR "{}\$mat.roughnessFactor"{}}, 0, 0}
+\DoxyCodeLine{1014 \textcolor{preprocessor}{\#define AI\_MATKEY\_ROUGHNESS\_TEXTURE aiTextureType\_DIFFUSE\_ROUGHNESS, 0}}
+\DoxyCodeLine{1015 \textcolor{comment}{// Anisotropy factor. 0.0 = isotropic, 1.0 = anisotropy along tangent direction,}}
+\DoxyCodeLine{1016 \textcolor{comment}{// -\/1.0 = anisotropy along bitangent direction}}
+\DoxyCodeLine{1017 \textcolor{preprocessor}{\#define AI\_MATKEY\_ANISOTROPY\_FACTOR "{}\$mat.anisotropyFactor"{}}, 0, 0}
+\DoxyCodeLine{1018 }
+\DoxyCodeLine{1019 \textcolor{comment}{// Specular/Glossiness Workflow}}
+\DoxyCodeLine{1020 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1021 \textcolor{comment}{// Diffuse/Albedo Color. Note: Pure Metals have a diffuse of \{0,0,0\}}}
+\DoxyCodeLine{1022 \textcolor{comment}{// AI\_MATKEY\_COLOR\_DIFFUSE}}
+\DoxyCodeLine{1023 \textcolor{comment}{// Specular Color.}}
+\DoxyCodeLine{1024 \textcolor{comment}{// Note: Metallic/Roughness may also have a Specular Color}}
+\DoxyCodeLine{1025 \textcolor{comment}{// AI\_MATKEY\_COLOR\_SPECULAR}}
+\DoxyCodeLine{1026 \textcolor{preprocessor}{\#define AI\_MATKEY\_SPECULAR\_FACTOR "{}\$mat.specularFactor"{}}, 0, 0}
+\DoxyCodeLine{1027 \textcolor{comment}{// Glossiness factor. 0.0 = Completely Rough, 1.0 = Perfectly Smooth}}
+\DoxyCodeLine{1028 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLOSSINESS\_FACTOR "{}\$mat.glossinessFactor"{}}, 0, 0}
+\DoxyCodeLine{1029 }
+\DoxyCodeLine{1030 \textcolor{comment}{// Sheen}}
+\DoxyCodeLine{1031 \textcolor{comment}{// -\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1032 \textcolor{comment}{// Sheen base RGB color. Default \{0,0,0\}}}
+\DoxyCodeLine{1033 \textcolor{preprocessor}{\#define AI\_MATKEY\_SHEEN\_COLOR\_FACTOR "{}\$clr.sheen.factor"{}}, 0, 0}
+\DoxyCodeLine{1034 \textcolor{comment}{// Sheen Roughness Factor.}}
+\DoxyCodeLine{1035 \textcolor{preprocessor}{\#define AI\_MATKEY\_SHEEN\_ROUGHNESS\_FACTOR "{}\$mat.sheen.roughnessFactor"{}}, 0, 0}
+\DoxyCodeLine{1036 \textcolor{preprocessor}{\#define AI\_MATKEY\_SHEEN\_COLOR\_TEXTURE aiTextureType\_SHEEN, 0}}
+\DoxyCodeLine{1037 \textcolor{preprocessor}{\#define AI\_MATKEY\_SHEEN\_ROUGHNESS\_TEXTURE aiTextureType\_SHEEN, 1}}
+\DoxyCodeLine{1038 }
+\DoxyCodeLine{1039 \textcolor{comment}{// Clearcoat}}
+\DoxyCodeLine{1040 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1041 \textcolor{comment}{// Clearcoat layer intensity. 0.0 = none (disabled)}}
+\DoxyCodeLine{1042 \textcolor{preprocessor}{\#define AI\_MATKEY\_CLEARCOAT\_FACTOR           "{}\$mat.clearcoat.factor"{}}, 0, 0}
+\DoxyCodeLine{1043 \textcolor{preprocessor}{\#define AI\_MATKEY\_CLEARCOAT\_ROUGHNESS\_FACTOR "{}\$mat.clearcoat.roughnessFactor"{}}, 0, 0}
+\DoxyCodeLine{1044 \textcolor{preprocessor}{\#define AI\_MATKEY\_CLEARCOAT\_TEXTURE aiTextureType\_CLEARCOAT, 0}}
+\DoxyCodeLine{1045 \textcolor{preprocessor}{\#define AI\_MATKEY\_CLEARCOAT\_ROUGHNESS\_TEXTURE aiTextureType\_CLEARCOAT, 1}}
+\DoxyCodeLine{1046 \textcolor{preprocessor}{\#define AI\_MATKEY\_CLEARCOAT\_NORMAL\_TEXTURE aiTextureType\_CLEARCOAT, 2}}
+\DoxyCodeLine{1047 }
+\DoxyCodeLine{1048 \textcolor{comment}{// Transmission}}
+\DoxyCodeLine{1049 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1050 \textcolor{comment}{// https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR\_materials\_transmission}}
+\DoxyCodeLine{1051 \textcolor{comment}{// Base percentage of light transmitted through the surface. 0.0 = Opaque, 1.0 = Fully transparent}}
+\DoxyCodeLine{1052 \textcolor{preprocessor}{\#define AI\_MATKEY\_TRANSMISSION\_FACTOR "{}\$mat.transmission.factor"{}}, 0, 0}
+\DoxyCodeLine{1053 \textcolor{comment}{// Texture defining percentage of light transmitted through the surface.}}
+\DoxyCodeLine{1054 \textcolor{comment}{// Multiplied by AI\_MATKEY\_TRANSMISSION\_FACTOR}}
+\DoxyCodeLine{1055 \textcolor{preprocessor}{\#define AI\_MATKEY\_TRANSMISSION\_TEXTURE aiTextureType\_TRANSMISSION, 0}}
+\DoxyCodeLine{1056 }
+\DoxyCodeLine{1057 \textcolor{comment}{// Volume}}
+\DoxyCodeLine{1058 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1059 \textcolor{comment}{// https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR\_materials\_volume}}
+\DoxyCodeLine{1060 \textcolor{comment}{// The thickness of the volume beneath the surface. If the value is 0 the material is thin-\/walled. Otherwise the material is a volume boundary.}}
+\DoxyCodeLine{1061 \textcolor{preprocessor}{\#define AI\_MATKEY\_VOLUME\_THICKNESS\_FACTOR "{}\$mat.volume.thicknessFactor"{}}, 0, 0}
+\DoxyCodeLine{1062 \textcolor{comment}{// Texture that defines the thickness.}}
+\DoxyCodeLine{1063 \textcolor{comment}{// Multiplied by AI\_MATKEY\_THICKNESS\_FACTOR}}
+\DoxyCodeLine{1064 \textcolor{preprocessor}{\#define AI\_MATKEY\_VOLUME\_THICKNESS\_TEXTURE aiTextureType\_TRANSMISSION, 1}}
+\DoxyCodeLine{1065 \textcolor{comment}{// Density of the medium given as the average distance that light travels in the medium before interacting with a particle.}}
+\DoxyCodeLine{1066 \textcolor{preprocessor}{\#define AI\_MATKEY\_VOLUME\_ATTENUATION\_DISTANCE "{}\$mat.volume.attenuationDistance"{}}, 0, 0}
+\DoxyCodeLine{1067 \textcolor{comment}{// The color that white light turns into due to absorption when reaching the attenuation distance.}}
+\DoxyCodeLine{1068 \textcolor{preprocessor}{\#define AI\_MATKEY\_VOLUME\_ATTENUATION\_COLOR "{}\$mat.volume.attenuationColor"{}}, 0, 0}
+\DoxyCodeLine{1069 }
+\DoxyCodeLine{1070 \textcolor{comment}{// Emissive}}
+\DoxyCodeLine{1071 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1072 \textcolor{preprocessor}{\#define AI\_MATKEY\_USE\_EMISSIVE\_MAP   "{}\$mat.useEmissiveMap"{}}, 0, 0}
+\DoxyCodeLine{1073 \textcolor{preprocessor}{\#define AI\_MATKEY\_EMISSIVE\_INTENSITY "{}\$mat.emissiveIntensity"{}}, 0, 0}
+\DoxyCodeLine{1074 \textcolor{preprocessor}{\#define AI\_MATKEY\_USE\_AO\_MAP         "{}\$mat.useAOMap"{}}, 0, 0}
+\DoxyCodeLine{1075 }
+\DoxyCodeLine{1076 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1077 \textcolor{comment}{// Pure key names for all texture-\/related properties}}
+\DoxyCodeLine{1079 \textcolor{comment}{}\textcolor{preprocessor}{\#define \_AI\_MATKEY\_TEXTURE\_BASE       "{}\$tex.file"{}}}
+\DoxyCodeLine{1080 \textcolor{preprocessor}{\#define \_AI\_MATKEY\_UVWSRC\_BASE        "{}\$tex.uvwsrc"{}}}
+\DoxyCodeLine{1081 \textcolor{preprocessor}{\#define \_AI\_MATKEY\_TEXOP\_BASE         "{}\$tex.op"{}}}
+\DoxyCodeLine{1082 \textcolor{preprocessor}{\#define \_AI\_MATKEY\_MAPPING\_BASE       "{}\$tex.mapping"{}}}
+\DoxyCodeLine{1083 \textcolor{preprocessor}{\#define \_AI\_MATKEY\_TEXBLEND\_BASE      "{}\$tex.blend"{}}}
+\DoxyCodeLine{1084 \textcolor{preprocessor}{\#define \_AI\_MATKEY\_MAPPINGMODE\_U\_BASE "{}\$tex.mapmodeu"{}}}
+\DoxyCodeLine{1085 \textcolor{preprocessor}{\#define \_AI\_MATKEY\_MAPPINGMODE\_V\_BASE "{}\$tex.mapmodev"{}}}
+\DoxyCodeLine{1086 \textcolor{preprocessor}{\#define \_AI\_MATKEY\_TEXMAP\_AXIS\_BASE   "{}\$tex.mapaxis"{}}}
+\DoxyCodeLine{1087 \textcolor{preprocessor}{\#define \_AI\_MATKEY\_UVTRANSFORM\_BASE   "{}\$tex.uvtrafo"{}}}
+\DoxyCodeLine{1088 \textcolor{preprocessor}{\#define \_AI\_MATKEY\_TEXFLAGS\_BASE      "{}\$tex.flags"{}}}
+\DoxyCodeLine{1090 }
+\DoxyCodeLine{1091 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1092 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXTURE(type, N) \_AI\_MATKEY\_TEXTURE\_BASE, type, N}}
+\DoxyCodeLine{1093 }
+\DoxyCodeLine{1094 \textcolor{comment}{// For backward compatibility and simplicity}}
+\DoxyCodeLine{1096 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_MATKEY\_TEXTURE\_DIFFUSE(N) \(\backslash\)}}
+\DoxyCodeLine{1097 \textcolor{preprocessor}{    AI\_MATKEY\_TEXTURE(aiTextureType\_DIFFUSE, N)}}
+\DoxyCodeLine{1098 }
+\DoxyCodeLine{1099 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXTURE\_SPECULAR(N) \(\backslash\)}}
+\DoxyCodeLine{1100 \textcolor{preprocessor}{    AI\_MATKEY\_TEXTURE(aiTextureType\_SPECULAR, N)}}
+\DoxyCodeLine{1101 }
+\DoxyCodeLine{1102 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXTURE\_AMBIENT(N) \(\backslash\)}}
+\DoxyCodeLine{1103 \textcolor{preprocessor}{    AI\_MATKEY\_TEXTURE(aiTextureType\_AMBIENT, N)}}
+\DoxyCodeLine{1104 }
+\DoxyCodeLine{1105 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXTURE\_EMISSIVE(N) \(\backslash\)}}
+\DoxyCodeLine{1106 \textcolor{preprocessor}{    AI\_MATKEY\_TEXTURE(aiTextureType\_EMISSIVE, N)}}
+\DoxyCodeLine{1107 }
+\DoxyCodeLine{1108 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXTURE\_NORMALS(N) \(\backslash\)}}
+\DoxyCodeLine{1109 \textcolor{preprocessor}{    AI\_MATKEY\_TEXTURE(aiTextureType\_NORMALS, N)}}
+\DoxyCodeLine{1110 }
+\DoxyCodeLine{1111 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXTURE\_HEIGHT(N) \(\backslash\)}}
+\DoxyCodeLine{1112 \textcolor{preprocessor}{    AI\_MATKEY\_TEXTURE(aiTextureType\_HEIGHT, N)}}
+\DoxyCodeLine{1113 }
+\DoxyCodeLine{1114 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXTURE\_SHININESS(N) \(\backslash\)}}
+\DoxyCodeLine{1115 \textcolor{preprocessor}{    AI\_MATKEY\_TEXTURE(aiTextureType\_SHININESS, N)}}
+\DoxyCodeLine{1116 }
+\DoxyCodeLine{1117 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXTURE\_OPACITY(N) \(\backslash\)}}
+\DoxyCodeLine{1118 \textcolor{preprocessor}{    AI\_MATKEY\_TEXTURE(aiTextureType\_OPACITY, N)}}
+\DoxyCodeLine{1119 }
+\DoxyCodeLine{1120 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXTURE\_DISPLACEMENT(N) \(\backslash\)}}
+\DoxyCodeLine{1121 \textcolor{preprocessor}{    AI\_MATKEY\_TEXTURE(aiTextureType\_DISPLACEMENT, N)}}
+\DoxyCodeLine{1122 }
+\DoxyCodeLine{1123 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXTURE\_LIGHTMAP(N) \(\backslash\)}}
+\DoxyCodeLine{1124 \textcolor{preprocessor}{    AI\_MATKEY\_TEXTURE(aiTextureType\_LIGHTMAP, N)}}
+\DoxyCodeLine{1125 }
+\DoxyCodeLine{1126 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXTURE\_REFLECTION(N) \(\backslash\)}}
+\DoxyCodeLine{1127 \textcolor{preprocessor}{    AI\_MATKEY\_TEXTURE(aiTextureType\_REFLECTION, N)}}
+\DoxyCodeLine{1128 }
+\DoxyCodeLine{1130 }
+\DoxyCodeLine{1131 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1132 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVWSRC(type, N) \_AI\_MATKEY\_UVWSRC\_BASE, type, N}}
+\DoxyCodeLine{1133 }
+\DoxyCodeLine{1134 \textcolor{comment}{// For backward compatibility and simplicity}}
+\DoxyCodeLine{1136 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_MATKEY\_UVWSRC\_DIFFUSE(N) \(\backslash\)}}
+\DoxyCodeLine{1137 \textcolor{preprocessor}{    AI\_MATKEY\_UVWSRC(aiTextureType\_DIFFUSE, N)}}
+\DoxyCodeLine{1138 }
+\DoxyCodeLine{1139 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVWSRC\_SPECULAR(N) \(\backslash\)}}
+\DoxyCodeLine{1140 \textcolor{preprocessor}{    AI\_MATKEY\_UVWSRC(aiTextureType\_SPECULAR, N)}}
+\DoxyCodeLine{1141 }
+\DoxyCodeLine{1142 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVWSRC\_AMBIENT(N) \(\backslash\)}}
+\DoxyCodeLine{1143 \textcolor{preprocessor}{    AI\_MATKEY\_UVWSRC(aiTextureType\_AMBIENT, N)}}
+\DoxyCodeLine{1144 }
+\DoxyCodeLine{1145 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVWSRC\_EMISSIVE(N) \(\backslash\)}}
+\DoxyCodeLine{1146 \textcolor{preprocessor}{    AI\_MATKEY\_UVWSRC(aiTextureType\_EMISSIVE, N)}}
+\DoxyCodeLine{1147 }
+\DoxyCodeLine{1148 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVWSRC\_NORMALS(N) \(\backslash\)}}
+\DoxyCodeLine{1149 \textcolor{preprocessor}{    AI\_MATKEY\_UVWSRC(aiTextureType\_NORMALS, N)}}
+\DoxyCodeLine{1150 }
+\DoxyCodeLine{1151 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVWSRC\_HEIGHT(N) \(\backslash\)}}
+\DoxyCodeLine{1152 \textcolor{preprocessor}{    AI\_MATKEY\_UVWSRC(aiTextureType\_HEIGHT, N)}}
+\DoxyCodeLine{1153 }
+\DoxyCodeLine{1154 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVWSRC\_SHININESS(N) \(\backslash\)}}
+\DoxyCodeLine{1155 \textcolor{preprocessor}{    AI\_MATKEY\_UVWSRC(aiTextureType\_SHININESS, N)}}
+\DoxyCodeLine{1156 }
+\DoxyCodeLine{1157 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVWSRC\_OPACITY(N) \(\backslash\)}}
+\DoxyCodeLine{1158 \textcolor{preprocessor}{    AI\_MATKEY\_UVWSRC(aiTextureType\_OPACITY, N)}}
+\DoxyCodeLine{1159 }
+\DoxyCodeLine{1160 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVWSRC\_DISPLACEMENT(N) \(\backslash\)}}
+\DoxyCodeLine{1161 \textcolor{preprocessor}{    AI\_MATKEY\_UVWSRC(aiTextureType\_DISPLACEMENT, N)}}
+\DoxyCodeLine{1162 }
+\DoxyCodeLine{1163 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVWSRC\_LIGHTMAP(N) \(\backslash\)}}
+\DoxyCodeLine{1164 \textcolor{preprocessor}{    AI\_MATKEY\_UVWSRC(aiTextureType\_LIGHTMAP, N)}}
+\DoxyCodeLine{1165 }
+\DoxyCodeLine{1166 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVWSRC\_REFLECTION(N) \(\backslash\)}}
+\DoxyCodeLine{1167 \textcolor{preprocessor}{    AI\_MATKEY\_UVWSRC(aiTextureType\_REFLECTION, N)}}
+\DoxyCodeLine{1168 }
+\DoxyCodeLine{1170 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1171 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXOP(type, N) \_AI\_MATKEY\_TEXOP\_BASE, type, N}}
+\DoxyCodeLine{1172 }
+\DoxyCodeLine{1173 \textcolor{comment}{// For backward compatibility and simplicity}}
+\DoxyCodeLine{1175 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_MATKEY\_TEXOP\_DIFFUSE(N) \(\backslash\)}}
+\DoxyCodeLine{1176 \textcolor{preprocessor}{    AI\_MATKEY\_TEXOP(aiTextureType\_DIFFUSE, N)}}
+\DoxyCodeLine{1177 }
+\DoxyCodeLine{1178 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXOP\_SPECULAR(N) \(\backslash\)}}
+\DoxyCodeLine{1179 \textcolor{preprocessor}{    AI\_MATKEY\_TEXOP(aiTextureType\_SPECULAR, N)}}
+\DoxyCodeLine{1180 }
+\DoxyCodeLine{1181 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXOP\_AMBIENT(N) \(\backslash\)}}
+\DoxyCodeLine{1182 \textcolor{preprocessor}{    AI\_MATKEY\_TEXOP(aiTextureType\_AMBIENT, N)}}
+\DoxyCodeLine{1183 }
+\DoxyCodeLine{1184 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXOP\_EMISSIVE(N) \(\backslash\)}}
+\DoxyCodeLine{1185 \textcolor{preprocessor}{    AI\_MATKEY\_TEXOP(aiTextureType\_EMISSIVE, N)}}
+\DoxyCodeLine{1186 }
+\DoxyCodeLine{1187 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXOP\_NORMALS(N) \(\backslash\)}}
+\DoxyCodeLine{1188 \textcolor{preprocessor}{    AI\_MATKEY\_TEXOP(aiTextureType\_NORMALS, N)}}
+\DoxyCodeLine{1189 }
+\DoxyCodeLine{1190 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXOP\_HEIGHT(N) \(\backslash\)}}
+\DoxyCodeLine{1191 \textcolor{preprocessor}{    AI\_MATKEY\_TEXOP(aiTextureType\_HEIGHT, N)}}
+\DoxyCodeLine{1192 }
+\DoxyCodeLine{1193 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXOP\_SHININESS(N) \(\backslash\)}}
+\DoxyCodeLine{1194 \textcolor{preprocessor}{    AI\_MATKEY\_TEXOP(aiTextureType\_SHININESS, N)}}
+\DoxyCodeLine{1195 }
+\DoxyCodeLine{1196 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXOP\_OPACITY(N) \(\backslash\)}}
+\DoxyCodeLine{1197 \textcolor{preprocessor}{    AI\_MATKEY\_TEXOP(aiTextureType\_OPACITY, N)}}
+\DoxyCodeLine{1198 }
+\DoxyCodeLine{1199 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXOP\_DISPLACEMENT(N) \(\backslash\)}}
+\DoxyCodeLine{1200 \textcolor{preprocessor}{    AI\_MATKEY\_TEXOP(aiTextureType\_DISPLACEMENT, N)}}
+\DoxyCodeLine{1201 }
+\DoxyCodeLine{1202 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXOP\_LIGHTMAP(N) \(\backslash\)}}
+\DoxyCodeLine{1203 \textcolor{preprocessor}{    AI\_MATKEY\_TEXOP(aiTextureType\_LIGHTMAP, N)}}
+\DoxyCodeLine{1204 }
+\DoxyCodeLine{1205 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXOP\_REFLECTION(N) \(\backslash\)}}
+\DoxyCodeLine{1206 \textcolor{preprocessor}{    AI\_MATKEY\_TEXOP(aiTextureType\_REFLECTION, N)}}
+\DoxyCodeLine{1207 }
+\DoxyCodeLine{1209 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1210 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPING(type, N) \_AI\_MATKEY\_MAPPING\_BASE, type, N}}
+\DoxyCodeLine{1211 }
+\DoxyCodeLine{1212 \textcolor{comment}{// For backward compatibility and simplicity}}
+\DoxyCodeLine{1214 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPING\_DIFFUSE(N) \(\backslash\)}}
+\DoxyCodeLine{1215 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPING(aiTextureType\_DIFFUSE, N)}}
+\DoxyCodeLine{1216 }
+\DoxyCodeLine{1217 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPING\_SPECULAR(N) \(\backslash\)}}
+\DoxyCodeLine{1218 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPING(aiTextureType\_SPECULAR, N)}}
+\DoxyCodeLine{1219 }
+\DoxyCodeLine{1220 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPING\_AMBIENT(N) \(\backslash\)}}
+\DoxyCodeLine{1221 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPING(aiTextureType\_AMBIENT, N)}}
+\DoxyCodeLine{1222 }
+\DoxyCodeLine{1223 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPING\_EMISSIVE(N) \(\backslash\)}}
+\DoxyCodeLine{1224 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPING(aiTextureType\_EMISSIVE, N)}}
+\DoxyCodeLine{1225 }
+\DoxyCodeLine{1226 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPING\_NORMALS(N) \(\backslash\)}}
+\DoxyCodeLine{1227 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPING(aiTextureType\_NORMALS, N)}}
+\DoxyCodeLine{1228 }
+\DoxyCodeLine{1229 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPING\_HEIGHT(N) \(\backslash\)}}
+\DoxyCodeLine{1230 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPING(aiTextureType\_HEIGHT, N)}}
+\DoxyCodeLine{1231 }
+\DoxyCodeLine{1232 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPING\_SHININESS(N) \(\backslash\)}}
+\DoxyCodeLine{1233 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPING(aiTextureType\_SHININESS, N)}}
+\DoxyCodeLine{1234 }
+\DoxyCodeLine{1235 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPING\_OPACITY(N) \(\backslash\)}}
+\DoxyCodeLine{1236 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPING(aiTextureType\_OPACITY, N)}}
+\DoxyCodeLine{1237 }
+\DoxyCodeLine{1238 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPING\_DISPLACEMENT(N) \(\backslash\)}}
+\DoxyCodeLine{1239 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPING(aiTextureType\_DISPLACEMENT, N)}}
+\DoxyCodeLine{1240 }
+\DoxyCodeLine{1241 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPING\_LIGHTMAP(N) \(\backslash\)}}
+\DoxyCodeLine{1242 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPING(aiTextureType\_LIGHTMAP, N)}}
+\DoxyCodeLine{1243 }
+\DoxyCodeLine{1244 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPING\_REFLECTION(N) \(\backslash\)}}
+\DoxyCodeLine{1245 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPING(aiTextureType\_REFLECTION, N)}}
+\DoxyCodeLine{1246 }
+\DoxyCodeLine{1248 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1249 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXBLEND(type, N) \_AI\_MATKEY\_TEXBLEND\_BASE, type, N}}
+\DoxyCodeLine{1250 }
+\DoxyCodeLine{1251 \textcolor{comment}{// For backward compatibility and simplicity}}
+\DoxyCodeLine{1253 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_MATKEY\_TEXBLEND\_DIFFUSE(N) \(\backslash\)}}
+\DoxyCodeLine{1254 \textcolor{preprocessor}{    AI\_MATKEY\_TEXBLEND(aiTextureType\_DIFFUSE, N)}}
+\DoxyCodeLine{1255 }
+\DoxyCodeLine{1256 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXBLEND\_SPECULAR(N) \(\backslash\)}}
+\DoxyCodeLine{1257 \textcolor{preprocessor}{    AI\_MATKEY\_TEXBLEND(aiTextureType\_SPECULAR, N)}}
+\DoxyCodeLine{1258 }
+\DoxyCodeLine{1259 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXBLEND\_AMBIENT(N) \(\backslash\)}}
+\DoxyCodeLine{1260 \textcolor{preprocessor}{    AI\_MATKEY\_TEXBLEND(aiTextureType\_AMBIENT, N)}}
+\DoxyCodeLine{1261 }
+\DoxyCodeLine{1262 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXBLEND\_EMISSIVE(N) \(\backslash\)}}
+\DoxyCodeLine{1263 \textcolor{preprocessor}{    AI\_MATKEY\_TEXBLEND(aiTextureType\_EMISSIVE, N)}}
+\DoxyCodeLine{1264 }
+\DoxyCodeLine{1265 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXBLEND\_NORMALS(N) \(\backslash\)}}
+\DoxyCodeLine{1266 \textcolor{preprocessor}{    AI\_MATKEY\_TEXBLEND(aiTextureType\_NORMALS, N)}}
+\DoxyCodeLine{1267 }
+\DoxyCodeLine{1268 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXBLEND\_HEIGHT(N) \(\backslash\)}}
+\DoxyCodeLine{1269 \textcolor{preprocessor}{    AI\_MATKEY\_TEXBLEND(aiTextureType\_HEIGHT, N)}}
+\DoxyCodeLine{1270 }
+\DoxyCodeLine{1271 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXBLEND\_SHININESS(N) \(\backslash\)}}
+\DoxyCodeLine{1272 \textcolor{preprocessor}{    AI\_MATKEY\_TEXBLEND(aiTextureType\_SHININESS, N)}}
+\DoxyCodeLine{1273 }
+\DoxyCodeLine{1274 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXBLEND\_OPACITY(N) \(\backslash\)}}
+\DoxyCodeLine{1275 \textcolor{preprocessor}{    AI\_MATKEY\_TEXBLEND(aiTextureType\_OPACITY, N)}}
+\DoxyCodeLine{1276 }
+\DoxyCodeLine{1277 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXBLEND\_DISPLACEMENT(N) \(\backslash\)}}
+\DoxyCodeLine{1278 \textcolor{preprocessor}{    AI\_MATKEY\_TEXBLEND(aiTextureType\_DISPLACEMENT, N)}}
+\DoxyCodeLine{1279 }
+\DoxyCodeLine{1280 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXBLEND\_LIGHTMAP(N) \(\backslash\)}}
+\DoxyCodeLine{1281 \textcolor{preprocessor}{    AI\_MATKEY\_TEXBLEND(aiTextureType\_LIGHTMAP, N)}}
+\DoxyCodeLine{1282 }
+\DoxyCodeLine{1283 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXBLEND\_REFLECTION(N) \(\backslash\)}}
+\DoxyCodeLine{1284 \textcolor{preprocessor}{    AI\_MATKEY\_TEXBLEND(aiTextureType\_REFLECTION, N)}}
+\DoxyCodeLine{1285 }
+\DoxyCodeLine{1287 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1288 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_U(type, N) \_AI\_MATKEY\_MAPPINGMODE\_U\_BASE, type, N}}
+\DoxyCodeLine{1289 }
+\DoxyCodeLine{1290 \textcolor{comment}{// For backward compatibility and simplicity}}
+\DoxyCodeLine{1292 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_U\_DIFFUSE(N) \(\backslash\)}}
+\DoxyCodeLine{1293 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_U(aiTextureType\_DIFFUSE, N)}}
+\DoxyCodeLine{1294 }
+\DoxyCodeLine{1295 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_U\_SPECULAR(N) \(\backslash\)}}
+\DoxyCodeLine{1296 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_U(aiTextureType\_SPECULAR, N)}}
+\DoxyCodeLine{1297 }
+\DoxyCodeLine{1298 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_U\_AMBIENT(N) \(\backslash\)}}
+\DoxyCodeLine{1299 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_U(aiTextureType\_AMBIENT, N)}}
+\DoxyCodeLine{1300 }
+\DoxyCodeLine{1301 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_U\_EMISSIVE(N) \(\backslash\)}}
+\DoxyCodeLine{1302 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_U(aiTextureType\_EMISSIVE, N)}}
+\DoxyCodeLine{1303 }
+\DoxyCodeLine{1304 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_U\_NORMALS(N) \(\backslash\)}}
+\DoxyCodeLine{1305 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_U(aiTextureType\_NORMALS, N)}}
+\DoxyCodeLine{1306 }
+\DoxyCodeLine{1307 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_U\_HEIGHT(N) \(\backslash\)}}
+\DoxyCodeLine{1308 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_U(aiTextureType\_HEIGHT, N)}}
+\DoxyCodeLine{1309 }
+\DoxyCodeLine{1310 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_U\_SHININESS(N) \(\backslash\)}}
+\DoxyCodeLine{1311 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_U(aiTextureType\_SHININESS, N)}}
+\DoxyCodeLine{1312 }
+\DoxyCodeLine{1313 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_U\_OPACITY(N) \(\backslash\)}}
+\DoxyCodeLine{1314 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_U(aiTextureType\_OPACITY, N)}}
+\DoxyCodeLine{1315 }
+\DoxyCodeLine{1316 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_U\_DISPLACEMENT(N) \(\backslash\)}}
+\DoxyCodeLine{1317 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_U(aiTextureType\_DISPLACEMENT, N)}}
+\DoxyCodeLine{1318 }
+\DoxyCodeLine{1319 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_U\_LIGHTMAP(N) \(\backslash\)}}
+\DoxyCodeLine{1320 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_U(aiTextureType\_LIGHTMAP, N)}}
+\DoxyCodeLine{1321 }
+\DoxyCodeLine{1322 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_U\_REFLECTION(N) \(\backslash\)}}
+\DoxyCodeLine{1323 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_U(aiTextureType\_REFLECTION, N)}}
+\DoxyCodeLine{1324 }
+\DoxyCodeLine{1326 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1327 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_V(type, N) \_AI\_MATKEY\_MAPPINGMODE\_V\_BASE, type, N}}
+\DoxyCodeLine{1328 }
+\DoxyCodeLine{1329 \textcolor{comment}{// For backward compatibility and simplicity}}
+\DoxyCodeLine{1331 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_V\_DIFFUSE(N) \(\backslash\)}}
+\DoxyCodeLine{1332 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_V(aiTextureType\_DIFFUSE, N)}}
+\DoxyCodeLine{1333 }
+\DoxyCodeLine{1334 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_V\_SPECULAR(N) \(\backslash\)}}
+\DoxyCodeLine{1335 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_V(aiTextureType\_SPECULAR, N)}}
+\DoxyCodeLine{1336 }
+\DoxyCodeLine{1337 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_V\_AMBIENT(N) \(\backslash\)}}
+\DoxyCodeLine{1338 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_V(aiTextureType\_AMBIENT, N)}}
+\DoxyCodeLine{1339 }
+\DoxyCodeLine{1340 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_V\_EMISSIVE(N) \(\backslash\)}}
+\DoxyCodeLine{1341 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_V(aiTextureType\_EMISSIVE, N)}}
+\DoxyCodeLine{1342 }
+\DoxyCodeLine{1343 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_V\_NORMALS(N) \(\backslash\)}}
+\DoxyCodeLine{1344 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_V(aiTextureType\_NORMALS, N)}}
+\DoxyCodeLine{1345 }
+\DoxyCodeLine{1346 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_V\_HEIGHT(N) \(\backslash\)}}
+\DoxyCodeLine{1347 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_V(aiTextureType\_HEIGHT, N)}}
+\DoxyCodeLine{1348 }
+\DoxyCodeLine{1349 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_V\_SHININESS(N) \(\backslash\)}}
+\DoxyCodeLine{1350 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_V(aiTextureType\_SHININESS, N)}}
+\DoxyCodeLine{1351 }
+\DoxyCodeLine{1352 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_V\_OPACITY(N) \(\backslash\)}}
+\DoxyCodeLine{1353 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_V(aiTextureType\_OPACITY, N)}}
+\DoxyCodeLine{1354 }
+\DoxyCodeLine{1355 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_V\_DISPLACEMENT(N) \(\backslash\)}}
+\DoxyCodeLine{1356 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_V(aiTextureType\_DISPLACEMENT, N)}}
+\DoxyCodeLine{1357 }
+\DoxyCodeLine{1358 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_V\_LIGHTMAP(N) \(\backslash\)}}
+\DoxyCodeLine{1359 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_V(aiTextureType\_LIGHTMAP, N)}}
+\DoxyCodeLine{1360 }
+\DoxyCodeLine{1361 \textcolor{preprocessor}{\#define AI\_MATKEY\_MAPPINGMODE\_V\_REFLECTION(N) \(\backslash\)}}
+\DoxyCodeLine{1362 \textcolor{preprocessor}{    AI\_MATKEY\_MAPPINGMODE\_V(aiTextureType\_REFLECTION, N)}}
+\DoxyCodeLine{1363 }
+\DoxyCodeLine{1365 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1366 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXMAP\_AXIS(type, N) \_AI\_MATKEY\_TEXMAP\_AXIS\_BASE, type, N}}
+\DoxyCodeLine{1367 }
+\DoxyCodeLine{1368 \textcolor{comment}{// For backward compatibility and simplicity}}
+\DoxyCodeLine{1370 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_MATKEY\_TEXMAP\_AXIS\_DIFFUSE(N) \(\backslash\)}}
+\DoxyCodeLine{1371 \textcolor{preprocessor}{    AI\_MATKEY\_TEXMAP\_AXIS(aiTextureType\_DIFFUSE, N)}}
+\DoxyCodeLine{1372 }
+\DoxyCodeLine{1373 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXMAP\_AXIS\_SPECULAR(N) \(\backslash\)}}
+\DoxyCodeLine{1374 \textcolor{preprocessor}{    AI\_MATKEY\_TEXMAP\_AXIS(aiTextureType\_SPECULAR, N)}}
+\DoxyCodeLine{1375 }
+\DoxyCodeLine{1376 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXMAP\_AXIS\_AMBIENT(N) \(\backslash\)}}
+\DoxyCodeLine{1377 \textcolor{preprocessor}{    AI\_MATKEY\_TEXMAP\_AXIS(aiTextureType\_AMBIENT, N)}}
+\DoxyCodeLine{1378 }
+\DoxyCodeLine{1379 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXMAP\_AXIS\_EMISSIVE(N) \(\backslash\)}}
+\DoxyCodeLine{1380 \textcolor{preprocessor}{    AI\_MATKEY\_TEXMAP\_AXIS(aiTextureType\_EMISSIVE, N)}}
+\DoxyCodeLine{1381 }
+\DoxyCodeLine{1382 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXMAP\_AXIS\_NORMALS(N) \(\backslash\)}}
+\DoxyCodeLine{1383 \textcolor{preprocessor}{    AI\_MATKEY\_TEXMAP\_AXIS(aiTextureType\_NORMALS, N)}}
+\DoxyCodeLine{1384 }
+\DoxyCodeLine{1385 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXMAP\_AXIS\_HEIGHT(N) \(\backslash\)}}
+\DoxyCodeLine{1386 \textcolor{preprocessor}{    AI\_MATKEY\_TEXMAP\_AXIS(aiTextureType\_HEIGHT, N)}}
+\DoxyCodeLine{1387 }
+\DoxyCodeLine{1388 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXMAP\_AXIS\_SHININESS(N) \(\backslash\)}}
+\DoxyCodeLine{1389 \textcolor{preprocessor}{    AI\_MATKEY\_TEXMAP\_AXIS(aiTextureType\_SHININESS, N)}}
+\DoxyCodeLine{1390 }
+\DoxyCodeLine{1391 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXMAP\_AXIS\_OPACITY(N) \(\backslash\)}}
+\DoxyCodeLine{1392 \textcolor{preprocessor}{    AI\_MATKEY\_TEXMAP\_AXIS(aiTextureType\_OPACITY, N)}}
+\DoxyCodeLine{1393 }
+\DoxyCodeLine{1394 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXMAP\_AXIS\_DISPLACEMENT(N) \(\backslash\)}}
+\DoxyCodeLine{1395 \textcolor{preprocessor}{    AI\_MATKEY\_TEXMAP\_AXIS(aiTextureType\_DISPLACEMENT, N)}}
+\DoxyCodeLine{1396 }
+\DoxyCodeLine{1397 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXMAP\_AXIS\_LIGHTMAP(N) \(\backslash\)}}
+\DoxyCodeLine{1398 \textcolor{preprocessor}{    AI\_MATKEY\_TEXMAP\_AXIS(aiTextureType\_LIGHTMAP, N)}}
+\DoxyCodeLine{1399 }
+\DoxyCodeLine{1400 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXMAP\_AXIS\_REFLECTION(N) \(\backslash\)}}
+\DoxyCodeLine{1401 \textcolor{preprocessor}{    AI\_MATKEY\_TEXMAP\_AXIS(aiTextureType\_REFLECTION, N)}}
+\DoxyCodeLine{1402 }
+\DoxyCodeLine{1404 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1405 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVTRANSFORM(type, N) \_AI\_MATKEY\_UVTRANSFORM\_BASE, type, N}}
+\DoxyCodeLine{1406 }
+\DoxyCodeLine{1407 \textcolor{comment}{// For backward compatibility and simplicity}}
+\DoxyCodeLine{1409 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_MATKEY\_UVTRANSFORM\_DIFFUSE(N) \(\backslash\)}}
+\DoxyCodeLine{1410 \textcolor{preprocessor}{    AI\_MATKEY\_UVTRANSFORM(aiTextureType\_DIFFUSE, N)}}
+\DoxyCodeLine{1411 }
+\DoxyCodeLine{1412 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVTRANSFORM\_SPECULAR(N) \(\backslash\)}}
+\DoxyCodeLine{1413 \textcolor{preprocessor}{    AI\_MATKEY\_UVTRANSFORM(aiTextureType\_SPECULAR, N)}}
+\DoxyCodeLine{1414 }
+\DoxyCodeLine{1415 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVTRANSFORM\_AMBIENT(N) \(\backslash\)}}
+\DoxyCodeLine{1416 \textcolor{preprocessor}{    AI\_MATKEY\_UVTRANSFORM(aiTextureType\_AMBIENT, N)}}
+\DoxyCodeLine{1417 }
+\DoxyCodeLine{1418 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVTRANSFORM\_EMISSIVE(N) \(\backslash\)}}
+\DoxyCodeLine{1419 \textcolor{preprocessor}{    AI\_MATKEY\_UVTRANSFORM(aiTextureType\_EMISSIVE, N)}}
+\DoxyCodeLine{1420 }
+\DoxyCodeLine{1421 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVTRANSFORM\_NORMALS(N) \(\backslash\)}}
+\DoxyCodeLine{1422 \textcolor{preprocessor}{    AI\_MATKEY\_UVTRANSFORM(aiTextureType\_NORMALS, N)}}
+\DoxyCodeLine{1423 }
+\DoxyCodeLine{1424 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVTRANSFORM\_HEIGHT(N) \(\backslash\)}}
+\DoxyCodeLine{1425 \textcolor{preprocessor}{    AI\_MATKEY\_UVTRANSFORM(aiTextureType\_HEIGHT, N)}}
+\DoxyCodeLine{1426 }
+\DoxyCodeLine{1427 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVTRANSFORM\_SHININESS(N) \(\backslash\)}}
+\DoxyCodeLine{1428 \textcolor{preprocessor}{    AI\_MATKEY\_UVTRANSFORM(aiTextureType\_SHININESS, N)}}
+\DoxyCodeLine{1429 }
+\DoxyCodeLine{1430 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVTRANSFORM\_OPACITY(N) \(\backslash\)}}
+\DoxyCodeLine{1431 \textcolor{preprocessor}{    AI\_MATKEY\_UVTRANSFORM(aiTextureType\_OPACITY, N)}}
+\DoxyCodeLine{1432 }
+\DoxyCodeLine{1433 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVTRANSFORM\_DISPLACEMENT(N) \(\backslash\)}}
+\DoxyCodeLine{1434 \textcolor{preprocessor}{    AI\_MATKEY\_UVTRANSFORM(aiTextureType\_DISPLACEMENT, N)}}
+\DoxyCodeLine{1435 }
+\DoxyCodeLine{1436 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVTRANSFORM\_LIGHTMAP(N) \(\backslash\)}}
+\DoxyCodeLine{1437 \textcolor{preprocessor}{    AI\_MATKEY\_UVTRANSFORM(aiTextureType\_LIGHTMAP, N)}}
+\DoxyCodeLine{1438 }
+\DoxyCodeLine{1439 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVTRANSFORM\_REFLECTION(N) \(\backslash\)}}
+\DoxyCodeLine{1440 \textcolor{preprocessor}{    AI\_MATKEY\_UVTRANSFORM(aiTextureType\_REFLECTION, N)}}
+\DoxyCodeLine{1441 }
+\DoxyCodeLine{1442 \textcolor{preprocessor}{\#define AI\_MATKEY\_UVTRANSFORM\_UNKNOWN(N) \(\backslash\)}}
+\DoxyCodeLine{1443 \textcolor{preprocessor}{    AI\_MATKEY\_UVTRANSFORM(aiTextureType\_UNKNOWN, N)}}
+\DoxyCodeLine{1444 }
+\DoxyCodeLine{1446 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1447 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXFLAGS(type, N) \_AI\_MATKEY\_TEXFLAGS\_BASE, type, N}}
+\DoxyCodeLine{1448 }
+\DoxyCodeLine{1449 \textcolor{comment}{// For backward compatibility and simplicity}}
+\DoxyCodeLine{1451 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_MATKEY\_TEXFLAGS\_DIFFUSE(N) \(\backslash\)}}
+\DoxyCodeLine{1452 \textcolor{preprocessor}{    AI\_MATKEY\_TEXFLAGS(aiTextureType\_DIFFUSE, N)}}
+\DoxyCodeLine{1453 }
+\DoxyCodeLine{1454 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXFLAGS\_SPECULAR(N) \(\backslash\)}}
+\DoxyCodeLine{1455 \textcolor{preprocessor}{    AI\_MATKEY\_TEXFLAGS(aiTextureType\_SPECULAR, N)}}
+\DoxyCodeLine{1456 }
+\DoxyCodeLine{1457 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXFLAGS\_AMBIENT(N) \(\backslash\)}}
+\DoxyCodeLine{1458 \textcolor{preprocessor}{    AI\_MATKEY\_TEXFLAGS(aiTextureType\_AMBIENT, N)}}
+\DoxyCodeLine{1459 }
+\DoxyCodeLine{1460 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXFLAGS\_EMISSIVE(N) \(\backslash\)}}
+\DoxyCodeLine{1461 \textcolor{preprocessor}{    AI\_MATKEY\_TEXFLAGS(aiTextureType\_EMISSIVE, N)}}
+\DoxyCodeLine{1462 }
+\DoxyCodeLine{1463 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXFLAGS\_NORMALS(N) \(\backslash\)}}
+\DoxyCodeLine{1464 \textcolor{preprocessor}{    AI\_MATKEY\_TEXFLAGS(aiTextureType\_NORMALS, N)}}
+\DoxyCodeLine{1465 }
+\DoxyCodeLine{1466 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXFLAGS\_HEIGHT(N) \(\backslash\)}}
+\DoxyCodeLine{1467 \textcolor{preprocessor}{    AI\_MATKEY\_TEXFLAGS(aiTextureType\_HEIGHT, N)}}
+\DoxyCodeLine{1468 }
+\DoxyCodeLine{1469 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXFLAGS\_SHININESS(N) \(\backslash\)}}
+\DoxyCodeLine{1470 \textcolor{preprocessor}{    AI\_MATKEY\_TEXFLAGS(aiTextureType\_SHININESS, N)}}
+\DoxyCodeLine{1471 }
+\DoxyCodeLine{1472 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXFLAGS\_OPACITY(N) \(\backslash\)}}
+\DoxyCodeLine{1473 \textcolor{preprocessor}{    AI\_MATKEY\_TEXFLAGS(aiTextureType\_OPACITY, N)}}
+\DoxyCodeLine{1474 }
+\DoxyCodeLine{1475 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXFLAGS\_DISPLACEMENT(N) \(\backslash\)}}
+\DoxyCodeLine{1476 \textcolor{preprocessor}{    AI\_MATKEY\_TEXFLAGS(aiTextureType\_DISPLACEMENT, N)}}
+\DoxyCodeLine{1477 }
+\DoxyCodeLine{1478 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXFLAGS\_LIGHTMAP(N) \(\backslash\)}}
+\DoxyCodeLine{1479 \textcolor{preprocessor}{    AI\_MATKEY\_TEXFLAGS(aiTextureType\_LIGHTMAP, N)}}
+\DoxyCodeLine{1480 }
+\DoxyCodeLine{1481 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXFLAGS\_REFLECTION(N) \(\backslash\)}}
+\DoxyCodeLine{1482 \textcolor{preprocessor}{    AI\_MATKEY\_TEXFLAGS(aiTextureType\_REFLECTION, N)}}
+\DoxyCodeLine{1483 }
+\DoxyCodeLine{1484 \textcolor{preprocessor}{\#define AI\_MATKEY\_TEXFLAGS\_UNKNOWN(N) \(\backslash\)}}
+\DoxyCodeLine{1485 \textcolor{preprocessor}{    AI\_MATKEY\_TEXFLAGS(aiTextureType\_UNKNOWN, N)}}
+\DoxyCodeLine{1486 }
+\DoxyCodeLine{1489 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1499 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1500 ASSIMP\_API C\_ENUM \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a3052135188f8fc7987d2f98fa17615e4}{aiGetMaterialProperty}}(}
+\DoxyCodeLine{1501         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_material}{aiMaterial}} *pMat,}
+\DoxyCodeLine{1502         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{1503         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{1504         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index,}
+\DoxyCodeLine{1505         \textcolor{keyword}{const} C\_STRUCT aiMaterialProperty **pPropOut);}
+\DoxyCodeLine{1506 }
+\DoxyCodeLine{1507 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1532 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1533 ASSIMP\_API C\_ENUM \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a5963149f09dcb194c269237c415fbff6}{aiGetMaterialFloatArray}}(}
+\DoxyCodeLine{1534         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_material}{aiMaterial}} *pMat,}
+\DoxyCodeLine{1535         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{1536         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{1537         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index,}
+\DoxyCodeLine{1538         \textcolor{keywordtype}{float} *pOut,}
+\DoxyCodeLine{1539         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *pMax);}
+\DoxyCodeLine{1540 }
+\DoxyCodeLine{1541 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1559 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1560 \textcolor{keyword}{inline} \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a51e7bf4cbc90f914c7b0b2348277dc5b}{aiGetMaterialFloat}}(\textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_material}{aiMaterial}} *pMat,}
+\DoxyCodeLine{1561         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{1562         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{1563         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index,}
+\DoxyCodeLine{1564         \textcolor{keywordtype}{float} *pOut) \{}
+\DoxyCodeLine{1565     \textcolor{keywordflow}{return} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a5963149f09dcb194c269237c415fbff6}{aiGetMaterialFloatArray}}(pMat, pKey, type, index, pOut, (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *)0x0);}
+\DoxyCodeLine{1566 \}}
+\DoxyCodeLine{1567 }
+\DoxyCodeLine{1568 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1573 \textcolor{comment}{}ASSIMP\_API C\_ENUM \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a8ed2b99a9861d257b77231b4ed70f69d}{aiGetMaterialIntegerArray}}(\textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_material}{aiMaterial}} *pMat,}
+\DoxyCodeLine{1574         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{1575         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{1576         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index,}
+\DoxyCodeLine{1577         \textcolor{keywordtype}{int} *pOut,}
+\DoxyCodeLine{1578         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *pMax);}
+\DoxyCodeLine{1579 }
+\DoxyCodeLine{1580 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1584 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1585 \textcolor{keyword}{inline} \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a0c3edecf5eade8c3c0578de7eab6d6dc}{aiGetMaterialInteger}}(\textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_material}{aiMaterial}} *pMat,}
+\DoxyCodeLine{1586         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{1587         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{1588         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index,}
+\DoxyCodeLine{1589         \textcolor{keywordtype}{int} *pOut) \{}
+\DoxyCodeLine{1590     \textcolor{keywordflow}{return} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a8ed2b99a9861d257b77231b4ed70f69d}{aiGetMaterialIntegerArray}}(pMat, pKey, type, index, pOut, (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *)0x0);}
+\DoxyCodeLine{1591 \}}
+\DoxyCodeLine{1592 }
+\DoxyCodeLine{1593 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1597 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1598 ASSIMP\_API C\_ENUM \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_ac4a6fbb0c08ddd1372ae187bf108d7e8}{aiGetMaterialColor}}(\textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_material}{aiMaterial}} *pMat,}
+\DoxyCodeLine{1599         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{1600         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{1601         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index,}
+\DoxyCodeLine{1602         C\_STRUCT \mbox{\hyperlink{structai_color4_d}{aiColor4D}} *pOut);}
+\DoxyCodeLine{1603 }
+\DoxyCodeLine{1604 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1608 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1609 ASSIMP\_API C\_ENUM \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a47b7e8aecc784edcb894600af33fd592}{aiGetMaterialUVTransform}}(\textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_material}{aiMaterial}} *pMat,}
+\DoxyCodeLine{1610         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{1611         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{1612         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index,}
+\DoxyCodeLine{1613         C\_STRUCT \mbox{\hyperlink{structai_u_v_transform}{aiUVTransform}} *pOut);}
+\DoxyCodeLine{1614 }
+\DoxyCodeLine{1615 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1619 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1620 ASSIMP\_API C\_ENUM \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a20e2873fb56982ea3a5dcd6a343b7070}{aiGetMaterialString}}(\textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_material}{aiMaterial}} *pMat,}
+\DoxyCodeLine{1621         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pKey,}
+\DoxyCodeLine{1622         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type,}
+\DoxyCodeLine{1623         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index,}
+\DoxyCodeLine{1624         C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} *pOut);}
+\DoxyCodeLine{1625 }
+\DoxyCodeLine{1626 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1632 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1633 ASSIMP\_API \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a8d331464c4f86b44cb6c6d64e39398ed}{aiGetMaterialTextureCount}}(\textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_material}{aiMaterial}} *pMat,}
+\DoxyCodeLine{1634         C\_ENUM \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0}{aiTextureType}} type);}
+\DoxyCodeLine{1635 }
+\DoxyCodeLine{1636 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1672 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1673 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1674 ASSIMP\_API \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_af3a53df46231d9f0aab39e972cd40ad3}{aiGetMaterialTexture}}(\textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_material}{aiMaterial}} *mat,}
+\DoxyCodeLine{1675         \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0}{aiTextureType}} type,}
+\DoxyCodeLine{1676         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index,}
+\DoxyCodeLine{1677         \mbox{\hyperlink{structai_string}{aiString}} *path,}
+\DoxyCodeLine{1678         \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6186e909f1ae28133ab10f1b4635b0f9}{aiTextureMapping}} *mapping = NULL,}
+\DoxyCodeLine{1679         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *uvindex = NULL,}
+\DoxyCodeLine{1680         ai\_real *blend = NULL,}
+\DoxyCodeLine{1681         \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_afcd3096d69affba13114cedfc6f9ee6b}{aiTextureOp}} *op = NULL,}
+\DoxyCodeLine{1682         \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6cbe56056751aa80e8dd714632a49de0}{aiTextureMapMode}} *mapmode = NULL,}
+\DoxyCodeLine{1683         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *flags = NULL);}
+\DoxyCodeLine{1684 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{1685 C\_ENUM \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_af3a53df46231d9f0aab39e972cd40ad3}{aiGetMaterialTexture}}(\textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_material}{aiMaterial}} *mat,}
+\DoxyCodeLine{1686         C\_ENUM \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a7dd415ff703a2cc53d1c22ddbbd7dde0}{aiTextureType}} type,}
+\DoxyCodeLine{1687         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index,}
+\DoxyCodeLine{1688         C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} *path,}
+\DoxyCodeLine{1689         C\_ENUM \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6186e909f1ae28133ab10f1b4635b0f9}{aiTextureMapping}} *mapping \textcolor{comment}{/*= NULL*/},}
+\DoxyCodeLine{1690         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *uvindex \textcolor{comment}{/*= NULL*/},}
+\DoxyCodeLine{1691         ai\_real *blend \textcolor{comment}{/*= NULL*/},}
+\DoxyCodeLine{1692         C\_ENUM \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_afcd3096d69affba13114cedfc6f9ee6b}{aiTextureOp}} *op \textcolor{comment}{/*= NULL*/},}
+\DoxyCodeLine{1693         C\_ENUM \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_material_8h_a6cbe56056751aa80e8dd714632a49de0}{aiTextureMapMode}} *mapmode \textcolor{comment}{/*= NULL*/},}
+\DoxyCodeLine{1694         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *flags \textcolor{comment}{/*= NULL*/});}
+\DoxyCodeLine{1695 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1696 }
+\DoxyCodeLine{1697 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1698 \}}
+\DoxyCodeLine{1699 }
+\DoxyCodeLine{1700 \textcolor{preprocessor}{\#include "{}material.inl"{}}}
+\DoxyCodeLine{1701 }
+\DoxyCodeLine{1702 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{1703 }
+\DoxyCodeLine{1704 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

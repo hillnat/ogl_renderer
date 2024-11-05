@@ -14,7 +14,7 @@ void Rigidbody::UpdateBody(float fixedDeltaTime) {
 		if (gravityScale != 0) {
 			AddForcePure(vec3(0, -4.9035f * gravityScale, 0));
 		}
-		attachedBody->TranslateGlobal(velocity * fixedDeltaTime);
+		attachedTransform->TranslateGlobal(velocity * fixedDeltaTime);
 	}	
 }
 void Rigidbody::AddForce(vec3 force) {

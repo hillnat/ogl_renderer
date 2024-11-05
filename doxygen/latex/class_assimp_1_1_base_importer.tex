@@ -1,0 +1,1200 @@
+\hypertarget{class_assimp_1_1_base_importer}{}\doxysection{Assimp\+::Base\+Importer Class Reference}
+\label{class_assimp_1_1_base_importer}\index{Assimp::BaseImporter@{Assimp::BaseImporter}}
+
+
+{\ttfamily \#include $<$Base\+Importer.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}\label{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}} 
+enum \mbox{\hyperlink{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}{Text\+File\+Mode}} \{ \newline
+{\bfseries ALLOW\+\_\+\+EMPTY}
+, {\bfseries FORBID\+\_\+\+EMPTY}
+, {\bfseries ALLOW\+\_\+\+EMPTY}
+, {\bfseries FORBID\+\_\+\+EMPTY}
+, \newline
+{\bfseries ALLOW\+\_\+\+EMPTY}
+, {\bfseries FORBID\+\_\+\+EMPTY}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum to define, if empty files are ok or not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}\label{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}} 
+enum \mbox{\hyperlink{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}{Text\+File\+Mode}} \{ \newline
+{\bfseries ALLOW\+\_\+\+EMPTY}
+, {\bfseries FORBID\+\_\+\+EMPTY}
+, {\bfseries ALLOW\+\_\+\+EMPTY}
+, {\bfseries FORBID\+\_\+\+EMPTY}
+, \newline
+{\bfseries ALLOW\+\_\+\+EMPTY}
+, {\bfseries FORBID\+\_\+\+EMPTY}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum to define, if empty files are ok or not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}\label{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}} 
+enum \mbox{\hyperlink{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}{Text\+File\+Mode}} \{ \newline
+{\bfseries ALLOW\+\_\+\+EMPTY}
+, {\bfseries FORBID\+\_\+\+EMPTY}
+, {\bfseries ALLOW\+\_\+\+EMPTY}
+, {\bfseries FORBID\+\_\+\+EMPTY}
+, \newline
+{\bfseries ALLOW\+\_\+\+EMPTY}
+, {\bfseries FORBID\+\_\+\+EMPTY}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum to define, if empty files are ok or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_assimp_1_1_base_importer_a699aebae893f17b5a5dd415ae7bee7f0}{Base\+Importer}} () AI\+\_\+\+NO\+\_\+\+EXCEPT
+\item 
+virtual \mbox{\hyperlink{class_assimp_1_1_base_importer_aa09f8b01894b96c1fcd6a8f22b003deb}{$\sim$\+Base\+Importer}} ()=default
+\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_base_importer_a13588d3396ba5b7ed1f1cb46e0945cfd}{Can\+Read}} (const std\+::string \&p\+File, \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, bool check\+Sig) const =0
+\item 
+\mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_base_importer_a2f5938785f722ebde616a30160bccde1}{Read\+File}} (\mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} $\ast$p\+Imp, const std\+::string \&p\+File, \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler)
+\item 
+const std\+::string \& \mbox{\hyperlink{class_assimp_1_1_base_importer_a285229c6bf59116b4653944ef7087727}{Get\+Error\+Text}} () const
+\item 
+const std\+::exception\+\_\+ptr \& \mbox{\hyperlink{class_assimp_1_1_base_importer_a27198204f4ef728968df429880564d60}{Get\+Exception}} () const
+\item 
+virtual void \mbox{\hyperlink{class_assimp_1_1_base_importer_ac076d9136745e898d43d9ea8f0d0c586}{Setup\+Properties}} (const \mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} $\ast$p\+Imp)
+\item 
+virtual const \mbox{\hyperlink{structai_importer_desc}{ai\+Importer\+Desc}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_base_importer_aea402563e886993c7b5c0d489288fa4c}{Get\+Info}} () const =0
+\item 
+void \mbox{\hyperlink{class_assimp_1_1_base_importer_a11b61c90b472d900d4f7e2d2f2219dac}{Set\+File\+Scale}} (double scale)
+\item 
+void \mbox{\hyperlink{class_assimp_1_1_base_importer_a7a658f1192a37e336ba98fe701918b31}{Get\+Extension\+List}} (std\+::set$<$ std\+::string $>$ \&extensions)
+\item 
+\mbox{\hyperlink{class_assimp_1_1_base_importer_a699aebae893f17b5a5dd415ae7bee7f0}{Base\+Importer}} () AI\+\_\+\+NO\+\_\+\+EXCEPT
+\item 
+virtual \mbox{\hyperlink{class_assimp_1_1_base_importer_aa09f8b01894b96c1fcd6a8f22b003deb}{$\sim$\+Base\+Importer}} ()=default
+\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_base_importer_a13588d3396ba5b7ed1f1cb46e0945cfd}{Can\+Read}} (const std\+::string \&p\+File, \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, bool check\+Sig) const =0
+\item 
+\mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_base_importer_a2f5938785f722ebde616a30160bccde1}{Read\+File}} (\mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} $\ast$p\+Imp, const std\+::string \&p\+File, \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler)
+\item 
+const std\+::string \& \mbox{\hyperlink{class_assimp_1_1_base_importer_a285229c6bf59116b4653944ef7087727}{Get\+Error\+Text}} () const
+\item 
+const std\+::exception\+\_\+ptr \& \mbox{\hyperlink{class_assimp_1_1_base_importer_a27198204f4ef728968df429880564d60}{Get\+Exception}} () const
+\item 
+virtual void \mbox{\hyperlink{class_assimp_1_1_base_importer_ac076d9136745e898d43d9ea8f0d0c586}{Setup\+Properties}} (const \mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} $\ast$p\+Imp)
+\item 
+virtual const \mbox{\hyperlink{structai_importer_desc}{ai\+Importer\+Desc}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_base_importer_aea402563e886993c7b5c0d489288fa4c}{Get\+Info}} () const =0
+\item 
+void \mbox{\hyperlink{class_assimp_1_1_base_importer_a11b61c90b472d900d4f7e2d2f2219dac}{Set\+File\+Scale}} (double scale)
+\item 
+void \mbox{\hyperlink{class_assimp_1_1_base_importer_a7a658f1192a37e336ba98fe701918b31}{Get\+Extension\+List}} (std\+::set$<$ std\+::string $>$ \&extensions)
+\item 
+\mbox{\hyperlink{class_assimp_1_1_base_importer_a699aebae893f17b5a5dd415ae7bee7f0}{Base\+Importer}} () AI\+\_\+\+NO\+\_\+\+EXCEPT
+\item 
+virtual \mbox{\hyperlink{class_assimp_1_1_base_importer_aa09f8b01894b96c1fcd6a8f22b003deb}{$\sim$\+Base\+Importer}} ()=default
+\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_base_importer_a13588d3396ba5b7ed1f1cb46e0945cfd}{Can\+Read}} (const std\+::string \&p\+File, \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, bool check\+Sig) const =0
+\item 
+\mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_base_importer_a2f5938785f722ebde616a30160bccde1}{Read\+File}} (\mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} $\ast$p\+Imp, const std\+::string \&p\+File, \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler)
+\item 
+const std\+::string \& \mbox{\hyperlink{class_assimp_1_1_base_importer_a285229c6bf59116b4653944ef7087727}{Get\+Error\+Text}} () const
+\item 
+const std\+::exception\+\_\+ptr \& \mbox{\hyperlink{class_assimp_1_1_base_importer_a27198204f4ef728968df429880564d60}{Get\+Exception}} () const
+\item 
+virtual void \mbox{\hyperlink{class_assimp_1_1_base_importer_ac076d9136745e898d43d9ea8f0d0c586}{Setup\+Properties}} (const \mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} $\ast$p\+Imp)
+\item 
+virtual const \mbox{\hyperlink{structai_importer_desc}{ai\+Importer\+Desc}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_base_importer_aea402563e886993c7b5c0d489288fa4c}{Get\+Info}} () const =0
+\item 
+void \mbox{\hyperlink{class_assimp_1_1_base_importer_a11b61c90b472d900d4f7e2d2f2219dac}{Set\+File\+Scale}} (double scale)
+\item 
+void \mbox{\hyperlink{class_assimp_1_1_base_importer_a7a658f1192a37e336ba98fe701918b31}{Get\+Extension\+List}} (std\+::set$<$ std\+::string $>$ \&extensions)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_base_importer_abae9dd2ae64d8fbac94fa8702848f133}{Search\+File\+Header\+For\+Token}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOSystem, const std\+::string \&file, const char $\ast$$\ast$tokens, std\+::size\+\_\+t num\+Tokens, unsigned int search\+Bytes=200, bool tokens\+Sol=false, bool no\+Graph\+Before\+Tokens=false)
+\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_base_importer_a329d0bf67681c92d07fafbb5c327a2f9}{Simple\+Extension\+Check}} (const std\+::string \&p\+File, const char $\ast$ext0, const char $\ast$ext1=nullptr, const char $\ast$ext2=nullptr, const char $\ast$ext3=nullptr)
+\begin{DoxyCompactList}\small\item\em Check whether a file has a specific file extension. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_base_importer_a4d3456d16f59cd28f456b79eabe206b0}{Has\+Extension}} (const std\+::string \&p\+File, const std\+::set$<$ std\+::string $>$ \&extensions)
+\begin{DoxyCompactList}\small\item\em Check whether a file has one of the passed file extensions. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_assimp_1_1_base_importer_a25edd42695863af078d2bab65077ce6c}{Get\+Extension}} (const std\+::string \&p\+File)
+\begin{DoxyCompactList}\small\item\em Extract file extension from a string. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_base_importer_a6b42085bed85c180f080daab395e8832}{Check\+Magic\+Token}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, const std\+::string \&p\+File, const void $\ast$magic, std\+::size\+\_\+t num, unsigned int offset=0, unsigned int size=4)
+\begin{DoxyCompactList}\small\item\em Check whether a file starts with one or more magic tokens. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_assimp_1_1_base_importer_afc318aa0eb85b73f501156a50f3eb703}{Convert\+To\+UTF8}} (std\+::vector$<$ char $>$ \&data)
+\item 
+static void \mbox{\hyperlink{class_assimp_1_1_base_importer_af36cd260cc2e756e95ee89d06d7c76d5}{Convert\+UTF8to\+ISO8859\+\_\+1}} (std\+::string \&data)
+\item 
+static void \mbox{\hyperlink{class_assimp_1_1_base_importer_a3a82f762127d9cb823276491fa701e3f}{Text\+File\+To\+Buffer}} (\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$stream, std\+::vector$<$ char $>$ \&data, \mbox{\hyperlink{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}{Text\+File\+Mode}} mode=FORBID\+\_\+\+EMPTY)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static AI\+\_\+\+FORCE\+\_\+\+INLINE void \mbox{\hyperlink{class_assimp_1_1_base_importer_abc1067a6780d7d6dbe457fef8abdb66a}{Copy\+Vector}} (std\+::vector$<$ T $>$ \&vec, T $\ast$\&out, unsigned int \&out\+Length)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static AI\+\_\+\+FORCE\+\_\+\+INLINE void \mbox{\hyperlink{class_assimp_1_1_base_importer_a3ce01553ca65d8cc8f1efc2174845d67}{Copy\+Vector}} (std\+::vector$<$ std\+::unique\+\_\+ptr$<$ T $>$ $>$ \&vec, T $\ast$$\ast$\&out, unsigned int \&out\+Length)
+\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_base_importer_abae9dd2ae64d8fbac94fa8702848f133}{Search\+File\+Header\+For\+Token}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOSystem, const std\+::string \&file, const char $\ast$$\ast$tokens, std\+::size\+\_\+t num\+Tokens, unsigned int search\+Bytes=200, bool tokens\+Sol=false, bool no\+Graph\+Before\+Tokens=false)
+\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_base_importer_a329d0bf67681c92d07fafbb5c327a2f9}{Simple\+Extension\+Check}} (const std\+::string \&p\+File, const char $\ast$ext0, const char $\ast$ext1=nullptr, const char $\ast$ext2=nullptr, const char $\ast$ext3=nullptr)
+\begin{DoxyCompactList}\small\item\em Check whether a file has a specific file extension. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_base_importer_a4d3456d16f59cd28f456b79eabe206b0}{Has\+Extension}} (const std\+::string \&p\+File, const std\+::set$<$ std\+::string $>$ \&extensions)
+\begin{DoxyCompactList}\small\item\em Check whether a file has one of the passed file extensions. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_assimp_1_1_base_importer_a25edd42695863af078d2bab65077ce6c}{Get\+Extension}} (const std\+::string \&p\+File)
+\begin{DoxyCompactList}\small\item\em Extract file extension from a string. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_base_importer_a6b42085bed85c180f080daab395e8832}{Check\+Magic\+Token}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, const std\+::string \&p\+File, const void $\ast$magic, std\+::size\+\_\+t num, unsigned int offset=0, unsigned int size=4)
+\begin{DoxyCompactList}\small\item\em Check whether a file starts with one or more magic tokens. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_assimp_1_1_base_importer_afc318aa0eb85b73f501156a50f3eb703}{Convert\+To\+UTF8}} (std\+::vector$<$ char $>$ \&data)
+\item 
+static void \mbox{\hyperlink{class_assimp_1_1_base_importer_af36cd260cc2e756e95ee89d06d7c76d5}{Convert\+UTF8to\+ISO8859\+\_\+1}} (std\+::string \&data)
+\item 
+static void \mbox{\hyperlink{class_assimp_1_1_base_importer_a3a82f762127d9cb823276491fa701e3f}{Text\+File\+To\+Buffer}} (\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$stream, std\+::vector$<$ char $>$ \&data, \mbox{\hyperlink{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}{Text\+File\+Mode}} mode=FORBID\+\_\+\+EMPTY)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static AI\+\_\+\+FORCE\+\_\+\+INLINE void \mbox{\hyperlink{class_assimp_1_1_base_importer_abc1067a6780d7d6dbe457fef8abdb66a}{Copy\+Vector}} (std\+::vector$<$ T $>$ \&vec, T $\ast$\&out, unsigned int \&out\+Length)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static AI\+\_\+\+FORCE\+\_\+\+INLINE void \mbox{\hyperlink{class_assimp_1_1_base_importer_a3ce01553ca65d8cc8f1efc2174845d67}{Copy\+Vector}} (std\+::vector$<$ std\+::unique\+\_\+ptr$<$ T $>$ $>$ \&vec, T $\ast$$\ast$\&out, unsigned int \&out\+Length)
+\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_base_importer_abae9dd2ae64d8fbac94fa8702848f133}{Search\+File\+Header\+For\+Token}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOSystem, const std\+::string \&file, const char $\ast$$\ast$tokens, std\+::size\+\_\+t num\+Tokens, unsigned int search\+Bytes=200, bool tokens\+Sol=false, bool no\+Graph\+Before\+Tokens=false)
+\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_base_importer_a329d0bf67681c92d07fafbb5c327a2f9}{Simple\+Extension\+Check}} (const std\+::string \&p\+File, const char $\ast$ext0, const char $\ast$ext1=nullptr, const char $\ast$ext2=nullptr, const char $\ast$ext3=nullptr)
+\begin{DoxyCompactList}\small\item\em Check whether a file has a specific file extension. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_base_importer_a4d3456d16f59cd28f456b79eabe206b0}{Has\+Extension}} (const std\+::string \&p\+File, const std\+::set$<$ std\+::string $>$ \&extensions)
+\begin{DoxyCompactList}\small\item\em Check whether a file has one of the passed file extensions. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_assimp_1_1_base_importer_a25edd42695863af078d2bab65077ce6c}{Get\+Extension}} (const std\+::string \&p\+File)
+\begin{DoxyCompactList}\small\item\em Extract file extension from a string. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_base_importer_a6b42085bed85c180f080daab395e8832}{Check\+Magic\+Token}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, const std\+::string \&p\+File, const void $\ast$magic, std\+::size\+\_\+t num, unsigned int offset=0, unsigned int size=4)
+\begin{DoxyCompactList}\small\item\em Check whether a file starts with one or more magic tokens. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_assimp_1_1_base_importer_afc318aa0eb85b73f501156a50f3eb703}{Convert\+To\+UTF8}} (std\+::vector$<$ char $>$ \&data)
+\item 
+static void \mbox{\hyperlink{class_assimp_1_1_base_importer_af36cd260cc2e756e95ee89d06d7c76d5}{Convert\+UTF8to\+ISO8859\+\_\+1}} (std\+::string \&data)
+\item 
+static void \mbox{\hyperlink{class_assimp_1_1_base_importer_a3a82f762127d9cb823276491fa701e3f}{Text\+File\+To\+Buffer}} (\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$stream, std\+::vector$<$ char $>$ \&data, \mbox{\hyperlink{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}{Text\+File\+Mode}} mode=FORBID\+\_\+\+EMPTY)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static AI\+\_\+\+FORCE\+\_\+\+INLINE void \mbox{\hyperlink{class_assimp_1_1_base_importer_abc1067a6780d7d6dbe457fef8abdb66a}{Copy\+Vector}} (std\+::vector$<$ T $>$ \&vec, T $\ast$\&out, unsigned int \&out\+Length)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static AI\+\_\+\+FORCE\+\_\+\+INLINE void \mbox{\hyperlink{class_assimp_1_1_base_importer_a3ce01553ca65d8cc8f1efc2174845d67}{Copy\+Vector}} (std\+::vector$<$ std\+::unique\+\_\+ptr$<$ T $>$ $>$ \&vec, T $\ast$$\ast$\&out, unsigned int \&out\+Length)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}{Intern\+Read\+File}} (const std\+::string \&p\+File, \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$p\+Scene, \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler)=0
+\item 
+virtual void \mbox{\hyperlink{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}{Intern\+Read\+File}} (const std\+::string \&p\+File, \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$p\+Scene, \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler)=0
+\item 
+virtual void \mbox{\hyperlink{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}{Intern\+Read\+File}} (const std\+::string \&p\+File, \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$p\+Scene, \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_ad5bb9d0bff964c79b625c754b3adb04c}\label{class_assimp_1_1_base_importer_ad5bb9d0bff964c79b625c754b3adb04c}} 
+double {\bfseries importer\+Scale} = 1.\+0
+\item 
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_af85971f80c5f45fef8c3a3395e4bbe14}\label{class_assimp_1_1_base_importer_af85971f80c5f45fef8c3a3395e4bbe14}} 
+double {\bfseries file\+Scale} = 1.\+0
+\item 
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_abd2c9b86479c0c165e5d84d733e53373}\label{class_assimp_1_1_base_importer_abd2c9b86479c0c165e5d84d733e53373}} 
+std\+::string {\bfseries m\+\_\+\+Error\+Text}
+\begin{DoxyCompactList}\small\item\em Error description in case there was one. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a7bf84fb733992558272add378e7d9525}\label{class_assimp_1_1_base_importer_a7bf84fb733992558272add378e7d9525}} 
+std\+::exception\+\_\+ptr {\bfseries m\+\_\+\+Exception}
+\begin{DoxyCompactList}\small\item\em The exception, in case there was one. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_ada6abefe7b87ef1f548b6a03dcbd941a}\label{class_assimp_1_1_base_importer_ada6abefe7b87ef1f548b6a03dcbd941a}} 
+\mbox{\hyperlink{class_assimp_1_1_progress_handler}{Progress\+Handler}} $\ast$ {\bfseries m\+\_\+progress}
+\begin{DoxyCompactList}\small\item\em Currently set progress handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_ac81c9c578a539b88828a1e57a4f242cd}\label{class_assimp_1_1_base_importer_ac81c9c578a539b88828a1e57a4f242cd}} 
+class {\bfseries Importer}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+FOR IMPORTER PLUGINS ONLY\+: The \mbox{\hyperlink{class_assimp_1_1_base_importer}{Base\+Importer}} defines a common interface for all importer worker classes.
+
+The interface defines two functions\+: \mbox{\hyperlink{class_assimp_1_1_base_importer_a13588d3396ba5b7ed1f1cb46e0945cfd}{Can\+Read()}} is used to check if the importer can handle the format of the given file. If an implementation of this function returns true, the importer then calls \mbox{\hyperlink{class_assimp_1_1_base_importer_a2f5938785f722ebde616a30160bccde1}{Read\+File()}} which imports the given file. Read\+File is not overridable, it just calls \mbox{\hyperlink{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}{Intern\+Read\+File()}} and catches any Import\+Error\+Exception that might occur. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a699aebae893f17b5a5dd415ae7bee7f0}\label{class_assimp_1_1_base_importer_a699aebae893f17b5a5dd415ae7bee7f0}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!BaseImporter@{BaseImporter}}
+\index{BaseImporter@{BaseImporter}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{BaseImporter()}{BaseImporter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Assimp\+::\+Base\+Importer\+::\+Base\+Importer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor to be privately used by Importer \mbox{\Hypertarget{class_assimp_1_1_base_importer_aa09f8b01894b96c1fcd6a8f22b003deb}\label{class_assimp_1_1_base_importer_aa09f8b01894b96c1fcd6a8f22b003deb}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!````~BaseImporter@{$\sim$BaseImporter}}
+\index{````~BaseImporter@{$\sim$BaseImporter}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{$\sim$BaseImporter()}{~BaseImporter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual Assimp\+::\+Base\+Importer\+::$\sim$\+Base\+Importer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+Destructor, private as well \mbox{\Hypertarget{class_assimp_1_1_base_importer_a699aebae893f17b5a5dd415ae7bee7f0}\label{class_assimp_1_1_base_importer_a699aebae893f17b5a5dd415ae7bee7f0}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!BaseImporter@{BaseImporter}}
+\index{BaseImporter@{BaseImporter}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{BaseImporter()}{BaseImporter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Assimp\+::\+Base\+Importer\+::\+Base\+Importer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor to be privately used by Importer \mbox{\Hypertarget{class_assimp_1_1_base_importer_aa09f8b01894b96c1fcd6a8f22b003deb}\label{class_assimp_1_1_base_importer_aa09f8b01894b96c1fcd6a8f22b003deb}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!````~BaseImporter@{$\sim$BaseImporter}}
+\index{````~BaseImporter@{$\sim$BaseImporter}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{$\sim$BaseImporter()}{~BaseImporter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual Assimp\+::\+Base\+Importer\+::$\sim$\+Base\+Importer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+Destructor, private as well \mbox{\Hypertarget{class_assimp_1_1_base_importer_a699aebae893f17b5a5dd415ae7bee7f0}\label{class_assimp_1_1_base_importer_a699aebae893f17b5a5dd415ae7bee7f0}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!BaseImporter@{BaseImporter}}
+\index{BaseImporter@{BaseImporter}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{BaseImporter()}{BaseImporter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Assimp\+::\+Base\+Importer\+::\+Base\+Importer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor to be privately used by Importer \mbox{\Hypertarget{class_assimp_1_1_base_importer_aa09f8b01894b96c1fcd6a8f22b003deb}\label{class_assimp_1_1_base_importer_aa09f8b01894b96c1fcd6a8f22b003deb}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!````~BaseImporter@{$\sim$BaseImporter}}
+\index{````~BaseImporter@{$\sim$BaseImporter}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{$\sim$BaseImporter()}{~BaseImporter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual Assimp\+::\+Base\+Importer\+::$\sim$\+Base\+Importer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+Destructor, private as well 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a13588d3396ba5b7ed1f1cb46e0945cfd}\label{class_assimp_1_1_base_importer_a13588d3396ba5b7ed1f1cb46e0945cfd}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!CanRead@{CanRead}}
+\index{CanRead@{CanRead}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{CanRead()}{CanRead()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+Base\+Importer\+::\+Can\+Read (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File,  }\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{bool}]{check\+Sig }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns whether the class can handle the format of the given file.
+
+The implementation is expected to perform a full check of the file structure, possibly searching the first bytes of the file for magic identifiers or keywords.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path and file name of the file to be examined. \\
+\hline
+{\em p\+IOHandler} & The IO handler to use for accessing any file. \\
+\hline
+{\em check\+Sig} & Legacy; do not use. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the class can read this file, false if not or if unsure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a13588d3396ba5b7ed1f1cb46e0945cfd}\label{class_assimp_1_1_base_importer_a13588d3396ba5b7ed1f1cb46e0945cfd}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!CanRead@{CanRead}}
+\index{CanRead@{CanRead}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{CanRead()}{CanRead()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+Base\+Importer\+::\+Can\+Read (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File,  }\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{bool}]{check\+Sig }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns whether the class can handle the format of the given file.
+
+The implementation is expected to perform a full check of the file structure, possibly searching the first bytes of the file for magic identifiers or keywords.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path and file name of the file to be examined. \\
+\hline
+{\em p\+IOHandler} & The IO handler to use for accessing any file. \\
+\hline
+{\em check\+Sig} & Legacy; do not use. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the class can read this file, false if not or if unsure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a13588d3396ba5b7ed1f1cb46e0945cfd}\label{class_assimp_1_1_base_importer_a13588d3396ba5b7ed1f1cb46e0945cfd}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!CanRead@{CanRead}}
+\index{CanRead@{CanRead}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{CanRead()}{CanRead()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+Base\+Importer\+::\+Can\+Read (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File,  }\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{bool}]{check\+Sig }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns whether the class can handle the format of the given file.
+
+The implementation is expected to perform a full check of the file structure, possibly searching the first bytes of the file for magic identifiers or keywords.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path and file name of the file to be examined. \\
+\hline
+{\em p\+IOHandler} & The IO handler to use for accessing any file. \\
+\hline
+{\em check\+Sig} & Legacy; do not use. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the class can read this file, false if not or if unsure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a6b42085bed85c180f080daab395e8832}\label{class_assimp_1_1_base_importer_a6b42085bed85c180f080daab395e8832}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!CheckMagicToken@{CheckMagicToken}}
+\index{CheckMagicToken@{CheckMagicToken}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{CheckMagicToken()}{CheckMagicToken()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Base\+Importer\+::\+Check\+Magic\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{const std\+::string \&}]{p\+File,  }\item[{const void $\ast$}]{magic,  }\item[{std\+::size\+\_\+t}]{num,  }\item[{unsigned int}]{offset = {\ttfamily 0},  }\item[{unsigned int}]{size = {\ttfamily 4} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check whether a file starts with one or more magic tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Input file \\
+\hline
+{\em p\+IOHandler} & IO system to be used \\
+\hline
+{\em magic} & n magic tokens @params num Size of magic \\
+\hline
+{\em offset} & Offset from file start where tokens are located \\
+\hline
+{\em Size} & of one token, in bytes. Maximally 16 bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if one of the given tokens was found
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+For convenience, the check is also performed for the byte-\/swapped variant of all tokens (big endian). Only for tokens of size 2,4. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a6b42085bed85c180f080daab395e8832}\label{class_assimp_1_1_base_importer_a6b42085bed85c180f080daab395e8832}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!CheckMagicToken@{CheckMagicToken}}
+\index{CheckMagicToken@{CheckMagicToken}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{CheckMagicToken()}{CheckMagicToken()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Base\+Importer\+::\+Check\+Magic\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{const std\+::string \&}]{p\+File,  }\item[{const void $\ast$}]{magic,  }\item[{std\+::size\+\_\+t}]{num,  }\item[{unsigned int}]{offset = {\ttfamily 0},  }\item[{unsigned int}]{size = {\ttfamily 4} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check whether a file starts with one or more magic tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Input file \\
+\hline
+{\em p\+IOHandler} & IO system to be used \\
+\hline
+{\em magic} & n magic tokens @params num Size of magic \\
+\hline
+{\em offset} & Offset from file start where tokens are located \\
+\hline
+{\em Size} & of one token, in bytes. Maximally 16 bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if one of the given tokens was found
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+For convenience, the check is also performed for the byte-\/swapped variant of all tokens (big endian). Only for tokens of size 2,4. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a6b42085bed85c180f080daab395e8832}\label{class_assimp_1_1_base_importer_a6b42085bed85c180f080daab395e8832}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!CheckMagicToken@{CheckMagicToken}}
+\index{CheckMagicToken@{CheckMagicToken}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{CheckMagicToken()}{CheckMagicToken()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Base\+Importer\+::\+Check\+Magic\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{const std\+::string \&}]{p\+File,  }\item[{const void $\ast$}]{magic,  }\item[{std\+::size\+\_\+t}]{num,  }\item[{unsigned int}]{offset = {\ttfamily 0},  }\item[{unsigned int}]{size = {\ttfamily 4} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check whether a file starts with one or more magic tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Input file \\
+\hline
+{\em p\+IOHandler} & IO system to be used \\
+\hline
+{\em magic} & n magic tokens @params num Size of magic \\
+\hline
+{\em offset} & Offset from file start where tokens are located \\
+\hline
+{\em Size} & of one token, in bytes. Maximally 16 bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if one of the given tokens was found
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+For convenience, the check is also performed for the byte-\/swapped variant of all tokens (big endian). Only for tokens of size 2,4. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_afc318aa0eb85b73f501156a50f3eb703}\label{class_assimp_1_1_base_importer_afc318aa0eb85b73f501156a50f3eb703}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!ConvertToUTF8@{ConvertToUTF8}}
+\index{ConvertToUTF8@{ConvertToUTF8}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{ConvertToUTF8()}{ConvertToUTF8()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static void Assimp\+::\+Base\+Importer\+::\+Convert\+To\+UTF8 (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+An utility for all text file loaders. It converts a file to our UTF8 character set. Errors are reported, but ignored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & File buffer to be converted to UTF8 data. The buffer is resized as appropriate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_afc318aa0eb85b73f501156a50f3eb703}\label{class_assimp_1_1_base_importer_afc318aa0eb85b73f501156a50f3eb703}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!ConvertToUTF8@{ConvertToUTF8}}
+\index{ConvertToUTF8@{ConvertToUTF8}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{ConvertToUTF8()}{ConvertToUTF8()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static void Assimp\+::\+Base\+Importer\+::\+Convert\+To\+UTF8 (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+An utility for all text file loaders. It converts a file to our UTF8 character set. Errors are reported, but ignored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & File buffer to be converted to UTF8 data. The buffer is resized as appropriate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_afc318aa0eb85b73f501156a50f3eb703}\label{class_assimp_1_1_base_importer_afc318aa0eb85b73f501156a50f3eb703}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!ConvertToUTF8@{ConvertToUTF8}}
+\index{ConvertToUTF8@{ConvertToUTF8}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{ConvertToUTF8()}{ConvertToUTF8()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static void Assimp\+::\+Base\+Importer\+::\+Convert\+To\+UTF8 (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+An utility for all text file loaders. It converts a file to our UTF8 character set. Errors are reported, but ignored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & File buffer to be converted to UTF8 data. The buffer is resized as appropriate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_af36cd260cc2e756e95ee89d06d7c76d5}\label{class_assimp_1_1_base_importer_af36cd260cc2e756e95ee89d06d7c76d5}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!ConvertUTF8toISO8859\_1@{ConvertUTF8toISO8859\_1}}
+\index{ConvertUTF8toISO8859\_1@{ConvertUTF8toISO8859\_1}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{ConvertUTF8toISO8859\_1()}{ConvertUTF8toISO8859\_1()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static void Assimp\+::\+Base\+Importer\+::\+Convert\+UTF8to\+ISO8859\+\_\+1 (\begin{DoxyParamCaption}\item[{std\+::string \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+An utility for all text file loaders. It converts a file from our UTF8 character set back to ISO-\/8859-\/1. Errors are reported, but ignored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & File buffer to be converted from UTF8 to ISO-\/8859-\/1. The buffer is resized as appropriate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_af36cd260cc2e756e95ee89d06d7c76d5}\label{class_assimp_1_1_base_importer_af36cd260cc2e756e95ee89d06d7c76d5}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!ConvertUTF8toISO8859\_1@{ConvertUTF8toISO8859\_1}}
+\index{ConvertUTF8toISO8859\_1@{ConvertUTF8toISO8859\_1}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{ConvertUTF8toISO8859\_1()}{ConvertUTF8toISO8859\_1()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static void Assimp\+::\+Base\+Importer\+::\+Convert\+UTF8to\+ISO8859\+\_\+1 (\begin{DoxyParamCaption}\item[{std\+::string \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+An utility for all text file loaders. It converts a file from our UTF8 character set back to ISO-\/8859-\/1. Errors are reported, but ignored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & File buffer to be converted from UTF8 to ISO-\/8859-\/1. The buffer is resized as appropriate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_af36cd260cc2e756e95ee89d06d7c76d5}\label{class_assimp_1_1_base_importer_af36cd260cc2e756e95ee89d06d7c76d5}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!ConvertUTF8toISO8859\_1@{ConvertUTF8toISO8859\_1}}
+\index{ConvertUTF8toISO8859\_1@{ConvertUTF8toISO8859\_1}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{ConvertUTF8toISO8859\_1()}{ConvertUTF8toISO8859\_1()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static void Assimp\+::\+Base\+Importer\+::\+Convert\+UTF8to\+ISO8859\+\_\+1 (\begin{DoxyParamCaption}\item[{std\+::string \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+An utility for all text file loaders. It converts a file from our UTF8 character set back to ISO-\/8859-\/1. Errors are reported, but ignored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & File buffer to be converted from UTF8 to ISO-\/8859-\/1. The buffer is resized as appropriate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a3ce01553ca65d8cc8f1efc2174845d67}\label{class_assimp_1_1_base_importer_a3ce01553ca65d8cc8f1efc2174845d67}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!CopyVector@{CopyVector}}
+\index{CopyVector@{CopyVector}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{CopyVector()}{CopyVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static AI\+\_\+\+FORCE\+\_\+\+INLINE void Assimp\+::\+Base\+Importer\+::\+Copy\+Vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ T $>$ $>$ \&}]{vec,  }\item[{T $\ast$$\ast$\&}]{out,  }\item[{unsigned int \&}]{out\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Utility function to move a std\+::vector of unique\+\_\+ptrs into a \mbox{\hyperlink{structai_scene}{ai\+Scene}} array 
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector of unique\+\_\+ptrs to be moved \\
+\hline
+{\em out} & The output pointer to the allocated array. \\
+\hline
+{\em num\+Out} & The output count of elements copied. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a3ce01553ca65d8cc8f1efc2174845d67}\label{class_assimp_1_1_base_importer_a3ce01553ca65d8cc8f1efc2174845d67}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!CopyVector@{CopyVector}}
+\index{CopyVector@{CopyVector}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{CopyVector()}{CopyVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static AI\+\_\+\+FORCE\+\_\+\+INLINE void Assimp\+::\+Base\+Importer\+::\+Copy\+Vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ T $>$ $>$ \&}]{vec,  }\item[{T $\ast$$\ast$\&}]{out,  }\item[{unsigned int \&}]{out\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Utility function to move a std\+::vector of unique\+\_\+ptrs into a \mbox{\hyperlink{structai_scene}{ai\+Scene}} array 
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector of unique\+\_\+ptrs to be moved \\
+\hline
+{\em out} & The output pointer to the allocated array. \\
+\hline
+{\em num\+Out} & The output count of elements copied. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a3ce01553ca65d8cc8f1efc2174845d67}\label{class_assimp_1_1_base_importer_a3ce01553ca65d8cc8f1efc2174845d67}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!CopyVector@{CopyVector}}
+\index{CopyVector@{CopyVector}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{CopyVector()}{CopyVector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static AI\+\_\+\+FORCE\+\_\+\+INLINE void Assimp\+::\+Base\+Importer\+::\+Copy\+Vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ T $>$ $>$ \&}]{vec,  }\item[{T $\ast$$\ast$\&}]{out,  }\item[{unsigned int \&}]{out\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Utility function to move a std\+::vector of unique\+\_\+ptrs into a \mbox{\hyperlink{structai_scene}{ai\+Scene}} array 
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector of unique\+\_\+ptrs to be moved \\
+\hline
+{\em out} & The output pointer to the allocated array. \\
+\hline
+{\em num\+Out} & The output count of elements copied. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_abc1067a6780d7d6dbe457fef8abdb66a}\label{class_assimp_1_1_base_importer_abc1067a6780d7d6dbe457fef8abdb66a}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!CopyVector@{CopyVector}}
+\index{CopyVector@{CopyVector}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{CopyVector()}{CopyVector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static AI\+\_\+\+FORCE\+\_\+\+INLINE void Assimp\+::\+Base\+Importer\+::\+Copy\+Vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{vec,  }\item[{T $\ast$\&}]{out,  }\item[{unsigned int \&}]{out\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Utility function to move a std\+::vector into a \mbox{\hyperlink{structai_scene}{ai\+Scene}} array 
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to be moved \\
+\hline
+{\em out} & The output pointer to the allocated array. \\
+\hline
+{\em num\+Out} & The output count of elements copied. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_abc1067a6780d7d6dbe457fef8abdb66a}\label{class_assimp_1_1_base_importer_abc1067a6780d7d6dbe457fef8abdb66a}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!CopyVector@{CopyVector}}
+\index{CopyVector@{CopyVector}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{CopyVector()}{CopyVector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static AI\+\_\+\+FORCE\+\_\+\+INLINE void Assimp\+::\+Base\+Importer\+::\+Copy\+Vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{vec,  }\item[{T $\ast$\&}]{out,  }\item[{unsigned int \&}]{out\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Utility function to move a std\+::vector into a \mbox{\hyperlink{structai_scene}{ai\+Scene}} array 
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to be moved \\
+\hline
+{\em out} & The output pointer to the allocated array. \\
+\hline
+{\em num\+Out} & The output count of elements copied. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_abc1067a6780d7d6dbe457fef8abdb66a}\label{class_assimp_1_1_base_importer_abc1067a6780d7d6dbe457fef8abdb66a}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!CopyVector@{CopyVector}}
+\index{CopyVector@{CopyVector}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{CopyVector()}{CopyVector()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static AI\+\_\+\+FORCE\+\_\+\+INLINE void Assimp\+::\+Base\+Importer\+::\+Copy\+Vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{vec,  }\item[{T $\ast$\&}]{out,  }\item[{unsigned int \&}]{out\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Utility function to move a std\+::vector into a \mbox{\hyperlink{structai_scene}{ai\+Scene}} array 
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to be moved \\
+\hline
+{\em out} & The output pointer to the allocated array. \\
+\hline
+{\em num\+Out} & The output count of elements copied. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a285229c6bf59116b4653944ef7087727}\label{class_assimp_1_1_base_importer_a285229c6bf59116b4653944ef7087727}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetErrorText@{GetErrorText}}
+\index{GetErrorText@{GetErrorText}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetErrorText()}{GetErrorText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily const std\+::string \& Assimp\+::\+Base\+Importer\+::\+Get\+Error\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the error description of the last error that occurred. If the error is due to a std\+::exception, this will return the message. Exceptions can also be accessed with \mbox{\hyperlink{class_assimp_1_1_base_importer_a27198204f4ef728968df429880564d60}{Get\+Exception()}}. \begin{DoxyReturn}{Returns}
+A description of the last error that occurred. An empty string if there was no error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a285229c6bf59116b4653944ef7087727}\label{class_assimp_1_1_base_importer_a285229c6bf59116b4653944ef7087727}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetErrorText@{GetErrorText}}
+\index{GetErrorText@{GetErrorText}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetErrorText()}{GetErrorText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily const std\+::string \& Assimp\+::\+Base\+Importer\+::\+Get\+Error\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the error description of the last error that occurred. If the error is due to a std\+::exception, this will return the message. Exceptions can also be accessed with \mbox{\hyperlink{class_assimp_1_1_base_importer_a27198204f4ef728968df429880564d60}{Get\+Exception()}}. \begin{DoxyReturn}{Returns}
+A description of the last error that occurred. An empty string if there was no error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a285229c6bf59116b4653944ef7087727}\label{class_assimp_1_1_base_importer_a285229c6bf59116b4653944ef7087727}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetErrorText@{GetErrorText}}
+\index{GetErrorText@{GetErrorText}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetErrorText()}{GetErrorText()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily const std\+::string \& Assimp\+::\+Base\+Importer\+::\+Get\+Error\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the error description of the last error that occurred. If the error is due to a std\+::exception, this will return the message. Exceptions can also be accessed with \mbox{\hyperlink{class_assimp_1_1_base_importer_a27198204f4ef728968df429880564d60}{Get\+Exception()}}. \begin{DoxyReturn}{Returns}
+A description of the last error that occurred. An empty string if there was no error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a27198204f4ef728968df429880564d60}\label{class_assimp_1_1_base_importer_a27198204f4ef728968df429880564d60}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetException@{GetException}}
+\index{GetException@{GetException}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetException()}{GetException()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily const std\+::exception\+\_\+ptr \& Assimp\+::\+Base\+Importer\+::\+Get\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the exception of the last exception that occurred. Note\+: Exceptions are not the only source of error details, so Get\+Error\+Text should be consulted too. \begin{DoxyReturn}{Returns}
+The last exception that occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a27198204f4ef728968df429880564d60}\label{class_assimp_1_1_base_importer_a27198204f4ef728968df429880564d60}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetException@{GetException}}
+\index{GetException@{GetException}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetException()}{GetException()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily const std\+::exception\+\_\+ptr \& Assimp\+::\+Base\+Importer\+::\+Get\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the exception of the last exception that occurred. Note\+: Exceptions are not the only source of error details, so Get\+Error\+Text should be consulted too. \begin{DoxyReturn}{Returns}
+The last exception that occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a27198204f4ef728968df429880564d60}\label{class_assimp_1_1_base_importer_a27198204f4ef728968df429880564d60}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetException@{GetException}}
+\index{GetException@{GetException}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetException()}{GetException()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily const std\+::exception\+\_\+ptr \& Assimp\+::\+Base\+Importer\+::\+Get\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the exception of the last exception that occurred. Note\+: Exceptions are not the only source of error details, so Get\+Error\+Text should be consulted too. \begin{DoxyReturn}{Returns}
+The last exception that occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a25edd42695863af078d2bab65077ce6c}\label{class_assimp_1_1_base_importer_a25edd42695863af078d2bab65077ce6c}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetExtension@{GetExtension}}
+\index{GetExtension@{GetExtension}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetExtension()}{GetExtension()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static std\+::string Assimp\+::\+Base\+Importer\+::\+Get\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Extract file extension from a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Input file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extension without trailing dot, all lowercase 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a25edd42695863af078d2bab65077ce6c}\label{class_assimp_1_1_base_importer_a25edd42695863af078d2bab65077ce6c}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetExtension@{GetExtension}}
+\index{GetExtension@{GetExtension}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetExtension()}{GetExtension()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static std\+::string Assimp\+::\+Base\+Importer\+::\+Get\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Extract file extension from a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Input file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extension without trailing dot, all lowercase 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a25edd42695863af078d2bab65077ce6c}\label{class_assimp_1_1_base_importer_a25edd42695863af078d2bab65077ce6c}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetExtension@{GetExtension}}
+\index{GetExtension@{GetExtension}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetExtension()}{GetExtension()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static std\+::string Assimp\+::\+Base\+Importer\+::\+Get\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Extract file extension from a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Input file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extension without trailing dot, all lowercase 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a7a658f1192a37e336ba98fe701918b31}\label{class_assimp_1_1_base_importer_a7a658f1192a37e336ba98fe701918b31}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetExtensionList@{GetExtensionList}}
+\index{GetExtensionList@{GetExtensionList}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetExtensionList()}{GetExtensionList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Base\+Importer\+::\+Get\+Extension\+List (\begin{DoxyParamCaption}\item[{std\+::set$<$ std\+::string $>$ \&}]{extensions }\end{DoxyParamCaption})}
+
+Called by \mbox{\hyperlink{class_assimp_1_1_importer_ab06927d45d5adbf909040c8f5bac1e4d}{Importer\+::\+Get\+Extension\+List}} for each loaded importer. Take the extension list contained in the structure returned by \mbox{\hyperlink{class_assimp_1_1_base_importer_aea402563e886993c7b5c0d489288fa4c}{Get\+Info}} and insert all file extensions into the given set. 
+\begin{DoxyParams}{Parameters}
+{\em extension} & set to collect file extensions in \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a7a658f1192a37e336ba98fe701918b31}\label{class_assimp_1_1_base_importer_a7a658f1192a37e336ba98fe701918b31}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetExtensionList@{GetExtensionList}}
+\index{GetExtensionList@{GetExtensionList}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetExtensionList()}{GetExtensionList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Base\+Importer\+::\+Get\+Extension\+List (\begin{DoxyParamCaption}\item[{std\+::set$<$ std\+::string $>$ \&}]{extensions }\end{DoxyParamCaption})}
+
+Called by \mbox{\hyperlink{class_assimp_1_1_importer_ab06927d45d5adbf909040c8f5bac1e4d}{Importer\+::\+Get\+Extension\+List}} for each loaded importer. Take the extension list contained in the structure returned by \mbox{\hyperlink{class_assimp_1_1_base_importer_aea402563e886993c7b5c0d489288fa4c}{Get\+Info}} and insert all file extensions into the given set. 
+\begin{DoxyParams}{Parameters}
+{\em extension} & set to collect file extensions in \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a7a658f1192a37e336ba98fe701918b31}\label{class_assimp_1_1_base_importer_a7a658f1192a37e336ba98fe701918b31}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetExtensionList@{GetExtensionList}}
+\index{GetExtensionList@{GetExtensionList}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetExtensionList()}{GetExtensionList()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Base\+Importer\+::\+Get\+Extension\+List (\begin{DoxyParamCaption}\item[{std\+::set$<$ std\+::string $>$ \&}]{extensions }\end{DoxyParamCaption})}
+
+Called by \mbox{\hyperlink{class_assimp_1_1_importer_ab06927d45d5adbf909040c8f5bac1e4d}{Importer\+::\+Get\+Extension\+List}} for each loaded importer. Take the extension list contained in the structure returned by \mbox{\hyperlink{class_assimp_1_1_base_importer_aea402563e886993c7b5c0d489288fa4c}{Get\+Info}} and insert all file extensions into the given set. 
+\begin{DoxyParams}{Parameters}
+{\em extension} & set to collect file extensions in \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_aea402563e886993c7b5c0d489288fa4c}\label{class_assimp_1_1_base_importer_aea402563e886993c7b5c0d489288fa4c}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetInfo@{GetInfo}}
+\index{GetInfo@{GetInfo}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetInfo()}{GetInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{structai_importer_desc}{ai\+Importer\+Desc}} $\ast$ Assimp\+::\+Base\+Importer\+::\+Get\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called by \mbox{\hyperlink{class_assimp_1_1_importer_ac791716a5c1978b73968dc7e53873e7e}{Importer\+::\+Get\+Importer\+Info}} to get a description of some loader features. Importers must provide this information. \mbox{\Hypertarget{class_assimp_1_1_base_importer_aea402563e886993c7b5c0d489288fa4c}\label{class_assimp_1_1_base_importer_aea402563e886993c7b5c0d489288fa4c}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetInfo@{GetInfo}}
+\index{GetInfo@{GetInfo}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetInfo()}{GetInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{structai_importer_desc}{ai\+Importer\+Desc}} $\ast$ Assimp\+::\+Base\+Importer\+::\+Get\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called by \mbox{\hyperlink{class_assimp_1_1_importer_ac791716a5c1978b73968dc7e53873e7e}{Importer\+::\+Get\+Importer\+Info}} to get a description of some loader features. Importers must provide this information. \mbox{\Hypertarget{class_assimp_1_1_base_importer_aea402563e886993c7b5c0d489288fa4c}\label{class_assimp_1_1_base_importer_aea402563e886993c7b5c0d489288fa4c}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!GetInfo@{GetInfo}}
+\index{GetInfo@{GetInfo}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{GetInfo()}{GetInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{structai_importer_desc}{ai\+Importer\+Desc}} $\ast$ Assimp\+::\+Base\+Importer\+::\+Get\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called by \mbox{\hyperlink{class_assimp_1_1_importer_ac791716a5c1978b73968dc7e53873e7e}{Importer\+::\+Get\+Importer\+Info}} to get a description of some loader features. Importers must provide this information. \mbox{\Hypertarget{class_assimp_1_1_base_importer_a4d3456d16f59cd28f456b79eabe206b0}\label{class_assimp_1_1_base_importer_a4d3456d16f59cd28f456b79eabe206b0}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!HasExtension@{HasExtension}}
+\index{HasExtension@{HasExtension}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{HasExtension()}{HasExtension()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Base\+Importer\+::\+Has\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File,  }\item[{const std\+::set$<$ std\+::string $>$ \&}]{extensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check whether a file has one of the passed file extensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Input file \\
+\hline
+{\em extensions} & Extensions to check for. Lowercase characters only, no dot! \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Case-\/insensitive 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a4d3456d16f59cd28f456b79eabe206b0}\label{class_assimp_1_1_base_importer_a4d3456d16f59cd28f456b79eabe206b0}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!HasExtension@{HasExtension}}
+\index{HasExtension@{HasExtension}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{HasExtension()}{HasExtension()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Base\+Importer\+::\+Has\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File,  }\item[{const std\+::set$<$ std\+::string $>$ \&}]{extensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check whether a file has one of the passed file extensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Input file \\
+\hline
+{\em extensions} & Extensions to check for. Lowercase characters only, no dot! \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Case-\/insensitive 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a4d3456d16f59cd28f456b79eabe206b0}\label{class_assimp_1_1_base_importer_a4d3456d16f59cd28f456b79eabe206b0}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!HasExtension@{HasExtension}}
+\index{HasExtension@{HasExtension}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{HasExtension()}{HasExtension()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Base\+Importer\+::\+Has\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File,  }\item[{const std\+::set$<$ std\+::string $>$ \&}]{extensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check whether a file has one of the passed file extensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Input file \\
+\hline
+{\em extensions} & Extensions to check for. Lowercase characters only, no dot! \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Case-\/insensitive 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}\label{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!InternReadFile@{InternReadFile}}
+\index{InternReadFile@{InternReadFile}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{InternReadFile()}{InternReadFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual void Assimp\+::\+Base\+Importer\+::\+Intern\+Read\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File,  }\item[{\mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$}]{p\+Scene,  }\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Imports the given file into the given scene structure. The function is expected to throw an Import\+Error\+Exception if there is an error. If it terminates normally, the data in \mbox{\hyperlink{structai_scene}{ai\+Scene}} is expected to be correct. Override this function to implement the actual importing. ~\newline
+ The output scene must meet the following requirements\+:~\newline
+ 
+\begin{DoxyItemize}
+\item At least a root node must be there, even if its only purpose is to reference one mesh. 
+\item \mbox{\hyperlink{structai_mesh_a99d66ac0a444068c1b252b30265cbf53}{ai\+Mesh\+::m\+Primitive\+Types}} may be 0. The types of primitives in the mesh are determined automatically in this case. 
+\item the vertex data is stored in a pseudo-\/indexed \char`\"{}verbose\char`\"{} format. In fact this means that every vertex that is referenced by a face is unique. Or the other way round\+: a vertex index may not occur twice in a single \mbox{\hyperlink{structai_mesh}{ai\+Mesh}}. 
+\item \mbox{\hyperlink{structai_animation_ae2bbc49320b4b75c05e23e0ab704ece7}{ai\+Animation\+::m\+Duration}} may be -\/1. \mbox{\hyperlink{namespace_assimp}{Assimp}} determines the length of the animation automatically in this case as the length of the longest animation channel. 
+\item \mbox{\hyperlink{structai_mesh_a4d2b15fe360d7c6f45c28dced096510a}{ai\+Mesh\+::m\+Bitangents}} may be nullptr if tangents and normals are given. In this case bitangents are computed as the cross product between normal and tangent. 
+\item There needn\textquotesingle{}t be a material. If none is there a default material is generated. However, it is recommended practice for loaders to generate a default material for yourself that matches the default material setting for the file format better than \mbox{\hyperlink{namespace_assimp}{Assimp}}\textquotesingle{}s generic default material. Note that default materials {\itshape should} be named AI\+\_\+\+DEFAULT\+\_\+\+MATERIAL\+\_\+\+NAME if they\textquotesingle{}re just color-\/shaded or AI\+\_\+\+DEFAULT\+\_\+\+TEXTURED\+\_\+\+MATERIAL\+\_\+\+NAME if they define a (dummy) texture.  
+\end{DoxyItemize}If the AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+INCOMPLETE-\/\+Flag is {\bfseries{not}} set\+:
+\begin{DoxyItemize}
+\item at least one mesh must be there 
+\item there may be no meshes with 0 vertices or faces 
+\end{DoxyItemize}This won\textquotesingle{}t be checked (except by the validation step)\+: \mbox{\hyperlink{namespace_assimp}{Assimp}} will crash if one of the conditions is not met!
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path of the file to be imported. \\
+\hline
+{\em p\+Scene} & The scene object to hold the imported data. nullptr is not a valid parameter. \\
+\hline
+{\em p\+IOHandler} & The IO handler to use for any file access. nullptr is not a valid parameter. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}\label{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!InternReadFile@{InternReadFile}}
+\index{InternReadFile@{InternReadFile}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{InternReadFile()}{InternReadFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual void Assimp\+::\+Base\+Importer\+::\+Intern\+Read\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File,  }\item[{\mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$}]{p\+Scene,  }\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Imports the given file into the given scene structure. The function is expected to throw an Import\+Error\+Exception if there is an error. If it terminates normally, the data in \mbox{\hyperlink{structai_scene}{ai\+Scene}} is expected to be correct. Override this function to implement the actual importing. ~\newline
+ The output scene must meet the following requirements\+:~\newline
+ 
+\begin{DoxyItemize}
+\item At least a root node must be there, even if its only purpose is to reference one mesh. 
+\item \mbox{\hyperlink{structai_mesh_a99d66ac0a444068c1b252b30265cbf53}{ai\+Mesh\+::m\+Primitive\+Types}} may be 0. The types of primitives in the mesh are determined automatically in this case. 
+\item the vertex data is stored in a pseudo-\/indexed \char`\"{}verbose\char`\"{} format. In fact this means that every vertex that is referenced by a face is unique. Or the other way round\+: a vertex index may not occur twice in a single \mbox{\hyperlink{structai_mesh}{ai\+Mesh}}. 
+\item \mbox{\hyperlink{structai_animation_ae2bbc49320b4b75c05e23e0ab704ece7}{ai\+Animation\+::m\+Duration}} may be -\/1. \mbox{\hyperlink{namespace_assimp}{Assimp}} determines the length of the animation automatically in this case as the length of the longest animation channel. 
+\item \mbox{\hyperlink{structai_mesh_a4d2b15fe360d7c6f45c28dced096510a}{ai\+Mesh\+::m\+Bitangents}} may be nullptr if tangents and normals are given. In this case bitangents are computed as the cross product between normal and tangent. 
+\item There needn\textquotesingle{}t be a material. If none is there a default material is generated. However, it is recommended practice for loaders to generate a default material for yourself that matches the default material setting for the file format better than \mbox{\hyperlink{namespace_assimp}{Assimp}}\textquotesingle{}s generic default material. Note that default materials {\itshape should} be named AI\+\_\+\+DEFAULT\+\_\+\+MATERIAL\+\_\+\+NAME if they\textquotesingle{}re just color-\/shaded or AI\+\_\+\+DEFAULT\+\_\+\+TEXTURED\+\_\+\+MATERIAL\+\_\+\+NAME if they define a (dummy) texture.  
+\end{DoxyItemize}If the AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+INCOMPLETE-\/\+Flag is {\bfseries{not}} set\+:
+\begin{DoxyItemize}
+\item at least one mesh must be there 
+\item there may be no meshes with 0 vertices or faces 
+\end{DoxyItemize}This won\textquotesingle{}t be checked (except by the validation step)\+: \mbox{\hyperlink{namespace_assimp}{Assimp}} will crash if one of the conditions is not met!
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path of the file to be imported. \\
+\hline
+{\em p\+Scene} & The scene object to hold the imported data. nullptr is not a valid parameter. \\
+\hline
+{\em p\+IOHandler} & The IO handler to use for any file access. nullptr is not a valid parameter. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}\label{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!InternReadFile@{InternReadFile}}
+\index{InternReadFile@{InternReadFile}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{InternReadFile()}{InternReadFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual void Assimp\+::\+Base\+Importer\+::\+Intern\+Read\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File,  }\item[{\mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$}]{p\+Scene,  }\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Imports the given file into the given scene structure. The function is expected to throw an Import\+Error\+Exception if there is an error. If it terminates normally, the data in \mbox{\hyperlink{structai_scene}{ai\+Scene}} is expected to be correct. Override this function to implement the actual importing. ~\newline
+ The output scene must meet the following requirements\+:~\newline
+ 
+\begin{DoxyItemize}
+\item At least a root node must be there, even if its only purpose is to reference one mesh. 
+\item \mbox{\hyperlink{structai_mesh_a99d66ac0a444068c1b252b30265cbf53}{ai\+Mesh\+::m\+Primitive\+Types}} may be 0. The types of primitives in the mesh are determined automatically in this case. 
+\item the vertex data is stored in a pseudo-\/indexed \char`\"{}verbose\char`\"{} format. In fact this means that every vertex that is referenced by a face is unique. Or the other way round\+: a vertex index may not occur twice in a single \mbox{\hyperlink{structai_mesh}{ai\+Mesh}}. 
+\item \mbox{\hyperlink{structai_animation_ae2bbc49320b4b75c05e23e0ab704ece7}{ai\+Animation\+::m\+Duration}} may be -\/1. \mbox{\hyperlink{namespace_assimp}{Assimp}} determines the length of the animation automatically in this case as the length of the longest animation channel. 
+\item \mbox{\hyperlink{structai_mesh_a4d2b15fe360d7c6f45c28dced096510a}{ai\+Mesh\+::m\+Bitangents}} may be nullptr if tangents and normals are given. In this case bitangents are computed as the cross product between normal and tangent. 
+\item There needn\textquotesingle{}t be a material. If none is there a default material is generated. However, it is recommended practice for loaders to generate a default material for yourself that matches the default material setting for the file format better than \mbox{\hyperlink{namespace_assimp}{Assimp}}\textquotesingle{}s generic default material. Note that default materials {\itshape should} be named AI\+\_\+\+DEFAULT\+\_\+\+MATERIAL\+\_\+\+NAME if they\textquotesingle{}re just color-\/shaded or AI\+\_\+\+DEFAULT\+\_\+\+TEXTURED\+\_\+\+MATERIAL\+\_\+\+NAME if they define a (dummy) texture.  
+\end{DoxyItemize}If the AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+INCOMPLETE-\/\+Flag is {\bfseries{not}} set\+:
+\begin{DoxyItemize}
+\item at least one mesh must be there 
+\item there may be no meshes with 0 vertices or faces 
+\end{DoxyItemize}This won\textquotesingle{}t be checked (except by the validation step)\+: \mbox{\hyperlink{namespace_assimp}{Assimp}} will crash if one of the conditions is not met!
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path of the file to be imported. \\
+\hline
+{\em p\+Scene} & The scene object to hold the imported data. nullptr is not a valid parameter. \\
+\hline
+{\em p\+IOHandler} & The IO handler to use for any file access. nullptr is not a valid parameter. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a2f5938785f722ebde616a30160bccde1}\label{class_assimp_1_1_base_importer_a2f5938785f722ebde616a30160bccde1}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!ReadFile@{ReadFile}}
+\index{ReadFile@{ReadFile}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{ReadFile()}{ReadFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ Assimp\+::\+Base\+Importer\+::\+Read\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} $\ast$}]{p\+Imp,  }\item[{const std\+::string \&}]{p\+File,  }\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler }\end{DoxyParamCaption})}
+
+Imports the given file and returns the imported data. If the import succeeds, ownership of the data is transferred to the caller. If the import fails, nullptr is returned. The function takes care that any partially constructed data is destroyed beforehand.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Imp} & Importer object hosting this loader. \\
+\hline
+{\em p\+File} & Path of the file to be imported. \\
+\hline
+{\em p\+IOHandler} & IO-\/\+Handler used to open this and possible other files. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The imported data or nullptr if failed. If it failed a human-\/readable error description can be retrieved by calling \mbox{\hyperlink{class_assimp_1_1_base_importer_a285229c6bf59116b4653944ef7087727}{Get\+Error\+Text()}}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is not intended to be overridden. Implement \mbox{\hyperlink{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}{Intern\+Read\+File()}} to do the import. If an exception is thrown somewhere in \mbox{\hyperlink{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}{Intern\+Read\+File()}}, this function will catch it and transform it into a suitable response to the caller. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a2f5938785f722ebde616a30160bccde1}\label{class_assimp_1_1_base_importer_a2f5938785f722ebde616a30160bccde1}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!ReadFile@{ReadFile}}
+\index{ReadFile@{ReadFile}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{ReadFile()}{ReadFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ Assimp\+::\+Base\+Importer\+::\+Read\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} $\ast$}]{p\+Imp,  }\item[{const std\+::string \&}]{p\+File,  }\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler }\end{DoxyParamCaption})}
+
+Imports the given file and returns the imported data. If the import succeeds, ownership of the data is transferred to the caller. If the import fails, nullptr is returned. The function takes care that any partially constructed data is destroyed beforehand.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Imp} & Importer object hosting this loader. \\
+\hline
+{\em p\+File} & Path of the file to be imported. \\
+\hline
+{\em p\+IOHandler} & IO-\/\+Handler used to open this and possible other files. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The imported data or nullptr if failed. If it failed a human-\/readable error description can be retrieved by calling \mbox{\hyperlink{class_assimp_1_1_base_importer_a285229c6bf59116b4653944ef7087727}{Get\+Error\+Text()}}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is not intended to be overridden. Implement \mbox{\hyperlink{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}{Intern\+Read\+File()}} to do the import. If an exception is thrown somewhere in \mbox{\hyperlink{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}{Intern\+Read\+File()}}, this function will catch it and transform it into a suitable response to the caller. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a2f5938785f722ebde616a30160bccde1}\label{class_assimp_1_1_base_importer_a2f5938785f722ebde616a30160bccde1}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!ReadFile@{ReadFile}}
+\index{ReadFile@{ReadFile}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{ReadFile()}{ReadFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structai_scene}{ai\+Scene}} $\ast$ Assimp\+::\+Base\+Importer\+::\+Read\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} $\ast$}]{p\+Imp,  }\item[{const std\+::string \&}]{p\+File,  }\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler }\end{DoxyParamCaption})}
+
+Imports the given file and returns the imported data. If the import succeeds, ownership of the data is transferred to the caller. If the import fails, nullptr is returned. The function takes care that any partially constructed data is destroyed beforehand.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Imp} & Importer object hosting this loader. \\
+\hline
+{\em p\+File} & Path of the file to be imported. \\
+\hline
+{\em p\+IOHandler} & IO-\/\+Handler used to open this and possible other files. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The imported data or nullptr if failed. If it failed a human-\/readable error description can be retrieved by calling \mbox{\hyperlink{class_assimp_1_1_base_importer_a285229c6bf59116b4653944ef7087727}{Get\+Error\+Text()}}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is not intended to be overridden. Implement \mbox{\hyperlink{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}{Intern\+Read\+File()}} to do the import. If an exception is thrown somewhere in \mbox{\hyperlink{class_assimp_1_1_base_importer_ac67d9f5ceb26353d27d6be06cccad398}{Intern\+Read\+File()}}, this function will catch it and transform it into a suitable response to the caller. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_abae9dd2ae64d8fbac94fa8702848f133}\label{class_assimp_1_1_base_importer_abae9dd2ae64d8fbac94fa8702848f133}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!SearchFileHeaderForToken@{SearchFileHeaderForToken}}
+\index{SearchFileHeaderForToken@{SearchFileHeaderForToken}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{SearchFileHeaderForToken()}{SearchFileHeaderForToken()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Base\+Importer\+::\+Search\+File\+Header\+For\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOSystem,  }\item[{const std\+::string \&}]{file,  }\item[{const char $\ast$$\ast$}]{tokens,  }\item[{std\+::size\+\_\+t}]{num\+Tokens,  }\item[{unsigned int}]{search\+Bytes = {\ttfamily 200},  }\item[{bool}]{tokens\+Sol = {\ttfamily false},  }\item[{bool}]{no\+Graph\+Before\+Tokens = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+A utility for \mbox{\hyperlink{class_assimp_1_1_base_importer_a13588d3396ba5b7ed1f1cb46e0945cfd}{Can\+Read()}}.
+
+The function searches the header of a file for a specific token and returns true if this token is found. This works for text files only. There is a rudimentary handling of UNICODE files. The comparison is case independent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+IOSystem} & IO System to work with \\
+\hline
+{\em file} & File name of the file \\
+\hline
+{\em tokens} & List of tokens to search for \\
+\hline
+{\em num\+Tokens} & Size of the token array \\
+\hline
+{\em search\+Bytes} & Number of bytes to be searched for the tokens. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_abae9dd2ae64d8fbac94fa8702848f133}\label{class_assimp_1_1_base_importer_abae9dd2ae64d8fbac94fa8702848f133}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!SearchFileHeaderForToken@{SearchFileHeaderForToken}}
+\index{SearchFileHeaderForToken@{SearchFileHeaderForToken}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{SearchFileHeaderForToken()}{SearchFileHeaderForToken()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Base\+Importer\+::\+Search\+File\+Header\+For\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOSystem,  }\item[{const std\+::string \&}]{file,  }\item[{const char $\ast$$\ast$}]{tokens,  }\item[{std\+::size\+\_\+t}]{num\+Tokens,  }\item[{unsigned int}]{search\+Bytes = {\ttfamily 200},  }\item[{bool}]{tokens\+Sol = {\ttfamily false},  }\item[{bool}]{no\+Graph\+Before\+Tokens = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+A utility for \mbox{\hyperlink{class_assimp_1_1_base_importer_a13588d3396ba5b7ed1f1cb46e0945cfd}{Can\+Read()}}.
+
+The function searches the header of a file for a specific token and returns true if this token is found. This works for text files only. There is a rudimentary handling of UNICODE files. The comparison is case independent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+IOSystem} & IO System to work with \\
+\hline
+{\em file} & File name of the file \\
+\hline
+{\em tokens} & List of tokens to search for \\
+\hline
+{\em num\+Tokens} & Size of the token array \\
+\hline
+{\em search\+Bytes} & Number of bytes to be searched for the tokens. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_abae9dd2ae64d8fbac94fa8702848f133}\label{class_assimp_1_1_base_importer_abae9dd2ae64d8fbac94fa8702848f133}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!SearchFileHeaderForToken@{SearchFileHeaderForToken}}
+\index{SearchFileHeaderForToken@{SearchFileHeaderForToken}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{SearchFileHeaderForToken()}{SearchFileHeaderForToken()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Base\+Importer\+::\+Search\+File\+Header\+For\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOSystem,  }\item[{const std\+::string \&}]{file,  }\item[{const char $\ast$$\ast$}]{tokens,  }\item[{std\+::size\+\_\+t}]{num\+Tokens,  }\item[{unsigned int}]{search\+Bytes = {\ttfamily 200},  }\item[{bool}]{tokens\+Sol = {\ttfamily false},  }\item[{bool}]{no\+Graph\+Before\+Tokens = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+A utility for \mbox{\hyperlink{class_assimp_1_1_base_importer_a13588d3396ba5b7ed1f1cb46e0945cfd}{Can\+Read()}}.
+
+The function searches the header of a file for a specific token and returns true if this token is found. This works for text files only. There is a rudimentary handling of UNICODE files. The comparison is case independent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+IOSystem} & IO System to work with \\
+\hline
+{\em file} & File name of the file \\
+\hline
+{\em tokens} & List of tokens to search for \\
+\hline
+{\em num\+Tokens} & Size of the token array \\
+\hline
+{\em search\+Bytes} & Number of bytes to be searched for the tokens. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a11b61c90b472d900d4f7e2d2f2219dac}\label{class_assimp_1_1_base_importer_a11b61c90b472d900d4f7e2d2f2219dac}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!SetFileScale@{SetFileScale}}
+\index{SetFileScale@{SetFileScale}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{SetFileScale()}{SetFileScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Base\+Importer\+::\+Set\+File\+Scale (\begin{DoxyParamCaption}\item[{double}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Will be called only by scale process when scaling is requested. \mbox{\Hypertarget{class_assimp_1_1_base_importer_a11b61c90b472d900d4f7e2d2f2219dac}\label{class_assimp_1_1_base_importer_a11b61c90b472d900d4f7e2d2f2219dac}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!SetFileScale@{SetFileScale}}
+\index{SetFileScale@{SetFileScale}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{SetFileScale()}{SetFileScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Base\+Importer\+::\+Set\+File\+Scale (\begin{DoxyParamCaption}\item[{double}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Will be called only by scale process when scaling is requested. \mbox{\Hypertarget{class_assimp_1_1_base_importer_a11b61c90b472d900d4f7e2d2f2219dac}\label{class_assimp_1_1_base_importer_a11b61c90b472d900d4f7e2d2f2219dac}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!SetFileScale@{SetFileScale}}
+\index{SetFileScale@{SetFileScale}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{SetFileScale()}{SetFileScale()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Base\+Importer\+::\+Set\+File\+Scale (\begin{DoxyParamCaption}\item[{double}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Will be called only by scale process when scaling is requested. \mbox{\Hypertarget{class_assimp_1_1_base_importer_ac076d9136745e898d43d9ea8f0d0c586}\label{class_assimp_1_1_base_importer_ac076d9136745e898d43d9ea8f0d0c586}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!SetupProperties@{SetupProperties}}
+\index{SetupProperties@{SetupProperties}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{SetupProperties()}{SetupProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual void Assimp\+::\+Base\+Importer\+::\+Setup\+Properties (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} $\ast$}]{p\+Imp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called prior to \mbox{\hyperlink{class_assimp_1_1_base_importer_a2f5938785f722ebde616a30160bccde1}{Read\+File()}}. The function is a request to the importer to update its configuration basing on the \mbox{\hyperlink{class_assimp_1_1_importer}{Importer}}\textquotesingle{}s configuration property list. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Imp} & \mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} instance \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_ac076d9136745e898d43d9ea8f0d0c586}\label{class_assimp_1_1_base_importer_ac076d9136745e898d43d9ea8f0d0c586}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!SetupProperties@{SetupProperties}}
+\index{SetupProperties@{SetupProperties}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{SetupProperties()}{SetupProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual void Assimp\+::\+Base\+Importer\+::\+Setup\+Properties (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} $\ast$}]{p\+Imp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called prior to \mbox{\hyperlink{class_assimp_1_1_base_importer_a2f5938785f722ebde616a30160bccde1}{Read\+File()}}. The function is a request to the importer to update its configuration basing on the \mbox{\hyperlink{class_assimp_1_1_importer}{Importer}}\textquotesingle{}s configuration property list. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Imp} & \mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} instance \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_ac076d9136745e898d43d9ea8f0d0c586}\label{class_assimp_1_1_base_importer_ac076d9136745e898d43d9ea8f0d0c586}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!SetupProperties@{SetupProperties}}
+\index{SetupProperties@{SetupProperties}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{SetupProperties()}{SetupProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual void Assimp\+::\+Base\+Importer\+::\+Setup\+Properties (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} $\ast$}]{p\+Imp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called prior to \mbox{\hyperlink{class_assimp_1_1_base_importer_a2f5938785f722ebde616a30160bccde1}{Read\+File()}}. The function is a request to the importer to update its configuration basing on the \mbox{\hyperlink{class_assimp_1_1_importer}{Importer}}\textquotesingle{}s configuration property list. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Imp} & \mbox{\hyperlink{class_assimp_1_1_importer}{Importer}} instance \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a329d0bf67681c92d07fafbb5c327a2f9}\label{class_assimp_1_1_base_importer_a329d0bf67681c92d07fafbb5c327a2f9}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!SimpleExtensionCheck@{SimpleExtensionCheck}}
+\index{SimpleExtensionCheck@{SimpleExtensionCheck}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{SimpleExtensionCheck()}{SimpleExtensionCheck()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Base\+Importer\+::\+Simple\+Extension\+Check (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File,  }\item[{const char $\ast$}]{ext0,  }\item[{const char $\ast$}]{ext1 = {\ttfamily nullptr},  }\item[{const char $\ast$}]{ext2 = {\ttfamily nullptr},  }\item[{const char $\ast$}]{ext3 = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check whether a file has a specific file extension. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Input file \\
+\hline
+{\em ext0} & Extension to check for. Lowercase characters only, no dot! \\
+\hline
+{\em ext1} & Optional second extension \\
+\hline
+{\em ext2} & Optional third extension \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Case-\/insensitive 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a329d0bf67681c92d07fafbb5c327a2f9}\label{class_assimp_1_1_base_importer_a329d0bf67681c92d07fafbb5c327a2f9}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!SimpleExtensionCheck@{SimpleExtensionCheck}}
+\index{SimpleExtensionCheck@{SimpleExtensionCheck}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{SimpleExtensionCheck()}{SimpleExtensionCheck()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Base\+Importer\+::\+Simple\+Extension\+Check (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File,  }\item[{const char $\ast$}]{ext0,  }\item[{const char $\ast$}]{ext1 = {\ttfamily nullptr},  }\item[{const char $\ast$}]{ext2 = {\ttfamily nullptr},  }\item[{const char $\ast$}]{ext3 = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check whether a file has a specific file extension. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Input file \\
+\hline
+{\em ext0} & Extension to check for. Lowercase characters only, no dot! \\
+\hline
+{\em ext1} & Optional second extension \\
+\hline
+{\em ext2} & Optional third extension \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Case-\/insensitive 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a329d0bf67681c92d07fafbb5c327a2f9}\label{class_assimp_1_1_base_importer_a329d0bf67681c92d07fafbb5c327a2f9}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!SimpleExtensionCheck@{SimpleExtensionCheck}}
+\index{SimpleExtensionCheck@{SimpleExtensionCheck}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{SimpleExtensionCheck()}{SimpleExtensionCheck()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Base\+Importer\+::\+Simple\+Extension\+Check (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+File,  }\item[{const char $\ast$}]{ext0,  }\item[{const char $\ast$}]{ext1 = {\ttfamily nullptr},  }\item[{const char $\ast$}]{ext2 = {\ttfamily nullptr},  }\item[{const char $\ast$}]{ext3 = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check whether a file has a specific file extension. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Input file \\
+\hline
+{\em ext0} & Extension to check for. Lowercase characters only, no dot! \\
+\hline
+{\em ext1} & Optional second extension \\
+\hline
+{\em ext2} & Optional third extension \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Case-\/insensitive 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a3a82f762127d9cb823276491fa701e3f}\label{class_assimp_1_1_base_importer_a3a82f762127d9cb823276491fa701e3f}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!TextFileToBuffer@{TextFileToBuffer}}
+\index{TextFileToBuffer@{TextFileToBuffer}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{TextFileToBuffer()}{TextFileToBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static void Assimp\+::\+Base\+Importer\+::\+Text\+File\+To\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$}]{stream,  }\item[{std\+::vector$<$ char $>$ \&}]{data,  }\item[{\mbox{\hyperlink{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}{Text\+File\+Mode}}}]{mode = {\ttfamily FORBID\+\_\+EMPTY} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Utility for text file loaders which copies the contents of the file into a memory buffer and converts it to our UTF8 representation. 
+\begin{DoxyParams}{Parameters}
+{\em stream} & Stream to read from. \\
+\hline
+{\em data} & Output buffer to be resized and filled with the converted text file data. The buffer is terminated with a binary 0. \\
+\hline
+{\em mode} & Whether it is OK to load empty text files. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a3a82f762127d9cb823276491fa701e3f}\label{class_assimp_1_1_base_importer_a3a82f762127d9cb823276491fa701e3f}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!TextFileToBuffer@{TextFileToBuffer}}
+\index{TextFileToBuffer@{TextFileToBuffer}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{TextFileToBuffer()}{TextFileToBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static void Assimp\+::\+Base\+Importer\+::\+Text\+File\+To\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$}]{stream,  }\item[{std\+::vector$<$ char $>$ \&}]{data,  }\item[{\mbox{\hyperlink{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}{Text\+File\+Mode}}}]{mode = {\ttfamily FORBID\+\_\+EMPTY} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Utility for text file loaders which copies the contents of the file into a memory buffer and converts it to our UTF8 representation. 
+\begin{DoxyParams}{Parameters}
+{\em stream} & Stream to read from. \\
+\hline
+{\em data} & Output buffer to be resized and filled with the converted text file data. The buffer is terminated with a binary 0. \\
+\hline
+{\em mode} & Whether it is OK to load empty text files. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assimp_1_1_base_importer_a3a82f762127d9cb823276491fa701e3f}\label{class_assimp_1_1_base_importer_a3a82f762127d9cb823276491fa701e3f}} 
+\index{Assimp::BaseImporter@{Assimp::BaseImporter}!TextFileToBuffer@{TextFileToBuffer}}
+\index{TextFileToBuffer@{TextFileToBuffer}!Assimp::BaseImporter@{Assimp::BaseImporter}}
+\doxysubsubsection{\texorpdfstring{TextFileToBuffer()}{TextFileToBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static void Assimp\+::\+Base\+Importer\+::\+Text\+File\+To\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$}]{stream,  }\item[{std\+::vector$<$ char $>$ \&}]{data,  }\item[{\mbox{\hyperlink{class_assimp_1_1_base_importer_a9fe6b47937a7c897536cac1513b65eb7}{Text\+File\+Mode}}}]{mode = {\ttfamily FORBID\+\_\+EMPTY} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Utility for text file loaders which copies the contents of the file into a memory buffer and converts it to our UTF8 representation. 
+\begin{DoxyParams}{Parameters}
+{\em stream} & Stream to read from. \\
+\hline
+{\em data} & Output buffer to be resized and filled with the converted text file data. The buffer is terminated with a binary 0. \\
+\hline
+{\em mode} & Whether it is OK to load empty text files. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/Base\+Importer.\+h\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Debug/include/assimp/Base\+Importer.\+h\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Release/include/assimp/Base\+Importer.\+h\end{DoxyCompactItemize}

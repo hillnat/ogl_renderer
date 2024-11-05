@@ -1,0 +1,54 @@
+\hypertarget{pca_8hpp_source}{}\doxysection{pca.\+hpp}
+\label{pca_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/gtx/pca.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/gtx/pca.hpp}}
+\mbox{\hyperlink{pca_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{// Dependency:}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include "{}../glm.hpp"{}}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}../ext/scalar\_relational.hpp"{}}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#ifndef GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#   error "{}GLM: GLM\_GTX\_pca is an experimental extension and may change in the future. Use \#define GLM\_ENABLE\_EXPERIMENTAL before including it, if you really want to use it."{}}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#elif GLM\_MESSAGES == GLM\_ENABLE \&\& !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_GTX\_pca extension included"{}})}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}} \{}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{58     \textcolor{keyword}{template}<length\_t D, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{59     GLM\_INLINE mat<D, D, T, Q> \mbox{\hyperlink{group__gtx__pca_ga4290358424d0cb9bcdfc5106f1db557e}{computeCovarianceMatrix}}(vec<D, T, Q> \textcolor{keyword}{const}* v, \textcolor{keywordtype}{size\_t} n);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{65     \textcolor{keyword}{template}<length\_t D, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{66     GLM\_INLINE mat<D, D, T, Q> \mbox{\hyperlink{group__gtx__pca_ga4290358424d0cb9bcdfc5106f1db557e}{computeCovarianceMatrix}}(vec<D, T, Q> \textcolor{keyword}{const}* v, \textcolor{keywordtype}{size\_t} n, vec<D, T, Q> \textcolor{keyword}{const}\& c);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{70     \textcolor{keyword}{template}<length\_t D, \textcolor{keyword}{typename} T, qualifier Q, \textcolor{keyword}{typename} I>}
+\DoxyCodeLine{71     GLM\_FUNC\_DECL mat<D, D, T, Q> \mbox{\hyperlink{group__gtx__pca_ga4290358424d0cb9bcdfc5106f1db557e}{computeCovarianceMatrix}}(I \textcolor{keyword}{const}\& b, I \textcolor{keyword}{const}\& \mbox{\hyperlink{group__gtc__constants_ga4b7956eb6e2fbedfc7cf2e46e85c5139}{e}});}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{75     \textcolor{keyword}{template}<length\_t D, \textcolor{keyword}{typename} T, qualifier Q, \textcolor{keyword}{typename} I>}
+\DoxyCodeLine{76     GLM\_FUNC\_DECL mat<D, D, T, Q> \mbox{\hyperlink{group__gtx__pca_ga4290358424d0cb9bcdfc5106f1db557e}{computeCovarianceMatrix}}(I \textcolor{keyword}{const}\& b, I \textcolor{keyword}{const}\& \mbox{\hyperlink{group__gtc__constants_ga4b7956eb6e2fbedfc7cf2e46e85c5139}{e}}, vec<D, T, Q> \textcolor{keyword}{const}\& c);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{86     \textcolor{keyword}{template}<length\_t D, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{87     GLM\_FUNC\_DECL \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{group__gtx__pca_ga0586007af1073c8b0f629bca0ee7c46c}{findEigenvaluesSymReal}}}
+\DoxyCodeLine{88     (}
+\DoxyCodeLine{89         mat<D, D, T, Q> \textcolor{keyword}{const}\& covarMat,}
+\DoxyCodeLine{90         vec<D, T, Q>\& outEigenvalues,}
+\DoxyCodeLine{91         mat<D, D, T, Q>\& outEigenvectors}
+\DoxyCodeLine{92     );}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{96     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{97     GLM\_FUNC\_DISCARD\_DECL \textcolor{keywordtype}{void} \mbox{\hyperlink{group__gtx__pca_ga2824ef6f23df255f86b9c33cebd5da2f}{sortEigenvalues}}(vec<2, T, Q>\& eigenvalues, mat<2, 2, T, Q>\& eigenvectors);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{101     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{102     GLM\_FUNC\_DISCARD\_DECL \textcolor{keywordtype}{void} \mbox{\hyperlink{group__gtx__pca_ga2824ef6f23df255f86b9c33cebd5da2f}{sortEigenvalues}}(vec<3, T, Q>\& eigenvalues, mat<3, 3, T, Q>\& eigenvectors);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{106     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{107     GLM\_FUNC\_DISCARD\_DECL \textcolor{keywordtype}{void} \mbox{\hyperlink{group__gtx__pca_ga2824ef6f23df255f86b9c33cebd5da2f}{sortEigenvalues}}(vec<4, T, Q>\& eigenvalues, mat<4, 4, T, Q>\& eigenvectors);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{110 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#include "{}pca.inl"{}}}
+
+\end{DoxyCode}

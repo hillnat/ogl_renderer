@@ -1,0 +1,433 @@
+\hypertarget{type__vec3_8hpp_source}{}\doxysection{type\+\_\+vec3.\+hpp}
+\label{type__vec3_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/detail/type\_vec3.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/detail/type\_vec3.hpp}}
+\mbox{\hyperlink{type__vec3_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}qualifier.hpp"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#if GLM\_CONFIG\_SWIZZLE == GLM\_SWIZZLE\_OPERATOR}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#   include "{}\_swizzle.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#elif GLM\_CONFIG\_SWIZZLE == GLM\_SWIZZLE\_FUNCTION}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#   include "{}\_swizzle\_func.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{17     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1vec}{vec}}<3, T, Q>}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19         \textcolor{comment}{// -\/-\/ Implementation detail -\/-\/}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \textcolor{keyword}{typedef} T value\_type;}
+\DoxyCodeLine{22         \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1vec}{vec<3, T, Q>}} \mbox{\hyperlink{structglm_1_1vec_3_013_00_01_t_00_01_q_01_4}{type}};}
+\DoxyCodeLine{23         \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1vec}{vec<3, bool, Q>}} \mbox{\hyperlink{structglm_1_1vec}{bool\_type}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \textcolor{comment}{// -\/-\/ Data -\/-\/}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#       if GLM\_SILENT\_WARNINGS == GLM\_ENABLE}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#           if GLM\_COMPILER \& GLM\_COMPILER\_GCC}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#               pragma GCC diagnostic push}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#               pragma GCC diagnostic ignored "{}-\/Wpedantic"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#           elif GLM\_COMPILER \& GLM\_COMPILER\_CLANG}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#               pragma clang diagnostic push}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#               pragma clang diagnostic ignored "{}-\/Wgnu-\/anonymous-\/struct"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#               pragma clang diagnostic ignored "{}-\/Wnested-\/anon-\/types"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#               pragma clang diagnostic ignored "{}-\/Wpadded"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#           elif GLM\_COMPILER \& GLM\_COMPILER\_VC}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#               pragma warning(push)}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#               pragma warning(disable: 4201)  }\textcolor{comment}{// nonstandard extension used : nameless struct/union}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#               if GLM\_CONFIG\_ALIGNED\_GENTYPES == GLM\_ENABLE}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#                   pragma warning(disable: 4324)  }\textcolor{comment}{// structure was padded due to alignment specifier}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#               endif}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#           endif}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#       if GLM\_CONFIG\_XYZW\_ONLY}}
+\DoxyCodeLine{46             T x, y, z;}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#           if GLM\_CONFIG\_SWIZZLE == GLM\_SWIZZLE\_FUNCTION}}
+\DoxyCodeLine{48             GLM\_SWIZZLE\_GEN\_VEC\_FROM\_VEC3\_COMP(T, Q, x, y, z)}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#           endif}\textcolor{comment}{//GLM\_CONFIG\_SWIZZLE}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#       elif GLM\_CONFIG\_ANONYMOUS\_STRUCT == GLM\_ENABLE}}
+\DoxyCodeLine{51             \textcolor{keyword}{union}}
+\DoxyCodeLine{52             \{}
+\DoxyCodeLine{53                 \textcolor{keyword}{struct}\{ T x, y, z; \};}
+\DoxyCodeLine{54                 \textcolor{keyword}{struct}\{ T r, g, b; \};}
+\DoxyCodeLine{55                 \textcolor{keyword}{struct}\{ T s, t, p; \};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57                 \textcolor{keyword}{typename} \mbox{\hyperlink{structglm_1_1detail_1_1storage}{detail::storage<3, T, detail::is\_aligned<Q>::value}}>::type data;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#               if GLM\_CONFIG\_SWIZZLE == GLM\_SWIZZLE\_OPERATOR}}
+\DoxyCodeLine{60                     GLM\_SWIZZLE3\_2\_MEMBERS(T, Q, x, y, z)}
+\DoxyCodeLine{61                     GLM\_SWIZZLE3\_2\_MEMBERS(T, Q, r, g, b)}
+\DoxyCodeLine{62                     GLM\_SWIZZLE3\_2\_MEMBERS(T, Q, s, t, p)}
+\DoxyCodeLine{63                     GLM\_SWIZZLE3\_3\_MEMBERS(T, Q, x, y, z)}
+\DoxyCodeLine{64                     GLM\_SWIZZLE3\_3\_MEMBERS(T, Q, r, g, b)}
+\DoxyCodeLine{65                     GLM\_SWIZZLE3\_3\_MEMBERS(T, Q, s, t, p)}
+\DoxyCodeLine{66                     GLM\_SWIZZLE3\_4\_MEMBERS(T, Q, x, y, z)}
+\DoxyCodeLine{67                     GLM\_SWIZZLE3\_4\_MEMBERS(T, Q, r, g, b)}
+\DoxyCodeLine{68                     GLM\_SWIZZLE3\_4\_MEMBERS(T, Q, s, t, p)}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#               endif}}
+\DoxyCodeLine{70             \};}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#       else}}
+\DoxyCodeLine{72             \textcolor{keyword}{union }\{ T x, r, s; \};}
+\DoxyCodeLine{73             \textcolor{keyword}{union }\{ T y, g, t; \};}
+\DoxyCodeLine{74             \textcolor{keyword}{union }\{ T z, b, p; \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#           if GLM\_CONFIG\_SWIZZLE == GLM\_SWIZZLE\_FUNCTION}}
+\DoxyCodeLine{77                 GLM\_SWIZZLE\_GEN\_VEC\_FROM\_VEC3(T, Q)}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#           endif}\textcolor{comment}{//GLM\_CONFIG\_SWIZZLE}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#       endif}\textcolor{comment}{//GLM\_LANG}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#       if GLM\_SILENT\_WARNINGS == GLM\_ENABLE}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#           if GLM\_COMPILER \& GLM\_COMPILER\_CLANG}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#               pragma clang diagnostic pop}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#           elif GLM\_COMPILER \& GLM\_COMPILER\_GCC}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#               pragma GCC diagnostic pop}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#           elif GLM\_COMPILER \& GLM\_COMPILER\_VC}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#               pragma warning(pop)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#           endif}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91         \textcolor{comment}{// -\/-\/ Component accesses -\/-\/}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{94         \textcolor{keyword}{typedef} length\_t \mbox{\hyperlink{structglm_1_1vec_3_013_00_01_t_00_01_q_01_4_ab586a87f82719bfdd180336a98843257}{length\_type}};}
+\DoxyCodeLine{95         GLM\_FUNC\_DECL \textcolor{keyword}{static} GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1vec_3_013_00_01_t_00_01_q_01_4_ab586a87f82719bfdd180336a98843257}{length\_type}} length()\{\textcolor{keywordflow}{return} 3;\}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97         GLM\_FUNC\_DECL GLM\_CONSTEXPR T \& operator[](length\_type i);}
+\DoxyCodeLine{98         GLM\_FUNC\_DECL GLM\_CONSTEXPR T \textcolor{keyword}{const}\& operator[](length\_type i) \textcolor{keyword}{const};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100         \textcolor{comment}{// -\/-\/ Implicit basic constructors -\/-\/}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102         GLM\_DEFAULTED\_DEFAULT\_CTOR\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1vec}{vec}}() GLM\_DEFAULT\_CTOR;}
+\DoxyCodeLine{103         GLM\_DEFAULTED\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1vec}{vec}}(\mbox{\hyperlink{structglm_1_1vec}{vec}} const\& v) GLM\_DEFAULT;}
+\DoxyCodeLine{104         template<\mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} P>}
+\DoxyCodeLine{105         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}(\mbox{\hyperlink{structglm_1_1vec}{vec}}<3, T, P> const\& v);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107         \textcolor{comment}{// -\/-\/ Explicit basic constructors -\/-\/}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109         GLM\_CTOR\_DECL explicit \mbox{\hyperlink{structglm_1_1vec}{vec}}(T scalar);}
+\DoxyCodeLine{110         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}(T a, T b, T c);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112         \textcolor{comment}{// -\/-\/ Conversion scalar constructors -\/-\/}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114         template<typename U, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} P>}
+\DoxyCodeLine{115         GLM\_CTOR\_DECL explicit \mbox{\hyperlink{structglm_1_1vec}{vec}}(\mbox{\hyperlink{structglm_1_1vec}{vec}}<1, U, P> const\& v);}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{118         template<typename X, typename Y, typename Z>}
+\DoxyCodeLine{119         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}(X x, Y y, Z z);}
+\DoxyCodeLine{120         template<typename X, typename Y, typename Z>}
+\DoxyCodeLine{121         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}(\mbox{\hyperlink{structglm_1_1vec}{vec}}<1, X, Q> const\& \_x, Y \_y, Z \_z);}
+\DoxyCodeLine{122         template<typename X, typename Y, typename Z>}
+\DoxyCodeLine{123         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}(X \_x, \mbox{\hyperlink{structglm_1_1vec}{vec}}<1, Y, Q> const\& \_y, Z \_z);}
+\DoxyCodeLine{124         template<typename X, typename Y, typename Z>}
+\DoxyCodeLine{125         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}(\mbox{\hyperlink{structglm_1_1vec}{vec}}<1, X, Q> const\& \_x, \mbox{\hyperlink{structglm_1_1vec}{vec}}<1, Y, Q> const\& \_y, Z \_z);}
+\DoxyCodeLine{126         template<typename X, typename Y, typename Z>}
+\DoxyCodeLine{127         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}(X \_x, Y \_y, \mbox{\hyperlink{structglm_1_1vec}{vec}}<1, Z, Q> const\& \_z);}
+\DoxyCodeLine{128         template<typename X, typename Y, typename Z>}
+\DoxyCodeLine{129         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}(\mbox{\hyperlink{structglm_1_1vec}{vec}}<1, X, Q> const\& \_x, Y \_y, \mbox{\hyperlink{structglm_1_1vec}{vec}}<1, Z, Q> const\& \_z);}
+\DoxyCodeLine{130         template<typename X, typename Y, typename Z>}
+\DoxyCodeLine{131         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}(X \_x, \mbox{\hyperlink{structglm_1_1vec}{vec}}<1, Y, Q> const\& \_y, \mbox{\hyperlink{structglm_1_1vec}{vec}}<1, Z, Q> const\& \_z);}
+\DoxyCodeLine{132         template<typename X, typename Y, typename Z>}
+\DoxyCodeLine{133         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}(\mbox{\hyperlink{structglm_1_1vec}{vec}}<1, X, Q> const\& \_x, \mbox{\hyperlink{structglm_1_1vec}{vec}}<1, Y, Q> const\& \_y, \mbox{\hyperlink{structglm_1_1vec}{vec}}<1, Z, Q> const\& \_z);}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135         \textcolor{comment}{// -\/-\/ Conversion vector constructors -\/-\/}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{138         template<typename A, typename B, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} P>}
+\DoxyCodeLine{139         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}(\mbox{\hyperlink{structglm_1_1vec}{vec}}<2, A, P> const\& \_xy, B \_z);}
+\DoxyCodeLine{141         template<typename A, typename B, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} P>}
+\DoxyCodeLine{142         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}(\mbox{\hyperlink{structglm_1_1vec}{vec}}<2, A, P> const\& \_xy, \mbox{\hyperlink{structglm_1_1vec}{vec}}<1, B, P> const\& \_z);}
+\DoxyCodeLine{144         template<typename A, typename B, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} P>}
+\DoxyCodeLine{145         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}(A \_x, \mbox{\hyperlink{structglm_1_1vec}{vec}}<2, B, P> const\& \_yz);}
+\DoxyCodeLine{147         template<typename A, typename B, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} P>}
+\DoxyCodeLine{148         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}(\mbox{\hyperlink{structglm_1_1vec}{vec}}<1, A, P> const\& \_x, \mbox{\hyperlink{structglm_1_1vec}{vec}}<2, B, P> const\& \_yz);}
+\DoxyCodeLine{150         template<typename U, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} P>}
+\DoxyCodeLine{151         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1vec}{vec}}(\mbox{\hyperlink{structglm_1_1vec}{vec}}<4, U, P> const\& v);}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{154         template<typename U, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} P>}
+\DoxyCodeLine{155         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1vec}{vec}}(\mbox{\hyperlink{structglm_1_1vec}{vec}}<3, U, P> const\& v);}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157         \textcolor{comment}{// -\/-\/ Swizzle constructors -\/-\/}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#       if GLM\_CONFIG\_SWIZZLE == GLM\_SWIZZLE\_OPERATOR}}
+\DoxyCodeLine{159             \textcolor{keyword}{template}<\textcolor{keywordtype}{int} E0, \textcolor{keywordtype}{int} E1, \textcolor{keywordtype}{int} E2>}
+\DoxyCodeLine{160             GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1vec}{vec}}(\mbox{\hyperlink{structglm_1_1detail_1_1__swizzle}{detail::\_swizzle<3, T, Q, E0, E1, E2, -\/1>}} \textcolor{keyword}{const}\& that)}
+\DoxyCodeLine{161             \{}
+\DoxyCodeLine{162                 *\textcolor{keyword}{this} = that();}
+\DoxyCodeLine{163             \}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165             \textcolor{keyword}{template}<\textcolor{keywordtype}{int} E0, \textcolor{keywordtype}{int} E1>}
+\DoxyCodeLine{166             GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1vec}{vec}}(\mbox{\hyperlink{structglm_1_1detail_1_1__swizzle}{detail::\_swizzle<2, T, Q, E0, E1, -\/1, -\/2>}} \textcolor{keyword}{const}\& v, T \textcolor{keyword}{const}\& scalar)}
+\DoxyCodeLine{167             \{}
+\DoxyCodeLine{168                 *\textcolor{keyword}{this} = \mbox{\hyperlink{structglm_1_1vec}{vec}}(v(), scalar);}
+\DoxyCodeLine{169             \}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171             \textcolor{keyword}{template}<\textcolor{keywordtype}{int} E0, \textcolor{keywordtype}{int} E1>}
+\DoxyCodeLine{172             GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec(T \textcolor{keyword}{const}\& scalar, detail::\_swizzle<2, T, Q, E0, E1, -\/1, -\/2> \textcolor{keyword}{const}\& v)}
+\DoxyCodeLine{173             \{}
+\DoxyCodeLine{174                 *\textcolor{keyword}{this} = vec(scalar, v());}
+\DoxyCodeLine{175             \}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#       endif}\textcolor{comment}{//GLM\_CONFIG\_SWIZZLE == GLM\_SWIZZLE\_OPERATOR}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178         \textcolor{comment}{// -\/-\/ Unary arithmetic operators -\/-\/}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180         GLM\_DEFAULTED\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q>\& operator=(vec<3, T, Q> \textcolor{keyword}{const}\& v) GLM\_DEFAULT;}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{183         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator=(vec<3, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{184         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{185         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator+=(U scalar);}
+\DoxyCodeLine{186         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{187         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator+=(vec<1, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{188         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{189         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator+=(vec<3, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{190         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{191         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator-\/=(U scalar);}
+\DoxyCodeLine{192         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{193         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator-\/=(vec<1, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{194         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{195         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator-\/=(vec<3, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{196         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{197         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator*=(U scalar);}
+\DoxyCodeLine{198         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{199         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator*=(vec<1, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{200         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{201         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator*=(vec<3, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{202         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{203         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator/=(U scalar);}
+\DoxyCodeLine{204         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{205         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator/=(vec<1, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{206         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{207         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator/=(vec<3, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209         \textcolor{comment}{// -\/-\/ Increment and decrement operators -\/-\/}}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator++();}
+\DoxyCodeLine{212         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator-\/-\/();}
+\DoxyCodeLine{213         GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator++(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{214         GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator-\/-\/(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216         \textcolor{comment}{// -\/-\/ Unary bit operators -\/-\/}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{219         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator\%=(U scalar);}
+\DoxyCodeLine{220         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{221         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator\%=(vec<1, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{222         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{223         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator\%=(vec<3, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{224         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{225         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator\&=(U scalar);}
+\DoxyCodeLine{226         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{227         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator\&=(vec<1, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{228         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{229         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator\&=(vec<3, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{230         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{231         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator|=(U scalar);}
+\DoxyCodeLine{232         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{233         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator|=(vec<1, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{234         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{235         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator|=(vec<3, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{236         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{237         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator\string^=(U scalar);}
+\DoxyCodeLine{238         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{239         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator\string^=(vec<1, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{240         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{241         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator\string^=(vec<3, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{242         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{243         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator<<=(U scalar);}
+\DoxyCodeLine{244         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{245         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator<<=(vec<1, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{246         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{247         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator<<=(vec<3, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{248         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{249         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator>>=(U scalar);}
+\DoxyCodeLine{250         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{251         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator>>=(vec<1, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{252         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{253         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR vec<3, T, Q> \& operator>>=(vec<3, U, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{254     \};}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256     \textcolor{comment}{// -\/-\/ Unary operators -\/-\/}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{259     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator+(vec<3, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{262     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator-\/(vec<3, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264     \textcolor{comment}{// -\/-\/ Binary operators -\/-\/}}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{267     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator+(vec<3, T, Q> \textcolor{keyword}{const}\& v, T scalar);}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{270     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator+(vec<3, T, Q> \textcolor{keyword}{const}\& v, vec<1, T, Q> \textcolor{keyword}{const}\& scalar);}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{273     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator+(T scalar, vec<3, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{276     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator+(vec<1, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{279     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator+(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{282     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator-\/(vec<3, T, Q> \textcolor{keyword}{const}\& v, T scalar);}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{285     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator-\/(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<1, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{288     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator-\/(T scalar, vec<3, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{291     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator-\/(vec<1, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{294     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator-\/(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{297     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator*(vec<3, T, Q> \textcolor{keyword}{const}\& v, T scalar);}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{300     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator*(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<1, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{303     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator*(T scalar, vec<3, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{306     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator*(vec<1, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{309     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator*(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{312     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator/(vec<3, T, Q> \textcolor{keyword}{const}\& v, T scalar);}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{315     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator/(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<1, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{318     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator/(T scalar, vec<3, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{321     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator/(vec<1, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{324     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator/(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{327     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\%(vec<3, T, Q> \textcolor{keyword}{const}\& v, T scalar);}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{330     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\%(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<1, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{333     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\%(T scalar, vec<3, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{334 }
+\DoxyCodeLine{335     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{336     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\%(vec<1, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{339     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\%(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{342     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\&(vec<3, T, Q> \textcolor{keyword}{const}\& v1, T scalar);}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{345     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\&(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<1, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{347     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{348     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\&(T scalar, vec<3, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{351     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\&(vec<1, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{354     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\&(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{357     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator|(vec<3, T, Q> \textcolor{keyword}{const}\& v, T scalar);}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{360     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator|(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<1, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{363     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator|(T scalar, vec<3, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{366     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator|(vec<1, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{368     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{369     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator|(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{372     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\string^(vec<3, T, Q> \textcolor{keyword}{const}\& v, T scalar);}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{374     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{375     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\string^(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<1, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{378     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\string^(T scalar, vec<3, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{381     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\string^(vec<1, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{382 }
+\DoxyCodeLine{383     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{384     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\string^(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{386     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{387     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator<<(vec<3, T, Q> \textcolor{keyword}{const}\& v, T scalar);}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{390     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator<<(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<1, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{392     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{393     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator<<(T scalar, vec<3, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{394 }
+\DoxyCodeLine{395     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{396     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator<<(vec<1, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{397 }
+\DoxyCodeLine{398     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{399     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator<<(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{400 }
+\DoxyCodeLine{401     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{402     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator>>(vec<3, T, Q> \textcolor{keyword}{const}\& v, T scalar);}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{405     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator>>(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<1, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{408     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator>>(T scalar, vec<3, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{409 }
+\DoxyCodeLine{410     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{411     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator>>(vec<1, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{414     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator>>(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{417     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator\string~(vec<3, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{418 }
+\DoxyCodeLine{419     \textcolor{comment}{// -\/-\/ Boolean operators -\/-\/}}
+\DoxyCodeLine{420 }
+\DoxyCodeLine{421     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{422     GLM\_FUNC\_DECL GLM\_CONSTEXPR \textcolor{keywordtype}{bool} operator==(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{423 }
+\DoxyCodeLine{424     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{425     GLM\_FUNC\_DECL GLM\_CONSTEXPR \textcolor{keywordtype}{bool} operator!=(vec<3, T, Q> \textcolor{keyword}{const}\& v1, vec<3, T, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427     \textcolor{keyword}{template}<qualifier Q>}
+\DoxyCodeLine{428     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, bool, Q> operator\&\&(vec<3, bool, Q> \textcolor{keyword}{const}\& v1, vec<3, bool, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430     \textcolor{keyword}{template}<qualifier Q>}
+\DoxyCodeLine{431     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, bool, Q> operator||(vec<3, bool, Q> \textcolor{keyword}{const}\& v1, vec<3, bool, Q> \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{432 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434 \textcolor{preprocessor}{\#ifndef GLM\_EXTERNAL\_TEMPLATE}}
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#include "{}type\_vec3.inl"{}}}
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_EXTERNAL\_TEMPLATE}}
+
+\end{DoxyCode}

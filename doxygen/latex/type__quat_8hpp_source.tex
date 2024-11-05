@@ -1,0 +1,189 @@
+\hypertarget{type__quat_8hpp_source}{}\doxysection{type\+\_\+quat.\+hpp}
+\label{type__quat_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/detail/type\_quat.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/detail/type\_quat.hpp}}
+\mbox{\hyperlink{type__quat_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{// Dependency:}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}../detail/type\_mat3x3.hpp"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../detail/type\_mat4x4.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}../detail/type\_vec3.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}../detail/type\_vec4.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}../ext/vector\_relational.hpp"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}../ext/quaternion\_relational.hpp"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}../gtc/constants.hpp"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}../gtc/matrix\_transform.hpp"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#       if GLM\_SILENT\_WARNINGS == GLM\_ENABLE}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#           if GLM\_COMPILER \& GLM\_COMPILER\_GCC}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#               pragma GCC diagnostic push}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#               pragma GCC diagnostic ignored "{}-\/Wpedantic"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#           elif GLM\_COMPILER \& GLM\_COMPILER\_CLANG}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#               pragma clang diagnostic push}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#               pragma clang diagnostic ignored "{}-\/Wgnu-\/anonymous-\/struct"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#               pragma clang diagnostic ignored "{}-\/Wnested-\/anon-\/types"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#           elif GLM\_COMPILER \& GLM\_COMPILER\_VC}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#               pragma warning(push)}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#               pragma warning(disable: 4201)  }\textcolor{comment}{// nonstandard extension used : nameless struct/union}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#           endif}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{33     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1qua}{qua}}}
+\DoxyCodeLine{34     \{}
+\DoxyCodeLine{35         \textcolor{comment}{// -\/-\/ Implementation detail -\/-\/}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}} \mbox{\hyperlink{structglm_1_1qua}{type}};}
+\DoxyCodeLine{38         \textcolor{keyword}{typedef} T value\_type;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \textcolor{comment}{// -\/-\/ Data -\/-\/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#       if GLM\_LANG \& GLM\_LANG\_CXXMS\_FLAG}}
+\DoxyCodeLine{43             \textcolor{keyword}{union}}
+\DoxyCodeLine{44             \{}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#               ifdef GLM\_FORCE\_QUAT\_DATA\_WXYZ}}
+\DoxyCodeLine{46                     \textcolor{keyword}{struct }\{ T w, x, y, z; \};}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#               else}}
+\DoxyCodeLine{48                     \textcolor{keyword}{struct }\{ T x, y, z, w; \};}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#               endif}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51                 \textcolor{keyword}{typename} \mbox{\hyperlink{structglm_1_1detail_1_1storage}{detail::storage<4, T, detail::is\_aligned<Q>::value}}>::type data;}
+\DoxyCodeLine{52             \};}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#       else}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#           ifdef GLM\_FORCE\_QUAT\_DATA\_WXYZ}}
+\DoxyCodeLine{55                 T w, x, y, z;}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#           else}}
+\DoxyCodeLine{57                 T x, y, z, w;}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#           endif}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \textcolor{comment}{// -\/-\/ Component accesses -\/-\/}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63         \textcolor{keyword}{typedef} length\_t length\_type;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{66         GLM\_FUNC\_DECL \textcolor{keyword}{static} GLM\_CONSTEXPR length\_type \mbox{\hyperlink{structglm_1_1qua_a82d90e74a12348ae93fff26fe78b606a}{length}}()\{\textcolor{keywordflow}{return} 4;\}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         GLM\_FUNC\_DECL GLM\_CONSTEXPR T \& operator[](length\_type i);}
+\DoxyCodeLine{69         GLM\_FUNC\_DECL GLM\_CONSTEXPR T \textcolor{keyword}{const}\& operator[](length\_type i) \textcolor{keyword}{const};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71         \textcolor{comment}{// -\/-\/ Implicit basic constructors -\/-\/}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73         GLM\_DEFAULTED\_DEFAULT\_CTOR\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1qua}{qua}}() GLM\_DEFAULT\_CTOR;}
+\DoxyCodeLine{74         GLM\_DEFAULTED\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1qua}{qua}}(\mbox{\hyperlink{structglm_1_1qua}{qua}}<T, Q> const\& q) GLM\_DEFAULT;}
+\DoxyCodeLine{75         template<\mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} P>}
+\DoxyCodeLine{76         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1qua}{qua}}(\mbox{\hyperlink{structglm_1_1qua}{qua}}<T, P> const\& q);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         \textcolor{comment}{// -\/-\/ Explicit basic constructors -\/-\/}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1qua}{qua}}(T s, \mbox{\hyperlink{structglm_1_1vec}{vec}}<3, T, Q> const\& v);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#       ifdef GLM\_FORCE\_QUAT\_DATA\_XYZW}}
+\DoxyCodeLine{83         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1qua}{qua}}(T x, T y, T z, T w);}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#       else}}
+\DoxyCodeLine{85         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1qua}{qua}}(T w, T x, T y, T z);}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         GLM\_FUNC\_DECL \textcolor{keyword}{static} GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}} wxyz(T w, T x, T y, T z);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90         \textcolor{comment}{// -\/-\/ Conversion constructors -\/-\/}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U, qualifier P>}
+\DoxyCodeLine{93         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1qua}{qua}}(\mbox{\hyperlink{structglm_1_1qua}{qua<U, P>}} \textcolor{keyword}{const}\& q);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#       if GLM\_HAS\_EXPLICIT\_CONVERSION\_OPERATORS}}
+\DoxyCodeLine{97             GLM\_FUNC\_DECL \textcolor{keyword}{explicit} \textcolor{keyword}{operator} \mbox{\hyperlink{structglm_1_1mat}{mat<3, 3, T, Q>}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{98             GLM\_FUNC\_DECL \textcolor{keyword}{explicit} \textcolor{keyword}{operator} \mbox{\hyperlink{structglm_1_1mat}{mat<4, 4, T, Q>}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{107         GLM\_FUNC\_DISCARD\_DECL \mbox{\hyperlink{structglm_1_1qua}{qua}}(\mbox{\hyperlink{structglm_1_1vec}{vec<3, T, Q>}} \textcolor{keyword}{const}\& u, \mbox{\hyperlink{structglm_1_1vec}{vec<3, T, Q>}} \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{110         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1qua}{qua}}(\mbox{\hyperlink{structglm_1_1vec}{vec<3, T, Q>}} \textcolor{keyword}{const}\& \mbox{\hyperlink{group__gtc__quaternion_gad3117cce1d062f28ed9bbadabcdac8fc}{eulerAngles}});}
+\DoxyCodeLine{111         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1qua}{qua}}(\mbox{\hyperlink{structglm_1_1mat}{mat<3, 3, T, Q>}} \textcolor{keyword}{const}\& q);}
+\DoxyCodeLine{112         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1qua}{qua}}(\mbox{\hyperlink{structglm_1_1mat}{mat<4, 4, T, Q>}} \textcolor{keyword}{const}\& q);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114         \textcolor{comment}{// -\/-\/ Unary arithmetic operators -\/-\/}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116         GLM\_DEFAULTED\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}}\& operator=(\mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}} \textcolor{keyword}{const}\& q) GLM\_DEFAULT;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{119         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}}\& operator=(\mbox{\hyperlink{structglm_1_1qua}{qua<U, Q>}} \textcolor{keyword}{const}\& q);}
+\DoxyCodeLine{120         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{121         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}}\& operator+=(\mbox{\hyperlink{structglm_1_1qua}{qua<U, Q>}} \textcolor{keyword}{const}\& q);}
+\DoxyCodeLine{122         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{123         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}}\& operator-\/=(\mbox{\hyperlink{structglm_1_1qua}{qua<U, Q>}} \textcolor{keyword}{const}\& q);}
+\DoxyCodeLine{124         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{125         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}}\& operator*=(\mbox{\hyperlink{structglm_1_1qua}{qua<U, Q>}} \textcolor{keyword}{const}\& q);}
+\DoxyCodeLine{126         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{127         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}}\& operator*=(U s);}
+\DoxyCodeLine{128         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{129         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}}\& operator/=(U s);}
+\DoxyCodeLine{130     \};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#       if GLM\_SILENT\_WARNINGS == GLM\_ENABLE}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#           if GLM\_COMPILER \& GLM\_COMPILER\_CLANG}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#               pragma clang diagnostic pop}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#           elif GLM\_COMPILER \& GLM\_COMPILER\_GCC}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#               pragma GCC diagnostic pop}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#           elif GLM\_COMPILER \& GLM\_COMPILER\_VC}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#               pragma warning(pop)}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#           endif}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142     \textcolor{comment}{// -\/-\/ Unary bit operators -\/-\/}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{145     GLM\_FUNC\_DECL GLM\_CONSTEXPR qua<T, Q> operator+(qua<T, Q> \textcolor{keyword}{const}\& q);}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{148     GLM\_FUNC\_DECL GLM\_CONSTEXPR qua<T, Q> operator-\/(qua<T, Q> \textcolor{keyword}{const}\& q);}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \textcolor{comment}{// -\/-\/ Binary operators -\/-\/}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{153     GLM\_FUNC\_DECL GLM\_CONSTEXPR qua<T, Q> operator+(qua<T, Q> \textcolor{keyword}{const}\& q, qua<T, Q> \textcolor{keyword}{const}\& p);}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{156     GLM\_FUNC\_DECL GLM\_CONSTEXPR qua<T, Q> operator-\/(qua<T, Q> \textcolor{keyword}{const}\& q, qua<T, Q> \textcolor{keyword}{const}\& p);}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{159     GLM\_FUNC\_DECL GLM\_CONSTEXPR qua<T, Q> operator*(qua<T, Q> \textcolor{keyword}{const}\& q, qua<T, Q> \textcolor{keyword}{const}\& p);}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{162     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator*(qua<T, Q> \textcolor{keyword}{const}\& q, vec<3, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{165     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<3, T, Q> operator*(vec<3, T, Q> \textcolor{keyword}{const}\& v, qua<T, Q> \textcolor{keyword}{const}\& q);}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{168     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<4, T, Q> operator*(qua<T, Q> \textcolor{keyword}{const}\& q, vec<4, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{171     GLM\_FUNC\_DECL GLM\_CONSTEXPR vec<4, T, Q> operator*(vec<4, T, Q> \textcolor{keyword}{const}\& v, qua<T, Q> \textcolor{keyword}{const}\& q);}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{174     GLM\_FUNC\_DECL GLM\_CONSTEXPR qua<T, Q> operator*(qua<T, Q> \textcolor{keyword}{const}\& q, T \textcolor{keyword}{const}\& s);}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{177     GLM\_FUNC\_DECL GLM\_CONSTEXPR qua<T, Q> operator*(T \textcolor{keyword}{const}\& s, qua<T, Q> \textcolor{keyword}{const}\& q);}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{180     GLM\_FUNC\_DECL GLM\_CONSTEXPR qua<T, Q> operator/(qua<T, Q> \textcolor{keyword}{const}\& q, T \textcolor{keyword}{const}\& s);}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182     \textcolor{comment}{// -\/-\/ Boolean operators -\/-\/}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{185     GLM\_FUNC\_DECL GLM\_CONSTEXPR \textcolor{keywordtype}{bool} operator==(qua<T, Q> \textcolor{keyword}{const}\& q1, qua<T, Q> \textcolor{keyword}{const}\& q2);}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{188     GLM\_FUNC\_DECL GLM\_CONSTEXPR \textcolor{keywordtype}{bool} operator!=(qua<T, Q> \textcolor{keyword}{const}\& q1, qua<T, Q> \textcolor{keyword}{const}\& q2);}
+\DoxyCodeLine{189 \} \textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#ifndef GLM\_EXTERNAL\_TEMPLATE}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#include "{}type\_quat.inl"{}}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_EXTERNAL\_TEMPLATE}}
+
+\end{DoxyCode}

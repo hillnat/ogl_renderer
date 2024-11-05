@@ -1,0 +1,134 @@
+\hypertarget{__matrix__vectorize_8hpp_source}{}\doxysection{\+\_\+matrix\+\_\+vectorize.\+hpp}
+\label{__matrix__vectorize_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/ext/\_matrix\_vectorize.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/ext/\_matrix\_vectorize.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}} \{}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5     \textcolor{keyword}{namespace }detail \{}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7         \textcolor{keyword}{template}<\textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q> \textcolor{keyword}{class }mat, length\_t C, length\_t R, \textcolor{keyword}{typename} Ret, \textcolor{keyword}{typename} T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{8         \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1matrix__functor__1}{matrix\_functor\_1}} \{}
+\DoxyCodeLine{9         \};}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11         \textcolor{keyword}{template}<\textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q> \textcolor{keyword}{class }\mbox{\hyperlink{structglm_1_1mat}{mat}}, \textcolor{keyword}{typename} Ret, \textcolor{keyword}{typename} T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{12         \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1matrix__functor__1}{matrix\_functor\_1}}<\mbox{\hyperlink{structglm_1_1mat}{mat}}, 2, 2, Ret, T, Q> \{}
+\DoxyCodeLine{13             GLM\_FUNC\_QUALIFIER GLM\_CONSTEXPR \textcolor{keyword}{static} \mbox{\hyperlink{structglm_1_1mat}{mat<2, 2, T, Q>}} call(Ret (*Func)(T x), \mbox{\hyperlink{structglm_1_1mat}{mat<2, 2, T, Q>}} \textcolor{keyword}{const} \&x) \{}
+\DoxyCodeLine{14                 \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1mat}{mat<2, 2, Ret, Q>}}(}
+\DoxyCodeLine{15                     Func(x[0][0]), Func(x[0][1]),}
+\DoxyCodeLine{16                     Func(x[1][0]), Func(x[1][1])}
+\DoxyCodeLine{17                 );}
+\DoxyCodeLine{18             \}}
+\DoxyCodeLine{19         \};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \textcolor{keyword}{template}<\textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q> \textcolor{keyword}{class }\mbox{\hyperlink{structglm_1_1mat}{mat}}, \textcolor{keyword}{typename} Ret, \textcolor{keyword}{typename} T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{22         \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1matrix__functor__1}{matrix\_functor\_1}}<\mbox{\hyperlink{structglm_1_1mat}{mat}}, 2, 3, Ret, T, Q> \{}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24             GLM\_FUNC\_QUALIFIER GLM\_CONSTEXPR \textcolor{keyword}{static} \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} call(Ret (*Func)(T x), \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const} \&x) \{}
+\DoxyCodeLine{25                 \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, Ret, Q>}}(}
+\DoxyCodeLine{26                     Func(x[0][0]), Func(x[0][1]), Func(x[0][2]),}
+\DoxyCodeLine{27                     Func(x[1][0]), Func(x[1][1]), Func(x[1][2])}
+\DoxyCodeLine{28                 );}
+\DoxyCodeLine{29             \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31         \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         \textcolor{keyword}{template}<\textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q> \textcolor{keyword}{class }\mbox{\hyperlink{structglm_1_1mat}{mat}}, \textcolor{keyword}{typename} Ret, \textcolor{keyword}{typename} T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{34         \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1matrix__functor__1}{matrix\_functor\_1}}<\mbox{\hyperlink{structglm_1_1mat}{mat}}, 2, 4, Ret, T, Q> \{}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36             GLM\_FUNC\_QUALIFIER GLM\_CONSTEXPR \textcolor{keyword}{static} \mbox{\hyperlink{structglm_1_1mat}{mat<2, 4, T, Q>}} call(Ret (*Func)(T x), \mbox{\hyperlink{structglm_1_1mat}{mat<2, 4, T, Q>}} \textcolor{keyword}{const} \&x) \{}
+\DoxyCodeLine{37                 \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1mat}{mat<2, 4, Ret, Q>}}(}
+\DoxyCodeLine{38                     Func(x[0][0]), Func(x[0][1]), Func(x[0][2]), Func(x[0][3]),}
+\DoxyCodeLine{39                     Func(x[1][0]), Func(x[1][1]), Func(x[1][2]), Func(x[1][3])}
+\DoxyCodeLine{40                 );}
+\DoxyCodeLine{41             \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \textcolor{keyword}{template}<\textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q> \textcolor{keyword}{class }\mbox{\hyperlink{structglm_1_1mat}{mat}}, \textcolor{keyword}{typename} Ret, \textcolor{keyword}{typename} T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{46         \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1matrix__functor__1}{matrix\_functor\_1}}<\mbox{\hyperlink{structglm_1_1mat}{mat}}, 3, 2, Ret, T, Q> \{}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48             GLM\_FUNC\_QUALIFIER GLM\_CONSTEXPR \textcolor{keyword}{static} \mbox{\hyperlink{structglm_1_1mat}{mat<3, 2, T, Q>}} call(Ret (*Func)(T x), \mbox{\hyperlink{structglm_1_1mat}{mat<3, 2, T, Q>}} \textcolor{keyword}{const} \&x) \{}
+\DoxyCodeLine{49                 \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1mat}{mat<3, 2, Ret, Q>}}(}
+\DoxyCodeLine{50                     Func(x[0][0]), Func(x[0][1]),}
+\DoxyCodeLine{51                     Func(x[1][0]), Func(x[1][1]),}
+\DoxyCodeLine{52                     Func(x[2][0]), Func(x[2][1])}
+\DoxyCodeLine{53                 );}
+\DoxyCodeLine{54             \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{keyword}{template}<\textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q> \textcolor{keyword}{class }\mbox{\hyperlink{structglm_1_1mat}{mat}}, \textcolor{keyword}{typename} Ret, \textcolor{keyword}{typename} T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{59         \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1matrix__functor__1}{matrix\_functor\_1}}<\mbox{\hyperlink{structglm_1_1mat}{mat}}, 3, 3, Ret, T, Q> \{}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61             GLM\_FUNC\_QUALIFIER GLM\_CONSTEXPR \textcolor{keyword}{static} \mbox{\hyperlink{structglm_1_1mat}{mat<3, 3, T, Q>}} call(Ret (*Func)(T x), \mbox{\hyperlink{structglm_1_1mat}{mat<3, 3, T, Q>}} \textcolor{keyword}{const} \&x) \{}
+\DoxyCodeLine{62                 \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1mat}{mat<3, 3, Ret, Q>}}(}
+\DoxyCodeLine{63                     Func(x[0][0]), Func(x[0][1]), Func(x[0][2]),}
+\DoxyCodeLine{64                     Func(x[1][0]), Func(x[1][1]), Func(x[1][2]),}
+\DoxyCodeLine{65                     Func(x[2][0]), Func(x[2][1]), Func(x[2][2])}
+\DoxyCodeLine{66                 );}
+\DoxyCodeLine{67             \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71         \textcolor{keyword}{template}<\textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q> \textcolor{keyword}{class }\mbox{\hyperlink{structglm_1_1mat}{mat}}, \textcolor{keyword}{typename} Ret, \textcolor{keyword}{typename} T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{72         \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1matrix__functor__1}{matrix\_functor\_1}}<\mbox{\hyperlink{structglm_1_1mat}{mat}}, 3, 4, Ret, T, Q> \{}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74             GLM\_FUNC\_QUALIFIER GLM\_CONSTEXPR \textcolor{keyword}{static} \mbox{\hyperlink{structglm_1_1mat}{mat<3, 4, T, Q>}} call(Ret (*Func)(T x), \mbox{\hyperlink{structglm_1_1mat}{mat<3, 4, T, Q>}} \textcolor{keyword}{const} \&x) \{}
+\DoxyCodeLine{75                 \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1mat}{mat<3, 4, Ret, Q>}}(}
+\DoxyCodeLine{76                     Func(x[0][0]), Func(x[0][1]), Func(x[0][2]), Func(x[0][3]),}
+\DoxyCodeLine{77                     Func(x[1][0]), Func(x[1][1]), Func(x[1][2]), Func(x[1][3]),}
+\DoxyCodeLine{78                     Func(x[2][0]), Func(x[2][1]), Func(x[2][2]), Func(x[2][3])}
+\DoxyCodeLine{79                 );}
+\DoxyCodeLine{80             \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         \};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         \textcolor{keyword}{template}<\textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q> \textcolor{keyword}{class }\mbox{\hyperlink{structglm_1_1mat}{mat}}, \textcolor{keyword}{typename} Ret, \textcolor{keyword}{typename} T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{85         \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1matrix__functor__1}{matrix\_functor\_1}}<\mbox{\hyperlink{structglm_1_1mat}{mat}}, 4, 2, Ret, T, Q> \{}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87             GLM\_FUNC\_QUALIFIER GLM\_CONSTEXPR \textcolor{keyword}{static} \mbox{\hyperlink{structglm_1_1mat}{mat<4, 2, T, Q>}} call(Ret (*Func)(T x), \mbox{\hyperlink{structglm_1_1mat}{mat<4, 2, T, Q>}} \textcolor{keyword}{const} \&x) \{}
+\DoxyCodeLine{88                 \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1mat}{mat<4, 2, Ret, Q>}}(}
+\DoxyCodeLine{89                     Func(x[0][0]), Func(x[0][1]),}
+\DoxyCodeLine{90                     Func(x[1][0]), Func(x[1][1]),}
+\DoxyCodeLine{91                     Func(x[2][0]), Func(x[2][1]),}
+\DoxyCodeLine{92                     Func(x[3][0]), Func(x[3][1])}
+\DoxyCodeLine{93                 );}
+\DoxyCodeLine{94             \}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96         \};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98         \textcolor{keyword}{template}<\textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q> \textcolor{keyword}{class }\mbox{\hyperlink{structglm_1_1mat}{mat}}, \textcolor{keyword}{typename} Ret, \textcolor{keyword}{typename} T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{99         \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1matrix__functor__1}{matrix\_functor\_1}}<\mbox{\hyperlink{structglm_1_1mat}{mat}}, 4, 3, Ret, T, Q> \{}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101             GLM\_FUNC\_QUALIFIER GLM\_CONSTEXPR \textcolor{keyword}{static} \mbox{\hyperlink{structglm_1_1mat}{mat<4, 3, T, Q>}} call(Ret (*Func)(T x), \mbox{\hyperlink{structglm_1_1mat}{mat<4, 3, T, Q>}} \textcolor{keyword}{const} \&x) \{}
+\DoxyCodeLine{102                 \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1mat}{mat<4, 3, Ret, Q>}}(}
+\DoxyCodeLine{103                     Func(x[0][0]), Func(x[0][1]), Func(x[0][2]),}
+\DoxyCodeLine{104                     Func(x[1][0]), Func(x[1][1]), Func(x[1][2]),}
+\DoxyCodeLine{105                     Func(x[2][0]), Func(x[2][1]), Func(x[2][2]),}
+\DoxyCodeLine{106                     Func(x[3][0]), Func(x[3][1]), Func(x[3][2])}
+\DoxyCodeLine{107                 );}
+\DoxyCodeLine{108             \}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110         \};}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112         \textcolor{keyword}{template}<\textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q> \textcolor{keyword}{class }\mbox{\hyperlink{structglm_1_1mat}{mat}}, \textcolor{keyword}{typename} Ret, \textcolor{keyword}{typename} T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{113         \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1matrix__functor__1}{matrix\_functor\_1}}<\mbox{\hyperlink{structglm_1_1mat}{mat}}, 4, 4, Ret, T, Q> \{}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115             GLM\_FUNC\_QUALIFIER GLM\_CONSTEXPR \textcolor{keyword}{static} \mbox{\hyperlink{structglm_1_1mat}{mat<4, 4, T, Q>}} call(Ret (*Func)(T x), \mbox{\hyperlink{structglm_1_1mat}{mat<4, 4, T, Q>}} \textcolor{keyword}{const} \&x) \{}
+\DoxyCodeLine{116                 \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1mat}{mat<4, 4, Ret, Q>}}(}
+\DoxyCodeLine{117                     Func(x[0][0]), Func(x[0][1]), Func(x[0][2]), Func(x[0][3]),}
+\DoxyCodeLine{118                     Func(x[1][0]), Func(x[1][1]), Func(x[1][2]), Func(x[1][3]),}
+\DoxyCodeLine{119                     Func(x[2][0]), Func(x[2][1]), Func(x[2][2]), Func(x[2][3]),}
+\DoxyCodeLine{120                     Func(x[3][0]), Func(x[3][1]), Func(x[3][2]), Func(x[3][3])}
+\DoxyCodeLine{121                 );}
+\DoxyCodeLine{122             \}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124         \};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \}\textcolor{comment}{// namespace glm}}
+
+\end{DoxyCode}

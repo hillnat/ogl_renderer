@@ -1,0 +1,601 @@
+\hypertarget{out_2install_2x64-_release_2include_2assimp_2cimport_8h_source}{}\doxysection{cimport.\+h}
+\label{out_2install_2x64-_release_2include_2assimp_2cimport_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/cimport.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/cimport.h}}
+\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cimport_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{12 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{17 \textcolor{comment}{}}
+\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{27 \textcolor{comment}{}}
+\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef AI\_ASSIMP\_H\_INC}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define AI\_ASSIMP\_H\_INC}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <assimp/importerdesc.h>}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <assimp/types.h>}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{57 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_scene}{aiScene}};}
+\DoxyCodeLine{61 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_texture}{aiTexture}};}
+\DoxyCodeLine{62 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_file_i_o}{aiFileIO}};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{keyword}{typedef} void (*aiLogStreamCallback)(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \textcolor{comment}{/* message */}, \textcolor{keywordtype}{char} * \textcolor{comment}{/* user */});}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{72 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{73 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_log_stream}{aiLogStream}} \{}
+\DoxyCodeLine{75     aiLogStreamCallback \mbox{\hyperlink{structai_log_stream_ac73ae46eee54ba0f920d6abb97c33e97}{callback}};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78     \textcolor{keywordtype}{char} *\mbox{\hyperlink{structai_log_stream_a54fd10877d88f475955afe84c2d9359c}{user}};}
+\DoxyCodeLine{79 \};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{91 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{92 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_property_store}{aiPropertyStore}} \{}
+\DoxyCodeLine{93     \textcolor{keywordtype}{char} sentinel;}
+\DoxyCodeLine{94 \};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{97 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} \mbox{\hyperlink{include_2assimp_2cimport_8h_aaf9b3b6ed742722b3d0bbff0f4621691}{aiBool}};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define AI\_FALSE 0}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define AI\_TRUE 1}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{118 \textcolor{comment}{}ASSIMP\_API \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_scene}{aiScene}} *\mbox{\hyperlink{include_2assimp_2cimport_8h_a5b07b5b6589ad33033c2d456cd95da2b}{aiImportFile}}(}
+\DoxyCodeLine{119         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pFile,}
+\DoxyCodeLine{120         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pFlags);}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{143 \textcolor{comment}{}ASSIMP\_API \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_scene}{aiScene}} *\mbox{\hyperlink{include_2assimp_2cimport_8h_a5345c1c24a0e4b71fff9b485adb11e00}{aiImportFileEx}}(}
+\DoxyCodeLine{144         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pFile,}
+\DoxyCodeLine{145         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pFlags,}
+\DoxyCodeLine{146         C\_STRUCT \mbox{\hyperlink{structai_file_i_o}{aiFileIO}} *pFS);}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{164 \textcolor{comment}{}ASSIMP\_API \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_scene}{aiScene}} *\mbox{\hyperlink{include_2assimp_2cimport_8h_a7060b00dbb8a17fa117526f9e0daa139}{aiImportFileExWithProperties}}(}
+\DoxyCodeLine{165         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pFile,}
+\DoxyCodeLine{166         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pFlags,}
+\DoxyCodeLine{167         C\_STRUCT \mbox{\hyperlink{structai_file_i_o}{aiFileIO}} *pFS,}
+\DoxyCodeLine{168         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_property_store}{aiPropertyStore}} *pProps);}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{201 \textcolor{comment}{}ASSIMP\_API \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_scene}{aiScene}} *\mbox{\hyperlink{include_2assimp_2cimport_8h_ae6c501bf96d364eec7105560787105ff}{aiImportFileFromMemory}}(}
+\DoxyCodeLine{202         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pBuffer,}
+\DoxyCodeLine{203         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pLength,}
+\DoxyCodeLine{204         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pFlags,}
+\DoxyCodeLine{205         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pHint);}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{235 \textcolor{comment}{}ASSIMP\_API \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_scene}{aiScene}} *\mbox{\hyperlink{include_2assimp_2cimport_8h_a5d8236ae1116d5140a40b65bfd01a145}{aiImportFileFromMemoryWithProperties}}(}
+\DoxyCodeLine{236         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pBuffer,}
+\DoxyCodeLine{237         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pLength,}
+\DoxyCodeLine{238         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pFlags,}
+\DoxyCodeLine{239         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pHint,}
+\DoxyCodeLine{240         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_property_store}{aiPropertyStore}} *pProps);}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{257 \textcolor{comment}{}ASSIMP\_API \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_scene}{aiScene}} *\mbox{\hyperlink{include_2assimp_2cimport_8h_af18a83214bad29e8582c7d2ac7be3f14}{aiApplyPostProcessing}}(}
+\DoxyCodeLine{258         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_scene}{aiScene}} *pScene,}
+\DoxyCodeLine{259         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pFlags);}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{281 \textcolor{comment}{}ASSIMP\_API C\_STRUCT \mbox{\hyperlink{structai_log_stream}{aiLogStream}} \mbox{\hyperlink{include_2assimp_2cimport_8h_ad7e375d7b134ec590e812ad1f50eab94}{aiGetPredefinedLogStream}}(}
+\DoxyCodeLine{282         C\_ENUM \mbox{\hyperlink{include_2assimp_2types_8h_ae4271f61a7c06cd4770fc3e11f58f9c6}{aiDefaultLogStream}} pStreams,}
+\DoxyCodeLine{283         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *file);}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{295 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a75c5aa6027cb059e63b3dda005c9c149}{aiAttachLogStream}}(}
+\DoxyCodeLine{296         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_log_stream}{aiLogStream}} *stream);}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{305 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a54a7485c9422348b2f20adcbd192ed64}{aiEnableVerboseLogging}}(\mbox{\hyperlink{include_2assimp_2cimport_8h_aaf9b3b6ed742722b3d0bbff0f4621691}{aiBool}} d);}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{316 \textcolor{comment}{}ASSIMP\_API C\_ENUM \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{include_2assimp_2cimport_8h_a98ad05bb95e8f8157a97c133812a1597}{aiDetachLogStream}}(}
+\DoxyCodeLine{317         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_log_stream}{aiLogStream}} *stream);}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{327 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a8f1fe2e8ccc5f93484098114ae7071bf}{aiDetachAllLogStreams}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{335 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a9d360f95be3deb87f40abf25d4c047dc}{aiReleaseImport}}(}
+\DoxyCodeLine{336         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_scene}{aiScene}} *pScene);}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{345 \textcolor{comment}{}ASSIMP\_API \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{include_2assimp_2cimport_8h_a512bfa5aca8613168d8c5246e09b3935}{aiGetErrorString}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{347 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{354 \textcolor{comment}{}ASSIMP\_API \mbox{\hyperlink{include_2assimp_2cimport_8h_aaf9b3b6ed742722b3d0bbff0f4621691}{aiBool}} \mbox{\hyperlink{include_2assimp_2cimport_8h_adf7ad488ca981fc8800e48e35ddc49e9}{aiIsExtensionSupported}}(}
+\DoxyCodeLine{355         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *szExtension);}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{365 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a99cec86f7950963c0c9ecda87a2e07e2}{aiGetExtensionList}}(}
+\DoxyCodeLine{366         C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} *szOut);}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{368 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{373 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_acf5b67b3700dc01b5f847ad077895e59}{aiGetMemoryRequirements}}(}
+\DoxyCodeLine{374         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_scene}{aiScene}} *pIn,}
+\DoxyCodeLine{375         C\_STRUCT \mbox{\hyperlink{structai_memory_info}{aiMemoryInfo}} *in);}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{382 \textcolor{comment}{}ASSIMP\_API \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_texture}{aiTexture}} *\mbox{\hyperlink{include_2assimp_2cimport_8h_a159f30a3b33f236ebb5b44cad5a2686e}{aiGetEmbeddedTexture}}(\textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_scene}{aiScene}} *pIn, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *filename);}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{390 \textcolor{comment}{}ASSIMP\_API C\_STRUCT \mbox{\hyperlink{structai_property_store}{aiPropertyStore}} *\mbox{\hyperlink{include_2assimp_2cimport_8h_a1c142eb7bcb709482d97a63d4ce6f809}{aiCreatePropertyStore}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{392 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{396 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a579dddd75dbba5621c235df780ffc3e6}{aiReleasePropertyStore}}(C\_STRUCT \mbox{\hyperlink{structai_property_store}{aiPropertyStore}} *p);}
+\DoxyCodeLine{397 }
+\DoxyCodeLine{398 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{410 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a77fe5bf63f5b7811b10fb1ea072cd995}{aiSetImportPropertyInteger}}(}
+\DoxyCodeLine{411         C\_STRUCT \mbox{\hyperlink{structai_property_store}{aiPropertyStore}} *store,}
+\DoxyCodeLine{412         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *szName,}
+\DoxyCodeLine{413         \textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{415 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{427 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a7a3fdb2a587ce72c66182b87465d664d}{aiSetImportPropertyFloat}}(}
+\DoxyCodeLine{428         C\_STRUCT \mbox{\hyperlink{structai_property_store}{aiPropertyStore}} *store,}
+\DoxyCodeLine{429         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *szName,}
+\DoxyCodeLine{430         ai\_real value);}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{432 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{444 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a0c6f78241e9ec7b2470d193858baf22d}{aiSetImportPropertyString}}(}
+\DoxyCodeLine{445         C\_STRUCT \mbox{\hyperlink{structai_property_store}{aiPropertyStore}} *store,}
+\DoxyCodeLine{446         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *szName,}
+\DoxyCodeLine{447         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} *st);}
+\DoxyCodeLine{448 }
+\DoxyCodeLine{449 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{461 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a9c55a41ee04a8bf624d2a735eebf4c87}{aiSetImportPropertyMatrix}}(}
+\DoxyCodeLine{462         C\_STRUCT \mbox{\hyperlink{structai_property_store}{aiPropertyStore}} *store,}
+\DoxyCodeLine{463         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *szName,}
+\DoxyCodeLine{464         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat);}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{466 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{472 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a6fa70de0a410d942b75102d605d700f3}{aiCreateQuaternionFromMatrix}}(}
+\DoxyCodeLine{473         C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *quat,}
+\DoxyCodeLine{474         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *mat);}
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{486 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a59f68c25251aefbd560582cfe39b9287}{aiDecomposeMatrix}}(}
+\DoxyCodeLine{487         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat,}
+\DoxyCodeLine{488         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *scaling,}
+\DoxyCodeLine{489         C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *rotation,}
+\DoxyCodeLine{490         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *position);}
+\DoxyCodeLine{491 }
+\DoxyCodeLine{492 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{496 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a884f06d627cc76df36c9b4ba67801997}{aiTransposeMatrix4}}(}
+\DoxyCodeLine{497         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat);}
+\DoxyCodeLine{498 }
+\DoxyCodeLine{499 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{503 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_af4b7283f4fab57fe71d5ba2efa65e620}{aiTransposeMatrix3}}(}
+\DoxyCodeLine{504         C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *mat);}
+\DoxyCodeLine{505 }
+\DoxyCodeLine{506 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{511 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a3b4fbac8311e9a41c558a0d0798a3e04}{aiTransformVecByMatrix3}}(}
+\DoxyCodeLine{512         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *vec,}
+\DoxyCodeLine{513         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *mat);}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{515 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{520 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_ae5fedd4e5296d335c3afd51cca4f180e}{aiTransformVecByMatrix4}}(}
+\DoxyCodeLine{521         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *vec,}
+\DoxyCodeLine{522         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat);}
+\DoxyCodeLine{523 }
+\DoxyCodeLine{524 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{529 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_addcc9b42dd7afac376679bc66a98fb4e}{aiMultiplyMatrix4}}(}
+\DoxyCodeLine{530         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *dst,}
+\DoxyCodeLine{531         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *src);}
+\DoxyCodeLine{532 }
+\DoxyCodeLine{533 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{538 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a756317f04e6b1f1fdbda294a0fc9d8b2}{aiMultiplyMatrix3}}(}
+\DoxyCodeLine{539         C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *dst,}
+\DoxyCodeLine{540         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *src);}
+\DoxyCodeLine{541 }
+\DoxyCodeLine{542 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{546 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a1e1bf11ec19f8be587c767f3910384ee}{aiIdentityMatrix3}}(}
+\DoxyCodeLine{547         C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *mat);}
+\DoxyCodeLine{548 }
+\DoxyCodeLine{549 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{553 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_ae7af650c79ce312146d55c46f3484508}{aiIdentityMatrix4}}(}
+\DoxyCodeLine{554         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat);}
+\DoxyCodeLine{555 }
+\DoxyCodeLine{556 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{560 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{include_2assimp_2cimport_8h_a0052bf974030e06a5f6b2a4c5d2c5d0d}{aiGetImportFormatCount}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{561 }
+\DoxyCodeLine{562 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{569 \textcolor{comment}{}ASSIMP\_API \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_importer_desc}{aiImporterDesc}} *\mbox{\hyperlink{include_2assimp_2cimport_8h_adcab8dc8878d51852201153fe6ee3e23}{aiGetImportFormatDescription}}(\textcolor{keywordtype}{size\_t} pIndex);}
+\DoxyCodeLine{570 }
+\DoxyCodeLine{571 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{578 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{include_2assimp_2cimport_8h_afdacb5f39a783fd63acb60f662aea88f}{aiVector2AreEqual}}(}
+\DoxyCodeLine{579         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *a,}
+\DoxyCodeLine{580         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *b);}
+\DoxyCodeLine{581 }
+\DoxyCodeLine{582 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{590 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{include_2assimp_2cimport_8h_a303ee3d48123b4db9c2d3cdcf290d9dd}{aiVector2AreEqualEpsilon}}(}
+\DoxyCodeLine{591         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *a,}
+\DoxyCodeLine{592         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *b,}
+\DoxyCodeLine{593         \textcolor{keyword}{const} \textcolor{keywordtype}{float} epsilon);}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{595 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{600 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_aa19faec79505e0b382d43744d0422787}{aiVector2Add}}(}
+\DoxyCodeLine{601         C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *dst,}
+\DoxyCodeLine{602         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *src);}
+\DoxyCodeLine{603 }
+\DoxyCodeLine{604 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{609 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a960a22e7f4332ef0d2821c50c2a546e0}{aiVector2Subtract}}(}
+\DoxyCodeLine{610         C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *dst,}
+\DoxyCodeLine{611         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *src);}
+\DoxyCodeLine{612 }
+\DoxyCodeLine{613 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{618 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_ab87d1ab7266e612681ce68cbbbdc742b}{aiVector2Scale}}(}
+\DoxyCodeLine{619         C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *dst,}
+\DoxyCodeLine{620         \textcolor{keyword}{const} \textcolor{keywordtype}{float} s);}
+\DoxyCodeLine{621 }
+\DoxyCodeLine{622 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{628 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a6590a0c15d493f42328252794552957a}{aiVector2SymMul}}(}
+\DoxyCodeLine{629         C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *dst,}
+\DoxyCodeLine{630         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *other);}
+\DoxyCodeLine{631 }
+\DoxyCodeLine{632 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{637 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_ac5745147ee76fa3e9b328d3e07d3c02e}{aiVector2DivideByScalar}}(}
+\DoxyCodeLine{638         C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *dst,}
+\DoxyCodeLine{639         \textcolor{keyword}{const} \textcolor{keywordtype}{float} s);}
+\DoxyCodeLine{640 }
+\DoxyCodeLine{641 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{647 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a4860e0daf82b2258ed9981a1daf054d9}{aiVector2DivideByVector}}(}
+\DoxyCodeLine{648         C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *dst,}
+\DoxyCodeLine{649         C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *v);}
+\DoxyCodeLine{650 }
+\DoxyCodeLine{651 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{655 \textcolor{comment}{}ASSIMP\_API ai\_real \mbox{\hyperlink{include_2assimp_2cimport_8h_ab72abfec7b02146e7970cc50e9d9156f}{aiVector2Length}}(}
+\DoxyCodeLine{656         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *v);}
+\DoxyCodeLine{657 }
+\DoxyCodeLine{658 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{662 \textcolor{comment}{}ASSIMP\_API ai\_real \mbox{\hyperlink{include_2assimp_2cimport_8h_a9963060107b6048021954f2a331754ad}{aiVector2SquareLength}}(}
+\DoxyCodeLine{663         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *v);}
+\DoxyCodeLine{664 }
+\DoxyCodeLine{665 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{669 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a435e92ce27e5b2dd702757d498d61259}{aiVector2Negate}}(}
+\DoxyCodeLine{670         C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *dst);}
+\DoxyCodeLine{671 }
+\DoxyCodeLine{672 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{678 \textcolor{comment}{}ASSIMP\_API ai\_real \mbox{\hyperlink{include_2assimp_2cimport_8h_aa868413041def06cc38da3c2be3a4f8c}{aiVector2DotProduct}}(}
+\DoxyCodeLine{679         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *a,}
+\DoxyCodeLine{680         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *b);}
+\DoxyCodeLine{681 }
+\DoxyCodeLine{682 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{686 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a2cf329d38b545ad0d792fc59443720f7}{aiVector2Normalize}}(}
+\DoxyCodeLine{687         C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *v);}
+\DoxyCodeLine{688 }
+\DoxyCodeLine{689 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{696 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{include_2assimp_2cimport_8h_a82b300cfbfa90e0313e3c502367d2cd0}{aiVector3AreEqual}}(}
+\DoxyCodeLine{697         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *a,}
+\DoxyCodeLine{698         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *b);}
+\DoxyCodeLine{699 }
+\DoxyCodeLine{700 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{708 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{include_2assimp_2cimport_8h_a8ccc11c2632f826405646bd7c428633e}{aiVector3AreEqualEpsilon}}(}
+\DoxyCodeLine{709         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *a,}
+\DoxyCodeLine{710         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *b,}
+\DoxyCodeLine{711         \textcolor{keyword}{const} \textcolor{keywordtype}{float} epsilon);}
+\DoxyCodeLine{712 }
+\DoxyCodeLine{713 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{721 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{include_2assimp_2cimport_8h_ab039f7f0231af6cf973344f2b9071345}{aiVector3LessThan}}(}
+\DoxyCodeLine{722         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *a,}
+\DoxyCodeLine{723         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *b);}
+\DoxyCodeLine{724 }
+\DoxyCodeLine{725 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{730 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a043069a04f234039695b248c904f710d}{aiVector3Add}}(}
+\DoxyCodeLine{731         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *dst,}
+\DoxyCodeLine{732         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *src);}
+\DoxyCodeLine{733 }
+\DoxyCodeLine{734 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{739 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_addbab9671fbac4f81ec07dad443e725f}{aiVector3Subtract}}(}
+\DoxyCodeLine{740         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *dst,}
+\DoxyCodeLine{741         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *src);}
+\DoxyCodeLine{742 }
+\DoxyCodeLine{743 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{748 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a465a1c389160c99113e9250b8b5b0fc4}{aiVector3Scale}}(}
+\DoxyCodeLine{749         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *dst,}
+\DoxyCodeLine{750         \textcolor{keyword}{const} \textcolor{keywordtype}{float} s);}
+\DoxyCodeLine{751 }
+\DoxyCodeLine{752 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{758 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a71009f6853344a64199d3ccc2be523d2}{aiVector3SymMul}}(}
+\DoxyCodeLine{759         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *dst,}
+\DoxyCodeLine{760         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *other);}
+\DoxyCodeLine{761 }
+\DoxyCodeLine{762 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{767 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_aba79aeb9d678f5a5f175565cd3bd8997}{aiVector3DivideByScalar}}(}
+\DoxyCodeLine{768         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *dst,}
+\DoxyCodeLine{769         \textcolor{keyword}{const} \textcolor{keywordtype}{float} s);}
+\DoxyCodeLine{770 }
+\DoxyCodeLine{771 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{777 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_abdec89c729a8f85be791af243b4d1c52}{aiVector3DivideByVector}}(}
+\DoxyCodeLine{778         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *dst,}
+\DoxyCodeLine{779         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *v);}
+\DoxyCodeLine{780 }
+\DoxyCodeLine{781 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{785 \textcolor{comment}{}ASSIMP\_API ai\_real \mbox{\hyperlink{include_2assimp_2cimport_8h_aa5abee7090fb692ab65487ed096c33e9}{aiVector3Length}}(}
+\DoxyCodeLine{786         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *v);}
+\DoxyCodeLine{787 }
+\DoxyCodeLine{788 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{792 \textcolor{comment}{}ASSIMP\_API ai\_real \mbox{\hyperlink{include_2assimp_2cimport_8h_ad00a60b197aef18e7adf8b04704578ae}{aiVector3SquareLength}}(}
+\DoxyCodeLine{793         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *v);}
+\DoxyCodeLine{794 }
+\DoxyCodeLine{795 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{799 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a8f6e6d6b4a4596775dfe165e2b32dcdc}{aiVector3Negate}}(}
+\DoxyCodeLine{800         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *dst);}
+\DoxyCodeLine{801 }
+\DoxyCodeLine{802 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{808 \textcolor{comment}{}ASSIMP\_API ai\_real \mbox{\hyperlink{include_2assimp_2cimport_8h_aea8b4c38e2a1eb3ced3381c1e813040d}{aiVector3DotProduct}}(}
+\DoxyCodeLine{809         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *a,}
+\DoxyCodeLine{810         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *b);}
+\DoxyCodeLine{811 }
+\DoxyCodeLine{812 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{819 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a2a14800504f7548ee93ca406025e187b}{aiVector3CrossProduct}}(}
+\DoxyCodeLine{820         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *dst,}
+\DoxyCodeLine{821         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *a,}
+\DoxyCodeLine{822         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *b);}
+\DoxyCodeLine{823 }
+\DoxyCodeLine{824 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{828 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_abcdd1e68af302f6505d6cb2c0063b158}{aiVector3Normalize}}(}
+\DoxyCodeLine{829         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *v);}
+\DoxyCodeLine{830 }
+\DoxyCodeLine{831 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{835 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a623783417aac17ea9e1453d05f3f06b0}{aiVector3NormalizeSafe}}(}
+\DoxyCodeLine{836         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *v);}
+\DoxyCodeLine{837 }
+\DoxyCodeLine{838 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{843 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a9a50bb28963ae12b229b1a0e2e8f72fe}{aiVector3RotateByQuaternion}}(}
+\DoxyCodeLine{844         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *v,}
+\DoxyCodeLine{845         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *q);}
+\DoxyCodeLine{846 }
+\DoxyCodeLine{847 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{852 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a3c08715c4cff3156db831d1c168ad75c}{aiMatrix3FromMatrix4}}(}
+\DoxyCodeLine{853         C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *dst,}
+\DoxyCodeLine{854         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat);}
+\DoxyCodeLine{855 }
+\DoxyCodeLine{856 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{861 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a210e38de6e4840f51df0b4609d9e6f3b}{aiMatrix3FromQuaternion}}(}
+\DoxyCodeLine{862         C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *mat,}
+\DoxyCodeLine{863         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *q);}
+\DoxyCodeLine{864 }
+\DoxyCodeLine{865 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{872 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{include_2assimp_2cimport_8h_a110da1b8c6b45f2b3952608e22accf95}{aiMatrix3AreEqual}}(}
+\DoxyCodeLine{873         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *a,}
+\DoxyCodeLine{874         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *b);}
+\DoxyCodeLine{875 }
+\DoxyCodeLine{876 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{884 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{include_2assimp_2cimport_8h_a4aa00973c551b9e152796e4f366beefb}{aiMatrix3AreEqualEpsilon}}(}
+\DoxyCodeLine{885         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *a,}
+\DoxyCodeLine{886         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *b,}
+\DoxyCodeLine{887         \textcolor{keyword}{const} \textcolor{keywordtype}{float} epsilon);}
+\DoxyCodeLine{888 }
+\DoxyCodeLine{889 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{893 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a908df55e96d0325cdc11cb4046b3924e}{aiMatrix3Inverse}}(}
+\DoxyCodeLine{894         C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *mat);}
+\DoxyCodeLine{895 }
+\DoxyCodeLine{896 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{900 \textcolor{comment}{}ASSIMP\_API ai\_real \mbox{\hyperlink{include_2assimp_2cimport_8h_a68866eaafe94c5e7ceb0314d23abb0b9}{aiMatrix3Determinant}}(}
+\DoxyCodeLine{901         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *mat);}
+\DoxyCodeLine{902 }
+\DoxyCodeLine{903 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{908 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_ab92b0b84fe56833684bf0a6daa09375a}{aiMatrix3RotationZ}}(}
+\DoxyCodeLine{909         C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *mat,}
+\DoxyCodeLine{910         \textcolor{keyword}{const} \textcolor{keywordtype}{float} angle);}
+\DoxyCodeLine{911 }
+\DoxyCodeLine{912 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{918 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_af9aa9c1b191f70daedf197830f3ebceb}{aiMatrix3FromRotationAroundAxis}}(}
+\DoxyCodeLine{919         C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *mat,}
+\DoxyCodeLine{920         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *axis,}
+\DoxyCodeLine{921         \textcolor{keyword}{const} \textcolor{keywordtype}{float} angle);}
+\DoxyCodeLine{922 }
+\DoxyCodeLine{923 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{928 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a629bb259d1fb0d1642bca1ad193a1a15}{aiMatrix3Translation}}(}
+\DoxyCodeLine{929         C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *mat,}
+\DoxyCodeLine{930         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector2_d}{aiVector2D}} *translation);}
+\DoxyCodeLine{931 }
+\DoxyCodeLine{932 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{938 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a6cbf731a617e671036daf330b8a24d11}{aiMatrix3FromTo}}(}
+\DoxyCodeLine{939         C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *mat,}
+\DoxyCodeLine{940         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *from,}
+\DoxyCodeLine{941         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *to);}
+\DoxyCodeLine{942 }
+\DoxyCodeLine{943 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{948 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_aff9e67a646bcbee082a04f3263c3b370}{aiMatrix4FromMatrix3}}(}
+\DoxyCodeLine{949         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *dst,}
+\DoxyCodeLine{950         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix3x3}{aiMatrix3x3}} *mat);}
+\DoxyCodeLine{951 }
+\DoxyCodeLine{952 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{959 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a6862bf926075ef8f31d30bb7deebadb7}{aiMatrix4FromScalingQuaternionPosition}}(}
+\DoxyCodeLine{960         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat,}
+\DoxyCodeLine{961         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *scaling,}
+\DoxyCodeLine{962         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *rotation,}
+\DoxyCodeLine{963         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *position);}
+\DoxyCodeLine{964 }
+\DoxyCodeLine{965 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{970 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_ac776cef5575489668b3a6d9dc4b5b9bb}{aiMatrix4Add}}(}
+\DoxyCodeLine{971         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *dst,}
+\DoxyCodeLine{972         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *src);}
+\DoxyCodeLine{973 }
+\DoxyCodeLine{974 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{981 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{include_2assimp_2cimport_8h_ade5fc9bc42ce480302bbc46dca0a1f71}{aiMatrix4AreEqual}}(}
+\DoxyCodeLine{982         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *a,}
+\DoxyCodeLine{983         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *b);}
+\DoxyCodeLine{984 }
+\DoxyCodeLine{985 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{993 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{include_2assimp_2cimport_8h_a1cb3dc49cf49438e3e119f749ebbb89a}{aiMatrix4AreEqualEpsilon}}(}
+\DoxyCodeLine{994         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *a,}
+\DoxyCodeLine{995         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *b,}
+\DoxyCodeLine{996         \textcolor{keyword}{const} \textcolor{keywordtype}{float} epsilon);}
+\DoxyCodeLine{997 }
+\DoxyCodeLine{998 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1002 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a9f56eae7a0ff03b6959cc3e8f49c5471}{aiMatrix4Inverse}}(}
+\DoxyCodeLine{1003         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat);}
+\DoxyCodeLine{1004 }
+\DoxyCodeLine{1005 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1010 \textcolor{comment}{}ASSIMP\_API ai\_real \mbox{\hyperlink{include_2assimp_2cimport_8h_aef8704f1b79ab42481e3dd379056c915}{aiMatrix4Determinant}}(}
+\DoxyCodeLine{1011         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat);}
+\DoxyCodeLine{1012 }
+\DoxyCodeLine{1013 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1019 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{include_2assimp_2cimport_8h_a614bf7c554b73ac4fb017232e9733f7c}{aiMatrix4IsIdentity}}(}
+\DoxyCodeLine{1020         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat);}
+\DoxyCodeLine{1021 }
+\DoxyCodeLine{1022 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1031 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_acde8a130e1ceddfed3f6aaef9cfbc202}{aiMatrix4DecomposeIntoScalingEulerAnglesPosition}}(}
+\DoxyCodeLine{1032         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat,}
+\DoxyCodeLine{1033         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *scaling,}
+\DoxyCodeLine{1034         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *rotation,}
+\DoxyCodeLine{1035         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *position);}
+\DoxyCodeLine{1036 }
+\DoxyCodeLine{1037 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1048 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a9b9e8095af73bbcb7ece6522d1e5afab}{aiMatrix4DecomposeIntoScalingAxisAnglePosition}}(}
+\DoxyCodeLine{1049         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat,}
+\DoxyCodeLine{1050         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *scaling,}
+\DoxyCodeLine{1051         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *axis,}
+\DoxyCodeLine{1052         ai\_real *angle,}
+\DoxyCodeLine{1053         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *position);}
+\DoxyCodeLine{1054 }
+\DoxyCodeLine{1055 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1063 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a1088673571a5d1ac3f0d350b1ec64eee}{aiMatrix4DecomposeNoScaling}}(}
+\DoxyCodeLine{1064         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat,}
+\DoxyCodeLine{1065         C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *rotation,}
+\DoxyCodeLine{1066         C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *position);}
+\DoxyCodeLine{1067 }
+\DoxyCodeLine{1068 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1075 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a614f4e244dcf3675caff5e58e622c724}{aiMatrix4FromEulerAngles}}(}
+\DoxyCodeLine{1076         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat,}
+\DoxyCodeLine{1077         \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z);}
+\DoxyCodeLine{1078 }
+\DoxyCodeLine{1079 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1084 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_abd32525a685798f943c0d0879c6803f2}{aiMatrix4RotationX}}(}
+\DoxyCodeLine{1085         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat,}
+\DoxyCodeLine{1086         \textcolor{keyword}{const} \textcolor{keywordtype}{float} angle);}
+\DoxyCodeLine{1087 }
+\DoxyCodeLine{1088 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1093 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a32ee0305287cd9acb71aee20a9f7dc26}{aiMatrix4RotationY}}(}
+\DoxyCodeLine{1094         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat,}
+\DoxyCodeLine{1095         \textcolor{keyword}{const} \textcolor{keywordtype}{float} angle);}
+\DoxyCodeLine{1096 }
+\DoxyCodeLine{1097 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1102 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a522a8d4f06df87bad085a0ca52ae9b3a}{aiMatrix4RotationZ}}(}
+\DoxyCodeLine{1103         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat,}
+\DoxyCodeLine{1104         \textcolor{keyword}{const} \textcolor{keywordtype}{float} angle);}
+\DoxyCodeLine{1105 }
+\DoxyCodeLine{1106 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1112 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a55c1f4c9f5a9e390be747e4d32ea01bd}{aiMatrix4FromRotationAroundAxis}}(}
+\DoxyCodeLine{1113         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat,}
+\DoxyCodeLine{1114         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *axis,}
+\DoxyCodeLine{1115         \textcolor{keyword}{const} \textcolor{keywordtype}{float} angle);}
+\DoxyCodeLine{1116 }
+\DoxyCodeLine{1117 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1122 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_acf1e51b238c89a591697b7c7b042a3e5}{aiMatrix4Translation}}(}
+\DoxyCodeLine{1123         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat,}
+\DoxyCodeLine{1124         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *translation);}
+\DoxyCodeLine{1125 }
+\DoxyCodeLine{1126 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1131 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_ad817fd02b90bc03d272bbf70d1c475be}{aiMatrix4Scaling}}(}
+\DoxyCodeLine{1132         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat,}
+\DoxyCodeLine{1133         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *scaling);}
+\DoxyCodeLine{1134 }
+\DoxyCodeLine{1135 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1141 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_adca34cb6c417e5f93facb179ee15b792}{aiMatrix4FromTo}}(}
+\DoxyCodeLine{1142         C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} *mat,}
+\DoxyCodeLine{1143         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *from,}
+\DoxyCodeLine{1144         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *to);}
+\DoxyCodeLine{1145 }
+\DoxyCodeLine{1146 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1153 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a5b91f777352483e071565305439ddc58}{aiQuaternionFromEulerAngles}}(}
+\DoxyCodeLine{1154         C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *q,}
+\DoxyCodeLine{1155         \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z);}
+\DoxyCodeLine{1156 }
+\DoxyCodeLine{1157 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1163 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a4905af66bbbc89a94b8ecd991404f27a}{aiQuaternionFromAxisAngle}}(}
+\DoxyCodeLine{1164         C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *q,}
+\DoxyCodeLine{1165         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *axis,}
+\DoxyCodeLine{1166         \textcolor{keyword}{const} \textcolor{keywordtype}{float} angle);}
+\DoxyCodeLine{1167 }
+\DoxyCodeLine{1168 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1174 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a40f1e286c016046d93b898a615a50d1d}{aiQuaternionFromNormalizedQuaternion}}(}
+\DoxyCodeLine{1175         C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *q,}
+\DoxyCodeLine{1176         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *normalized);}
+\DoxyCodeLine{1177 }
+\DoxyCodeLine{1178 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1185 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{include_2assimp_2cimport_8h_ac0c4d303f2bc7a2c709c77b37ff8642e}{aiQuaternionAreEqual}}(}
+\DoxyCodeLine{1186         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *a,}
+\DoxyCodeLine{1187         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *b);}
+\DoxyCodeLine{1188 }
+\DoxyCodeLine{1189 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1197 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{int} \mbox{\hyperlink{include_2assimp_2cimport_8h_acfe60c5a39046c23735f56efb3fd2599}{aiQuaternionAreEqualEpsilon}}(}
+\DoxyCodeLine{1198         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *a,}
+\DoxyCodeLine{1199         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *b,}
+\DoxyCodeLine{1200         \textcolor{keyword}{const} \textcolor{keywordtype}{float} epsilon);}
+\DoxyCodeLine{1201 }
+\DoxyCodeLine{1202 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1206 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a688b5b7f8c0ea71ee69cca9760363b85}{aiQuaternionNormalize}}(}
+\DoxyCodeLine{1207         C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *q);}
+\DoxyCodeLine{1208 }
+\DoxyCodeLine{1209 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1214 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a7f95379c84b89a71039ef7d2f1f48ade}{aiQuaternionConjugate}}(}
+\DoxyCodeLine{1215         C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *q);}
+\DoxyCodeLine{1216 }
+\DoxyCodeLine{1217 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1222 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a68b266354ba787b887edbb2197d5ec38}{aiQuaternionMultiply}}(}
+\DoxyCodeLine{1223         C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *dst,}
+\DoxyCodeLine{1224         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *q);}
+\DoxyCodeLine{1225 }
+\DoxyCodeLine{1226 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1233 \textcolor{comment}{}ASSIMP\_API \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2cimport_8h_a737dbdbfe30cf5cde4cd7ff52bd5e0ad}{aiQuaternionInterpolate}}(}
+\DoxyCodeLine{1234         C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *dst,}
+\DoxyCodeLine{1235         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *start,}
+\DoxyCodeLine{1236         \textcolor{keyword}{const} C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} *end,}
+\DoxyCodeLine{1237         \textcolor{keyword}{const} \textcolor{keywordtype}{float} factor);}
+\DoxyCodeLine{1238 }
+\DoxyCodeLine{1239 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1240 \}}
+\DoxyCodeLine{1241 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1242 }
+\DoxyCodeLine{1243 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_ASSIMP\_H\_INC}}
+
+\end{DoxyCode}

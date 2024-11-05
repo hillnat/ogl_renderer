@@ -1,0 +1,125 @@
+\hypertarget{include_2assimp_2_default_i_o_stream_8h_source}{}\doxysection{Default\+IOStream.\+h}
+\label{include_2assimp_2_default_i_o_stream_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/DefaultIOStream.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/DefaultIOStream.h}}
+\mbox{\hyperlink{include_2assimp_2_default_i_o_stream_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{10 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{11 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{14 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{15 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{18 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{19 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{20 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{21 \textcolor{comment}{}}
+\DoxyCodeLine{22 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{23 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{24 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{25 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{26 \textcolor{comment}{}}
+\DoxyCodeLine{27 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{28 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{29 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{30 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{31 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{32 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{33 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{34 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{35 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{36 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{37 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{38 \textcolor{comment}{}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#ifndef AI\_DEFAULTIOSTREAM\_H\_INC}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define AI\_DEFAULTIOSTREAM\_H\_INC}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <cstdio>}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <assimp/IOStream.hpp>}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <assimp/importerdesc.h>}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{66 \textcolor{comment}{}\textcolor{keyword}{class }ASSIMP\_API \mbox{\hyperlink{class_assimp_1_1_default_i_o_stream}{DefaultIOStream}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} \{}
+\DoxyCodeLine{67     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_default_i_o_system}{DefaultIOSystem}};}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#if \_\_ANDROID\_\_}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\# if \_\_ANDROID\_API\_\_ > 9}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#  if defined(AI\_CONFIG\_ANDROID\_JNI\_ASSIMP\_MANAGER\_SUPPORT)}}
+\DoxyCodeLine{71     \textcolor{keyword}{friend} \textcolor{keyword}{class }AndroidJNIIOSystem;}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#  endif }\textcolor{comment}{// defined(AI\_CONFIG\_ANDROID\_JNI\_ASSIMP\_MANAGER\_SUPPORT)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\# endif }\textcolor{comment}{// \_\_ANDROID\_API\_\_ > 9}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_ANDROID\_\_}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{78     \mbox{\hyperlink{class_assimp_1_1_default_i_o_stream}{DefaultIOStream}}() AI\_NO\_EXCEPT;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{83     \mbox{\hyperlink{class_assimp_1_1_default_i_o_stream}{DefaultIOStream}}(FILE* pFile, \textcolor{keyword}{const} std::string \&strFilename);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{keyword}{public}:}
+\DoxyCodeLine{87     \mbox{\hyperlink{class_assimp_1_1_default_i_o_stream_a71771ef1da1d51f70c5076aa6b594664}{\string~DefaultIOStream}} () \textcolor{keyword}{override};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{91 \textcolor{comment}{}    \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_default_i_o_stream_a0ccc421495f66a7321c9bfc3868ec166}{Read}}(\textcolor{keywordtype}{void}* pvBuffer, \textcolor{keywordtype}{size\_t} pSize, \textcolor{keywordtype}{size\_t} pCount) \textcolor{keyword}{override};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{95 \textcolor{comment}{}    \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_default_i_o_stream_ab9416c5c70b5a8d831cdf7f9d1dcc163}{Write}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void}* pvBuffer, \textcolor{keywordtype}{size\_t} pSize, \textcolor{keywordtype}{size\_t} pCount) \textcolor{keyword}{override};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{99 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{class_assimp_1_1_default_i_o_stream_a76a4d4f97de5045bc5dcd08c537c2b0a}{Seek}}(\textcolor{keywordtype}{size\_t} pOffset, \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786}{aiOrigin}} pOrigin) \textcolor{keyword}{override};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{103 \textcolor{comment}{}    \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_default_i_o_stream_a6983b5bb00211231ae65c44660ce59f9}{Tell}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{107 \textcolor{comment}{}    \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_default_i_o_stream_ada6e943195cfd77582fda026c2966718}{FileSize}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{111 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_default_i_o_stream_a4d9f3d3ffa6067c1c8be2587f2006fb5}{Flush}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{keyword}{private}:}
+\DoxyCodeLine{114     FILE* mFile;}
+\DoxyCodeLine{115     std::string mFilename;}
+\DoxyCodeLine{116     \textcolor{keyword}{mutable} \textcolor{keywordtype}{size\_t} mCachedSize;}
+\DoxyCodeLine{117 \};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{120 AI\_FORCE\_INLINE DefaultIOStream::DefaultIOStream() AI\_NO\_EXCEPT :}
+\DoxyCodeLine{121         mFile(\textcolor{keywordtype}{nullptr}),}
+\DoxyCodeLine{122         mFilename(),}
+\DoxyCodeLine{123         mCachedSize(SIZE\_MAX) \{}
+\DoxyCodeLine{124     \textcolor{comment}{// empty}}
+\DoxyCodeLine{125 \}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{128 AI\_FORCE\_INLINE DefaultIOStream::DefaultIOStream (FILE* pFile, \textcolor{keyword}{const} std::string \&strFilename) :}
+\DoxyCodeLine{129         mFile(pFile),}
+\DoxyCodeLine{130         mFilename(strFilename),}
+\DoxyCodeLine{131         mCachedSize(SIZE\_MAX) \{}
+\DoxyCodeLine{132     \textcolor{comment}{// empty}}
+\DoxyCodeLine{133 \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \} \textcolor{comment}{// ns assimp}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

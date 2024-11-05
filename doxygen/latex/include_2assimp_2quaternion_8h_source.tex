@@ -1,0 +1,114 @@
+\hypertarget{include_2assimp_2quaternion_8h_source}{}\doxysection{quaternion.\+h}
+\label{include_2assimp_2quaternion_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/quaternion.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/quaternion.h}}
+\mbox{\hyperlink{include_2assimp_2quaternion_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{10 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{11 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{14 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{15 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{18 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{19 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{20 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{21 \textcolor{comment}{}}
+\DoxyCodeLine{22 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{23 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{24 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{25 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{26 \textcolor{comment}{}}
+\DoxyCodeLine{27 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{28 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{29 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{30 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{31 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{32 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{33 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{34 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{35 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{36 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{37 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{38 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{39 \textcolor{comment}{*/}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#ifndef AI\_QUATERNION\_H\_INC}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define AI\_QUATERNION\_H\_INC}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include <assimp/defs.h>}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{comment}{// Forward declarations}}
+\DoxyCodeLine{57 \textcolor{keyword}{template} <\textcolor{keyword}{typename} TReal> \textcolor{keyword}{class }aiVector3t;}
+\DoxyCodeLine{58 \textcolor{keyword}{template} <\textcolor{keyword}{typename} TReal> \textcolor{keyword}{class }aiMatrix3x3t;}
+\DoxyCodeLine{59 \textcolor{keyword}{template} <\textcolor{keyword}{typename} TReal> \textcolor{keyword}{class }aiMatrix4x4t;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{65 \textcolor{comment}{}\textcolor{keyword}{template} <\textcolor{keyword}{typename} TReal>}
+\DoxyCodeLine{66 \textcolor{keyword}{class }aiQuaterniont \{}
+\DoxyCodeLine{67 \textcolor{keyword}{public}:}
+\DoxyCodeLine{68     aiQuaterniont() AI\_NO\_EXCEPT : w(1.0), x(), y(), z() \{\}}
+\DoxyCodeLine{69     aiQuaterniont(TReal pw, TReal px, TReal py, TReal pz)}
+\DoxyCodeLine{70         : w(pw), x(px), y(py), z(pz) \{\}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{75     \textcolor{keyword}{explicit} aiQuaterniont( \textcolor{keyword}{const} aiMatrix3x3t<TReal>\& pRotMatrix);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78     aiQuaterniont( TReal roty, TReal rotz, TReal rotx);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81     aiQuaterniont( aiVector3t<TReal> axis, TReal angle);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{84     \textcolor{keyword}{explicit} aiQuaterniont( aiVector3t<TReal> normalized);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{87     aiMatrix3x3t<TReal> GetMatrix() \textcolor{keyword}{const};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{keywordtype}{bool} operator== (\textcolor{keyword}{const} aiQuaterniont\& o) \textcolor{keyword}{const};}
+\DoxyCodeLine{90     \textcolor{keywordtype}{bool} operator!= (\textcolor{keyword}{const} aiQuaterniont\& o) \textcolor{keyword}{const};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{// transform vector by matrix}}
+\DoxyCodeLine{93     aiQuaterniont\& operator *= (\textcolor{keyword}{const} aiMatrix4x4t<TReal>\& mat);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{keywordtype}{bool} Equal(\textcolor{keyword}{const} aiQuaterniont \&o, TReal epsilon = ai\_epsilon) \textcolor{keyword}{const};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{100     aiQuaterniont\& Normalize();}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{105     aiQuaterniont\& Conjugate();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{110     aiVector3t<TReal> Rotate(\textcolor{keyword}{const} aiVector3t<TReal>\& in) \textcolor{keyword}{const};}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{117     aiQuaterniont operator * (\textcolor{keyword}{const} aiQuaterniont\& two) \textcolor{keyword}{const};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{126     \textcolor{keyword}{static} \textcolor{keywordtype}{void} Interpolate( aiQuaterniont\& pOut, \textcolor{keyword}{const} aiQuaterniont\& pStart,}
+\DoxyCodeLine{127         \textcolor{keyword}{const} aiQuaterniont\& pEnd, TReal pFactor);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{130     TReal w, x, y, z;}
+\DoxyCodeLine{131 \} ;}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{keyword}{using }\mbox{\hyperlink{structai_quaternion}{aiQuaternion}} = aiQuaterniont<ai\_real>;}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_quaternion}{aiQuaternion}} \{}
+\DoxyCodeLine{138     ai\_real w, x, y, z;}
+\DoxyCodeLine{139 \};}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_QUATERNION\_H\_INC}}
+
+\end{DoxyCode}

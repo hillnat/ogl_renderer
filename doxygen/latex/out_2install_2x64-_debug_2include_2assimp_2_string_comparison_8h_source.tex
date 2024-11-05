@@ -1,0 +1,175 @@
+\hypertarget{out_2install_2x64-_debug_2include_2assimp_2_string_comparison_8h_source}{}\doxysection{String\+Comparison.\+h}
+\label{out_2install_2x64-_debug_2include_2assimp_2_string_comparison_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/StringComparison.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/StringComparison.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{12 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{17 \textcolor{comment}{}}
+\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{27 \textcolor{comment}{}}
+\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{39 \textcolor{comment}{}}
+\DoxyCodeLine{40 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{41 \textcolor{comment}{*/}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#ifndef INCLUDED\_AI\_STRING\_WORKERS\_H}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define INCLUDED\_AI\_STRING\_WORKERS\_H}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#include <assimp/ai\_assert.h>}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#include <assimp/defs.h>}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{80 \textcolor{comment}{}\textcolor{keyword}{inline} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespace_assimp_a95de3dd4de6a42bfed3eb0a9fcea48be}{ASSIMP\_itoa10}}(\textcolor{keywordtype}{char} *out, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} max, int32\_t number) \{}
+\DoxyCodeLine{81     ai\_assert(\textcolor{keyword}{nullptr} != out);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{comment}{// write the unary minus to indicate we have a negative number}}
+\DoxyCodeLine{84     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} written = 1u;}
+\DoxyCodeLine{85     \textcolor{keywordflow}{if} (number < 0 \&\& written < max) \{}
+\DoxyCodeLine{86         *out++ = \textcolor{charliteral}{'-\/'};}
+\DoxyCodeLine{87         ++written;}
+\DoxyCodeLine{88         number = -\/number;}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{comment}{// We begin with the largest number that is not zero.}}
+\DoxyCodeLine{92     \mbox{\hyperlink{group__gtc__type__precision_gab870c0eb6f525b0c8c4716762e0fc3a8}{int32\_t}} cur = 1000000000; \textcolor{comment}{// 2147483648}}
+\DoxyCodeLine{93     \textcolor{keywordtype}{bool} mustPrint = \textcolor{keyword}{false};}
+\DoxyCodeLine{94     \textcolor{keywordflow}{while} (written < max) \{}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} digit = number / cur;}
+\DoxyCodeLine{97         \textcolor{keywordflow}{if} (mustPrint || digit > 0 || 1 == cur) \{}
+\DoxyCodeLine{98             \textcolor{comment}{// print all future zero's from now}}
+\DoxyCodeLine{99             mustPrint = \textcolor{keyword}{true};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101             *out++ = \textcolor{charliteral}{'0'} + \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(digit);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103             ++written;}
+\DoxyCodeLine{104             number -\/= digit * cur;}
+\DoxyCodeLine{105             \textcolor{keywordflow}{if} (1 == cur) \{}
+\DoxyCodeLine{106                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{107             \}}
+\DoxyCodeLine{108         \}}
+\DoxyCodeLine{109         cur /= 10;}
+\DoxyCodeLine{110     \}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{comment}{// append a terminal zero}}
+\DoxyCodeLine{113     *out++ = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{114     \textcolor{keywordflow}{return} written -\/ 1;}
+\DoxyCodeLine{115 \}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{122 \textcolor{comment}{}\textcolor{keyword}{template} <\textcolor{keywordtype}{size\_t} length>}
+\DoxyCodeLine{123 \textcolor{keyword}{inline} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespace_assimp_a95de3dd4de6a42bfed3eb0a9fcea48be}{ASSIMP\_itoa10}}(\textcolor{keywordtype}{char} (\&out)[length], int32\_t number) \{}
+\DoxyCodeLine{124     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespace_assimp_a95de3dd4de6a42bfed3eb0a9fcea48be}{ASSIMP\_itoa10}}(out, length, number);}
+\DoxyCodeLine{125 \}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{138 \textcolor{comment}{}\textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespace_assimp_a72851b2740829d0e26ee31da7af20ce6}{ASSIMP\_stricmp}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *s1, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *s2) \{}
+\DoxyCodeLine{139     ai\_assert(\textcolor{keyword}{nullptr} != s1);}
+\DoxyCodeLine{140     ai\_assert(\textcolor{keyword}{nullptr} != s2);}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#if (defined \_MSC\_VER)}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144     return ::\_stricmp(s1, s2);}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{146     \textcolor{keywordtype}{char} c1, c2;}
+\DoxyCodeLine{147     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{148         c1 = tolower((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})*(s1++));}
+\DoxyCodeLine{149         c2 = tolower((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})*(s2++));}
+\DoxyCodeLine{150     \} \textcolor{keywordflow}{while} (c1 \&\& (c1 == c2));}
+\DoxyCodeLine{151     \textcolor{keywordflow}{return} c1 -\/ c2;}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{153 \}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{162 \textcolor{comment}{}\textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespace_assimp_a72851b2740829d0e26ee31da7af20ce6}{ASSIMP\_stricmp}}(\textcolor{keyword}{const} std::string \&a, \textcolor{keyword}{const} std::string \&b) \{}
+\DoxyCodeLine{163     \textcolor{keywordtype}{int} i = (int)b.length() -\/ (int)a.length();}
+\DoxyCodeLine{164     \textcolor{keywordflow}{return} (i ? i : \mbox{\hyperlink{namespace_assimp_a72851b2740829d0e26ee31da7af20ce6}{ASSIMP\_stricmp}}(a.c\_str(), b.c\_str()));}
+\DoxyCodeLine{165 \}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{179 \textcolor{comment}{}\textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespace_assimp_a5718d462fef0070afea1d4ac4e65d4d8}{ASSIMP\_strincmp}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *s1, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *s2, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n) \{}
+\DoxyCodeLine{180     ai\_assert(\textcolor{keyword}{nullptr} != s1);}
+\DoxyCodeLine{181     ai\_assert(\textcolor{keyword}{nullptr} != s2);}
+\DoxyCodeLine{182     \textcolor{keywordflow}{if} (!n) \{}
+\DoxyCodeLine{183         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{184     \}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#if (defined \_MSC\_VER)}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188     return ::\_strnicmp(s1, s2, n);}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#elif defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192     return ::strncasecmp(s1, s2, n);}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{195     \textcolor{keywordtype}{char} c1, c2;}
+\DoxyCodeLine{196     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} p = 0;}
+\DoxyCodeLine{197     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{198         \textcolor{keywordflow}{if} (p++ >= n) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{199         c1 = tolower((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})*(s1++));}
+\DoxyCodeLine{200         c2 = tolower((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})*(s2++));}
+\DoxyCodeLine{201     \} \textcolor{keywordflow}{while} (c1 \&\& (c1 == c2));}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203     \textcolor{keywordflow}{return} c1 -\/ c2;}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{205 \}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{212 \textcolor{comment}{}\textcolor{keyword}{inline} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespace_assimp_a7f1165ac9e907c30dbbba7657c651b4e}{integer\_pow}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} base, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} power) \{}
+\DoxyCodeLine{213     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} res = 1;}
+\DoxyCodeLine{214     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < power; ++i) \{}
+\DoxyCodeLine{215         res *= base;}
+\DoxyCodeLine{216     \}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218     \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{219 \}}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 \} \textcolor{comment}{// namespace Assimp}}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !  AI\_STRINGCOMPARISON\_H\_INC}}
+
+\end{DoxyCode}

@@ -1,0 +1,49 @@
+\hypertarget{out_2install_2x64-_debug_2include_2assimp_2_compiler_2pushpack1_8h_source}{}\doxysection{pushpack1.\+h}
+\label{out_2install_2x64-_debug_2include_2assimp_2_compiler_2pushpack1_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/Compiler/pushpack1.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/Compiler/pushpack1.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{comment}{// ===============================================================================}}
+\DoxyCodeLine{4 \textcolor{comment}{// May be included multiple times -\/ sets structure packing to 1}}
+\DoxyCodeLine{5 \textcolor{comment}{// for all supported compilers. \#include <poppack1.h> reverts the changes.}}
+\DoxyCodeLine{6 \textcolor{comment}{//}}
+\DoxyCodeLine{7 \textcolor{comment}{// Currently this works on the following compilers:}}
+\DoxyCodeLine{8 \textcolor{comment}{// MSVC 7,8,9}}
+\DoxyCodeLine{9 \textcolor{comment}{// GCC}}
+\DoxyCodeLine{10 \textcolor{comment}{// BORLAND (complains about 'pack state changed but not reverted', but works)}}
+\DoxyCodeLine{11 \textcolor{comment}{// Clang}}
+\DoxyCodeLine{12 \textcolor{comment}{//}}
+\DoxyCodeLine{13 \textcolor{comment}{//}}
+\DoxyCodeLine{14 \textcolor{comment}{// USAGE:}}
+\DoxyCodeLine{15 \textcolor{comment}{//}}
+\DoxyCodeLine{16 \textcolor{comment}{// struct StructToBePacked \{}}
+\DoxyCodeLine{17 \textcolor{comment}{// \} PACK\_STRUCT;}}
+\DoxyCodeLine{18 \textcolor{comment}{//}}
+\DoxyCodeLine{19 \textcolor{comment}{// ===============================================================================}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifdef AI\_PUSHPACK\_IS\_DEFINED}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#   error poppack1.h must be included after pushpack1.h}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#if (defined(\_MSC\_VER) \&\& !defined(\_\_clang\_\_)) ||  defined(\_\_BORLANDC\_\_) || defined (\_\_BCPLUSPLUS\_\_)}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#   pragma pack(push,1)}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#   define PACK\_STRUCT}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#elif defined( \_\_GNUC\_\_ ) || defined(\_\_clang\_\_)}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#   if !defined(HOST\_MINGW)}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#       define PACK\_STRUCT  \_\_attribute\_\_((\_\_packed\_\_))}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#   else}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#       define PACK\_STRUCT  \_\_attribute\_\_((gcc\_struct, \_\_packed\_\_))}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#   error Compiler not supported}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#if defined(\_MSC\_VER)}}
+\DoxyCodeLine{39 \textcolor{comment}{// C4103: Packing was changed after the inclusion of the header, probably missing \#pragma pop}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#   pragma warning (disable : 4103)}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define AI\_PUSHPACK\_IS\_DEFINED}}
+
+\end{DoxyCode}

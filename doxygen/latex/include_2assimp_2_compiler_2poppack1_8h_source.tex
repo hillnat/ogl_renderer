@@ -1,0 +1,28 @@
+\hypertarget{include_2assimp_2_compiler_2poppack1_8h_source}{}\doxysection{poppack1.\+h}
+\label{include_2assimp_2_compiler_2poppack1_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/Compiler/poppack1.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/Compiler/poppack1.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{// ===============================================================================}}
+\DoxyCodeLine{3 \textcolor{comment}{// May be included multiple times -\/ resets structure packing to the defaults}}
+\DoxyCodeLine{4 \textcolor{comment}{// for all supported compilers. Reverts the changes made by \#include <pushpack1.h>}}
+\DoxyCodeLine{5 \textcolor{comment}{//}}
+\DoxyCodeLine{6 \textcolor{comment}{// Currently this works on the following compilers:}}
+\DoxyCodeLine{7 \textcolor{comment}{// MSVC 7,8,9}}
+\DoxyCodeLine{8 \textcolor{comment}{// GCC}}
+\DoxyCodeLine{9 \textcolor{comment}{// BORLAND (complains about 'pack state changed but not reverted', but works)}}
+\DoxyCodeLine{10 \textcolor{comment}{// ===============================================================================}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef AI\_PUSHPACK\_IS\_DEFINED}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#   error pushpack1.h must be included after poppack1.h}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{// reset packing to the original value}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#if (defined(\_MSC\_VER) \&\& !defined(\_\_clang\_\_)) ||  defined(\_\_BORLANDC\_\_) || defined (\_\_BCPLUSPLUS\_\_)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#   pragma pack( pop )}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#undef PACK\_STRUCT}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#undef AI\_PUSHPACK\_IS\_DEFINED}}
+
+\end{DoxyCode}

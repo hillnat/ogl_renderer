@@ -1,0 +1,1453 @@
+\hypertarget{wglew_8h_source}{}\doxysection{wglew.\+h}
+\label{wglew_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glew/wglew.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glew/wglew.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** The OpenGL Extension Wrangler Library}}
+\DoxyCodeLine{3 \textcolor{comment}{** Copyright (C) 2008-\/2017, Nigel Stewart <nigels[]users sourceforge net>}}
+\DoxyCodeLine{4 \textcolor{comment}{** Copyright (C) 2002-\/2008, Milan Ikits <milan ikits[]ieee org>}}
+\DoxyCodeLine{5 \textcolor{comment}{** Copyright (C) 2002-\/2008, Marcelo E. Magallon <mmagallo[]debian org>}}
+\DoxyCodeLine{6 \textcolor{comment}{** Copyright (C) 2002, Lev Povalahev}}
+\DoxyCodeLine{7 \textcolor{comment}{** All rights reserved.}}
+\DoxyCodeLine{8 \textcolor{comment}{** }}
+\DoxyCodeLine{9 \textcolor{comment}{** Redistribution and use in source and binary forms, with or without }}
+\DoxyCodeLine{10 \textcolor{comment}{** modification, are permitted provided that the following conditions are met:}}
+\DoxyCodeLine{11 \textcolor{comment}{** }}
+\DoxyCodeLine{12 \textcolor{comment}{** * Redistributions of source code must retain the above copyright notice, }}
+\DoxyCodeLine{13 \textcolor{comment}{**   this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{14 \textcolor{comment}{** * Redistributions in binary form must reproduce the above copyright notice, }}
+\DoxyCodeLine{15 \textcolor{comment}{**   this list of conditions and the following disclaimer in the documentation }}
+\DoxyCodeLine{16 \textcolor{comment}{**   and/or other materials provided with the distribution.}}
+\DoxyCodeLine{17 \textcolor{comment}{** * The name of the author may be used to endorse or promote products }}
+\DoxyCodeLine{18 \textcolor{comment}{**   derived from this software without specific prior written permission.}}
+\DoxyCodeLine{19 \textcolor{comment}{**}}
+\DoxyCodeLine{20 \textcolor{comment}{** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}AS IS"{} }}
+\DoxyCodeLine{21 \textcolor{comment}{** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE }}
+\DoxyCodeLine{22 \textcolor{comment}{** IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE}}
+\DoxyCodeLine{23 \textcolor{comment}{** ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE }}
+\DoxyCodeLine{24 \textcolor{comment}{** LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR }}
+\DoxyCodeLine{25 \textcolor{comment}{** CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF }}
+\DoxyCodeLine{26 \textcolor{comment}{** SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS}}
+\DoxyCodeLine{27 \textcolor{comment}{** INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN}}
+\DoxyCodeLine{28 \textcolor{comment}{** CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)}}
+\DoxyCodeLine{29 \textcolor{comment}{** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF}}
+\DoxyCodeLine{30 \textcolor{comment}{** THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{31 \textcolor{comment}{*/}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{** Copyright (c) 2007 The Khronos Group Inc.}}
+\DoxyCodeLine{35 \textcolor{comment}{** }}
+\DoxyCodeLine{36 \textcolor{comment}{** Permission is hereby granted, free of charge, to any person obtaining a}}
+\DoxyCodeLine{37 \textcolor{comment}{** copy of this software and/or associated documentation files (the}}
+\DoxyCodeLine{38 \textcolor{comment}{** "{}Materials"{}), to deal in the Materials without restriction, including}}
+\DoxyCodeLine{39 \textcolor{comment}{** without limitation the rights to use, copy, modify, merge, publish,}}
+\DoxyCodeLine{40 \textcolor{comment}{** distribute, sublicense, and/or sell copies of the Materials, and to}}
+\DoxyCodeLine{41 \textcolor{comment}{** permit persons to whom the Materials are furnished to do so, subject to}}
+\DoxyCodeLine{42 \textcolor{comment}{** the following conditions:}}
+\DoxyCodeLine{43 \textcolor{comment}{** }}
+\DoxyCodeLine{44 \textcolor{comment}{** The above copyright notice and this permission notice shall be included}}
+\DoxyCodeLine{45 \textcolor{comment}{** in all copies or substantial portions of the Materials.}}
+\DoxyCodeLine{46 \textcolor{comment}{** }}
+\DoxyCodeLine{47 \textcolor{comment}{** THE MATERIALS ARE PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{48 \textcolor{comment}{** EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{49 \textcolor{comment}{** MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{50 \textcolor{comment}{** IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY}}
+\DoxyCodeLine{51 \textcolor{comment}{** CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,}}
+\DoxyCodeLine{52 \textcolor{comment}{** TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE}}
+\DoxyCodeLine{53 \textcolor{comment}{** MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.}}
+\DoxyCodeLine{54 \textcolor{comment}{*/}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#ifndef \_\_wglew\_h\_\_}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define \_\_wglew\_h\_\_}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define \_\_WGLEW\_H\_\_}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#ifdef \_\_wglext\_h\_}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#error wglext.h included before wglew.h}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define \_\_wglext\_h\_}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#if !defined(WINAPI)}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#  ifndef WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#    define WIN32\_LEAN\_AND\_MEAN 1}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#  undef WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{comment}{/*}}
+\DoxyCodeLine{75 \textcolor{comment}{ * GLEW\_STATIC needs to be set when using the static version.}}
+\DoxyCodeLine{76 \textcolor{comment}{ * GLEW\_BUILD is set when building the DLL version.}}
+\DoxyCodeLine{77 \textcolor{comment}{ */}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#ifdef GLEW\_STATIC}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#  define GLEWAPI extern}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#  ifdef GLEW\_BUILD}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#    define GLEWAPI extern \_\_declspec(dllexport)}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#    define GLEWAPI extern \_\_declspec(dllimport)}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{89 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_3DFX\_multisample -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#ifndef WGL\_3DFX\_multisample}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define WGL\_3DFX\_multisample 1}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define WGL\_SAMPLE\_BUFFERS\_3DFX 0x2060}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define WGL\_SAMPLES\_3DFX 0x2061}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define WGLEW\_3DFX\_multisample WGLEW\_GET\_VAR(\_\_WGLEW\_3DFX\_multisample)}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_3DFX\_multisample */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_3DL\_stereo\_control -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#ifndef WGL\_3DL\_stereo\_control}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define WGL\_3DL\_stereo\_control 1}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define WGL\_STEREO\_EMITTER\_ENABLE\_3DL 0x2055}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define WGL\_STEREO\_EMITTER\_DISABLE\_3DL 0x2056}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define WGL\_STEREO\_POLARITY\_NORMAL\_3DL 0x2057}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define WGL\_STEREO\_POLARITY\_INVERT\_3DL 0x2058}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLSETSTEREOEMITTERSTATE3DLPROC) (HDC hDC, UINT uState);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define wglSetStereoEmitterState3DL WGLEW\_GET\_FUN(\_\_wglewSetStereoEmitterState3DL)}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define WGLEW\_3DL\_stereo\_control WGLEW\_GET\_VAR(\_\_WGLEW\_3DL\_stereo\_control)}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_3DL\_stereo\_control */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_AMD\_gpu\_association -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#ifndef WGL\_AMD\_gpu\_association}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define WGL\_AMD\_gpu\_association 1}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define WGL\_GPU\_VENDOR\_AMD 0x1F00}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define WGL\_GPU\_RENDERER\_STRING\_AMD 0x1F01}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define WGL\_GPU\_OPENGL\_VERSION\_STRING\_AMD 0x1F02}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define WGL\_GPU\_FASTEST\_TARGET\_GPUS\_AMD 0x21A2}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define WGL\_GPU\_RAM\_AMD 0x21A3}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define WGL\_GPU\_CLOCK\_AMD 0x21A4}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define WGL\_GPU\_NUM\_PIPES\_AMD 0x21A5}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define WGL\_GPU\_NUM\_SIMD\_AMD 0x21A6}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define WGL\_GPU\_NUM\_RB\_AMD 0x21A7}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define WGL\_GPU\_NUM\_SPI\_AMD 0x21A8}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{keyword}{typedef} VOID (WINAPI * PFNWGLBLITCONTEXTFRAMEBUFFERAMDPROC) (HGLRC dstCtx, GLint srcX0, GLint srcY0, GLint srcX1, GLint srcY1, GLint dstX0, GLint dstY0, GLint dstX1, GLint dstY1, GLbitfield mask, GLenum filter);}
+\DoxyCodeLine{139 \textcolor{keyword}{typedef} HGLRC (WINAPI * PFNWGLCREATEASSOCIATEDCONTEXTAMDPROC) (UINT id);}
+\DoxyCodeLine{140 \textcolor{keyword}{typedef} HGLRC (WINAPI * PFNWGLCREATEASSOCIATEDCONTEXTATTRIBSAMDPROC) (UINT id, HGLRC hShareContext, \textcolor{keyword}{const} \textcolor{keywordtype}{int}* attribList);}
+\DoxyCodeLine{141 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLDELETEASSOCIATEDCONTEXTAMDPROC) (HGLRC hglrc);}
+\DoxyCodeLine{142 \textcolor{keyword}{typedef} UINT (WINAPI * PFNWGLGETCONTEXTGPUIDAMDPROC) (HGLRC hglrc);}
+\DoxyCodeLine{143 \textcolor{keyword}{typedef} HGLRC (WINAPI * PFNWGLGETCURRENTASSOCIATEDCONTEXTAMDPROC) (void);}
+\DoxyCodeLine{144 \textcolor{keyword}{typedef} UINT (WINAPI * PFNWGLGETGPUIDSAMDPROC) (UINT maxCount, UINT* ids);}
+\DoxyCodeLine{145 \textcolor{keyword}{typedef} INT (WINAPI * PFNWGLGETGPUINFOAMDPROC) (UINT id, INT property, GLenum dataType, UINT size, \textcolor{keywordtype}{void}* data);}
+\DoxyCodeLine{146 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLMAKEASSOCIATEDCONTEXTCURRENTAMDPROC) (HGLRC hglrc);}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define wglBlitContextFramebufferAMD WGLEW\_GET\_FUN(\_\_wglewBlitContextFramebufferAMD)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define wglCreateAssociatedContextAMD WGLEW\_GET\_FUN(\_\_wglewCreateAssociatedContextAMD)}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define wglCreateAssociatedContextAttribsAMD WGLEW\_GET\_FUN(\_\_wglewCreateAssociatedContextAttribsAMD)}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define wglDeleteAssociatedContextAMD WGLEW\_GET\_FUN(\_\_wglewDeleteAssociatedContextAMD)}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define wglGetContextGPUIDAMD WGLEW\_GET\_FUN(\_\_wglewGetContextGPUIDAMD)}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define wglGetCurrentAssociatedContextAMD WGLEW\_GET\_FUN(\_\_wglewGetCurrentAssociatedContextAMD)}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define wglGetGPUIDsAMD WGLEW\_GET\_FUN(\_\_wglewGetGPUIDsAMD)}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define wglGetGPUInfoAMD WGLEW\_GET\_FUN(\_\_wglewGetGPUInfoAMD)}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define wglMakeAssociatedContextCurrentAMD WGLEW\_GET\_FUN(\_\_wglewMakeAssociatedContextCurrentAMD)}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define WGLEW\_AMD\_gpu\_association WGLEW\_GET\_VAR(\_\_WGLEW\_AMD\_gpu\_association)}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_AMD\_gpu\_association */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_buffer\_region -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_buffer\_region}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define WGL\_ARB\_buffer\_region 1}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define WGL\_FRONT\_COLOR\_BUFFER\_BIT\_ARB 0x00000001}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define WGL\_BACK\_COLOR\_BUFFER\_BIT\_ARB 0x00000002}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define WGL\_DEPTH\_BUFFER\_BIT\_ARB 0x00000004}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define WGL\_STENCIL\_BUFFER\_BIT\_ARB 0x00000008}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{keyword}{typedef} HANDLE (WINAPI * PFNWGLCREATEBUFFERREGIONARBPROC) (HDC hDC, \textcolor{keywordtype}{int} iLayerPlane, UINT uType);}
+\DoxyCodeLine{173 \textcolor{keyword}{typedef} VOID (WINAPI * PFNWGLDELETEBUFFERREGIONARBPROC) (HANDLE hRegion);}
+\DoxyCodeLine{174 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLRESTOREBUFFERREGIONARBPROC) (HANDLE hRegion, \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height, \textcolor{keywordtype}{int} xSrc, \textcolor{keywordtype}{int} ySrc);}
+\DoxyCodeLine{175 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLSAVEBUFFERREGIONARBPROC) (HANDLE hRegion, \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height);}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define wglCreateBufferRegionARB WGLEW\_GET\_FUN(\_\_wglewCreateBufferRegionARB)}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define wglDeleteBufferRegionARB WGLEW\_GET\_FUN(\_\_wglewDeleteBufferRegionARB)}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define wglRestoreBufferRegionARB WGLEW\_GET\_FUN(\_\_wglewRestoreBufferRegionARB)}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define wglSaveBufferRegionARB WGLEW\_GET\_FUN(\_\_wglewSaveBufferRegionARB)}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define WGLEW\_ARB\_buffer\_region WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_buffer\_region)}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_buffer\_region */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_context\_flush\_control -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_context\_flush\_control}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define WGL\_ARB\_context\_flush\_control 1}}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define WGLEW\_ARB\_context\_flush\_control WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_context\_flush\_control)}}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_context\_flush\_control */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_create\_context -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_create\_context}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#define WGL\_ARB\_create\_context 1}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_DEBUG\_BIT\_ARB 0x0001}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_FORWARD\_COMPATIBLE\_BIT\_ARB 0x0002}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_MAJOR\_VERSION\_ARB 0x2091}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_MINOR\_VERSION\_ARB 0x2092}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_LAYER\_PLANE\_ARB 0x2093}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_FLAGS\_ARB 0x2094}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define ERROR\_INVALID\_VERSION\_ARB 0x2095}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define ERROR\_INVALID\_PROFILE\_ARB 0x2096}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 \textcolor{keyword}{typedef} HGLRC (WINAPI * PFNWGLCREATECONTEXTATTRIBSARBPROC) (HDC hDC, HGLRC hShareContext, \textcolor{keyword}{const} \textcolor{keywordtype}{int}* attribList);}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define wglCreateContextAttribsARB WGLEW\_GET\_FUN(\_\_wglewCreateContextAttribsARB)}}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#define WGLEW\_ARB\_create\_context WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_create\_context)}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_create\_context */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_create\_context\_no\_error -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_create\_context\_no\_error}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#define WGL\_ARB\_create\_context\_no\_error 1}}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#define WGLEW\_ARB\_create\_context\_no\_error WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_create\_context\_no\_error)}}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_create\_context\_no\_error */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_create\_context\_profile -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_create\_context\_profile}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#define WGL\_ARB\_create\_context\_profile 1}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_CORE\_PROFILE\_BIT\_ARB 0x00000001}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_COMPATIBILITY\_PROFILE\_BIT\_ARB 0x00000002}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_PROFILE\_MASK\_ARB 0x9126}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#define WGLEW\_ARB\_create\_context\_profile WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_create\_context\_profile)}}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_create\_context\_profile */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_create\_context\_robustness -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_create\_context\_robustness}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#define WGL\_ARB\_create\_context\_robustness 1}}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_ROBUST\_ACCESS\_BIT\_ARB 0x00000004}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#define WGL\_LOSE\_CONTEXT\_ON\_RESET\_ARB 0x8252}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_RESET\_NOTIFICATION\_STRATEGY\_ARB 0x8256}}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#define WGL\_NO\_RESET\_NOTIFICATION\_ARB 0x8261}}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#define WGLEW\_ARB\_create\_context\_robustness WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_create\_context\_robustness)}}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_create\_context\_robustness */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_extensions\_string -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_extensions\_string}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#define WGL\_ARB\_extensions\_string 1}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 \textcolor{keyword}{typedef} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* (WINAPI * PFNWGLGETEXTENSIONSSTRINGARBPROC) (HDC hdc);}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#define wglGetExtensionsStringARB WGLEW\_GET\_FUN(\_\_wglewGetExtensionsStringARB)}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#define WGLEW\_ARB\_extensions\_string WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_extensions\_string)}}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_extensions\_string */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_framebuffer\_sRGB -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_framebuffer\_sRGB}}
+\DoxyCodeLine{269 \textcolor{preprocessor}{\#define WGL\_ARB\_framebuffer\_sRGB 1}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#define WGL\_FRAMEBUFFER\_SRGB\_CAPABLE\_ARB 0x20A9}}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#define WGLEW\_ARB\_framebuffer\_sRGB WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_framebuffer\_sRGB)}}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_framebuffer\_sRGB */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_make\_current\_read -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_make\_current\_read}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#define WGL\_ARB\_make\_current\_read 1}}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#define ERROR\_INVALID\_PIXEL\_TYPE\_ARB 0x2043}}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#define ERROR\_INCOMPATIBLE\_DEVICE\_CONTEXTS\_ARB 0x2054}}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285 \textcolor{keyword}{typedef} HDC (WINAPI * PFNWGLGETCURRENTREADDCARBPROC) (VOID);}
+\DoxyCodeLine{286 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLMAKECONTEXTCURRENTARBPROC) (HDC hDrawDC, HDC hReadDC, HGLRC hglrc);}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#define wglGetCurrentReadDCARB WGLEW\_GET\_FUN(\_\_wglewGetCurrentReadDCARB)}}
+\DoxyCodeLine{289 \textcolor{preprocessor}{\#define wglMakeContextCurrentARB WGLEW\_GET\_FUN(\_\_wglewMakeContextCurrentARB)}}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#define WGLEW\_ARB\_make\_current\_read WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_make\_current\_read)}}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_make\_current\_read */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_multisample -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_multisample}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#define WGL\_ARB\_multisample 1}}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#define WGL\_SAMPLE\_BUFFERS\_ARB 0x2041}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#define WGL\_SAMPLES\_ARB 0x2042}}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#define WGLEW\_ARB\_multisample WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_multisample)}}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_multisample */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_pbuffer -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_pbuffer}}
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#define WGL\_ARB\_pbuffer 1}}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312 \textcolor{preprocessor}{\#define WGL\_DRAW\_TO\_PBUFFER\_ARB 0x202D}}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#define WGL\_MAX\_PBUFFER\_PIXELS\_ARB 0x202E}}
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#define WGL\_MAX\_PBUFFER\_WIDTH\_ARB 0x202F}}
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#define WGL\_MAX\_PBUFFER\_HEIGHT\_ARB 0x2030}}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#define WGL\_PBUFFER\_LARGEST\_ARB 0x2033}}
+\DoxyCodeLine{317 \textcolor{preprocessor}{\#define WGL\_PBUFFER\_WIDTH\_ARB 0x2034}}
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#define WGL\_PBUFFER\_HEIGHT\_ARB 0x2035}}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#define WGL\_PBUFFER\_LOST\_ARB 0x2036}}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 DECLARE\_HANDLE(HPBUFFERARB);}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323 \textcolor{keyword}{typedef} HPBUFFERARB (WINAPI * PFNWGLCREATEPBUFFERARBPROC) (HDC hDC, \textcolor{keywordtype}{int} iPixelFormat, \textcolor{keywordtype}{int} iWidth, \textcolor{keywordtype}{int} iHeight, \textcolor{keyword}{const} \textcolor{keywordtype}{int}* piAttribList);}
+\DoxyCodeLine{324 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLDESTROYPBUFFERARBPROC) (HPBUFFERARB hPbuffer);}
+\DoxyCodeLine{325 \textcolor{keyword}{typedef} HDC (WINAPI * PFNWGLGETPBUFFERDCARBPROC) (HPBUFFERARB hPbuffer);}
+\DoxyCodeLine{326 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLQUERYPBUFFERARBPROC) (HPBUFFERARB hPbuffer, \textcolor{keywordtype}{int} iAttribute, \textcolor{keywordtype}{int}* piValue);}
+\DoxyCodeLine{327 \textcolor{keyword}{typedef} int (WINAPI * PFNWGLRELEASEPBUFFERDCARBPROC) (HPBUFFERARB hPbuffer, HDC hDC);}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#define wglCreatePbufferARB WGLEW\_GET\_FUN(\_\_wglewCreatePbufferARB)}}
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#define wglDestroyPbufferARB WGLEW\_GET\_FUN(\_\_wglewDestroyPbufferARB)}}
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#define wglGetPbufferDCARB WGLEW\_GET\_FUN(\_\_wglewGetPbufferDCARB)}}
+\DoxyCodeLine{332 \textcolor{preprocessor}{\#define wglQueryPbufferARB WGLEW\_GET\_FUN(\_\_wglewQueryPbufferARB)}}
+\DoxyCodeLine{333 \textcolor{preprocessor}{\#define wglReleasePbufferDCARB WGLEW\_GET\_FUN(\_\_wglewReleasePbufferDCARB)}}
+\DoxyCodeLine{334 }
+\DoxyCodeLine{335 \textcolor{preprocessor}{\#define WGLEW\_ARB\_pbuffer WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_pbuffer)}}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_pbuffer */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_pixel\_format -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_pixel\_format}}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#define WGL\_ARB\_pixel\_format 1}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#define WGL\_NUMBER\_PIXEL\_FORMATS\_ARB 0x2000}}
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#define WGL\_DRAW\_TO\_WINDOW\_ARB 0x2001}}
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#define WGL\_DRAW\_TO\_BITMAP\_ARB 0x2002}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#define WGL\_ACCELERATION\_ARB 0x2003}}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#define WGL\_NEED\_PALETTE\_ARB 0x2004}}
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#define WGL\_NEED\_SYSTEM\_PALETTE\_ARB 0x2005}}
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#define WGL\_SWAP\_LAYER\_BUFFERS\_ARB 0x2006}}
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#define WGL\_SWAP\_METHOD\_ARB 0x2007}}
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#define WGL\_NUMBER\_OVERLAYS\_ARB 0x2008}}
+\DoxyCodeLine{353 \textcolor{preprocessor}{\#define WGL\_NUMBER\_UNDERLAYS\_ARB 0x2009}}
+\DoxyCodeLine{354 \textcolor{preprocessor}{\#define WGL\_TRANSPARENT\_ARB 0x200A}}
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define WGL\_SHARE\_DEPTH\_ARB 0x200C}}
+\DoxyCodeLine{356 \textcolor{preprocessor}{\#define WGL\_SHARE\_STENCIL\_ARB 0x200D}}
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#define WGL\_SHARE\_ACCUM\_ARB 0x200E}}
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#define WGL\_SUPPORT\_GDI\_ARB 0x200F}}
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#define WGL\_SUPPORT\_OPENGL\_ARB 0x2010}}
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#define WGL\_DOUBLE\_BUFFER\_ARB 0x2011}}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#define WGL\_STEREO\_ARB 0x2012}}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#define WGL\_PIXEL\_TYPE\_ARB 0x2013}}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define WGL\_COLOR\_BITS\_ARB 0x2014}}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#define WGL\_RED\_BITS\_ARB 0x2015}}
+\DoxyCodeLine{365 \textcolor{preprocessor}{\#define WGL\_RED\_SHIFT\_ARB 0x2016}}
+\DoxyCodeLine{366 \textcolor{preprocessor}{\#define WGL\_GREEN\_BITS\_ARB 0x2017}}
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#define WGL\_GREEN\_SHIFT\_ARB 0x2018}}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#define WGL\_BLUE\_BITS\_ARB 0x2019}}
+\DoxyCodeLine{369 \textcolor{preprocessor}{\#define WGL\_BLUE\_SHIFT\_ARB 0x201A}}
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#define WGL\_ALPHA\_BITS\_ARB 0x201B}}
+\DoxyCodeLine{371 \textcolor{preprocessor}{\#define WGL\_ALPHA\_SHIFT\_ARB 0x201C}}
+\DoxyCodeLine{372 \textcolor{preprocessor}{\#define WGL\_ACCUM\_BITS\_ARB 0x201D}}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#define WGL\_ACCUM\_RED\_BITS\_ARB 0x201E}}
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#define WGL\_ACCUM\_GREEN\_BITS\_ARB 0x201F}}
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#define WGL\_ACCUM\_BLUE\_BITS\_ARB 0x2020}}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#define WGL\_ACCUM\_ALPHA\_BITS\_ARB 0x2021}}
+\DoxyCodeLine{377 \textcolor{preprocessor}{\#define WGL\_DEPTH\_BITS\_ARB 0x2022}}
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#define WGL\_STENCIL\_BITS\_ARB 0x2023}}
+\DoxyCodeLine{379 \textcolor{preprocessor}{\#define WGL\_AUX\_BUFFERS\_ARB 0x2024}}
+\DoxyCodeLine{380 \textcolor{preprocessor}{\#define WGL\_NO\_ACCELERATION\_ARB 0x2025}}
+\DoxyCodeLine{381 \textcolor{preprocessor}{\#define WGL\_GENERIC\_ACCELERATION\_ARB 0x2026}}
+\DoxyCodeLine{382 \textcolor{preprocessor}{\#define WGL\_FULL\_ACCELERATION\_ARB 0x2027}}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#define WGL\_SWAP\_EXCHANGE\_ARB 0x2028}}
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#define WGL\_SWAP\_COPY\_ARB 0x2029}}
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#define WGL\_SWAP\_UNDEFINED\_ARB 0x202A}}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#define WGL\_TYPE\_RGBA\_ARB 0x202B}}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#define WGL\_TYPE\_COLORINDEX\_ARB 0x202C}}
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#define WGL\_TRANSPARENT\_RED\_VALUE\_ARB 0x2037}}
+\DoxyCodeLine{389 \textcolor{preprocessor}{\#define WGL\_TRANSPARENT\_GREEN\_VALUE\_ARB 0x2038}}
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#define WGL\_TRANSPARENT\_BLUE\_VALUE\_ARB 0x2039}}
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#define WGL\_TRANSPARENT\_ALPHA\_VALUE\_ARB 0x203A}}
+\DoxyCodeLine{392 \textcolor{preprocessor}{\#define WGL\_TRANSPARENT\_INDEX\_VALUE\_ARB 0x203B}}
+\DoxyCodeLine{393 }
+\DoxyCodeLine{394 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLCHOOSEPIXELFORMATARBPROC) (HDC hdc, \textcolor{keyword}{const} \textcolor{keywordtype}{int}* piAttribIList, \textcolor{keyword}{const} FLOAT *pfAttribFList, UINT nMaxFormats, \textcolor{keywordtype}{int} *piFormats, UINT *nNumFormats);}
+\DoxyCodeLine{395 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETPIXELFORMATATTRIBFVARBPROC) (HDC hdc, \textcolor{keywordtype}{int} iPixelFormat, \textcolor{keywordtype}{int} iLayerPlane, UINT nAttributes, \textcolor{keyword}{const} \textcolor{keywordtype}{int}* piAttributes, FLOAT *pfValues);}
+\DoxyCodeLine{396 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETPIXELFORMATATTRIBIVARBPROC) (HDC hdc, \textcolor{keywordtype}{int} iPixelFormat, \textcolor{keywordtype}{int} iLayerPlane, UINT nAttributes, \textcolor{keyword}{const} \textcolor{keywordtype}{int}* piAttributes, \textcolor{keywordtype}{int} *piValues);}
+\DoxyCodeLine{397 }
+\DoxyCodeLine{398 \textcolor{preprocessor}{\#define wglChoosePixelFormatARB WGLEW\_GET\_FUN(\_\_wglewChoosePixelFormatARB)}}
+\DoxyCodeLine{399 \textcolor{preprocessor}{\#define wglGetPixelFormatAttribfvARB WGLEW\_GET\_FUN(\_\_wglewGetPixelFormatAttribfvARB)}}
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#define wglGetPixelFormatAttribivARB WGLEW\_GET\_FUN(\_\_wglewGetPixelFormatAttribivARB)}}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{402 \textcolor{preprocessor}{\#define WGLEW\_ARB\_pixel\_format WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_pixel\_format)}}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_pixel\_format */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_pixel\_format\_float -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_pixel\_format\_float}}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#define WGL\_ARB\_pixel\_format\_float 1}}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#define WGL\_TYPE\_RGBA\_FLOAT\_ARB 0x21A0}}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#define WGLEW\_ARB\_pixel\_format\_float WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_pixel\_format\_float)}}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{415 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_pixel\_format\_float */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{417 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_render\_texture -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{418 }
+\DoxyCodeLine{419 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_render\_texture}}
+\DoxyCodeLine{420 \textcolor{preprocessor}{\#define WGL\_ARB\_render\_texture 1}}
+\DoxyCodeLine{421 }
+\DoxyCodeLine{422 \textcolor{preprocessor}{\#define WGL\_BIND\_TO\_TEXTURE\_RGB\_ARB 0x2070}}
+\DoxyCodeLine{423 \textcolor{preprocessor}{\#define WGL\_BIND\_TO\_TEXTURE\_RGBA\_ARB 0x2071}}
+\DoxyCodeLine{424 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_FORMAT\_ARB 0x2072}}
+\DoxyCodeLine{425 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_TARGET\_ARB 0x2073}}
+\DoxyCodeLine{426 \textcolor{preprocessor}{\#define WGL\_MIPMAP\_TEXTURE\_ARB 0x2074}}
+\DoxyCodeLine{427 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_RGB\_ARB 0x2075}}
+\DoxyCodeLine{428 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_RGBA\_ARB 0x2076}}
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#define WGL\_NO\_TEXTURE\_ARB 0x2077}}
+\DoxyCodeLine{430 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_CUBE\_MAP\_ARB 0x2078}}
+\DoxyCodeLine{431 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_1D\_ARB 0x2079}}
+\DoxyCodeLine{432 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_2D\_ARB 0x207A}}
+\DoxyCodeLine{433 \textcolor{preprocessor}{\#define WGL\_MIPMAP\_LEVEL\_ARB 0x207B}}
+\DoxyCodeLine{434 \textcolor{preprocessor}{\#define WGL\_CUBE\_MAP\_FACE\_ARB 0x207C}}
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_CUBE\_MAP\_POSITIVE\_X\_ARB 0x207D}}
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_CUBE\_MAP\_NEGATIVE\_X\_ARB 0x207E}}
+\DoxyCodeLine{437 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_CUBE\_MAP\_POSITIVE\_Y\_ARB 0x207F}}
+\DoxyCodeLine{438 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_CUBE\_MAP\_NEGATIVE\_Y\_ARB 0x2080}}
+\DoxyCodeLine{439 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_CUBE\_MAP\_POSITIVE\_Z\_ARB 0x2081}}
+\DoxyCodeLine{440 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_CUBE\_MAP\_NEGATIVE\_Z\_ARB 0x2082}}
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#define WGL\_FRONT\_LEFT\_ARB 0x2083}}
+\DoxyCodeLine{442 \textcolor{preprocessor}{\#define WGL\_FRONT\_RIGHT\_ARB 0x2084}}
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#define WGL\_BACK\_LEFT\_ARB 0x2085}}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#define WGL\_BACK\_RIGHT\_ARB 0x2086}}
+\DoxyCodeLine{445 \textcolor{preprocessor}{\#define WGL\_AUX0\_ARB 0x2087}}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define WGL\_AUX1\_ARB 0x2088}}
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#define WGL\_AUX2\_ARB 0x2089}}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#define WGL\_AUX3\_ARB 0x208A}}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#define WGL\_AUX4\_ARB 0x208B}}
+\DoxyCodeLine{450 \textcolor{preprocessor}{\#define WGL\_AUX5\_ARB 0x208C}}
+\DoxyCodeLine{451 \textcolor{preprocessor}{\#define WGL\_AUX6\_ARB 0x208D}}
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#define WGL\_AUX7\_ARB 0x208E}}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#define WGL\_AUX8\_ARB 0x208F}}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\#define WGL\_AUX9\_ARB 0x2090}}
+\DoxyCodeLine{455 }
+\DoxyCodeLine{456 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLBINDTEXIMAGEARBPROC) (HPBUFFERARB hPbuffer, \textcolor{keywordtype}{int} iBuffer);}
+\DoxyCodeLine{457 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLRELEASETEXIMAGEARBPROC) (HPBUFFERARB hPbuffer, \textcolor{keywordtype}{int} iBuffer);}
+\DoxyCodeLine{458 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLSETPBUFFERATTRIBARBPROC) (HPBUFFERARB hPbuffer, \textcolor{keyword}{const} \textcolor{keywordtype}{int}* piAttribList);}
+\DoxyCodeLine{459 }
+\DoxyCodeLine{460 \textcolor{preprocessor}{\#define wglBindTexImageARB WGLEW\_GET\_FUN(\_\_wglewBindTexImageARB)}}
+\DoxyCodeLine{461 \textcolor{preprocessor}{\#define wglReleaseTexImageARB WGLEW\_GET\_FUN(\_\_wglewReleaseTexImageARB)}}
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#define wglSetPbufferAttribARB WGLEW\_GET\_FUN(\_\_wglewSetPbufferAttribARB)}}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464 \textcolor{preprocessor}{\#define WGLEW\_ARB\_render\_texture WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_render\_texture)}}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{466 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_render\_texture */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{467 }
+\DoxyCodeLine{468 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_robustness\_application\_isolation -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{469 }
+\DoxyCodeLine{470 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_robustness\_application\_isolation}}
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#define WGL\_ARB\_robustness\_application\_isolation 1}}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{473 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_RESET\_ISOLATION\_BIT\_ARB 0x00000008}}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475 \textcolor{preprocessor}{\#define WGLEW\_ARB\_robustness\_application\_isolation WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_robustness\_application\_isolation)}}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_robustness\_application\_isolation */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{478 }
+\DoxyCodeLine{479 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ARB\_robustness\_share\_group\_isolation -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{480 }
+\DoxyCodeLine{481 \textcolor{preprocessor}{\#ifndef WGL\_ARB\_robustness\_share\_group\_isolation}}
+\DoxyCodeLine{482 \textcolor{preprocessor}{\#define WGL\_ARB\_robustness\_share\_group\_isolation 1}}
+\DoxyCodeLine{483 }
+\DoxyCodeLine{484 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_RESET\_ISOLATION\_BIT\_ARB 0x00000008}}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486 \textcolor{preprocessor}{\#define WGLEW\_ARB\_robustness\_share\_group\_isolation WGLEW\_GET\_VAR(\_\_WGLEW\_ARB\_robustness\_share\_group\_isolation)}}
+\DoxyCodeLine{487 }
+\DoxyCodeLine{488 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ARB\_robustness\_share\_group\_isolation */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{489 }
+\DoxyCodeLine{490 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ATI\_pixel\_format\_float -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{491 }
+\DoxyCodeLine{492 \textcolor{preprocessor}{\#ifndef WGL\_ATI\_pixel\_format\_float}}
+\DoxyCodeLine{493 \textcolor{preprocessor}{\#define WGL\_ATI\_pixel\_format\_float 1}}
+\DoxyCodeLine{494 }
+\DoxyCodeLine{495 \textcolor{preprocessor}{\#define WGL\_TYPE\_RGBA\_FLOAT\_ATI 0x21A0}}
+\DoxyCodeLine{496 \textcolor{preprocessor}{\#define GL\_RGBA\_FLOAT\_MODE\_ATI 0x8820}}
+\DoxyCodeLine{497 \textcolor{preprocessor}{\#define GL\_COLOR\_CLEAR\_UNCLAMPED\_VALUE\_ATI 0x8835}}
+\DoxyCodeLine{498 }
+\DoxyCodeLine{499 \textcolor{preprocessor}{\#define WGLEW\_ATI\_pixel\_format\_float WGLEW\_GET\_VAR(\_\_WGLEW\_ATI\_pixel\_format\_float)}}
+\DoxyCodeLine{500 }
+\DoxyCodeLine{501 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ATI\_pixel\_format\_float */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{502 }
+\DoxyCodeLine{503 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_ATI\_render\_texture\_rectangle -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{504 }
+\DoxyCodeLine{505 \textcolor{preprocessor}{\#ifndef WGL\_ATI\_render\_texture\_rectangle}}
+\DoxyCodeLine{506 \textcolor{preprocessor}{\#define WGL\_ATI\_render\_texture\_rectangle 1}}
+\DoxyCodeLine{507 }
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_RECTANGLE\_ATI 0x21A5}}
+\DoxyCodeLine{509 }
+\DoxyCodeLine{510 \textcolor{preprocessor}{\#define WGLEW\_ATI\_render\_texture\_rectangle WGLEW\_GET\_VAR(\_\_WGLEW\_ATI\_render\_texture\_rectangle)}}
+\DoxyCodeLine{511 }
+\DoxyCodeLine{512 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_ATI\_render\_texture\_rectangle */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{513 }
+\DoxyCodeLine{514 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_EXT\_colorspace -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{515 }
+\DoxyCodeLine{516 \textcolor{preprocessor}{\#ifndef WGL\_EXT\_colorspace}}
+\DoxyCodeLine{517 \textcolor{preprocessor}{\#define WGL\_EXT\_colorspace 1}}
+\DoxyCodeLine{518 }
+\DoxyCodeLine{519 \textcolor{preprocessor}{\#define WGL\_COLORSPACE\_SRGB\_EXT 0x3089}}
+\DoxyCodeLine{520 \textcolor{preprocessor}{\#define WGL\_COLORSPACE\_LINEAR\_EXT 0x308A}}
+\DoxyCodeLine{521 \textcolor{preprocessor}{\#define WGL\_COLORSPACE\_EXT 0x309D}}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523 \textcolor{preprocessor}{\#define WGLEW\_EXT\_colorspace WGLEW\_GET\_VAR(\_\_WGLEW\_EXT\_colorspace)}}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{525 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_EXT\_colorspace */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_EXT\_create\_context\_es2\_profile -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{528 }
+\DoxyCodeLine{529 \textcolor{preprocessor}{\#ifndef WGL\_EXT\_create\_context\_es2\_profile}}
+\DoxyCodeLine{530 \textcolor{preprocessor}{\#define WGL\_EXT\_create\_context\_es2\_profile 1}}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_ES2\_PROFILE\_BIT\_EXT 0x00000004}}
+\DoxyCodeLine{533 }
+\DoxyCodeLine{534 \textcolor{preprocessor}{\#define WGLEW\_EXT\_create\_context\_es2\_profile WGLEW\_GET\_VAR(\_\_WGLEW\_EXT\_create\_context\_es2\_profile)}}
+\DoxyCodeLine{535 }
+\DoxyCodeLine{536 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_EXT\_create\_context\_es2\_profile */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{537 }
+\DoxyCodeLine{538 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_EXT\_create\_context\_es\_profile -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{539 }
+\DoxyCodeLine{540 \textcolor{preprocessor}{\#ifndef WGL\_EXT\_create\_context\_es\_profile}}
+\DoxyCodeLine{541 \textcolor{preprocessor}{\#define WGL\_EXT\_create\_context\_es\_profile 1}}
+\DoxyCodeLine{542 }
+\DoxyCodeLine{543 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_ES\_PROFILE\_BIT\_EXT 0x00000004}}
+\DoxyCodeLine{544 }
+\DoxyCodeLine{545 \textcolor{preprocessor}{\#define WGLEW\_EXT\_create\_context\_es\_profile WGLEW\_GET\_VAR(\_\_WGLEW\_EXT\_create\_context\_es\_profile)}}
+\DoxyCodeLine{546 }
+\DoxyCodeLine{547 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_EXT\_create\_context\_es\_profile */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{548 }
+\DoxyCodeLine{549 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_EXT\_depth\_float -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{550 }
+\DoxyCodeLine{551 \textcolor{preprocessor}{\#ifndef WGL\_EXT\_depth\_float}}
+\DoxyCodeLine{552 \textcolor{preprocessor}{\#define WGL\_EXT\_depth\_float 1}}
+\DoxyCodeLine{553 }
+\DoxyCodeLine{554 \textcolor{preprocessor}{\#define WGL\_DEPTH\_FLOAT\_EXT 0x2040}}
+\DoxyCodeLine{555 }
+\DoxyCodeLine{556 \textcolor{preprocessor}{\#define WGLEW\_EXT\_depth\_float WGLEW\_GET\_VAR(\_\_WGLEW\_EXT\_depth\_float)}}
+\DoxyCodeLine{557 }
+\DoxyCodeLine{558 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_EXT\_depth\_float */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{559 }
+\DoxyCodeLine{560 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_EXT\_display\_color\_table -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{561 }
+\DoxyCodeLine{562 \textcolor{preprocessor}{\#ifndef WGL\_EXT\_display\_color\_table}}
+\DoxyCodeLine{563 \textcolor{preprocessor}{\#define WGL\_EXT\_display\_color\_table 1}}
+\DoxyCodeLine{564 }
+\DoxyCodeLine{565 \textcolor{keyword}{typedef} GLboolean (WINAPI * PFNWGLBINDDISPLAYCOLORTABLEEXTPROC) (GLushort id);}
+\DoxyCodeLine{566 \textcolor{keyword}{typedef} GLboolean (WINAPI * PFNWGLCREATEDISPLAYCOLORTABLEEXTPROC) (GLushort id);}
+\DoxyCodeLine{567 \textcolor{keyword}{typedef} void (WINAPI * PFNWGLDESTROYDISPLAYCOLORTABLEEXTPROC) (GLushort id);}
+\DoxyCodeLine{568 \textcolor{keyword}{typedef} GLboolean (WINAPI * PFNWGLLOADDISPLAYCOLORTABLEEXTPROC) (GLushort* table, GLuint length);}
+\DoxyCodeLine{569 }
+\DoxyCodeLine{570 \textcolor{preprocessor}{\#define wglBindDisplayColorTableEXT WGLEW\_GET\_FUN(\_\_wglewBindDisplayColorTableEXT)}}
+\DoxyCodeLine{571 \textcolor{preprocessor}{\#define wglCreateDisplayColorTableEXT WGLEW\_GET\_FUN(\_\_wglewCreateDisplayColorTableEXT)}}
+\DoxyCodeLine{572 \textcolor{preprocessor}{\#define wglDestroyDisplayColorTableEXT WGLEW\_GET\_FUN(\_\_wglewDestroyDisplayColorTableEXT)}}
+\DoxyCodeLine{573 \textcolor{preprocessor}{\#define wglLoadDisplayColorTableEXT WGLEW\_GET\_FUN(\_\_wglewLoadDisplayColorTableEXT)}}
+\DoxyCodeLine{574 }
+\DoxyCodeLine{575 \textcolor{preprocessor}{\#define WGLEW\_EXT\_display\_color\_table WGLEW\_GET\_VAR(\_\_WGLEW\_EXT\_display\_color\_table)}}
+\DoxyCodeLine{576 }
+\DoxyCodeLine{577 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_EXT\_display\_color\_table */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{578 }
+\DoxyCodeLine{579 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_EXT\_extensions\_string -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{580 }
+\DoxyCodeLine{581 \textcolor{preprocessor}{\#ifndef WGL\_EXT\_extensions\_string}}
+\DoxyCodeLine{582 \textcolor{preprocessor}{\#define WGL\_EXT\_extensions\_string 1}}
+\DoxyCodeLine{583 }
+\DoxyCodeLine{584 \textcolor{keyword}{typedef} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* (WINAPI * PFNWGLGETEXTENSIONSSTRINGEXTPROC) (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{585 }
+\DoxyCodeLine{586 \textcolor{preprocessor}{\#define wglGetExtensionsStringEXT WGLEW\_GET\_FUN(\_\_wglewGetExtensionsStringEXT)}}
+\DoxyCodeLine{587 }
+\DoxyCodeLine{588 \textcolor{preprocessor}{\#define WGLEW\_EXT\_extensions\_string WGLEW\_GET\_VAR(\_\_WGLEW\_EXT\_extensions\_string)}}
+\DoxyCodeLine{589 }
+\DoxyCodeLine{590 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_EXT\_extensions\_string */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{591 }
+\DoxyCodeLine{592 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_EXT\_framebuffer\_sRGB -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{593 }
+\DoxyCodeLine{594 \textcolor{preprocessor}{\#ifndef WGL\_EXT\_framebuffer\_sRGB}}
+\DoxyCodeLine{595 \textcolor{preprocessor}{\#define WGL\_EXT\_framebuffer\_sRGB 1}}
+\DoxyCodeLine{596 }
+\DoxyCodeLine{597 \textcolor{preprocessor}{\#define WGL\_FRAMEBUFFER\_SRGB\_CAPABLE\_EXT 0x20A9}}
+\DoxyCodeLine{598 }
+\DoxyCodeLine{599 \textcolor{preprocessor}{\#define WGLEW\_EXT\_framebuffer\_sRGB WGLEW\_GET\_VAR(\_\_WGLEW\_EXT\_framebuffer\_sRGB)}}
+\DoxyCodeLine{600 }
+\DoxyCodeLine{601 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_EXT\_framebuffer\_sRGB */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{602 }
+\DoxyCodeLine{603 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_EXT\_make\_current\_read -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{604 }
+\DoxyCodeLine{605 \textcolor{preprocessor}{\#ifndef WGL\_EXT\_make\_current\_read}}
+\DoxyCodeLine{606 \textcolor{preprocessor}{\#define WGL\_EXT\_make\_current\_read 1}}
+\DoxyCodeLine{607 }
+\DoxyCodeLine{608 \textcolor{preprocessor}{\#define ERROR\_INVALID\_PIXEL\_TYPE\_EXT 0x2043}}
+\DoxyCodeLine{609 }
+\DoxyCodeLine{610 \textcolor{keyword}{typedef} HDC (WINAPI * PFNWGLGETCURRENTREADDCEXTPROC) (VOID);}
+\DoxyCodeLine{611 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLMAKECONTEXTCURRENTEXTPROC) (HDC hDrawDC, HDC hReadDC, HGLRC hglrc);}
+\DoxyCodeLine{612 }
+\DoxyCodeLine{613 \textcolor{preprocessor}{\#define wglGetCurrentReadDCEXT WGLEW\_GET\_FUN(\_\_wglewGetCurrentReadDCEXT)}}
+\DoxyCodeLine{614 \textcolor{preprocessor}{\#define wglMakeContextCurrentEXT WGLEW\_GET\_FUN(\_\_wglewMakeContextCurrentEXT)}}
+\DoxyCodeLine{615 }
+\DoxyCodeLine{616 \textcolor{preprocessor}{\#define WGLEW\_EXT\_make\_current\_read WGLEW\_GET\_VAR(\_\_WGLEW\_EXT\_make\_current\_read)}}
+\DoxyCodeLine{617 }
+\DoxyCodeLine{618 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_EXT\_make\_current\_read */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{619 }
+\DoxyCodeLine{620 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_EXT\_multisample -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{621 }
+\DoxyCodeLine{622 \textcolor{preprocessor}{\#ifndef WGL\_EXT\_multisample}}
+\DoxyCodeLine{623 \textcolor{preprocessor}{\#define WGL\_EXT\_multisample 1}}
+\DoxyCodeLine{624 }
+\DoxyCodeLine{625 \textcolor{preprocessor}{\#define WGL\_SAMPLE\_BUFFERS\_EXT 0x2041}}
+\DoxyCodeLine{626 \textcolor{preprocessor}{\#define WGL\_SAMPLES\_EXT 0x2042}}
+\DoxyCodeLine{627 }
+\DoxyCodeLine{628 \textcolor{preprocessor}{\#define WGLEW\_EXT\_multisample WGLEW\_GET\_VAR(\_\_WGLEW\_EXT\_multisample)}}
+\DoxyCodeLine{629 }
+\DoxyCodeLine{630 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_EXT\_multisample */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{631 }
+\DoxyCodeLine{632 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_EXT\_pbuffer -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{633 }
+\DoxyCodeLine{634 \textcolor{preprocessor}{\#ifndef WGL\_EXT\_pbuffer}}
+\DoxyCodeLine{635 \textcolor{preprocessor}{\#define WGL\_EXT\_pbuffer 1}}
+\DoxyCodeLine{636 }
+\DoxyCodeLine{637 \textcolor{preprocessor}{\#define WGL\_DRAW\_TO\_PBUFFER\_EXT 0x202D}}
+\DoxyCodeLine{638 \textcolor{preprocessor}{\#define WGL\_MAX\_PBUFFER\_PIXELS\_EXT 0x202E}}
+\DoxyCodeLine{639 \textcolor{preprocessor}{\#define WGL\_MAX\_PBUFFER\_WIDTH\_EXT 0x202F}}
+\DoxyCodeLine{640 \textcolor{preprocessor}{\#define WGL\_MAX\_PBUFFER\_HEIGHT\_EXT 0x2030}}
+\DoxyCodeLine{641 \textcolor{preprocessor}{\#define WGL\_OPTIMAL\_PBUFFER\_WIDTH\_EXT 0x2031}}
+\DoxyCodeLine{642 \textcolor{preprocessor}{\#define WGL\_OPTIMAL\_PBUFFER\_HEIGHT\_EXT 0x2032}}
+\DoxyCodeLine{643 \textcolor{preprocessor}{\#define WGL\_PBUFFER\_LARGEST\_EXT 0x2033}}
+\DoxyCodeLine{644 \textcolor{preprocessor}{\#define WGL\_PBUFFER\_WIDTH\_EXT 0x2034}}
+\DoxyCodeLine{645 \textcolor{preprocessor}{\#define WGL\_PBUFFER\_HEIGHT\_EXT 0x2035}}
+\DoxyCodeLine{646 }
+\DoxyCodeLine{647 DECLARE\_HANDLE(HPBUFFEREXT);}
+\DoxyCodeLine{648 }
+\DoxyCodeLine{649 \textcolor{keyword}{typedef} HPBUFFEREXT (WINAPI * PFNWGLCREATEPBUFFEREXTPROC) (HDC hDC, \textcolor{keywordtype}{int} iPixelFormat, \textcolor{keywordtype}{int} iWidth, \textcolor{keywordtype}{int} iHeight, \textcolor{keyword}{const} \textcolor{keywordtype}{int}* piAttribList);}
+\DoxyCodeLine{650 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLDESTROYPBUFFEREXTPROC) (HPBUFFEREXT hPbuffer);}
+\DoxyCodeLine{651 \textcolor{keyword}{typedef} HDC (WINAPI * PFNWGLGETPBUFFERDCEXTPROC) (HPBUFFEREXT hPbuffer);}
+\DoxyCodeLine{652 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLQUERYPBUFFEREXTPROC) (HPBUFFEREXT hPbuffer, \textcolor{keywordtype}{int} iAttribute, \textcolor{keywordtype}{int}* piValue);}
+\DoxyCodeLine{653 \textcolor{keyword}{typedef} int (WINAPI * PFNWGLRELEASEPBUFFERDCEXTPROC) (HPBUFFEREXT hPbuffer, HDC hDC);}
+\DoxyCodeLine{654 }
+\DoxyCodeLine{655 \textcolor{preprocessor}{\#define wglCreatePbufferEXT WGLEW\_GET\_FUN(\_\_wglewCreatePbufferEXT)}}
+\DoxyCodeLine{656 \textcolor{preprocessor}{\#define wglDestroyPbufferEXT WGLEW\_GET\_FUN(\_\_wglewDestroyPbufferEXT)}}
+\DoxyCodeLine{657 \textcolor{preprocessor}{\#define wglGetPbufferDCEXT WGLEW\_GET\_FUN(\_\_wglewGetPbufferDCEXT)}}
+\DoxyCodeLine{658 \textcolor{preprocessor}{\#define wglQueryPbufferEXT WGLEW\_GET\_FUN(\_\_wglewQueryPbufferEXT)}}
+\DoxyCodeLine{659 \textcolor{preprocessor}{\#define wglReleasePbufferDCEXT WGLEW\_GET\_FUN(\_\_wglewReleasePbufferDCEXT)}}
+\DoxyCodeLine{660 }
+\DoxyCodeLine{661 \textcolor{preprocessor}{\#define WGLEW\_EXT\_pbuffer WGLEW\_GET\_VAR(\_\_WGLEW\_EXT\_pbuffer)}}
+\DoxyCodeLine{662 }
+\DoxyCodeLine{663 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_EXT\_pbuffer */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{664 }
+\DoxyCodeLine{665 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_EXT\_pixel\_format -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{666 }
+\DoxyCodeLine{667 \textcolor{preprocessor}{\#ifndef WGL\_EXT\_pixel\_format}}
+\DoxyCodeLine{668 \textcolor{preprocessor}{\#define WGL\_EXT\_pixel\_format 1}}
+\DoxyCodeLine{669 }
+\DoxyCodeLine{670 \textcolor{preprocessor}{\#define WGL\_NUMBER\_PIXEL\_FORMATS\_EXT 0x2000}}
+\DoxyCodeLine{671 \textcolor{preprocessor}{\#define WGL\_DRAW\_TO\_WINDOW\_EXT 0x2001}}
+\DoxyCodeLine{672 \textcolor{preprocessor}{\#define WGL\_DRAW\_TO\_BITMAP\_EXT 0x2002}}
+\DoxyCodeLine{673 \textcolor{preprocessor}{\#define WGL\_ACCELERATION\_EXT 0x2003}}
+\DoxyCodeLine{674 \textcolor{preprocessor}{\#define WGL\_NEED\_PALETTE\_EXT 0x2004}}
+\DoxyCodeLine{675 \textcolor{preprocessor}{\#define WGL\_NEED\_SYSTEM\_PALETTE\_EXT 0x2005}}
+\DoxyCodeLine{676 \textcolor{preprocessor}{\#define WGL\_SWAP\_LAYER\_BUFFERS\_EXT 0x2006}}
+\DoxyCodeLine{677 \textcolor{preprocessor}{\#define WGL\_SWAP\_METHOD\_EXT 0x2007}}
+\DoxyCodeLine{678 \textcolor{preprocessor}{\#define WGL\_NUMBER\_OVERLAYS\_EXT 0x2008}}
+\DoxyCodeLine{679 \textcolor{preprocessor}{\#define WGL\_NUMBER\_UNDERLAYS\_EXT 0x2009}}
+\DoxyCodeLine{680 \textcolor{preprocessor}{\#define WGL\_TRANSPARENT\_EXT 0x200A}}
+\DoxyCodeLine{681 \textcolor{preprocessor}{\#define WGL\_TRANSPARENT\_VALUE\_EXT 0x200B}}
+\DoxyCodeLine{682 \textcolor{preprocessor}{\#define WGL\_SHARE\_DEPTH\_EXT 0x200C}}
+\DoxyCodeLine{683 \textcolor{preprocessor}{\#define WGL\_SHARE\_STENCIL\_EXT 0x200D}}
+\DoxyCodeLine{684 \textcolor{preprocessor}{\#define WGL\_SHARE\_ACCUM\_EXT 0x200E}}
+\DoxyCodeLine{685 \textcolor{preprocessor}{\#define WGL\_SUPPORT\_GDI\_EXT 0x200F}}
+\DoxyCodeLine{686 \textcolor{preprocessor}{\#define WGL\_SUPPORT\_OPENGL\_EXT 0x2010}}
+\DoxyCodeLine{687 \textcolor{preprocessor}{\#define WGL\_DOUBLE\_BUFFER\_EXT 0x2011}}
+\DoxyCodeLine{688 \textcolor{preprocessor}{\#define WGL\_STEREO\_EXT 0x2012}}
+\DoxyCodeLine{689 \textcolor{preprocessor}{\#define WGL\_PIXEL\_TYPE\_EXT 0x2013}}
+\DoxyCodeLine{690 \textcolor{preprocessor}{\#define WGL\_COLOR\_BITS\_EXT 0x2014}}
+\DoxyCodeLine{691 \textcolor{preprocessor}{\#define WGL\_RED\_BITS\_EXT 0x2015}}
+\DoxyCodeLine{692 \textcolor{preprocessor}{\#define WGL\_RED\_SHIFT\_EXT 0x2016}}
+\DoxyCodeLine{693 \textcolor{preprocessor}{\#define WGL\_GREEN\_BITS\_EXT 0x2017}}
+\DoxyCodeLine{694 \textcolor{preprocessor}{\#define WGL\_GREEN\_SHIFT\_EXT 0x2018}}
+\DoxyCodeLine{695 \textcolor{preprocessor}{\#define WGL\_BLUE\_BITS\_EXT 0x2019}}
+\DoxyCodeLine{696 \textcolor{preprocessor}{\#define WGL\_BLUE\_SHIFT\_EXT 0x201A}}
+\DoxyCodeLine{697 \textcolor{preprocessor}{\#define WGL\_ALPHA\_BITS\_EXT 0x201B}}
+\DoxyCodeLine{698 \textcolor{preprocessor}{\#define WGL\_ALPHA\_SHIFT\_EXT 0x201C}}
+\DoxyCodeLine{699 \textcolor{preprocessor}{\#define WGL\_ACCUM\_BITS\_EXT 0x201D}}
+\DoxyCodeLine{700 \textcolor{preprocessor}{\#define WGL\_ACCUM\_RED\_BITS\_EXT 0x201E}}
+\DoxyCodeLine{701 \textcolor{preprocessor}{\#define WGL\_ACCUM\_GREEN\_BITS\_EXT 0x201F}}
+\DoxyCodeLine{702 \textcolor{preprocessor}{\#define WGL\_ACCUM\_BLUE\_BITS\_EXT 0x2020}}
+\DoxyCodeLine{703 \textcolor{preprocessor}{\#define WGL\_ACCUM\_ALPHA\_BITS\_EXT 0x2021}}
+\DoxyCodeLine{704 \textcolor{preprocessor}{\#define WGL\_DEPTH\_BITS\_EXT 0x2022}}
+\DoxyCodeLine{705 \textcolor{preprocessor}{\#define WGL\_STENCIL\_BITS\_EXT 0x2023}}
+\DoxyCodeLine{706 \textcolor{preprocessor}{\#define WGL\_AUX\_BUFFERS\_EXT 0x2024}}
+\DoxyCodeLine{707 \textcolor{preprocessor}{\#define WGL\_NO\_ACCELERATION\_EXT 0x2025}}
+\DoxyCodeLine{708 \textcolor{preprocessor}{\#define WGL\_GENERIC\_ACCELERATION\_EXT 0x2026}}
+\DoxyCodeLine{709 \textcolor{preprocessor}{\#define WGL\_FULL\_ACCELERATION\_EXT 0x2027}}
+\DoxyCodeLine{710 \textcolor{preprocessor}{\#define WGL\_SWAP\_EXCHANGE\_EXT 0x2028}}
+\DoxyCodeLine{711 \textcolor{preprocessor}{\#define WGL\_SWAP\_COPY\_EXT 0x2029}}
+\DoxyCodeLine{712 \textcolor{preprocessor}{\#define WGL\_SWAP\_UNDEFINED\_EXT 0x202A}}
+\DoxyCodeLine{713 \textcolor{preprocessor}{\#define WGL\_TYPE\_RGBA\_EXT 0x202B}}
+\DoxyCodeLine{714 \textcolor{preprocessor}{\#define WGL\_TYPE\_COLORINDEX\_EXT 0x202C}}
+\DoxyCodeLine{715 }
+\DoxyCodeLine{716 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLCHOOSEPIXELFORMATEXTPROC) (HDC hdc, \textcolor{keyword}{const} \textcolor{keywordtype}{int}* piAttribIList, \textcolor{keyword}{const} FLOAT *pfAttribFList, UINT nMaxFormats, \textcolor{keywordtype}{int} *piFormats, UINT *nNumFormats);}
+\DoxyCodeLine{717 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETPIXELFORMATATTRIBFVEXTPROC) (HDC hdc, \textcolor{keywordtype}{int} iPixelFormat, \textcolor{keywordtype}{int} iLayerPlane, UINT nAttributes, \textcolor{keywordtype}{int}* piAttributes, FLOAT *pfValues);}
+\DoxyCodeLine{718 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETPIXELFORMATATTRIBIVEXTPROC) (HDC hdc, \textcolor{keywordtype}{int} iPixelFormat, \textcolor{keywordtype}{int} iLayerPlane, UINT nAttributes, \textcolor{keywordtype}{int}* piAttributes, \textcolor{keywordtype}{int} *piValues);}
+\DoxyCodeLine{719 }
+\DoxyCodeLine{720 \textcolor{preprocessor}{\#define wglChoosePixelFormatEXT WGLEW\_GET\_FUN(\_\_wglewChoosePixelFormatEXT)}}
+\DoxyCodeLine{721 \textcolor{preprocessor}{\#define wglGetPixelFormatAttribfvEXT WGLEW\_GET\_FUN(\_\_wglewGetPixelFormatAttribfvEXT)}}
+\DoxyCodeLine{722 \textcolor{preprocessor}{\#define wglGetPixelFormatAttribivEXT WGLEW\_GET\_FUN(\_\_wglewGetPixelFormatAttribivEXT)}}
+\DoxyCodeLine{723 }
+\DoxyCodeLine{724 \textcolor{preprocessor}{\#define WGLEW\_EXT\_pixel\_format WGLEW\_GET\_VAR(\_\_WGLEW\_EXT\_pixel\_format)}}
+\DoxyCodeLine{725 }
+\DoxyCodeLine{726 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_EXT\_pixel\_format */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{727 }
+\DoxyCodeLine{728 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_EXT\_pixel\_format\_packed\_float -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{729 }
+\DoxyCodeLine{730 \textcolor{preprocessor}{\#ifndef WGL\_EXT\_pixel\_format\_packed\_float}}
+\DoxyCodeLine{731 \textcolor{preprocessor}{\#define WGL\_EXT\_pixel\_format\_packed\_float 1}}
+\DoxyCodeLine{732 }
+\DoxyCodeLine{733 \textcolor{preprocessor}{\#define WGL\_TYPE\_RGBA\_UNSIGNED\_FLOAT\_EXT 0x20A8}}
+\DoxyCodeLine{734 }
+\DoxyCodeLine{735 \textcolor{preprocessor}{\#define WGLEW\_EXT\_pixel\_format\_packed\_float WGLEW\_GET\_VAR(\_\_WGLEW\_EXT\_pixel\_format\_packed\_float)}}
+\DoxyCodeLine{736 }
+\DoxyCodeLine{737 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_EXT\_pixel\_format\_packed\_float */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{738 }
+\DoxyCodeLine{739 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_EXT\_swap\_control -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{740 }
+\DoxyCodeLine{741 \textcolor{preprocessor}{\#ifndef WGL\_EXT\_swap\_control}}
+\DoxyCodeLine{742 \textcolor{preprocessor}{\#define WGL\_EXT\_swap\_control 1}}
+\DoxyCodeLine{743 }
+\DoxyCodeLine{744 \textcolor{keyword}{typedef} int (WINAPI * PFNWGLGETSWAPINTERVALEXTPROC) (void);}
+\DoxyCodeLine{745 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLSWAPINTERVALEXTPROC) (\textcolor{keywordtype}{int} interval);}
+\DoxyCodeLine{746 }
+\DoxyCodeLine{747 \textcolor{preprocessor}{\#define wglGetSwapIntervalEXT WGLEW\_GET\_FUN(\_\_wglewGetSwapIntervalEXT)}}
+\DoxyCodeLine{748 \textcolor{preprocessor}{\#define wglSwapIntervalEXT WGLEW\_GET\_FUN(\_\_wglewSwapIntervalEXT)}}
+\DoxyCodeLine{749 }
+\DoxyCodeLine{750 \textcolor{preprocessor}{\#define WGLEW\_EXT\_swap\_control WGLEW\_GET\_VAR(\_\_WGLEW\_EXT\_swap\_control)}}
+\DoxyCodeLine{751 }
+\DoxyCodeLine{752 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_EXT\_swap\_control */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{753 }
+\DoxyCodeLine{754 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_EXT\_swap\_control\_tear -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{755 }
+\DoxyCodeLine{756 \textcolor{preprocessor}{\#ifndef WGL\_EXT\_swap\_control\_tear}}
+\DoxyCodeLine{757 \textcolor{preprocessor}{\#define WGL\_EXT\_swap\_control\_tear 1}}
+\DoxyCodeLine{758 }
+\DoxyCodeLine{759 \textcolor{preprocessor}{\#define WGLEW\_EXT\_swap\_control\_tear WGLEW\_GET\_VAR(\_\_WGLEW\_EXT\_swap\_control\_tear)}}
+\DoxyCodeLine{760 }
+\DoxyCodeLine{761 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_EXT\_swap\_control\_tear */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{762 }
+\DoxyCodeLine{763 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_I3D\_digital\_video\_control -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{764 }
+\DoxyCodeLine{765 \textcolor{preprocessor}{\#ifndef WGL\_I3D\_digital\_video\_control}}
+\DoxyCodeLine{766 \textcolor{preprocessor}{\#define WGL\_I3D\_digital\_video\_control 1}}
+\DoxyCodeLine{767 }
+\DoxyCodeLine{768 \textcolor{preprocessor}{\#define WGL\_DIGITAL\_VIDEO\_CURSOR\_ALPHA\_FRAMEBUFFER\_I3D 0x2050}}
+\DoxyCodeLine{769 \textcolor{preprocessor}{\#define WGL\_DIGITAL\_VIDEO\_CURSOR\_ALPHA\_VALUE\_I3D 0x2051}}
+\DoxyCodeLine{770 \textcolor{preprocessor}{\#define WGL\_DIGITAL\_VIDEO\_CURSOR\_INCLUDED\_I3D 0x2052}}
+\DoxyCodeLine{771 \textcolor{preprocessor}{\#define WGL\_DIGITAL\_VIDEO\_GAMMA\_CORRECTED\_I3D 0x2053}}
+\DoxyCodeLine{772 }
+\DoxyCodeLine{773 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETDIGITALVIDEOPARAMETERSI3DPROC) (HDC hDC, \textcolor{keywordtype}{int} iAttribute, \textcolor{keywordtype}{int}* piValue);}
+\DoxyCodeLine{774 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLSETDIGITALVIDEOPARAMETERSI3DPROC) (HDC hDC, \textcolor{keywordtype}{int} iAttribute, \textcolor{keyword}{const} \textcolor{keywordtype}{int}* piValue);}
+\DoxyCodeLine{775 }
+\DoxyCodeLine{776 \textcolor{preprocessor}{\#define wglGetDigitalVideoParametersI3D WGLEW\_GET\_FUN(\_\_wglewGetDigitalVideoParametersI3D)}}
+\DoxyCodeLine{777 \textcolor{preprocessor}{\#define wglSetDigitalVideoParametersI3D WGLEW\_GET\_FUN(\_\_wglewSetDigitalVideoParametersI3D)}}
+\DoxyCodeLine{778 }
+\DoxyCodeLine{779 \textcolor{preprocessor}{\#define WGLEW\_I3D\_digital\_video\_control WGLEW\_GET\_VAR(\_\_WGLEW\_I3D\_digital\_video\_control)}}
+\DoxyCodeLine{780 }
+\DoxyCodeLine{781 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_I3D\_digital\_video\_control */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{782 }
+\DoxyCodeLine{783 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_I3D\_gamma -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{784 }
+\DoxyCodeLine{785 \textcolor{preprocessor}{\#ifndef WGL\_I3D\_gamma}}
+\DoxyCodeLine{786 \textcolor{preprocessor}{\#define WGL\_I3D\_gamma 1}}
+\DoxyCodeLine{787 }
+\DoxyCodeLine{788 \textcolor{preprocessor}{\#define WGL\_GAMMA\_TABLE\_SIZE\_I3D 0x204E}}
+\DoxyCodeLine{789 \textcolor{preprocessor}{\#define WGL\_GAMMA\_EXCLUDE\_DESKTOP\_I3D 0x204F}}
+\DoxyCodeLine{790 }
+\DoxyCodeLine{791 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETGAMMATABLEI3DPROC) (HDC hDC, \textcolor{keywordtype}{int} iEntries, USHORT* puRed, USHORT *puGreen, USHORT *puBlue);}
+\DoxyCodeLine{792 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETGAMMATABLEPARAMETERSI3DPROC) (HDC hDC, \textcolor{keywordtype}{int} iAttribute, \textcolor{keywordtype}{int}* piValue);}
+\DoxyCodeLine{793 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLSETGAMMATABLEI3DPROC) (HDC hDC, \textcolor{keywordtype}{int} iEntries, \textcolor{keyword}{const} USHORT* puRed, \textcolor{keyword}{const} USHORT *puGreen, \textcolor{keyword}{const} USHORT *puBlue);}
+\DoxyCodeLine{794 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLSETGAMMATABLEPARAMETERSI3DPROC) (HDC hDC, \textcolor{keywordtype}{int} iAttribute, \textcolor{keyword}{const} \textcolor{keywordtype}{int}* piValue);}
+\DoxyCodeLine{795 }
+\DoxyCodeLine{796 \textcolor{preprocessor}{\#define wglGetGammaTableI3D WGLEW\_GET\_FUN(\_\_wglewGetGammaTableI3D)}}
+\DoxyCodeLine{797 \textcolor{preprocessor}{\#define wglGetGammaTableParametersI3D WGLEW\_GET\_FUN(\_\_wglewGetGammaTableParametersI3D)}}
+\DoxyCodeLine{798 \textcolor{preprocessor}{\#define wglSetGammaTableI3D WGLEW\_GET\_FUN(\_\_wglewSetGammaTableI3D)}}
+\DoxyCodeLine{799 \textcolor{preprocessor}{\#define wglSetGammaTableParametersI3D WGLEW\_GET\_FUN(\_\_wglewSetGammaTableParametersI3D)}}
+\DoxyCodeLine{800 }
+\DoxyCodeLine{801 \textcolor{preprocessor}{\#define WGLEW\_I3D\_gamma WGLEW\_GET\_VAR(\_\_WGLEW\_I3D\_gamma)}}
+\DoxyCodeLine{802 }
+\DoxyCodeLine{803 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_I3D\_gamma */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{804 }
+\DoxyCodeLine{805 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_I3D\_genlock -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{806 }
+\DoxyCodeLine{807 \textcolor{preprocessor}{\#ifndef WGL\_I3D\_genlock}}
+\DoxyCodeLine{808 \textcolor{preprocessor}{\#define WGL\_I3D\_genlock 1}}
+\DoxyCodeLine{809 }
+\DoxyCodeLine{810 \textcolor{preprocessor}{\#define WGL\_GENLOCK\_SOURCE\_MULTIVIEW\_I3D 0x2044}}
+\DoxyCodeLine{811 \textcolor{preprocessor}{\#define WGL\_GENLOCK\_SOURCE\_EXTERNAL\_SYNC\_I3D 0x2045}}
+\DoxyCodeLine{812 \textcolor{preprocessor}{\#define WGL\_GENLOCK\_SOURCE\_EXTERNAL\_FIELD\_I3D 0x2046}}
+\DoxyCodeLine{813 \textcolor{preprocessor}{\#define WGL\_GENLOCK\_SOURCE\_EXTERNAL\_TTL\_I3D 0x2047}}
+\DoxyCodeLine{814 \textcolor{preprocessor}{\#define WGL\_GENLOCK\_SOURCE\_DIGITAL\_SYNC\_I3D 0x2048}}
+\DoxyCodeLine{815 \textcolor{preprocessor}{\#define WGL\_GENLOCK\_SOURCE\_DIGITAL\_FIELD\_I3D 0x2049}}
+\DoxyCodeLine{816 \textcolor{preprocessor}{\#define WGL\_GENLOCK\_SOURCE\_EDGE\_FALLING\_I3D 0x204A}}
+\DoxyCodeLine{817 \textcolor{preprocessor}{\#define WGL\_GENLOCK\_SOURCE\_EDGE\_RISING\_I3D 0x204B}}
+\DoxyCodeLine{818 \textcolor{preprocessor}{\#define WGL\_GENLOCK\_SOURCE\_EDGE\_BOTH\_I3D 0x204C}}
+\DoxyCodeLine{819 }
+\DoxyCodeLine{820 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLDISABLEGENLOCKI3DPROC) (HDC hDC);}
+\DoxyCodeLine{821 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLENABLEGENLOCKI3DPROC) (HDC hDC);}
+\DoxyCodeLine{822 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGENLOCKSAMPLERATEI3DPROC) (HDC hDC, UINT uRate);}
+\DoxyCodeLine{823 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGENLOCKSOURCEDELAYI3DPROC) (HDC hDC, UINT uDelay);}
+\DoxyCodeLine{824 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGENLOCKSOURCEEDGEI3DPROC) (HDC hDC, UINT uEdge);}
+\DoxyCodeLine{825 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGENLOCKSOURCEI3DPROC) (HDC hDC, UINT uSource);}
+\DoxyCodeLine{826 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETGENLOCKSAMPLERATEI3DPROC) (HDC hDC, UINT* uRate);}
+\DoxyCodeLine{827 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETGENLOCKSOURCEDELAYI3DPROC) (HDC hDC, UINT* uDelay);}
+\DoxyCodeLine{828 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETGENLOCKSOURCEEDGEI3DPROC) (HDC hDC, UINT* uEdge);}
+\DoxyCodeLine{829 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETGENLOCKSOURCEI3DPROC) (HDC hDC, UINT* uSource);}
+\DoxyCodeLine{830 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLISENABLEDGENLOCKI3DPROC) (HDC hDC, BOOL* pFlag);}
+\DoxyCodeLine{831 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLQUERYGENLOCKMAXSOURCEDELAYI3DPROC) (HDC hDC, UINT* uMaxLineDelay, UINT *uMaxPixelDelay);}
+\DoxyCodeLine{832 }
+\DoxyCodeLine{833 \textcolor{preprocessor}{\#define wglDisableGenlockI3D WGLEW\_GET\_FUN(\_\_wglewDisableGenlockI3D)}}
+\DoxyCodeLine{834 \textcolor{preprocessor}{\#define wglEnableGenlockI3D WGLEW\_GET\_FUN(\_\_wglewEnableGenlockI3D)}}
+\DoxyCodeLine{835 \textcolor{preprocessor}{\#define wglGenlockSampleRateI3D WGLEW\_GET\_FUN(\_\_wglewGenlockSampleRateI3D)}}
+\DoxyCodeLine{836 \textcolor{preprocessor}{\#define wglGenlockSourceDelayI3D WGLEW\_GET\_FUN(\_\_wglewGenlockSourceDelayI3D)}}
+\DoxyCodeLine{837 \textcolor{preprocessor}{\#define wglGenlockSourceEdgeI3D WGLEW\_GET\_FUN(\_\_wglewGenlockSourceEdgeI3D)}}
+\DoxyCodeLine{838 \textcolor{preprocessor}{\#define wglGenlockSourceI3D WGLEW\_GET\_FUN(\_\_wglewGenlockSourceI3D)}}
+\DoxyCodeLine{839 \textcolor{preprocessor}{\#define wglGetGenlockSampleRateI3D WGLEW\_GET\_FUN(\_\_wglewGetGenlockSampleRateI3D)}}
+\DoxyCodeLine{840 \textcolor{preprocessor}{\#define wglGetGenlockSourceDelayI3D WGLEW\_GET\_FUN(\_\_wglewGetGenlockSourceDelayI3D)}}
+\DoxyCodeLine{841 \textcolor{preprocessor}{\#define wglGetGenlockSourceEdgeI3D WGLEW\_GET\_FUN(\_\_wglewGetGenlockSourceEdgeI3D)}}
+\DoxyCodeLine{842 \textcolor{preprocessor}{\#define wglGetGenlockSourceI3D WGLEW\_GET\_FUN(\_\_wglewGetGenlockSourceI3D)}}
+\DoxyCodeLine{843 \textcolor{preprocessor}{\#define wglIsEnabledGenlockI3D WGLEW\_GET\_FUN(\_\_wglewIsEnabledGenlockI3D)}}
+\DoxyCodeLine{844 \textcolor{preprocessor}{\#define wglQueryGenlockMaxSourceDelayI3D WGLEW\_GET\_FUN(\_\_wglewQueryGenlockMaxSourceDelayI3D)}}
+\DoxyCodeLine{845 }
+\DoxyCodeLine{846 \textcolor{preprocessor}{\#define WGLEW\_I3D\_genlock WGLEW\_GET\_VAR(\_\_WGLEW\_I3D\_genlock)}}
+\DoxyCodeLine{847 }
+\DoxyCodeLine{848 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_I3D\_genlock */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{849 }
+\DoxyCodeLine{850 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_I3D\_image\_buffer -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{851 }
+\DoxyCodeLine{852 \textcolor{preprocessor}{\#ifndef WGL\_I3D\_image\_buffer}}
+\DoxyCodeLine{853 \textcolor{preprocessor}{\#define WGL\_I3D\_image\_buffer 1}}
+\DoxyCodeLine{854 }
+\DoxyCodeLine{855 \textcolor{preprocessor}{\#define WGL\_IMAGE\_BUFFER\_MIN\_ACCESS\_I3D 0x00000001}}
+\DoxyCodeLine{856 \textcolor{preprocessor}{\#define WGL\_IMAGE\_BUFFER\_LOCK\_I3D 0x00000002}}
+\DoxyCodeLine{857 }
+\DoxyCodeLine{858 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLASSOCIATEIMAGEBUFFEREVENTSI3DPROC) (HDC hdc, HANDLE* pEvent, LPVOID *pAddress, DWORD *pSize, UINT count);}
+\DoxyCodeLine{859 \textcolor{keyword}{typedef} LPVOID (WINAPI * PFNWGLCREATEIMAGEBUFFERI3DPROC) (HDC hDC, DWORD dwSize, UINT uFlags);}
+\DoxyCodeLine{860 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLDESTROYIMAGEBUFFERI3DPROC) (HDC hDC, LPVOID pAddress);}
+\DoxyCodeLine{861 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLRELEASEIMAGEBUFFEREVENTSI3DPROC) (HDC hdc, LPVOID* pAddress, UINT count);}
+\DoxyCodeLine{862 }
+\DoxyCodeLine{863 \textcolor{preprocessor}{\#define wglAssociateImageBufferEventsI3D WGLEW\_GET\_FUN(\_\_wglewAssociateImageBufferEventsI3D)}}
+\DoxyCodeLine{864 \textcolor{preprocessor}{\#define wglCreateImageBufferI3D WGLEW\_GET\_FUN(\_\_wglewCreateImageBufferI3D)}}
+\DoxyCodeLine{865 \textcolor{preprocessor}{\#define wglDestroyImageBufferI3D WGLEW\_GET\_FUN(\_\_wglewDestroyImageBufferI3D)}}
+\DoxyCodeLine{866 \textcolor{preprocessor}{\#define wglReleaseImageBufferEventsI3D WGLEW\_GET\_FUN(\_\_wglewReleaseImageBufferEventsI3D)}}
+\DoxyCodeLine{867 }
+\DoxyCodeLine{868 \textcolor{preprocessor}{\#define WGLEW\_I3D\_image\_buffer WGLEW\_GET\_VAR(\_\_WGLEW\_I3D\_image\_buffer)}}
+\DoxyCodeLine{869 }
+\DoxyCodeLine{870 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_I3D\_image\_buffer */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{871 }
+\DoxyCodeLine{872 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_I3D\_swap\_frame\_lock -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{873 }
+\DoxyCodeLine{874 \textcolor{preprocessor}{\#ifndef WGL\_I3D\_swap\_frame\_lock}}
+\DoxyCodeLine{875 \textcolor{preprocessor}{\#define WGL\_I3D\_swap\_frame\_lock 1}}
+\DoxyCodeLine{876 }
+\DoxyCodeLine{877 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLDISABLEFRAMELOCKI3DPROC) (VOID);}
+\DoxyCodeLine{878 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLENABLEFRAMELOCKI3DPROC) (VOID);}
+\DoxyCodeLine{879 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLISENABLEDFRAMELOCKI3DPROC) (BOOL* pFlag);}
+\DoxyCodeLine{880 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLQUERYFRAMELOCKMASTERI3DPROC) (BOOL* pFlag);}
+\DoxyCodeLine{881 }
+\DoxyCodeLine{882 \textcolor{preprocessor}{\#define wglDisableFrameLockI3D WGLEW\_GET\_FUN(\_\_wglewDisableFrameLockI3D)}}
+\DoxyCodeLine{883 \textcolor{preprocessor}{\#define wglEnableFrameLockI3D WGLEW\_GET\_FUN(\_\_wglewEnableFrameLockI3D)}}
+\DoxyCodeLine{884 \textcolor{preprocessor}{\#define wglIsEnabledFrameLockI3D WGLEW\_GET\_FUN(\_\_wglewIsEnabledFrameLockI3D)}}
+\DoxyCodeLine{885 \textcolor{preprocessor}{\#define wglQueryFrameLockMasterI3D WGLEW\_GET\_FUN(\_\_wglewQueryFrameLockMasterI3D)}}
+\DoxyCodeLine{886 }
+\DoxyCodeLine{887 \textcolor{preprocessor}{\#define WGLEW\_I3D\_swap\_frame\_lock WGLEW\_GET\_VAR(\_\_WGLEW\_I3D\_swap\_frame\_lock)}}
+\DoxyCodeLine{888 }
+\DoxyCodeLine{889 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_I3D\_swap\_frame\_lock */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{890 }
+\DoxyCodeLine{891 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_I3D\_swap\_frame\_usage -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{892 }
+\DoxyCodeLine{893 \textcolor{preprocessor}{\#ifndef WGL\_I3D\_swap\_frame\_usage}}
+\DoxyCodeLine{894 \textcolor{preprocessor}{\#define WGL\_I3D\_swap\_frame\_usage 1}}
+\DoxyCodeLine{895 }
+\DoxyCodeLine{896 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLBEGINFRAMETRACKINGI3DPROC) (void);}
+\DoxyCodeLine{897 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLENDFRAMETRACKINGI3DPROC) (void);}
+\DoxyCodeLine{898 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETFRAMEUSAGEI3DPROC) (\textcolor{keywordtype}{float}* pUsage);}
+\DoxyCodeLine{899 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLQUERYFRAMETRACKINGI3DPROC) (DWORD* pFrameCount, DWORD *pMissedFrames, \textcolor{keywordtype}{float} *pLastMissedUsage);}
+\DoxyCodeLine{900 }
+\DoxyCodeLine{901 \textcolor{preprocessor}{\#define wglBeginFrameTrackingI3D WGLEW\_GET\_FUN(\_\_wglewBeginFrameTrackingI3D)}}
+\DoxyCodeLine{902 \textcolor{preprocessor}{\#define wglEndFrameTrackingI3D WGLEW\_GET\_FUN(\_\_wglewEndFrameTrackingI3D)}}
+\DoxyCodeLine{903 \textcolor{preprocessor}{\#define wglGetFrameUsageI3D WGLEW\_GET\_FUN(\_\_wglewGetFrameUsageI3D)}}
+\DoxyCodeLine{904 \textcolor{preprocessor}{\#define wglQueryFrameTrackingI3D WGLEW\_GET\_FUN(\_\_wglewQueryFrameTrackingI3D)}}
+\DoxyCodeLine{905 }
+\DoxyCodeLine{906 \textcolor{preprocessor}{\#define WGLEW\_I3D\_swap\_frame\_usage WGLEW\_GET\_VAR(\_\_WGLEW\_I3D\_swap\_frame\_usage)}}
+\DoxyCodeLine{907 }
+\DoxyCodeLine{908 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_I3D\_swap\_frame\_usage */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{909 }
+\DoxyCodeLine{910 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_NV\_DX\_interop -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{911 }
+\DoxyCodeLine{912 \textcolor{preprocessor}{\#ifndef WGL\_NV\_DX\_interop}}
+\DoxyCodeLine{913 \textcolor{preprocessor}{\#define WGL\_NV\_DX\_interop 1}}
+\DoxyCodeLine{914 }
+\DoxyCodeLine{915 \textcolor{preprocessor}{\#define WGL\_ACCESS\_READ\_ONLY\_NV 0x0000}}
+\DoxyCodeLine{916 \textcolor{preprocessor}{\#define WGL\_ACCESS\_READ\_WRITE\_NV 0x0001}}
+\DoxyCodeLine{917 \textcolor{preprocessor}{\#define WGL\_ACCESS\_WRITE\_DISCARD\_NV 0x0002}}
+\DoxyCodeLine{918 }
+\DoxyCodeLine{919 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLDXCLOSEDEVICENVPROC) (HANDLE hDevice);}
+\DoxyCodeLine{920 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLDXLOCKOBJECTSNVPROC) (HANDLE hDevice, GLint count, HANDLE* hObjects);}
+\DoxyCodeLine{921 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLDXOBJECTACCESSNVPROC) (HANDLE hObject, GLenum access);}
+\DoxyCodeLine{922 \textcolor{keyword}{typedef} HANDLE (WINAPI * PFNWGLDXOPENDEVICENVPROC) (\textcolor{keywordtype}{void}* dxDevice);}
+\DoxyCodeLine{923 \textcolor{keyword}{typedef} HANDLE (WINAPI * PFNWGLDXREGISTEROBJECTNVPROC) (HANDLE hDevice, \textcolor{keywordtype}{void}* dxObject, GLuint name, GLenum type, GLenum access);}
+\DoxyCodeLine{924 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLDXSETRESOURCESHAREHANDLENVPROC) (\textcolor{keywordtype}{void}* dxObject, HANDLE shareHandle);}
+\DoxyCodeLine{925 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLDXUNLOCKOBJECTSNVPROC) (HANDLE hDevice, GLint count, HANDLE* hObjects);}
+\DoxyCodeLine{926 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLDXUNREGISTEROBJECTNVPROC) (HANDLE hDevice, HANDLE hObject);}
+\DoxyCodeLine{927 }
+\DoxyCodeLine{928 \textcolor{preprocessor}{\#define wglDXCloseDeviceNV WGLEW\_GET\_FUN(\_\_wglewDXCloseDeviceNV)}}
+\DoxyCodeLine{929 \textcolor{preprocessor}{\#define wglDXLockObjectsNV WGLEW\_GET\_FUN(\_\_wglewDXLockObjectsNV)}}
+\DoxyCodeLine{930 \textcolor{preprocessor}{\#define wglDXObjectAccessNV WGLEW\_GET\_FUN(\_\_wglewDXObjectAccessNV)}}
+\DoxyCodeLine{931 \textcolor{preprocessor}{\#define wglDXOpenDeviceNV WGLEW\_GET\_FUN(\_\_wglewDXOpenDeviceNV)}}
+\DoxyCodeLine{932 \textcolor{preprocessor}{\#define wglDXRegisterObjectNV WGLEW\_GET\_FUN(\_\_wglewDXRegisterObjectNV)}}
+\DoxyCodeLine{933 \textcolor{preprocessor}{\#define wglDXSetResourceShareHandleNV WGLEW\_GET\_FUN(\_\_wglewDXSetResourceShareHandleNV)}}
+\DoxyCodeLine{934 \textcolor{preprocessor}{\#define wglDXUnlockObjectsNV WGLEW\_GET\_FUN(\_\_wglewDXUnlockObjectsNV)}}
+\DoxyCodeLine{935 \textcolor{preprocessor}{\#define wglDXUnregisterObjectNV WGLEW\_GET\_FUN(\_\_wglewDXUnregisterObjectNV)}}
+\DoxyCodeLine{936 }
+\DoxyCodeLine{937 \textcolor{preprocessor}{\#define WGLEW\_NV\_DX\_interop WGLEW\_GET\_VAR(\_\_WGLEW\_NV\_DX\_interop)}}
+\DoxyCodeLine{938 }
+\DoxyCodeLine{939 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_NV\_DX\_interop */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{940 }
+\DoxyCodeLine{941 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_NV\_DX\_interop2 -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{942 }
+\DoxyCodeLine{943 \textcolor{preprocessor}{\#ifndef WGL\_NV\_DX\_interop2}}
+\DoxyCodeLine{944 \textcolor{preprocessor}{\#define WGL\_NV\_DX\_interop2 1}}
+\DoxyCodeLine{945 }
+\DoxyCodeLine{946 \textcolor{preprocessor}{\#define WGLEW\_NV\_DX\_interop2 WGLEW\_GET\_VAR(\_\_WGLEW\_NV\_DX\_interop2)}}
+\DoxyCodeLine{947 }
+\DoxyCodeLine{948 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_NV\_DX\_interop2 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{949 }
+\DoxyCodeLine{950 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_NV\_copy\_image -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{951 }
+\DoxyCodeLine{952 \textcolor{preprocessor}{\#ifndef WGL\_NV\_copy\_image}}
+\DoxyCodeLine{953 \textcolor{preprocessor}{\#define WGL\_NV\_copy\_image 1}}
+\DoxyCodeLine{954 }
+\DoxyCodeLine{955 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLCOPYIMAGESUBDATANVPROC) (HGLRC hSrcRC, GLuint srcName, GLenum srcTarget, GLint srcLevel, GLint srcX, GLint srcY, GLint srcZ, HGLRC hDstRC, GLuint dstName, GLenum dstTarget, GLint dstLevel, GLint dstX, GLint dstY, GLint dstZ, GLsizei width, GLsizei height, GLsizei depth);}
+\DoxyCodeLine{956 }
+\DoxyCodeLine{957 \textcolor{preprocessor}{\#define wglCopyImageSubDataNV WGLEW\_GET\_FUN(\_\_wglewCopyImageSubDataNV)}}
+\DoxyCodeLine{958 }
+\DoxyCodeLine{959 \textcolor{preprocessor}{\#define WGLEW\_NV\_copy\_image WGLEW\_GET\_VAR(\_\_WGLEW\_NV\_copy\_image)}}
+\DoxyCodeLine{960 }
+\DoxyCodeLine{961 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_NV\_copy\_image */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{962 }
+\DoxyCodeLine{963 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_NV\_delay\_before\_swap -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{964 }
+\DoxyCodeLine{965 \textcolor{preprocessor}{\#ifndef WGL\_NV\_delay\_before\_swap}}
+\DoxyCodeLine{966 \textcolor{preprocessor}{\#define WGL\_NV\_delay\_before\_swap 1}}
+\DoxyCodeLine{967 }
+\DoxyCodeLine{968 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLDELAYBEFORESWAPNVPROC) (HDC hDC, GLfloat seconds);}
+\DoxyCodeLine{969 }
+\DoxyCodeLine{970 \textcolor{preprocessor}{\#define wglDelayBeforeSwapNV WGLEW\_GET\_FUN(\_\_wglewDelayBeforeSwapNV)}}
+\DoxyCodeLine{971 }
+\DoxyCodeLine{972 \textcolor{preprocessor}{\#define WGLEW\_NV\_delay\_before\_swap WGLEW\_GET\_VAR(\_\_WGLEW\_NV\_delay\_before\_swap)}}
+\DoxyCodeLine{973 }
+\DoxyCodeLine{974 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_NV\_delay\_before\_swap */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{975 }
+\DoxyCodeLine{976 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_NV\_float\_buffer -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{977 }
+\DoxyCodeLine{978 \textcolor{preprocessor}{\#ifndef WGL\_NV\_float\_buffer}}
+\DoxyCodeLine{979 \textcolor{preprocessor}{\#define WGL\_NV\_float\_buffer 1}}
+\DoxyCodeLine{980 }
+\DoxyCodeLine{981 \textcolor{preprocessor}{\#define WGL\_FLOAT\_COMPONENTS\_NV 0x20B0}}
+\DoxyCodeLine{982 \textcolor{preprocessor}{\#define WGL\_BIND\_TO\_TEXTURE\_RECTANGLE\_FLOAT\_R\_NV 0x20B1}}
+\DoxyCodeLine{983 \textcolor{preprocessor}{\#define WGL\_BIND\_TO\_TEXTURE\_RECTANGLE\_FLOAT\_RG\_NV 0x20B2}}
+\DoxyCodeLine{984 \textcolor{preprocessor}{\#define WGL\_BIND\_TO\_TEXTURE\_RECTANGLE\_FLOAT\_RGB\_NV 0x20B3}}
+\DoxyCodeLine{985 \textcolor{preprocessor}{\#define WGL\_BIND\_TO\_TEXTURE\_RECTANGLE\_FLOAT\_RGBA\_NV 0x20B4}}
+\DoxyCodeLine{986 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_FLOAT\_R\_NV 0x20B5}}
+\DoxyCodeLine{987 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_FLOAT\_RG\_NV 0x20B6}}
+\DoxyCodeLine{988 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_FLOAT\_RGB\_NV 0x20B7}}
+\DoxyCodeLine{989 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_FLOAT\_RGBA\_NV 0x20B8}}
+\DoxyCodeLine{990 }
+\DoxyCodeLine{991 \textcolor{preprocessor}{\#define WGLEW\_NV\_float\_buffer WGLEW\_GET\_VAR(\_\_WGLEW\_NV\_float\_buffer)}}
+\DoxyCodeLine{992 }
+\DoxyCodeLine{993 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_NV\_float\_buffer */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{994 }
+\DoxyCodeLine{995 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_NV\_gpu\_affinity -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{996 }
+\DoxyCodeLine{997 \textcolor{preprocessor}{\#ifndef WGL\_NV\_gpu\_affinity}}
+\DoxyCodeLine{998 \textcolor{preprocessor}{\#define WGL\_NV\_gpu\_affinity 1}}
+\DoxyCodeLine{999 }
+\DoxyCodeLine{1000 \textcolor{preprocessor}{\#define WGL\_ERROR\_INCOMPATIBLE\_AFFINITY\_MASKS\_NV 0x20D0}}
+\DoxyCodeLine{1001 \textcolor{preprocessor}{\#define WGL\_ERROR\_MISSING\_AFFINITY\_MASK\_NV 0x20D1}}
+\DoxyCodeLine{1002 }
+\DoxyCodeLine{1003 DECLARE\_HANDLE(HGPUNV);}
+\DoxyCodeLine{1004 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_p_u___d_e_v_i_c_e}{\_GPU\_DEVICE}} \{}
+\DoxyCodeLine{1005   DWORD cb; }
+\DoxyCodeLine{1006   CHAR DeviceName[32]; }
+\DoxyCodeLine{1007   CHAR DeviceString[128]; }
+\DoxyCodeLine{1008   DWORD Flags; }
+\DoxyCodeLine{1009   RECT rcVirtualScreen; }
+\DoxyCodeLine{1010 \} \mbox{\hyperlink{struct___g_p_u___d_e_v_i_c_e}{GPU\_DEVICE}}, *\mbox{\hyperlink{struct___g_p_u___d_e_v_i_c_e}{PGPU\_DEVICE}};}
+\DoxyCodeLine{1011 }
+\DoxyCodeLine{1012 \textcolor{keyword}{typedef} HDC (WINAPI * PFNWGLCREATEAFFINITYDCNVPROC) (\textcolor{keyword}{const} HGPUNV *phGpuList);}
+\DoxyCodeLine{1013 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLDELETEDCNVPROC) (HDC hdc);}
+\DoxyCodeLine{1014 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLENUMGPUDEVICESNVPROC) (HGPUNV hGpu, UINT iDeviceIndex, \mbox{\hyperlink{struct___g_p_u___d_e_v_i_c_e}{PGPU\_DEVICE}} lpGpuDevice);}
+\DoxyCodeLine{1015 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLENUMGPUSFROMAFFINITYDCNVPROC) (HDC hAffinityDC, UINT iGpuIndex, HGPUNV *hGpu);}
+\DoxyCodeLine{1016 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLENUMGPUSNVPROC) (UINT iGpuIndex, HGPUNV *phGpu);}
+\DoxyCodeLine{1017 }
+\DoxyCodeLine{1018 \textcolor{preprocessor}{\#define wglCreateAffinityDCNV WGLEW\_GET\_FUN(\_\_wglewCreateAffinityDCNV)}}
+\DoxyCodeLine{1019 \textcolor{preprocessor}{\#define wglDeleteDCNV WGLEW\_GET\_FUN(\_\_wglewDeleteDCNV)}}
+\DoxyCodeLine{1020 \textcolor{preprocessor}{\#define wglEnumGpuDevicesNV WGLEW\_GET\_FUN(\_\_wglewEnumGpuDevicesNV)}}
+\DoxyCodeLine{1021 \textcolor{preprocessor}{\#define wglEnumGpusFromAffinityDCNV WGLEW\_GET\_FUN(\_\_wglewEnumGpusFromAffinityDCNV)}}
+\DoxyCodeLine{1022 \textcolor{preprocessor}{\#define wglEnumGpusNV WGLEW\_GET\_FUN(\_\_wglewEnumGpusNV)}}
+\DoxyCodeLine{1023 }
+\DoxyCodeLine{1024 \textcolor{preprocessor}{\#define WGLEW\_NV\_gpu\_affinity WGLEW\_GET\_VAR(\_\_WGLEW\_NV\_gpu\_affinity)}}
+\DoxyCodeLine{1025 }
+\DoxyCodeLine{1026 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_NV\_gpu\_affinity */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1027 }
+\DoxyCodeLine{1028 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_NV\_multisample\_coverage -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1029 }
+\DoxyCodeLine{1030 \textcolor{preprocessor}{\#ifndef WGL\_NV\_multisample\_coverage}}
+\DoxyCodeLine{1031 \textcolor{preprocessor}{\#define WGL\_NV\_multisample\_coverage 1}}
+\DoxyCodeLine{1032 }
+\DoxyCodeLine{1033 \textcolor{preprocessor}{\#define WGL\_COVERAGE\_SAMPLES\_NV 0x2042}}
+\DoxyCodeLine{1034 \textcolor{preprocessor}{\#define WGL\_COLOR\_SAMPLES\_NV 0x20B9}}
+\DoxyCodeLine{1035 }
+\DoxyCodeLine{1036 \textcolor{preprocessor}{\#define WGLEW\_NV\_multisample\_coverage WGLEW\_GET\_VAR(\_\_WGLEW\_NV\_multisample\_coverage)}}
+\DoxyCodeLine{1037 }
+\DoxyCodeLine{1038 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_NV\_multisample\_coverage */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1039 }
+\DoxyCodeLine{1040 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_NV\_present\_video -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1041 }
+\DoxyCodeLine{1042 \textcolor{preprocessor}{\#ifndef WGL\_NV\_present\_video}}
+\DoxyCodeLine{1043 \textcolor{preprocessor}{\#define WGL\_NV\_present\_video 1}}
+\DoxyCodeLine{1044 }
+\DoxyCodeLine{1045 \textcolor{preprocessor}{\#define WGL\_NUM\_VIDEO\_SLOTS\_NV 0x20F0}}
+\DoxyCodeLine{1046 }
+\DoxyCodeLine{1047 DECLARE\_HANDLE(HVIDEOOUTPUTDEVICENV);}
+\DoxyCodeLine{1048 }
+\DoxyCodeLine{1049 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLBINDVIDEODEVICENVPROC) (HDC hDc, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} uVideoSlot, HVIDEOOUTPUTDEVICENV hVideoDevice, \textcolor{keyword}{const} \textcolor{keywordtype}{int}* piAttribList);}
+\DoxyCodeLine{1050 \textcolor{keyword}{typedef} int (WINAPI * PFNWGLENUMERATEVIDEODEVICESNVPROC) (HDC hDc, HVIDEOOUTPUTDEVICENV* phDeviceList);}
+\DoxyCodeLine{1051 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLQUERYCURRENTCONTEXTNVPROC) (\textcolor{keywordtype}{int} iAttribute, \textcolor{keywordtype}{int}* piValue);}
+\DoxyCodeLine{1052 }
+\DoxyCodeLine{1053 \textcolor{preprocessor}{\#define wglBindVideoDeviceNV WGLEW\_GET\_FUN(\_\_wglewBindVideoDeviceNV)}}
+\DoxyCodeLine{1054 \textcolor{preprocessor}{\#define wglEnumerateVideoDevicesNV WGLEW\_GET\_FUN(\_\_wglewEnumerateVideoDevicesNV)}}
+\DoxyCodeLine{1055 \textcolor{preprocessor}{\#define wglQueryCurrentContextNV WGLEW\_GET\_FUN(\_\_wglewQueryCurrentContextNV)}}
+\DoxyCodeLine{1056 }
+\DoxyCodeLine{1057 \textcolor{preprocessor}{\#define WGLEW\_NV\_present\_video WGLEW\_GET\_VAR(\_\_WGLEW\_NV\_present\_video)}}
+\DoxyCodeLine{1058 }
+\DoxyCodeLine{1059 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_NV\_present\_video */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1060 }
+\DoxyCodeLine{1061 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_NV\_render\_depth\_texture -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1062 }
+\DoxyCodeLine{1063 \textcolor{preprocessor}{\#ifndef WGL\_NV\_render\_depth\_texture}}
+\DoxyCodeLine{1064 \textcolor{preprocessor}{\#define WGL\_NV\_render\_depth\_texture 1}}
+\DoxyCodeLine{1065 }
+\DoxyCodeLine{1066 \textcolor{preprocessor}{\#define WGL\_NO\_TEXTURE\_ARB 0x2077}}
+\DoxyCodeLine{1067 \textcolor{preprocessor}{\#define WGL\_BIND\_TO\_TEXTURE\_DEPTH\_NV 0x20A3}}
+\DoxyCodeLine{1068 \textcolor{preprocessor}{\#define WGL\_BIND\_TO\_TEXTURE\_RECTANGLE\_DEPTH\_NV 0x20A4}}
+\DoxyCodeLine{1069 \textcolor{preprocessor}{\#define WGL\_DEPTH\_TEXTURE\_FORMAT\_NV 0x20A5}}
+\DoxyCodeLine{1070 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_DEPTH\_COMPONENT\_NV 0x20A6}}
+\DoxyCodeLine{1071 \textcolor{preprocessor}{\#define WGL\_DEPTH\_COMPONENT\_NV 0x20A7}}
+\DoxyCodeLine{1072 }
+\DoxyCodeLine{1073 \textcolor{preprocessor}{\#define WGLEW\_NV\_render\_depth\_texture WGLEW\_GET\_VAR(\_\_WGLEW\_NV\_render\_depth\_texture)}}
+\DoxyCodeLine{1074 }
+\DoxyCodeLine{1075 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_NV\_render\_depth\_texture */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1076 }
+\DoxyCodeLine{1077 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_NV\_render\_texture\_rectangle -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1078 }
+\DoxyCodeLine{1079 \textcolor{preprocessor}{\#ifndef WGL\_NV\_render\_texture\_rectangle}}
+\DoxyCodeLine{1080 \textcolor{preprocessor}{\#define WGL\_NV\_render\_texture\_rectangle 1}}
+\DoxyCodeLine{1081 }
+\DoxyCodeLine{1082 \textcolor{preprocessor}{\#define WGL\_BIND\_TO\_TEXTURE\_RECTANGLE\_RGB\_NV 0x20A0}}
+\DoxyCodeLine{1083 \textcolor{preprocessor}{\#define WGL\_BIND\_TO\_TEXTURE\_RECTANGLE\_RGBA\_NV 0x20A1}}
+\DoxyCodeLine{1084 \textcolor{preprocessor}{\#define WGL\_TEXTURE\_RECTANGLE\_NV 0x20A2}}
+\DoxyCodeLine{1085 }
+\DoxyCodeLine{1086 \textcolor{preprocessor}{\#define WGLEW\_NV\_render\_texture\_rectangle WGLEW\_GET\_VAR(\_\_WGLEW\_NV\_render\_texture\_rectangle)}}
+\DoxyCodeLine{1087 }
+\DoxyCodeLine{1088 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_NV\_render\_texture\_rectangle */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1089 }
+\DoxyCodeLine{1090 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_NV\_swap\_group -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1091 }
+\DoxyCodeLine{1092 \textcolor{preprocessor}{\#ifndef WGL\_NV\_swap\_group}}
+\DoxyCodeLine{1093 \textcolor{preprocessor}{\#define WGL\_NV\_swap\_group 1}}
+\DoxyCodeLine{1094 }
+\DoxyCodeLine{1095 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLBINDSWAPBARRIERNVPROC) (GLuint group, GLuint barrier);}
+\DoxyCodeLine{1096 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLJOINSWAPGROUPNVPROC) (HDC hDC, GLuint group);}
+\DoxyCodeLine{1097 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLQUERYFRAMECOUNTNVPROC) (HDC hDC, GLuint* count);}
+\DoxyCodeLine{1098 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLQUERYMAXSWAPGROUPSNVPROC) (HDC hDC, GLuint* maxGroups, GLuint *maxBarriers);}
+\DoxyCodeLine{1099 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLQUERYSWAPGROUPNVPROC) (HDC hDC, GLuint* group, GLuint *barrier);}
+\DoxyCodeLine{1100 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLRESETFRAMECOUNTNVPROC) (HDC hDC);}
+\DoxyCodeLine{1101 }
+\DoxyCodeLine{1102 \textcolor{preprocessor}{\#define wglBindSwapBarrierNV WGLEW\_GET\_FUN(\_\_wglewBindSwapBarrierNV)}}
+\DoxyCodeLine{1103 \textcolor{preprocessor}{\#define wglJoinSwapGroupNV WGLEW\_GET\_FUN(\_\_wglewJoinSwapGroupNV)}}
+\DoxyCodeLine{1104 \textcolor{preprocessor}{\#define wglQueryFrameCountNV WGLEW\_GET\_FUN(\_\_wglewQueryFrameCountNV)}}
+\DoxyCodeLine{1105 \textcolor{preprocessor}{\#define wglQueryMaxSwapGroupsNV WGLEW\_GET\_FUN(\_\_wglewQueryMaxSwapGroupsNV)}}
+\DoxyCodeLine{1106 \textcolor{preprocessor}{\#define wglQuerySwapGroupNV WGLEW\_GET\_FUN(\_\_wglewQuerySwapGroupNV)}}
+\DoxyCodeLine{1107 \textcolor{preprocessor}{\#define wglResetFrameCountNV WGLEW\_GET\_FUN(\_\_wglewResetFrameCountNV)}}
+\DoxyCodeLine{1108 }
+\DoxyCodeLine{1109 \textcolor{preprocessor}{\#define WGLEW\_NV\_swap\_group WGLEW\_GET\_VAR(\_\_WGLEW\_NV\_swap\_group)}}
+\DoxyCodeLine{1110 }
+\DoxyCodeLine{1111 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_NV\_swap\_group */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1112 }
+\DoxyCodeLine{1113 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_NV\_vertex\_array\_range -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1114 }
+\DoxyCodeLine{1115 \textcolor{preprocessor}{\#ifndef WGL\_NV\_vertex\_array\_range}}
+\DoxyCodeLine{1116 \textcolor{preprocessor}{\#define WGL\_NV\_vertex\_array\_range 1}}
+\DoxyCodeLine{1117 }
+\DoxyCodeLine{1118 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} * (WINAPI * PFNWGLALLOCATEMEMORYNVPROC) (GLsizei size, GLfloat readFrequency, GLfloat writeFrequency, GLfloat priority);}
+\DoxyCodeLine{1119 \textcolor{keyword}{typedef} void (WINAPI * PFNWGLFREEMEMORYNVPROC) (\textcolor{keywordtype}{void} *pointer);}
+\DoxyCodeLine{1120 }
+\DoxyCodeLine{1121 \textcolor{preprocessor}{\#define wglAllocateMemoryNV WGLEW\_GET\_FUN(\_\_wglewAllocateMemoryNV)}}
+\DoxyCodeLine{1122 \textcolor{preprocessor}{\#define wglFreeMemoryNV WGLEW\_GET\_FUN(\_\_wglewFreeMemoryNV)}}
+\DoxyCodeLine{1123 }
+\DoxyCodeLine{1124 \textcolor{preprocessor}{\#define WGLEW\_NV\_vertex\_array\_range WGLEW\_GET\_VAR(\_\_WGLEW\_NV\_vertex\_array\_range)}}
+\DoxyCodeLine{1125 }
+\DoxyCodeLine{1126 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_NV\_vertex\_array\_range */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1127 }
+\DoxyCodeLine{1128 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_NV\_video\_capture -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1129 }
+\DoxyCodeLine{1130 \textcolor{preprocessor}{\#ifndef WGL\_NV\_video\_capture}}
+\DoxyCodeLine{1131 \textcolor{preprocessor}{\#define WGL\_NV\_video\_capture 1}}
+\DoxyCodeLine{1132 }
+\DoxyCodeLine{1133 \textcolor{preprocessor}{\#define WGL\_UNIQUE\_ID\_NV 0x20CE}}
+\DoxyCodeLine{1134 \textcolor{preprocessor}{\#define WGL\_NUM\_VIDEO\_CAPTURE\_SLOTS\_NV 0x20CF}}
+\DoxyCodeLine{1135 }
+\DoxyCodeLine{1136 DECLARE\_HANDLE(HVIDEOINPUTDEVICENV);}
+\DoxyCodeLine{1137 }
+\DoxyCodeLine{1138 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLBINDVIDEOCAPTUREDEVICENVPROC) (UINT uVideoSlot, HVIDEOINPUTDEVICENV hDevice);}
+\DoxyCodeLine{1139 \textcolor{keyword}{typedef} UINT (WINAPI * PFNWGLENUMERATEVIDEOCAPTUREDEVICESNVPROC) (HDC hDc, HVIDEOINPUTDEVICENV* phDeviceList);}
+\DoxyCodeLine{1140 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLLOCKVIDEOCAPTUREDEVICENVPROC) (HDC hDc, HVIDEOINPUTDEVICENV hDevice);}
+\DoxyCodeLine{1141 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLQUERYVIDEOCAPTUREDEVICENVPROC) (HDC hDc, HVIDEOINPUTDEVICENV hDevice, \textcolor{keywordtype}{int} iAttribute, \textcolor{keywordtype}{int}* piValue);}
+\DoxyCodeLine{1142 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLRELEASEVIDEOCAPTUREDEVICENVPROC) (HDC hDc, HVIDEOINPUTDEVICENV hDevice);}
+\DoxyCodeLine{1143 }
+\DoxyCodeLine{1144 \textcolor{preprocessor}{\#define wglBindVideoCaptureDeviceNV WGLEW\_GET\_FUN(\_\_wglewBindVideoCaptureDeviceNV)}}
+\DoxyCodeLine{1145 \textcolor{preprocessor}{\#define wglEnumerateVideoCaptureDevicesNV WGLEW\_GET\_FUN(\_\_wglewEnumerateVideoCaptureDevicesNV)}}
+\DoxyCodeLine{1146 \textcolor{preprocessor}{\#define wglLockVideoCaptureDeviceNV WGLEW\_GET\_FUN(\_\_wglewLockVideoCaptureDeviceNV)}}
+\DoxyCodeLine{1147 \textcolor{preprocessor}{\#define wglQueryVideoCaptureDeviceNV WGLEW\_GET\_FUN(\_\_wglewQueryVideoCaptureDeviceNV)}}
+\DoxyCodeLine{1148 \textcolor{preprocessor}{\#define wglReleaseVideoCaptureDeviceNV WGLEW\_GET\_FUN(\_\_wglewReleaseVideoCaptureDeviceNV)}}
+\DoxyCodeLine{1149 }
+\DoxyCodeLine{1150 \textcolor{preprocessor}{\#define WGLEW\_NV\_video\_capture WGLEW\_GET\_VAR(\_\_WGLEW\_NV\_video\_capture)}}
+\DoxyCodeLine{1151 }
+\DoxyCodeLine{1152 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_NV\_video\_capture */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1153 }
+\DoxyCodeLine{1154 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_NV\_video\_output -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1155 }
+\DoxyCodeLine{1156 \textcolor{preprocessor}{\#ifndef WGL\_NV\_video\_output}}
+\DoxyCodeLine{1157 \textcolor{preprocessor}{\#define WGL\_NV\_video\_output 1}}
+\DoxyCodeLine{1158 }
+\DoxyCodeLine{1159 \textcolor{preprocessor}{\#define WGL\_BIND\_TO\_VIDEO\_RGB\_NV 0x20C0}}
+\DoxyCodeLine{1160 \textcolor{preprocessor}{\#define WGL\_BIND\_TO\_VIDEO\_RGBA\_NV 0x20C1}}
+\DoxyCodeLine{1161 \textcolor{preprocessor}{\#define WGL\_BIND\_TO\_VIDEO\_RGB\_AND\_DEPTH\_NV 0x20C2}}
+\DoxyCodeLine{1162 \textcolor{preprocessor}{\#define WGL\_VIDEO\_OUT\_COLOR\_NV 0x20C3}}
+\DoxyCodeLine{1163 \textcolor{preprocessor}{\#define WGL\_VIDEO\_OUT\_ALPHA\_NV 0x20C4}}
+\DoxyCodeLine{1164 \textcolor{preprocessor}{\#define WGL\_VIDEO\_OUT\_DEPTH\_NV 0x20C5}}
+\DoxyCodeLine{1165 \textcolor{preprocessor}{\#define WGL\_VIDEO\_OUT\_COLOR\_AND\_ALPHA\_NV 0x20C6}}
+\DoxyCodeLine{1166 \textcolor{preprocessor}{\#define WGL\_VIDEO\_OUT\_COLOR\_AND\_DEPTH\_NV 0x20C7}}
+\DoxyCodeLine{1167 \textcolor{preprocessor}{\#define WGL\_VIDEO\_OUT\_FRAME 0x20C8}}
+\DoxyCodeLine{1168 \textcolor{preprocessor}{\#define WGL\_VIDEO\_OUT\_FIELD\_1 0x20C9}}
+\DoxyCodeLine{1169 \textcolor{preprocessor}{\#define WGL\_VIDEO\_OUT\_FIELD\_2 0x20CA}}
+\DoxyCodeLine{1170 \textcolor{preprocessor}{\#define WGL\_VIDEO\_OUT\_STACKED\_FIELDS\_1\_2 0x20CB}}
+\DoxyCodeLine{1171 \textcolor{preprocessor}{\#define WGL\_VIDEO\_OUT\_STACKED\_FIELDS\_2\_1 0x20CC}}
+\DoxyCodeLine{1172 }
+\DoxyCodeLine{1173 DECLARE\_HANDLE(HPVIDEODEV);}
+\DoxyCodeLine{1174 }
+\DoxyCodeLine{1175 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLBINDVIDEOIMAGENVPROC) (HPVIDEODEV hVideoDevice, HPBUFFERARB hPbuffer, \textcolor{keywordtype}{int} iVideoBuffer);}
+\DoxyCodeLine{1176 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETVIDEODEVICENVPROC) (HDC hDC, \textcolor{keywordtype}{int} numDevices, HPVIDEODEV* hVideoDevice);}
+\DoxyCodeLine{1177 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETVIDEOINFONVPROC) (HPVIDEODEV hpVideoDevice, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}* pulCounterOutputPbuffer, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *pulCounterOutputVideo);}
+\DoxyCodeLine{1178 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLRELEASEVIDEODEVICENVPROC) (HPVIDEODEV hVideoDevice);}
+\DoxyCodeLine{1179 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLRELEASEVIDEOIMAGENVPROC) (HPBUFFERARB hPbuffer, \textcolor{keywordtype}{int} iVideoBuffer);}
+\DoxyCodeLine{1180 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLSENDPBUFFERTOVIDEONVPROC) (HPBUFFERARB hPbuffer, \textcolor{keywordtype}{int} iBufferType, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}* pulCounterPbuffer, BOOL bBlock);}
+\DoxyCodeLine{1181 }
+\DoxyCodeLine{1182 \textcolor{preprocessor}{\#define wglBindVideoImageNV WGLEW\_GET\_FUN(\_\_wglewBindVideoImageNV)}}
+\DoxyCodeLine{1183 \textcolor{preprocessor}{\#define wglGetVideoDeviceNV WGLEW\_GET\_FUN(\_\_wglewGetVideoDeviceNV)}}
+\DoxyCodeLine{1184 \textcolor{preprocessor}{\#define wglGetVideoInfoNV WGLEW\_GET\_FUN(\_\_wglewGetVideoInfoNV)}}
+\DoxyCodeLine{1185 \textcolor{preprocessor}{\#define wglReleaseVideoDeviceNV WGLEW\_GET\_FUN(\_\_wglewReleaseVideoDeviceNV)}}
+\DoxyCodeLine{1186 \textcolor{preprocessor}{\#define wglReleaseVideoImageNV WGLEW\_GET\_FUN(\_\_wglewReleaseVideoImageNV)}}
+\DoxyCodeLine{1187 \textcolor{preprocessor}{\#define wglSendPbufferToVideoNV WGLEW\_GET\_FUN(\_\_wglewSendPbufferToVideoNV)}}
+\DoxyCodeLine{1188 }
+\DoxyCodeLine{1189 \textcolor{preprocessor}{\#define WGLEW\_NV\_video\_output WGLEW\_GET\_VAR(\_\_WGLEW\_NV\_video\_output)}}
+\DoxyCodeLine{1190 }
+\DoxyCodeLine{1191 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_NV\_video\_output */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1192 }
+\DoxyCodeLine{1193 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ WGL\_OML\_sync\_control -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1194 }
+\DoxyCodeLine{1195 \textcolor{preprocessor}{\#ifndef WGL\_OML\_sync\_control}}
+\DoxyCodeLine{1196 \textcolor{preprocessor}{\#define WGL\_OML\_sync\_control 1}}
+\DoxyCodeLine{1197 }
+\DoxyCodeLine{1198 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETMSCRATEOMLPROC) (HDC hdc, INT32* numerator, INT32 *denominator);}
+\DoxyCodeLine{1199 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLGETSYNCVALUESOMLPROC) (HDC hdc, INT64* ust, INT64 *msc, INT64 *sbc);}
+\DoxyCodeLine{1200 \textcolor{keyword}{typedef} INT64 (WINAPI * PFNWGLSWAPBUFFERSMSCOMLPROC) (HDC hdc, INT64 target\_msc, INT64 divisor, INT64 remainder);}
+\DoxyCodeLine{1201 \textcolor{keyword}{typedef} INT64 (WINAPI * PFNWGLSWAPLAYERBUFFERSMSCOMLPROC) (HDC hdc, INT fuPlanes, INT64 target\_msc, INT64 divisor, INT64 remainder);}
+\DoxyCodeLine{1202 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLWAITFORMSCOMLPROC) (HDC hdc, INT64 target\_msc, INT64 divisor, INT64 remainder, INT64* ust, INT64 *msc, INT64 *sbc);}
+\DoxyCodeLine{1203 \textcolor{keyword}{typedef} BOOL (WINAPI * PFNWGLWAITFORSBCOMLPROC) (HDC hdc, INT64 target\_sbc, INT64* ust, INT64 *msc, INT64 *sbc);}
+\DoxyCodeLine{1204 }
+\DoxyCodeLine{1205 \textcolor{preprocessor}{\#define wglGetMscRateOML WGLEW\_GET\_FUN(\_\_wglewGetMscRateOML)}}
+\DoxyCodeLine{1206 \textcolor{preprocessor}{\#define wglGetSyncValuesOML WGLEW\_GET\_FUN(\_\_wglewGetSyncValuesOML)}}
+\DoxyCodeLine{1207 \textcolor{preprocessor}{\#define wglSwapBuffersMscOML WGLEW\_GET\_FUN(\_\_wglewSwapBuffersMscOML)}}
+\DoxyCodeLine{1208 \textcolor{preprocessor}{\#define wglSwapLayerBuffersMscOML WGLEW\_GET\_FUN(\_\_wglewSwapLayerBuffersMscOML)}}
+\DoxyCodeLine{1209 \textcolor{preprocessor}{\#define wglWaitForMscOML WGLEW\_GET\_FUN(\_\_wglewWaitForMscOML)}}
+\DoxyCodeLine{1210 \textcolor{preprocessor}{\#define wglWaitForSbcOML WGLEW\_GET\_FUN(\_\_wglewWaitForSbcOML)}}
+\DoxyCodeLine{1211 }
+\DoxyCodeLine{1212 \textcolor{preprocessor}{\#define WGLEW\_OML\_sync\_control WGLEW\_GET\_VAR(\_\_WGLEW\_OML\_sync\_control)}}
+\DoxyCodeLine{1213 }
+\DoxyCodeLine{1214 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* WGL\_OML\_sync\_control */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1215 }
+\DoxyCodeLine{1216 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1217 }
+\DoxyCodeLine{1218 \textcolor{preprocessor}{\#define WGLEW\_FUN\_EXPORT GLEW\_FUN\_EXPORT}}
+\DoxyCodeLine{1219 \textcolor{preprocessor}{\#define WGLEW\_VAR\_EXPORT GLEW\_VAR\_EXPORT}}
+\DoxyCodeLine{1220 }
+\DoxyCodeLine{1221 WGLEW\_FUN\_EXPORT PFNWGLSETSTEREOEMITTERSTATE3DLPROC \_\_wglewSetStereoEmitterState3DL;}
+\DoxyCodeLine{1222 }
+\DoxyCodeLine{1223 WGLEW\_FUN\_EXPORT PFNWGLBLITCONTEXTFRAMEBUFFERAMDPROC \_\_wglewBlitContextFramebufferAMD;}
+\DoxyCodeLine{1224 WGLEW\_FUN\_EXPORT PFNWGLCREATEASSOCIATEDCONTEXTAMDPROC \_\_wglewCreateAssociatedContextAMD;}
+\DoxyCodeLine{1225 WGLEW\_FUN\_EXPORT PFNWGLCREATEASSOCIATEDCONTEXTATTRIBSAMDPROC \_\_wglewCreateAssociatedContextAttribsAMD;}
+\DoxyCodeLine{1226 WGLEW\_FUN\_EXPORT PFNWGLDELETEASSOCIATEDCONTEXTAMDPROC \_\_wglewDeleteAssociatedContextAMD;}
+\DoxyCodeLine{1227 WGLEW\_FUN\_EXPORT PFNWGLGETCONTEXTGPUIDAMDPROC \_\_wglewGetContextGPUIDAMD;}
+\DoxyCodeLine{1228 WGLEW\_FUN\_EXPORT PFNWGLGETCURRENTASSOCIATEDCONTEXTAMDPROC \_\_wglewGetCurrentAssociatedContextAMD;}
+\DoxyCodeLine{1229 WGLEW\_FUN\_EXPORT PFNWGLGETGPUIDSAMDPROC \_\_wglewGetGPUIDsAMD;}
+\DoxyCodeLine{1230 WGLEW\_FUN\_EXPORT PFNWGLGETGPUINFOAMDPROC \_\_wglewGetGPUInfoAMD;}
+\DoxyCodeLine{1231 WGLEW\_FUN\_EXPORT PFNWGLMAKEASSOCIATEDCONTEXTCURRENTAMDPROC \_\_wglewMakeAssociatedContextCurrentAMD;}
+\DoxyCodeLine{1232 }
+\DoxyCodeLine{1233 WGLEW\_FUN\_EXPORT PFNWGLCREATEBUFFERREGIONARBPROC \_\_wglewCreateBufferRegionARB;}
+\DoxyCodeLine{1234 WGLEW\_FUN\_EXPORT PFNWGLDELETEBUFFERREGIONARBPROC \_\_wglewDeleteBufferRegionARB;}
+\DoxyCodeLine{1235 WGLEW\_FUN\_EXPORT PFNWGLRESTOREBUFFERREGIONARBPROC \_\_wglewRestoreBufferRegionARB;}
+\DoxyCodeLine{1236 WGLEW\_FUN\_EXPORT PFNWGLSAVEBUFFERREGIONARBPROC \_\_wglewSaveBufferRegionARB;}
+\DoxyCodeLine{1237 }
+\DoxyCodeLine{1238 WGLEW\_FUN\_EXPORT PFNWGLCREATECONTEXTATTRIBSARBPROC \_\_wglewCreateContextAttribsARB;}
+\DoxyCodeLine{1239 }
+\DoxyCodeLine{1240 WGLEW\_FUN\_EXPORT PFNWGLGETEXTENSIONSSTRINGARBPROC \_\_wglewGetExtensionsStringARB;}
+\DoxyCodeLine{1241 }
+\DoxyCodeLine{1242 WGLEW\_FUN\_EXPORT PFNWGLGETCURRENTREADDCARBPROC \_\_wglewGetCurrentReadDCARB;}
+\DoxyCodeLine{1243 WGLEW\_FUN\_EXPORT PFNWGLMAKECONTEXTCURRENTARBPROC \_\_wglewMakeContextCurrentARB;}
+\DoxyCodeLine{1244 }
+\DoxyCodeLine{1245 WGLEW\_FUN\_EXPORT PFNWGLCREATEPBUFFERARBPROC \_\_wglewCreatePbufferARB;}
+\DoxyCodeLine{1246 WGLEW\_FUN\_EXPORT PFNWGLDESTROYPBUFFERARBPROC \_\_wglewDestroyPbufferARB;}
+\DoxyCodeLine{1247 WGLEW\_FUN\_EXPORT PFNWGLGETPBUFFERDCARBPROC \_\_wglewGetPbufferDCARB;}
+\DoxyCodeLine{1248 WGLEW\_FUN\_EXPORT PFNWGLQUERYPBUFFERARBPROC \_\_wglewQueryPbufferARB;}
+\DoxyCodeLine{1249 WGLEW\_FUN\_EXPORT PFNWGLRELEASEPBUFFERDCARBPROC \_\_wglewReleasePbufferDCARB;}
+\DoxyCodeLine{1250 }
+\DoxyCodeLine{1251 WGLEW\_FUN\_EXPORT PFNWGLCHOOSEPIXELFORMATARBPROC \_\_wglewChoosePixelFormatARB;}
+\DoxyCodeLine{1252 WGLEW\_FUN\_EXPORT PFNWGLGETPIXELFORMATATTRIBFVARBPROC \_\_wglewGetPixelFormatAttribfvARB;}
+\DoxyCodeLine{1253 WGLEW\_FUN\_EXPORT PFNWGLGETPIXELFORMATATTRIBIVARBPROC \_\_wglewGetPixelFormatAttribivARB;}
+\DoxyCodeLine{1254 }
+\DoxyCodeLine{1255 WGLEW\_FUN\_EXPORT PFNWGLBINDTEXIMAGEARBPROC \_\_wglewBindTexImageARB;}
+\DoxyCodeLine{1256 WGLEW\_FUN\_EXPORT PFNWGLRELEASETEXIMAGEARBPROC \_\_wglewReleaseTexImageARB;}
+\DoxyCodeLine{1257 WGLEW\_FUN\_EXPORT PFNWGLSETPBUFFERATTRIBARBPROC \_\_wglewSetPbufferAttribARB;}
+\DoxyCodeLine{1258 }
+\DoxyCodeLine{1259 WGLEW\_FUN\_EXPORT PFNWGLBINDDISPLAYCOLORTABLEEXTPROC \_\_wglewBindDisplayColorTableEXT;}
+\DoxyCodeLine{1260 WGLEW\_FUN\_EXPORT PFNWGLCREATEDISPLAYCOLORTABLEEXTPROC \_\_wglewCreateDisplayColorTableEXT;}
+\DoxyCodeLine{1261 WGLEW\_FUN\_EXPORT PFNWGLDESTROYDISPLAYCOLORTABLEEXTPROC \_\_wglewDestroyDisplayColorTableEXT;}
+\DoxyCodeLine{1262 WGLEW\_FUN\_EXPORT PFNWGLLOADDISPLAYCOLORTABLEEXTPROC \_\_wglewLoadDisplayColorTableEXT;}
+\DoxyCodeLine{1263 }
+\DoxyCodeLine{1264 WGLEW\_FUN\_EXPORT PFNWGLGETEXTENSIONSSTRINGEXTPROC \_\_wglewGetExtensionsStringEXT;}
+\DoxyCodeLine{1265 }
+\DoxyCodeLine{1266 WGLEW\_FUN\_EXPORT PFNWGLGETCURRENTREADDCEXTPROC \_\_wglewGetCurrentReadDCEXT;}
+\DoxyCodeLine{1267 WGLEW\_FUN\_EXPORT PFNWGLMAKECONTEXTCURRENTEXTPROC \_\_wglewMakeContextCurrentEXT;}
+\DoxyCodeLine{1268 }
+\DoxyCodeLine{1269 WGLEW\_FUN\_EXPORT PFNWGLCREATEPBUFFEREXTPROC \_\_wglewCreatePbufferEXT;}
+\DoxyCodeLine{1270 WGLEW\_FUN\_EXPORT PFNWGLDESTROYPBUFFEREXTPROC \_\_wglewDestroyPbufferEXT;}
+\DoxyCodeLine{1271 WGLEW\_FUN\_EXPORT PFNWGLGETPBUFFERDCEXTPROC \_\_wglewGetPbufferDCEXT;}
+\DoxyCodeLine{1272 WGLEW\_FUN\_EXPORT PFNWGLQUERYPBUFFEREXTPROC \_\_wglewQueryPbufferEXT;}
+\DoxyCodeLine{1273 WGLEW\_FUN\_EXPORT PFNWGLRELEASEPBUFFERDCEXTPROC \_\_wglewReleasePbufferDCEXT;}
+\DoxyCodeLine{1274 }
+\DoxyCodeLine{1275 WGLEW\_FUN\_EXPORT PFNWGLCHOOSEPIXELFORMATEXTPROC \_\_wglewChoosePixelFormatEXT;}
+\DoxyCodeLine{1276 WGLEW\_FUN\_EXPORT PFNWGLGETPIXELFORMATATTRIBFVEXTPROC \_\_wglewGetPixelFormatAttribfvEXT;}
+\DoxyCodeLine{1277 WGLEW\_FUN\_EXPORT PFNWGLGETPIXELFORMATATTRIBIVEXTPROC \_\_wglewGetPixelFormatAttribivEXT;}
+\DoxyCodeLine{1278 }
+\DoxyCodeLine{1279 WGLEW\_FUN\_EXPORT PFNWGLGETSWAPINTERVALEXTPROC \_\_wglewGetSwapIntervalEXT;}
+\DoxyCodeLine{1280 WGLEW\_FUN\_EXPORT PFNWGLSWAPINTERVALEXTPROC \_\_wglewSwapIntervalEXT;}
+\DoxyCodeLine{1281 }
+\DoxyCodeLine{1282 WGLEW\_FUN\_EXPORT PFNWGLGETDIGITALVIDEOPARAMETERSI3DPROC \_\_wglewGetDigitalVideoParametersI3D;}
+\DoxyCodeLine{1283 WGLEW\_FUN\_EXPORT PFNWGLSETDIGITALVIDEOPARAMETERSI3DPROC \_\_wglewSetDigitalVideoParametersI3D;}
+\DoxyCodeLine{1284 }
+\DoxyCodeLine{1285 WGLEW\_FUN\_EXPORT PFNWGLGETGAMMATABLEI3DPROC \_\_wglewGetGammaTableI3D;}
+\DoxyCodeLine{1286 WGLEW\_FUN\_EXPORT PFNWGLGETGAMMATABLEPARAMETERSI3DPROC \_\_wglewGetGammaTableParametersI3D;}
+\DoxyCodeLine{1287 WGLEW\_FUN\_EXPORT PFNWGLSETGAMMATABLEI3DPROC \_\_wglewSetGammaTableI3D;}
+\DoxyCodeLine{1288 WGLEW\_FUN\_EXPORT PFNWGLSETGAMMATABLEPARAMETERSI3DPROC \_\_wglewSetGammaTableParametersI3D;}
+\DoxyCodeLine{1289 }
+\DoxyCodeLine{1290 WGLEW\_FUN\_EXPORT PFNWGLDISABLEGENLOCKI3DPROC \_\_wglewDisableGenlockI3D;}
+\DoxyCodeLine{1291 WGLEW\_FUN\_EXPORT PFNWGLENABLEGENLOCKI3DPROC \_\_wglewEnableGenlockI3D;}
+\DoxyCodeLine{1292 WGLEW\_FUN\_EXPORT PFNWGLGENLOCKSAMPLERATEI3DPROC \_\_wglewGenlockSampleRateI3D;}
+\DoxyCodeLine{1293 WGLEW\_FUN\_EXPORT PFNWGLGENLOCKSOURCEDELAYI3DPROC \_\_wglewGenlockSourceDelayI3D;}
+\DoxyCodeLine{1294 WGLEW\_FUN\_EXPORT PFNWGLGENLOCKSOURCEEDGEI3DPROC \_\_wglewGenlockSourceEdgeI3D;}
+\DoxyCodeLine{1295 WGLEW\_FUN\_EXPORT PFNWGLGENLOCKSOURCEI3DPROC \_\_wglewGenlockSourceI3D;}
+\DoxyCodeLine{1296 WGLEW\_FUN\_EXPORT PFNWGLGETGENLOCKSAMPLERATEI3DPROC \_\_wglewGetGenlockSampleRateI3D;}
+\DoxyCodeLine{1297 WGLEW\_FUN\_EXPORT PFNWGLGETGENLOCKSOURCEDELAYI3DPROC \_\_wglewGetGenlockSourceDelayI3D;}
+\DoxyCodeLine{1298 WGLEW\_FUN\_EXPORT PFNWGLGETGENLOCKSOURCEEDGEI3DPROC \_\_wglewGetGenlockSourceEdgeI3D;}
+\DoxyCodeLine{1299 WGLEW\_FUN\_EXPORT PFNWGLGETGENLOCKSOURCEI3DPROC \_\_wglewGetGenlockSourceI3D;}
+\DoxyCodeLine{1300 WGLEW\_FUN\_EXPORT PFNWGLISENABLEDGENLOCKI3DPROC \_\_wglewIsEnabledGenlockI3D;}
+\DoxyCodeLine{1301 WGLEW\_FUN\_EXPORT PFNWGLQUERYGENLOCKMAXSOURCEDELAYI3DPROC \_\_wglewQueryGenlockMaxSourceDelayI3D;}
+\DoxyCodeLine{1302 }
+\DoxyCodeLine{1303 WGLEW\_FUN\_EXPORT PFNWGLASSOCIATEIMAGEBUFFEREVENTSI3DPROC \_\_wglewAssociateImageBufferEventsI3D;}
+\DoxyCodeLine{1304 WGLEW\_FUN\_EXPORT PFNWGLCREATEIMAGEBUFFERI3DPROC \_\_wglewCreateImageBufferI3D;}
+\DoxyCodeLine{1305 WGLEW\_FUN\_EXPORT PFNWGLDESTROYIMAGEBUFFERI3DPROC \_\_wglewDestroyImageBufferI3D;}
+\DoxyCodeLine{1306 WGLEW\_FUN\_EXPORT PFNWGLRELEASEIMAGEBUFFEREVENTSI3DPROC \_\_wglewReleaseImageBufferEventsI3D;}
+\DoxyCodeLine{1307 }
+\DoxyCodeLine{1308 WGLEW\_FUN\_EXPORT PFNWGLDISABLEFRAMELOCKI3DPROC \_\_wglewDisableFrameLockI3D;}
+\DoxyCodeLine{1309 WGLEW\_FUN\_EXPORT PFNWGLENABLEFRAMELOCKI3DPROC \_\_wglewEnableFrameLockI3D;}
+\DoxyCodeLine{1310 WGLEW\_FUN\_EXPORT PFNWGLISENABLEDFRAMELOCKI3DPROC \_\_wglewIsEnabledFrameLockI3D;}
+\DoxyCodeLine{1311 WGLEW\_FUN\_EXPORT PFNWGLQUERYFRAMELOCKMASTERI3DPROC \_\_wglewQueryFrameLockMasterI3D;}
+\DoxyCodeLine{1312 }
+\DoxyCodeLine{1313 WGLEW\_FUN\_EXPORT PFNWGLBEGINFRAMETRACKINGI3DPROC \_\_wglewBeginFrameTrackingI3D;}
+\DoxyCodeLine{1314 WGLEW\_FUN\_EXPORT PFNWGLENDFRAMETRACKINGI3DPROC \_\_wglewEndFrameTrackingI3D;}
+\DoxyCodeLine{1315 WGLEW\_FUN\_EXPORT PFNWGLGETFRAMEUSAGEI3DPROC \_\_wglewGetFrameUsageI3D;}
+\DoxyCodeLine{1316 WGLEW\_FUN\_EXPORT PFNWGLQUERYFRAMETRACKINGI3DPROC \_\_wglewQueryFrameTrackingI3D;}
+\DoxyCodeLine{1317 }
+\DoxyCodeLine{1318 WGLEW\_FUN\_EXPORT PFNWGLDXCLOSEDEVICENVPROC \_\_wglewDXCloseDeviceNV;}
+\DoxyCodeLine{1319 WGLEW\_FUN\_EXPORT PFNWGLDXLOCKOBJECTSNVPROC \_\_wglewDXLockObjectsNV;}
+\DoxyCodeLine{1320 WGLEW\_FUN\_EXPORT PFNWGLDXOBJECTACCESSNVPROC \_\_wglewDXObjectAccessNV;}
+\DoxyCodeLine{1321 WGLEW\_FUN\_EXPORT PFNWGLDXOPENDEVICENVPROC \_\_wglewDXOpenDeviceNV;}
+\DoxyCodeLine{1322 WGLEW\_FUN\_EXPORT PFNWGLDXREGISTEROBJECTNVPROC \_\_wglewDXRegisterObjectNV;}
+\DoxyCodeLine{1323 WGLEW\_FUN\_EXPORT PFNWGLDXSETRESOURCESHAREHANDLENVPROC \_\_wglewDXSetResourceShareHandleNV;}
+\DoxyCodeLine{1324 WGLEW\_FUN\_EXPORT PFNWGLDXUNLOCKOBJECTSNVPROC \_\_wglewDXUnlockObjectsNV;}
+\DoxyCodeLine{1325 WGLEW\_FUN\_EXPORT PFNWGLDXUNREGISTEROBJECTNVPROC \_\_wglewDXUnregisterObjectNV;}
+\DoxyCodeLine{1326 }
+\DoxyCodeLine{1327 WGLEW\_FUN\_EXPORT PFNWGLCOPYIMAGESUBDATANVPROC \_\_wglewCopyImageSubDataNV;}
+\DoxyCodeLine{1328 }
+\DoxyCodeLine{1329 WGLEW\_FUN\_EXPORT PFNWGLDELAYBEFORESWAPNVPROC \_\_wglewDelayBeforeSwapNV;}
+\DoxyCodeLine{1330 }
+\DoxyCodeLine{1331 WGLEW\_FUN\_EXPORT PFNWGLCREATEAFFINITYDCNVPROC \_\_wglewCreateAffinityDCNV;}
+\DoxyCodeLine{1332 WGLEW\_FUN\_EXPORT PFNWGLDELETEDCNVPROC \_\_wglewDeleteDCNV;}
+\DoxyCodeLine{1333 WGLEW\_FUN\_EXPORT PFNWGLENUMGPUDEVICESNVPROC \_\_wglewEnumGpuDevicesNV;}
+\DoxyCodeLine{1334 WGLEW\_FUN\_EXPORT PFNWGLENUMGPUSFROMAFFINITYDCNVPROC \_\_wglewEnumGpusFromAffinityDCNV;}
+\DoxyCodeLine{1335 WGLEW\_FUN\_EXPORT PFNWGLENUMGPUSNVPROC \_\_wglewEnumGpusNV;}
+\DoxyCodeLine{1336 }
+\DoxyCodeLine{1337 WGLEW\_FUN\_EXPORT PFNWGLBINDVIDEODEVICENVPROC \_\_wglewBindVideoDeviceNV;}
+\DoxyCodeLine{1338 WGLEW\_FUN\_EXPORT PFNWGLENUMERATEVIDEODEVICESNVPROC \_\_wglewEnumerateVideoDevicesNV;}
+\DoxyCodeLine{1339 WGLEW\_FUN\_EXPORT PFNWGLQUERYCURRENTCONTEXTNVPROC \_\_wglewQueryCurrentContextNV;}
+\DoxyCodeLine{1340 }
+\DoxyCodeLine{1341 WGLEW\_FUN\_EXPORT PFNWGLBINDSWAPBARRIERNVPROC \_\_wglewBindSwapBarrierNV;}
+\DoxyCodeLine{1342 WGLEW\_FUN\_EXPORT PFNWGLJOINSWAPGROUPNVPROC \_\_wglewJoinSwapGroupNV;}
+\DoxyCodeLine{1343 WGLEW\_FUN\_EXPORT PFNWGLQUERYFRAMECOUNTNVPROC \_\_wglewQueryFrameCountNV;}
+\DoxyCodeLine{1344 WGLEW\_FUN\_EXPORT PFNWGLQUERYMAXSWAPGROUPSNVPROC \_\_wglewQueryMaxSwapGroupsNV;}
+\DoxyCodeLine{1345 WGLEW\_FUN\_EXPORT PFNWGLQUERYSWAPGROUPNVPROC \_\_wglewQuerySwapGroupNV;}
+\DoxyCodeLine{1346 WGLEW\_FUN\_EXPORT PFNWGLRESETFRAMECOUNTNVPROC \_\_wglewResetFrameCountNV;}
+\DoxyCodeLine{1347 }
+\DoxyCodeLine{1348 WGLEW\_FUN\_EXPORT PFNWGLALLOCATEMEMORYNVPROC \_\_wglewAllocateMemoryNV;}
+\DoxyCodeLine{1349 WGLEW\_FUN\_EXPORT PFNWGLFREEMEMORYNVPROC \_\_wglewFreeMemoryNV;}
+\DoxyCodeLine{1350 }
+\DoxyCodeLine{1351 WGLEW\_FUN\_EXPORT PFNWGLBINDVIDEOCAPTUREDEVICENVPROC \_\_wglewBindVideoCaptureDeviceNV;}
+\DoxyCodeLine{1352 WGLEW\_FUN\_EXPORT PFNWGLENUMERATEVIDEOCAPTUREDEVICESNVPROC \_\_wglewEnumerateVideoCaptureDevicesNV;}
+\DoxyCodeLine{1353 WGLEW\_FUN\_EXPORT PFNWGLLOCKVIDEOCAPTUREDEVICENVPROC \_\_wglewLockVideoCaptureDeviceNV;}
+\DoxyCodeLine{1354 WGLEW\_FUN\_EXPORT PFNWGLQUERYVIDEOCAPTUREDEVICENVPROC \_\_wglewQueryVideoCaptureDeviceNV;}
+\DoxyCodeLine{1355 WGLEW\_FUN\_EXPORT PFNWGLRELEASEVIDEOCAPTUREDEVICENVPROC \_\_wglewReleaseVideoCaptureDeviceNV;}
+\DoxyCodeLine{1356 }
+\DoxyCodeLine{1357 WGLEW\_FUN\_EXPORT PFNWGLBINDVIDEOIMAGENVPROC \_\_wglewBindVideoImageNV;}
+\DoxyCodeLine{1358 WGLEW\_FUN\_EXPORT PFNWGLGETVIDEODEVICENVPROC \_\_wglewGetVideoDeviceNV;}
+\DoxyCodeLine{1359 WGLEW\_FUN\_EXPORT PFNWGLGETVIDEOINFONVPROC \_\_wglewGetVideoInfoNV;}
+\DoxyCodeLine{1360 WGLEW\_FUN\_EXPORT PFNWGLRELEASEVIDEODEVICENVPROC \_\_wglewReleaseVideoDeviceNV;}
+\DoxyCodeLine{1361 WGLEW\_FUN\_EXPORT PFNWGLRELEASEVIDEOIMAGENVPROC \_\_wglewReleaseVideoImageNV;}
+\DoxyCodeLine{1362 WGLEW\_FUN\_EXPORT PFNWGLSENDPBUFFERTOVIDEONVPROC \_\_wglewSendPbufferToVideoNV;}
+\DoxyCodeLine{1363 }
+\DoxyCodeLine{1364 WGLEW\_FUN\_EXPORT PFNWGLGETMSCRATEOMLPROC \_\_wglewGetMscRateOML;}
+\DoxyCodeLine{1365 WGLEW\_FUN\_EXPORT PFNWGLGETSYNCVALUESOMLPROC \_\_wglewGetSyncValuesOML;}
+\DoxyCodeLine{1366 WGLEW\_FUN\_EXPORT PFNWGLSWAPBUFFERSMSCOMLPROC \_\_wglewSwapBuffersMscOML;}
+\DoxyCodeLine{1367 WGLEW\_FUN\_EXPORT PFNWGLSWAPLAYERBUFFERSMSCOMLPROC \_\_wglewSwapLayerBuffersMscOML;}
+\DoxyCodeLine{1368 WGLEW\_FUN\_EXPORT PFNWGLWAITFORMSCOMLPROC \_\_wglewWaitForMscOML;}
+\DoxyCodeLine{1369 WGLEW\_FUN\_EXPORT PFNWGLWAITFORSBCOMLPROC \_\_wglewWaitForSbcOML;}
+\DoxyCodeLine{1370 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_3DFX\_multisample;}
+\DoxyCodeLine{1371 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_3DL\_stereo\_control;}
+\DoxyCodeLine{1372 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_AMD\_gpu\_association;}
+\DoxyCodeLine{1373 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_buffer\_region;}
+\DoxyCodeLine{1374 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_context\_flush\_control;}
+\DoxyCodeLine{1375 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_create\_context;}
+\DoxyCodeLine{1376 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_create\_context\_no\_error;}
+\DoxyCodeLine{1377 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_create\_context\_profile;}
+\DoxyCodeLine{1378 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_create\_context\_robustness;}
+\DoxyCodeLine{1379 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_extensions\_string;}
+\DoxyCodeLine{1380 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_framebuffer\_sRGB;}
+\DoxyCodeLine{1381 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_make\_current\_read;}
+\DoxyCodeLine{1382 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_multisample;}
+\DoxyCodeLine{1383 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_pbuffer;}
+\DoxyCodeLine{1384 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_pixel\_format;}
+\DoxyCodeLine{1385 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_pixel\_format\_float;}
+\DoxyCodeLine{1386 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_render\_texture;}
+\DoxyCodeLine{1387 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_robustness\_application\_isolation;}
+\DoxyCodeLine{1388 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ARB\_robustness\_share\_group\_isolation;}
+\DoxyCodeLine{1389 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ATI\_pixel\_format\_float;}
+\DoxyCodeLine{1390 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_ATI\_render\_texture\_rectangle;}
+\DoxyCodeLine{1391 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_EXT\_colorspace;}
+\DoxyCodeLine{1392 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_EXT\_create\_context\_es2\_profile;}
+\DoxyCodeLine{1393 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_EXT\_create\_context\_es\_profile;}
+\DoxyCodeLine{1394 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_EXT\_depth\_float;}
+\DoxyCodeLine{1395 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_EXT\_display\_color\_table;}
+\DoxyCodeLine{1396 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_EXT\_extensions\_string;}
+\DoxyCodeLine{1397 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_EXT\_framebuffer\_sRGB;}
+\DoxyCodeLine{1398 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_EXT\_make\_current\_read;}
+\DoxyCodeLine{1399 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_EXT\_multisample;}
+\DoxyCodeLine{1400 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_EXT\_pbuffer;}
+\DoxyCodeLine{1401 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_EXT\_pixel\_format;}
+\DoxyCodeLine{1402 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_EXT\_pixel\_format\_packed\_float;}
+\DoxyCodeLine{1403 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_EXT\_swap\_control;}
+\DoxyCodeLine{1404 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_EXT\_swap\_control\_tear;}
+\DoxyCodeLine{1405 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_I3D\_digital\_video\_control;}
+\DoxyCodeLine{1406 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_I3D\_gamma;}
+\DoxyCodeLine{1407 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_I3D\_genlock;}
+\DoxyCodeLine{1408 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_I3D\_image\_buffer;}
+\DoxyCodeLine{1409 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_I3D\_swap\_frame\_lock;}
+\DoxyCodeLine{1410 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_I3D\_swap\_frame\_usage;}
+\DoxyCodeLine{1411 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_NV\_DX\_interop;}
+\DoxyCodeLine{1412 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_NV\_DX\_interop2;}
+\DoxyCodeLine{1413 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_NV\_copy\_image;}
+\DoxyCodeLine{1414 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_NV\_delay\_before\_swap;}
+\DoxyCodeLine{1415 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_NV\_float\_buffer;}
+\DoxyCodeLine{1416 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_NV\_gpu\_affinity;}
+\DoxyCodeLine{1417 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_NV\_multisample\_coverage;}
+\DoxyCodeLine{1418 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_NV\_present\_video;}
+\DoxyCodeLine{1419 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_NV\_render\_depth\_texture;}
+\DoxyCodeLine{1420 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_NV\_render\_texture\_rectangle;}
+\DoxyCodeLine{1421 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_NV\_swap\_group;}
+\DoxyCodeLine{1422 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_NV\_vertex\_array\_range;}
+\DoxyCodeLine{1423 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_NV\_video\_capture;}
+\DoxyCodeLine{1424 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_NV\_video\_output;}
+\DoxyCodeLine{1425 WGLEW\_VAR\_EXPORT GLboolean \_\_WGLEW\_OML\_sync\_control;}
+\DoxyCodeLine{1426 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{1427 }
+\DoxyCodeLine{1428 GLEWAPI GLenum GLEWAPIENTRY wglewInit ();}
+\DoxyCodeLine{1429 GLEWAPI GLboolean GLEWAPIENTRY wglewIsSupported (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *name);}
+\DoxyCodeLine{1430 }
+\DoxyCodeLine{1431 \textcolor{preprocessor}{\#ifndef WGLEW\_GET\_VAR}}
+\DoxyCodeLine{1432 \textcolor{preprocessor}{\#define WGLEW\_GET\_VAR(x) (*(const GLboolean*)\&x)}}
+\DoxyCodeLine{1433 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1434 }
+\DoxyCodeLine{1435 \textcolor{preprocessor}{\#ifndef WGLEW\_GET\_FUN}}
+\DoxyCodeLine{1436 \textcolor{preprocessor}{\#define WGLEW\_GET\_FUN(x) x}}
+\DoxyCodeLine{1437 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1438 }
+\DoxyCodeLine{1439 GLEWAPI GLboolean GLEWAPIENTRY wglewGetExtension (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *name);}
+\DoxyCodeLine{1440 }
+\DoxyCodeLine{1441 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1442 \}}
+\DoxyCodeLine{1443 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1444 }
+\DoxyCodeLine{1445 \textcolor{preprocessor}{\#undef GLEWAPI}}
+\DoxyCodeLine{1446 }
+\DoxyCodeLine{1447 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_wglew\_h\_\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

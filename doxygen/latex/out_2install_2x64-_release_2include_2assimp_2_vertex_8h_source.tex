@@ -1,0 +1,283 @@
+\hypertarget{out_2install_2x64-_release_2include_2assimp_2_vertex_8h_source}{}\doxysection{Vertex.\+h}
+\label{out_2install_2x64-_release_2include_2assimp_2_vertex_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/Vertex.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/Vertex.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{10 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{11 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{14 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{15 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{18 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{19 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{20 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{21 \textcolor{comment}{}}
+\DoxyCodeLine{22 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{23 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{24 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{25 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{26 \textcolor{comment}{}}
+\DoxyCodeLine{27 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{28 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{29 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{30 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{31 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{32 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{33 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{34 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{35 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{36 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{37 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{38 \textcolor{comment}{}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#ifndef AI\_VERTEX\_H\_INC}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define AI\_VERTEX\_H\_INC}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <assimp/vector3.h>}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#include <assimp/mesh.h>}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#include <assimp/ai\_assert.h>}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{66     \textcolor{comment}{// std::plus-\/family operates on operands with identical types -\/ we need to}}
+\DoxyCodeLine{67     \textcolor{comment}{// support all the (vectype op float) combinations in vector maths.}}
+\DoxyCodeLine{68     \textcolor{comment}{// Providing T(float) would open the way to endless implicit conversions.}}
+\DoxyCodeLine{70 \textcolor{comment}{}    \textcolor{keyword}{namespace }Intern \{}
+\DoxyCodeLine{71         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T0, \textcolor{keyword}{typename} T1, \textcolor{keyword}{typename} TRES = T0> \textcolor{keyword}{struct }plus \{}
+\DoxyCodeLine{72             TRES operator() (\textcolor{keyword}{const} T0\& t0, \textcolor{keyword}{const} T1\& t1)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{73                 \textcolor{keywordflow}{return} t0+t1;}
+\DoxyCodeLine{74             \}}
+\DoxyCodeLine{75         \};}
+\DoxyCodeLine{76         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T0, \textcolor{keyword}{typename} T1, \textcolor{keyword}{typename} TRES = T0> \textcolor{keyword}{struct }minus \{}
+\DoxyCodeLine{77             TRES operator() (\textcolor{keyword}{const} T0\& t0, \textcolor{keyword}{const} T1\& t1)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{78                 \textcolor{keywordflow}{return} t0-\/t1;}
+\DoxyCodeLine{79             \}}
+\DoxyCodeLine{80         \};}
+\DoxyCodeLine{81         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T0, \textcolor{keyword}{typename} T1, \textcolor{keyword}{typename} TRES = T0> \textcolor{keyword}{struct }multiplies \{}
+\DoxyCodeLine{82             TRES operator() (\textcolor{keyword}{const} T0\& t0, \textcolor{keyword}{const} T1\& t1)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{83                 \textcolor{keywordflow}{return} t0*t1;}
+\DoxyCodeLine{84             \}}
+\DoxyCodeLine{85         \};}
+\DoxyCodeLine{86         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T0, \textcolor{keyword}{typename} T1, \textcolor{keyword}{typename} TRES = T0> \textcolor{keyword}{struct }divides \{}
+\DoxyCodeLine{87             TRES operator() (\textcolor{keyword}{const} T0\& t0, \textcolor{keyword}{const} T1\& t1)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{88                 \textcolor{keywordflow}{return} t0/t1;}
+\DoxyCodeLine{89             \}}
+\DoxyCodeLine{90         \};}
+\DoxyCodeLine{91     \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{98 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{99 \textcolor{keyword}{struct }Vertex \{}
+\DoxyCodeLine{100     \textcolor{keyword}{friend} Vertex operator + (\textcolor{keyword}{const} Vertex\&,\textcolor{keyword}{const} Vertex\&);}
+\DoxyCodeLine{101     \textcolor{keyword}{friend} Vertex operator -\/ (\textcolor{keyword}{const} Vertex\&,\textcolor{keyword}{const} Vertex\&);}
+\DoxyCodeLine{102     \textcolor{keyword}{friend} Vertex operator * (\textcolor{keyword}{const} Vertex\&,ai\_real);}
+\DoxyCodeLine{103     \textcolor{keyword}{friend} Vertex operator / (\textcolor{keyword}{const} Vertex\&,ai\_real);}
+\DoxyCodeLine{104     \textcolor{keyword}{friend} Vertex operator * (ai\_real, \textcolor{keyword}{const} Vertex\&);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} position;}
+\DoxyCodeLine{107     \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} normal;}
+\DoxyCodeLine{108     \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} tangent, bitangent;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} texcoords[\mbox{\hyperlink{include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}];}
+\DoxyCodeLine{111     \mbox{\hyperlink{structai_color4_d}{aiColor4D}} colors[\mbox{\hyperlink{include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}];}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     Vertex() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{117 \textcolor{comment}{}    \textcolor{keyword}{explicit} \mbox{\hyperlink{struct_assimp_1_1_vertex_a033c3e271016c729f353726007b25d7e}{Vertex}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_mesh}{aiMesh}}* msh, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx) \{}
+\DoxyCodeLine{118         ai\_assert(idx < msh-\/>mNumVertices);}
+\DoxyCodeLine{119         position = msh-\/>\mbox{\hyperlink{structai_mesh_a5abd50282e39563a14734820378b1690}{mVertices}}[idx];}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121         \textcolor{keywordflow}{if} (msh-\/>HasNormals()) \{}
+\DoxyCodeLine{122             normal = msh-\/>\mbox{\hyperlink{structai_mesh_ac7d23a5c9caf8f647ce96e2abf3da3ef}{mNormals}}[idx];}
+\DoxyCodeLine{123         \}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125         \textcolor{keywordflow}{if} (msh-\/>HasTangentsAndBitangents()) \{}
+\DoxyCodeLine{126             tangent = msh-\/>\mbox{\hyperlink{structai_mesh_a37be52ca5c293ef46c1ee10bf7410d86}{mTangents}}[idx];}
+\DoxyCodeLine{127             bitangent = msh-\/>\mbox{\hyperlink{structai_mesh_a4d2b15fe360d7c6f45c28dced096510a}{mBitangents}}[idx];}
+\DoxyCodeLine{128         \}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; msh-\/>HasTextureCoords(i); ++i) \{}
+\DoxyCodeLine{131             texcoords[i] = msh-\/>\mbox{\hyperlink{structai_mesh_a35055266863d76681d371bf3bb4ccd72}{mTextureCoords}}[i][idx];}
+\DoxyCodeLine{132         \}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; msh-\/>HasVertexColors(i); ++i) \{}
+\DoxyCodeLine{135             colors[i] = msh-\/>\mbox{\hyperlink{structai_mesh_a387fa89e34f4b13f03cfd15c9be1e787}{mColors}}[i][idx];}
+\DoxyCodeLine{136         \}}
+\DoxyCodeLine{137     \}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{141 \textcolor{comment}{}    \textcolor{keyword}{explicit} \mbox{\hyperlink{struct_assimp_1_1_vertex_a11244d5ce8e0ef958363c8a2498dde6e}{Vertex}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_anim_mesh}{aiAnimMesh}}* msh, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx) \{}
+\DoxyCodeLine{142         ai\_assert(idx < msh-\/>mNumVertices);}
+\DoxyCodeLine{143         \textcolor{keywordflow}{if} (msh-\/>HasPositions()) \{}
+\DoxyCodeLine{144             position = msh-\/>\mbox{\hyperlink{structai_anim_mesh_ab7f2b12fe402d6083bb1750d287d5cee}{mVertices}}[idx];}
+\DoxyCodeLine{145         \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147         \textcolor{keywordflow}{if} (msh-\/>HasNormals()) \{}
+\DoxyCodeLine{148             normal = msh-\/>\mbox{\hyperlink{structai_anim_mesh_a9d9f5c8bc9309af7b3c91bf3172d1237}{mNormals}}[idx];}
+\DoxyCodeLine{149         \}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151         \textcolor{keywordflow}{if} (msh-\/>HasTangentsAndBitangents()) \{}
+\DoxyCodeLine{152             tangent = msh-\/>\mbox{\hyperlink{structai_anim_mesh_a6f16d6c0f33d9ea8673a50b6b485fd42}{mTangents}}[idx];}
+\DoxyCodeLine{153             bitangent = msh-\/>\mbox{\hyperlink{structai_anim_mesh_a8a5aa66caf35facc9c5ec783f1572f78}{mBitangents}}[idx];}
+\DoxyCodeLine{154         \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; msh-\/>HasTextureCoords(i); ++i) \{}
+\DoxyCodeLine{157             texcoords[i] = msh-\/>\mbox{\hyperlink{structai_anim_mesh_a05d0d11863b91fc35b69e7bce5970701}{mTextureCoords}}[i][idx];}
+\DoxyCodeLine{158         \}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; msh-\/>HasVertexColors(i); ++i) \{}
+\DoxyCodeLine{161            colors[i] = msh-\/>\mbox{\hyperlink{structai_anim_mesh_a475255bf7dbc970646a8481ddf3f6981}{mColors}}[i][idx];}
+\DoxyCodeLine{162         \}}
+\DoxyCodeLine{163     \}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     \mbox{\hyperlink{struct_assimp_1_1_vertex}{Vertex}}\& operator += (\textcolor{keyword}{const} \mbox{\hyperlink{struct_assimp_1_1_vertex}{Vertex}}\& v) \{}
+\DoxyCodeLine{166         *\textcolor{keyword}{this} = *\textcolor{keyword}{this}+v;}
+\DoxyCodeLine{167         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{168     \}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     Vertex\& operator -\/= (\textcolor{keyword}{const} Vertex\& v) \{}
+\DoxyCodeLine{171         *\textcolor{keyword}{this} = *\textcolor{keyword}{this}-\/v;}
+\DoxyCodeLine{172         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{173     \}}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175     Vertex\& operator *= (ai\_real v) \{}
+\DoxyCodeLine{176         *\textcolor{keyword}{this} = *\textcolor{keyword}{this}*v;}
+\DoxyCodeLine{177         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{178     \}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180     Vertex\& operator /= (ai\_real v) \{}
+\DoxyCodeLine{181         *\textcolor{keyword}{this} = *\textcolor{keyword}{this}/v;}
+\DoxyCodeLine{182         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{183     \}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{187 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_assimp_1_1_vertex_a09d29f6cac51d56aa90ab874ad1cdc78}{SortBack}}(\mbox{\hyperlink{structai_mesh}{aiMesh}}* out, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} idx)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{188         ai\_assert(idx<out-\/>mNumVertices);}
+\DoxyCodeLine{189         out-\/>\mbox{\hyperlink{structai_mesh_a5abd50282e39563a14734820378b1690}{mVertices}}[idx] = position;}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191         \textcolor{keywordflow}{if} (out-\/>HasNormals()) \{}
+\DoxyCodeLine{192             out-\/>\mbox{\hyperlink{structai_mesh_ac7d23a5c9caf8f647ce96e2abf3da3ef}{mNormals}}[idx] = normal;}
+\DoxyCodeLine{193         \}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195         \textcolor{keywordflow}{if} (out-\/>HasTangentsAndBitangents()) \{}
+\DoxyCodeLine{196             out-\/>\mbox{\hyperlink{structai_mesh_a37be52ca5c293ef46c1ee10bf7410d86}{mTangents}}[idx] = tangent;}
+\DoxyCodeLine{197             out-\/>\mbox{\hyperlink{structai_mesh_a4d2b15fe360d7c6f45c28dced096510a}{mBitangents}}[idx] = bitangent;}
+\DoxyCodeLine{198         \}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; out-\/>HasTextureCoords(i); ++i) \{}
+\DoxyCodeLine{201             out-\/>\mbox{\hyperlink{structai_mesh_a35055266863d76681d371bf3bb4ccd72}{mTextureCoords}}[i][idx] = texcoords[i];}
+\DoxyCodeLine{202         \}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; out-\/>HasVertexColors(i); ++i) \{}
+\DoxyCodeLine{205             out-\/>\mbox{\hyperlink{structai_mesh_a387fa89e34f4b13f03cfd15c9be1e787}{mColors}}[i][idx] = colors[i];}
+\DoxyCodeLine{206         \}}
+\DoxyCodeLine{207     \}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 \textcolor{keyword}{private}:}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{213 \textcolor{comment}{}    \textcolor{keyword}{template} <\textcolor{keyword}{template} <\textcolor{keyword}{typename} t> \textcolor{keyword}{class }op> \textcolor{keyword}{static} \mbox{\hyperlink{struct_assimp_1_1_vertex}{Vertex}} BinaryOp(\textcolor{keyword}{const} \mbox{\hyperlink{struct_assimp_1_1_vertex}{Vertex}}\& v0, \textcolor{keyword}{const} \mbox{\hyperlink{struct_assimp_1_1_vertex}{Vertex}}\& v1) \{}
+\DoxyCodeLine{214         \textcolor{comment}{// this is a heavy task for the compiler to optimize ... *pray*}}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216         \mbox{\hyperlink{struct_assimp_1_1_vertex}{Vertex}} res;}
+\DoxyCodeLine{217         res.position  = op<aiVector3D>()(v0.position,v1.position);}
+\DoxyCodeLine{218         res.normal    = op<aiVector3D>()(v0.normal,v1.normal);}
+\DoxyCodeLine{219         res.tangent   = op<aiVector3D>()(v0.tangent,v1.tangent);}
+\DoxyCodeLine{220         res.bitangent = op<aiVector3D>()(v0.bitangent,v1.bitangent);}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}; ++i) \{}
+\DoxyCodeLine{223             res.texcoords[i] = op<aiVector3D>()(v0.texcoords[i],v1.texcoords[i]);}
+\DoxyCodeLine{224         \}}
+\DoxyCodeLine{225         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}; ++i) \{}
+\DoxyCodeLine{226             res.colors[i] = op<aiColor4D>()(v0.colors[i],v1.colors[i]);}
+\DoxyCodeLine{227         \}}
+\DoxyCodeLine{228         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{229     \}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{233 \textcolor{comment}{}    \textcolor{keyword}{template} <\textcolor{keyword}{template} <\textcolor{keyword}{typename}, \textcolor{keyword}{typename}, \textcolor{keyword}{typename}> \textcolor{keyword}{class }op>}
+\DoxyCodeLine{234     \textcolor{keyword}{static} Vertex BinaryOp(\textcolor{keyword}{const} Vertex\& v0, ai\_real f) \{}
+\DoxyCodeLine{235         \textcolor{comment}{// this is a heavy task for the compiler to optimize ... *pray*}}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237         Vertex res;}
+\DoxyCodeLine{238         res.position  = op<aiVector3D,ai\_real,aiVector3D>()(v0.position,f);}
+\DoxyCodeLine{239         res.normal    = op<aiVector3D,ai\_real,aiVector3D>()(v0.normal,f);}
+\DoxyCodeLine{240         res.tangent   = op<aiVector3D,ai\_real,aiVector3D>()(v0.tangent,f);}
+\DoxyCodeLine{241         res.bitangent = op<aiVector3D,ai\_real,aiVector3D>()(v0.bitangent,f);}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}; ++i) \{}
+\DoxyCodeLine{244             res.texcoords[i] = op<aiVector3D,ai\_real,aiVector3D>()(v0.texcoords[i],f);}
+\DoxyCodeLine{245         \}}
+\DoxyCodeLine{246         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}; ++i) \{}
+\DoxyCodeLine{247             res.colors[i] = op<aiColor4D,float, aiColor4D>()(v0.colors[i],f);}
+\DoxyCodeLine{248         \}}
+\DoxyCodeLine{249         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{250     \}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{254 \textcolor{comment}{}    \textcolor{keyword}{template} <\textcolor{keyword}{template} <\textcolor{keyword}{typename}, \textcolor{keyword}{typename}, \textcolor{keyword}{typename}> \textcolor{keyword}{class }op>}
+\DoxyCodeLine{255     \textcolor{keyword}{static} Vertex BinaryOp(ai\_real f, \textcolor{keyword}{const} Vertex\& v0) \{}
+\DoxyCodeLine{256         \textcolor{comment}{// this is a heavy task for the compiler to optimize ... *pray*}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258         Vertex res;}
+\DoxyCodeLine{259         res.position  = op<ai\_real,aiVector3D,aiVector3D>()(f,v0.position);}
+\DoxyCodeLine{260         res.normal    = op<ai\_real,aiVector3D,aiVector3D>()(f,v0.normal);}
+\DoxyCodeLine{261         res.tangent   = op<ai\_real,aiVector3D,aiVector3D>()(f,v0.tangent);}
+\DoxyCodeLine{262         res.bitangent = op<ai\_real,aiVector3D,aiVector3D>()(f,v0.bitangent);}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}; ++i) \{}
+\DoxyCodeLine{265             res.texcoords[i] = op<ai\_real,aiVector3D,aiVector3D>()(f,v0.texcoords[i]);}
+\DoxyCodeLine{266         \}}
+\DoxyCodeLine{267         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}; ++i) \{}
+\DoxyCodeLine{268             res.colors[i] = op<float, aiColor4D,aiColor4D>()(f,v0.colors[i]);}
+\DoxyCodeLine{269         \}}
+\DoxyCodeLine{270         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{271     \}}
+\DoxyCodeLine{272 \};}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{275 AI\_FORCE\_INLINE Vertex operator + (\textcolor{keyword}{const} Vertex\& v0,\textcolor{keyword}{const} Vertex\& v1) \{}
+\DoxyCodeLine{276     \textcolor{keywordflow}{return} Vertex::BinaryOp<std::plus>(v0,v1);}
+\DoxyCodeLine{277 \}}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279 AI\_FORCE\_INLINE Vertex operator -\/ (\textcolor{keyword}{const} Vertex\& v0,\textcolor{keyword}{const} Vertex\& v1) \{}
+\DoxyCodeLine{280     \textcolor{keywordflow}{return} Vertex::BinaryOp<std::minus>(v0,v1);}
+\DoxyCodeLine{281 \}}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283 AI\_FORCE\_INLINE Vertex operator * (\textcolor{keyword}{const} Vertex\& v0,ai\_real f) \{}
+\DoxyCodeLine{284     \textcolor{keywordflow}{return} Vertex::BinaryOp<Intern::multiplies>(v0,f);}
+\DoxyCodeLine{285 \}}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287 AI\_FORCE\_INLINE Vertex operator / (\textcolor{keyword}{const} Vertex\& v0,ai\_real f) \{}
+\DoxyCodeLine{288     \textcolor{keywordflow}{return} Vertex::BinaryOp<Intern::multiplies>(v0,1.f/f);}
+\DoxyCodeLine{289 \}}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 AI\_FORCE\_INLINE Vertex operator * (ai\_real f,\textcolor{keyword}{const} Vertex\& v0) \{}
+\DoxyCodeLine{292     \textcolor{keywordflow}{return} Vertex::BinaryOp<Intern::multiplies>(f,v0);}
+\DoxyCodeLine{293 \}}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295 \}}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_VERTEX\_H\_INC}}
+
+\end{DoxyCode}

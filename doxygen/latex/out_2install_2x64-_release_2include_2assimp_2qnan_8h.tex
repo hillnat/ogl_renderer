@@ -1,0 +1,109 @@
+\hypertarget{out_2install_2x64-_release_2include_2assimp_2qnan_8h}{}\doxysection{C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Release/include/assimp/qnan.h File Reference}
+\label{out_2install_2x64-_release_2include_2assimp_2qnan_8h}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/qnan.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/qnan.h}}
+
+
+Some utilities for our dealings with qnans.  
+
+
+{\ttfamily \#include $<$assimp/defs.\+h$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union___i_e_e_e_single}{\+\_\+\+IEEESingle}}
+\item 
+union \mbox{\hyperlink{union___i_e_e_e_double}{\+\_\+\+IEEEDouble}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+AI\+\_\+\+FORCE\+\_\+\+INLINE bool \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2qnan_8h_aba07171feddf4c9513c2424a630b03a5}{is\+\_\+qnan}} (float in)
+\item 
+AI\+\_\+\+FORCE\+\_\+\+INLINE bool \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2qnan_8h_a682b18f4d3112793d4f7dd5c1a117c67}{is\+\_\+qnan}} (double in)
+\item 
+AI\+\_\+\+FORCE\+\_\+\+INLINE bool \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2qnan_8h_ae81ad0f99eba1f73bad78e48a16df827}{is\+\_\+special\+\_\+float}} (float in)
+\begin{DoxyCompactList}\small\item\em check whether a float is either NaN or (+/-\/) INF. \end{DoxyCompactList}\item 
+AI\+\_\+\+FORCE\+\_\+\+INLINE bool \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2qnan_8h_abefbb78762da57066abee01f541de2be}{is\+\_\+special\+\_\+float}} (double in)
+\begin{DoxyCompactList}\small\item\em check whether a double is either NaN or (+/-\/) INF. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class TReal $>$ }\\AI\+\_\+\+FORCE\+\_\+\+INLINE bool \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2qnan_8h_a4b93a2d042b065c5b0c068626dc54ed2}{is\+\_\+not\+\_\+qnan}} (TReal in)
+\item 
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2qnan_8h_a1563bfa01954df98282cbaaf632dc95a}\label{out_2install_2x64-_release_2include_2assimp_2qnan_8h_a1563bfa01954df98282cbaaf632dc95a}} 
+AI\+\_\+\+FORCE\+\_\+\+INLINE ai\+\_\+real {\bfseries get\+\_\+qnan} ()
+\begin{DoxyCompactList}\small\item\em Get a fresh qnan. ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Some utilities for our dealings with qnans. 
+
+\begin{DoxyNote}{Note}
+Some loaders use qnans to mark invalid values tempoarily, also \mbox{\hyperlink{namespace_assimp}{Assimp}} explicitly enforces undefined normals to be set to qnan. qnan utilities are available in standard libraries (C99 for example) but last time I checked compiler coverage was so bad that I decided to reinvent the wheel. 
+\end{DoxyNote}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2qnan_8h_a4b93a2d042b065c5b0c068626dc54ed2}\label{out_2install_2x64-_release_2include_2assimp_2qnan_8h_a4b93a2d042b065c5b0c068626dc54ed2}} 
+\index{qnan.h@{qnan.h}!is\_not\_qnan@{is\_not\_qnan}}
+\index{is\_not\_qnan@{is\_not\_qnan}!qnan.h@{qnan.h}}
+\doxysubsubsection{\texorpdfstring{is\_not\_qnan()}{is\_not\_qnan()}}
+{\footnotesize\ttfamily template$<$class TReal $>$ \\
+AI\+\_\+\+FORCE\+\_\+\+INLINE bool is\+\_\+not\+\_\+qnan (\begin{DoxyParamCaption}\item[{TReal}]{in }\end{DoxyParamCaption})}
+
+Check whether a float is NOT q\+NaN. 
+\begin{DoxyParams}{Parameters}
+{\em in} & Input value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2qnan_8h_a682b18f4d3112793d4f7dd5c1a117c67}\label{out_2install_2x64-_release_2include_2assimp_2qnan_8h_a682b18f4d3112793d4f7dd5c1a117c67}} 
+\index{qnan.h@{qnan.h}!is\_qnan@{is\_qnan}}
+\index{is\_qnan@{is\_qnan}!qnan.h@{qnan.h}}
+\doxysubsubsection{\texorpdfstring{is\_qnan()}{is\_qnan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily AI\+\_\+\+FORCE\+\_\+\+INLINE bool is\+\_\+qnan (\begin{DoxyParamCaption}\item[{double}]{in }\end{DoxyParamCaption})}
+
+Check whether a given double is q\+NaN. 
+\begin{DoxyParams}{Parameters}
+{\em in} & Input value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2qnan_8h_aba07171feddf4c9513c2424a630b03a5}\label{out_2install_2x64-_release_2include_2assimp_2qnan_8h_aba07171feddf4c9513c2424a630b03a5}} 
+\index{qnan.h@{qnan.h}!is\_qnan@{is\_qnan}}
+\index{is\_qnan@{is\_qnan}!qnan.h@{qnan.h}}
+\doxysubsubsection{\texorpdfstring{is\_qnan()}{is\_qnan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily AI\+\_\+\+FORCE\+\_\+\+INLINE bool is\+\_\+qnan (\begin{DoxyParamCaption}\item[{float}]{in }\end{DoxyParamCaption})}
+
+Check whether a given float is q\+NaN. 
+\begin{DoxyParams}{Parameters}
+{\em in} & Input value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2qnan_8h_abefbb78762da57066abee01f541de2be}\label{out_2install_2x64-_release_2include_2assimp_2qnan_8h_abefbb78762da57066abee01f541de2be}} 
+\index{qnan.h@{qnan.h}!is\_special\_float@{is\_special\_float}}
+\index{is\_special\_float@{is\_special\_float}!qnan.h@{qnan.h}}
+\doxysubsubsection{\texorpdfstring{is\_special\_float()}{is\_special\_float()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily AI\+\_\+\+FORCE\+\_\+\+INLINE bool is\+\_\+special\+\_\+float (\begin{DoxyParamCaption}\item[{double}]{in }\end{DoxyParamCaption})}
+
+
+
+check whether a double is either NaN or (+/-\/) INF. 
+
+Denorms return false, they\textquotesingle{}re treated like normal values. 
+\begin{DoxyParams}{Parameters}
+{\em in} & Input value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2qnan_8h_ae81ad0f99eba1f73bad78e48a16df827}\label{out_2install_2x64-_release_2include_2assimp_2qnan_8h_ae81ad0f99eba1f73bad78e48a16df827}} 
+\index{qnan.h@{qnan.h}!is\_special\_float@{is\_special\_float}}
+\index{is\_special\_float@{is\_special\_float}!qnan.h@{qnan.h}}
+\doxysubsubsection{\texorpdfstring{is\_special\_float()}{is\_special\_float()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily AI\+\_\+\+FORCE\+\_\+\+INLINE bool is\+\_\+special\+\_\+float (\begin{DoxyParamCaption}\item[{float}]{in }\end{DoxyParamCaption})}
+
+
+
+check whether a float is either NaN or (+/-\/) INF. 
+
+Denorms return false, they\textquotesingle{}re treated like normal values. 
+\begin{DoxyParams}{Parameters}
+{\em in} & Input value \\
+\hline
+\end{DoxyParams}

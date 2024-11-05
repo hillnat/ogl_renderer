@@ -1,0 +1,316 @@
+\hypertarget{include_2assimp_2_blob_i_o_system_8h_source}{}\doxysection{Blob\+IOSystem.\+h}
+\label{include_2assimp_2_blob_i_o_system_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/BlobIOSystem.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/BlobIOSystem.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{12 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{17 \textcolor{comment}{}}
+\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{27 \textcolor{comment}{}}
+\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef AI\_BLOBIOSYSTEM\_H\_INCLUDED}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define AI\_BLOBIOSYSTEM\_H\_INCLUDED}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <assimp/cexport.h>}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <assimp/DefaultLogger.hpp>}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <assimp/IOStream.hpp>}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <assimp/IOSystem.hpp>}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{62 \textcolor{keyword}{class }BlobIOSystem;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{66 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{67 \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream}{BlobIOStream}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} \{}
+\DoxyCodeLine{68 \textcolor{keyword}{public}:}
+\DoxyCodeLine{73     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a8f35d99f46306fe8e7b7fb02d8b09f38}{BlobIOStream}}(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system}{BlobIOSystem}} *creator, \textcolor{keyword}{const} std::string \&file, \textcolor{keywordtype}{size\_t} initial = 4096) :}
+\DoxyCodeLine{74             buffer(),}
+\DoxyCodeLine{75             cur\_size(),}
+\DoxyCodeLine{76             file\_size(),}
+\DoxyCodeLine{77             cursor(),}
+\DoxyCodeLine{78             initial(initial),}
+\DoxyCodeLine{79             file(file),}
+\DoxyCodeLine{80             creator(creator) \{}
+\DoxyCodeLine{81         \textcolor{comment}{// empty}}
+\DoxyCodeLine{82     \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{85     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a12c18de13363e35ee9a08550fcfbc41f}{\string~BlobIOStream}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{keyword}{public}:}
+\DoxyCodeLine{88     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{89     \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}} *GetBlob() \{}
+\DoxyCodeLine{90         \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}} *blob = \textcolor{keyword}{new} \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}}();}
+\DoxyCodeLine{91         blob-\/>\mbox{\hyperlink{structai_export_data_blob_a339bfaacc70396b2f99f94c1bc3b808f}{size}} = file\_size;}
+\DoxyCodeLine{92         blob-\/>\mbox{\hyperlink{structai_export_data_blob_a6fc6dcff8be3b209a1da7141b11d716d}{data}} = buffer;}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94         buffer = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96         \textcolor{keywordflow}{return} blob;}
+\DoxyCodeLine{97     \}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{100     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_af7c647f5fee4cf0f34efdb637b08a6a3}{Read}}(\textcolor{keywordtype}{void} *, \textcolor{keywordtype}{size\_t}, \textcolor{keywordtype}{size\_t})\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{101         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{102     \}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{105     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31}{Write}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *pvBuffer, \textcolor{keywordtype}{size\_t} pSize, \textcolor{keywordtype}{size\_t} pCount)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{106         pSize *= pCount;}
+\DoxyCodeLine{107         \textcolor{keywordflow}{if} (cursor + pSize > cur\_size) \{}
+\DoxyCodeLine{108             Grow(cursor + pSize);}
+\DoxyCodeLine{109         \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111         memcpy(buffer + cursor, pvBuffer, pSize);}
+\DoxyCodeLine{112         cursor += pSize;}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114         file\_size = std::max(file\_size, cursor);}
+\DoxyCodeLine{115         \textcolor{keywordflow}{return} pCount;}
+\DoxyCodeLine{116     \}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{119     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01}{Seek}}(\textcolor{keywordtype}{size\_t} pOffset, \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786}{aiOrigin}} pOrigin)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{120         \textcolor{keywordflow}{switch} (pOrigin) \{}
+\DoxyCodeLine{121             \textcolor{keywordflow}{case} \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786a34f9f30078835fdb09212bf69d5ebb36}{aiOrigin\_CUR}}:}
+\DoxyCodeLine{122                 cursor += pOffset;}
+\DoxyCodeLine{123                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125             \textcolor{keywordflow}{case} \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786a88929c7834e2026ab642fd84bea2fec7}{aiOrigin\_END}}:}
+\DoxyCodeLine{126                 cursor = file\_size -\/ pOffset;}
+\DoxyCodeLine{127                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129             \textcolor{keywordflow}{case} \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786a94a44e681b6c891e39767c518b64b56f}{aiOrigin\_SET}}:}
+\DoxyCodeLine{130                 cursor = pOffset;}
+\DoxyCodeLine{131                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{134                 \textcolor{keywordflow}{return} AI\_FAILURE;}
+\DoxyCodeLine{135         \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137         \textcolor{keywordflow}{if} (cursor > file\_size) \{}
+\DoxyCodeLine{138             Grow(cursor);}
+\DoxyCodeLine{139         \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141         file\_size = std::max(cursor, file\_size);}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143         \textcolor{keywordflow}{return} AI\_SUCCESS;}
+\DoxyCodeLine{144     \}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{147     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ade466c822b6f0930c2744eb4ac799a4d}{Tell}}()\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{148         \textcolor{keywordflow}{return} cursor;}
+\DoxyCodeLine{149     \}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{152     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5381f03b7609df4883ce2b1d1e30b61f}{FileSize}}()\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{153         \textcolor{keywordflow}{return} file\_size;}
+\DoxyCodeLine{154     \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{157     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a586a52bd8dbadb1ea579f80bbaad68bd}{Flush}}()\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{158         \textcolor{comment}{// ignore}}
+\DoxyCodeLine{159     \}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \textcolor{keyword}{private}:}
+\DoxyCodeLine{162     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{163     \textcolor{keywordtype}{void} Grow(\textcolor{keywordtype}{size\_t} need = 0) \{}
+\DoxyCodeLine{164         \textcolor{comment}{// 1.5 and phi are very heap-\/friendly growth factors (the first}}
+\DoxyCodeLine{165         \textcolor{comment}{// allows for frequent re-\/use of heap blocks, the second}}
+\DoxyCodeLine{166         \textcolor{comment}{// forms a fibonacci sequence with similar characteristics -\/}}
+\DoxyCodeLine{167         \textcolor{comment}{// since this heavily depends on the heap implementation}}
+\DoxyCodeLine{168         \textcolor{comment}{// and other factors as well, i'll just go with 1.5 since}}
+\DoxyCodeLine{169         \textcolor{comment}{// it is quicker to compute).}}
+\DoxyCodeLine{170         \textcolor{keywordtype}{size\_t} new\_size = std::max(initial, std::max(need, cur\_size + (cur\_size >> 1)));}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172         \textcolor{keyword}{const} uint8\_t *\textcolor{keyword}{const} old = buffer;}
+\DoxyCodeLine{173         buffer = \textcolor{keyword}{new} uint8\_t[new\_size];}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175         \textcolor{keywordflow}{if} (old) \{}
+\DoxyCodeLine{176             memcpy(buffer, old, cur\_size);}
+\DoxyCodeLine{177             \textcolor{keyword}{delete}[] old;}
+\DoxyCodeLine{178         \}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180         cur\_size = new\_size;}
+\DoxyCodeLine{181     \}}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \textcolor{keyword}{private}:}
+\DoxyCodeLine{184     \mbox{\hyperlink{group__gtc__type__precision_ga93adf6dd9803408f3e3aaf9dedda352b}{uint8\_t}} *buffer;}
+\DoxyCodeLine{185     \textcolor{keywordtype}{size\_t} cur\_size, file\_size, cursor, initial;}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187     \textcolor{keyword}{const} std::string file;}
+\DoxyCodeLine{188     BlobIOSystem *\textcolor{keyword}{const} creator;}
+\DoxyCodeLine{189 \};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define AI\_BLOBIO\_MAGIC "{}\$blobfile"{}}}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{195 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{196 \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system}{BlobIOSystem}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} \{}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream}{BlobIOStream}};}
+\DoxyCodeLine{199     \textcolor{keyword}{typedef} std::pair<std::string, aiExportDataBlob *> BlobEntry;}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{keyword}{public}:}
+\DoxyCodeLine{204     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ae65eda0fd63692bceb8702684b81d22d}{BlobIOSystem}}() :}
+\DoxyCodeLine{205             baseName\{AI\_BLOBIO\_MAGIC\} \{}
+\DoxyCodeLine{206     \}}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{210     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ac39e6f818df7d54ca8218e0581ffbd60}{BlobIOSystem}}(\textcolor{keyword}{const} std::string \&baseName) :}
+\DoxyCodeLine{211             baseName(baseName) \{}
+\DoxyCodeLine{212         \textcolor{comment}{// empty}}
+\DoxyCodeLine{213     \}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system}{\string~BlobIOSystem}}()\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{216         \textcolor{keywordflow}{for} (BlobEntry \&blobby : blobs) \{}
+\DoxyCodeLine{217             \textcolor{keyword}{delete} blobby.second;}
+\DoxyCodeLine{218         \}}
+\DoxyCodeLine{219     \}}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 \textcolor{keyword}{public}:}
+\DoxyCodeLine{222     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{223     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *GetMagicFileName()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{224         \textcolor{keywordflow}{return} baseName.c\_str();}
+\DoxyCodeLine{225     \}}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{228     \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}} *GetBlobChain() \{}
+\DoxyCodeLine{229         \textcolor{keyword}{const} \textcolor{keyword}{auto} magicName = std::string(this-\/>GetMagicFileName());}
+\DoxyCodeLine{230         \textcolor{keyword}{const} \textcolor{keywordtype}{bool} hasBaseName = baseName != AI\_BLOBIO\_MAGIC;}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232         \textcolor{comment}{// one must be the master}}
+\DoxyCodeLine{233         \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}} *master = \textcolor{keyword}{nullptr}, *cur;}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} BlobEntry \&blobby : blobs) \{}
+\DoxyCodeLine{236             \textcolor{keywordflow}{if} (blobby.first == magicName) \{}
+\DoxyCodeLine{237                 master = blobby.second;}
+\DoxyCodeLine{238                 master-\/>\mbox{\hyperlink{structai_export_data_blob_af7f006ac5ad818c0d81d520a84f74c3e}{name}}.Set(hasBaseName ? blobby.first : \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{239                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{240             \}}
+\DoxyCodeLine{241         \}}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243         \textcolor{keywordflow}{if} (!master) \{}
+\DoxyCodeLine{244             ASSIMP\_LOG\_ERROR(\textcolor{stringliteral}{"{}BlobIOSystem: no data written or master file was not closed properly."{}});}
+\DoxyCodeLine{245             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{246         \}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248         cur = master;}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} BlobEntry \&blobby : blobs) \{}
+\DoxyCodeLine{251             \textcolor{keywordflow}{if} (blobby.second == master) \{}
+\DoxyCodeLine{252                 \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{253             \}}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255             cur-\/>\mbox{\hyperlink{structai_export_data_blob_a78ed68cd60597616c78f92dbd4882b15}{next}} = blobby.second;}
+\DoxyCodeLine{256             cur = cur-\/>\mbox{\hyperlink{structai_export_data_blob_a78ed68cd60597616c78f92dbd4882b15}{next}};}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258             \textcolor{keywordflow}{if} (hasBaseName) \{}
+\DoxyCodeLine{259                 cur-\/>\mbox{\hyperlink{structai_export_data_blob_af7f006ac5ad818c0d81d520a84f74c3e}{name}}.Set(blobby.first);}
+\DoxyCodeLine{260             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{261                 \textcolor{comment}{// extract the file extension from the file written}}
+\DoxyCodeLine{262                 \textcolor{keyword}{const} std::string::size\_type s = blobby.first.find\_first\_of(\textcolor{charliteral}{'.'});}
+\DoxyCodeLine{263                 cur-\/>name.Set(s == std::string::npos ? blobby.first : blobby.first.substr(s + 1));}
+\DoxyCodeLine{264             \}}
+\DoxyCodeLine{265         \}}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267         \textcolor{comment}{// give up blob ownership}}
+\DoxyCodeLine{268         blobs.clear();}
+\DoxyCodeLine{269         \textcolor{keywordflow}{return} master;}
+\DoxyCodeLine{270     \}}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 \textcolor{keyword}{public}:}
+\DoxyCodeLine{273     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{274     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a4e524259954c01b89aa75f1fd0dab03c}{Exists}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pFile)\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{275         \textcolor{keywordflow}{return} created.find(std::string(pFile)) != created.end();}
+\DoxyCodeLine{276     \}}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{279     \textcolor{keywordtype}{char} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_aa3f6c9fa0e5a7a2f4dcae331a4060f73}{getOsSeparator}}()\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{280         \textcolor{keywordflow}{return} \textcolor{charliteral}{'/'};}
+\DoxyCodeLine{281     \}}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{284     \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} *\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a93ef86ce5edfee4b9b4376f07f5b2407}{Open}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pFile, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pMode)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{285         \textcolor{keywordflow}{if} (pMode[0] != \textcolor{charliteral}{'w'}) \{}
+\DoxyCodeLine{286             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{287         \}}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289         created.insert(std::string(pFile));}
+\DoxyCodeLine{290         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream}{BlobIOStream}}(\textcolor{keyword}{this}, std::string(pFile));}
+\DoxyCodeLine{291     \}}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{294     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a76836272edbdfcdee7b196c0449dd270}{Close}}(\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} *pFile)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{295         \textcolor{keyword}{delete} pFile;}
+\DoxyCodeLine{296     \}}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298 \textcolor{keyword}{private}:}
+\DoxyCodeLine{299     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{300     \textcolor{keywordtype}{void} OnDestruct(\textcolor{keyword}{const} std::string \&filename, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream}{BlobIOStream}} *child) \{}
+\DoxyCodeLine{301         \textcolor{comment}{// we don't know in which the files are closed, so we}}
+\DoxyCodeLine{302         \textcolor{comment}{// can't reliably say that the first must be the master}}
+\DoxyCodeLine{303         \textcolor{comment}{// file ...}}
+\DoxyCodeLine{304         blobs.emplace\_back(filename, child-\/>GetBlob());}
+\DoxyCodeLine{305     \}}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307 \textcolor{keyword}{private}:}
+\DoxyCodeLine{308     std::string baseName;}
+\DoxyCodeLine{309     std::set<std::string> created;}
+\DoxyCodeLine{310     std::vector<BlobEntry> blobs;}
+\DoxyCodeLine{311 \};}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{314 \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a12c18de13363e35ee9a08550fcfbc41f}{BlobIOStream::\string~BlobIOStream}}() \{}
+\DoxyCodeLine{315     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} != creator) \{}
+\DoxyCodeLine{316         creator-\/>OnDestruct(file, \textcolor{keyword}{this});}
+\DoxyCodeLine{317     \}}
+\DoxyCodeLine{318     \textcolor{keyword}{delete}[] buffer;}
+\DoxyCodeLine{319 \}}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 \} \textcolor{comment}{// namespace Assimp}}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

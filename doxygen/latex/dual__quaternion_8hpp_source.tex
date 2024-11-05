@@ -1,0 +1,201 @@
+\hypertarget{dual__quaternion_8hpp_source}{}\doxysection{dual\+\_\+quaternion.\+hpp}
+\label{dual__quaternion_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/gtx/dual\_quaternion.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/gtx/dual\_quaternion.hpp}}
+\mbox{\hyperlink{dual__quaternion_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{// Dependency:}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}../glm.hpp"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}../gtc/constants.hpp"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}../gtc/quaternion.hpp"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#ifndef GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#   error "{}GLM: GLM\_GTX\_dual\_quaternion is an experimental extension and may change in the future. Use \#define GLM\_ENABLE\_EXPERIMENTAL before including it, if you really want to use it."{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#elif GLM\_MESSAGES == GLM\_ENABLE \&\& !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_GTX\_dual\_quaternion extension included"{}})}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q = defaultp>}
+\DoxyCodeLine{35     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37         \textcolor{comment}{// -\/-\/ Implementation detail -\/-\/}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         \textcolor{keyword}{typedef} T value\_type;}
+\DoxyCodeLine{40         \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}} \mbox{\hyperlink{structglm_1_1qua}{part\_type}};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         \textcolor{comment}{// -\/-\/ Data -\/-\/}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}} real, dual;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{comment}{// -\/-\/ Component accesses -\/-\/}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \textcolor{keyword}{typedef} length\_t length\_type;}
+\DoxyCodeLine{50         GLM\_FUNC\_DECL \textcolor{keyword}{static} GLM\_CONSTEXPR length\_type \mbox{\hyperlink{structglm_1_1tdualquat_a79fe24c72a3f26d906b080de34b92b4e}{length}}()\{\textcolor{keywordflow}{return} 2;\}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         GLM\_FUNC\_DECL part\_type \& operator[](length\_type i);}
+\DoxyCodeLine{53         GLM\_FUNC\_DECL part\_type \textcolor{keyword}{const}\& operator[](length\_type i) \textcolor{keyword}{const};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \textcolor{comment}{// -\/-\/ Implicit basic constructors -\/-\/}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57         GLM\_DEFAULTED\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}() GLM\_DEFAULT;}
+\DoxyCodeLine{58         GLM\_DEFAULTED\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& d) GLM\_DEFAULT;}
+\DoxyCodeLine{59         template<\mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} P>}
+\DoxyCodeLine{60         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, P> const\& d);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{comment}{// -\/-\/ Explicit basic constructors -\/-\/}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}(\mbox{\hyperlink{structglm_1_1qua}{qua}}<T, Q> const\& real);}
+\DoxyCodeLine{65         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}(\mbox{\hyperlink{structglm_1_1qua}{qua}}<T, Q> const\& \mbox{\hyperlink{group__gtx__rotate__vector_ga83099d005b4af6a7a0d882ff6eb1a536}{orientation}}, \mbox{\hyperlink{structglm_1_1vec}{vec}}<3, T, Q> const\& translation);}
+\DoxyCodeLine{66         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}(\mbox{\hyperlink{structglm_1_1qua}{qua}}<T, Q> const\& real, \mbox{\hyperlink{structglm_1_1qua}{qua}}<T, Q> const\& dual);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         \textcolor{comment}{// -\/-\/ Conversion constructors -\/-\/}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         template<typename U, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} P>}
+\DoxyCodeLine{71         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<U, P> const\& q);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}(\mbox{\hyperlink{structglm_1_1mat}{mat}}<2, 4, T, Q> const\& holder\_mat);}
+\DoxyCodeLine{74         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}(\mbox{\hyperlink{structglm_1_1mat}{mat}}<3, 4, T, Q> const\& aug\_mat);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76         \textcolor{comment}{// -\/-\/ Unary arithmetic operators -\/-\/}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         GLM\_DEFAULTED\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> \& operator=(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& m) GLM\_DEFAULT;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80         template<typename U>}
+\DoxyCodeLine{81         GLM\_FUNC\_DISCARD\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> \& operator=(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<U, Q> const\& m);}
+\DoxyCodeLine{82         template<typename U>}
+\DoxyCodeLine{83         GLM\_FUNC\_DISCARD\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> \& operator*=(U s);}
+\DoxyCodeLine{84         template<typename U>}
+\DoxyCodeLine{85         GLM\_FUNC\_DISCARD\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> \& operator/=(U s);}
+\DoxyCodeLine{86     \};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{comment}{// -\/-\/ Unary bit operators -\/-\/}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{91     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> operator+(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{94     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> operator-\/(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{// -\/-\/ Binary operators -\/-\/}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{99     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> operator+(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& p);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{102     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> operator*(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& p);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{105     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}<3, T, Q> operator*(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q, \mbox{\hyperlink{structglm_1_1vec}{vec}}<3, T, Q> const\& v);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{108     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}<3, T, Q> operator*(\mbox{\hyperlink{structglm_1_1vec}{vec}}<3, T, Q> const\& v, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q);}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{111     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}<4, T, Q> operator*(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q, \mbox{\hyperlink{structglm_1_1vec}{vec}}<4, T, Q> const\& v);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{114     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec}}<4, T, Q> operator*(\mbox{\hyperlink{structglm_1_1vec}{vec}}<4, T, Q> const\& v, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{117     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> operator*(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q, T const\& s);}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{120     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> operator*(T const\& s, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q);}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{123     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> operator/(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q, T const\& s);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     \textcolor{comment}{// -\/-\/ Boolean operators -\/-\/}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{128     GLM\_FUNC\_DECL \textcolor{keywordtype}{bool} operator==(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q1, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q2);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{131     GLM\_FUNC\_DECL \textcolor{keywordtype}{bool} operator!=(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q1, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q2);}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{136     template <typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{137     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> \mbox{\hyperlink{group__gtx__dual__quaternion_ga41273c54a79788b6a4a5063f557921e4}{dual\_quat\_identity}}();}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{142     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{143     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> \mbox{\hyperlink{group__core__func__geometric_ga5c6c1379961d4589035a390856f2d66c}{normalize}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q);}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{148     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{149     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> \mbox{\hyperlink{group__ext__quaternion__common_ga0c68ffc0d006bd3300865215dcf744c5}{lerp}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& x, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& y, T const\& a);}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{154     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{155     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> \mbox{\hyperlink{group__core__func__matrix_gace61e11fc177491beeca0c6971e2f3fc}{inverse}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& q);}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{160     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{161     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1mat}{mat}}<2, 4, T, Q> \mbox{\hyperlink{group__gtx__dual__quaternion_ga5a0b3bf8ca6d42e6fbfd590cea3b5795}{mat2x4\_cast}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& x);}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{166     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{167     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1mat}{mat}}<3, 4, T, Q> \mbox{\hyperlink{group__gtx__dual__quaternion_gacd7c91027b92e07cc5596145b87027b5}{mat3x4\_cast}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> const\& x);}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{172     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{173     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> \mbox{\hyperlink{group__gtx__dual__quaternion_ga752ed38a7e05cea2cd8aa5936f7187dc}{dualquat\_cast}}(\mbox{\hyperlink{structglm_1_1mat}{mat}}<2, 4, T, Q> const\& x);}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{178     template<typename T, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25}{qualifier}} Q>}
+\DoxyCodeLine{179     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> \mbox{\hyperlink{group__gtx__dual__quaternion_ga752ed38a7e05cea2cd8aa5936f7187dc}{dualquat\_cast}}(\mbox{\hyperlink{structglm_1_1mat}{mat}}<3, 4, T, Q> const\& x);}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 }
+\DoxyCodeLine{185     typedef \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<\textcolor{keywordtype}{float}, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25ae161af3fc695e696ce3bf69f7332bc2d}{lowp}}>     \mbox{\hyperlink{structglm_1_1tdualquat}{lowp\_dualquat}};}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{190     typedef \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<\textcolor{keywordtype}{float}, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25a6416f3ea0c9025fb21ed50c4d6620482}{mediump}}>   \mbox{\hyperlink{structglm_1_1tdualquat}{mediump\_dualquat}};}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{195     typedef \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<\textcolor{keywordtype}{float}, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25ac6f7eab42eacbb10d59a58e95e362074}{highp}}>       \mbox{\hyperlink{structglm_1_1tdualquat}{highp\_dualquat}};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 }
+\DoxyCodeLine{201     typedef \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<\textcolor{keywordtype}{float}, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25ae161af3fc695e696ce3bf69f7332bc2d}{lowp}}>     \mbox{\hyperlink{structglm_1_1tdualquat}{lowp\_fdualquat}};}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{206     typedef \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<\textcolor{keywordtype}{float}, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25a6416f3ea0c9025fb21ed50c4d6620482}{mediump}}>   \mbox{\hyperlink{structglm_1_1tdualquat}{mediump\_fdualquat}};}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{211     typedef \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<\textcolor{keywordtype}{float}, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25ac6f7eab42eacbb10d59a58e95e362074}{highp}}>       \mbox{\hyperlink{structglm_1_1tdualquat}{highp\_fdualquat}};}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 }
+\DoxyCodeLine{217     typedef \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<\textcolor{keywordtype}{double}, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25ae161af3fc695e696ce3bf69f7332bc2d}{lowp}}>        \mbox{\hyperlink{structglm_1_1tdualquat}{lowp\_ddualquat}};}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{222     typedef \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<\textcolor{keywordtype}{double}, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25a6416f3ea0c9025fb21ed50c4d6620482}{mediump}}>  \mbox{\hyperlink{structglm_1_1tdualquat}{mediump\_ddualquat}};}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{227     typedef \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<\textcolor{keywordtype}{double}, \mbox{\hyperlink{namespaceglm_a36ed105b07c7746804d7fdc7cc90ff25ac6f7eab42eacbb10d59a58e95e362074}{highp}}>  \mbox{\hyperlink{structglm_1_1tdualquat}{highp\_ddualquat}};}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#if(!defined(GLM\_PRECISION\_HIGHP\_FLOAT) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_FLOAT) \&\& !defined(GLM\_PRECISION\_LOWP\_FLOAT))}}
+\DoxyCodeLine{234     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1tdualquat}{highp\_fdualquat}}          \mbox{\hyperlink{group__gtx__dual__quaternion_ga2f6227b5f9dc08a2e7682065a84b3aa9}{dualquat}};}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{239     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1tdualquat}{highp\_fdualquat}}          \mbox{\hyperlink{group__gtx__dual__quaternion_ga436906129bc69ca5059555cafcbac9fd}{fdualquat}};}
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#elif(defined(GLM\_PRECISION\_HIGHP\_FLOAT) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_FLOAT) \&\& !defined(GLM\_PRECISION\_LOWP\_FLOAT))}}
+\DoxyCodeLine{241     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1tdualquat}{highp\_fdualquat}}          \mbox{\hyperlink{group__gtx__dual__quaternion_ga2f6227b5f9dc08a2e7682065a84b3aa9}{dualquat}};}
+\DoxyCodeLine{242     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1tdualquat}{highp\_fdualquat}}          \mbox{\hyperlink{group__gtx__dual__quaternion_ga436906129bc69ca5059555cafcbac9fd}{fdualquat}};}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#elif(!defined(GLM\_PRECISION\_HIGHP\_FLOAT) \&\& defined(GLM\_PRECISION\_MEDIUMP\_FLOAT) \&\& !defined(GLM\_PRECISION\_LOWP\_FLOAT))}}
+\DoxyCodeLine{244     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1tdualquat}{mediump\_fdualquat}}      \mbox{\hyperlink{group__gtx__dual__quaternion_ga2f6227b5f9dc08a2e7682065a84b3aa9}{dualquat}};}
+\DoxyCodeLine{245     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1tdualquat}{mediump\_fdualquat}}      \mbox{\hyperlink{group__gtx__dual__quaternion_ga436906129bc69ca5059555cafcbac9fd}{fdualquat}};}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#elif(!defined(GLM\_PRECISION\_HIGHP\_FLOAT) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_FLOAT) \&\& defined(GLM\_PRECISION\_LOWP\_FLOAT))}}
+\DoxyCodeLine{247     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1tdualquat}{lowp\_fdualquat}}            \mbox{\hyperlink{group__gtx__dual__quaternion_ga2f6227b5f9dc08a2e7682065a84b3aa9}{dualquat}};}
+\DoxyCodeLine{248     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1tdualquat}{lowp\_fdualquat}}            \mbox{\hyperlink{group__gtx__dual__quaternion_ga436906129bc69ca5059555cafcbac9fd}{fdualquat}};}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#   error "{}GLM error: multiple default precision requested for single-\/precision floating-\/point types"{}}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#if(!defined(GLM\_PRECISION\_HIGHP\_DOUBLE) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_DOUBLE) \&\& !defined(GLM\_PRECISION\_LOWP\_DOUBLE))}}
+\DoxyCodeLine{258     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1tdualquat}{highp\_ddualquat}}          \mbox{\hyperlink{group__gtx__dual__quaternion_ga373431ffdd82d5c03c258217a9e1f1a6}{ddualquat}};}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#elif(defined(GLM\_PRECISION\_HIGHP\_DOUBLE) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_DOUBLE) \&\& !defined(GLM\_PRECISION\_LOWP\_DOUBLE))}}
+\DoxyCodeLine{260     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1tdualquat}{highp\_ddualquat}}          \mbox{\hyperlink{group__gtx__dual__quaternion_ga373431ffdd82d5c03c258217a9e1f1a6}{ddualquat}};}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#elif(!defined(GLM\_PRECISION\_HIGHP\_DOUBLE) \&\& defined(GLM\_PRECISION\_MEDIUMP\_DOUBLE) \&\& !defined(GLM\_PRECISION\_LOWP\_DOUBLE))}}
+\DoxyCodeLine{262     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1tdualquat}{mediump\_ddualquat}}      \mbox{\hyperlink{group__gtx__dual__quaternion_ga373431ffdd82d5c03c258217a9e1f1a6}{ddualquat}};}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#elif(!defined(GLM\_PRECISION\_HIGHP\_DOUBLE) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_DOUBLE) \&\& defined(GLM\_PRECISION\_LOWP\_DOUBLE))}}
+\DoxyCodeLine{264     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1tdualquat}{lowp\_ddualquat}}            \mbox{\hyperlink{group__gtx__dual__quaternion_ga373431ffdd82d5c03c258217a9e1f1a6}{ddualquat}};}
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#   error "{}GLM error: Multiple default precision requested for double-\/precision floating-\/point types"{}}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{270 \} \textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#include "{}dual\_quaternion.inl"{}}}
+
+\end{DoxyCode}

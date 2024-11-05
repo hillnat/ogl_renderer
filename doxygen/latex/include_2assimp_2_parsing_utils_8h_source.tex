@@ -1,0 +1,263 @@
+\hypertarget{include_2assimp_2_parsing_utils_8h_source}{}\doxysection{Parsing\+Utils.\+h}
+\label{include_2assimp_2_parsing_utils_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/ParsingUtils.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/ParsingUtils.h}}
+\mbox{\hyperlink{include_2assimp_2_parsing_utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{10 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{11 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{14 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{15 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{18 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{19 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{20 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{21 \textcolor{comment}{}}
+\DoxyCodeLine{22 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{23 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{24 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{25 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{26 \textcolor{comment}{}}
+\DoxyCodeLine{27 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{28 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{29 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{30 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{31 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{32 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{33 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{34 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{35 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{36 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{37 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{38 \textcolor{comment}{}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef AI\_PARSING\_UTILS\_H\_INC}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define AI\_PARSING\_UTILS\_H\_INC}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <assimp/StringComparison.h>}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <assimp/StringUtils.h>}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <assimp/defs.h>}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{comment}{// NOTE: the functions below are mostly intended as replacement for}}
+\DoxyCodeLine{63 \textcolor{comment}{// std::upper, std::lower, std::isupper, std::islower, std::isspace.}}
+\DoxyCodeLine{64 \textcolor{comment}{// we don't bother of locales. We don't want them. We want reliable}}
+\DoxyCodeLine{65 \textcolor{comment}{// (i.e. identical) results across all locales.}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{// The functions below accept any character type, but know only}}
+\DoxyCodeLine{68 \textcolor{comment}{// about ASCII. However, UTF-\/32 is the only safe ASCII superset to}}
+\DoxyCodeLine{69 \textcolor{comment}{// use since it doesn't have multi-\/byte sequences.}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} BufferSize = 4096;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{74 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{75 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IsUpper(char\_t in) \{}
+\DoxyCodeLine{76     \textcolor{keywordflow}{return} (in >= (char\_t)\textcolor{charliteral}{'A'} \&\& in <= (char\_t)\textcolor{charliteral}{'Z'});}
+\DoxyCodeLine{77 \}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{80 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{81 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IsLower(char\_t in) \{}
+\DoxyCodeLine{82     \textcolor{keywordflow}{return} (in >= (char\_t)\textcolor{charliteral}{'a'} \&\& in <= (char\_t)\textcolor{charliteral}{'z'});}
+\DoxyCodeLine{83 \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{86 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{87 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IsSpace(char\_t in) \{}
+\DoxyCodeLine{88     \textcolor{keywordflow}{return} (in == (char\_t)\textcolor{charliteral}{' '} || in == (char\_t)\textcolor{charliteral}{'\(\backslash\)t'});}
+\DoxyCodeLine{89 \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{92 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{93 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IsLineEnd(char\_t in) \{}
+\DoxyCodeLine{94     \textcolor{keywordflow}{return} (in == (char\_t)\textcolor{charliteral}{'\(\backslash\)r'} || in == (char\_t)\textcolor{charliteral}{'\(\backslash\)n'} || in == (char\_t)\textcolor{charliteral}{'\(\backslash\)0'} || in == (char\_t)\textcolor{charliteral}{'\(\backslash\)f'});}
+\DoxyCodeLine{95 \}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{98 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{99 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IsSpaceOrNewLine(char\_t in) \{}
+\DoxyCodeLine{100     \textcolor{keywordflow}{return} IsSpace<char\_t>(in) || IsLineEnd<char\_t>(in);}
+\DoxyCodeLine{101 \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{104 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{105 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} SkipSpaces(\textcolor{keyword}{const} char\_t *in, \textcolor{keyword}{const} char\_t **out, \textcolor{keyword}{const} char\_t *end) \{}
+\DoxyCodeLine{106     \textcolor{keywordflow}{while} ((*in == (char\_t)\textcolor{charliteral}{' '} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)t'}) \&\& in != end) \{}
+\DoxyCodeLine{107         ++in;}
+\DoxyCodeLine{108     \}}
+\DoxyCodeLine{109     *out = in;}
+\DoxyCodeLine{110     \textcolor{keywordflow}{return} !IsLineEnd<char\_t>(*in);}
+\DoxyCodeLine{111 \}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{114 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{115 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} SkipSpaces(\textcolor{keyword}{const} char\_t **inout, \textcolor{keyword}{const} char\_t *end) \{}
+\DoxyCodeLine{116     \textcolor{keywordflow}{return} SkipSpaces<char\_t>(*inout, inout, end);}
+\DoxyCodeLine{117 \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{120 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{121 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} SkipLine(\textcolor{keyword}{const} char\_t *in, \textcolor{keyword}{const} char\_t **out, \textcolor{keyword}{const} char\_t *end) \{}
+\DoxyCodeLine{122     \textcolor{keywordflow}{while} ((*in != (char\_t)\textcolor{charliteral}{'\(\backslash\)r'} \&\& *in != (char\_t)\textcolor{charliteral}{'\(\backslash\)n'} \&\& *in != (char\_t)\textcolor{charliteral}{'\(\backslash\)0'}) \&\& in != end) \{}
+\DoxyCodeLine{123         ++in;}
+\DoxyCodeLine{124     \}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \textcolor{comment}{// files are opened in binary mode. Ergo there are both NL and CR}}
+\DoxyCodeLine{127     \textcolor{keywordflow}{while} ((*in == (char\_t)\textcolor{charliteral}{'\(\backslash\)r'} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)n'}) \&\& in != end) \{}
+\DoxyCodeLine{128         ++in;}
+\DoxyCodeLine{129     \}}
+\DoxyCodeLine{130     *out = in;}
+\DoxyCodeLine{131     \textcolor{keywordflow}{return} *in != (char\_t)\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{132 \}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{135 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{136 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} SkipLine(\textcolor{keyword}{const} char\_t **inout, \textcolor{keyword}{const} char\_t *end) \{}
+\DoxyCodeLine{137     \textcolor{keywordflow}{return} SkipLine<char\_t>(*inout, inout, end);}
+\DoxyCodeLine{138 \}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{141 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{142 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} SkipSpacesAndLineEnd(\textcolor{keyword}{const} char\_t *in, \textcolor{keyword}{const} char\_t **out, \textcolor{keyword}{const} char\_t  *end) \{}
+\DoxyCodeLine{143     \textcolor{keywordflow}{while} ((*in == (char\_t)\textcolor{charliteral}{' '} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)t'} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)r'} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)n'}) \&\& in != end) \{}
+\DoxyCodeLine{144         ++in;}
+\DoxyCodeLine{145     \}}
+\DoxyCodeLine{146     *out = in;}
+\DoxyCodeLine{147     \textcolor{keywordflow}{return} *in != \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{148 \}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{151 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{152 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} SkipSpacesAndLineEnd(\textcolor{keyword}{const} char\_t **inout, \textcolor{keyword}{const} char\_t *end) \{}
+\DoxyCodeLine{153     \textcolor{keywordflow}{return} SkipSpacesAndLineEnd<char\_t>(*inout, inout, end);}
+\DoxyCodeLine{154 \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{157 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{158 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} GetNextLine(\textcolor{keyword}{const} char\_t *\&buffer, char\_t out[BufferSize]) \{}
+\DoxyCodeLine{159     \textcolor{keywordflow}{if} ((char\_t)\textcolor{charliteral}{'\(\backslash\)0'} == *buffer) \{}
+\DoxyCodeLine{160         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{161     \}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163     \textcolor{keywordtype}{char} *\_out = out;}
+\DoxyCodeLine{164     \textcolor{keywordtype}{char} *\textcolor{keyword}{const} end = \_out + BufferSize;}
+\DoxyCodeLine{165     \textcolor{keywordflow}{while} (!IsLineEnd(*buffer) \&\& \_out < end) \{}
+\DoxyCodeLine{166         *\_out++ = *buffer++;}
+\DoxyCodeLine{167     \}}
+\DoxyCodeLine{168     *\_out = (char\_t)\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     \textcolor{keywordflow}{while} (IsLineEnd(*buffer) \&\& \textcolor{charliteral}{'\(\backslash\)0'} != *buffer) \{}
+\DoxyCodeLine{171         ++buffer;}
+\DoxyCodeLine{172     \}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{175 \}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{178 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{179 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IsNumeric(char\_t in) \{}
+\DoxyCodeLine{180     \textcolor{keywordflow}{return} (in >= \textcolor{charliteral}{'0'} \&\& in <= \textcolor{charliteral}{'9'}) || \textcolor{charliteral}{'-\/'} == in || \textcolor{charliteral}{'+'} == in;}
+\DoxyCodeLine{181 \}}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{184 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{185 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} TokenMatch(char\_t *\&in, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *token, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} len) \{}
+\DoxyCodeLine{186     \textcolor{keywordflow}{if} (!::strncmp(token, in, len) \&\& IsSpaceOrNewLine(in[len])) \{}
+\DoxyCodeLine{187         \textcolor{keywordflow}{if} (in[len] != \textcolor{charliteral}{'\(\backslash\)0'}) \{}
+\DoxyCodeLine{188             in += len + 1;}
+\DoxyCodeLine{189         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{190             \textcolor{comment}{// If EOF after the token make sure we don't go past end of buffer}}
+\DoxyCodeLine{191             in += len;}
+\DoxyCodeLine{192         \}}
+\DoxyCodeLine{193         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{194     \}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{197 \}}
+\DoxyCodeLine{198 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{204 \textcolor{comment}{}AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a3bd333f65bd8da9590190ed27987e47f}{TokenMatchI}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\&in, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *token, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} len) \{}
+\DoxyCodeLine{205     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespace_assimp_a5718d462fef0070afea1d4ac4e65d4d8}{ASSIMP\_strincmp}}(token, in, len) \&\& IsSpaceOrNewLine(in[len])) \{}
+\DoxyCodeLine{206         in += len + 1;}
+\DoxyCodeLine{207         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{208     \}}
+\DoxyCodeLine{209     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{210 \}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{213 AI\_FORCE\_INLINE \textcolor{keywordtype}{void} SkipToken(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\&in, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *end) \{}
+\DoxyCodeLine{214     SkipSpaces(\&in, end);}
+\DoxyCodeLine{215     \textcolor{keywordflow}{while} (!IsSpaceOrNewLine(*in)) \{}
+\DoxyCodeLine{216         ++in;}
+\DoxyCodeLine{217     \}}
+\DoxyCodeLine{218 \}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{221 AI\_FORCE\_INLINE std::string GetNextToken(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\&in, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *end) \{}
+\DoxyCodeLine{222     SkipSpacesAndLineEnd(\&in, end);}
+\DoxyCodeLine{223     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *cur = in;}
+\DoxyCodeLine{224     \textcolor{keywordflow}{while} (!IsSpaceOrNewLine(*in)) \{}
+\DoxyCodeLine{225         ++in;}
+\DoxyCodeLine{226     \}}
+\DoxyCodeLine{227     \textcolor{keywordflow}{return} std::string(cur, (\textcolor{keywordtype}{size\_t})(in -\/ cur));}
+\DoxyCodeLine{228 \}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{237 \textcolor{comment}{}\textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{string}\_type>}
+\DoxyCodeLine{238 AI\_FORCE\_INLINE \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespace_assimp_a0e0c2d9e4239076705ccee261d0c2e70}{tokenize}}(\textcolor{keyword}{const} string\_type \&str, std::vector<string\_type> \&tokens,}
+\DoxyCodeLine{239         \textcolor{keyword}{const} string\_type \&delimiters) \{}
+\DoxyCodeLine{240     \textcolor{comment}{// Skip delimiters at beginning.}}
+\DoxyCodeLine{241     \textcolor{keyword}{typename} string\_type::size\_type lastPos = str.find\_first\_not\_of(delimiters, 0);}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243     \textcolor{comment}{// Find first "{}non-\/delimiter"{}.}}
+\DoxyCodeLine{244     \textcolor{keyword}{typename} string\_type::size\_type pos = str.find\_first\_of(delimiters, lastPos);}
+\DoxyCodeLine{245     \textcolor{keywordflow}{while} (string\_type::npos != pos || string\_type::npos != lastPos) \{}
+\DoxyCodeLine{246         \textcolor{comment}{// Found a token, add it to the vector.}}
+\DoxyCodeLine{247         string\_type tmp = str.substr(lastPos, pos -\/ lastPos);}
+\DoxyCodeLine{248         \textcolor{keywordflow}{if} (!tmp.empty() \&\& \textcolor{charliteral}{' '} != tmp[0])}
+\DoxyCodeLine{249             tokens.push\_back(tmp);}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251         \textcolor{comment}{// Skip delimiters.  Note the "{}not\_of"{}}}
+\DoxyCodeLine{252         lastPos = str.find\_first\_not\_of(delimiters, pos);}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254         \textcolor{comment}{// Find next "{}non-\/delimiter"{}}}
+\DoxyCodeLine{255         pos = str.find\_first\_of(delimiters, lastPos);}
+\DoxyCodeLine{256     \}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(tokens.size());}
+\DoxyCodeLine{259 \}}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261 \textcolor{keyword}{inline} std::string ai\_stdStrToLower(\textcolor{keyword}{const} std::string \&str) \{}
+\DoxyCodeLine{262     std::string out(str);}
+\DoxyCodeLine{263     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < str.size(); ++i) \{}
+\DoxyCodeLine{264         out[i] = (char) tolower((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})out[i]);}
+\DoxyCodeLine{265     \}}
+\DoxyCodeLine{266     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{267 \}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 \} \textcolor{comment}{// namespace Assimp}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// ! AI\_PARSING\_UTILS\_H\_INC}}
+
+\end{DoxyCode}

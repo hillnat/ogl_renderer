@@ -1,0 +1,146 @@
+\hypertarget{out_2install_2x64-_release_2include_2assimp_2_small_vector_8h_source}{}\doxysection{Small\+Vector.\+h}
+\label{out_2install_2x64-_release_2include_2assimp_2_small_vector_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/SmallVector.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/SmallVector.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{10 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{11 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{14 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{15 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{16 \textcolor{comment}{}}
+\DoxyCodeLine{17 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{18 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{19 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{20 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{21 \textcolor{comment}{}}
+\DoxyCodeLine{22 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{23 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{24 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{25 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{26 \textcolor{comment}{}}
+\DoxyCodeLine{27 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{28 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{29 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{30 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{31 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{32 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{33 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{34 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{35 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{36 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{37 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{38 \textcolor{comment}{}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef AI\_SMALLVECTOR\_H\_INC}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define AI\_SMALLVECTOR\_H\_INC}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{61 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{62 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} Capacity>}
+\DoxyCodeLine{63 \textcolor{keyword}{class }SmallVector \{}
+\DoxyCodeLine{64 \textcolor{keyword}{public}:}
+\DoxyCodeLine{66     \mbox{\hyperlink{class_assimp_1_1_small_vector_ab6b4d98296422f1b560058951a921026}{SmallVector}}() :}
+\DoxyCodeLine{67             mStorage(mInplaceStorage),}
+\DoxyCodeLine{68             mSize(0),}
+\DoxyCodeLine{69             mCapacity(Capacity) \{}
+\DoxyCodeLine{70         \textcolor{comment}{// empty}}
+\DoxyCodeLine{71     \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74     \mbox{\hyperlink{class_assimp_1_1_small_vector_a5ed292445a3b5900534b964f720a01e1}{\string~SmallVector}}() \{}
+\DoxyCodeLine{75         \textcolor{keywordflow}{if} (mStorage != mInplaceStorage) \{}
+\DoxyCodeLine{76             \textcolor{keyword}{delete} [] mStorage;}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78     \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_small_vector_a1544011b738929bb369217f7e6e3df47}{push\_back}}(\textcolor{keyword}{const} T\& item) \{}
+\DoxyCodeLine{83         \textcolor{keywordflow}{if} (mSize < mCapacity) \{}
+\DoxyCodeLine{84             mStorage[mSize++] = item;}
+\DoxyCodeLine{85             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{86         \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         push\_back\_and\_grow(item);}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_small_vector_a1a659256b65ddde4bfef0723d9fbbafc}{resize}}(\textcolor{keywordtype}{size\_t} newSize) \{}
+\DoxyCodeLine{94         \textcolor{keywordflow}{if} (newSize > mCapacity) \{}
+\DoxyCodeLine{95             grow(newSize);}
+\DoxyCodeLine{96         \}}
+\DoxyCodeLine{97         mSize = newSize;}
+\DoxyCodeLine{98     \}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{102     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_small_vector_ac845a91db64e039ca0d1de37e71b6e51}{size}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{103         \textcolor{keywordflow}{return} mSize;}
+\DoxyCodeLine{104     \}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{108     T* \mbox{\hyperlink{class_assimp_1_1_small_vector_a82b636cd2db30736c98517566aba1b35}{begin}}() \{}
+\DoxyCodeLine{109         \textcolor{keywordflow}{return} mStorage;}
+\DoxyCodeLine{110     \}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{114     T* \mbox{\hyperlink{class_assimp_1_1_small_vector_a41e1cbef2651b76f690a4e398d41e7e0}{end}}() \{}
+\DoxyCodeLine{115         \textcolor{keywordflow}{return} \&mStorage[mSize];}
+\DoxyCodeLine{116     \}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{120     T* \mbox{\hyperlink{class_assimp_1_1_small_vector_ad38cd73cbfd5d104a597b9e74fdf18ab}{begin}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{121         \textcolor{keywordflow}{return} mStorage;}
+\DoxyCodeLine{122     \}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{126     T* \mbox{\hyperlink{class_assimp_1_1_small_vector_a741a4af665d0119750b710ddd8b96b18}{end}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{127         \textcolor{keywordflow}{return} \&mStorage[mSize];}
+\DoxyCodeLine{128     \}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     \mbox{\hyperlink{class_assimp_1_1_small_vector_ab6b4d98296422f1b560058951a921026}{SmallVector}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_small_vector}{SmallVector}} \&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{131     \mbox{\hyperlink{class_assimp_1_1_small_vector_ab6b4d98296422f1b560058951a921026}{SmallVector}}(\mbox{\hyperlink{class_assimp_1_1_small_vector}{SmallVector}} \&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{132     \mbox{\hyperlink{class_assimp_1_1_small_vector}{SmallVector}} \&operator = (\textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_small_vector}{SmallVector}} \&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{133     \mbox{\hyperlink{class_assimp_1_1_small_vector}{SmallVector}} \&operator = (\mbox{\hyperlink{class_assimp_1_1_small_vector}{SmallVector}} \&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{keyword}{private}:}
+\DoxyCodeLine{136     \textcolor{keywordtype}{void} grow( \textcolor{keywordtype}{size\_t} newCapacity) \{}
+\DoxyCodeLine{137         T* oldStorage = mStorage;}
+\DoxyCodeLine{138         T* newStorage = \textcolor{keyword}{new} T[newCapacity];}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140         std::memcpy(newStorage, oldStorage, mSize * \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142         mStorage = newStorage;}
+\DoxyCodeLine{143         mCapacity = newCapacity;}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145         \textcolor{keywordflow}{if} (oldStorage != mInplaceStorage) \{}
+\DoxyCodeLine{146             \textcolor{keyword}{delete} [] oldStorage;}
+\DoxyCodeLine{147         \}}
+\DoxyCodeLine{148     \}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \textcolor{keywordtype}{void} push\_back\_and\_grow(\textcolor{keyword}{const} T\& item) \{}
+\DoxyCodeLine{151         grow(mCapacity + Capacity);}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153         mStorage[mSize++] = item;}
+\DoxyCodeLine{154     \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156     T* mStorage;}
+\DoxyCodeLine{157     \textcolor{keywordtype}{size\_t} mSize;}
+\DoxyCodeLine{158     \textcolor{keywordtype}{size\_t} mCapacity;}
+\DoxyCodeLine{159     T mInplaceStorage[Capacity];}
+\DoxyCodeLine{160 \};}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \} \textcolor{comment}{// end namespace Assimp}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_SMALLVECTOR\_H\_INC}}
+
+\end{DoxyCode}

@@ -1,0 +1,50 @@
+\hypertarget{structai_export_data_blob}{}\doxysection{ai\+Export\+Data\+Blob Struct Reference}
+\label{structai_export_data_blob}\index{aiExportDataBlob@{aiExportDataBlob}}
+
+
+{\ttfamily \#include $<$cexport.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structai_export_data_blob_a339bfaacc70396b2f99f94c1bc3b808f}\label{structai_export_data_blob_a339bfaacc70396b2f99f94c1bc3b808f}} 
+size\+\_\+t {\bfseries size}
+\begin{DoxyCompactList}\small\item\em Size of the data in bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structai_export_data_blob_a6fc6dcff8be3b209a1da7141b11d716d}\label{structai_export_data_blob_a6fc6dcff8be3b209a1da7141b11d716d}} 
+void $\ast$ {\bfseries data}
+\begin{DoxyCompactList}\small\item\em The data. \end{DoxyCompactList}\item 
+C\+\_\+\+STRUCT \mbox{\hyperlink{structai_string}{ai\+String}} \mbox{\hyperlink{structai_export_data_blob_af7f006ac5ad818c0d81d520a84f74c3e}{name}}
+\item 
+C\+\_\+\+STRUCT \mbox{\hyperlink{structai_export_data_blob}{ai\+Export\+Data\+Blob}} $\ast$ \mbox{\hyperlink{structai_export_data_blob_a78ed68cd60597616c78f92dbd4882b15}{next}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Describes a blob of exported scene data. Use \mbox{\hyperlink{include_2assimp_2cexport_8h_ae3b710975c7fe09f849ca989546dda05}{ai\+Export\+Scene\+To\+Blob()}} to create a blob containing an exported scene. The memory referred by this structure is owned by \mbox{\hyperlink{namespace_assimp}{Assimp}}. to free its resources. Don\textquotesingle{}t try to free the memory on your side -\/ it will crash for most build configurations due to conflicting heaps.
+
+Blobs can be nested -\/ each blob may reference another blob, which may in turn reference another blob and so on. This is used when exporters write more than one output file for a given \mbox{\hyperlink{structai_scene}{ai\+Scene}}. See the remarks for \mbox{\hyperlink{structai_export_data_blob_af7f006ac5ad818c0d81d520a84f74c3e}{ai\+Export\+Data\+Blob\+::name}} for more information. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structai_export_data_blob_af7f006ac5ad818c0d81d520a84f74c3e}\label{structai_export_data_blob_af7f006ac5ad818c0d81d520a84f74c3e}} 
+\index{aiExportDataBlob@{aiExportDataBlob}!name@{name}}
+\index{name@{name}!aiExportDataBlob@{aiExportDataBlob}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily C\+\_\+\+STRUCT \mbox{\hyperlink{structai_string}{ai\+String}} ai\+Export\+Data\+Blob\+::name}
+
+Name of the blob. An empty string always indicates the first (and primary) blob, which contains the actual file data. Any other blobs are auxiliary files produced by exporters (i.\+e. material files). Existence of such files depends on the file format. Most formats don\textquotesingle{}t split assets across multiple files.
+
+If used, blob names usually contain the file extension that should be used when writing the data to disc.
+
+The blob names generated can be influenced by setting the \mbox{\hyperlink{build_2x64-_debug_2include_2assimp_2config_8h_a8d3547bf4c8add121f6c53544ed83fad}{AI\+\_\+\+CONFIG\+\_\+\+EXPORT\+\_\+\+BLOB\+\_\+\+NAME}} export property to the name that is used for the master blob. All other names are typically derived from the base name, by the file format exporter. \mbox{\Hypertarget{structai_export_data_blob_a78ed68cd60597616c78f92dbd4882b15}\label{structai_export_data_blob_a78ed68cd60597616c78f92dbd4882b15}} 
+\index{aiExportDataBlob@{aiExportDataBlob}!next@{next}}
+\index{next@{next}!aiExportDataBlob@{aiExportDataBlob}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily C\+\_\+\+STRUCT \mbox{\hyperlink{structai_export_data_blob}{ai\+Export\+Data\+Blob}} $\ast$ ai\+Export\+Data\+Blob\+::next}
+
+Pointer to the next blob in the chain or NULL if there is none. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/\mbox{\hyperlink{include_2assimp_2cexport_8h}{cexport.\+h}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Debug/include/assimp/\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2cexport_8h}{cexport.\+h}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Release/include/assimp/\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cexport_8h}{cexport.\+h}}\end{DoxyCompactItemize}

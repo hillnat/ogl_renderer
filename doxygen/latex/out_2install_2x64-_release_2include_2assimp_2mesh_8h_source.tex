@@ -1,0 +1,680 @@
+\hypertarget{out_2install_2x64-_release_2include_2assimp_2mesh_8h_source}{}\doxysection{mesh.\+h}
+\label{out_2install_2x64-_release_2include_2assimp_2mesh_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/mesh.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/mesh.h}}
+\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{12 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{17 \textcolor{comment}{}}
+\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{27 \textcolor{comment}{}}
+\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#ifndef AI\_MESH\_H\_INC}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define AI\_MESH\_H\_INC}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#pragma warning(disable : 4351)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_MSC\_VER}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#include <assimp/aabb.h>}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#include <assimp/types.h>}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#include <unordered\_set>}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{68 \textcolor{comment}{// Limits. These values are required to match the settings Assimp was}}
+\DoxyCodeLine{69 \textcolor{comment}{// compiled against. Therefore, do not redefine them unless you build the}}
+\DoxyCodeLine{70 \textcolor{comment}{// library from source using the same definitions.}}
+\DoxyCodeLine{71 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#ifndef AI\_MAX\_FACE\_INDICES}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define AI\_MAX\_FACE\_INDICES 0x7fff}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#ifndef AI\_MAX\_BONE\_WEIGHTS}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define AI\_MAX\_BONE\_WEIGHTS 0x7fffffff}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#ifndef AI\_MAX\_VERTICES}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define AI\_MAX\_VERTICES 0x7fffffff}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#ifndef AI\_MAX\_FACES}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define AI\_MAX\_FACES 0x7fffffff}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#ifndef AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define AI\_MAX\_NUMBER\_OF\_COLOR\_SETS 0x8}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#ifndef AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS 0x8}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{138 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_face}{aiFace}} \{}
+\DoxyCodeLine{141     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{144     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *\mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{149     \mbox{\hyperlink{structai_face}{aiFace}}() AI\_NO\_EXCEPT}
+\DoxyCodeLine{150             : \mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}}(0),}
+\DoxyCodeLine{151               \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}(\textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{152         \textcolor{comment}{// empty}}
+\DoxyCodeLine{153     \}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{156     \mbox{\hyperlink{structai_face}{\string~aiFace}}() \{}
+\DoxyCodeLine{157         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}};}
+\DoxyCodeLine{158     \}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{161     \mbox{\hyperlink{structai_face}{aiFace}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_face}{aiFace}} \&o) :}
+\DoxyCodeLine{162             \mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}}(0), \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}(\textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{163         *\textcolor{keyword}{this} = o;}
+\DoxyCodeLine{164     \}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{167     \mbox{\hyperlink{structai_face}{aiFace}} \&operator=(\textcolor{keyword}{const} \mbox{\hyperlink{structai_face}{aiFace}} \&o) \{}
+\DoxyCodeLine{168         \textcolor{keywordflow}{if} (\&o == \textcolor{keyword}{this}) \{}
+\DoxyCodeLine{169             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{170         \}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}};}
+\DoxyCodeLine{173         \mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}} = o.\mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}};}
+\DoxyCodeLine{174         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}}) \{}
+\DoxyCodeLine{175             \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}} = \textcolor{keyword}{new} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}[\mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}}];}
+\DoxyCodeLine{176             ::memcpy(\mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}, o.\mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}, \mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}} * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{177         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{178             \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{179         \}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{182     \}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{185     \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{structai_face}{aiFace}} \&o)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{186         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}} == o.\mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}) \{}
+\DoxyCodeLine{187             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{188         \}}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190         \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} != \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}} \&\& \mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}} != o.\mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}}) \{}
+\DoxyCodeLine{191             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{192         \}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194         \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}) \{}
+\DoxyCodeLine{195             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{196         \}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this-\/>\mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}}; ++i) \{}
+\DoxyCodeLine{199             \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}[i] != o.\mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}[i]) \{}
+\DoxyCodeLine{200                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{201             \}}
+\DoxyCodeLine{202         \}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{205     \}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{209     \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{structai_face}{aiFace}} \&o)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{210         \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} == o);}
+\DoxyCodeLine{211     \}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{213 \}; \textcolor{comment}{// struct aiFace}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{218 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}} \{}
+\DoxyCodeLine{220     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_vertex_weight_af6269cf6a0f02e5ae870a72046d58f4f}{mVertexId}};}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{224     ai\_real \mbox{\hyperlink{structai_vertex_weight_a9a11636b76b90fccb204296aa2db07a7}{mWeight}};}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{229     \mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}}() AI\_NO\_EXCEPT}
+\DoxyCodeLine{230             : \mbox{\hyperlink{structai_vertex_weight_af6269cf6a0f02e5ae870a72046d58f4f}{mVertexId}}(0),}
+\DoxyCodeLine{231               \mbox{\hyperlink{structai_vertex_weight_a9a11636b76b90fccb204296aa2db07a7}{mWeight}}(0.0f) \{}
+\DoxyCodeLine{232         \textcolor{comment}{// empty}}
+\DoxyCodeLine{233     \}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{238     \mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pID, \textcolor{keywordtype}{float} pWeight) :}
+\DoxyCodeLine{239             \mbox{\hyperlink{structai_vertex_weight_af6269cf6a0f02e5ae870a72046d58f4f}{mVertexId}}(pID), \mbox{\hyperlink{structai_vertex_weight_a9a11636b76b90fccb204296aa2db07a7}{mWeight}}(pWeight) \{}
+\DoxyCodeLine{240         \textcolor{comment}{// empty}}
+\DoxyCodeLine{241     \}}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243     \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}} \&rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{244         \textcolor{keywordflow}{return} (\mbox{\hyperlink{structai_vertex_weight_af6269cf6a0f02e5ae870a72046d58f4f}{mVertexId}} == rhs.\mbox{\hyperlink{structai_vertex_weight_af6269cf6a0f02e5ae870a72046d58f4f}{mVertexId}} \&\& \mbox{\hyperlink{structai_vertex_weight_a9a11636b76b90fccb204296aa2db07a7}{mWeight}} == rhs.\mbox{\hyperlink{structai_vertex_weight_a9a11636b76b90fccb204296aa2db07a7}{mWeight}});}
+\DoxyCodeLine{245     \}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247     \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}} \&rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{248         \textcolor{keywordflow}{return} (*\textcolor{keyword}{this} == rhs);}
+\DoxyCodeLine{249     \}}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{252 \};}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254 \textcolor{comment}{// Forward declare aiNode (pointer use only)}}
+\DoxyCodeLine{255 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_node}{aiNode}};}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{265 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_bone}{aiBone}} \{}
+\DoxyCodeLine{269     C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}};}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{275     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}};}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#ifndef ASSIMP\_BUILD\_NO\_ARMATUREPOPULATE\_PROCESS}}
+\DoxyCodeLine{282     C\_STRUCT \mbox{\hyperlink{structai_node}{aiNode}} *\mbox{\hyperlink{structai_bone_a8f89bbec0bcd4b3e548a356b981d70df}{mArmature}};}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{288     C\_STRUCT \mbox{\hyperlink{structai_node}{aiNode}} *\mbox{\hyperlink{structai_bone_aaa81bb10b66fdbe620b3d1a5e6be04b1}{mNode}};}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{294     C\_STRUCT \mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}} *\mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}};}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{308     C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} \mbox{\hyperlink{structai_bone_a1dd6c4f24a1384c05da281692be3e78d}{mOffsetMatrix}};}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{313     \mbox{\hyperlink{structai_bone}{aiBone}}() AI\_NO\_EXCEPT}
+\DoxyCodeLine{314             : \mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}}(),}
+\DoxyCodeLine{315               \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}}(0),}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#ifndef ASSIMP\_BUILD\_NO\_ARMATUREPOPULATE\_PROCESS}}
+\DoxyCodeLine{317               \mbox{\hyperlink{structai_bone_a8f89bbec0bcd4b3e548a356b981d70df}{mArmature}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{318               \mbox{\hyperlink{structai_bone_aaa81bb10b66fdbe620b3d1a5e6be04b1}{mNode}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{320               \mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{321               \mbox{\hyperlink{structai_bone_a1dd6c4f24a1384c05da281692be3e78d}{mOffsetMatrix}}() \{}
+\DoxyCodeLine{322         \textcolor{comment}{// empty}}
+\DoxyCodeLine{323     \}}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{326     \mbox{\hyperlink{structai_bone}{aiBone}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_bone}{aiBone}} \&other) :}
+\DoxyCodeLine{327             \mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}}(other.\mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}}),}
+\DoxyCodeLine{328             \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}}(other.\mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}}),}
+\DoxyCodeLine{329 \#ifndef ASSIMP\_BUILD\_NO\_ARMATUREPOPULATE\_PROCESS}
+\DoxyCodeLine{330               \mbox{\hyperlink{structai_bone_a8f89bbec0bcd4b3e548a356b981d70df}{mArmature}}(nullptr),}
+\DoxyCodeLine{331               \mbox{\hyperlink{structai_bone_aaa81bb10b66fdbe620b3d1a5e6be04b1}{mNode}}(nullptr),}
+\DoxyCodeLine{332 \#endif}
+\DoxyCodeLine{333             \mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}}(nullptr),}
+\DoxyCodeLine{334             \mbox{\hyperlink{structai_bone_a1dd6c4f24a1384c05da281692be3e78d}{mOffsetMatrix}}(other.\mbox{\hyperlink{structai_bone_a1dd6c4f24a1384c05da281692be3e78d}{mOffsetMatrix}}) \{}
+\DoxyCodeLine{335         copyVertexWeights(other);}
+\DoxyCodeLine{336     \}}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338     \textcolor{keywordtype}{void} copyVertexWeights( \textcolor{keyword}{const} \mbox{\hyperlink{structai_bone}{aiBone}} \&other ) \{}
+\DoxyCodeLine{339         \textcolor{keywordflow}{if} (other.\mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}} == \textcolor{keyword}{nullptr} || other.\mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}} == 0) \{}
+\DoxyCodeLine{340             \mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{341             \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}} = 0;}
+\DoxyCodeLine{342             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{343         \}}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345         \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}} = other.\mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}};}
+\DoxyCodeLine{346         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}}) \{}
+\DoxyCodeLine{347             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}};}
+\DoxyCodeLine{348         \}}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350         \mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}} = \textcolor{keyword}{new} \mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}}[\mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}}];}
+\DoxyCodeLine{351         ::memcpy(\mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}}, other.\mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}}, \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}} * \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}}));}
+\DoxyCodeLine{352     \}}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{355     \mbox{\hyperlink{structai_bone}{aiBone}} \&operator = (\textcolor{keyword}{const} \mbox{\hyperlink{structai_bone}{aiBone}} \&other) \{}
+\DoxyCodeLine{356         \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&other) \{}
+\DoxyCodeLine{357             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{358         \}}
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360         \mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}} = other.\mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}};}
+\DoxyCodeLine{361         \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}} = other.\mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}};}
+\DoxyCodeLine{362         \mbox{\hyperlink{structai_bone_a1dd6c4f24a1384c05da281692be3e78d}{mOffsetMatrix}} = other.\mbox{\hyperlink{structai_bone_a1dd6c4f24a1384c05da281692be3e78d}{mOffsetMatrix}};}
+\DoxyCodeLine{363         copyVertexWeights(other);}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{366     \}}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{369     \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{structai_bone}{aiBone}} \&rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{370         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}} != rhs.\mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}} || \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}} != rhs.\mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}} ) \{}
+\DoxyCodeLine{371             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{372         \}}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{374         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}}; ++i) \{}
+\DoxyCodeLine{375             \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}}[i] != rhs.\mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}}[i]) \{}
+\DoxyCodeLine{376                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{377             \}}
+\DoxyCodeLine{378         \}}
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{381     \}}
+\DoxyCodeLine{383     \mbox{\hyperlink{structai_bone}{\string~aiBone}}() \{}
+\DoxyCodeLine{384         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}};}
+\DoxyCodeLine{385     \}}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{387 \};}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{397 \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03f}{aiPrimitiveType}} \{}
+\DoxyCodeLine{404     \mbox{\hyperlink{include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fafb9158b4924ec9457647c759aa961053}{aiPrimitiveType\_POINT}} = 0x1,}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{412     \mbox{\hyperlink{include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fa724184f90f0e408b903d07aed39914b4}{aiPrimitiveType\_LINE}} = 0x2,}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{419     \mbox{\hyperlink{include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fae1875196046a6139abb8734fe97d67f5}{aiPrimitiveType\_TRIANGLE}} = 0x4,}
+\DoxyCodeLine{420 }
+\DoxyCodeLine{429     \mbox{\hyperlink{include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03faea762261e9efd0313baa0b3193b43253}{aiPrimitiveType\_POLYGON}} = 0x8,}
+\DoxyCodeLine{430 }
+\DoxyCodeLine{447     \mbox{\hyperlink{include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fa9936ab10ebebd878a5cd6521b5bdc003}{aiPrimitiveType\_NGONEncodingFlag}} = 0x10,}
+\DoxyCodeLine{448 }
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{454     \mbox{\hyperlink{include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fa6cc0d20689875344a59dc56d8baf08f8}{\_aiPrimitiveType\_Force32Bit}} = INT\_MAX}
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{456 \}; }
+\DoxyCodeLine{457 }
+\DoxyCodeLine{458 \textcolor{comment}{// Get the \#aiPrimitiveType flag for a specific number of face indices}}
+\DoxyCodeLine{459 \textcolor{preprocessor}{\#define AI\_PRIMITIVE\_TYPE\_FOR\_N\_INDICES(n) \(\backslash\)}}
+\DoxyCodeLine{460 \textcolor{preprocessor}{    ((n) > 3 ? aiPrimitiveType\_POLYGON : (aiPrimitiveType)(1u << ((n)-\/1)))}}
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{473 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_anim_mesh}{aiAnimMesh}} \{}
+\DoxyCodeLine{475     C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_anim_mesh_a09f0047d802db8b996b1a168eab0a533}{mName}};}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{483     C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_anim_mesh_ab7f2b12fe402d6083bb1750d287d5cee}{mVertices}};}
+\DoxyCodeLine{484 }
+\DoxyCodeLine{486     C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_anim_mesh_a9d9f5c8bc9309af7b3c91bf3172d1237}{mNormals}};}
+\DoxyCodeLine{487 }
+\DoxyCodeLine{489     C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_anim_mesh_a6f16d6c0f33d9ea8673a50b6b485fd42}{mTangents}};}
+\DoxyCodeLine{490 }
+\DoxyCodeLine{492     C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_anim_mesh_a8a5aa66caf35facc9c5ec783f1572f78}{mBitangents}};}
+\DoxyCodeLine{493 }
+\DoxyCodeLine{495     C\_STRUCT \mbox{\hyperlink{structai_color4_d}{aiColor4D}} *\mbox{\hyperlink{structai_anim_mesh_a475255bf7dbc970646a8481ddf3f6981}{mColors}}[\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}];}
+\DoxyCodeLine{496 }
+\DoxyCodeLine{498     C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_anim_mesh_a05d0d11863b91fc35b69e7bce5970701}{mTextureCoords}}[\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}];}
+\DoxyCodeLine{499 }
+\DoxyCodeLine{508     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_anim_mesh_a6bb0d45317a1bbea7f2b7f8191d0c436}{mNumVertices}};}
+\DoxyCodeLine{509 }
+\DoxyCodeLine{513     \textcolor{keywordtype}{float} \mbox{\hyperlink{structai_anim_mesh_a3554843cf6bb042369be1e75a2eff88a}{mWeight}};}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{515 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{517     \mbox{\hyperlink{structai_anim_mesh}{aiAnimMesh}}() AI\_NO\_EXCEPT :}
+\DoxyCodeLine{518             \mbox{\hyperlink{structai_anim_mesh_ab7f2b12fe402d6083bb1750d287d5cee}{mVertices}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{519             \mbox{\hyperlink{structai_anim_mesh_a9d9f5c8bc9309af7b3c91bf3172d1237}{mNormals}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{520             \mbox{\hyperlink{structai_anim_mesh_a6f16d6c0f33d9ea8673a50b6b485fd42}{mTangents}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{521             \mbox{\hyperlink{structai_anim_mesh_a8a5aa66caf35facc9c5ec783f1572f78}{mBitangents}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{522             \mbox{\hyperlink{structai_anim_mesh_a475255bf7dbc970646a8481ddf3f6981}{mColors}} \{\textcolor{keyword}{nullptr}\},}
+\DoxyCodeLine{523             \mbox{\hyperlink{structai_anim_mesh_a05d0d11863b91fc35b69e7bce5970701}{mTextureCoords}}\{\textcolor{keyword}{nullptr}\},}
+\DoxyCodeLine{524             \mbox{\hyperlink{structai_anim_mesh_a6bb0d45317a1bbea7f2b7f8191d0c436}{mNumVertices}}(0),}
+\DoxyCodeLine{525             \mbox{\hyperlink{structai_anim_mesh_a3554843cf6bb042369be1e75a2eff88a}{mWeight}}(0.0f) \{}
+\DoxyCodeLine{526         \textcolor{comment}{// empty}}
+\DoxyCodeLine{527     \}}
+\DoxyCodeLine{528 }
+\DoxyCodeLine{530     \mbox{\hyperlink{structai_anim_mesh}{\string~aiAnimMesh}}() \{}
+\DoxyCodeLine{531         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_anim_mesh_ab7f2b12fe402d6083bb1750d287d5cee}{mVertices}};}
+\DoxyCodeLine{532         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_anim_mesh_a9d9f5c8bc9309af7b3c91bf3172d1237}{mNormals}};}
+\DoxyCodeLine{533         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_anim_mesh_a6f16d6c0f33d9ea8673a50b6b485fd42}{mTangents}};}
+\DoxyCodeLine{534         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_anim_mesh_a8a5aa66caf35facc9c5ec783f1572f78}{mBitangents}};}
+\DoxyCodeLine{535         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}; a++) \{}
+\DoxyCodeLine{536             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_anim_mesh_a05d0d11863b91fc35b69e7bce5970701}{mTextureCoords}}[a];}
+\DoxyCodeLine{537         \}}
+\DoxyCodeLine{538         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}; a++) \{}
+\DoxyCodeLine{539             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_anim_mesh_a475255bf7dbc970646a8481ddf3f6981}{mColors}}[a];}
+\DoxyCodeLine{540         \}}
+\DoxyCodeLine{541     \}}
+\DoxyCodeLine{542 }
+\DoxyCodeLine{548     \textcolor{keywordtype}{bool} HasPositions()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{549         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_anim_mesh_ab7f2b12fe402d6083bb1750d287d5cee}{mVertices}} != \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{550     \}}
+\DoxyCodeLine{551 }
+\DoxyCodeLine{557     \textcolor{keywordtype}{bool} HasNormals()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{558         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_anim_mesh_a9d9f5c8bc9309af7b3c91bf3172d1237}{mNormals}} != \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{559     \}}
+\DoxyCodeLine{560 }
+\DoxyCodeLine{567     \textcolor{keywordtype}{bool} HasTangentsAndBitangents()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{568         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_anim_mesh_a6f16d6c0f33d9ea8673a50b6b485fd42}{mTangents}} != \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{569     \}}
+\DoxyCodeLine{570 }
+\DoxyCodeLine{578     \textcolor{keywordtype}{bool} HasVertexColors(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pIndex)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{579         \textcolor{keywordflow}{return} pIndex >= \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}} ? false : \mbox{\hyperlink{structai_anim_mesh_a475255bf7dbc970646a8481ddf3f6981}{mColors}}[pIndex] != \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{580     \}}
+\DoxyCodeLine{581 }
+\DoxyCodeLine{588     \textcolor{keywordtype}{bool} HasTextureCoords(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pIndex)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{589         \textcolor{keywordflow}{return} pIndex >= \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}} ? false : \mbox{\hyperlink{structai_anim_mesh_a05d0d11863b91fc35b69e7bce5970701}{mTextureCoords}}[pIndex] != \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{590     \}}
+\DoxyCodeLine{591 }
+\DoxyCodeLine{592 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{593 \};}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{595 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{598 \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70e}{aiMorphingMethod}} \{}
+\DoxyCodeLine{600     \mbox{\hyperlink{include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea2fa91a7bd2146df7f49a718c8ae8ab4b}{aiMorphingMethod\_UNKNOWN}} = 0x0,}
+\DoxyCodeLine{601 }
+\DoxyCodeLine{603     \mbox{\hyperlink{include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea8a0a244056339ce87af17325ae0d6560}{aiMorphingMethod\_VERTEX\_BLEND}} = 0x1,}
+\DoxyCodeLine{604 }
+\DoxyCodeLine{606     \mbox{\hyperlink{include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea0e82e32a9452da1726eab9d4a582088e}{aiMorphingMethod\_MORPH\_NORMALIZED}} = 0x2,}
+\DoxyCodeLine{607 }
+\DoxyCodeLine{609     \mbox{\hyperlink{include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea1ae15d6a0e67d51fed037179bbfccf96}{aiMorphingMethod\_MORPH\_RELATIVE}} = 0x3,}
+\DoxyCodeLine{610 }
+\DoxyCodeLine{614 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{615     \mbox{\hyperlink{include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea07c9fe9d673b15bb3a798860f330b124}{\_aiMorphingMethod\_Force32Bit}} = INT\_MAX}
+\DoxyCodeLine{616 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{617 \}; }
+\DoxyCodeLine{618 }
+\DoxyCodeLine{619 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{638 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_mesh}{aiMesh}} \{}
+\DoxyCodeLine{645     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_a99d66ac0a444068c1b252b30265cbf53}{mPrimitiveTypes}};}
+\DoxyCodeLine{646 }
+\DoxyCodeLine{652     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_ab34b7b5941e6636f1c08f615cbb072ef}{mNumVertices}};}
+\DoxyCodeLine{653 }
+\DoxyCodeLine{659     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_aeed22ee6963b79548f3877b3c905518e}{mNumFaces}};}
+\DoxyCodeLine{660 }
+\DoxyCodeLine{667     C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_mesh_a5abd50282e39563a14734820378b1690}{mVertices}};}
+\DoxyCodeLine{668 }
+\DoxyCodeLine{691     C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_mesh_ac7d23a5c9caf8f647ce96e2abf3da3ef}{mNormals}};}
+\DoxyCodeLine{692 }
+\DoxyCodeLine{707     C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_mesh_a37be52ca5c293ef46c1ee10bf7410d86}{mTangents}};}
+\DoxyCodeLine{708 }
+\DoxyCodeLine{718     C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_mesh_a4d2b15fe360d7c6f45c28dced096510a}{mBitangents}};}
+\DoxyCodeLine{719 }
+\DoxyCodeLine{727     C\_STRUCT \mbox{\hyperlink{structai_color4_d}{aiColor4D}} *\mbox{\hyperlink{structai_mesh_a387fa89e34f4b13f03cfd15c9be1e787}{mColors}}[\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}];}
+\DoxyCodeLine{728 }
+\DoxyCodeLine{736     C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_mesh_a35055266863d76681d371bf3bb4ccd72}{mTextureCoords}}[\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}];}
+\DoxyCodeLine{737 }
+\DoxyCodeLine{747     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_acdee8e023301b261dd3850cbd46fdda5}{mNumUVComponents}}[\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}];}
+\DoxyCodeLine{748 }
+\DoxyCodeLine{757     C\_STRUCT \mbox{\hyperlink{structai_face}{aiFace}} *\mbox{\hyperlink{structai_mesh_afdeda8b60a83dcf4cefef8b02c11f360}{mFaces}};}
+\DoxyCodeLine{758 }
+\DoxyCodeLine{762     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_a0f9d5425b6300e32a842a94f943fd79e}{mNumBones}};}
+\DoxyCodeLine{763 }
+\DoxyCodeLine{770     C\_STRUCT \mbox{\hyperlink{structai_bone}{aiBone}} **\mbox{\hyperlink{structai_mesh_ad0388784814d4534ec011abf9b57e3a8}{mBones}};}
+\DoxyCodeLine{771 }
+\DoxyCodeLine{779     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_aa2807c7ba172115203ed16047ad65f9e}{mMaterialIndex}};}
+\DoxyCodeLine{780 }
+\DoxyCodeLine{793     C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_mesh_a8dd9433e0c5b008e3e5aee6c801d3b74}{mName}};}
+\DoxyCodeLine{794 }
+\DoxyCodeLine{801     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_a1692a300222b32348ae51779df4a697e}{mNumAnimMeshes}};}
+\DoxyCodeLine{802 }
+\DoxyCodeLine{811     C\_STRUCT \mbox{\hyperlink{structai_anim_mesh}{aiAnimMesh}} **\mbox{\hyperlink{structai_mesh_aac9ab8395ffe59078bce9def74065a99}{mAnimMeshes}};}
+\DoxyCodeLine{812 }
+\DoxyCodeLine{817     \textcolor{keyword}{enum} \mbox{\hyperlink{include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70e}{aiMorphingMethod}} \mbox{\hyperlink{structai_mesh_ac1d0b703e2e39ed364252db0daafd733}{mMethod}};}
+\DoxyCodeLine{818 }
+\DoxyCodeLine{822     C\_STRUCT \mbox{\hyperlink{structai_a_a_b_b}{aiAABB}} \mbox{\hyperlink{structai_mesh_ade5815b8f019a930e31b3824e867010d}{mAABB}};}
+\DoxyCodeLine{823 }
+\DoxyCodeLine{827     C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} **\mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}};}
+\DoxyCodeLine{828 }
+\DoxyCodeLine{829 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{830 }
+\DoxyCodeLine{832     \mbox{\hyperlink{structai_mesh}{aiMesh}}() AI\_NO\_EXCEPT}
+\DoxyCodeLine{833             : \mbox{\hyperlink{structai_mesh_a99d66ac0a444068c1b252b30265cbf53}{mPrimitiveTypes}}(0),}
+\DoxyCodeLine{834               \mbox{\hyperlink{structai_mesh_ab34b7b5941e6636f1c08f615cbb072ef}{mNumVertices}}(0),}
+\DoxyCodeLine{835               \mbox{\hyperlink{structai_mesh_aeed22ee6963b79548f3877b3c905518e}{mNumFaces}}(0),}
+\DoxyCodeLine{836               \mbox{\hyperlink{structai_mesh_a5abd50282e39563a14734820378b1690}{mVertices}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{837               \mbox{\hyperlink{structai_mesh_ac7d23a5c9caf8f647ce96e2abf3da3ef}{mNormals}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{838               \mbox{\hyperlink{structai_mesh_a37be52ca5c293ef46c1ee10bf7410d86}{mTangents}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{839               \mbox{\hyperlink{structai_mesh_a4d2b15fe360d7c6f45c28dced096510a}{mBitangents}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{840               \mbox{\hyperlink{structai_mesh_a387fa89e34f4b13f03cfd15c9be1e787}{mColors}}\{\textcolor{keyword}{nullptr}\},}
+\DoxyCodeLine{841               \mbox{\hyperlink{structai_mesh_a35055266863d76681d371bf3bb4ccd72}{mTextureCoords}}\{\textcolor{keyword}{nullptr}\},}
+\DoxyCodeLine{842               \mbox{\hyperlink{structai_mesh_acdee8e023301b261dd3850cbd46fdda5}{mNumUVComponents}}\{0\},}
+\DoxyCodeLine{843               \mbox{\hyperlink{structai_mesh_afdeda8b60a83dcf4cefef8b02c11f360}{mFaces}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{844               \mbox{\hyperlink{structai_mesh_a0f9d5425b6300e32a842a94f943fd79e}{mNumBones}}(0),}
+\DoxyCodeLine{845               \mbox{\hyperlink{structai_mesh_ad0388784814d4534ec011abf9b57e3a8}{mBones}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{846               \mbox{\hyperlink{structai_mesh_aa2807c7ba172115203ed16047ad65f9e}{mMaterialIndex}}(0),}
+\DoxyCodeLine{847               \mbox{\hyperlink{structai_mesh_a1692a300222b32348ae51779df4a697e}{mNumAnimMeshes}}(0),}
+\DoxyCodeLine{848               \mbox{\hyperlink{structai_mesh_aac9ab8395ffe59078bce9def74065a99}{mAnimMeshes}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{849               \mbox{\hyperlink{structai_mesh_ac1d0b703e2e39ed364252db0daafd733}{mMethod}}(\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea2fa91a7bd2146df7f49a718c8ae8ab4b}{aiMorphingMethod\_UNKNOWN}}),}
+\DoxyCodeLine{850               \mbox{\hyperlink{structai_mesh_ade5815b8f019a930e31b3824e867010d}{mAABB}}(),}
+\DoxyCodeLine{851               \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}(\textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{852         \textcolor{comment}{// empty}}
+\DoxyCodeLine{853     \}}
+\DoxyCodeLine{854 }
+\DoxyCodeLine{856     \mbox{\hyperlink{structai_mesh}{\string~aiMesh}}() \{}
+\DoxyCodeLine{857         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_a5abd50282e39563a14734820378b1690}{mVertices}};}
+\DoxyCodeLine{858         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_ac7d23a5c9caf8f647ce96e2abf3da3ef}{mNormals}};}
+\DoxyCodeLine{859         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_a37be52ca5c293ef46c1ee10bf7410d86}{mTangents}};}
+\DoxyCodeLine{860         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_a4d2b15fe360d7c6f45c28dced096510a}{mBitangents}};}
+\DoxyCodeLine{861         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}; a++) \{}
+\DoxyCodeLine{862             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_a35055266863d76681d371bf3bb4ccd72}{mTextureCoords}}[a];}
+\DoxyCodeLine{863         \}}
+\DoxyCodeLine{864 }
+\DoxyCodeLine{865         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}) \{}
+\DoxyCodeLine{866             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}; a++) \{}
+\DoxyCodeLine{867                 \textcolor{keyword}{delete} \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[a];}
+\DoxyCodeLine{868             \}}
+\DoxyCodeLine{869             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}};}
+\DoxyCodeLine{870         \}}
+\DoxyCodeLine{871 }
+\DoxyCodeLine{872         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}; a++) \{}
+\DoxyCodeLine{873             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_a387fa89e34f4b13f03cfd15c9be1e787}{mColors}}[a];}
+\DoxyCodeLine{874         \}}
+\DoxyCodeLine{875 }
+\DoxyCodeLine{876         \textcolor{comment}{// DO NOT REMOVE THIS ADDITIONAL CHECK}}
+\DoxyCodeLine{877         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_a0f9d5425b6300e32a842a94f943fd79e}{mNumBones}} \&\& \mbox{\hyperlink{structai_mesh_ad0388784814d4534ec011abf9b57e3a8}{mBones}}) \{}
+\DoxyCodeLine{878             std::unordered\_set<const aiBone *> bones;}
+\DoxyCodeLine{879             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{structai_mesh_a0f9d5425b6300e32a842a94f943fd79e}{mNumBones}}; a++) \{}
+\DoxyCodeLine{880                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_ad0388784814d4534ec011abf9b57e3a8}{mBones}}[a]) \{}
+\DoxyCodeLine{881                     bones.insert(\mbox{\hyperlink{structai_mesh_ad0388784814d4534ec011abf9b57e3a8}{mBones}}[a]);}
+\DoxyCodeLine{882                 \}}
+\DoxyCodeLine{883             \}}
+\DoxyCodeLine{884             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{structai_bone}{aiBone}} *bone: bones) \{}
+\DoxyCodeLine{885                 \textcolor{keyword}{delete} bone;}
+\DoxyCodeLine{886             \}}
+\DoxyCodeLine{887             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_ad0388784814d4534ec011abf9b57e3a8}{mBones}};}
+\DoxyCodeLine{888         \}}
+\DoxyCodeLine{889 }
+\DoxyCodeLine{890         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_a1692a300222b32348ae51779df4a697e}{mNumAnimMeshes}} \&\& \mbox{\hyperlink{structai_mesh_aac9ab8395ffe59078bce9def74065a99}{mAnimMeshes}}) \{}
+\DoxyCodeLine{891             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{structai_mesh_a1692a300222b32348ae51779df4a697e}{mNumAnimMeshes}}; a++) \{}
+\DoxyCodeLine{892                 \textcolor{keyword}{delete} \mbox{\hyperlink{structai_mesh_aac9ab8395ffe59078bce9def74065a99}{mAnimMeshes}}[a];}
+\DoxyCodeLine{893             \}}
+\DoxyCodeLine{894             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_aac9ab8395ffe59078bce9def74065a99}{mAnimMeshes}};}
+\DoxyCodeLine{895         \}}
+\DoxyCodeLine{896 }
+\DoxyCodeLine{897         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_afdeda8b60a83dcf4cefef8b02c11f360}{mFaces}};}
+\DoxyCodeLine{898     \}}
+\DoxyCodeLine{899 }
+\DoxyCodeLine{903     \textcolor{keywordtype}{bool} HasPositions()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{904         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_a5abd50282e39563a14734820378b1690}{mVertices}} != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_ab34b7b5941e6636f1c08f615cbb072ef}{mNumVertices}} > 0;}
+\DoxyCodeLine{905     \}}
+\DoxyCodeLine{906 }
+\DoxyCodeLine{910     \textcolor{keywordtype}{bool} HasFaces()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{911         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_afdeda8b60a83dcf4cefef8b02c11f360}{mFaces}} != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_aeed22ee6963b79548f3877b3c905518e}{mNumFaces}} > 0;}
+\DoxyCodeLine{912     \}}
+\DoxyCodeLine{913 }
+\DoxyCodeLine{916     \textcolor{keywordtype}{bool} HasNormals()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{917         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_ac7d23a5c9caf8f647ce96e2abf3da3ef}{mNormals}} != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_ab34b7b5941e6636f1c08f615cbb072ef}{mNumVertices}} > 0;}
+\DoxyCodeLine{918     \}}
+\DoxyCodeLine{919 }
+\DoxyCodeLine{926     \textcolor{keywordtype}{bool} HasTangentsAndBitangents()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{927         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_a37be52ca5c293ef46c1ee10bf7410d86}{mTangents}} != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_a4d2b15fe360d7c6f45c28dced096510a}{mBitangents}} != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_ab34b7b5941e6636f1c08f615cbb072ef}{mNumVertices}} > 0;}
+\DoxyCodeLine{928     \}}
+\DoxyCodeLine{929 }
+\DoxyCodeLine{933     \textcolor{keywordtype}{bool} HasVertexColors(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{934         \textcolor{keywordflow}{if} (index >= \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}) \{}
+\DoxyCodeLine{935             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{936         \}}
+\DoxyCodeLine{937         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_a387fa89e34f4b13f03cfd15c9be1e787}{mColors}}[index] != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_ab34b7b5941e6636f1c08f615cbb072ef}{mNumVertices}} > 0;        }
+\DoxyCodeLine{938     \}}
+\DoxyCodeLine{939 }
+\DoxyCodeLine{943     \textcolor{keywordtype}{bool} HasTextureCoords(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{944         \textcolor{keywordflow}{if} (index >= \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}) \{}
+\DoxyCodeLine{945             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{946         \}}
+\DoxyCodeLine{947         \textcolor{keywordflow}{return} (\mbox{\hyperlink{structai_mesh_a35055266863d76681d371bf3bb4ccd72}{mTextureCoords}}[index] != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_ab34b7b5941e6636f1c08f615cbb072ef}{mNumVertices}} > 0);}
+\DoxyCodeLine{948     \}}
+\DoxyCodeLine{949 }
+\DoxyCodeLine{952     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetNumUVChannels()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{953         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n(0);}
+\DoxyCodeLine{954         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0; i < \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}; i++) \{}
+\DoxyCodeLine{955             \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_a35055266863d76681d371bf3bb4ccd72}{mTextureCoords}}[i]) \{}
+\DoxyCodeLine{956                 ++n;}
+\DoxyCodeLine{957             \}}
+\DoxyCodeLine{958         \}}
+\DoxyCodeLine{959 }
+\DoxyCodeLine{960         \textcolor{keywordflow}{return} n;}
+\DoxyCodeLine{961     \}}
+\DoxyCodeLine{962 }
+\DoxyCodeLine{965     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetNumColorChannels()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{966         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n(0);}
+\DoxyCodeLine{967         \textcolor{keywordflow}{while} (n < \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}} \&\& \mbox{\hyperlink{structai_mesh_a387fa89e34f4b13f03cfd15c9be1e787}{mColors}}[n]) \{}
+\DoxyCodeLine{968             ++n;}
+\DoxyCodeLine{969         \}}
+\DoxyCodeLine{970         \textcolor{keywordflow}{return} n;}
+\DoxyCodeLine{971     \}}
+\DoxyCodeLine{972 }
+\DoxyCodeLine{975     \textcolor{keywordtype}{bool} HasBones()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{976         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_ad0388784814d4534ec011abf9b57e3a8}{mBones}} != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_a0f9d5425b6300e32a842a94f943fd79e}{mNumBones}} > 0;}
+\DoxyCodeLine{977     \}}
+\DoxyCodeLine{978 }
+\DoxyCodeLine{982     \textcolor{keywordtype}{bool} HasTextureCoordsName(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pIndex)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{983         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}} == \textcolor{keyword}{nullptr} || pIndex >= \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}) \{}
+\DoxyCodeLine{984             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{985         \}}
+\DoxyCodeLine{986         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[pIndex] != \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{987     \}}
+\DoxyCodeLine{988 }
+\DoxyCodeLine{992     \textcolor{keywordtype}{void} SetTextureCoordsName(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pIndex, \textcolor{keyword}{const} \mbox{\hyperlink{structai_string}{aiString}} \&texCoordsName) \{}
+\DoxyCodeLine{993         \textcolor{keywordflow}{if} (pIndex >= \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}) \{}
+\DoxyCodeLine{994             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{995         \}}
+\DoxyCodeLine{996 }
+\DoxyCodeLine{997         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}} == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{998             \textcolor{comment}{// Construct and null-\/init array}}
+\DoxyCodeLine{999             \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}} = \textcolor{keyword}{new} \mbox{\hyperlink{structai_string}{aiString}} *[\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}];}
+\DoxyCodeLine{1000             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}; ++i) \{}
+\DoxyCodeLine{1001                 \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[i] = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{1002             \}}
+\DoxyCodeLine{1003         \}}
+\DoxyCodeLine{1004 }
+\DoxyCodeLine{1005         \textcolor{keywordflow}{if} (texCoordsName.\mbox{\hyperlink{structai_string_aed051e2996a96ca3a53e069f9b93da0c}{length}} == 0) \{}
+\DoxyCodeLine{1006             \textcolor{keyword}{delete} \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[pIndex];}
+\DoxyCodeLine{1007             \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[pIndex] = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{1008             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1009         \}}
+\DoxyCodeLine{1010 }
+\DoxyCodeLine{1011         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[pIndex] == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{1012             \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[pIndex] = \textcolor{keyword}{new} \mbox{\hyperlink{structai_string}{aiString}}(texCoordsName);}
+\DoxyCodeLine{1013             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1014         \}}
+\DoxyCodeLine{1015 }
+\DoxyCodeLine{1016         *\mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[pIndex] = texCoordsName;}
+\DoxyCodeLine{1017     \}}
+\DoxyCodeLine{1018 }
+\DoxyCodeLine{1022     \textcolor{keyword}{const} \mbox{\hyperlink{structai_string}{aiString}} *GetTextureCoordsName(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{1023         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}} == \textcolor{keyword}{nullptr} || index >= \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}) \{}
+\DoxyCodeLine{1024             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{1025         \}}
+\DoxyCodeLine{1026 }
+\DoxyCodeLine{1027         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[index];}
+\DoxyCodeLine{1028     \}}
+\DoxyCodeLine{1029 }
+\DoxyCodeLine{1030 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{1031 \};}
+\DoxyCodeLine{1032 }
+\DoxyCodeLine{1048 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_skeleton_bone}{aiSkeletonBone}} \{}
+\DoxyCodeLine{1050     \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_skeleton_bone_a467da082576fa3d0851085b4c1a910b1}{mParent}};}
+\DoxyCodeLine{1051 }
+\DoxyCodeLine{1052 }
+\DoxyCodeLine{1053 \textcolor{preprocessor}{\#ifndef ASSIMP\_BUILD\_NO\_ARMATUREPOPULATE\_PROCESS}}
+\DoxyCodeLine{1056     C\_STRUCT \mbox{\hyperlink{structai_node}{aiNode}} *\mbox{\hyperlink{structai_skeleton_bone_ad38b4ebf3afd0ea996681f589729af8c}{mArmature}};}
+\DoxyCodeLine{1057 }
+\DoxyCodeLine{1060     C\_STRUCT \mbox{\hyperlink{structai_node}{aiNode}} *\mbox{\hyperlink{structai_skeleton_bone_a9ff833c452cc8190d1f2c8caf87a5a4b}{mNode}};}
+\DoxyCodeLine{1061 }
+\DoxyCodeLine{1062 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1064     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_skeleton_bone_a108acad41fcfadcadce1f511d7f2dc67}{mNumnWeights}};}
+\DoxyCodeLine{1065 }
+\DoxyCodeLine{1067     C\_STRUCT \mbox{\hyperlink{structai_mesh}{aiMesh}} *\mbox{\hyperlink{structai_skeleton_bone_a64424398138b28d531da4a6cb1381446}{mMeshId}};}
+\DoxyCodeLine{1068 }
+\DoxyCodeLine{1070     C\_STRUCT \mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}} *\mbox{\hyperlink{structai_skeleton_bone_aa7eba6914ace32d1e393955c2fd669a6}{mWeights}};}
+\DoxyCodeLine{1071 }
+\DoxyCodeLine{1083     C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} \mbox{\hyperlink{structai_skeleton_bone_a699e4965860b358dc210deb1bf143305}{mOffsetMatrix}};}
+\DoxyCodeLine{1084 }
+\DoxyCodeLine{1086     C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} \mbox{\hyperlink{structai_skeleton_bone_a1ebcbfc261a776d437a2289f1401bf13}{mLocalMatrix}};}
+\DoxyCodeLine{1087 }
+\DoxyCodeLine{1088 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1090     \mbox{\hyperlink{structai_skeleton_bone}{aiSkeletonBone}}() :}
+\DoxyCodeLine{1091             \mbox{\hyperlink{structai_skeleton_bone_a467da082576fa3d0851085b4c1a910b1}{mParent}}(-\/1),}
+\DoxyCodeLine{1092 \#ifndef ASSIMP\_BUILD\_NO\_ARMATUREPOPULATE\_PROCESS}
+\DoxyCodeLine{1093             \mbox{\hyperlink{structai_skeleton_bone_ad38b4ebf3afd0ea996681f589729af8c}{mArmature}}(nullptr),}
+\DoxyCodeLine{1094             \mbox{\hyperlink{structai_skeleton_bone_a9ff833c452cc8190d1f2c8caf87a5a4b}{mNode}}(nullptr),}
+\DoxyCodeLine{1095 \#endif}
+\DoxyCodeLine{1096             \mbox{\hyperlink{structai_skeleton_bone_a108acad41fcfadcadce1f511d7f2dc67}{mNumnWeights}}(0),}
+\DoxyCodeLine{1097             \mbox{\hyperlink{structai_skeleton_bone_a64424398138b28d531da4a6cb1381446}{mMeshId}}(nullptr),}
+\DoxyCodeLine{1098             \mbox{\hyperlink{structai_skeleton_bone_aa7eba6914ace32d1e393955c2fd669a6}{mWeights}}(nullptr),}
+\DoxyCodeLine{1099             \mbox{\hyperlink{structai_skeleton_bone_a699e4965860b358dc210deb1bf143305}{mOffsetMatrix}}(),}
+\DoxyCodeLine{1100             \mbox{\hyperlink{structai_skeleton_bone_a1ebcbfc261a776d437a2289f1401bf13}{mLocalMatrix}}() \{}
+\DoxyCodeLine{1101         \textcolor{comment}{// empty}}
+\DoxyCodeLine{1102     \}}
+\DoxyCodeLine{1103 }
+\DoxyCodeLine{1106     \mbox{\hyperlink{structai_skeleton_bone}{aiSkeletonBone}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} parent) :}
+\DoxyCodeLine{1107             \mbox{\hyperlink{structai_skeleton_bone_a467da082576fa3d0851085b4c1a910b1}{mParent}}(parent),}
+\DoxyCodeLine{1108 \#ifndef ASSIMP\_BUILD\_NO\_ARMATUREPOPULATE\_PROCESS}
+\DoxyCodeLine{1109             \mbox{\hyperlink{structai_skeleton_bone_ad38b4ebf3afd0ea996681f589729af8c}{mArmature}}(nullptr),}
+\DoxyCodeLine{1110             \mbox{\hyperlink{structai_skeleton_bone_a9ff833c452cc8190d1f2c8caf87a5a4b}{mNode}}(nullptr),}
+\DoxyCodeLine{1111 \#endif}
+\DoxyCodeLine{1112             \mbox{\hyperlink{structai_skeleton_bone_a108acad41fcfadcadce1f511d7f2dc67}{mNumnWeights}}(0),}
+\DoxyCodeLine{1113             \mbox{\hyperlink{structai_skeleton_bone_a64424398138b28d531da4a6cb1381446}{mMeshId}}(nullptr),}
+\DoxyCodeLine{1114             \mbox{\hyperlink{structai_skeleton_bone_aa7eba6914ace32d1e393955c2fd669a6}{mWeights}}(nullptr),}
+\DoxyCodeLine{1115             \mbox{\hyperlink{structai_skeleton_bone_a699e4965860b358dc210deb1bf143305}{mOffsetMatrix}}(),}
+\DoxyCodeLine{1116             \mbox{\hyperlink{structai_skeleton_bone_a1ebcbfc261a776d437a2289f1401bf13}{mLocalMatrix}}() \{}
+\DoxyCodeLine{1117         \textcolor{comment}{// empty}}
+\DoxyCodeLine{1118     \}}
+\DoxyCodeLine{1120     \mbox{\hyperlink{structai_skeleton_bone}{\string~aiSkeletonBone}}() \{}
+\DoxyCodeLine{1121         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_skeleton_bone_aa7eba6914ace32d1e393955c2fd669a6}{mWeights}};}
+\DoxyCodeLine{1122         \mbox{\hyperlink{structai_skeleton_bone_aa7eba6914ace32d1e393955c2fd669a6}{mWeights}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{1123     \}}
+\DoxyCodeLine{1124 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{1125 \};}
+\DoxyCodeLine{1140 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_skeleton}{aiSkeleton}} \{}
+\DoxyCodeLine{1144     C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_skeleton_afe4c5509eb4536590e0fb0a7d74567a6}{mName}};}
+\DoxyCodeLine{1145 }
+\DoxyCodeLine{1149     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_skeleton_a4cb4733bf1487caf474875030e1bc3db}{mNumBones}};}
+\DoxyCodeLine{1150 }
+\DoxyCodeLine{1154     C\_STRUCT \mbox{\hyperlink{structai_skeleton_bone}{aiSkeletonBone}} **\mbox{\hyperlink{structai_skeleton_a768e2b1140681e31a9773a3e545fa0ef}{mBones}};}
+\DoxyCodeLine{1155 }
+\DoxyCodeLine{1156 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1160     \mbox{\hyperlink{structai_skeleton}{aiSkeleton}}() AI\_NO\_EXCEPT : \mbox{\hyperlink{structai_skeleton_afe4c5509eb4536590e0fb0a7d74567a6}{mName}}(), \mbox{\hyperlink{structai_skeleton_a4cb4733bf1487caf474875030e1bc3db}{mNumBones}}(0), \mbox{\hyperlink{structai_skeleton_a768e2b1140681e31a9773a3e545fa0ef}{mBones}}(\textcolor{keywordtype}{nullptr}) \{}
+\DoxyCodeLine{1161         \textcolor{comment}{// empty}}
+\DoxyCodeLine{1162     \}}
+\DoxyCodeLine{1163 }
+\DoxyCodeLine{1167     \mbox{\hyperlink{structai_skeleton}{\string~aiSkeleton}}() \{}
+\DoxyCodeLine{1168         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_skeleton_a768e2b1140681e31a9773a3e545fa0ef}{mBones}};}
+\DoxyCodeLine{1169     \}}
+\DoxyCodeLine{1170 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{1171 \};}
+\DoxyCodeLine{1172 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1173 \}}
+\DoxyCodeLine{1174 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{1175 }
+\DoxyCodeLine{1176 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_MESH\_H\_INC}}
+\DoxyCodeLine{1177 }
+
+\end{DoxyCode}

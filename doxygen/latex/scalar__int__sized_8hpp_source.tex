@@ -1,0 +1,59 @@
+\hypertarget{scalar__int__sized_8hpp_source}{}\doxysection{scalar\+\_\+int\+\_\+sized.\+hpp}
+\label{scalar__int__sized_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/ext/scalar\_int\_sized.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/ext/scalar\_int\_sized.hpp}}
+\mbox{\hyperlink{scalar__int__sized_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}../detail/setup.hpp"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#if GLM\_MESSAGES == GLM\_ENABLE \&\& !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_EXT\_scalar\_int\_sized extension included"{}})}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{22 \textcolor{keyword}{namespace }detail}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#   if GLM\_HAS\_EXTENDED\_INTEGER\_TYPE}}
+\DoxyCodeLine{25         \textcolor{keyword}{typedef} std::int8\_t         int8;}
+\DoxyCodeLine{26         \textcolor{keyword}{typedef} std::int16\_t        int16;}
+\DoxyCodeLine{27         \textcolor{keyword}{typedef} std::int32\_t        int32;}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#   else}}
+\DoxyCodeLine{29         \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{char}         int8;}
+\DoxyCodeLine{30         \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{short}        int16;}
+\DoxyCodeLine{31         \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{int}          int32;}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{35     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1is__int}{is\_int}}<int8>}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37         \textcolor{keyword}{enum} test \{value = \string~0\};}
+\DoxyCodeLine{38     \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{41     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1is__int}{is\_int}}<int16>}
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43         \textcolor{keyword}{enum} test \{value = \string~0\};}
+\DoxyCodeLine{44     \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{keyword}{template}<>}
+\DoxyCodeLine{47     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1is__int}{is\_int}}<int64>}
+\DoxyCodeLine{48     \{}
+\DoxyCodeLine{49         \textcolor{keyword}{enum} test \{value = \string~0\};}
+\DoxyCodeLine{50     \};}
+\DoxyCodeLine{51 \}\textcolor{comment}{//namespace detail}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58     \textcolor{keyword}{typedef} detail::int8        \mbox{\hyperlink{group__ext__scalar__int__sized_gaf9d6ceaf8a36734c0a026f6f699ff60c}{int8}};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61     \textcolor{keyword}{typedef} detail::int16       \mbox{\hyperlink{group__ext__scalar__int__sized_ga22d9cd55823f7c4aeee13aceafd7238a}{int16}};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64     \textcolor{keyword}{typedef} detail::int32       \mbox{\hyperlink{group__ext__scalar__int__sized_gafc36c598ca57ab4a9286a53bf91a5fff}{int32}};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67     \textcolor{keyword}{typedef} detail::int64       \mbox{\hyperlink{group__ext__scalar__int__sized_ga435d75819cce297cc5fa21bd84ef89a5}{int64}};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70 \}\textcolor{comment}{//namespace glm}}
+
+\end{DoxyCode}

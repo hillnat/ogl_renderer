@@ -1,0 +1,164 @@
+\hypertarget{type__mat2x3_8hpp_source}{}\doxysection{type\+\_\+mat2x3.\+hpp}
+\label{type__mat2x3_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/detail/type\_mat2x3.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/detail/type\_mat2x3.hpp}}
+\mbox{\hyperlink{type__mat2x3_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{type__vec2_8hpp}{type\_vec2.hpp}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{type__vec3_8hpp}{type\_vec3.hpp}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{14     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1mat}{mat}}<2, 3, T, Q>}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1vec}{vec<3, T, Q>}} \mbox{\hyperlink{structglm_1_1vec_3_013_00_01_t_00_01_q_01_4}{col\_type}};}
+\DoxyCodeLine{17         \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1vec}{vec<2, T, Q>}} \mbox{\hyperlink{structglm_1_1vec_3_012_00_01_t_00_01_q_01_4}{row\_type}};}
+\DoxyCodeLine{18         \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \mbox{\hyperlink{structglm_1_1mat_3_012_00_013_00_01_t_00_01_q_01_4}{type}};}
+\DoxyCodeLine{19         \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1mat}{mat<3, 2, T, Q>}} \mbox{\hyperlink{structglm_1_1mat_3_013_00_012_00_01_t_00_01_q_01_4}{transpose\_type}};}
+\DoxyCodeLine{20         \textcolor{keyword}{typedef} T value\_type;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keyword}{private}:}
+\DoxyCodeLine{23         \mbox{\hyperlink{structglm_1_1vec_3_013_00_01_t_00_01_q_01_4}{col\_type}} value[2];}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keyword}{public}:}
+\DoxyCodeLine{26         \textcolor{comment}{// -\/-\/ Accesses -\/-\/}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \textcolor{keyword}{typedef} length\_t length\_type;}
+\DoxyCodeLine{29         GLM\_FUNC\_DECL \textcolor{keyword}{static} GLM\_CONSTEXPR length\_type length() \{ \textcolor{keywordflow}{return} 2; \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31         GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1vec_3_013_00_01_t_00_01_q_01_4}{col\_type}} \& operator[](length\_type i) GLM\_NOEXCEPT;}
+\DoxyCodeLine{32         GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1vec_3_013_00_01_t_00_01_q_01_4}{col\_type}} \textcolor{keyword}{const}\& operator[](length\_type i) \textcolor{keyword}{const} GLM\_NOEXCEPT;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \textcolor{comment}{// -\/-\/ Constructors -\/-\/}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         GLM\_DEFAULTED\_DEFAULT\_CTOR\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat}}() GLM\_DEFAULT\_CTOR;}
+\DoxyCodeLine{37         \textcolor{keyword}{template}<qualifier P>}
+\DoxyCodeLine{38         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1mat}{mat}}(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, P>}} \textcolor{keyword}{const}\& m);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1mat}{mat}}(T scalar);}
+\DoxyCodeLine{41         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1mat}{mat}}(}
+\DoxyCodeLine{42             T x0, T y0, T z0,}
+\DoxyCodeLine{43             T x1, T y1, T z1);}
+\DoxyCodeLine{44         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1mat}{mat}}(}
+\DoxyCodeLine{45             \mbox{\hyperlink{structglm_1_1vec_3_013_00_01_t_00_01_q_01_4}{col\_type}} \textcolor{keyword}{const}\& v0,}
+\DoxyCodeLine{46             \mbox{\hyperlink{structglm_1_1vec_3_013_00_01_t_00_01_q_01_4}{col\_type}} \textcolor{keyword}{const}\& v1);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \textcolor{comment}{// -\/-\/ Conversions -\/-\/}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{keyword}{template}<\textcolor{keyword}{typename} X1, \textcolor{keyword}{typename} Y1, \textcolor{keyword}{typename} Z1, \textcolor{keyword}{typename} X2, \textcolor{keyword}{typename} Y2, \textcolor{keyword}{typename} Z2>}
+\DoxyCodeLine{51         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1mat}{mat}}(}
+\DoxyCodeLine{52             X1 x1, Y1 y1, Z1 z1,}
+\DoxyCodeLine{53             X2 x2, Y2 y2, Z2 z2);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U, \textcolor{keyword}{typename} V>}
+\DoxyCodeLine{56         GLM\_CTOR\_DECL \mbox{\hyperlink{structglm_1_1mat}{mat}}(}
+\DoxyCodeLine{57             \mbox{\hyperlink{structglm_1_1vec}{vec<3, U, Q>}} \textcolor{keyword}{const}\& v1,}
+\DoxyCodeLine{58             \mbox{\hyperlink{structglm_1_1vec}{vec<3, V, Q>}} \textcolor{keyword}{const}\& v2);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         \textcolor{comment}{// -\/-\/ Matrix conversions -\/-\/}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U, qualifier P>}
+\DoxyCodeLine{63         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1mat}{mat}}(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, U, P>}} \textcolor{keyword}{const}\& m);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1mat}{mat}}(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 2, T, Q>}} \textcolor{keyword}{const}\& x);}
+\DoxyCodeLine{66         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1mat}{mat}}(\mbox{\hyperlink{structglm_1_1mat}{mat<3, 3, T, Q>}} \textcolor{keyword}{const}\& x);}
+\DoxyCodeLine{67         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1mat}{mat}}(\mbox{\hyperlink{structglm_1_1mat}{mat<4, 4, T, Q>}} \textcolor{keyword}{const}\& x);}
+\DoxyCodeLine{68         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1mat}{mat}}(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 4, T, Q>}} \textcolor{keyword}{const}\& x);}
+\DoxyCodeLine{69         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1mat}{mat}}(\mbox{\hyperlink{structglm_1_1mat}{mat<3, 2, T, Q>}} \textcolor{keyword}{const}\& x);}
+\DoxyCodeLine{70         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1mat}{mat}}(\mbox{\hyperlink{structglm_1_1mat}{mat<3, 4, T, Q>}} \textcolor{keyword}{const}\& x);}
+\DoxyCodeLine{71         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1mat}{mat}}(\mbox{\hyperlink{structglm_1_1mat}{mat<4, 2, T, Q>}} \textcolor{keyword}{const}\& x);}
+\DoxyCodeLine{72         GLM\_CTOR\_DECL GLM\_EXPLICIT \mbox{\hyperlink{structglm_1_1mat}{mat}}(\mbox{\hyperlink{structglm_1_1mat}{mat<4, 3, T, Q>}} \textcolor{keyword}{const}\& x);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74         \textcolor{comment}{// -\/-\/ Unary arithmetic operators -\/-\/}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{77         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \& operator=(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, U, Q>}} \textcolor{keyword}{const}\& m);}
+\DoxyCodeLine{78         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{79         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \& operator+=(U s);}
+\DoxyCodeLine{80         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{81         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \& operator+=(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, U, Q>}} \textcolor{keyword}{const}\& m);}
+\DoxyCodeLine{82         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{83         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \& operator-\/=(U s);}
+\DoxyCodeLine{84         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{85         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \& operator-\/=(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, U, Q>}} \textcolor{keyword}{const}\& m);}
+\DoxyCodeLine{86         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{87         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \& operator*=(U s);}
+\DoxyCodeLine{88         \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{89         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \& operator/=(U s);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91         \textcolor{comment}{// -\/-\/ Increment and decrement operators -\/-\/}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \& operator++ ();}
+\DoxyCodeLine{94         GLM\_FUNC\_DISCARD\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \& operator-\/-\/ ();}
+\DoxyCodeLine{95         GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} operator++(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{96         GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} operator-\/-\/(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{97     \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{// -\/-\/ Unary operators -\/-\/}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{102     GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} operator+(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{105     GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} operator-\/(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{comment}{// -\/-\/ Binary operators -\/-\/}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{110     GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} operator+(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m, T scalar);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{113     GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} operator+(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m1, \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m2);}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{116     GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} operator-\/(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m, T scalar);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{119     GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} operator-\/(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m1, \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m2);}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{122     GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} operator*(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m, T scalar);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{125     GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} operator*(T scalar, \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m);}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{128     GLM\_FUNC\_DECL GLM\_CONSTEXPR \textcolor{keyword}{typename} \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>::col\_type}} operator*(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m, \textcolor{keyword}{typename} \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>::row\_type}} \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{131     GLM\_FUNC\_DECL GLM\_CONSTEXPR \textcolor{keyword}{typename} \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>::row\_type}} operator*(\textcolor{keyword}{typename} \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>::col\_type}} \textcolor{keyword}{const}\& v, \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m);}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{134     GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} operator*(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m1, \mbox{\hyperlink{structglm_1_1mat}{mat<2, 2, T, Q>}} \textcolor{keyword}{const}\& m2);}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{137     GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<3, 3, T, Q>}} operator*(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m1, \mbox{\hyperlink{structglm_1_1mat}{mat<3, 2, T, Q>}} \textcolor{keyword}{const}\& m2);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{140     GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<4, 3, T, Q>}} operator*(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m1, \mbox{\hyperlink{structglm_1_1mat}{mat<4, 2, T, Q>}} \textcolor{keyword}{const}\& m2);}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{143     GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} operator/(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m, T scalar);}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{146     GLM\_FUNC\_DECL GLM\_CONSTEXPR \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} operator/(T scalar, \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m);}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{comment}{// -\/-\/ Boolean operators -\/-\/}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{151     GLM\_FUNC\_DECL GLM\_CONSTEXPR \textcolor{keywordtype}{bool} operator==(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m1, \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m2);}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{154     GLM\_FUNC\_DECL GLM\_CONSTEXPR \textcolor{keywordtype}{bool} operator!=(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m1, \mbox{\hyperlink{structglm_1_1mat}{mat<2, 3, T, Q>}} \textcolor{keyword}{const}\& m2);}
+\DoxyCodeLine{155 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#ifndef GLM\_EXTERNAL\_TEMPLATE}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#include "{}type\_mat2x3.inl"{}}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

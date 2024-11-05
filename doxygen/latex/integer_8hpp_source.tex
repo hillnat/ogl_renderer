@@ -1,0 +1,80 @@
+\hypertarget{integer_8hpp_source}{}\doxysection{integer.\+hpp}
+\label{integer_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/integer.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/integer.hpp}}
+\mbox{\hyperlink{integer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}detail/qualifier.hpp"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gtx_2common_8hpp}{common.hpp}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{vector__relational_8hpp}{vector\_relational.hpp}}"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{36     \textcolor{keyword}{template}<length\_t L, qualifier Q>}
+\DoxyCodeLine{37     GLM\_FUNC\_DECL vec<L, uint, Q> uaddCarry(}
+\DoxyCodeLine{38         vec<L, uint, Q> \textcolor{keyword}{const}\& x,}
+\DoxyCodeLine{39         vec<L, uint, Q> \textcolor{keyword}{const}\& y,}
+\DoxyCodeLine{40         vec<L, uint, Q> \& carry);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{50     \textcolor{keyword}{template}<length\_t L, qualifier Q>}
+\DoxyCodeLine{51     GLM\_FUNC\_DECL vec<L, uint, Q> usubBorrow(}
+\DoxyCodeLine{52         vec<L, uint, Q> \textcolor{keyword}{const}\& x,}
+\DoxyCodeLine{53         vec<L, uint, Q> \textcolor{keyword}{const}\& y,}
+\DoxyCodeLine{54         vec<L, uint, Q> \& borrow);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{64     \textcolor{keyword}{template}<length\_t L, qualifier Q>}
+\DoxyCodeLine{65     GLM\_FUNC\_DISCARD\_DECL \textcolor{keywordtype}{void} umulExtended(}
+\DoxyCodeLine{66         vec<L, uint, Q> \textcolor{keyword}{const}\& x,}
+\DoxyCodeLine{67         vec<L, uint, Q> \textcolor{keyword}{const}\& y,}
+\DoxyCodeLine{68         vec<L, uint, Q> \& msb,}
+\DoxyCodeLine{69         vec<L, uint, Q> \& lsb);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{79     \textcolor{keyword}{template}<length\_t L, qualifier Q>}
+\DoxyCodeLine{80     GLM\_FUNC\_DISCARD\_DECL \textcolor{keywordtype}{void} imulExtended(}
+\DoxyCodeLine{81         vec<L, int, Q> \textcolor{keyword}{const}\& x,}
+\DoxyCodeLine{82         vec<L, int, Q> \textcolor{keyword}{const}\& y,}
+\DoxyCodeLine{83         vec<L, int, Q> \& msb,}
+\DoxyCodeLine{84         vec<L, int, Q> \& lsb);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{102     \textcolor{keyword}{template}<length\_t L, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{103     GLM\_FUNC\_DECL vec<L, T, Q> bitfieldExtract(}
+\DoxyCodeLine{104         vec<L, T, Q> \textcolor{keyword}{const}\& Value,}
+\DoxyCodeLine{105         \textcolor{keywordtype}{int} Offset,}
+\DoxyCodeLine{106         \textcolor{keywordtype}{int} Bits);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{123     \textcolor{keyword}{template}<length\_t L, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{124     GLM\_FUNC\_DECL vec<L, T, Q> bitfieldInsert(}
+\DoxyCodeLine{125         vec<L, T, Q> \textcolor{keyword}{const}\& Base,}
+\DoxyCodeLine{126         vec<L, T, Q> \textcolor{keyword}{const}\& Insert,}
+\DoxyCodeLine{127         \textcolor{keywordtype}{int} Offset,}
+\DoxyCodeLine{128         \textcolor{keywordtype}{int} Bits);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{139     \textcolor{keyword}{template}<length\_t L, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{140     GLM\_FUNC\_DECL vec<L, T, Q> bitfieldReverse(vec<L, T, Q> \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{148     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genType>}
+\DoxyCodeLine{149     GLM\_FUNC\_DECL \textcolor{keywordtype}{int} bitCount(genType v);}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{158     \textcolor{keyword}{template}<length\_t L, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{159     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec<L, int, Q>}} bitCount(\mbox{\hyperlink{structglm_1_1vec}{vec<L, T, Q>}} \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{169     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genIUType>}
+\DoxyCodeLine{170     GLM\_FUNC\_DECL \textcolor{keywordtype}{int} \mbox{\hyperlink{group__core__func__integer_gaf74c4d969fa34ab8acb9d390f5ca5274}{findLSB}}(genIUType x);}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{181     \textcolor{keyword}{template}<length\_t L, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{182     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec<L, int, Q>}} \mbox{\hyperlink{group__core__func__integer_gaf74c4d969fa34ab8acb9d390f5ca5274}{findLSB}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L, T, Q>}} \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{193     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genIUType>}
+\DoxyCodeLine{194     GLM\_FUNC\_DECL \textcolor{keywordtype}{int} \mbox{\hyperlink{group__core__func__integer_ga7e4a794d766861c70bc961630f8ef621}{findMSB}}(genIUType x);}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{206     \textcolor{keyword}{template}<length\_t L, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{207     GLM\_FUNC\_DECL \mbox{\hyperlink{structglm_1_1vec}{vec<L, int, Q>}} \mbox{\hyperlink{group__core__func__integer_ga7e4a794d766861c70bc961630f8ef621}{findMSB}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L, T, Q>}} \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{210 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#include "{}detail/func\_integer.inl"{}}}
+
+\end{DoxyCode}

@@ -1,0 +1,76 @@
+\hypertarget{type__trait_8hpp_source}{}\doxysection{type\+\_\+trait.\+hpp}
+\label{type__trait_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/gtx/type\_trait.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/gtx/type\_trait.hpp}}
+\mbox{\hyperlink{type__trait_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#   error "{}GLM: GLM\_GTX\_type\_trait is an experimental extension and may change in the future. Use \#define GLM\_ENABLE\_EXPERIMENTAL before including it, if you really want to use it."{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#elif GLM\_MESSAGES == GLM\_ENABLE \&\& !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_GTX\_type\_trait extension included"{}})}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{// Dependency:}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}../detail/qualifier.hpp"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}../gtc/quaternion.hpp"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}../gtx/dual\_quaternion.hpp"{}}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{32     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1type}{type}}}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_vec = \textcolor{keyword}{false};}
+\DoxyCodeLine{35         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_mat = \textcolor{keyword}{false};}
+\DoxyCodeLine{36         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_quat = \textcolor{keyword}{false};}
+\DoxyCodeLine{37         \textcolor{keyword}{static} length\_t \textcolor{keyword}{const} components = 0;}
+\DoxyCodeLine{38         \textcolor{keyword}{static} length\_t \textcolor{keyword}{const} cols = 0;}
+\DoxyCodeLine{39         \textcolor{keyword}{static} length\_t \textcolor{keyword}{const} rows = 0;}
+\DoxyCodeLine{40     \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keyword}{template}<length\_t L, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{43     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1type}{type}}<\mbox{\hyperlink{structglm_1_1vec}{vec}}<L, T, Q> >}
+\DoxyCodeLine{44     \{}
+\DoxyCodeLine{45         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_vec = \textcolor{keyword}{true};}
+\DoxyCodeLine{46         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_mat = \textcolor{keyword}{false};}
+\DoxyCodeLine{47         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_quat = \textcolor{keyword}{false};}
+\DoxyCodeLine{48         \textcolor{keyword}{static} length\_t \textcolor{keyword}{const} components = L;}
+\DoxyCodeLine{49     \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{52     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1type}{type}}<\mbox{\hyperlink{structglm_1_1mat}{mat}}<C, R, T, Q> >}
+\DoxyCodeLine{53     \{}
+\DoxyCodeLine{54         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_vec = \textcolor{keyword}{false};}
+\DoxyCodeLine{55         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_mat = \textcolor{keyword}{true};}
+\DoxyCodeLine{56         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_quat = \textcolor{keyword}{false};}
+\DoxyCodeLine{57         \textcolor{keyword}{static} length\_t \textcolor{keyword}{const} components = C;}
+\DoxyCodeLine{58         \textcolor{keyword}{static} length\_t \textcolor{keyword}{const} cols = C;}
+\DoxyCodeLine{59         \textcolor{keyword}{static} length\_t \textcolor{keyword}{const} rows = R;}
+\DoxyCodeLine{60     \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{63     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1type}{type}}<\mbox{\hyperlink{structglm_1_1qua}{qua}}<T, Q> >}
+\DoxyCodeLine{64     \{}
+\DoxyCodeLine{65         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_vec = \textcolor{keyword}{false};}
+\DoxyCodeLine{66         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_mat = \textcolor{keyword}{false};}
+\DoxyCodeLine{67         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_quat = \textcolor{keyword}{true};}
+\DoxyCodeLine{68         \textcolor{keyword}{static} length\_t \textcolor{keyword}{const} components = 4;}
+\DoxyCodeLine{69     \};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{72     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1type}{type}}<\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat}}<T, Q> >}
+\DoxyCodeLine{73     \{}
+\DoxyCodeLine{74         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_vec = \textcolor{keyword}{false};}
+\DoxyCodeLine{75         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_mat = \textcolor{keyword}{false};}
+\DoxyCodeLine{76         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \textcolor{keyword}{const} is\_quat = \textcolor{keyword}{true};}
+\DoxyCodeLine{77         \textcolor{keyword}{static} length\_t \textcolor{keyword}{const} components = 8;}
+\DoxyCodeLine{78     \};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#include "{}type\_trait.inl"{}}}
+
+\end{DoxyCode}

@@ -1,0 +1,260 @@
+\hypertarget{thirdparty_2assimp_2out_2install_2x64-_debug_2include_2assimp_2_scene_8h_source}{}\doxysection{scene.\+h}
+\label{thirdparty_2assimp_2out_2install_2x64-_debug_2include_2assimp_2_scene_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/scene.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/scene.h}}
+\mbox{\hyperlink{thirdparty_2assimp_2out_2install_2x64-_debug_2include_2assimp_2_scene_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{7 \textcolor{comment}{}}
+\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{12 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{17 \textcolor{comment}{}}
+\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{22 \textcolor{comment}{}}
+\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{27 \textcolor{comment}{}}
+\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef AI\_SCENE\_H\_INC}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define AI\_SCENE\_H\_INC}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <assimp/types.h>}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <assimp/texture.h>}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <assimp/mesh.h>}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <assimp/light.h>}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <assimp/camera.h>}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#include <assimp/material.h>}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#include <assimp/anim.h>}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#include <assimp/metadata.h>}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#  include <cstdlib>}}
+\DoxyCodeLine{64 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#pragma GCC diagnostic push}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#pragma GCC diagnostic ignored "{}-\/Wattributes"{}}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{81 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{82 \textcolor{keyword}{struct }ASSIMP\_API \mbox{\hyperlink{structai_node}{aiNode}} \{}
+\DoxyCodeLine{105     C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} mName;}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{108     C\_STRUCT \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} mTransformation;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{111     C\_STRUCT \mbox{\hyperlink{structai_node}{aiNode}}* mParent;}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{114     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumChildren;}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{117     C\_STRUCT \mbox{\hyperlink{structai_node}{aiNode}}** mChildren;}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{120     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumMeshes;}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{125     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}* mMeshes;}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{132     C\_STRUCT \mbox{\hyperlink{structai_metadata}{aiMetadata}}* mMetaData;}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{136     \mbox{\hyperlink{structai_node}{aiNode}}();}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{139     \textcolor{keyword}{explicit} \mbox{\hyperlink{structai_node}{aiNode}}(\textcolor{keyword}{const} std::string\& name);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{142     \mbox{\hyperlink{structai_node}{\string~aiNode}}();}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{152     \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{structai_node}{aiNode}}* FindNode(\textcolor{keyword}{const} \mbox{\hyperlink{structai_string}{aiString}}\& name)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{153         \textcolor{keywordflow}{return} FindNode(name.\mbox{\hyperlink{structai_string_a2e03d8ac36c4a65e4650088710bbdd6d}{data}});}
+\DoxyCodeLine{154     \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156     \textcolor{keyword}{inline} \mbox{\hyperlink{structai_node}{aiNode}}* FindNode(\textcolor{keyword}{const} \mbox{\hyperlink{structai_string}{aiString}}\& name) \{}
+\DoxyCodeLine{157         \textcolor{keywordflow}{return} FindNode(name.\mbox{\hyperlink{structai_string_a2e03d8ac36c4a65e4650088710bbdd6d}{data}});}
+\DoxyCodeLine{158     \}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{165     \textcolor{keyword}{const} \mbox{\hyperlink{structai_node}{aiNode}}* FindNode(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name) \textcolor{keyword}{const};}
+\DoxyCodeLine{166     \mbox{\hyperlink{structai_node}{aiNode}}* FindNode(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name);}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{173     \textcolor{keywordtype}{void} addChildren(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} numChildren, \mbox{\hyperlink{structai_node}{aiNode}} **children);}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{175 \};}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#pragma GCC diagnostic pop}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{188 \textcolor{comment}{}\textcolor{preprocessor}{\#define AI\_SCENE\_FLAGS\_INCOMPLETE   0x1}}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#define AI\_SCENE\_FLAGS\_VALIDATED    0x2}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define AI\_SCENE\_FLAGS\_VALIDATION\_WARNING   0x4}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#define AI\_SCENE\_FLAGS\_NON\_VERBOSE\_FORMAT   0x8}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define AI\_SCENE\_FLAGS\_TERRAIN 0x10}}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#define AI\_SCENE\_FLAGS\_ALLOW\_SHARED         0x20}}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{245 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{246 \textcolor{keyword}{struct }ASSIMP\_API \mbox{\hyperlink{structai_scene}{aiScene}} \{}
+\DoxyCodeLine{252     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mFlags;}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{261     C\_STRUCT \mbox{\hyperlink{structai_node}{aiNode}}* mRootNode;}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{264     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumMeshes;}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{273     C\_STRUCT \mbox{\hyperlink{structai_mesh}{aiMesh}}** mMeshes;}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{276     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumMaterials;}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{285     C\_STRUCT \mbox{\hyperlink{structai_material}{aiMaterial}}** mMaterials;}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{288     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumAnimations;}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{295     C\_STRUCT \mbox{\hyperlink{structai_animation}{aiAnimation}}** mAnimations;}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{298     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumTextures;}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{306     C\_STRUCT \mbox{\hyperlink{structai_texture}{aiTexture}}** mTextures;}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{311     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumLights;}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{318     C\_STRUCT \mbox{\hyperlink{structai_light}{aiLight}}** mLights;}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{323     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumCameras;}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{332     C\_STRUCT \mbox{\hyperlink{structai_camera}{aiCamera}}** mCameras;}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{341     C\_STRUCT \mbox{\hyperlink{structai_metadata}{aiMetadata}}* mMetaData;}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{345     C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} mName;}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{350     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mNumSkeletons;}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{355     C\_STRUCT \mbox{\hyperlink{structai_skeleton}{aiSkeleton}} **mSkeletons;}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{360     \mbox{\hyperlink{structai_scene}{aiScene}}();}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{363     \mbox{\hyperlink{structai_scene}{\string~aiScene}}();}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{367     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} HasMeshes()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{368         \textcolor{keywordflow}{return} mMeshes != \textcolor{keyword}{nullptr} \&\& mNumMeshes > 0;}
+\DoxyCodeLine{369     \}}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{373     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} HasMaterials()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{374         \textcolor{keywordflow}{return} mMaterials != \textcolor{keyword}{nullptr} \&\& mNumMaterials > 0;}
+\DoxyCodeLine{375     \}}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{378     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} HasLights()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{379         \textcolor{keywordflow}{return} mLights != \textcolor{keyword}{nullptr} \&\& mNumLights > 0;}
+\DoxyCodeLine{380     \}}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{383     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} HasTextures()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{384         \textcolor{keywordflow}{return} mTextures != \textcolor{keyword}{nullptr} \&\& mNumTextures > 0;}
+\DoxyCodeLine{385     \}}
+\DoxyCodeLine{386 }
+\DoxyCodeLine{388     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} HasCameras()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{389         \textcolor{keywordflow}{return} mCameras != \textcolor{keyword}{nullptr} \&\& mNumCameras > 0;}
+\DoxyCodeLine{390     \}}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{393     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} HasAnimations()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{394         \textcolor{keywordflow}{return} mAnimations != \textcolor{keyword}{nullptr} \&\& mNumAnimations > 0;}
+\DoxyCodeLine{395     \}}
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397     \textcolor{keywordtype}{bool} hasSkeletons()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{398         \textcolor{keywordflow}{return} mSkeletons != \textcolor{keyword}{nullptr} \&\& mNumSkeletons > 0;}
+\DoxyCodeLine{399     \}}
+\DoxyCodeLine{400 }
+\DoxyCodeLine{402     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* GetShortFilename(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename) \{}
+\DoxyCodeLine{403         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* lastSlash = strrchr(filename, \textcolor{charliteral}{'/'});}
+\DoxyCodeLine{404         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* lastBackSlash = strrchr(filename, \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});}
+\DoxyCodeLine{405         \textcolor{keywordflow}{if} (lastSlash < lastBackSlash) \{}
+\DoxyCodeLine{406             lastSlash = lastBackSlash;}
+\DoxyCodeLine{407         \}}
+\DoxyCodeLine{408         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* shortFilename = lastSlash != \textcolor{keyword}{nullptr} ? lastSlash + 1 : filename;}
+\DoxyCodeLine{409         \textcolor{keywordflow}{return} shortFilename;}
+\DoxyCodeLine{410     \}}
+\DoxyCodeLine{411 }
+\DoxyCodeLine{413     \textcolor{keyword}{const} \mbox{\hyperlink{structai_texture}{aiTexture}}* GetEmbeddedTexture(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{414         \textcolor{keywordflow}{return} GetEmbeddedTextureAndIndex(filename).first;}
+\DoxyCodeLine{415     \}}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{418     std::pair<const aiTexture*, int> GetEmbeddedTextureAndIndex(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{419         \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr}==filename) \{}
+\DoxyCodeLine{420             \textcolor{keywordflow}{return} std::make\_pair(\textcolor{keyword}{nullptr}, -\/1);}
+\DoxyCodeLine{421         \}}
+\DoxyCodeLine{422         \textcolor{comment}{// lookup using texture ID (if referenced like: "{}*1"{}, "{}*2"{}, etc.)}}
+\DoxyCodeLine{423         \textcolor{keywordflow}{if} (\textcolor{charliteral}{'*'} == *filename) \{}
+\DoxyCodeLine{424             \textcolor{keywordtype}{int} index = std::atoi(filename + 1);}
+\DoxyCodeLine{425             \textcolor{keywordflow}{if} (0 > index || mNumTextures <= \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\textcolor{keyword}{>}(index)) \{}
+\DoxyCodeLine{426                 \textcolor{keywordflow}{return} std::make\_pair(\textcolor{keyword}{nullptr}, -\/1);}
+\DoxyCodeLine{427             \}}
+\DoxyCodeLine{428             \textcolor{keywordflow}{return} std::make\_pair(mTextures[index], index);}
+\DoxyCodeLine{429         \}}
+\DoxyCodeLine{430         \textcolor{comment}{// lookup using filename}}
+\DoxyCodeLine{431         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* shortFilename = GetShortFilename(filename);}
+\DoxyCodeLine{432         \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == shortFilename) \{}
+\DoxyCodeLine{433             \textcolor{keywordflow}{return} std::make\_pair(\textcolor{keyword}{nullptr}, -\/1);}
+\DoxyCodeLine{434         \}}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < mNumTextures; i++) \{}
+\DoxyCodeLine{437             \textcolor{keyword}{const} \textcolor{keywordtype}{char}* shortTextureFilename = GetShortFilename(mTextures[i]-\/>mFilename.C\_Str());}
+\DoxyCodeLine{438             \textcolor{keywordflow}{if} (strcmp(shortTextureFilename, shortFilename) == 0) \{}
+\DoxyCodeLine{439                 \textcolor{keywordflow}{return} std::make\_pair(mTextures[i], \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(i));}
+\DoxyCodeLine{440             \}}
+\DoxyCodeLine{441         \}}
+\DoxyCodeLine{442         \textcolor{keywordflow}{return} std::make\_pair(\textcolor{keyword}{nullptr}, -\/1);}
+\DoxyCodeLine{443     \}}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{448     \textcolor{keywordtype}{void}* mPrivate;}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{450     \textcolor{keywordtype}{char}* mPrivate;}
+\DoxyCodeLine{451 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{452 }
+\DoxyCodeLine{453 \};}
+\DoxyCodeLine{454 }
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{456 \}}
+\DoxyCodeLine{457 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{458 }
+\DoxyCodeLine{459 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_SCENE\_H\_INC}}
+
+\end{DoxyCode}
