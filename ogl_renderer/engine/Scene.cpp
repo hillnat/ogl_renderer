@@ -1,6 +1,7 @@
 #include "scene.h"
 #include "glm/ext.hpp"
 #include "../renderer/renderer.h"
+
 void Scene::AddToScene(GameObject* go) {
 	gameObjects.push_back(go);
 }

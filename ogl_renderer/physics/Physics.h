@@ -17,6 +17,7 @@ public:
 
 	bool OverlapSphereSphere(vec3 posA, float radA, vec3 posB, float radB);
 	bool OverlapSpherePlane(vec3 spherePos, float sphereRadius, vec3 planePos, vec3 planeNormal);
+	bool OverlapSpherePlane(vec3 spherePos, float sphereRadius, vec3 planePos, vec3 planeNormal, Rigidbody rbToDepenetrate);
 	//bool OverlapSphereBox(const vec3 spherePos, const float sphereRadius, const vec3 boxPos, const vec3 boxSize);
 	bool OverlapSphereAABB(const vec3 spherePos, const float sphereRadius, const AABB aabb);
 

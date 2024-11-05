@@ -156,10 +156,10 @@ void FreeShader(Shader& shader) {
 void SetUniform(const Shader& shader, GLuint location, const mat4& value) {
 	glProgramUniformMatrix4fv(shader.program, location,1,GL_FALSE, glm::value_ptr(value));
 }
-void SetUniform(const Shader& shader, GLuint location, const Texture& value, int textureSlot) {
+void SetUniform(const Shader* shader, GLuint location, const Texture* value, int textureSlot) {
 	glActiveTexture(GL_TEXTURE0 + textureSlot);
-	glBindTexture(GL_TEXTURE_2D, value.handle);
-	glProgramUniform1i(shader.program, location, textureSlot);
+	glBindTexture(GL_TEXTURE_2D, value->handle);
+	glProgramUniform1i(shader->program, location, textureSlot);
 }
 void SetUniform(const Shader& shader, GLuint location, const vec4& value) {
 	glProgramUniform4fv(shader.program, location, 1, glm::value_ptr(value));

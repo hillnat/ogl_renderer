@@ -31,7 +31,9 @@ void Transform::SetRotation(const vec3 axis, const float angleDegrees) {
 	//LogTransform();
 }
 vec3 Transform::GetPosition() {
-	return vec3(matrix[3]);
+	vec3 pos = vec3(matrix[3]);
+	if (parent != nullptr) {pos += GetAccumParentPosition(this); }
+	return pos;
 }
 void Transform::LookAt(vec3 pos) {
 	matrix = glm::lookAt(GetPosition(), pos, vec3(0, 1, 0));
@@ -42,6 +44,13 @@ void Transform::LogTransform() {
 	std::cout << "Up      : " << Up().x      << " | " << Up().y      << " | " << Up().z      << " | " << std::endl;
 	std::cout << "Right   : " << Right().x   << " | " << Right().y   << " | " << Right().z   << " | " << std::endl;
 	std::cout << "-----------------------------------------------------------------" << std::endl;
+}
+vec3 Transform::GetAccumParentPosition(Transform* transform) {
+	if (transform->parent != nullptr) {
+		return GetAccumParentPosition(transform->parent);
+	} else {
+		return vec3(0, 0, 0);
+	}
 }
 
  

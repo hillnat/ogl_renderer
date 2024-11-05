@@ -4,6 +4,8 @@
 #include "../renderer/Camera.h"
 class Scene
 {
+private:
+	
 public:
 	Scene() {
 		gameObjects.clear();

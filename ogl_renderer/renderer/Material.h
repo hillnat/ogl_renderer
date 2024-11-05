@@ -8,4 +8,5 @@ public:
 		this->shader = shader;
 	}
 	Shader* shader;
+	void SetTexture(Texture* tex);
 };

@@ -65,7 +65,7 @@ void FreeShader(Shader& shader);
 #pragma endregion
 #pragma region Uniform Functions
 void SetUniform(const Shader& shader, GLuint location, const mat4& value);//For transforms
-void SetUniform(const Shader& shader, GLuint location, const Texture& value, int textureSlot);
+void SetUniform(const Shader* shader, GLuint location, const Texture* value, int textureSlot);
 void SetUniform(const Shader& shader, GLuint location, const vec4& value);//For color and quaternions
 void SetUniform(const Shader& shader, GLuint location, const vec3& value);//For rgb color and positions
 void SetUniform(const Shader& shader, GLuint location, int count, const vec3& values);//For rgb color and positions arrays
