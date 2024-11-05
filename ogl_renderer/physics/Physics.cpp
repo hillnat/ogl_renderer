@@ -78,7 +78,10 @@ bool Physics::OverlapSpherePlane(const vec3 spherePos, const float sphereRadius,
 	bool isPenetrating = (mag < sphereRadius);
 	if (isPenetrating) {
 		float penAmount = sphereRadius - mag;
+		vec3 oldPos = rbToDepenetrate.attachedBody->GetPosition();
 		rbToDepenetrate.attachedBody->TranslateGlobal(planeNormal * penAmount);
+		vec3 newPos = rbToDepenetrate.attachedBody->GetPosition();
+		std::cout << "Depenetrated | X : " << abs(oldPos.x - newPos.x) << " Y : " << abs(oldPos.y - newPos.y) << " Z : " << abs(oldPos.z - newPos.z) << std::endl;
 	}
 	return isPenetrating;
 }

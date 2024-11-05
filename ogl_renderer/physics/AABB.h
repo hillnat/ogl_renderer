@@ -2,7 +2,13 @@
 #include "glm/ext.hpp"//Vector math
 
 struct AABB {
+	/// <summary>
+	/// The center position of this AABB
+	/// </summary>
 	glm::vec3 pos;
+	/// <summary>
+	/// The half extents of our object
+	/// </summary>
 	glm::vec3 size;
 	AABB() {
 		pos = glm::vec3(0, 0, 0);

@@ -5,9 +5,10 @@
 #include <random>
 #include "glm/ext.hpp"
 #include <iostream>
+
 bool Context::Initialize(){
 	glfwInit();
-	window = glfwCreateWindow((int)TargetWindowSize.x, (int)TargetWindowSize.y, "Window", NULL, NULL);
+	window = glfwCreateWindow((int)TargetWindowSize.x, (int)TargetWindowSize.y, "Newton's Blender", NULL, NULL);
 	glfwMakeContextCurrent(window);
 	//glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 

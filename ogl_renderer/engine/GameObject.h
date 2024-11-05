@@ -34,6 +34,9 @@ public:
 		this->transform = Transform();
 		this->material = material;
 	}
+	~GameObject() {
+		std::cout << name << "is deconstructing" << std::endl;
+	}
 	const char* name;
 	Transform transform = Transform();
 	Mesh mesh;

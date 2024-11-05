@@ -4,15 +4,16 @@
 class Rigidbody;
 struct ColRbPair {
 	ColRbPair(Collider* c, Rigidbody* r) {
-		this->rigidbody = r;
-		this->collider = c;
+		this->attachedRigidbody = r;
+		this->attachedCollider = c;
 	}
 	ColRbPair(Rigidbody* r) {
-		this->rigidbody = r;
+		this->attachedRigidbody = r;
 	}
 	ColRbPair(Collider* c) {
-		this->collider = c;
+		this->attachedCollider = c;
 	}
-	Rigidbody* rigidbody= nullptr;
-	Collider* collider=nullptr;
+
+	Rigidbody* attachedRigidbody= nullptr;
+	Collider* attachedCollider=nullptr;
 };

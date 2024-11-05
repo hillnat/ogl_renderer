@@ -8,5 +8,9 @@ public:
 		this->shader = shader;
 	}
 	Shader* shader;
+	/// <summary>
+	/// Sets the texture of this material / shader
+	/// </summary>
+	/// <param name="tex">Texture to use</param>
 	void SetTexture(Texture* tex);
 };

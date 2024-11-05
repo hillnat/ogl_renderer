@@ -51,30 +51,127 @@ struct Light {
 };
 #pragma endregion
 #pragma region Meshes
+/// <summary>
+/// Builds a mesh
+/// </summary>
+/// <param name="verts">Vertex array</param>
+/// <param name="vertCount">Vertex count</param>
+/// <param name="indices">Index Array</param>
+/// <param name="indexCount">Index Count</param>
+/// <returns>The mesh built</returns>
 Mesh MakeMesh(const vertex* const verts, GLsizei vertCount, const GLuint* indices, const GLsizei indexCount);//GLsizei = GL Size Index
+/// <summary>
+/// Builds a mesh
+/// </summary>
+/// <param name="verts">Vertex Array</param>
+/// <param name="indices">Index Array</param>
+/// <returns>The mesh built</returns>
 Mesh MakeMesh(const vector<vertex> verts, const vector<GLuint> indices);
 //Geometry MakeGeometry(const vector<vertex> verts, const vector<GLuint> indices);
+/// <summary>
+/// Free a mesh from memory
+/// </summary>
+/// <param name="mesh">The mesh to free</param>
 void FreeMesh(Mesh& geo);
-void DrawMesh(const Shader& shader, const Mesh& geo);
+/// <summary>
+/// Render a given mesh
+/// </summary>
+/// <param name="shader">Shader program to use</param>
+/// <param name="mesh">The mesh to render</param>
+void DrawMesh(const Shader& shader, const Mesh& mesh);
 #pragma endregion
-#pragma region shader Functions
-Shader MakeShader(const char* vertshader, const char* fragshader);
-Shader MakeShader(const string& vertshader, const string& fragshader);
+#pragma region Shader Functions
+/// <summary>
+/// Builds a shader
+/// </summary>
+/// <param name="vertShader">The vertex shader to use</param>
+/// <param name="fragShader">The fragment shader to use</param>
+/// <returns>The shader built</returns>
+Shader MakeShader(const char* vertShader, const char* fragShader);
+/// <summary>
+/// Builds a shader
+/// </summary>
+/// <param name="vertShader">The vertex shader to use</param>
+/// <param name="fragShader">The fragment shader to use</param>
+/// <returns>The shader built</returns>
+Shader MakeShader(const string& vertShader, const string& fragShader);
+/// <summary>
+/// Load a shader from file
+/// </summary>
+/// <param name="vertPath">The path of the vertex shader to load</param>
+/// <param name="fragPath">The path of the fragment shader to load</param>
+/// <returns>The loaded shader</returns>
 Shader LoadShader(const char* vertPath, const char* fragPath);
+/// <summary>
+/// Frees a shader program from memory
+/// </summary>
+/// <param name="shader">The shader to free</param>
 void FreeShader(Shader& shader);
 #pragma endregion
 #pragma region Uniform Functions
-void SetUniform(const Shader& shader, GLuint location, const mat4& value);//For transforms
+/// <summary>
+/// Sets a shader program uniform with parameters for transforms
+/// </summary>
+/// <param name="shader">Shader to use</param>
+/// <param name="location">Uniform location in shader</param>
+/// <param name="value">glm::mat4 value to use</param>
+void SetUniform(const Shader& shader, GLuint location, const mat4& value);
+/// <summary>
+/// Sets a shader program uniform with parameters for textures
+/// </summary>
+/// <param name="shader">Shader to use</param>
+/// <param name="location">Uniform location in shader</param>
+/// <param name="value">Texture to use</param>
+/// <param name="textureSlot">The texture slot to set</param>
 void SetUniform(const Shader* shader, GLuint location, const Texture* value, int textureSlot);
-void SetUniform(const Shader& shader, GLuint location, const vec4& value);//For color and quaternions
-void SetUniform(const Shader& shader, GLuint location, const vec3& value);//For rgb color and positions
-void SetUniform(const Shader& shader, GLuint location, int count, const vec3& values);//For rgb color and positions arrays
+/// <summary>
+/// Sets a shader program uniform with parameters for color and quaternions
+/// </summary>
+/// <param name="shader">Shader to use</param>
+/// <param name="location">Uniform location in shader</param>
+/// <param name="value">glm::vec4 value to use</param>
+void SetUniform(const Shader& shader, GLuint location, const vec4& value);
+/// <summary>
+/// Sets a shader program uniform with parameters for rgb color and positions
+/// </summary>
+/// <param name="shader">Shader to use</param>
+/// <param name="location">Uniform location in shader</param>
+/// <param name="value">glm::vec3 value to use</param>
+void SetUniform(const Shader& shader, GLuint location, const vec3& value);
+/// <summary>
+/// Sets a shader program uniform, with parameters for rgb color and positions arrays
+/// </summary>
+/// <param name="shader">Shader to use</param>
+/// <param name="location">Uniform location in shader</param>
+/// <param name="count">Count of values in values array</param>
+/// <param name="values">glm::vec3 array values to use</param>
+void SetUniform(const Shader& shader, GLuint location, int count, const vec3& values);
 #pragma endregion
 #pragma region texture Functions
+/// <summary>
+/// Builds a texture
+/// </summary>
+/// <param name="width">Width of the texture in pixels</param>
+/// <param name="height">Height of the texture in pixels</param>
+/// <param name="channels">The channels</param>
+/// <param name="pixels">The pixels</param>
+/// <returns></returns>
 Texture MakeTexture(unsigned width, unsigned height, unsigned channels, const unsigned char* pixels);
+/// <summary>
+/// Free a texture from memory
+/// </summary>
+/// <param name="tex">The texture to free</param>
 void FreeTexture(Texture& tex);
+/// <summary>
+/// Loads a texture from file
+/// </summary>
+/// <param name="imagePath">The path of the texture</param>
+/// <returns>The loaded texture</returns>
 Texture LoadTexture(const char* imagePath);
 #pragma endregion
+/// <summary>
+/// Read from a file
+/// </summary>
+/// <param name="path">File path to use</param>
+/// <returns>File contents</returns>
 string ReadFile(const char* path);
-string ReadFile(string path);
-
