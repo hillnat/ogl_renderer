@@ -1,0 +1,18 @@
+digraph "Camera::viewMatrix"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="Camera::viewMatrix",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Uses glm::lookAt to build a view matrix from cameraTransform"];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="Transform::Forward",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transform.html#a3fbf814bbd069c57d1b3579a56893b3e",tooltip="Our local forward vector"];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="Transform::GetPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transform.html#a482ec8a49b08f224b2ec513dc27f47b5",tooltip="Gets the position of this transform"];
+  Node3 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="Transform::GetAccumParent\lPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transform.html#aa12429358147b70bdfd11af25a99f660",tooltip=" "];
+  Node4 -> Node4 [color="steelblue1",style="solid"];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="Transform::Up",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transform.html#ae0ce3a189b726c18e21c2eb1990f4464",tooltip="Our local up vector"];
+}

@@ -1,0 +1,25 @@
+\hypertarget{_diagnostics_8cpp_source}{}\doxysection{Diagnostics.\+cpp}
+\label{_diagnostics_8cpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/ogl\_renderer/engine/Diagnostics.cpp@{C:/Users/s239074/Documents/ogl\_renderer/ogl\_renderer/engine/Diagnostics.cpp}}
+\mbox{\hyperlink{_diagnostics_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_diagnostics_8h}{diagnostics.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}glew/glew.h"{}}}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00004}00004 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00005}\mbox{\hyperlink{namespace_diagnostics}{00005}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_diagnostics}{Diagnostics}} \{}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00006}\mbox{\hyperlink{namespace_diagnostics_a123bacc1da39ec478aa6e3f01530bb98}{00006}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_diagnostics_a123bacc1da39ec478aa6e3f01530bb98}{LogHardware}}() \{}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00007}00007         cout << \textcolor{stringliteral}{"{}OpenGL Version : "{}} << (\textcolor{keyword}{const} \textcolor{keywordtype}{char}*)glGetString(GL\_VERSION) << endl;\textcolor{comment}{//Char pointer is const bc we are reading form a compiled lib / macro}}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00008}00008         cout << \textcolor{stringliteral}{"{}GLEW Version   : "{}} << (\textcolor{keyword}{const} \textcolor{keywordtype}{char}*)glewGetString(GLEW\_VERSION) << endl;}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00009}00009         cout << \textcolor{stringliteral}{"{}GLSL Version   : "{}} << (\textcolor{keyword}{const} \textcolor{keywordtype}{char}*)glGetString(GL\_SHADING\_LANGUAGE\_VERSION) << endl;}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00010}00010         cout << \textcolor{stringliteral}{"{}GPU (Active)   : "{}} << (\textcolor{keyword}{const} \textcolor{keywordtype}{char}*)glGetString(GL\_RENDERER) << endl;}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00011}00011     \}}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00012}\mbox{\hyperlink{namespace_diagnostics_a610ebbc18458a8d08d626e5e883635b4}{00012}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_diagnostics_a610ebbc18458a8d08d626e5e883635b4}{CheckGLError}}()}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00013}00013     \{}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00014}00014         GLenum err;}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00015}00015         \textcolor{keywordflow}{while} ((err = glGetError()) != GL\_NO\_ERROR) \{}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00016}00016             std::cout << err << std::endl;}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00017}00017         \}}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00018}00018     \}}
+\DoxyCodeLine{\Hypertarget{_diagnostics_8cpp_source_l00019}00019 \}}
+
+\end{DoxyCode}

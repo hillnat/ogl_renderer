@@ -12,12 +12,10 @@ using glm::identity;
 class Transform
 {
 public:
-#pragma region Constructors  
 	Transform() {
 		this->matrix = identity<mat4>();
 		this->parent = nullptr;
 	}
-#pragma endregion
 	/// <summary>
 	/// This transforms parent transform
 	/// </summary>

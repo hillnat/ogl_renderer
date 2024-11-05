@@ -1,0 +1,484 @@
+\hypertarget{_renderer_8h}{}\doxysection{C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/ogl\+\_\+renderer/renderer/\+Renderer.h File Reference}
+\label{_renderer_8h}\index{C:/Users/s239074/Documents/ogl\_renderer/ogl\_renderer/renderer/Renderer.h@{C:/Users/s239074/Documents/ogl\_renderer/ogl\_renderer/renderer/Renderer.h}}
+{\ttfamily \#include \char`\"{}glew/glew.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}glm/glm.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Renderer.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structvertex}{vertex}}
+\item 
+struct \mbox{\hyperlink{struct_mesh}{Mesh}}
+\item 
+struct \mbox{\hyperlink{struct_shader}{Shader}}
+\item 
+struct \mbox{\hyperlink{struct_texture}{Texture}}
+\item 
+struct \mbox{\hyperlink{struct_light}{Light}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_mesh}{Mesh}} \mbox{\hyperlink{_renderer_8h_adf9593d997c74943c9176b08c9eaf5ba}{Make\+Mesh}} (const \mbox{\hyperlink{structvertex}{vertex}} $\ast$const verts, GLsizei vert\+Count, const GLuint $\ast$indices, const GLsizei index\+Count)
+\begin{DoxyCompactList}\small\item\em Builds a mesh  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_mesh}{Mesh}} \mbox{\hyperlink{_renderer_8h_aaa3d18276994ddea176f6fe95181c5eb}{Make\+Mesh}} (const vector$<$ \mbox{\hyperlink{structvertex}{vertex}} $>$ verts, const vector$<$ GLuint $>$ indices)
+\begin{DoxyCompactList}\small\item\em Builds a mesh  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_renderer_8h_a98b75a3588b0cf49035f2c6b1ff008f0}{Free\+Mesh}} (\mbox{\hyperlink{struct_mesh}{Mesh}} \&geo)
+\begin{DoxyCompactList}\small\item\em Free a mesh from memory  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_renderer_8h_a29771e363fa2dc03edb94a64277440ea}{Draw\+Mesh}} (const \mbox{\hyperlink{struct_shader}{Shader}} \&shader, const \mbox{\hyperlink{struct_mesh}{Mesh}} \&mesh)
+\begin{DoxyCompactList}\small\item\em Render a given mesh  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_shader}{Shader}} \mbox{\hyperlink{_renderer_8h_a0674084217f98c96fd3472c4f50a93da}{Make\+Shader}} (const char $\ast$vert\+Shader, const char $\ast$frag\+Shader)
+\begin{DoxyCompactList}\small\item\em Builds a shader  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_shader}{Shader}} \mbox{\hyperlink{_renderer_8h_a24835f94c1bdc58bdad9745211ee718c}{Make\+Shader}} (const string \&vert\+Shader, const string \&frag\+Shader)
+\begin{DoxyCompactList}\small\item\em Builds a shader  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_shader}{Shader}} \mbox{\hyperlink{_renderer_8h_a4538cb126a10be7197ec76db1fa3de08}{Load\+Shader}} (const char $\ast$vert\+Path, const char $\ast$frag\+Path)
+\begin{DoxyCompactList}\small\item\em Load a shader from file  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_renderer_8h_a3251568148869093a183e7e3990b9b33}{Free\+Shader}} (\mbox{\hyperlink{struct_shader}{Shader}} \&shader)
+\begin{DoxyCompactList}\small\item\em Frees a shader program from memory  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_renderer_8h_a7eea27f41e32dbf6703525ac0b7a1bb3}{Set\+Uniform}} (const \mbox{\hyperlink{struct_shader}{Shader}} \&shader, GLuint location, const mat4 \&value)
+\begin{DoxyCompactList}\small\item\em Sets a shader program uniform with parameters for transforms  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_renderer_8h_addd95b3ecc093b23e4b81620d57df122}{Set\+Uniform}} (const \mbox{\hyperlink{struct_shader}{Shader}} $\ast$shader, GLuint location, const \mbox{\hyperlink{struct_texture}{Texture}} $\ast$value, int texture\+Slot)
+\begin{DoxyCompactList}\small\item\em Sets a shader program uniform with parameters for textures  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_renderer_8h_a4c2e7bb4da8e0727d44a1f9c4292a777}{Set\+Uniform}} (const \mbox{\hyperlink{struct_shader}{Shader}} \&shader, GLuint location, const vec4 \&value)
+\begin{DoxyCompactList}\small\item\em Sets a shader program uniform with parameters for color and quaternions  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_renderer_8h_a556f63d5702890a71269adf0d4cb3274}{Set\+Uniform}} (const \mbox{\hyperlink{struct_shader}{Shader}} \&shader, GLuint location, const vec3 \&value)
+\begin{DoxyCompactList}\small\item\em Sets a shader program uniform with parameters for rgb color and positions  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_renderer_8h_a2e524b0bfa2a8edaacd1b69dd76e7602}{Set\+Uniform}} (const \mbox{\hyperlink{struct_shader}{Shader}} \&shader, GLuint location, int count, const vec3 \&values)
+\begin{DoxyCompactList}\small\item\em Sets a shader program uniform, with parameters for rgb color and positions arrays  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_texture}{Texture}} \mbox{\hyperlink{_renderer_8h_a4200fd24c96e771a51d8cb0caeb20cb3}{Make\+Texture}} (unsigned width, unsigned height, unsigned channels, const unsigned char $\ast$pixels)
+\begin{DoxyCompactList}\small\item\em Builds a texture  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_renderer_8h_aec674375d5f158b96528aa490e7cdd00}{Free\+Texture}} (\mbox{\hyperlink{struct_texture}{Texture}} \&tex)
+\begin{DoxyCompactList}\small\item\em Free a texture from memory  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_texture}{Texture}} \mbox{\hyperlink{_renderer_8h_aed1bb04bfe2f3e43871bb89c730b188b}{Load\+Texture}} (const char $\ast$image\+Path)
+\begin{DoxyCompactList}\small\item\em Loads a texture from file  \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{_renderer_8h_a570229cd3453d3b1a930a8ec7d6133e5}{Read\+File}} (const char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Read from a file  \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_renderer_8h_a29771e363fa2dc03edb94a64277440ea}\label{_renderer_8h_a29771e363fa2dc03edb94a64277440ea}} 
+\index{Renderer.h@{Renderer.h}!DrawMesh@{DrawMesh}}
+\index{DrawMesh@{DrawMesh}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{DrawMesh()}{DrawMesh()}}
+{\footnotesize\ttfamily void Draw\+Mesh (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_shader}{Shader}} \&}]{shader,  }\item[{const \mbox{\hyperlink{struct_mesh}{Mesh}} \&}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Render a given mesh  
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \mbox{\hyperlink{struct_shader}{Shader}} program to use\\
+\hline
+{\em mesh} & The mesh to render\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00095}{95}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{_renderer_8h_a98b75a3588b0cf49035f2c6b1ff008f0}\label{_renderer_8h_a98b75a3588b0cf49035f2c6b1ff008f0}} 
+\index{Renderer.h@{Renderer.h}!FreeMesh@{FreeMesh}}
+\index{FreeMesh@{FreeMesh}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{FreeMesh()}{FreeMesh()}}
+{\footnotesize\ttfamily void Free\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh}{Mesh}} \&}]{geo }\end{DoxyParamCaption})}
+
+
+
+Free a mesh from memory  
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & The mesh to free\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{_renderer_8h_a3251568148869093a183e7e3990b9b33}\label{_renderer_8h_a3251568148869093a183e7e3990b9b33}} 
+\index{Renderer.h@{Renderer.h}!FreeShader@{FreeShader}}
+\index{FreeShader@{FreeShader}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{FreeShader()}{FreeShader()}}
+{\footnotesize\ttfamily void Free\+Shader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_shader}{Shader}} \&}]{shader }\end{DoxyParamCaption})}
+
+
+
+Frees a shader program from memory  
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & The shader to free\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00150}{150}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+\mbox{\Hypertarget{_renderer_8h_aec674375d5f158b96528aa490e7cdd00}\label{_renderer_8h_aec674375d5f158b96528aa490e7cdd00}} 
+\index{Renderer.h@{Renderer.h}!FreeTexture@{FreeTexture}}
+\index{FreeTexture@{FreeTexture}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{FreeTexture()}{FreeTexture()}}
+{\footnotesize\ttfamily void Free\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_texture}{Texture}} \&}]{tex }\end{DoxyParamCaption})}
+
+
+
+Free a texture from memory  
+
+
+\begin{DoxyParams}{Parameters}
+{\em tex} & The texture to free\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00204}{204}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{_renderer_8h_a4538cb126a10be7197ec76db1fa3de08}\label{_renderer_8h_a4538cb126a10be7197ec76db1fa3de08}} 
+\index{Renderer.h@{Renderer.h}!LoadShader@{LoadShader}}
+\index{LoadShader@{LoadShader}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{LoadShader()}{LoadShader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_shader}{Shader}} Load\+Shader (\begin{DoxyParamCaption}\item[{const char $\ast$}]{vert\+Path,  }\item[{const char $\ast$}]{frag\+Path }\end{DoxyParamCaption})}
+
+
+
+Load a shader from file  
+
+
+\begin{DoxyParams}{Parameters}
+{\em vert\+Path} & The path of the vertex shader to load\\
+\hline
+{\em frag\+Path} & The path of the fragment shader to load\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The loaded shader
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00145}{145}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{_renderer_8h_aed1bb04bfe2f3e43871bb89c730b188b}\label{_renderer_8h_aed1bb04bfe2f3e43871bb89c730b188b}} 
+\index{Renderer.h@{Renderer.h}!LoadTexture@{LoadTexture}}
+\index{LoadTexture@{LoadTexture}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{LoadTexture()}{LoadTexture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_texture}{Texture}} Load\+Texture (\begin{DoxyParamCaption}\item[{const char $\ast$}]{image\+Path }\end{DoxyParamCaption})}
+
+
+
+Loads a texture from file  
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Path} & The path of the texture\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The loaded texture
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00208}{208}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{_renderer_8h_aaa3d18276994ddea176f6fe95181c5eb}\label{_renderer_8h_aaa3d18276994ddea176f6fe95181c5eb}} 
+\index{Renderer.h@{Renderer.h}!MakeMesh@{MakeMesh}}
+\index{MakeMesh@{MakeMesh}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{MakeMesh()}{MakeMesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_mesh}{Mesh}} Make\+Mesh (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{structvertex}{vertex}} $>$}]{verts,  }\item[{const vector$<$ GLuint $>$}]{indices }\end{DoxyParamCaption})}
+
+
+
+Builds a mesh  
+
+
+\begin{DoxyParams}{Parameters}
+{\em verts} & Vertex Array\\
+\hline
+{\em indices} & Index Array\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The mesh built
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{_renderer_8h_adf9593d997c74943c9176b08c9eaf5ba}\label{_renderer_8h_adf9593d997c74943c9176b08c9eaf5ba}} 
+\index{Renderer.h@{Renderer.h}!MakeMesh@{MakeMesh}}
+\index{MakeMesh@{MakeMesh}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{MakeMesh()}{MakeMesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_mesh}{Mesh}} Make\+Mesh (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvertex}{vertex}} $\ast$const}]{verts,  }\item[{GLsizei}]{vert\+Count,  }\item[{const GLuint $\ast$}]{indices,  }\item[{const GLsizei}]{index\+Count }\end{DoxyParamCaption})}
+
+
+
+Builds a mesh  
+
+
+\begin{DoxyParams}{Parameters}
+{\em verts} & Vertex array\\
+\hline
+{\em vert\+Count} & Vertex count\\
+\hline
+{\em indices} & Index Array\\
+\hline
+{\em index\+Count} & Index Count\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The mesh built
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{_renderer_8h_a0674084217f98c96fd3472c4f50a93da}\label{_renderer_8h_a0674084217f98c96fd3472c4f50a93da}} 
+\index{Renderer.h@{Renderer.h}!MakeShader@{MakeShader}}
+\index{MakeShader@{MakeShader}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{MakeShader()}{MakeShader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_shader}{Shader}} Make\+Shader (\begin{DoxyParamCaption}\item[{const char $\ast$}]{vert\+Shader,  }\item[{const char $\ast$}]{frag\+Shader }\end{DoxyParamCaption})}
+
+
+
+Builds a shader  
+
+
+\begin{DoxyParams}{Parameters}
+{\em vert\+Shader} & The vertex shader to use\\
+\hline
+{\em frag\+Shader} & The fragment shader to use\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The shader built
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00117}{117}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{_renderer_8h_a24835f94c1bdc58bdad9745211ee718c}\label{_renderer_8h_a24835f94c1bdc58bdad9745211ee718c}} 
+\index{Renderer.h@{Renderer.h}!MakeShader@{MakeShader}}
+\index{MakeShader@{MakeShader}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{MakeShader()}{MakeShader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_shader}{Shader}} Make\+Shader (\begin{DoxyParamCaption}\item[{const string \&}]{vert\+Shader,  }\item[{const string \&}]{frag\+Shader }\end{DoxyParamCaption})}
+
+
+
+Builds a shader  
+
+
+\begin{DoxyParams}{Parameters}
+{\em vert\+Shader} & The vertex shader to use\\
+\hline
+{\em frag\+Shader} & The fragment shader to use\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The shader built
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00142}{142}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{_renderer_8h_a4200fd24c96e771a51d8cb0caeb20cb3}\label{_renderer_8h_a4200fd24c96e771a51d8cb0caeb20cb3}} 
+\index{Renderer.h@{Renderer.h}!MakeTexture@{MakeTexture}}
+\index{MakeTexture@{MakeTexture}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{MakeTexture()}{MakeTexture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_texture}{Texture}} Make\+Texture (\begin{DoxyParamCaption}\item[{unsigned}]{width,  }\item[{unsigned}]{height,  }\item[{unsigned}]{channels,  }\item[{const unsigned char $\ast$}]{pixels }\end{DoxyParamCaption})}
+
+
+
+Builds a texture  
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the texture in pixels\\
+\hline
+{\em height} & Height of the texture in pixels\\
+\hline
+{\em channels} & The channels\\
+\hline
+{\em pixels} & The pixels\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00175}{175}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{_renderer_8h_a570229cd3453d3b1a930a8ec7d6133e5}\label{_renderer_8h_a570229cd3453d3b1a930a8ec7d6133e5}} 
+\index{Renderer.h@{Renderer.h}!ReadFile@{ReadFile}}
+\index{ReadFile@{ReadFile}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{ReadFile()}{ReadFile()}}
+{\footnotesize\ttfamily string Read\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path }\end{DoxyParamCaption})}
+
+
+
+Read from a file  
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & File path to use\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+File contents
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00225}{225}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 14
+\mbox{\Hypertarget{_renderer_8h_a7eea27f41e32dbf6703525ac0b7a1bb3}\label{_renderer_8h_a7eea27f41e32dbf6703525ac0b7a1bb3}} 
+\index{Renderer.h@{Renderer.h}!SetUniform@{SetUniform}}
+\index{SetUniform@{SetUniform}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{SetUniform()}{SetUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily void Set\+Uniform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_shader}{Shader}} \&}]{shader,  }\item[{GLuint}]{location,  }\item[{const mat4 \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Sets a shader program uniform with parameters for transforms  
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \mbox{\hyperlink{struct_shader}{Shader}} to use\\
+\hline
+{\em location} & Uniform location in shader\\
+\hline
+{\em value} & glm\+::mat4 value to use\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00156}{156}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{_renderer_8h_a556f63d5702890a71269adf0d4cb3274}\label{_renderer_8h_a556f63d5702890a71269adf0d4cb3274}} 
+\index{Renderer.h@{Renderer.h}!SetUniform@{SetUniform}}
+\index{SetUniform@{SetUniform}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{SetUniform()}{SetUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily void Set\+Uniform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_shader}{Shader}} \&}]{shader,  }\item[{GLuint}]{location,  }\item[{const vec3 \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Sets a shader program uniform with parameters for rgb color and positions  
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \mbox{\hyperlink{struct_shader}{Shader}} to use\\
+\hline
+{\em location} & Uniform location in shader\\
+\hline
+{\em value} & glm\+::vec3 value to use\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00167}{167}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+\mbox{\Hypertarget{_renderer_8h_a4c2e7bb4da8e0727d44a1f9c4292a777}\label{_renderer_8h_a4c2e7bb4da8e0727d44a1f9c4292a777}} 
+\index{Renderer.h@{Renderer.h}!SetUniform@{SetUniform}}
+\index{SetUniform@{SetUniform}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{SetUniform()}{SetUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily void Set\+Uniform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_shader}{Shader}} \&}]{shader,  }\item[{GLuint}]{location,  }\item[{const vec4 \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Sets a shader program uniform with parameters for color and quaternions  
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \mbox{\hyperlink{struct_shader}{Shader}} to use\\
+\hline
+{\em location} & Uniform location in shader\\
+\hline
+{\em value} & glm\+::vec4 value to use\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+\mbox{\Hypertarget{_renderer_8h_a2e524b0bfa2a8edaacd1b69dd76e7602}\label{_renderer_8h_a2e524b0bfa2a8edaacd1b69dd76e7602}} 
+\index{Renderer.h@{Renderer.h}!SetUniform@{SetUniform}}
+\index{SetUniform@{SetUniform}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{SetUniform()}{SetUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily void Set\+Uniform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_shader}{Shader}} \&}]{shader,  }\item[{GLuint}]{location,  }\item[{int}]{count,  }\item[{const vec3 \&}]{values }\end{DoxyParamCaption})}
+
+
+
+Sets a shader program uniform, with parameters for rgb color and positions arrays  
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \mbox{\hyperlink{struct_shader}{Shader}} to use\\
+\hline
+{\em location} & Uniform location in shader\\
+\hline
+{\em count} & Count of values in values array\\
+\hline
+{\em values} & glm\+::vec3 array values to use\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+
+\mbox{\Hypertarget{_renderer_8h_addd95b3ecc093b23e4b81620d57df122}\label{_renderer_8h_addd95b3ecc093b23e4b81620d57df122}} 
+\index{Renderer.h@{Renderer.h}!SetUniform@{SetUniform}}
+\index{SetUniform@{SetUniform}!Renderer.h@{Renderer.h}}
+\doxysubsubsection{\texorpdfstring{SetUniform()}{SetUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily void Set\+Uniform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_shader}{Shader}} $\ast$}]{shader,  }\item[{GLuint}]{location,  }\item[{const \mbox{\hyperlink{struct_texture}{Texture}} $\ast$}]{value,  }\item[{int}]{texture\+Slot }\end{DoxyParamCaption})}
+
+
+
+Sets a shader program uniform with parameters for textures  
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \mbox{\hyperlink{struct_shader}{Shader}} to use\\
+\hline
+{\em location} & Uniform location in shader\\
+\hline
+{\em value} & \mbox{\hyperlink{struct_texture}{Texture}} to use\\
+\hline
+{\em texture\+Slot} & The texture slot to set\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
+

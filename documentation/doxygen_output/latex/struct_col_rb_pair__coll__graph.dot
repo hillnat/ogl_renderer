@@ -1,0 +1,19 @@
+digraph "ColRbPair"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="ColRbPair",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" attachedRigidbody" ];
+  Node2 [label="Rigidbody",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_rigidbody.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" attachedTransform" ];
+  Node3 [label="Transform",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_transform.html",tooltip=" "];
+  Node3 -> Node3 [dir="back",color="darkorchid3",style="dashed",label=" parent" ];
+  Node4 -> Node3 [dir="back",color="darkorchid3",style="dashed",label=" matrix" ];
+  Node4 [label="mat4",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" velocity" ];
+  Node5 [label="vec3",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" attachedCollider" ];
+  Node6 [label="Collider",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_collider.html",tooltip=" "];
+}

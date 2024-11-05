@@ -1,0 +1,172 @@
+\hypertarget{_physics_8cpp_source}{}\doxysection{Physics.\+cpp}
+\label{_physics_8cpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/ogl\_renderer/physics/Physics.cpp@{C:/Users/s239074/Documents/ogl\_renderer/ogl\_renderer/physics/Physics.cpp}}
+\mbox{\hyperlink{_physics_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_physics_8h}{Physics.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00003}\mbox{\hyperlink{class_physics_a7a0fea62b1d2a36f3fbf9d09901da0c6}{00003}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_physics_a7a0fea62b1d2a36f3fbf9d09901da0c6}{Physics::AddColRbPair}}(\mbox{\hyperlink{struct_col_rb_pair}{ColRbPair}}* crp) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00004}00004     \mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}.push\_back(crp);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00005}00005 \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00006}\mbox{\hyperlink{class_physics_a5dcd928dfbdca3feaefc1d9ca070683a}{00006}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_physics_a5dcd928dfbdca3feaefc1d9ca070683a}{Physics::UpdateAllBodies}}(\textcolor{keywordtype}{float} fixedDeltaTime) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00007}00007     \textcolor{comment}{//Tell RBs to apply their velocity}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00008}00008     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}.size() == 0) \{ \textcolor{keywordflow}{return}; \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00009}00009     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}.size(); i++) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00010}00010         \textcolor{keywordflow}{if} ((*\mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[i]).attachedRigidbody==\textcolor{keyword}{nullptr}) \{ \textcolor{keywordflow}{continue}; \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00011}00011         \textcolor{keywordflow}{if} ((*\mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[i]).attachedRigidbody-\/>isStatic) \{ \textcolor{keywordflow}{continue}; \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00012}00012         (*\mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[i]).attachedRigidbody-\/>UpdateBody(fixedDeltaTime);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00013}00013     \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00014}00014     \textcolor{comment}{//Collision checks}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00015}00015     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}.size()-\/1; i++) \{\textcolor{comment}{//Loop with logic to avoid double checking}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00017}00017         \mbox{\hyperlink{class_collider}{Collider}}* colA = \mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[i]-\/>attachedCollider;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00018}00018         \textcolor{keywordflow}{if} (colA == \textcolor{keyword}{nullptr}) \{ \textcolor{keywordflow}{continue}; \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00020}00020         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = i+1; k < \mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}.size(); k++) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00021}00021             \textcolor{keywordflow}{if} (i == k) \{ \textcolor{keywordflow}{continue}; \}\textcolor{comment}{//Cant collide with self}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00023}00023             \mbox{\hyperlink{class_collider}{Collider}}* colB = \mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[k]-\/>attachedCollider;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00024}00024             \textcolor{keywordflow}{if} (colB == \textcolor{keyword}{nullptr}) \{ \textcolor{keywordflow}{continue}; \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00025}00025             }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00026}00026             \textcolor{keywordflow}{switch} (colA-\/>\mbox{\hyperlink{class_collider_a5ccaa4b4449d6e89b1ddca581225343d}{colliderShape}}) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00027}00027                 \textcolor{keywordflow}{case} ColliderShapes::Sphere:}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00028}00028                     \textcolor{keywordflow}{switch} (colB-\/>\mbox{\hyperlink{class_collider_a5ccaa4b4449d6e89b1ddca581225343d}{colliderShape}}) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00029}00029                         \textcolor{keywordflow}{case} ColliderShapes::Sphere:}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00030}00030                             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_physics_aa662da4d0f96ee8fd41d526cc2ef2c40}{OverlapSphereSphere}}(\mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[i]-\/>attachedRigidbody-\/>attachedTransform-\/>GetPosition(), 0.5f, \mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[k]-\/>attachedRigidbody-\/>attachedTransform-\/>GetPosition(), 0.5f)) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00031}00031                                 \mbox{\hyperlink{class_physics_aa343c30848ec0030d0c73719cbcabc05}{ResolveSphereSphere}}(\mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[i]-\/>attachedRigidbody, \mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[k]-\/>attachedRigidbody);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00032}00032                             \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00033}00033                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00034}00034                         \textcolor{keywordflow}{case} ColliderShapes::Plane:}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00035}00035                             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_physics_a5e74480371f8f0d42774b882c231006f}{OverlapSpherePlane}}(\mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[i]-\/>attachedRigidbody-\/>attachedTransform-\/>GetPosition(), 0.5f, \mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[k]-\/>attachedRigidbody-\/>attachedTransform-\/>GetPosition(), \mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[k]-\/>attachedRigidbody-\/>attachedTransform-\/>Up(), *\mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[i]-\/>attachedRigidbody)) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00036}00036                                 \mbox{\hyperlink{class_physics_a736d261010f60931a23fb0ce91700225}{ResolveSpherePlane}}(\mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[i]-\/>attachedRigidbody, \mbox{\hyperlink{class_physics_ad8c5ec4d7b22aa159195728e14b478cb}{colRbPairs}}[k]-\/>attachedRigidbody);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00037}00037                             \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00038}00038                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00039}00039                         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00040}00040                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00041}00041                     \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00042}00042                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00043}00043                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00044}00044                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00045}00045             \}   }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00046}00046         \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00047}00047     \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00048}00048 \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00049}00049 \textcolor{preprocessor}{\#pragma region Collision Detection}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00050}\mbox{\hyperlink{class_physics_aa662da4d0f96ee8fd41d526cc2ef2c40}{00050}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_physics_aa662da4d0f96ee8fd41d526cc2ef2c40}{Physics::OverlapSphereSphere}}(\textcolor{keyword}{const} vec3 posA, \textcolor{keyword}{const} \textcolor{keywordtype}{float} radA, \textcolor{keyword}{const} vec3 posB, \textcolor{keyword}{const} \textcolor{keywordtype}{float} radB) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00051}00051     \textcolor{keywordtype}{float} dist = sqrtf(}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00052}00052         (posA.x -\/ posB.x) * (posA.x -\/ posB.x) +}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00053}00053         (posA.y -\/ posB.y) * (posA.y -\/ posB.y) +}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00054}00054         (posA.z -\/ posB.z) * (posA.z -\/ posB.z));}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00055}00055     \textcolor{keywordflow}{return} ((radA + radB) > dist);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00056}00056 \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00057}\mbox{\hyperlink{class_physics_a5e74480371f8f0d42774b882c231006f}{00057}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_physics_a5e74480371f8f0d42774b882c231006f}{Physics::OverlapSpherePlane}}(\textcolor{keyword}{const} vec3 spherePos, \textcolor{keyword}{const} \textcolor{keywordtype}{float} sphereRadius, \textcolor{keyword}{const} vec3 planePos, \textcolor{keyword}{const} vec3 planeNormal) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00058}00058     \textcolor{comment}{//Collision between a sphere and an infinite-\/depth plane}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00060}00060     vec3 dist = vec3(}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00061}00061         (spherePos.x -\/ planePos.x),}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00062}00062         (spherePos.y -\/ planePos.y),}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00063}00063         (spherePos.z -\/ planePos.z));}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00064}00064     vec3 distNorm = dist * planeNormal;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00065}00065     \textcolor{keywordtype}{float} mag = distNorm.x + distNorm.y + distNorm.z;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00066}00066     \textcolor{keywordtype}{bool} isPenetrating = (mag < sphereRadius);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00067}00067     \textcolor{keywordflow}{return} isPenetrating;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00068}00068 \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00069}\mbox{\hyperlink{class_physics_a2da5a63c31a377c4feb2fb20e23aea09}{00069}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_physics_a5e74480371f8f0d42774b882c231006f}{Physics::OverlapSpherePlane}}(\textcolor{keyword}{const} vec3 spherePos, \textcolor{keyword}{const} \textcolor{keywordtype}{float} sphereRadius, \textcolor{keyword}{const} vec3 planePos, \textcolor{keyword}{const} vec3 planeNormal, \mbox{\hyperlink{class_rigidbody}{Rigidbody}} rbToDepenetrate) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00070}00070     \textcolor{comment}{//Collision between a sphere and an infinite-\/depth plane}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00072}00072     vec3 dist = vec3(}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00073}00073         (spherePos.x -\/ planePos.x),}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00074}00074         (spherePos.y -\/ planePos.y),}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00075}00075         (spherePos.z -\/ planePos.z));}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00076}00076     vec3 distNorm = dist * planeNormal;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00077}00077     \textcolor{keywordtype}{float} mag = distNorm.x + distNorm.y + distNorm.z;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00078}00078     \textcolor{keywordtype}{bool} isPenetrating = (mag < sphereRadius);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00079}00079     \textcolor{keywordflow}{if} (isPenetrating) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00080}00080         \textcolor{keywordtype}{float} penAmount = sphereRadius -\/ mag;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00081}00081         vec3 oldPos = rbToDepenetrate.\mbox{\hyperlink{class_rigidbody_ae72c531ed1c6b56f60ed4f62c7870f90}{attachedTransform}}-\/>\mbox{\hyperlink{class_transform_a482ec8a49b08f224b2ec513dc27f47b5}{GetPosition}}();}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00082}00082         rbToDepenetrate.\mbox{\hyperlink{class_rigidbody_ae72c531ed1c6b56f60ed4f62c7870f90}{attachedTransform}}-\/>\mbox{\hyperlink{class_transform_abd54bc9cc0def3dd94cce058b49082b8}{TranslateGlobal}}(planeNormal * penAmount);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00083}00083         vec3 newPos = rbToDepenetrate.\mbox{\hyperlink{class_rigidbody_ae72c531ed1c6b56f60ed4f62c7870f90}{attachedTransform}}-\/>\mbox{\hyperlink{class_transform_a482ec8a49b08f224b2ec513dc27f47b5}{GetPosition}}();}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00084}00084         std::cout << \textcolor{stringliteral}{"{}Depenetrated | X : "{}} << abs(oldPos.x -\/ newPos.x) << \textcolor{stringliteral}{"{} Y : "{}} << abs(oldPos.y -\/ newPos.y) << \textcolor{stringliteral}{"{} Z : "{}} << abs(oldPos.z -\/ newPos.z) << std::endl;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00085}00085     \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00086}00086     \textcolor{keywordflow}{return} isPenetrating;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00087}00087 \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00088}\mbox{\hyperlink{class_physics_a3c5e85a55bbff533b9b4016da4389eb3}{00088}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_physics_a3c5e85a55bbff533b9b4016da4389eb3}{Physics::OverlapSphereAABB}}(\textcolor{keyword}{const} vec3 spherePos, \textcolor{keyword}{const} \textcolor{keywordtype}{float} sphereRadius, \textcolor{keyword}{const} \mbox{\hyperlink{struct_a_a_b_b}{AABB}} aabb) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00089}00089     \textcolor{comment}{//Get point on edge of AABB}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00090}00090     vec3 point = \mbox{\hyperlink{class_physics_aefefcb8706ba7e6178ae14c7dfe3e9cc}{GetClosestPointToAABB}}(spherePos, aabb);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00091}00091     \textcolor{comment}{//Sphere to (point = sphere where r=0)}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00092}00092     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_physics_aa662da4d0f96ee8fd41d526cc2ef2c40}{OverlapSphereSphere}}(spherePos, sphereRadius, point, 0);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00093}00093 \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00094}00094 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00096}00096 \textcolor{preprocessor}{\#pragma region Collision Resolution}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00097}00097 \textcolor{comment}{//Resolve collision between two RBs assumed as spheres.}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00098}\mbox{\hyperlink{class_physics_aa343c30848ec0030d0c73719cbcabc05}{00098}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_physics_aa343c30848ec0030d0c73719cbcabc05}{Physics::ResolveSphereSphere}}(\mbox{\hyperlink{class_rigidbody}{Rigidbody}}* sphereA, \mbox{\hyperlink{class_rigidbody}{Rigidbody}}* sphereB) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00099}00099     \textcolor{keywordflow}{if} (sphereA-\/>\mbox{\hyperlink{class_rigidbody_aac501b7f51395b8ec3204b0353c91db0}{isStatic}} || sphereB-\/>\mbox{\hyperlink{class_rigidbody_aac501b7f51395b8ec3204b0353c91db0}{isStatic}}) \{\textcolor{comment}{//If either are static, set flip vel of whichever is not static}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00100}00100         \textcolor{keywordflow}{if} (!sphereA-\/>\mbox{\hyperlink{class_rigidbody_aac501b7f51395b8ec3204b0353c91db0}{isStatic}}) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00101}00101             sphereA-\/>\mbox{\hyperlink{class_rigidbody_a4e7b75373c2a77e70cad1864c3dfd830}{velocity}} *= -\/1.F;      }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00102}00102         \}\textcolor{keywordflow}{if} (!sphereB-\/>\mbox{\hyperlink{class_rigidbody_aac501b7f51395b8ec3204b0353c91db0}{isStatic}}) \{ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00103}00103             sphereB-\/>\mbox{\hyperlink{class_rigidbody_a4e7b75373c2a77e70cad1864c3dfd830}{velocity}} *= -\/1.F;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00104}00104         \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00105}00105         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00106}00106     \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00107}00107     vec3 relVel = sphereA-\/>\mbox{\hyperlink{class_rigidbody_a4e7b75373c2a77e70cad1864c3dfd830}{velocity}} -\/ sphereB-\/>\mbox{\hyperlink{class_rigidbody_a4e7b75373c2a77e70cad1864c3dfd830}{velocity}};}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00108}00108     vec3 colNorm = normalize(sphereA-\/>\mbox{\hyperlink{class_rigidbody_ae72c531ed1c6b56f60ed4f62c7870f90}{attachedTransform}}-\/>\mbox{\hyperlink{class_transform_a482ec8a49b08f224b2ec513dc27f47b5}{GetPosition}}() -\/ sphereB-\/>\mbox{\hyperlink{class_rigidbody_ae72c531ed1c6b56f60ed4f62c7870f90}{attachedTransform}}-\/>\mbox{\hyperlink{class_transform_a482ec8a49b08f224b2ec513dc27f47b5}{GetPosition}}());}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00110}00110     \textcolor{keywordtype}{float} scaledMassSum = ((1.f / sphereA-\/>\mbox{\hyperlink{class_rigidbody_a0ff47d17bcd8629f60b5b36de8a5357c}{mass}}) + (1.f / sphereB-\/>\mbox{\hyperlink{class_rigidbody_a0ff47d17bcd8629f60b5b36de8a5357c}{mass}}));}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00111}00111     \textcolor{keywordtype}{float} joules = dot(2.f * relVel, colNorm) / dot(colNorm, colNorm * scaledMassSum);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00113}00113     sphereA-\/>\mbox{\hyperlink{class_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2}{AddForce}}(-\/joules * colNorm);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00114}00114     sphereB-\/>\mbox{\hyperlink{class_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2}{AddForce}}(joules * colNorm);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00115}00115 \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00116}00116 \textcolor{comment}{//Resolve collision between an assumed sphere RB, and a assumed plane RB}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00117}\mbox{\hyperlink{class_physics_a736d261010f60931a23fb0ce91700225}{00117}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_physics_a736d261010f60931a23fb0ce91700225}{Physics::ResolveSpherePlane}}(\mbox{\hyperlink{class_rigidbody}{Rigidbody}}* sphere, \mbox{\hyperlink{class_rigidbody}{Rigidbody}}* plane) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00118}00118     \textcolor{keywordflow}{if} (sphere-\/>\mbox{\hyperlink{class_rigidbody_aac501b7f51395b8ec3204b0353c91db0}{isStatic}} || plane-\/>\mbox{\hyperlink{class_rigidbody_aac501b7f51395b8ec3204b0353c91db0}{isStatic}}) \{\textcolor{comment}{//If either are static, set flip vel of whichever is not static}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00119}00119         \textcolor{keywordflow}{if} (!sphere-\/>\mbox{\hyperlink{class_rigidbody_aac501b7f51395b8ec3204b0353c91db0}{isStatic}}) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00120}00120             sphere-\/>\mbox{\hyperlink{class_rigidbody_a4e7b75373c2a77e70cad1864c3dfd830}{velocity}} *= -\/1.F;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00121}00121         \}\textcolor{keywordflow}{if} (!plane-\/>\mbox{\hyperlink{class_rigidbody_aac501b7f51395b8ec3204b0353c91db0}{isStatic}}) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00122}00122             plane-\/>\mbox{\hyperlink{class_rigidbody_a4e7b75373c2a77e70cad1864c3dfd830}{velocity}} *= -\/1.F;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00123}00123         \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00124}00124         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00125}00125     \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00126}00126     vec3 relVel = sphere-\/>\mbox{\hyperlink{class_rigidbody_a4e7b75373c2a77e70cad1864c3dfd830}{velocity}} -\/ plane-\/>\mbox{\hyperlink{class_rigidbody_a4e7b75373c2a77e70cad1864c3dfd830}{velocity}};}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00127}00127     vec3 colNorm = normalize(sphere-\/>\mbox{\hyperlink{class_rigidbody_ae72c531ed1c6b56f60ed4f62c7870f90}{attachedTransform}}-\/>\mbox{\hyperlink{class_transform_a482ec8a49b08f224b2ec513dc27f47b5}{GetPosition}}() -\/ plane-\/>\mbox{\hyperlink{class_rigidbody_ae72c531ed1c6b56f60ed4f62c7870f90}{attachedTransform}}-\/>\mbox{\hyperlink{class_transform_a482ec8a49b08f224b2ec513dc27f47b5}{GetPosition}}());}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00129}00129     \textcolor{keywordtype}{float} scaledMassSum = ((1.f / sphere-\/>\mbox{\hyperlink{class_rigidbody_a0ff47d17bcd8629f60b5b36de8a5357c}{mass}}) + (1.f / plane-\/>\mbox{\hyperlink{class_rigidbody_a0ff47d17bcd8629f60b5b36de8a5357c}{mass}}));}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00130}00130     \textcolor{keywordtype}{float} joules = dot(2.f * relVel, colNorm) / dot(colNorm, colNorm * scaledMassSum);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00131}00131     sphere-\/>\mbox{\hyperlink{class_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2}{AddForce}}(-\/joules * colNorm);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00132}00132     plane-\/>\mbox{\hyperlink{class_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2}{AddForce}}(joules * colNorm);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00133}00133 \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00134}00134 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00135}00135 \textcolor{preprocessor}{\#pragma region Point Checks}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00136}\mbox{\hyperlink{class_physics_a43a34c220d1557ea1ead38fff9599f60}{00136}} vec3 \mbox{\hyperlink{class_physics_a43a34c220d1557ea1ead38fff9599f60}{Physics::GetClosestPointToSphere}}(vec3 spherePos, \textcolor{keywordtype}{float} sphereRadius, vec3 targetPoint) \{\textcolor{comment}{//Direction from sphere center to target point, times sphere radius}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00137}00137     vec3 dir = glm::normalize(targetPoint -\/ spherePos);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00138}00138     \textcolor{keywordflow}{return} spherePos + (dir * sphereRadius);\textcolor{comment}{//Return the position of the sphere, plus our direction times radius}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00139}00139 \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00140}\mbox{\hyperlink{class_physics_aefefcb8706ba7e6178ae14c7dfe3e9cc}{00140}} vec3 \mbox{\hyperlink{class_physics_aefefcb8706ba7e6178ae14c7dfe3e9cc}{Physics::GetClosestPointToAABB}}(vec3 targetPoint, \mbox{\hyperlink{struct_a_a_b_b}{AABB}} aabb) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00141}00141     \textcolor{comment}{//Returns a point laying on the edge of the AABB in the direction of the targetPoint.}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00142}00142     vec3 output = targetPoint;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00144}00144     \textcolor{keywordflow}{if} (targetPoint.x > aabb.\mbox{\hyperlink{struct_a_a_b_b_ab30670352ac9a39800c2e409e58427ab}{pos}}.x + (aabb.\mbox{\hyperlink{struct_a_a_b_b_aa81f22712bea85145f75cff926b8e27e}{size}}.x / 2.F)) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00145}00145         output.x = aabb.\mbox{\hyperlink{struct_a_a_b_b_ab30670352ac9a39800c2e409e58427ab}{pos}}.x + (aabb.\mbox{\hyperlink{struct_a_a_b_b_aa81f22712bea85145f75cff926b8e27e}{size}}.x / 2.F);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00146}00146     \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00147}00147     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00148}00148         output.x = targetPoint.x;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00149}00149     \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00151}00151     \textcolor{keywordflow}{if} (targetPoint.y > aabb.\mbox{\hyperlink{struct_a_a_b_b_ab30670352ac9a39800c2e409e58427ab}{pos}}.y + (aabb.\mbox{\hyperlink{struct_a_a_b_b_aa81f22712bea85145f75cff926b8e27e}{size}}.y / 2.F)) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00152}00152         output.y = aabb.\mbox{\hyperlink{struct_a_a_b_b_ab30670352ac9a39800c2e409e58427ab}{pos}}.y + (aabb.\mbox{\hyperlink{struct_a_a_b_b_aa81f22712bea85145f75cff926b8e27e}{size}}.y / 2.F);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00153}00153     \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00154}00154     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00155}00155         output.y = targetPoint.y;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00156}00156     \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00158}00158     \textcolor{keywordflow}{if} (targetPoint.z > aabb.\mbox{\hyperlink{struct_a_a_b_b_ab30670352ac9a39800c2e409e58427ab}{pos}}.z + (aabb.\mbox{\hyperlink{struct_a_a_b_b_aa81f22712bea85145f75cff926b8e27e}{size}}.z / 2.F)) \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00159}00159         output.z = aabb.\mbox{\hyperlink{struct_a_a_b_b_ab30670352ac9a39800c2e409e58427ab}{pos}}.z + (aabb.\mbox{\hyperlink{struct_a_a_b_b_aa81f22712bea85145f75cff926b8e27e}{size}}.z / 2.F);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00160}00160     \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00161}00161     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00162}00162         output.z = targetPoint.z;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00163}00163     \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00164}00164     \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00165}00165 \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00166}00166 \textcolor{preprocessor}{\#pragma endregion}}
+
+\end{DoxyCode}

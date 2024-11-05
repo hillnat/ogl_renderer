@@ -1,0 +1,136 @@
+\hypertarget{main_8cpp_source}{}\doxysection{main.\+cpp}
+\label{main_8cpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/ogl\_renderer/main.cpp@{C:/Users/s239074/Documents/ogl\_renderer/ogl\_renderer/main.cpp}}
+\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_diagnostics_8h}{engine/Diagnostics.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_context_8h}{engine/Context.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_primitives_8h}{engine/Primitives.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_game_object_8h}{engine/GameObject.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_scene_8h}{engine/Scene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_mesh_importer_8h}{renderer/MeshImporter.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_camera_8h}{renderer/Camera.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_renderer_8h}{renderer/Renderer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include "{}glm/ext.hpp"{}} \textcolor{comment}{//GLM provides us with matrices and math functions}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}glfw/glfw3.h"{}} \textcolor{comment}{//GLFW is a Windows API wrapper, allows us to handle window context easily}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_physics_8h}{physics/Physics.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014 \textcolor{keyword}{using }glm::mat4;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015 \textcolor{keyword}{using }glm::vec3;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}\mbox{\hyperlink{main_8cpp_ad9d7e043ba793109d100937cbfdbf408}{00017}} \textcolor{preprocessor}{\#define TESTGRAVITYSCALE 0.05}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00019}} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020     \textcolor{comment}{//Window init}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021     \mbox{\hyperlink{class_context}{Context}}* context = \textcolor{keyword}{new} \mbox{\hyperlink{class_context}{Context}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022     context-\/>\mbox{\hyperlink{class_context_ac092592027d44949396a8e16069fcab4}{Initialize}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023     \textcolor{comment}{// Shaders / Textures / Materials Setup}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024     \mbox{\hyperlink{struct_mesh}{Mesh}} sphereMesh = \mbox{\hyperlink{namespace_primitives_ab1b6ee053dfdd05c13a82f08607c78c3}{Primitives::MakeSphere}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025     \mbox{\hyperlink{struct_shader}{Shader}} mainShader = \mbox{\hyperlink{_renderer_8cpp_a4538cb126a10be7197ec76db1fa3de08}{LoadShader}}(\textcolor{stringliteral}{"{}shaders/basic.vert"{}}, \textcolor{stringliteral}{"{}shaders/diffuse.frag"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026     \mbox{\hyperlink{struct_texture}{Texture}} mainTexture = \mbox{\hyperlink{_renderer_8cpp_aed1bb04bfe2f3e43871bb89c730b188b}{LoadTexture}}(\textcolor{stringliteral}{"{}textures/marble.png"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027     \mbox{\hyperlink{class_material}{Material}} mainMaterial = \mbox{\hyperlink{class_material}{Material}}(\&mainShader);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028     mainMaterial.\mbox{\hyperlink{class_material_ad0049f77efe1760ee497e3df84e083c1}{SetTexture}}(\&mainTexture);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029     \textcolor{comment}{// Object Setup}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030     \mbox{\hyperlink{class_game_object}{GameObject}} obj0(sphereMesh, \&mainMaterial);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031     \mbox{\hyperlink{class_game_object}{GameObject}} planeObj(\mbox{\hyperlink{namespace_primitives_a03774cd0af30bf294d51bcd43d937ff3}{Primitives::MakePlane}}(), \&mainMaterial);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032     \textcolor{comment}{//Make our camera}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033     \mbox{\hyperlink{class_camera}{Camera}}* mainCamera = \textcolor{keyword}{new} \mbox{\hyperlink{class_camera}{Camera}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034     \textcolor{comment}{//Move stuff around}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035     mainCamera-\/>\mbox{\hyperlink{class_camera_a07b41576d8be5553720b17b7a9dbb8e7}{cameraTransform}}.\mbox{\hyperlink{class_transform_a9ad1b47d91bbdc9266e71690e5ddcd56}{TranslateLocal}}(vec3(0, 3, -\/9));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036     obj0.\mbox{\hyperlink{class_game_object_ad2de7705e8d1d7b5d0014448dd13f99a}{transform}}.\mbox{\hyperlink{class_transform_a9ad1b47d91bbdc9266e71690e5ddcd56}{TranslateLocal}}(vec3(0,5,0));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037     planeObj.\mbox{\hyperlink{class_game_object_ad2de7705e8d1d7b5d0014448dd13f99a}{transform}}.\mbox{\hyperlink{class_transform_a9ad1b47d91bbdc9266e71690e5ddcd56}{TranslateLocal}}(vec3(0,-\/5,0));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038     planeObj.\mbox{\hyperlink{class_game_object_ad2de7705e8d1d7b5d0014448dd13f99a}{transform}}.\mbox{\hyperlink{class_transform_a7bdfd5cf2cac6fc06216e0c93e469e67}{ChangeScale}}(vec3(5, 1, 5));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039     \textcolor{comment}{//Light}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040     \mbox{\hyperlink{struct_light}{Light}} testDirLight(vec3(1, 1, 1) / 2.f, vec3(-\/0.5f, 1, -\/0.5f));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041     \textcolor{comment}{//Physics Setup}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042     \mbox{\hyperlink{class_physics}{Physics}}* phys = \textcolor{keyword}{new} \mbox{\hyperlink{class_physics}{Physics}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043     \textcolor{comment}{//Each phys object gets a collider, rigidbody, and a colRbPair containing info on both}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044     \mbox{\hyperlink{class_collider}{Collider}} col0 = \mbox{\hyperlink{class_collider}{Collider}}(\mbox{\hyperlink{_collider_shapes_8h_a600afea14cbeaa9f94a2bab3e244e1ddab7095f057db3fefa7325ad93a04e14fd}{ColliderShapes::Sphere}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045     \mbox{\hyperlink{class_rigidbody}{Rigidbody}} rb0 = \mbox{\hyperlink{class_rigidbody}{Rigidbody}}(\&obj0.\mbox{\hyperlink{class_game_object_ad2de7705e8d1d7b5d0014448dd13f99a}{transform}}, vec3(0, 0, 0), \mbox{\hyperlink{main_8cpp_ad9d7e043ba793109d100937cbfdbf408}{TESTGRAVITYSCALE}}, \textcolor{keyword}{false}, 1.f);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046     \mbox{\hyperlink{struct_col_rb_pair}{ColRbPair}} crp0 = \mbox{\hyperlink{struct_col_rb_pair}{ColRbPair}}(\&col0, \&rb0);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047     phys-\/>\mbox{\hyperlink{class_physics_a7a0fea62b1d2a36f3fbf9d09901da0c6}{AddColRbPair}}(\&crp0);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048     \mbox{\hyperlink{class_collider}{Collider}} planeCol = \mbox{\hyperlink{class_collider}{Collider}}(\mbox{\hyperlink{_collider_shapes_8h_a600afea14cbeaa9f94a2bab3e244e1dda0d3adee051531c15b3509b4d4d75ce7b}{ColliderShapes::Plane}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049     \mbox{\hyperlink{class_rigidbody}{Rigidbody}} planeRb = \mbox{\hyperlink{class_rigidbody}{Rigidbody}}(\&planeObj.\mbox{\hyperlink{class_game_object_ad2de7705e8d1d7b5d0014448dd13f99a}{transform}}, vec3(0, 0, 0), 0.f, \textcolor{keyword}{true}, 1.f);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050     \mbox{\hyperlink{struct_col_rb_pair}{ColRbPair}} planeCrp = \mbox{\hyperlink{struct_col_rb_pair}{ColRbPair}}(\&planeCol, \&planeRb);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051     phys-\/>\mbox{\hyperlink{class_physics_a7a0fea62b1d2a36f3fbf9d09901da0c6}{AddColRbPair}}(\&planeCrp);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052     \textcolor{comment}{//Scene setup}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053     \mbox{\hyperlink{class_scene}{Scene}}* scene = \textcolor{keyword}{new} \mbox{\hyperlink{class_scene}{Scene}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054     scene-\/>\mbox{\hyperlink{class_scene_a076c10df7e28c559db2dac955f22f3a0}{AddToScene}}(\&obj0);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055     scene-\/>\mbox{\hyperlink{class_scene_a076c10df7e28c559db2dac955f22f3a0}{AddToScene}}(\&planeObj);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056     scene-\/>\mbox{\hyperlink{class_scene_a076c10df7e28c559db2dac955f22f3a0}{AddToScene}}(mainCamera);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057     scene-\/>\mbox{\hyperlink{class_scene_a076c10df7e28c559db2dac955f22f3a0}{AddToScene}}(\&testDirLight);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058     \textcolor{comment}{//Time setup}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059     \textcolor{keywordtype}{float} lastTime = glfwGetTime();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060     \textcolor{keywordtype}{float} fixedDeltaTimeAccum = 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061     \textcolor{keyword}{const} \textcolor{keywordtype}{float} fixedTimeStepsPerSec = 500;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062     \textcolor{keyword}{const} \textcolor{keywordtype}{float} fixedDeltaTime = 1.f / fixedTimeStepsPerSec;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063     \textcolor{comment}{//Testing stuff}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064     \textcolor{keywordtype}{float} moveSpeed = 15.f;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065     \textcolor{keywordtype}{float} spinSpeed = 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066     \textcolor{keywordtype}{float} sensitivity = 30.f;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067     \textcolor{keywordtype}{float} lastSpawnTime = 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068     \mbox{\hyperlink{namespace_diagnostics_a123bacc1da39ec478aa6e3f01530bb98}{Diagnostics::LogHardware}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069     std::cout << \textcolor{stringliteral}{"{}PRESS SPACE TO SPAWN BALLS"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070     \textcolor{comment}{//Main Loop}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071     \textcolor{keywordflow}{while} (!context-\/>\mbox{\hyperlink{class_context_af8e3274e192dc42652d1f7b8ccd002e8}{ShouldClose}}()) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072         \textcolor{comment}{//Get delta times}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073         \textcolor{keywordtype}{float} currentTime = glfwGetTime();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074         \textcolor{keywordtype}{float} deltaTime = currentTime -\/ lastTime;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075         fixedDeltaTimeAccum += deltaTime;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076         lastTime = currentTime;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077         \textcolor{comment}{//Physics Timestep, Run in a WHILE loop, to allow multiple fixed time steps to happen in the same frame given the delta time is larger than the threshold*2}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078         \textcolor{keywordflow}{while} (fixedDeltaTimeAccum > fixedDeltaTime) \{ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079             fixedDeltaTimeAccum -\/= fixedDeltaTime;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080             phys-\/>\mbox{\hyperlink{class_physics_a5dcd928dfbdca3feaefc1d9ca070683a}{UpdateAllBodies}}(fixedDeltaTime);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082         \textcolor{comment}{//Tick context}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083         context-\/>\mbox{\hyperlink{class_context_a9a805274ba34f57a68954d9fe4d59ba1}{Tick}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084         context-\/>\mbox{\hyperlink{class_context_aa02215a88cd690c65631d8fc5b5f2b08}{ClearScreen}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086         vec2 mouseDelta = context-\/>\mbox{\hyperlink{class_context_a0cf2ac4048152225b90c15fd14b556c6}{GetMouseDelta}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087         \textcolor{comment}{//Inputs}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088         \textcolor{keywordflow}{if} (context-\/>\mbox{\hyperlink{class_context_a17e0516739864eb7050f693ccf5d671b}{Mouse1\_Pressed}}() \&\& mouseDelta.x!=0)     \{ mainCamera-\/>\mbox{\hyperlink{class_camera_a07b41576d8be5553720b17b7a9dbb8e7}{cameraTransform}}.\mbox{\hyperlink{class_transform_ac8dbabcac850603bac784cd464eaf3bf}{Rotate}}(vec3(0, 1, 0), -\/mouseDelta.x * sensitivity * deltaTime); \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089         \textcolor{keywordflow}{if} (context-\/>\mbox{\hyperlink{class_context_a17e0516739864eb7050f693ccf5d671b}{Mouse1\_Pressed}}() \&\& mouseDelta.y!=0)     \{ mainCamera-\/>\mbox{\hyperlink{class_camera_a07b41576d8be5553720b17b7a9dbb8e7}{cameraTransform}}.\mbox{\hyperlink{class_transform_ac8dbabcac850603bac784cd464eaf3bf}{Rotate}}(vec3(1, 0, 0), mouseDelta.y * sensitivity * deltaTime); \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00091}00091         \textcolor{keywordflow}{if} (context-\/>\mbox{\hyperlink{class_context_a728b1567b82b29cc101a24e285cfd1bc}{W\_Pressed}}())      \{ mainCamera-\/>\mbox{\hyperlink{class_camera_a07b41576d8be5553720b17b7a9dbb8e7}{cameraTransform}}.\mbox{\hyperlink{class_transform_a9ad1b47d91bbdc9266e71690e5ddcd56}{TranslateLocal}}(vec3(0, 0, 1) * deltaTime * moveSpeed); \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00092}00092         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (context-\/>\mbox{\hyperlink{class_context_a2b78763c584f3c8372ac9f9f4133e7c8}{S\_Pressed}}()) \{ mainCamera-\/>\mbox{\hyperlink{class_camera_a07b41576d8be5553720b17b7a9dbb8e7}{cameraTransform}}.\mbox{\hyperlink{class_transform_a9ad1b47d91bbdc9266e71690e5ddcd56}{TranslateLocal}}(vec3(0, 0, -\/1) * deltaTime * moveSpeed); \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00093}00093         \textcolor{keywordflow}{if} (context-\/>\mbox{\hyperlink{class_context_a637e95805a80426269f06136b9566959}{D\_Pressed}}())      \{ mainCamera-\/>\mbox{\hyperlink{class_camera_a07b41576d8be5553720b17b7a9dbb8e7}{cameraTransform}}.\mbox{\hyperlink{class_transform_a9ad1b47d91bbdc9266e71690e5ddcd56}{TranslateLocal}}(vec3(-\/1, 0, 0) * deltaTime * moveSpeed); \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00094}00094         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (context-\/>\mbox{\hyperlink{class_context_a17169c6946c0f951e62ee872151b299e}{A\_Pressed}}()) \{ mainCamera-\/>\mbox{\hyperlink{class_camera_a07b41576d8be5553720b17b7a9dbb8e7}{cameraTransform}}.\mbox{\hyperlink{class_transform_a9ad1b47d91bbdc9266e71690e5ddcd56}{TranslateLocal}}(vec3(1, 0, 0) * deltaTime * moveSpeed); \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00095}00095         \textcolor{keywordflow}{if} (context-\/>\mbox{\hyperlink{class_context_ac609bd7952637878bd2f57673edad640}{E\_Pressed}}()) \{ mainCamera-\/>\mbox{\hyperlink{class_camera_a07b41576d8be5553720b17b7a9dbb8e7}{cameraTransform}}.\mbox{\hyperlink{class_transform_a9ad1b47d91bbdc9266e71690e5ddcd56}{TranslateLocal}}(vec3(0, -\/1, 0) * deltaTime * moveSpeed); \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00096}00096         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (context-\/>\mbox{\hyperlink{class_context_a43765bcf7efc98bb61212c787eda1ebb}{Q\_Pressed}}()) \{ mainCamera-\/>\mbox{\hyperlink{class_camera_a07b41576d8be5553720b17b7a9dbb8e7}{cameraTransform}}.\mbox{\hyperlink{class_transform_a9ad1b47d91bbdc9266e71690e5ddcd56}{TranslateLocal}}(vec3(0, 1, 0) * deltaTime * moveSpeed); \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00098}00098         \textcolor{keywordflow}{if} (context-\/>\mbox{\hyperlink{class_context_a165fa5b13554b8c4ccb6d75c366daa59}{UpArrow\_Pressed}}()) \{ sensitivity += 10.f; \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00099}00099         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (context-\/>\mbox{\hyperlink{class_context_ac3611d247372af83e4d7adc3cadb7752}{DownArrow\_Pressed}}()) \{ sensitivity -\/= 10.f; \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00100}00100         \textcolor{keywordflow}{if} (context-\/>\mbox{\hyperlink{class_context_a7709919aa4d55dcf0bd5244f93d30b9a}{RightArrow\_Pressed}}()) \{ spinSpeed += 5.f; \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00101}00101         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (context-\/>\mbox{\hyperlink{class_context_a58700ac52e74ce46a6e6ec32531e88f7}{LeftArrow\_Pressed}}()) \{ spinSpeed -\/= 5.f; \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00103}00103         \textcolor{keywordflow}{if} (context-\/>\mbox{\hyperlink{class_context_a0f82eefcca7f2a7c746c296265b4ddb0}{Space\_Pressed}}() \&\& (currentTime > lastSpawnTime + 0.1f)) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00104}00104             lastSpawnTime = currentTime;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00106}00106             \mbox{\hyperlink{class_game_object}{GameObject}}* newObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_game_object}{GameObject}}(sphereMesh, \&mainMaterial);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00107}00107             scene-\/>\mbox{\hyperlink{class_scene_a076c10df7e28c559db2dac955f22f3a0}{AddToScene}}(newObj);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00108}00108             newObj-\/>\mbox{\hyperlink{class_game_object_ad2de7705e8d1d7b5d0014448dd13f99a}{transform}}.\mbox{\hyperlink{class_transform_a9ad1b47d91bbdc9266e71690e5ddcd56}{TranslateLocal}}(vec3(0, 10, 0));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00109}00109             \mbox{\hyperlink{class_collider}{Collider}}* newCol = \textcolor{keyword}{new} \mbox{\hyperlink{class_collider}{Collider}}(\mbox{\hyperlink{_collider_shapes_8h_a600afea14cbeaa9f94a2bab3e244e1ddab7095f057db3fefa7325ad93a04e14fd}{ColliderShapes::Sphere}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00110}00110             \mbox{\hyperlink{class_rigidbody}{Rigidbody}}* newRb = \textcolor{keyword}{new} \mbox{\hyperlink{class_rigidbody}{Rigidbody}}(\&newObj-\/>\mbox{\hyperlink{class_game_object_ad2de7705e8d1d7b5d0014448dd13f99a}{transform}}, vec3(0, 50, 0), \mbox{\hyperlink{main_8cpp_ad9d7e043ba793109d100937cbfdbf408}{TESTGRAVITYSCALE}}, \textcolor{keyword}{false}, 1.f);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00111}00111             \mbox{\hyperlink{struct_col_rb_pair}{ColRbPair}}* newCrp = \textcolor{keyword}{new} \mbox{\hyperlink{struct_col_rb_pair}{ColRbPair}}(newCol, newRb);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00112}00112             phys-\/>\mbox{\hyperlink{class_physics_a7a0fea62b1d2a36f3fbf9d09901da0c6}{AddColRbPair}}(newCrp);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00113}00113         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00115}00115         \textcolor{comment}{//Draw and error check}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00116}00116         scene-\/>\mbox{\hyperlink{class_scene_af1231c8f794238d9fb79e5f413e0108f}{RenderAll}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00117}00117         \mbox{\hyperlink{namespace_diagnostics_a610ebbc18458a8d08d626e5e883635b4}{Diagnostics::CheckGLError}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00118}00118     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00119}00119     \textcolor{comment}{//Program ending}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00120}00120     scene-\/>\mbox{\hyperlink{class_scene_a551288687e94be3ae6cf8a868eb95735}{FreeAllMeshes}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00121}00121     \textcolor{keyword}{delete}(scene);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00122}00122     \textcolor{keyword}{delete}(phys);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00123}00123     \textcolor{keyword}{delete}(mainCamera);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00124}00124     \textcolor{comment}{//Refactor freeing of mats and textures}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00125}00125     \mbox{\hyperlink{_renderer_8cpp_aec674375d5f158b96528aa490e7cdd00}{FreeTexture}}(mainTexture);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00126}00126     context-\/>\mbox{\hyperlink{class_context_a3fe8dff7fed0091868224cd797e1ff32}{Terminate}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00127}00127     \textcolor{keyword}{delete}(context);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00129}00129     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00130}00130 \}}
+
+\end{DoxyCode}

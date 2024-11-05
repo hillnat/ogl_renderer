@@ -1,0 +1,80 @@
+\hypertarget{_context_8cpp_source}{}\doxysection{Context.\+cpp}
+\label{_context_8cpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/ogl\_renderer/engine/Context.cpp@{C:/Users/s239074/Documents/ogl\_renderer/ogl\_renderer/engine/Context.cpp}}
+\mbox{\hyperlink{_context_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_context_8h}{context.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00002}\mbox{\hyperlink{_context_8cpp_abcde84ea0ef5f934384e4620f092c85a}{00002}} \textcolor{preprocessor}{\#define GLEW\_STATIC}\textcolor{comment}{//If proprocessor not defined, Sets the flag for GLEW to act static}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}glew/glew.h"{}}\textcolor{comment}{//GLEW helps us setup graphics pipeline and interface with hardware}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}glfw/glfw3.h"{}} \textcolor{comment}{//GLFW is a Windows API wrapper, allows us to handle window context easily}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <random>}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}glm/ext.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00009}\mbox{\hyperlink{class_context_ac092592027d44949396a8e16069fcab4}{00009}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_ac092592027d44949396a8e16069fcab4}{Context::Initialize}}()\{}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00010}00010     glfwInit();}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00011}00011     \mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}} = glfwCreateWindow((\textcolor{keywordtype}{int})\mbox{\hyperlink{class_context_a4058ee97f1a08f3ce37b21709657f9ce}{TargetWindowSize}}.x, (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_context_a4058ee97f1a08f3ce37b21709657f9ce}{TargetWindowSize}}.y, \textcolor{stringliteral}{"{}Newton's Blender"{}}, NULL, NULL);}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00012}00012     glfwMakeContextCurrent(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}});}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00013}00013     \textcolor{comment}{//glfwSetInputMode(window, GLFW\_CURSOR, GLFW\_CURSOR\_DISABLED);}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00015}00015     glewInit();}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00017}00017     \textcolor{comment}{//Set flags for opengl featues! OpenGL checks ifdef on these flags}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00018}00018     glEnable(GL\_BLEND);\textcolor{comment}{//Enable blend}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00019}00019     glEnable(GL\_DEPTH\_TEST);\textcolor{comment}{//Enable depth}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00020}00020     glEnable(GL\_CULL\_FACE);\textcolor{comment}{//Optimazation to only render 1 face}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00021}00021     glBlendFunc(GL\_SRC\_ALPHA, GL\_ONE\_MINUS\_SRC\_ALPHA);\textcolor{comment}{//Selected blending function}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00022}00022     glDepthFunc(GL\_LEQUAL);\textcolor{comment}{//Decide which objects are in front}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00023}00023     glFrontFace(GL\_CCW);\textcolor{comment}{//Algorithm for normal. Winding direction for determining normal direction on triangle}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00024}00024     glCullFace(GL\_BACK);\textcolor{comment}{//Which side should we hide? NOTE : THIS SHOULD BE CULLING BACKFACE (GL\_BACK)}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00025}00025     glClearColor(0.757F, 0.714F, 0.91F, 1);}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00026}00026     std::srand(time(\textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00027}00027     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00028}00028 \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00029}\mbox{\hyperlink{class_context_a9a805274ba34f57a68954d9fe4d59ba1}{00029}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_context_a9a805274ba34f57a68954d9fe4d59ba1}{Context::Tick}}()\{}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00030}00030     glfwSwapBuffers(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}});}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00031}00031     glfwPollEvents();\textcolor{comment}{//tick polling}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00032}00032     \textcolor{comment}{//Free crosshair}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00033}00033     \textcolor{keywordflow}{if}(glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_MINUS))}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00034}00034     \{}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00035}00035         glfwSetInputMode(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_CURSOR, GLFW\_CURSOR\_DISABLED);}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00036}00036     \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00037}00037     \textcolor{keywordflow}{if} (glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_EQUAL))}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00038}00038     \{}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00039}00039         glfwSetInputMode(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_CURSOR, GLFW\_CURSOR\_NORMAL);}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00040}00040     \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00041}00041     \textcolor{comment}{//glfwSetWindowSize(window, std::rand()\%1000, std::rand() \% 1000);}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00042}00042 \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00043}\mbox{\hyperlink{class_context_aa02215a88cd690c65631d8fc5b5f2b08}{00043}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_context_aa02215a88cd690c65631d8fc5b5f2b08}{Context::ClearScreen}}()\{}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00044}00044     glClear(GL\_COLOR\_BUFFER\_BIT | GL\_DEPTH\_BUFFER\_BIT);\textcolor{comment}{//Clear those two buffers every time we call clear}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00045}00045 \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00046}\mbox{\hyperlink{class_context_a3fe8dff7fed0091868224cd797e1ff32}{00046}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_context_a3fe8dff7fed0091868224cd797e1ff32}{Context::Terminate}}()\{}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00047}00047     glfwDestroyWindow(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}});}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00048}00048     \mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00049}00049     glfwTerminate();}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00050}00050 \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00051}\mbox{\hyperlink{class_context_af8e3274e192dc42652d1f7b8ccd002e8}{00051}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_af8e3274e192dc42652d1f7b8ccd002e8}{Context::ShouldClose}}()\{}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00052}00052     \textcolor{keywordflow}{return} glfwWindowShouldClose(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}) || glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_GRAVE\_ACCENT);}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00053}00053 \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00054}\mbox{\hyperlink{class_context_a728b1567b82b29cc101a24e285cfd1bc}{00054}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_a728b1567b82b29cc101a24e285cfd1bc}{Context::W\_Pressed}}() \{ \textcolor{keywordflow}{return} glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_W); \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00055}\mbox{\hyperlink{class_context_a2b78763c584f3c8372ac9f9f4133e7c8}{00055}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_a2b78763c584f3c8372ac9f9f4133e7c8}{Context::S\_Pressed}}() \{ \textcolor{keywordflow}{return} glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_S); \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00056}\mbox{\hyperlink{class_context_a637e95805a80426269f06136b9566959}{00056}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_a637e95805a80426269f06136b9566959}{Context::D\_Pressed}}() \{ \textcolor{keywordflow}{return} glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_D); \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00057}\mbox{\hyperlink{class_context_a17169c6946c0f951e62ee872151b299e}{00057}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_a17169c6946c0f951e62ee872151b299e}{Context::A\_Pressed}}() \{ \textcolor{keywordflow}{return} glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_A); \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00058}\mbox{\hyperlink{class_context_ac609bd7952637878bd2f57673edad640}{00058}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_ac609bd7952637878bd2f57673edad640}{Context::E\_Pressed}}() \{ \textcolor{keywordflow}{return} glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_E); \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00059}\mbox{\hyperlink{class_context_a43765bcf7efc98bb61212c787eda1ebb}{00059}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_a43765bcf7efc98bb61212c787eda1ebb}{Context::Q\_Pressed}}() \{ \textcolor{keywordflow}{return} glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_Q); \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00060}\mbox{\hyperlink{class_context_a0f82eefcca7f2a7c746c296265b4ddb0}{00060}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_a0f82eefcca7f2a7c746c296265b4ddb0}{Context::Space\_Pressed}}() \{ \textcolor{keywordflow}{return} glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_SPACE); \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00061}\mbox{\hyperlink{class_context_adfb4ef0a734d9bede47da6a50a4e02bf}{00061}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_adfb4ef0a734d9bede47da6a50a4e02bf}{Context::LCtrl\_Pressed}}() \{ \textcolor{keywordflow}{return} glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_LEFT\_CONTROL); \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00062}\mbox{\hyperlink{class_context_a165fa5b13554b8c4ccb6d75c366daa59}{00062}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_a165fa5b13554b8c4ccb6d75c366daa59}{Context::UpArrow\_Pressed}}() \{ \textcolor{keywordflow}{return} glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_UP); \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00063}\mbox{\hyperlink{class_context_a7709919aa4d55dcf0bd5244f93d30b9a}{00063}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_a7709919aa4d55dcf0bd5244f93d30b9a}{Context::RightArrow\_Pressed}}() \{ \textcolor{keywordflow}{return} glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_RIGHT); \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00064}\mbox{\hyperlink{class_context_a58700ac52e74ce46a6e6ec32531e88f7}{00064}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_a58700ac52e74ce46a6e6ec32531e88f7}{Context::LeftArrow\_Pressed}}() \{ \textcolor{keywordflow}{return} glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_LEFT); \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00065}\mbox{\hyperlink{class_context_ac3611d247372af83e4d7adc3cadb7752}{00065}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_ac3611d247372af83e4d7adc3cadb7752}{Context::DownArrow\_Pressed}}() \{ \textcolor{keywordflow}{return} glfwGetKey(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_KEY\_DOWN); \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00066}\mbox{\hyperlink{class_context_a17e0516739864eb7050f693ccf5d671b}{00066}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_context_a17e0516739864eb7050f693ccf5d671b}{Context::Mouse1\_Pressed}}() \{ \textcolor{keywordflow}{return} glfwGetMouseButton(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, GLFW\_MOUSE\_BUTTON\_1); \}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00067}\mbox{\hyperlink{class_context_a0cf2ac4048152225b90c15fd14b556c6}{00067}} glm::dvec2 \mbox{\hyperlink{class_context_a0cf2ac4048152225b90c15fd14b556c6}{Context::GetMouseDelta}}()\{}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00068}00068     glm::dvec2 curMousePos(0.f,0.f);}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00069}00069     glfwGetCursorPos(\mbox{\hyperlink{class_context_aab4a205c4e387c7da03867a964904c3d}{window}}, \&curMousePos.x, \&curMousePos.y);}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00070}00070     glm::dvec2 toReturn = curMousePos -\/ \mbox{\hyperlink{class_context_ab56d5be75a24eb22fa705ee2b70c9ea3}{lastMousePos}};}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00071}00071     \textcolor{comment}{//std::cout << toReturn.x << "{} "{} << toReturn.y << std::endl;}}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00072}00072     \mbox{\hyperlink{class_context_ab56d5be75a24eb22fa705ee2b70c9ea3}{lastMousePos}} = curMousePos;}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00073}00073     \textcolor{keywordflow}{return} toReturn;}
+\DoxyCodeLine{\Hypertarget{_context_8cpp_source_l00074}00074 \}}
+
+\end{DoxyCode}

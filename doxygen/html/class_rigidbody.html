@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -24,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
-   <div id="projectbrief">Graphics &amp; Physics engine in C++ with OpenGL</div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -78,14 +79,25 @@ $(function() {
   <div class="headertitle"><div class="title">Rigidbody Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_rigidbody_8h_source.html">Rigidbody.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Rigidbody:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_rigidbody__coll__graph.png" border="0" usemap="#a_rigidbody_coll__map" alt="Collaboration graph"/></div>
+<map name="a_rigidbody_coll__map" id="a_rigidbody_coll__map">
+<area shape="rect" title=" " alt="" coords="84,191,161,218"/>
+<area shape="rect" href="class_transform.html" title=" " alt="" coords="5,98,85,126"/>
+<area shape="rect" title=" " alt="" coords="20,5,70,33"/>
+<area shape="rect" title=" " alt="" coords="174,98,222,126"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae6a187f538fa44de1ee3cf9d5f503779"><td class="memItemLeft" align="right" valign="top"><a id="ae6a187f538fa44de1ee3cf9d5f503779" name="ae6a187f538fa44de1ee3cf9d5f503779"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Rigidbody</b> (<a class="el" href="class_transform.html">Transform</a> *attachedBody)</td></tr>
+<tr class="memitem:ae6a187f538fa44de1ee3cf9d5f503779"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#ae6a187f538fa44de1ee3cf9d5f503779">Rigidbody</a> (<a class="el" href="class_transform.html">Transform</a> *attachedBody)</td></tr>
 <tr class="separator:ae6a187f538fa44de1ee3cf9d5f503779"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd75f0b2e6363b4ac78f627dab091c51"><td class="memItemLeft" align="right" valign="top"><a id="abd75f0b2e6363b4ac78f627dab091c51" name="abd75f0b2e6363b4ac78f627dab091c51"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Rigidbody</b> (<a class="el" href="class_transform.html">Transform</a> *attachedBody, vec3 vel, float gravityScale, bool isStatic, float mass)</td></tr>
+<tr class="memitem:abd75f0b2e6363b4ac78f627dab091c51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#abd75f0b2e6363b4ac78f627dab091c51">Rigidbody</a> (<a class="el" href="class_transform.html">Transform</a> *attachedBody, vec3 vel, float <a class="el" href="class_rigidbody.html#a258caa3707f50201ba6b30923384fa43">gravityScale</a>, bool <a class="el" href="class_rigidbody.html#aac501b7f51395b8ec3204b0353c91db0">isStatic</a>, float <a class="el" href="class_rigidbody.html#a0ff47d17bcd8629f60b5b36de8a5357c">mass</a>)</td></tr>
 <tr class="separator:abd75f0b2e6363b4ac78f627dab091c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3489a4d160049331712e71179e7ecebd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#a3489a4d160049331712e71179e7ecebd">UpdateBody</a> (float fixedDeltaTime)</td></tr>
 <tr class="memdesc:a3489a4d160049331712e71179e7ecebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a physics tick on this object   <a href="class_rigidbody.html#a3489a4d160049331712e71179e7ecebd">More...</a><br /></td></tr>
@@ -99,25 +111,107 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ae72c531ed1c6b56f60ed4f62c7870f90"><td class="memItemLeft" align="right" valign="top"><a id="ae72c531ed1c6b56f60ed4f62c7870f90" name="ae72c531ed1c6b56f60ed4f62c7870f90"></a>
-<a class="el" href="class_transform.html">Transform</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>attachedTransform</b></td></tr>
+<tr class="memitem:ae72c531ed1c6b56f60ed4f62c7870f90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_transform.html">Transform</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#ae72c531ed1c6b56f60ed4f62c7870f90">attachedTransform</a></td></tr>
 <tr class="separator:ae72c531ed1c6b56f60ed4f62c7870f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a258caa3707f50201ba6b30923384fa43"><td class="memItemLeft" align="right" valign="top"><a id="a258caa3707f50201ba6b30923384fa43" name="a258caa3707f50201ba6b30923384fa43"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>gravityScale</b> = 0</td></tr>
+<tr class="memitem:a258caa3707f50201ba6b30923384fa43"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#a258caa3707f50201ba6b30923384fa43">gravityScale</a> = 0</td></tr>
 <tr class="separator:a258caa3707f50201ba6b30923384fa43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e7b75373c2a77e70cad1864c3dfd830"><td class="memItemLeft" align="right" valign="top"><a id="a4e7b75373c2a77e70cad1864c3dfd830" name="a4e7b75373c2a77e70cad1864c3dfd830"></a>
-vec3&#160;</td><td class="memItemRight" valign="bottom"><b>velocity</b> = vec3(0, 0, 0)</td></tr>
+<tr class="memitem:a4e7b75373c2a77e70cad1864c3dfd830"><td class="memItemLeft" align="right" valign="top">vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#a4e7b75373c2a77e70cad1864c3dfd830">velocity</a> = vec3(0, 0, 0)</td></tr>
 <tr class="separator:a4e7b75373c2a77e70cad1864c3dfd830"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ff47d17bcd8629f60b5b36de8a5357c"><td class="memItemLeft" align="right" valign="top"><a id="a0ff47d17bcd8629f60b5b36de8a5357c" name="a0ff47d17bcd8629f60b5b36de8a5357c"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>mass</b> =1</td></tr>
+<tr class="memitem:a0ff47d17bcd8629f60b5b36de8a5357c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#a0ff47d17bcd8629f60b5b36de8a5357c">mass</a> =1</td></tr>
 <tr class="separator:a0ff47d17bcd8629f60b5b36de8a5357c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac501b7f51395b8ec3204b0353c91db0"><td class="memItemLeft" align="right" valign="top"><a id="aac501b7f51395b8ec3204b0353c91db0" name="aac501b7f51395b8ec3204b0353c91db0"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isStatic</b> = false</td></tr>
+<tr class="memitem:aac501b7f51395b8ec3204b0353c91db0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#aac501b7f51395b8ec3204b0353c91db0">isStatic</a> = false</td></tr>
 <tr class="separator:aac501b7f51395b8ec3204b0353c91db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a161f81a10b39514161d0f1fb473bcd8a"><td class="memItemLeft" align="right" valign="top"><a id="a161f81a10b39514161d0f1fb473bcd8a" name="a161f81a10b39514161d0f1fb473bcd8a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isResting</b> = false</td></tr>
+<tr class="memitem:a161f81a10b39514161d0f1fb473bcd8a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#a161f81a10b39514161d0f1fb473bcd8a">isResting</a> = false</td></tr>
 <tr class="separator:a161f81a10b39514161d0f1fb473bcd8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_rigidbody_8h_source.html#l00005">5</a> of file <a class="el" href="_rigidbody_8h_source.html">Rigidbody.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae6a187f538fa44de1ee3cf9d5f503779" name="ae6a187f538fa44de1ee3cf9d5f503779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6a187f538fa44de1ee3cf9d5f503779">&#9670;&#160;</a></span>Rigidbody() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Rigidbody::Rigidbody </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_transform.html">Transform</a> *&#160;</td>
+          <td class="paramname"><em>attachedBody</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_rigidbody_8h_source.html#l00011">11</a> of file <a class="el" href="_rigidbody_8h_source.html">Rigidbody.h</a>.</p>
+
+</div>
+</div>
+<a id="abd75f0b2e6363b4ac78f627dab091c51" name="abd75f0b2e6363b4ac78f627dab091c51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd75f0b2e6363b4ac78f627dab091c51">&#9670;&#160;</a></span>Rigidbody() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Rigidbody::Rigidbody </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_transform.html">Transform</a> *&#160;</td>
+          <td class="paramname"><em>attachedBody</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vec3&#160;</td>
+          <td class="paramname"><em>vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gravityScale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isStatic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>mass</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_rigidbody_8h_source.html#l00019">19</a> of file <a class="el" href="_rigidbody_8h_source.html">Rigidbody.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad968aba72e2d80dc282ce7a2f2639ca2" name="ad968aba72e2d80dc282ce7a2f2639ca2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad968aba72e2d80dc282ce7a2f2639ca2">&#9670;&#160;</a></span>AddForce()</h2>
@@ -142,6 +236,29 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isResting</b> = false
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_rigidbody_8cpp_source.html#l00020">20</a> of file <a class="el" href="_rigidbody_8cpp_source.html">Rigidbody.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_cgraph.png" border="0" usemap="#aclass_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_cgraph" alt=""/></div>
+<map name="aclass_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_cgraph" id="aclass_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_cgraph">
+<area shape="rect" title="Adds force, factoring in mass" alt="" coords="5,5,147,33"/>
+<area shape="rect" href="class_rigidbody.html#ab633f234942f4142cb4128883c6c9aa6" title="Adds force, ignoring mass" alt="" coords="195,5,362,33"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_icgraph.png" border="0" usemap="#aclass_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_icgraph" alt=""/></div>
+<map name="aclass_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_icgraph" id="aclass_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_icgraph">
+<area shape="rect" title="Adds force, factoring in mass" alt="" coords="563,32,705,60"/>
+<area shape="rect" href="class_physics.html#a736d261010f60931a23fb0ce91700225" title="Resolves a collision between one sphere RigidBody and one plane RigidBody" alt="" coords="322,5,511,33"/>
+<area shape="rect" href="class_physics.html#aa343c30848ec0030d0c73719cbcabc05" title="Resolves a collision between two sphere Rigidbodies" alt="" coords="317,57,515,85"/>
+<area shape="rect" href="class_physics.html#a5dcd928dfbdca3feaefc1d9ca070683a" title="Executes the physics tick on all physics objects in vector" alt="" coords="103,32,269,60"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,32,55,60"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -169,6 +286,22 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isResting</b> = false
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_rigidbody_8cpp_source.html#l00023">23</a> of file <a class="el" href="_rigidbody_8cpp_source.html">Rigidbody.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_rigidbody_ab633f234942f4142cb4128883c6c9aa6_icgraph.png" border="0" usemap="#aclass_rigidbody_ab633f234942f4142cb4128883c6c9aa6_icgraph" alt=""/></div>
+<map name="aclass_rigidbody_ab633f234942f4142cb4128883c6c9aa6_icgraph" id="aclass_rigidbody_ab633f234942f4142cb4128883c6c9aa6_icgraph">
+<area shape="rect" title="Adds force, ignoring mass" alt="" coords="769,57,936,85"/>
+<area shape="rect" href="class_rigidbody.html#ad968aba72e2d80dc282ce7a2f2639ca2" title="Adds force, factoring in mass" alt="" coords="571,31,713,58"/>
+<area shape="rect" href="class_rigidbody.html#a3489a4d160049331712e71179e7ecebd" title="Executes a physics tick on this object" alt="" coords="563,83,721,110"/>
+<area shape="rect" href="class_physics.html#a736d261010f60931a23fb0ce91700225" title="Resolves a collision between one sphere RigidBody and one plane RigidBody" alt="" coords="322,5,511,33"/>
+<area shape="rect" href="class_physics.html#aa343c30848ec0030d0c73719cbcabc05" title="Resolves a collision between two sphere Rigidbodies" alt="" coords="317,57,515,85"/>
+<area shape="rect" href="class_physics.html#a5dcd928dfbdca3feaefc1d9ca070683a" title="Executes the physics tick on all physics objects in vector" alt="" coords="103,32,269,60"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,32,55,60"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a3489a4d160049331712e71179e7ecebd" name="a3489a4d160049331712e71179e7ecebd"></a>
@@ -195,11 +328,120 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isResting</b> = false
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_rigidbody_8cpp_source.html#l00006">6</a> of file <a class="el" href="_rigidbody_8cpp_source.html">Rigidbody.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_rigidbody_a3489a4d160049331712e71179e7ecebd_cgraph.png" border="0" usemap="#aclass_rigidbody_a3489a4d160049331712e71179e7ecebd_cgraph" alt=""/></div>
+<map name="aclass_rigidbody_a3489a4d160049331712e71179e7ecebd_cgraph" id="aclass_rigidbody_a3489a4d160049331712e71179e7ecebd_cgraph">
+<area shape="rect" title="Executes a physics tick on this object" alt="" coords="5,32,163,60"/>
+<area shape="rect" href="class_rigidbody.html#ab633f234942f4142cb4128883c6c9aa6" title="Adds force, ignoring mass" alt="" coords="216,5,383,33"/>
+<area shape="rect" href="class_transform.html#abd54bc9cc0def3dd94cce058b49082b8" title="Translates our matrix, disregarding rotation" alt="" coords="211,57,388,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae72c531ed1c6b56f60ed4f62c7870f90" name="ae72c531ed1c6b56f60ed4f62c7870f90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae72c531ed1c6b56f60ed4f62c7870f90">&#9670;&#160;</a></span>attachedTransform</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_transform.html">Transform</a>* Rigidbody::attachedTransform</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_rigidbody_8h_source.html#l00028">28</a> of file <a class="el" href="_rigidbody_8h_source.html">Rigidbody.h</a>.</p>
+
+</div>
+</div>
+<a id="a258caa3707f50201ba6b30923384fa43" name="a258caa3707f50201ba6b30923384fa43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a258caa3707f50201ba6b30923384fa43">&#9670;&#160;</a></span>gravityScale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Rigidbody::gravityScale = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_rigidbody_8h_source.html#l00029">29</a> of file <a class="el" href="_rigidbody_8h_source.html">Rigidbody.h</a>.</p>
+
+</div>
+</div>
+<a id="a161f81a10b39514161d0f1fb473bcd8a" name="a161f81a10b39514161d0f1fb473bcd8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a161f81a10b39514161d0f1fb473bcd8a">&#9670;&#160;</a></span>isResting</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Rigidbody::isResting = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_rigidbody_8h_source.html#l00033">33</a> of file <a class="el" href="_rigidbody_8h_source.html">Rigidbody.h</a>.</p>
+
+</div>
+</div>
+<a id="aac501b7f51395b8ec3204b0353c91db0" name="aac501b7f51395b8ec3204b0353c91db0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac501b7f51395b8ec3204b0353c91db0">&#9670;&#160;</a></span>isStatic</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Rigidbody::isStatic = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_rigidbody_8h_source.html#l00032">32</a> of file <a class="el" href="_rigidbody_8h_source.html">Rigidbody.h</a>.</p>
+
+</div>
+</div>
+<a id="a0ff47d17bcd8629f60b5b36de8a5357c" name="a0ff47d17bcd8629f60b5b36de8a5357c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ff47d17bcd8629f60b5b36de8a5357c">&#9670;&#160;</a></span>mass</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Rigidbody::mass =1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_rigidbody_8h_source.html#l00031">31</a> of file <a class="el" href="_rigidbody_8h_source.html">Rigidbody.h</a>.</p>
+
+</div>
+</div>
+<a id="a4e7b75373c2a77e70cad1864c3dfd830" name="a4e7b75373c2a77e70cad1864c3dfd830"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e7b75373c2a77e70cad1864c3dfd830">&#9670;&#160;</a></span>velocity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vec3 Rigidbody::velocity = vec3(0, 0, 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_rigidbody_8h_source.html#l00030">30</a> of file <a class="el" href="_rigidbody_8h_source.html">Rigidbody.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/s239074/Documents/ogl_renderer/ogl_renderer/physics/<a class="el" href="_rigidbody_8h_source.html">Rigidbody.h</a></li>
-<li>C:/Users/s239074/Documents/ogl_renderer/ogl_renderer/physics/Rigidbody.cpp</li>
+<li>C:/Users/s239074/Documents/ogl_renderer/ogl_renderer/physics/<a class="el" href="_rigidbody_8cpp_source.html">Rigidbody.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

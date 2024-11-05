@@ -134,8 +134,7 @@ namespace Primitives {
 		};
 
 		return MakeMesh(verts, 4, indices, 6);
-	}
-	
+	}	
 	//Mesh MakeCube() {
 	//	vertex verts[24] = {
 	//#pragma region Top Face

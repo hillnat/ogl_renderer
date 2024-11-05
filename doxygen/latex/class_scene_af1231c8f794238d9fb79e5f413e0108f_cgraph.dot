@@ -1,0 +1,25 @@
+digraph "Scene::RenderAll"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Terminal,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Terminal,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="Scene::RenderAll",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Draw all gameObjects using cameras[0] as a camera, accounting for all lights"];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="DrawMesh",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_renderer_8cpp.html#a29771e363fa2dc03edb94a64277440ea",tooltip="Render a given mesh"];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="Transform::GetPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transform.html#a482ec8a49b08f224b2ec513dc27f47b5",tooltip="Gets the position of this transform"];
+  Node3 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="Transform::GetAccumParent\lPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transform.html#aa12429358147b70bdfd11af25a99f660",tooltip=" "];
+  Node4 -> Node4 [color="steelblue1",style="solid"];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="SetUniform",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_renderer_8cpp.html#a7eea27f41e32dbf6703525ac0b7a1bb3",tooltip="Sets a shader program uniform with parameters for transforms"];
+  Node1 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="Camera::viewMatrix",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_camera.html#ade59c8e9e1ccf81c92d69722ed070718",tooltip="Uses glm::lookAt to build a view matrix from cameraTransform"];
+  Node6 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="Transform::Forward",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transform.html#a3fbf814bbd069c57d1b3579a56893b3e",tooltip="Our local forward vector"];
+  Node6 -> Node3 [color="steelblue1",style="solid"];
+  Node6 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="Transform::Up",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transform.html#ae0ce3a189b726c18e21c2eb1990f4464",tooltip="Our local up vector"];
+}

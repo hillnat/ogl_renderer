@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -24,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
-   <div id="projectbrief">Graphics &amp; Physics engine in C++ with OpenGL</div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -78,40 +79,308 @@ $(function() {
   <div class="headertitle"><div class="title">Scene Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_scene_8h_source.html">Scene.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aca6a2db99c6c46588bf32b59919704bd"><td class="memItemLeft" align="right" valign="top"><a id="aca6a2db99c6c46588bf32b59919704bd" name="aca6a2db99c6c46588bf32b59919704bd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AddToScene</b> (<a class="el" href="class_game_object.html">GameObject</a> *)</td></tr>
-<tr class="separator:aca6a2db99c6c46588bf32b59919704bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fc322294a42908b8225f18c5c2d94d5"><td class="memItemLeft" align="right" valign="top"><a id="a2fc322294a42908b8225f18c5c2d94d5" name="a2fc322294a42908b8225f18c5c2d94d5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AddToScene</b> (<a class="el" href="class_camera.html">Camera</a> *)</td></tr>
-<tr class="separator:a2fc322294a42908b8225f18c5c2d94d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4da3e26ace26a278528b678d057dbcee"><td class="memItemLeft" align="right" valign="top"><a id="a4da3e26ace26a278528b678d057dbcee" name="a4da3e26ace26a278528b678d057dbcee"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AddToScene</b> (<a class="el" href="struct_light.html">Light</a> *)</td></tr>
-<tr class="separator:a4da3e26ace26a278528b678d057dbcee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a551288687e94be3ae6cf8a868eb95735"><td class="memItemLeft" align="right" valign="top"><a id="a551288687e94be3ae6cf8a868eb95735" name="a551288687e94be3ae6cf8a868eb95735"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>FreeAllMeshes</b> ()</td></tr>
+<tr class="memitem:ad10176d75a9cc0da56626f682d083507"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ad10176d75a9cc0da56626f682d083507">Scene</a> ()</td></tr>
+<tr class="separator:ad10176d75a9cc0da56626f682d083507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a076c10df7e28c559db2dac955f22f3a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a076c10df7e28c559db2dac955f22f3a0">AddToScene</a> (<a class="el" href="class_game_object.html">GameObject</a> *gameObject)</td></tr>
+<tr class="memdesc:a076c10df7e28c559db2dac955f22f3a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a gameObject to the scene   <a href="class_scene.html#a076c10df7e28c559db2dac955f22f3a0">More...</a><br /></td></tr>
+<tr class="separator:a076c10df7e28c559db2dac955f22f3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c47bcdffc63bb6c82813a66b3f94412"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a5c47bcdffc63bb6c82813a66b3f94412">AddToScene</a> (<a class="el" href="class_camera.html">Camera</a> *camera)</td></tr>
+<tr class="memdesc:a5c47bcdffc63bb6c82813a66b3f94412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a camera to the scene   <a href="class_scene.html#a5c47bcdffc63bb6c82813a66b3f94412">More...</a><br /></td></tr>
+<tr class="separator:a5c47bcdffc63bb6c82813a66b3f94412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765258e8c77e72e9699d9b09e19aff20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a765258e8c77e72e9699d9b09e19aff20">AddToScene</a> (<a class="el" href="struct_light.html">Light</a> *light)</td></tr>
+<tr class="memdesc:a765258e8c77e72e9699d9b09e19aff20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a light to the scene   <a href="class_scene.html#a765258e8c77e72e9699d9b09e19aff20">More...</a><br /></td></tr>
+<tr class="separator:a765258e8c77e72e9699d9b09e19aff20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a551288687e94be3ae6cf8a868eb95735"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a551288687e94be3ae6cf8a868eb95735">FreeAllMeshes</a> ()</td></tr>
+<tr class="memdesc:a551288687e94be3ae6cf8a868eb95735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free all the meshes attached to gameObjects in gameObjects   <a href="class_scene.html#a551288687e94be3ae6cf8a868eb95735">More...</a><br /></td></tr>
 <tr class="separator:a551288687e94be3ae6cf8a868eb95735"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1231c8f794238d9fb79e5f413e0108f"><td class="memItemLeft" align="right" valign="top"><a id="af1231c8f794238d9fb79e5f413e0108f" name="af1231c8f794238d9fb79e5f413e0108f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RenderAll</b> ()</td></tr>
+<tr class="memitem:af1231c8f794238d9fb79e5f413e0108f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#af1231c8f794238d9fb79e5f413e0108f">RenderAll</a> ()</td></tr>
+<tr class="memdesc:af1231c8f794238d9fb79e5f413e0108f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw all gameObjects using cameras[0] as a camera, accounting for all lights   <a href="class_scene.html#af1231c8f794238d9fb79e5f413e0108f">More...</a><br /></td></tr>
 <tr class="separator:af1231c8f794238d9fb79e5f413e0108f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aa2ecf40b87422ea8d9a38a04b7765345"><td class="memItemLeft" align="right" valign="top"><a id="aa2ecf40b87422ea8d9a38a04b7765345" name="aa2ecf40b87422ea8d9a38a04b7765345"></a>
-std::vector&lt; <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>gameObjects</b></td></tr>
+<tr class="memitem:aa2ecf40b87422ea8d9a38a04b7765345"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#aa2ecf40b87422ea8d9a38a04b7765345">gameObjects</a></td></tr>
+<tr class="memdesc:aa2ecf40b87422ea8d9a38a04b7765345"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of all GameObjects in scene   <a href="class_scene.html#aa2ecf40b87422ea8d9a38a04b7765345">More...</a><br /></td></tr>
 <tr class="separator:aa2ecf40b87422ea8d9a38a04b7765345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a766a660b1b9d851b14157a6d9373f719"><td class="memItemLeft" align="right" valign="top"><a id="a766a660b1b9d851b14157a6d9373f719" name="a766a660b1b9d851b14157a6d9373f719"></a>
-std::vector&lt; <a class="el" href="class_camera.html">Camera</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>cameras</b></td></tr>
+<tr class="memitem:a766a660b1b9d851b14157a6d9373f719"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_camera.html">Camera</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a766a660b1b9d851b14157a6d9373f719">cameras</a></td></tr>
+<tr class="memdesc:a766a660b1b9d851b14157a6d9373f719"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of all Cameras in scene   <a href="class_scene.html#a766a660b1b9d851b14157a6d9373f719">More...</a><br /></td></tr>
 <tr class="separator:a766a660b1b9d851b14157a6d9373f719"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ecc3182a80435e1c4dfbe1b20e559bd"><td class="memItemLeft" align="right" valign="top"><a id="a4ecc3182a80435e1c4dfbe1b20e559bd" name="a4ecc3182a80435e1c4dfbe1b20e559bd"></a>
-std::vector&lt; <a class="el" href="struct_light.html">Light</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>lights</b></td></tr>
+<tr class="memitem:a4ecc3182a80435e1c4dfbe1b20e559bd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_light.html">Light</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a4ecc3182a80435e1c4dfbe1b20e559bd">lights</a></td></tr>
+<tr class="memdesc:a4ecc3182a80435e1c4dfbe1b20e559bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of all Lights in scene   <a href="class_scene.html#a4ecc3182a80435e1c4dfbe1b20e559bd">More...</a><br /></td></tr>
 <tr class="separator:a4ecc3182a80435e1c4dfbe1b20e559bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00005">5</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad10176d75a9cc0da56626f682d083507" name="ad10176d75a9cc0da56626f682d083507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad10176d75a9cc0da56626f682d083507">&#9670;&#160;</a></span>Scene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Scene::Scene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00010">10</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5c47bcdffc63bb6c82813a66b3f94412" name="a5c47bcdffc63bb6c82813a66b3f94412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c47bcdffc63bb6c82813a66b3f94412">&#9670;&#160;</a></span>AddToScene() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::AddToScene </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_camera.html">Camera</a> *&#160;</td>
+          <td class="paramname"><em>camera</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a camera to the scene  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camera</td><td><a class="el" href="class_camera.html">Camera</a> to add</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00008">8</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a076c10df7e28c559db2dac955f22f3a0" name="a076c10df7e28c559db2dac955f22f3a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a076c10df7e28c559db2dac955f22f3a0">&#9670;&#160;</a></span>AddToScene() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::AddToScene </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_object.html">GameObject</a> *&#160;</td>
+          <td class="paramname"><em>gameObject</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a gameObject to the scene  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gameObject</td><td><a class="el" href="class_game_object.html">GameObject</a> to add</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00005">5</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_a076c10df7e28c559db2dac955f22f3a0_icgraph.png" border="0" usemap="#aclass_scene_a076c10df7e28c559db2dac955f22f3a0_icgraph" alt=""/></div>
+<map name="aclass_scene_a076c10df7e28c559db2dac955f22f3a0_icgraph" id="aclass_scene_a076c10df7e28c559db2dac955f22f3a0_icgraph">
+<area shape="rect" title="Add a gameObject to the scene" alt="" coords="103,5,238,33"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,33"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a765258e8c77e72e9699d9b09e19aff20" name="a765258e8c77e72e9699d9b09e19aff20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a765258e8c77e72e9699d9b09e19aff20">&#9670;&#160;</a></span>AddToScene() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::AddToScene </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_light.html">Light</a> *&#160;</td>
+          <td class="paramname"><em>light</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a light to the scene  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">light</td><td><a class="el" href="struct_light.html">Light</a> to add</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00011">11</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a551288687e94be3ae6cf8a868eb95735" name="a551288687e94be3ae6cf8a868eb95735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a551288687e94be3ae6cf8a868eb95735">&#9670;&#160;</a></span>FreeAllMeshes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::FreeAllMeshes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free all the meshes attached to gameObjects in gameObjects  </p>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00014">14</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_a551288687e94be3ae6cf8a868eb95735_cgraph.png" border="0" usemap="#aclass_scene_a551288687e94be3ae6cf8a868eb95735_cgraph" alt=""/></div>
+<map name="aclass_scene_a551288687e94be3ae6cf8a868eb95735_cgraph" id="aclass_scene_a551288687e94be3ae6cf8a868eb95735_cgraph">
+<area shape="rect" title="Free all the meshes attached to gameObjects in gameObjects" alt="" coords="5,5,154,33"/>
+<area shape="rect" href="_renderer_8cpp.html#a9aba7adb196ca0b29e4a0cad46b05dd4" title="Free a mesh from memory" alt="" coords="202,5,279,33"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_a551288687e94be3ae6cf8a868eb95735_icgraph.png" border="0" usemap="#aclass_scene_a551288687e94be3ae6cf8a868eb95735_icgraph" alt=""/></div>
+<map name="aclass_scene_a551288687e94be3ae6cf8a868eb95735_icgraph" id="aclass_scene_a551288687e94be3ae6cf8a868eb95735_icgraph">
+<area shape="rect" title="Free all the meshes attached to gameObjects in gameObjects" alt="" coords="103,5,251,33"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,33"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af1231c8f794238d9fb79e5f413e0108f" name="af1231c8f794238d9fb79e5f413e0108f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1231c8f794238d9fb79e5f413e0108f">&#9670;&#160;</a></span>RenderAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::RenderAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draw all gameObjects using cameras[0] as a camera, accounting for all lights  </p>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00019">19</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_af1231c8f794238d9fb79e5f413e0108f_cgraph.png" border="0" usemap="#aclass_scene_af1231c8f794238d9fb79e5f413e0108f_cgraph" alt=""/></div>
+<map name="aclass_scene_af1231c8f794238d9fb79e5f413e0108f_cgraph" id="aclass_scene_af1231c8f794238d9fb79e5f413e0108f_cgraph">
+<area shape="rect" title="Draw all gameObjects using cameras[0] as a camera, accounting for all lights" alt="" coords="5,81,126,109"/>
+<area shape="rect" href="_renderer_8cpp.html#a29771e363fa2dc03edb94a64277440ea" title="Render a given mesh" alt="" coords="202,5,284,33"/>
+<area shape="rect" href="class_transform.html#a482ec8a49b08f224b2ec513dc27f47b5" title="Gets the position of this transform" alt="" coords="361,68,514,96"/>
+<area shape="rect" href="_renderer_8cpp.html#a7eea27f41e32dbf6703525ac0b7a1bb3" title="Sets a shader program uniform with parameters for transforms" alt="" coords="201,107,286,134"/>
+<area shape="rect" href="class_camera.html#ade59c8e9e1ccf81c92d69722ed070718" title="Uses glm::lookAt to build a view matrix from cameraTransform" alt="" coords="174,159,313,186"/>
+<area shape="rect" href="class_transform.html#aa12429358147b70bdfd11af25a99f660" title=" " alt="" coords="562,60,747,104"/>
+<area shape="rect" href="class_transform.html#a3fbf814bbd069c57d1b3579a56893b3e" title="Our local forward vector" alt="" coords="369,145,506,173"/>
+<area shape="rect" href="class_transform.html#ae0ce3a189b726c18e21c2eb1990f4464" title="Our local up vector" alt="" coords="385,197,490,225"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_af1231c8f794238d9fb79e5f413e0108f_icgraph.png" border="0" usemap="#aclass_scene_af1231c8f794238d9fb79e5f413e0108f_icgraph" alt=""/></div>
+<map name="aclass_scene_af1231c8f794238d9fb79e5f413e0108f_icgraph" id="aclass_scene_af1231c8f794238d9fb79e5f413e0108f_icgraph">
+<area shape="rect" title="Draw all gameObjects using cameras[0] as a camera, accounting for all lights" alt="" coords="103,5,223,33"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,33"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a766a660b1b9d851b14157a6d9373f719" name="a766a660b1b9d851b14157a6d9373f719"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a766a660b1b9d851b14157a6d9373f719">&#9670;&#160;</a></span>cameras</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_camera.html">Camera</a>*&gt; Scene::cameras</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List of all Cameras in scene  </p>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00022">22</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
+
+</div>
+</div>
+<a id="aa2ecf40b87422ea8d9a38a04b7765345" name="aa2ecf40b87422ea8d9a38a04b7765345"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2ecf40b87422ea8d9a38a04b7765345">&#9670;&#160;</a></span>gameObjects</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_game_object.html">GameObject</a>*&gt; Scene::gameObjects</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List of all GameObjects in scene  </p>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00018">18</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
+
+</div>
+</div>
+<a id="a4ecc3182a80435e1c4dfbe1b20e559bd" name="a4ecc3182a80435e1c4dfbe1b20e559bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ecc3182a80435e1c4dfbe1b20e559bd">&#9670;&#160;</a></span>lights</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="struct_light.html">Light</a>*&gt; Scene::lights</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List of all Lights in scene  </p>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00026">26</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/s239074/Documents/ogl_renderer/ogl_renderer/engine/<a class="el" href="_scene_8h_source.html">Scene.h</a></li>
-<li>C:/Users/s239074/Documents/ogl_renderer/ogl_renderer/engine/Scene.cpp</li>
+<li>C:/Users/s239074/Documents/ogl_renderer/ogl_renderer/engine/<a class="el" href="_scene_8cpp_source.html">Scene.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
