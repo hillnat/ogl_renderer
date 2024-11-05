@@ -20,52 +20,48 @@ int main(){
 
 // Shaders / Textures / Materials Setup
 	Shader diffuseShader = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
-	Shader diffuseShader2 = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
-	Shader basicShader = LoadShader("shaders/basic.vert", "shaders/basic.frag");
-	Texture marbleTexture = LoadTexture("textures/marble.png");
-	Texture metalTexture = LoadTexture("textures/metal.png");
+	Texture treeTexture = LoadTexture("textures/treetex.png");
 	Material diffuseMaterial = Material(&diffuseShader);
-	Material diffuseMaterial2 = Material(&diffuseShader2);
-	//Material basicMaterial = Material(&basicShader);
-	diffuseMaterial.SetTexture(&marbleTexture);
-
+	SetUniform(diffuseShader, 3, treeTexture, 0);//Attach texture to shader
 // Object Setup
-	GameObject obj1(Primitives::MakeSphere(), &diffuseMaterial);
-	GameObject obj2(Primitives::MakePlane(), &diffuseMaterial2);
-	GameObject obj3(Primitives::MakeSphere(), &diffuseMaterial);
+	//GameObject obj1(Primitives::MakeSphere(), &diffuseMaterial);
+	GameObject obj1("meshes/tree.obj", &diffuseMaterial);
+	//GameObject obj3(Primitives::MakeSphere(), &diffuseMaterial2);
+	//GameObject obj2(Primitives::MakePlane(), &basicMaterial);
+
 	Camera testCamera{};
 
 	testCamera.cameraTransform.TranslateLocal(vec3(0, 0, -6));
-	obj1.transform.TranslateLocal(vec3(0,3,0));
-	obj2.transform.TranslateLocal(vec3(0, -3, 0));
-	obj3.transform.TranslateLocal(vec3(0.5f, 3, 0));
-	obj3.transform.parent = &(obj1.transform);
+	//obj2.transform.TranslateLocal(vec3(0,-4,0));
+	//obj1.transform.TranslateLocal(vec3(0,2,0));
+	//obj3.transform.TranslateLocal(vec3(0,4,0));
 
 	Light testDirLight(vec3(1, 1, 1) / 2.f, vec3(-0.5f, 1, -0.5f));
 //Physics Setup
 	Physics* phys = new Physics();
-
-	Collider col1 = Collider(ColliderShapes::Sphere);
-	Rigidbody rb1 = Rigidbody(&obj1.transform, vec3(0, 0, 0), 1.f, false, 1.f);
-	ColRbPair crp1 = ColRbPair(&col1, &rb1);
-	phys->AddColRbPair(&crp1);
-
-	Collider col2 = Collider(ColliderShapes::Plane);
-	Rigidbody rb2 = Rigidbody(&obj2.transform, vec3(0, 0, 0), 0.f, true, 1.f);
-	ColRbPair crp2 = ColRbPair(&col2, &rb2);
-	phys->AddColRbPair(&crp2);
-
-
+	//Collider col1 = Collider(ColliderShapes::Sphere);
+	//Rigidbody rb1 = Rigidbody(&obj1.transform, vec3(0, 0, 0), false, false, 1.f);
+	//ColRbPair crp1 = ColRbPair(&col1, &rb1);
+	//phys->AddColRbPair(&crp1);
+	//Collider col2 = Collider(ColliderShapes::Plane);
+	//Rigidbody rb2 = Rigidbody(&obj2.transform, vec3(0, 0, 0), false, false, 1.f);
+	//ColRbPair crp2 = ColRbPair(&col2, &rb2);
+	//phys->AddColRbPair(&crp2);
+	//Collider col3 = Collider(ColliderShapes::Sphere);
+	//Rigidbody rb3 = Rigidbody(&obj3.transform, vec3(0, -0.7f, 0), false, false, 3.f);
+	//ColRbPair crp3 = ColRbPair(&col3, &rb3);
+	//phys->AddColRbPair(&crp3);
 
 	Scene* scene = new Scene();
 	scene->AddToScene(&obj1);
-	scene->AddToScene(&obj2);
+	//scene->AddToScene(&obj2);
+	//scene->AddToScene(&obj3);
 	scene->AddToScene(&testCamera);
 	scene->AddToScene(&testDirLight);
 
 	float lastTime = glfwGetTime();
 	float fixedDeltaTimeAccum = 0;
-	const float fixedTimeStepsPerSec = 200;
+	const float fixedTimeStepsPerSec = 100;
 	const float fixedDeltaTime = 1.f / fixedTimeStepsPerSec;
 
 	//Test
@@ -90,7 +86,7 @@ int main(){
 		context->ClearScreen();
 
 		//Rotate random stuff for testing
-		//obj1.transform.Rotate(vec3(0,0,1), spinSpeed * deltaTime);
+		obj1.transform.Rotate(vec3(0,0,1), spinSpeed * deltaTime);
 		vec2 mouseDelta = context->GetMouseDelta();
 
 		if (context->Mouse1_Pressed() && mouseDelta.x!=0)		{ testCamera.cameraTransform.Rotate(vec3(0, 1, 0), -mouseDelta.x * sensitivity * deltaTime); }
@@ -100,8 +96,6 @@ int main(){
 		else if (context->S_Pressed())	{ testCamera.cameraTransform.TranslateLocal(vec3(0, 0, -1) * deltaTime * moveSpeed); }
 		if (context->D_Pressed())		{ testCamera.cameraTransform.TranslateLocal(vec3(-1, 0, 0) * deltaTime * moveSpeed); }
 		else if (context->A_Pressed())	{ testCamera.cameraTransform.TranslateLocal(vec3(1, 0, 0) * deltaTime * moveSpeed); }
-		if (context->E_Pressed()) { testCamera.cameraTransform.TranslateLocal(vec3(0, 1, 0) * deltaTime * moveSpeed); }
-		else if (context->Q_Pressed()) { testCamera.cameraTransform.TranslateLocal(vec3(0, -1, 0) * deltaTime * moveSpeed); }
 
 		if (context->UpArrow_Pressed()) { sensitivity += 10.f; }
 		else if (context->DownArrow_Pressed()) { sensitivity -= 10.f; }
