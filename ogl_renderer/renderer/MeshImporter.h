@@ -7,6 +7,6 @@ namespace MeshImporter {
 	/// </summary>
 	/// <param name="filePath">File path to use</param>
 	/// <returns>The imported mesh</returns>
-	Mesh ImportFromFile(const char* filePath);
+	Mesh* ImportFromFile(const char* filePath);
 }
 

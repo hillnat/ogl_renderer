@@ -13,7 +13,7 @@ void Scene::AddToScene(Light* light) {
 }
 void Scene::FreeAllMeshes() {
 	for (int i = 0; i < gameObjects.size(); i++) {
-		FreeMesh(*(gameObjects[i]->mesh));
+		FreeMesh(gameObjects[i]->mesh);
 	}
 }
 void Scene::RenderAll() {
@@ -43,20 +43,20 @@ void Scene::RenderAll() {
 		//Handle Camera
 		if (cameras.size() != 0 && cameras[0] != nullptr) {
 			Camera mainCamera = *cameras[0];
-			SetUniform(*shader, 1, mainCamera.viewMatrix());
-			SetUniform(*shader, 0, mainCamera.projectionMatrix);
-			SetUniform(*shader, 7, vec3(mainCamera.cameraTransform.GetPosition()));//Cam position for specular. Mat4 to vec3 conversion
+			SetUniform(shader, 1, mainCamera.viewMatrix());
+			SetUniform(shader, 0, mainCamera.projectionMatrix);
+			SetUniform(shader, 7, (vec3(mainCamera.cameraTransform.GetPosition())));//Cam position for specular. Mat4 to vec3 conversion
 		}
-		SetUniform(*shader, 4, vec3(0.1f, 0.1f, 0.1f));//Set ambient
-		SetUniform(*shader, 5, lights[0]->color);
-		SetUniform(*shader, 6, lights[0]->direction);
+		SetUniform(shader, 4, vec3(0.1f, 0.1f, 0.1));//Set ambient
+		SetUniform(shader, 5, lights[0]->color);
+		SetUniform(shader, 6, lights[0]->direction);
 	}
 	
 	//Draw all objects, setting object based uniforms for their respective shader
 	for (int i = 0; i < gameObjects.size(); i++) {
-		SetUniform(*(*gameObjects[i]).material->shader, 2, (*gameObjects[i]).transform.matrix);
-		if (gameObjects[i]->mesh.size !=0) {
-			DrawMesh(*(*gameObjects[i]).material->shader, (*gameObjects[i]).mesh);
+		SetUniform(gameObjects[i]->material->shader, 2,(&gameObjects[i]->transform.matrix));
+		if (gameObjects[i]->mesh->size !=0) {
+			DrawMesh(gameObjects[i]->material->shader, gameObjects[i]->mesh);
 		}		
 	}	
 }

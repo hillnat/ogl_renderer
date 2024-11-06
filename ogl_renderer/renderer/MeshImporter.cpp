@@ -7,13 +7,13 @@
 #include "glfw/glfw3.h"	//GLFW is a Windows API wrapper, allows us to handle window context easily
 #include <iostream>
 
-Mesh MeshImporter::ImportFromFile(const char* filename)
+Mesh* MeshImporter::ImportFromFile(const char* filename)
 {
 	//std::cout << "Loading mesh from file path : " << filename << std::endl;
 	// read vertices from the model
 	float startTime = glfwGetTime();
 	const aiScene* scene = aiImportFile(filename, 0);
-	if (scene == NULL) { std::cout << "Fatal error" << std::endl; return Mesh{}; }
+	if (scene == NULL) { std::cout << "Fatal error" << std::endl; return nullptr; }
 	std::vector<vertex> allVertices;
 	std::vector<GLuint> allIndices;
 	int allVertexCount = 0;

@@ -2,7 +2,7 @@
 #include "../Renderer/Renderer.h"
 #define PI 3.1415926535897932
 namespace Primitives {
-	Mesh Primitives::MakeSphere() {
+	Mesh* Primitives::MakeSphere() {
 
 		const float radius = 0.5f;
 		const int longCount = 100;
@@ -97,7 +97,7 @@ namespace Primitives {
 	//	const int topCenterIndex = baseCenterIndex + sides + 1;
 	//	//pikcup here
 	//}
-	Mesh Primitives::MakePlane() {
+	Mesh* Primitives::MakePlane() {
 		vertex verts[4] = {
 			vertex//top right
 			(
@@ -311,7 +311,7 @@ namespace Primitives {
 	//
 	//	return MakeMesh(verts, 24, indices, 36);
 	//}
-	Mesh Primitives::MakeLine() {
+	Mesh* Primitives::MakeLine() {
 		//Just a skinny double sided plane
 		vertex verts[8] = {
 			vertex//top right

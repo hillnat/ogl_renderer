@@ -12,10 +12,10 @@ namespace Primitives {
 	const vec4 WHITE = vec4{ 1.f,1.f,1.f,1.f };
 	//Mesh MakeCube();
 	//Mesh MakeCube();
-	Mesh MakeSphere();
+	Mesh* MakeSphere();
 	//Mesh MakeCylinder();
-	Mesh MakePlane();
-	Mesh MakeLine();
+	Mesh* MakePlane();
+	Mesh* MakeLine();
 
 }
 

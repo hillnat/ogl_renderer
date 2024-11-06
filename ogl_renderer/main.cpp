@@ -21,14 +21,15 @@ int main(){
 	Context* context = new Context();
 	context->Initialize();
 	// Shaders / Textures / Materials Setup
-	Mesh* sphereMesh = &Primitives::MakeSphere();
-	Shader* mainShader = &LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
-	Texture* mainTexture = &LoadTexture("textures/marble.png");
+	Mesh* sphereMesh = Primitives::MakeSphere();
+	Mesh* planeMesh = Primitives::MakePlane();
+	Shader* mainShader = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
+	Texture* mainTexture = LoadTexture("textures/marble.png");
 	Material* mainMaterial = new Material(mainShader);
 	mainMaterial->SetTexture(mainTexture);
 	// Object Setup
 	GameObject* obj0 = new GameObject(sphereMesh, mainMaterial);
-	GameObject* planeObj = new GameObject(&Primitives::MakePlane(), mainMaterial);
+	GameObject* planeObj = new GameObject(planeMesh, mainMaterial);
 	//Make our camera
 	Camera* mainCamera = new Camera;
 	//Move stuff around
@@ -124,7 +125,7 @@ int main(){
 	delete(phys);
 	delete(mainCamera);
 	//Refactor freeing of mats and textures
-	FreeTexture(*mainTexture);
+	FreeTexture(mainTexture);
 	context->Terminate();
 	delete(context);
 
