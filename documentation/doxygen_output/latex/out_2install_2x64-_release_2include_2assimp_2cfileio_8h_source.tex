@@ -2,108 +2,108 @@
 \label{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/cfileio.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/cfileio.h}}
 \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
-\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{5 \textcolor{comment}{}}
-\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
-\DoxyCodeLine{7 \textcolor{comment}{}}
-\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
-\DoxyCodeLine{9 \textcolor{comment}{}}
-\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
-\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the following}}
-\DoxyCodeLine{12 \textcolor{comment}{conditions are met:}}
-\DoxyCodeLine{13 \textcolor{comment}{}}
-\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
-\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
-\DoxyCodeLine{17 \textcolor{comment}{}}
-\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
-\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
-\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
-\DoxyCodeLine{22 \textcolor{comment}{}}
-\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
-\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
-\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
-\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
-\DoxyCodeLine{27 \textcolor{comment}{}}
-\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
-\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
-\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
-\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
-\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
-\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
-\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
-\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
-\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
-\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
-\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
-\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{40 \textcolor{comment}{*/}}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{45 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef AI\_FILEIO\_H\_INC}}
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#define AI\_FILEIO\_H\_INC}}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
-\DoxyCodeLine{50 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
-\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{52 }
-\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <assimp/types.h>}}
-\DoxyCodeLine{54 }
-\DoxyCodeLine{55 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{56 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
-\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_file_i_o}{aiFileIO}};}
-\DoxyCodeLine{60 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_file}{aiFile}};}
-\DoxyCodeLine{61 }
-\DoxyCodeLine{62 \textcolor{comment}{// aiFile callbacks}}
-\DoxyCodeLine{63 \textcolor{keyword}{typedef} size\_t          (*aiFileWriteProc) (C\_STRUCT \mbox{\hyperlink{structai_file}{aiFile}}*,   \textcolor{keyword}{const} \textcolor{keywordtype}{char}*, size\_t, size\_t);}
-\DoxyCodeLine{64 \textcolor{keyword}{typedef} size\_t          (*aiFileReadProc)  (C\_STRUCT \mbox{\hyperlink{structai_file}{aiFile}}*,   \textcolor{keywordtype}{char}*, size\_t,size\_t);}
-\DoxyCodeLine{65 \textcolor{keyword}{typedef} size\_t          (*aiFileTellProc)  (C\_STRUCT \mbox{\hyperlink{structai_file}{aiFile}}*);}
-\DoxyCodeLine{66 \textcolor{keyword}{typedef} void            (*aiFileFlushProc) (C\_STRUCT \mbox{\hyperlink{structai_file}{aiFile}}*);}
-\DoxyCodeLine{67 \textcolor{keyword}{typedef} C\_ENUM \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} (*aiFileSeek)      (C\_STRUCT \mbox{\hyperlink{structai_file}{aiFile}}*, size\_t, C\_ENUM \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786}{aiOrigin}});}
-\DoxyCodeLine{68 }
-\DoxyCodeLine{69 \textcolor{comment}{// aiFileIO callbacks}}
-\DoxyCodeLine{70 \textcolor{keyword}{typedef} C\_STRUCT \mbox{\hyperlink{structai_file}{aiFile}}* (*aiFileOpenProc)  (C\_STRUCT \mbox{\hyperlink{structai_file_i_o}{aiFileIO}}*, \textcolor{keyword}{const} \textcolor{keywordtype}{char}*, \textcolor{keyword}{const} \textcolor{keywordtype}{char}*);}
-\DoxyCodeLine{71 \textcolor{keyword}{typedef} void             (*aiFileCloseProc) (C\_STRUCT \mbox{\hyperlink{structai_file_i_o}{aiFileIO}}*, C\_STRUCT \mbox{\hyperlink{structai_file}{aiFile}}*);}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{73 \textcolor{comment}{// Represents user-\/defined data}}
-\DoxyCodeLine{74 \textcolor{keyword}{typedef} \textcolor{keywordtype}{char}* aiUserData;}
-\DoxyCodeLine{75 }
-\DoxyCodeLine{76 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{83 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_file_i_o}{aiFileIO}}}
-\DoxyCodeLine{84 \{}
-\DoxyCodeLine{87     aiFileOpenProc \mbox{\hyperlink{structai_file_i_o_a819d9c7823039294125068d06949a6df}{OpenProc}};}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{91     aiFileCloseProc \mbox{\hyperlink{structai_file_i_o_a7ec702672712b5a02dc49cb17f980a14}{CloseProc}};}
-\DoxyCodeLine{92 }
-\DoxyCodeLine{94     aiUserData \mbox{\hyperlink{structai_file_i_o_a9c62b7f3d70fbb2f41e33ad0b9933139}{UserData}};}
-\DoxyCodeLine{95 \};}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{97 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{107 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_file}{aiFile}} \{}
-\DoxyCodeLine{109     aiFileReadProc \mbox{\hyperlink{structai_file_a52287e81ca67b9d43cc1ce6142f781fa}{ReadProc}};}
-\DoxyCodeLine{110 }
-\DoxyCodeLine{112     aiFileWriteProc \mbox{\hyperlink{structai_file_ab9fca3a62e34a33592c13a6f31db7d1d}{WriteProc}};}
-\DoxyCodeLine{113 }
-\DoxyCodeLine{117     aiFileTellProc \mbox{\hyperlink{structai_file_aaf2d88a3b2fcbdacf51119658283d27e}{TellProc}};}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{122     aiFileTellProc \mbox{\hyperlink{structai_file_aff2fff8c0458e7ec71f7de217c3a3033}{FileSizeProc}};}
-\DoxyCodeLine{123 }
-\DoxyCodeLine{127     aiFileSeek \mbox{\hyperlink{structai_file_a7a07b499be4ad433669246479a4d4ad2}{SeekProc}};}
-\DoxyCodeLine{128 }
-\DoxyCodeLine{131     aiFileFlushProc \mbox{\hyperlink{structai_file_a1102d28d1c0be68ffed20476669bdb0d}{FlushProc}};}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{135     aiUserData \mbox{\hyperlink{structai_file_aec528fa18f4755fe4f28d604fde28aad}{UserData}};}
-\DoxyCodeLine{136 \};}
-\DoxyCodeLine{137 }
-\DoxyCodeLine{138 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{139 \}}
-\DoxyCodeLine{140 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{141 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_FILEIO\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00002}00002 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00003}00003 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00004}00004 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00005}00005 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00006}00006 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00007}00007 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00008}00008 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00009}00009 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00010}00010 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00011}00011 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00012}00012 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00013}00013 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00014}00014 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00015}00015 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00016}00016 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00017}00017 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00018}00018 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00019}00019 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00020}00020 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00021}00021 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00022}00022 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00023}00023 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00024}00024 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00025}00025 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00026}00026 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00027}00027 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00028}00028 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00029}00029 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00030}00030 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00031}00031 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00032}00032 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00033}00033 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00034}00034 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00035}00035 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00036}00036 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00037}00037 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00038}00038 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00039}00039 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00040}00040 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00045}00045 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00046}00046 \textcolor{preprocessor}{\#ifndef AI\_FILEIO\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00047}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_ae0c842cece18608e0566cbe270c97d2e}{00047}} \textcolor{preprocessor}{\#define AI\_FILEIO\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00049}00049 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00050}00050 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00051}00051 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00053}00053 \textcolor{preprocessor}{\#include <assimp/types.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00055}00055 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00056}00056 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00057}00057 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00059}00059 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_file_i_o}{aiFileIO}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00060}00060 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_file}{aiFile}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00062}00062 \textcolor{comment}{// aiFile callbacks}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00063}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_a21d0825136cd8be942613ff77479045d}{00063}} \textcolor{keyword}{typedef} size\_t          (*\mbox{\hyperlink{include_2assimp_2cfileio_8h_a21d0825136cd8be942613ff77479045d}{aiFileWriteProc}}) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_file}{aiFile}}*,   \textcolor{keyword}{const} \textcolor{keywordtype}{char}*, size\_t, size\_t);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00064}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_a482e6ebea846d515ef23556d0f1717f4}{00064}} \textcolor{keyword}{typedef} size\_t          (*\mbox{\hyperlink{include_2assimp_2cfileio_8h_a482e6ebea846d515ef23556d0f1717f4}{aiFileReadProc}})  (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_file}{aiFile}}*,   \textcolor{keywordtype}{char}*, size\_t,size\_t);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00065}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_a30d575ddf8f46426ecb12c95f92b1686}{00065}} \textcolor{keyword}{typedef} size\_t          (*\mbox{\hyperlink{include_2assimp_2cfileio_8h_a30d575ddf8f46426ecb12c95f92b1686}{aiFileTellProc}})  (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_file}{aiFile}}*);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00066}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_a49a7a4a25167c7aa03dfe80ae5bdd959}{00066}} \textcolor{keyword}{typedef} void            (*\mbox{\hyperlink{include_2assimp_2cfileio_8h_a49a7a4a25167c7aa03dfe80ae5bdd959}{aiFileFlushProc}}) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_file}{aiFile}}*);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00067}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_a9d44e516b1ce6ef3da4295045d6ec217}{00067}} \textcolor{keyword}{typedef} \mbox{\hyperlink{include_2assimp_2defs_8h_aa8c1788fd9d096036c9e3b6cfe4b1301}{C\_ENUM}} \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} (*\mbox{\hyperlink{include_2assimp_2cfileio_8h_a9d44e516b1ce6ef3da4295045d6ec217}{aiFileSeek}})      (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_file}{aiFile}}*, size\_t, \mbox{\hyperlink{include_2assimp_2defs_8h_aa8c1788fd9d096036c9e3b6cfe4b1301}{C\_ENUM}} \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786}{aiOrigin}});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00069}00069 \textcolor{comment}{// aiFileIO callbacks}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00070}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_acf147febf5749700fdbca46189ef66c0}{00070}} \textcolor{keyword}{typedef} \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_file}{aiFile}}* (*aiFileOpenProc)  (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_file_i_o}{aiFileIO}}*, \textcolor{keyword}{const} \textcolor{keywordtype}{char}*, \textcolor{keyword}{const} \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00071}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_ab6e7f26b63f2d1ed9655e97bd4ebd38c}{00071}} \textcolor{keyword}{typedef} void             (*\mbox{\hyperlink{include_2assimp_2cfileio_8h_ab6e7f26b63f2d1ed9655e97bd4ebd38c}{aiFileCloseProc}}) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_file_i_o}{aiFileIO}}*, \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_file}{aiFile}}*);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00073}00073 \textcolor{comment}{// Represents user-\/defined data}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00074}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_a176132d0cd51c96302089ff3f8a8ee1c}{00074}} \textcolor{keyword}{typedef} \textcolor{keywordtype}{char}* \mbox{\hyperlink{include_2assimp_2cfileio_8h_a176132d0cd51c96302089ff3f8a8ee1c}{aiUserData}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00076}00076 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00083}00083 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_file_i_o}{aiFileIO}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00084}00084 \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00087}00087     \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_acf147febf5749700fdbca46189ef66c0}{aiFileOpenProc}} \mbox{\hyperlink{structai_file_i_o_a819d9c7823039294125068d06949a6df}{OpenProc}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00091}00091     \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_ab6e7f26b63f2d1ed9655e97bd4ebd38c}{aiFileCloseProc}} \mbox{\hyperlink{structai_file_i_o_a7ec702672712b5a02dc49cb17f980a14}{CloseProc}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00094}00094     \mbox{\hyperlink{include_2assimp_2cfileio_8h_a176132d0cd51c96302089ff3f8a8ee1c}{aiUserData}} \mbox{\hyperlink{structai_file_i_o_a9c62b7f3d70fbb2f41e33ad0b9933139}{UserData}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00095}00095 \};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00097}00097 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00107}00107 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_file}{aiFile}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00109}00109     \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_a482e6ebea846d515ef23556d0f1717f4}{aiFileReadProc}} \mbox{\hyperlink{structai_file_a52287e81ca67b9d43cc1ce6142f781fa}{ReadProc}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00112}00112     \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_a21d0825136cd8be942613ff77479045d}{aiFileWriteProc}} \mbox{\hyperlink{structai_file_ab9fca3a62e34a33592c13a6f31db7d1d}{WriteProc}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00117}00117     \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_a30d575ddf8f46426ecb12c95f92b1686}{aiFileTellProc}} \mbox{\hyperlink{structai_file_aaf2d88a3b2fcbdacf51119658283d27e}{TellProc}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00122}00122     \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_a30d575ddf8f46426ecb12c95f92b1686}{aiFileTellProc}} \mbox{\hyperlink{structai_file_aff2fff8c0458e7ec71f7de217c3a3033}{FileSizeProc}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00127}00127     \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_a9d44e516b1ce6ef3da4295045d6ec217}{aiFileSeek}} \mbox{\hyperlink{structai_file_a7a07b499be4ad433669246479a4d4ad2}{SeekProc}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00131}00131     \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_a49a7a4a25167c7aa03dfe80ae5bdd959}{aiFileFlushProc}} \mbox{\hyperlink{structai_file_a1102d28d1c0be68ffed20476669bdb0d}{FlushProc}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00135}00135     \mbox{\hyperlink{include_2assimp_2cfileio_8h_a176132d0cd51c96302089ff3f8a8ee1c}{aiUserData}} \mbox{\hyperlink{structai_file_aec528fa18f4755fe4f28d604fde28aad}{UserData}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00136}00136 \};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00138}00138 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00139}00139 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00140}00140 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2cfileio_8h_source_l00141}00141 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_FILEIO\_H\_INC}}
 
 \end{DoxyCode}

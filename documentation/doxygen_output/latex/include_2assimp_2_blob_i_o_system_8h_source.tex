@@ -1,316 +1,316 @@
 \hypertarget{include_2assimp_2_blob_i_o_system_8h_source}{}\doxysection{Blob\+IOSystem.\+h}
 \label{include_2assimp_2_blob_i_o_system_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/BlobIOSystem.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/BlobIOSystem.h}}
-
+\mbox{\hyperlink{include_2assimp_2_blob_i_o_system_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
-\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{5 \textcolor{comment}{}}
-\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
-\DoxyCodeLine{7 \textcolor{comment}{}}
-\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
-\DoxyCodeLine{9 \textcolor{comment}{}}
-\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
-\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the following}}
-\DoxyCodeLine{12 \textcolor{comment}{conditions are met:}}
-\DoxyCodeLine{13 \textcolor{comment}{}}
-\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
-\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
-\DoxyCodeLine{17 \textcolor{comment}{}}
-\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
-\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
-\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
-\DoxyCodeLine{22 \textcolor{comment}{}}
-\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
-\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
-\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
-\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
-\DoxyCodeLine{27 \textcolor{comment}{}}
-\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
-\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
-\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
-\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
-\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
-\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
-\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
-\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
-\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
-\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
-\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
-\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{40 \textcolor{comment}{*/}}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{45 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef AI\_BLOBIOSYSTEM\_H\_INCLUDED}}
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#define AI\_BLOBIOSYSTEM\_H\_INCLUDED}}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
-\DoxyCodeLine{50 \textcolor{preprocessor}{\#pragma GCC system\_header}}
-\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{52 }
-\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <assimp/cexport.h>}}
-\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <assimp/DefaultLogger.hpp>}}
-\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <assimp/IOStream.hpp>}}
-\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <assimp/IOSystem.hpp>}}
-\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <cstdint>}}
-\DoxyCodeLine{58 \textcolor{preprocessor}{\#include <set>}}
-\DoxyCodeLine{59 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{60 }
-\DoxyCodeLine{61 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
-\DoxyCodeLine{62 \textcolor{keyword}{class }BlobIOSystem;}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{66 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{67 \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream}{BlobIOStream}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} \{}
-\DoxyCodeLine{68 \textcolor{keyword}{public}:}
-\DoxyCodeLine{73     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a8f35d99f46306fe8e7b7fb02d8b09f38}{BlobIOStream}}(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system}{BlobIOSystem}} *creator, \textcolor{keyword}{const} std::string \&file, \textcolor{keywordtype}{size\_t} initial = 4096) :}
-\DoxyCodeLine{74             buffer(),}
-\DoxyCodeLine{75             cur\_size(),}
-\DoxyCodeLine{76             file\_size(),}
-\DoxyCodeLine{77             cursor(),}
-\DoxyCodeLine{78             initial(initial),}
-\DoxyCodeLine{79             file(file),}
-\DoxyCodeLine{80             creator(creator) \{}
-\DoxyCodeLine{81         \textcolor{comment}{// empty}}
-\DoxyCodeLine{82     \}}
-\DoxyCodeLine{83 }
-\DoxyCodeLine{85     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a12c18de13363e35ee9a08550fcfbc41f}{\string~BlobIOStream}}() \textcolor{keyword}{override};}
-\DoxyCodeLine{86 }
-\DoxyCodeLine{87 \textcolor{keyword}{public}:}
-\DoxyCodeLine{88     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{89     \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}} *GetBlob() \{}
-\DoxyCodeLine{90         \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}} *blob = \textcolor{keyword}{new} \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}}();}
-\DoxyCodeLine{91         blob-\/>\mbox{\hyperlink{structai_export_data_blob_a339bfaacc70396b2f99f94c1bc3b808f}{size}} = file\_size;}
-\DoxyCodeLine{92         blob-\/>\mbox{\hyperlink{structai_export_data_blob_a6fc6dcff8be3b209a1da7141b11d716d}{data}} = buffer;}
-\DoxyCodeLine{93 }
-\DoxyCodeLine{94         buffer = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{95 }
-\DoxyCodeLine{96         \textcolor{keywordflow}{return} blob;}
-\DoxyCodeLine{97     \}}
-\DoxyCodeLine{98 }
-\DoxyCodeLine{99     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{100     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_af7c647f5fee4cf0f34efdb637b08a6a3}{Read}}(\textcolor{keywordtype}{void} *, \textcolor{keywordtype}{size\_t}, \textcolor{keywordtype}{size\_t})\textcolor{keyword}{ override }\{}
-\DoxyCodeLine{101         \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{102     \}}
-\DoxyCodeLine{103 }
-\DoxyCodeLine{104     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{105     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31}{Write}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *pvBuffer, \textcolor{keywordtype}{size\_t} pSize, \textcolor{keywordtype}{size\_t} pCount)\textcolor{keyword}{ override }\{}
-\DoxyCodeLine{106         pSize *= pCount;}
-\DoxyCodeLine{107         \textcolor{keywordflow}{if} (cursor + pSize > cur\_size) \{}
-\DoxyCodeLine{108             Grow(cursor + pSize);}
-\DoxyCodeLine{109         \}}
-\DoxyCodeLine{110 }
-\DoxyCodeLine{111         memcpy(buffer + cursor, pvBuffer, pSize);}
-\DoxyCodeLine{112         cursor += pSize;}
-\DoxyCodeLine{113 }
-\DoxyCodeLine{114         file\_size = std::max(file\_size, cursor);}
-\DoxyCodeLine{115         \textcolor{keywordflow}{return} pCount;}
-\DoxyCodeLine{116     \}}
-\DoxyCodeLine{117 }
-\DoxyCodeLine{118     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{119     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01}{Seek}}(\textcolor{keywordtype}{size\_t} pOffset, \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786}{aiOrigin}} pOrigin)\textcolor{keyword}{ override }\{}
-\DoxyCodeLine{120         \textcolor{keywordflow}{switch} (pOrigin) \{}
-\DoxyCodeLine{121             \textcolor{keywordflow}{case} \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786a34f9f30078835fdb09212bf69d5ebb36}{aiOrigin\_CUR}}:}
-\DoxyCodeLine{122                 cursor += pOffset;}
-\DoxyCodeLine{123                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{124 }
-\DoxyCodeLine{125             \textcolor{keywordflow}{case} \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786a88929c7834e2026ab642fd84bea2fec7}{aiOrigin\_END}}:}
-\DoxyCodeLine{126                 cursor = file\_size -\/ pOffset;}
-\DoxyCodeLine{127                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{128 }
-\DoxyCodeLine{129             \textcolor{keywordflow}{case} \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786a94a44e681b6c891e39767c518b64b56f}{aiOrigin\_SET}}:}
-\DoxyCodeLine{130                 cursor = pOffset;}
-\DoxyCodeLine{131                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133             \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{134                 \textcolor{keywordflow}{return} AI\_FAILURE;}
-\DoxyCodeLine{135         \}}
-\DoxyCodeLine{136 }
-\DoxyCodeLine{137         \textcolor{keywordflow}{if} (cursor > file\_size) \{}
-\DoxyCodeLine{138             Grow(cursor);}
-\DoxyCodeLine{139         \}}
-\DoxyCodeLine{140 }
-\DoxyCodeLine{141         file\_size = std::max(cursor, file\_size);}
-\DoxyCodeLine{142 }
-\DoxyCodeLine{143         \textcolor{keywordflow}{return} AI\_SUCCESS;}
-\DoxyCodeLine{144     \}}
-\DoxyCodeLine{145 }
-\DoxyCodeLine{146     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{147     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ade466c822b6f0930c2744eb4ac799a4d}{Tell}}()\textcolor{keyword}{ const override }\{}
-\DoxyCodeLine{148         \textcolor{keywordflow}{return} cursor;}
-\DoxyCodeLine{149     \}}
-\DoxyCodeLine{150 }
-\DoxyCodeLine{151     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{152     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5381f03b7609df4883ce2b1d1e30b61f}{FileSize}}()\textcolor{keyword}{ const override }\{}
-\DoxyCodeLine{153         \textcolor{keywordflow}{return} file\_size;}
-\DoxyCodeLine{154     \}}
-\DoxyCodeLine{155 }
-\DoxyCodeLine{156     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{157     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a586a52bd8dbadb1ea579f80bbaad68bd}{Flush}}()\textcolor{keyword}{ override }\{}
-\DoxyCodeLine{158         \textcolor{comment}{// ignore}}
-\DoxyCodeLine{159     \}}
-\DoxyCodeLine{160 }
-\DoxyCodeLine{161 \textcolor{keyword}{private}:}
-\DoxyCodeLine{162     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{163     \textcolor{keywordtype}{void} Grow(\textcolor{keywordtype}{size\_t} need = 0) \{}
-\DoxyCodeLine{164         \textcolor{comment}{// 1.5 and phi are very heap-\/friendly growth factors (the first}}
-\DoxyCodeLine{165         \textcolor{comment}{// allows for frequent re-\/use of heap blocks, the second}}
-\DoxyCodeLine{166         \textcolor{comment}{// forms a fibonacci sequence with similar characteristics -\/}}
-\DoxyCodeLine{167         \textcolor{comment}{// since this heavily depends on the heap implementation}}
-\DoxyCodeLine{168         \textcolor{comment}{// and other factors as well, i'll just go with 1.5 since}}
-\DoxyCodeLine{169         \textcolor{comment}{// it is quicker to compute).}}
-\DoxyCodeLine{170         \textcolor{keywordtype}{size\_t} new\_size = std::max(initial, std::max(need, cur\_size + (cur\_size >> 1)));}
-\DoxyCodeLine{171 }
-\DoxyCodeLine{172         \textcolor{keyword}{const} uint8\_t *\textcolor{keyword}{const} old = buffer;}
-\DoxyCodeLine{173         buffer = \textcolor{keyword}{new} uint8\_t[new\_size];}
-\DoxyCodeLine{174 }
-\DoxyCodeLine{175         \textcolor{keywordflow}{if} (old) \{}
-\DoxyCodeLine{176             memcpy(buffer, old, cur\_size);}
-\DoxyCodeLine{177             \textcolor{keyword}{delete}[] old;}
-\DoxyCodeLine{178         \}}
-\DoxyCodeLine{179 }
-\DoxyCodeLine{180         cur\_size = new\_size;}
-\DoxyCodeLine{181     \}}
-\DoxyCodeLine{182 }
-\DoxyCodeLine{183 \textcolor{keyword}{private}:}
-\DoxyCodeLine{184     \mbox{\hyperlink{group__gtc__type__precision_ga93adf6dd9803408f3e3aaf9dedda352b}{uint8\_t}} *buffer;}
-\DoxyCodeLine{185     \textcolor{keywordtype}{size\_t} cur\_size, file\_size, cursor, initial;}
-\DoxyCodeLine{186 }
-\DoxyCodeLine{187     \textcolor{keyword}{const} std::string file;}
-\DoxyCodeLine{188     BlobIOSystem *\textcolor{keyword}{const} creator;}
-\DoxyCodeLine{189 \};}
-\DoxyCodeLine{190 }
-\DoxyCodeLine{191 \textcolor{preprocessor}{\#define AI\_BLOBIO\_MAGIC "{}\$blobfile"{}}}
-\DoxyCodeLine{192 }
-\DoxyCodeLine{193 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{195 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{196 \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system}{BlobIOSystem}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} \{}
-\DoxyCodeLine{197 }
-\DoxyCodeLine{198     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream}{BlobIOStream}};}
-\DoxyCodeLine{199     \textcolor{keyword}{typedef} std::pair<std::string, aiExportDataBlob *> BlobEntry;}
-\DoxyCodeLine{200 }
-\DoxyCodeLine{201 }
-\DoxyCodeLine{202 \textcolor{keyword}{public}:}
-\DoxyCodeLine{204     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ae65eda0fd63692bceb8702684b81d22d}{BlobIOSystem}}() :}
-\DoxyCodeLine{205             baseName\{AI\_BLOBIO\_MAGIC\} \{}
-\DoxyCodeLine{206     \}}
-\DoxyCodeLine{207 }
-\DoxyCodeLine{210     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ac39e6f818df7d54ca8218e0581ffbd60}{BlobIOSystem}}(\textcolor{keyword}{const} std::string \&baseName) :}
-\DoxyCodeLine{211             baseName(baseName) \{}
-\DoxyCodeLine{212         \textcolor{comment}{// empty}}
-\DoxyCodeLine{213     \}}
-\DoxyCodeLine{214 }
-\DoxyCodeLine{215     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system}{\string~BlobIOSystem}}()\textcolor{keyword}{ override }\{}
-\DoxyCodeLine{216         \textcolor{keywordflow}{for} (BlobEntry \&blobby : blobs) \{}
-\DoxyCodeLine{217             \textcolor{keyword}{delete} blobby.second;}
-\DoxyCodeLine{218         \}}
-\DoxyCodeLine{219     \}}
-\DoxyCodeLine{220 }
-\DoxyCodeLine{221 \textcolor{keyword}{public}:}
-\DoxyCodeLine{222     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{223     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *GetMagicFileName()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{224         \textcolor{keywordflow}{return} baseName.c\_str();}
-\DoxyCodeLine{225     \}}
-\DoxyCodeLine{226 }
-\DoxyCodeLine{227     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{228     \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}} *GetBlobChain() \{}
-\DoxyCodeLine{229         \textcolor{keyword}{const} \textcolor{keyword}{auto} magicName = std::string(this-\/>GetMagicFileName());}
-\DoxyCodeLine{230         \textcolor{keyword}{const} \textcolor{keywordtype}{bool} hasBaseName = baseName != AI\_BLOBIO\_MAGIC;}
-\DoxyCodeLine{231 }
-\DoxyCodeLine{232         \textcolor{comment}{// one must be the master}}
-\DoxyCodeLine{233         \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}} *master = \textcolor{keyword}{nullptr}, *cur;}
-\DoxyCodeLine{234 }
-\DoxyCodeLine{235         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} BlobEntry \&blobby : blobs) \{}
-\DoxyCodeLine{236             \textcolor{keywordflow}{if} (blobby.first == magicName) \{}
-\DoxyCodeLine{237                 master = blobby.second;}
-\DoxyCodeLine{238                 master-\/>\mbox{\hyperlink{structai_export_data_blob_af7f006ac5ad818c0d81d520a84f74c3e}{name}}.Set(hasBaseName ? blobby.first : \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{239                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{240             \}}
-\DoxyCodeLine{241         \}}
-\DoxyCodeLine{242 }
-\DoxyCodeLine{243         \textcolor{keywordflow}{if} (!master) \{}
-\DoxyCodeLine{244             ASSIMP\_LOG\_ERROR(\textcolor{stringliteral}{"{}BlobIOSystem: no data written or master file was not closed properly."{}});}
-\DoxyCodeLine{245             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{246         \}}
-\DoxyCodeLine{247 }
-\DoxyCodeLine{248         cur = master;}
-\DoxyCodeLine{249 }
-\DoxyCodeLine{250         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} BlobEntry \&blobby : blobs) \{}
-\DoxyCodeLine{251             \textcolor{keywordflow}{if} (blobby.second == master) \{}
-\DoxyCodeLine{252                 \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{253             \}}
-\DoxyCodeLine{254 }
-\DoxyCodeLine{255             cur-\/>\mbox{\hyperlink{structai_export_data_blob_a78ed68cd60597616c78f92dbd4882b15}{next}} = blobby.second;}
-\DoxyCodeLine{256             cur = cur-\/>\mbox{\hyperlink{structai_export_data_blob_a78ed68cd60597616c78f92dbd4882b15}{next}};}
-\DoxyCodeLine{257 }
-\DoxyCodeLine{258             \textcolor{keywordflow}{if} (hasBaseName) \{}
-\DoxyCodeLine{259                 cur-\/>\mbox{\hyperlink{structai_export_data_blob_af7f006ac5ad818c0d81d520a84f74c3e}{name}}.Set(blobby.first);}
-\DoxyCodeLine{260             \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{261                 \textcolor{comment}{// extract the file extension from the file written}}
-\DoxyCodeLine{262                 \textcolor{keyword}{const} std::string::size\_type s = blobby.first.find\_first\_of(\textcolor{charliteral}{'.'});}
-\DoxyCodeLine{263                 cur-\/>name.Set(s == std::string::npos ? blobby.first : blobby.first.substr(s + 1));}
-\DoxyCodeLine{264             \}}
-\DoxyCodeLine{265         \}}
-\DoxyCodeLine{266 }
-\DoxyCodeLine{267         \textcolor{comment}{// give up blob ownership}}
-\DoxyCodeLine{268         blobs.clear();}
-\DoxyCodeLine{269         \textcolor{keywordflow}{return} master;}
-\DoxyCodeLine{270     \}}
-\DoxyCodeLine{271 }
-\DoxyCodeLine{272 \textcolor{keyword}{public}:}
-\DoxyCodeLine{273     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{274     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a4e524259954c01b89aa75f1fd0dab03c}{Exists}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pFile)\textcolor{keyword}{ const override }\{}
-\DoxyCodeLine{275         \textcolor{keywordflow}{return} created.find(std::string(pFile)) != created.end();}
-\DoxyCodeLine{276     \}}
-\DoxyCodeLine{277 }
-\DoxyCodeLine{278     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{279     \textcolor{keywordtype}{char} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_aa3f6c9fa0e5a7a2f4dcae331a4060f73}{getOsSeparator}}()\textcolor{keyword}{ const override }\{}
-\DoxyCodeLine{280         \textcolor{keywordflow}{return} \textcolor{charliteral}{'/'};}
-\DoxyCodeLine{281     \}}
-\DoxyCodeLine{282 }
-\DoxyCodeLine{283     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{284     \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} *\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a93ef86ce5edfee4b9b4376f07f5b2407}{Open}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pFile, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pMode)\textcolor{keyword}{ override }\{}
-\DoxyCodeLine{285         \textcolor{keywordflow}{if} (pMode[0] != \textcolor{charliteral}{'w'}) \{}
-\DoxyCodeLine{286             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{287         \}}
-\DoxyCodeLine{288 }
-\DoxyCodeLine{289         created.insert(std::string(pFile));}
-\DoxyCodeLine{290         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream}{BlobIOStream}}(\textcolor{keyword}{this}, std::string(pFile));}
-\DoxyCodeLine{291     \}}
-\DoxyCodeLine{292 }
-\DoxyCodeLine{293     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{294     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a76836272edbdfcdee7b196c0449dd270}{Close}}(\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} *pFile)\textcolor{keyword}{ override }\{}
-\DoxyCodeLine{295         \textcolor{keyword}{delete} pFile;}
-\DoxyCodeLine{296     \}}
-\DoxyCodeLine{297 }
-\DoxyCodeLine{298 \textcolor{keyword}{private}:}
-\DoxyCodeLine{299     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{300     \textcolor{keywordtype}{void} OnDestruct(\textcolor{keyword}{const} std::string \&filename, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream}{BlobIOStream}} *child) \{}
-\DoxyCodeLine{301         \textcolor{comment}{// we don't know in which the files are closed, so we}}
-\DoxyCodeLine{302         \textcolor{comment}{// can't reliably say that the first must be the master}}
-\DoxyCodeLine{303         \textcolor{comment}{// file ...}}
-\DoxyCodeLine{304         blobs.emplace\_back(filename, child-\/>GetBlob());}
-\DoxyCodeLine{305     \}}
-\DoxyCodeLine{306 }
-\DoxyCodeLine{307 \textcolor{keyword}{private}:}
-\DoxyCodeLine{308     std::string baseName;}
-\DoxyCodeLine{309     std::set<std::string> created;}
-\DoxyCodeLine{310     std::vector<BlobEntry> blobs;}
-\DoxyCodeLine{311 \};}
-\DoxyCodeLine{312 }
-\DoxyCodeLine{313 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{314 \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a12c18de13363e35ee9a08550fcfbc41f}{BlobIOStream::\string~BlobIOStream}}() \{}
-\DoxyCodeLine{315     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} != creator) \{}
-\DoxyCodeLine{316         creator-\/>OnDestruct(file, \textcolor{keyword}{this});}
-\DoxyCodeLine{317     \}}
-\DoxyCodeLine{318     \textcolor{keyword}{delete}[] buffer;}
-\DoxyCodeLine{319 \}}
-\DoxyCodeLine{320 }
-\DoxyCodeLine{321 \} \textcolor{comment}{// namespace Assimp}}
-\DoxyCodeLine{322 }
-\DoxyCodeLine{323 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00002}00002 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00003}00003 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00004}00004 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00005}00005 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00006}00006 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00007}00007 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00008}00008 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00009}00009 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00010}00010 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00011}00011 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00012}00012 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00013}00013 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00014}00014 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00015}00015 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00016}00016 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00017}00017 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00018}00018 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00019}00019 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00020}00020 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00021}00021 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00022}00022 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00023}00023 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00024}00024 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00025}00025 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00026}00026 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00027}00027 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00028}00028 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00029}00029 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00030}00030 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00031}00031 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00032}00032 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00033}00033 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00034}00034 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00035}00035 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00036}00036 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00037}00037 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00038}00038 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00039}00039 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00040}00040 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00045}00045 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00046}00046 \textcolor{preprocessor}{\#ifndef AI\_BLOBIOSYSTEM\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00047}\mbox{\hyperlink{include_2assimp_2_blob_i_o_system_8h_a88968d6031b3503349338e5835c0d928}{00047}} \textcolor{preprocessor}{\#define AI\_BLOBIOSYSTEM\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00049}00049 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00050}00050 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00051}00051 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00053}00053 \textcolor{preprocessor}{\#include <assimp/cexport.h>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00054}00054 \textcolor{preprocessor}{\#include <assimp/DefaultLogger.hpp>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00055}00055 \textcolor{preprocessor}{\#include <assimp/IOStream.hpp>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00056}00056 \textcolor{preprocessor}{\#include <assimp/IOSystem.hpp>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00057}00057 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00058}00058 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00059}00059 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00061}00061 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00062}00062 \textcolor{keyword}{class }BlobIOSystem;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00064}00064 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00066}00066 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00067}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream}{00067}} \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream}{BlobIOStream}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00068}00068 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00073}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a8f35d99f46306fe8e7b7fb02d8b09f38}{00073}}     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a8f35d99f46306fe8e7b7fb02d8b09f38}{BlobIOStream}}(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system}{BlobIOSystem}} *\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_acce7e544886a2cd7da808666f3e3c467}{creator}}, \textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a3514f94a363e3c628207679fe56b2ad0}{file}}, \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_aea5ee46166027f83a377d8e9f1974628}{initial}} = 4096) :}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00074}00074             \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a32a457aee2db7ff1498dd64c83e5a074}{buffer}}(),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00075}00075             \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ae439326641887108b324b580a9d58ed5}{cur\_size}}(),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00076}00076             \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a6aee0eb61f46e2f7c7867a527dd29e38}{file\_size}}(),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00077}00077             \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5483134b78159cc971ce60040f6ce69f}{cursor}}(),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00078}00078             \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_aea5ee46166027f83a377d8e9f1974628}{initial}}(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_aea5ee46166027f83a377d8e9f1974628}{initial}}),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00079}00079             \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a3514f94a363e3c628207679fe56b2ad0}{file}}(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a3514f94a363e3c628207679fe56b2ad0}{file}}),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00080}00080             \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_acce7e544886a2cd7da808666f3e3c467}{creator}}(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_acce7e544886a2cd7da808666f3e3c467}{creator}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00081}00081         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00082}00082     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00085}00085     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a12c18de13363e35ee9a08550fcfbc41f}{\string~BlobIOStream}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00087}00087 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00088}00088     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00089}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ae81d57b624c32b519d6049394d5aa1cb}{00089}}     \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}} *\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ae81d57b624c32b519d6049394d5aa1cb}{GetBlob}}() \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00090}00090         \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}} *blob = \textcolor{keyword}{new} \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}}();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00091}00091         blob-\/>\mbox{\hyperlink{structai_export_data_blob_a339bfaacc70396b2f99f94c1bc3b808f}{size}} = \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a6aee0eb61f46e2f7c7867a527dd29e38}{file\_size}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00092}00092         blob-\/>\mbox{\hyperlink{structai_export_data_blob_a6fc6dcff8be3b209a1da7141b11d716d}{data}} = \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a32a457aee2db7ff1498dd64c83e5a074}{buffer}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00094}00094         \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a32a457aee2db7ff1498dd64c83e5a074}{buffer}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00096}00096         \textcolor{keywordflow}{return} blob;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00099}00099     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00100}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_af7c647f5fee4cf0f34efdb637b08a6a3}{00100}}     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_af7c647f5fee4cf0f34efdb637b08a6a3}{Read}}(\textcolor{keywordtype}{void} *, \textcolor{keywordtype}{size\_t}, \textcolor{keywordtype}{size\_t})\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00101}00101         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00102}00102     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00104}00104     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00105}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31}{00105}}     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31}{Write}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *pvBuffer, \textcolor{keywordtype}{size\_t} pSize, \textcolor{keywordtype}{size\_t} pCount)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00106}00106         pSize *= pCount;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00107}00107         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5483134b78159cc971ce60040f6ce69f}{cursor}} + pSize > \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ae439326641887108b324b580a9d58ed5}{cur\_size}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00108}00108             \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a9cf9828edeb38e0d70c3ff0784f46216}{Grow}}(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5483134b78159cc971ce60040f6ce69f}{cursor}} + pSize);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00109}00109         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00111}00111         memcpy(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a32a457aee2db7ff1498dd64c83e5a074}{buffer}} + \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5483134b78159cc971ce60040f6ce69f}{cursor}}, pvBuffer, pSize);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00112}00112         \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5483134b78159cc971ce60040f6ce69f}{cursor}} += pSize;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00114}00114         \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a6aee0eb61f46e2f7c7867a527dd29e38}{file\_size}} = std::max(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a6aee0eb61f46e2f7c7867a527dd29e38}{file\_size}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5483134b78159cc971ce60040f6ce69f}{cursor}});}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00115}00115         \textcolor{keywordflow}{return} pCount;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00116}00116     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00118}00118     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00119}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01}{00119}}     \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{aiReturn}} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01}{Seek}}(\textcolor{keywordtype}{size\_t} pOffset, \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786}{aiOrigin}} pOrigin)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00120}00120         \textcolor{keywordflow}{switch} (pOrigin) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00121}00121             \textcolor{keywordflow}{case} \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786a34f9f30078835fdb09212bf69d5ebb36}{aiOrigin\_CUR}}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00122}00122                 \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5483134b78159cc971ce60040f6ce69f}{cursor}} += pOffset;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00123}00123                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00125}00125             \textcolor{keywordflow}{case} \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786a88929c7834e2026ab642fd84bea2fec7}{aiOrigin\_END}}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00126}00126                 \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5483134b78159cc971ce60040f6ce69f}{cursor}} = \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a6aee0eb61f46e2f7c7867a527dd29e38}{file\_size}} -\/ pOffset;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00127}00127                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00129}00129             \textcolor{keywordflow}{case} \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786a94a44e681b6c891e39767c518b64b56f}{aiOrigin\_SET}}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00130}00130                 \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5483134b78159cc971ce60040f6ce69f}{cursor}} = pOffset;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00131}00131                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00133}00133             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00134}00134                 \textcolor{keywordflow}{return} AI\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00135}00135         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00137}00137         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5483134b78159cc971ce60040f6ce69f}{cursor}} > \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a6aee0eb61f46e2f7c7867a527dd29e38}{file\_size}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00138}00138             \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a9cf9828edeb38e0d70c3ff0784f46216}{Grow}}(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5483134b78159cc971ce60040f6ce69f}{cursor}});}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00139}00139         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00141}00141         \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a6aee0eb61f46e2f7c7867a527dd29e38}{file\_size}} = std::max(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5483134b78159cc971ce60040f6ce69f}{cursor}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a6aee0eb61f46e2f7c7867a527dd29e38}{file\_size}});}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00143}00143         \textcolor{keywordflow}{return} AI\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00144}00144     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00146}00146     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00147}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ade466c822b6f0930c2744eb4ac799a4d}{00147}}     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ade466c822b6f0930c2744eb4ac799a4d}{Tell}}()\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00148}00148         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5483134b78159cc971ce60040f6ce69f}{cursor}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00149}00149     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00151}00151     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00152}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5381f03b7609df4883ce2b1d1e30b61f}{00152}}     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5381f03b7609df4883ce2b1d1e30b61f}{FileSize}}()\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00153}00153         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a6aee0eb61f46e2f7c7867a527dd29e38}{file\_size}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00154}00154     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00156}00156     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00157}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a586a52bd8dbadb1ea579f80bbaad68bd}{00157}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a586a52bd8dbadb1ea579f80bbaad68bd}{Flush}}()\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00158}00158         \textcolor{comment}{// ignore}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00159}00159     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00160}00160 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00161}00161 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00162}00162     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00163}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a9cf9828edeb38e0d70c3ff0784f46216}{00163}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a9cf9828edeb38e0d70c3ff0784f46216}{Grow}}(\textcolor{keywordtype}{size\_t} need = 0) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00164}00164         \textcolor{comment}{// 1.5 and phi are very heap-\/friendly growth factors (the first}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00165}00165         \textcolor{comment}{// allows for frequent re-\/use of heap blocks, the second}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00166}00166         \textcolor{comment}{// forms a fibonacci sequence with similar characteristics -\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00167}00167         \textcolor{comment}{// since this heavily depends on the heap implementation}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00168}00168         \textcolor{comment}{// and other factors as well, i'll just go with 1.5 since}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00169}00169         \textcolor{comment}{// it is quicker to compute).}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00170}00170         \textcolor{keywordtype}{size\_t} new\_size = std::max(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_aea5ee46166027f83a377d8e9f1974628}{initial}}, std::max(need, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ae439326641887108b324b580a9d58ed5}{cur\_size}} + (\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ae439326641887108b324b580a9d58ed5}{cur\_size}} >> 1)));}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00171}00171 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00172}00172         \textcolor{keyword}{const} uint8\_t *\textcolor{keyword}{const} old = \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a32a457aee2db7ff1498dd64c83e5a074}{buffer}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00173}00173         \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a32a457aee2db7ff1498dd64c83e5a074}{buffer}} = \textcolor{keyword}{new} uint8\_t[new\_size];}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00175}00175         \textcolor{keywordflow}{if} (old) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00176}00176             memcpy(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a32a457aee2db7ff1498dd64c83e5a074}{buffer}}, old, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ae439326641887108b324b580a9d58ed5}{cur\_size}});}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00177}00177             \textcolor{keyword}{delete}[] old;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00178}00178         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00179}00179 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00180}00180         \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ae439326641887108b324b580a9d58ed5}{cur\_size}} = new\_size;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00181}00181     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00182}00182 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00183}00183 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00184}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a32a457aee2db7ff1498dd64c83e5a074}{00184}}     uint8\_t *\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a32a457aee2db7ff1498dd64c83e5a074}{buffer}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00185}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ae439326641887108b324b580a9d58ed5}{00185}}     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ae439326641887108b324b580a9d58ed5}{cur\_size}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a6aee0eb61f46e2f7c7867a527dd29e38}{file\_size}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a5483134b78159cc971ce60040f6ce69f}{cursor}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_aea5ee46166027f83a377d8e9f1974628}{initial}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00186}00186 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00187}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a3514f94a363e3c628207679fe56b2ad0}{00187}}     \textcolor{keyword}{const} std::string \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a3514f94a363e3c628207679fe56b2ad0}{file}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00188}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_acce7e544886a2cd7da808666f3e3c467}{00188}}     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system}{BlobIOSystem}} *\textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_acce7e544886a2cd7da808666f3e3c467}{creator}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00189}00189 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00191}\mbox{\hyperlink{include_2assimp_2_blob_i_o_system_8h_a7b2ca02473b77e5709418732ca5fc3c4}{00191}} \textcolor{preprocessor}{\#define AI\_BLOBIO\_MAGIC "{}\$blobfile"{}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00192}00192 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00193}00193 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00195}00195 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00196}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system}{00196}} \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system}{BlobIOSystem}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00197}00197 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00198}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a1d9935074961685f975ecbb8c09bacaf}{00198}}     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream}{BlobIOStream}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00199}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a0d8b11637fbd6d87cf839ce80c141da6}{00199}}     \textcolor{keyword}{typedef} std::pair<std::string, aiExportDataBlob *> \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a0d8b11637fbd6d87cf839ce80c141da6}{BlobEntry}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00200}00200 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00201}00201 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00202}00202 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00204}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ae65eda0fd63692bceb8702684b81d22d}{00204}}     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ae65eda0fd63692bceb8702684b81d22d}{BlobIOSystem}}() :}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00205}00205             \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ae6881fdeaa924a48c6458d6355446ac9}{baseName}}\{\mbox{\hyperlink{include_2assimp_2_blob_i_o_system_8h_a7b2ca02473b77e5709418732ca5fc3c4}{AI\_BLOBIO\_MAGIC}}\} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00206}00206     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00207}00207 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00210}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ac39e6f818df7d54ca8218e0581ffbd60}{00210}}     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ac39e6f818df7d54ca8218e0581ffbd60}{BlobIOSystem}}(\textcolor{keyword}{const} std::string \&\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ae6881fdeaa924a48c6458d6355446ac9}{baseName}}) :}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00211}00211             \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ae6881fdeaa924a48c6458d6355446ac9}{baseName}}(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ae6881fdeaa924a48c6458d6355446ac9}{baseName}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00212}00212         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00213}00213     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00214}00214 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00215}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ade9a0597d8cef7845f0daf020e9141b2}{00215}}     \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ade9a0597d8cef7845f0daf020e9141b2}{\string~BlobIOSystem}}()\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00216}00216         \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a0d8b11637fbd6d87cf839ce80c141da6}{BlobEntry}} \&blobby : \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a658e36d0e404aa1a73b15facc1fdeffc}{blobs}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00217}00217             \textcolor{keyword}{delete} blobby.second;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00218}00218         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00219}00219     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00220}00220 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00221}00221 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00222}00222     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00223}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a01f330dd7b1135c614ffe3d6a0320683}{00223}}     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a01f330dd7b1135c614ffe3d6a0320683}{GetMagicFileName}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00224}00224         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ae6881fdeaa924a48c6458d6355446ac9}{baseName}}.c\_str();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00225}00225     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00226}00226 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00227}00227     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00228}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ac0b9b325c2c5d459291bbeb9f7b2993c}{00228}}     \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}} *\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ac0b9b325c2c5d459291bbeb9f7b2993c}{GetBlobChain}}() \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00229}00229         \textcolor{keyword}{const} \textcolor{keyword}{auto} magicName = std::string(this-\/>\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a01f330dd7b1135c614ffe3d6a0320683}{GetMagicFileName}}());}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00230}00230         \textcolor{keyword}{const} \textcolor{keywordtype}{bool} hasBaseName = \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ae6881fdeaa924a48c6458d6355446ac9}{baseName}} != \mbox{\hyperlink{include_2assimp_2_blob_i_o_system_8h_a7b2ca02473b77e5709418732ca5fc3c4}{AI\_BLOBIO\_MAGIC}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00231}00231 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00232}00232         \textcolor{comment}{// one must be the master}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00233}00233         \mbox{\hyperlink{structai_export_data_blob}{aiExportDataBlob}} *master = \textcolor{keyword}{nullptr}, *cur;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00234}00234 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00235}00235         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a0d8b11637fbd6d87cf839ce80c141da6}{BlobEntry}} \&blobby : \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a658e36d0e404aa1a73b15facc1fdeffc}{blobs}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00236}00236             \textcolor{keywordflow}{if} (blobby.first == magicName) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00237}00237                 master = blobby.second;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00238}00238                 master-\/>\mbox{\hyperlink{structai_export_data_blob_af7f006ac5ad818c0d81d520a84f74c3e}{name}}.Set(hasBaseName ? blobby.first : \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00239}00239                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00240}00240             \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00241}00241         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00242}00242 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00243}00243         \textcolor{keywordflow}{if} (!master) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00244}00244             \mbox{\hyperlink{include_2assimp_2_logger_8hpp_af9c5f9debd2b062dec87a32121cf12dd}{ASSIMP\_LOG\_ERROR}}(\textcolor{stringliteral}{"{}BlobIOSystem: no data written or master file was not closed properly."{}});}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00245}00245             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00246}00246         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00247}00247 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00248}00248         cur = master;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00249}00249 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00250}00250         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a0d8b11637fbd6d87cf839ce80c141da6}{BlobEntry}} \&blobby : \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a658e36d0e404aa1a73b15facc1fdeffc}{blobs}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00251}00251             \textcolor{keywordflow}{if} (blobby.second == master) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00252}00252                 \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00253}00253             \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00254}00254 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00255}00255             cur-\/>\mbox{\hyperlink{structai_export_data_blob_a78ed68cd60597616c78f92dbd4882b15}{next}} = blobby.second;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00256}00256             cur = cur-\/>\mbox{\hyperlink{structai_export_data_blob_a78ed68cd60597616c78f92dbd4882b15}{next}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00257}00257 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00258}00258             \textcolor{keywordflow}{if} (hasBaseName) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00259}00259                 cur-\/>\mbox{\hyperlink{structai_export_data_blob_af7f006ac5ad818c0d81d520a84f74c3e}{name}}.Set(blobby.first);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00260}00260             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00261}00261                 \textcolor{comment}{// extract the file extension from the file written}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00262}00262                 \textcolor{keyword}{const} std::string::size\_type s = blobby.first.find\_first\_of(\textcolor{charliteral}{'.'});}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00263}00263                 cur-\/>name.Set(s == std::string::npos ? blobby.first : blobby.first.substr(s + 1));}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00264}00264             \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00265}00265         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00266}00266 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00267}00267         \textcolor{comment}{// give up blob ownership}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00268}00268         \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a658e36d0e404aa1a73b15facc1fdeffc}{blobs}}.clear();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00269}00269         \textcolor{keywordflow}{return} master;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00270}00270     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00271}00271 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00272}00272 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00273}00273     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00274}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a4e524259954c01b89aa75f1fd0dab03c}{00274}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a4e524259954c01b89aa75f1fd0dab03c}{Exists}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pFile)\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00275}00275         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ab38bcfe278b0be967575367e8386b213}{created}}.find(std::string(pFile)) != \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ab38bcfe278b0be967575367e8386b213}{created}}.end();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00276}00276     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00277}00277 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00278}00278     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00279}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_aa3f6c9fa0e5a7a2f4dcae331a4060f73}{00279}}     \textcolor{keywordtype}{char} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_aa3f6c9fa0e5a7a2f4dcae331a4060f73}{getOsSeparator}}()\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00280}00280         \textcolor{keywordflow}{return} \textcolor{charliteral}{'/'};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00281}00281     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00282}00282 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00283}00283     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00284}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a93ef86ce5edfee4b9b4376f07f5b2407}{00284}}     \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} *\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a93ef86ce5edfee4b9b4376f07f5b2407}{Open}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *pFile, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pMode)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00285}00285         \textcolor{keywordflow}{if} (pMode[0] != \textcolor{charliteral}{'w'}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00286}00286             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00287}00287         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00288}00288 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00289}00289         \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ab38bcfe278b0be967575367e8386b213}{created}}.insert(std::string(pFile));}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00290}00290         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a1d9935074961685f975ecbb8c09bacaf}{BlobIOStream}}(\textcolor{keyword}{this}, std::string(pFile));}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00291}00291     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00292}00292 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00293}00293     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00294}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a76836272edbdfcdee7b196c0449dd270}{00294}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a76836272edbdfcdee7b196c0449dd270}{Close}}(\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} *pFile)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00295}00295         \textcolor{keyword}{delete} pFile;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00296}00296     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00297}00297 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00298}00298 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00299}00299     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00300}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a54d97cba240908302b508c770c11e9f0}{00300}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a54d97cba240908302b508c770c11e9f0}{OnDestruct}}(\textcolor{keyword}{const} std::string \&filename, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream}{BlobIOStream}} *child) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00301}00301         \textcolor{comment}{// we don't know in which the files are closed, so we}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00302}00302         \textcolor{comment}{// can't reliably say that the first must be the master}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00303}00303         \textcolor{comment}{// file ...}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00304}00304         \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a658e36d0e404aa1a73b15facc1fdeffc}{blobs}}.emplace\_back(filename, child-\/>\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_ae81d57b624c32b519d6049394d5aa1cb}{GetBlob}}());}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00305}00305     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00306}00306 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00307}00307 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00308}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ae6881fdeaa924a48c6458d6355446ac9}{00308}}     std::string \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ae6881fdeaa924a48c6458d6355446ac9}{baseName}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00309}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ab38bcfe278b0be967575367e8386b213}{00309}}     std::set<std::string> \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_ab38bcfe278b0be967575367e8386b213}{created}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00310}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a658e36d0e404aa1a73b15facc1fdeffc}{00310}}     std::vector<BlobEntry> \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a658e36d0e404aa1a73b15facc1fdeffc}{blobs}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00311}00311 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00312}00312 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00313}00313 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00314}\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a12c18de13363e35ee9a08550fcfbc41f}{00314}} \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a12c18de13363e35ee9a08550fcfbc41f}{BlobIOStream::\string~BlobIOStream}}() \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00315}00315     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} != \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_acce7e544886a2cd7da808666f3e3c467}{creator}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00316}00316         \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_acce7e544886a2cd7da808666f3e3c467}{creator}}-\/>\mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a54d97cba240908302b508c770c11e9f0}{OnDestruct}}(\mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a3514f94a363e3c628207679fe56b2ad0}{file}}, \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00317}00317     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00318}00318     \textcolor{keyword}{delete}[] \mbox{\hyperlink{class_assimp_1_1_blob_i_o_stream_a32a457aee2db7ff1498dd64c83e5a074}{buffer}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00319}00319 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00320}00320 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00321}00321 \} \textcolor{comment}{// namespace Assimp}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00322}00322 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_blob_i_o_system_8h_source_l00323}00323 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

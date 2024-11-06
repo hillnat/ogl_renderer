@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['normal_0',['NORMAL',['../class_assimp_1_1_logger.html#a8b6248a0fd062431e8572556350d29e6a3bc91952c98d7ca18720d32a6e3a29d8',1,'Assimp::Logger']]]
+  ['info_0',['Info',['../class_assimp_1_1_logger.html#acd0b52a87d6fc11e957ed2c6e2ad75b6aaad1b80407037ec3364d331e149ead9a',1,'Assimp::Logger']]],
+  ['initial_5fcapacity_1',['INITIAL_CAPACITY',['../class_assimp_1_1_stream_writer.html#aa01def83061d2fd8b95ff1cd841555baaddca952454e13c95ab7600b7a030f8d9',1,'Assimp::StreamWriter']]]
 ];

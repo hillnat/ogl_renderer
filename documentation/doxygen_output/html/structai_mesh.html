@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -80,6 +83,26 @@ $(function() {
  <a href="structai_mesh.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for aiMesh:</div>
+<div class="dyncontent">
+<div class="center"><img src="structai_mesh__coll__graph.png" border="0" usemap="#aai_mesh_coll__map" alt="Collaboration graph"/></div>
+<map name="aai_mesh_coll__map" id="aai_mesh_coll__map">
+<area shape="rect" title="enum aiMorphingMethod" alt="" coords="301,508,362,535"/>
+<area shape="rect" href="structai_vector3_d.html" title=" " alt="" coords="64,194,148,222"/>
+<area shape="rect" href="structai_anim_mesh.html" title="An AnimMesh is an attachment to an aiMesh stores per&#45;vertex animations for a particular frame." alt="" coords="300,386,390,414"/>
+<area shape="rect" href="structai_a_a_b_b.html" title=" " alt="" coords="129,386,193,414"/>
+<area shape="rect" href="structai_color4_d.html" title=" " alt="" coords="328,194,405,222"/>
+<area shape="rect" href="structai_face.html" title="A single face in a mesh, referring to multiple vertices." alt="" coords="217,386,275,414"/>
+<area shape="rect" href="structai_bone.html" title="A single bone of a mesh." alt="" coords="545,386,606,414"/>
+<area shape="rect" href="structai_string.html" title="Represents an UTF&#45;8 string, zero byte terminated." alt="" coords="738,5,802,33"/>
+<area shape="rect" href="structai_node.html" title=" " alt="" coords="762,194,824,222"/>
+<area shape="rect" href="structai_metadata.html" title=" " alt="" coords="843,98,927,126"/>
+<area shape="rect" href="structai_matrix4x4.html" title=" " alt="" coords="622,98,710,126"/>
+<area shape="rect" href="structai_metadata_entry.html" title=" " alt="" coords="952,5,1066,33"/>
+<area shape="rect" href="structai_vertex_weight.html" title="A single influence of a bone on a vertex." alt="" coords="429,194,538,222"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -89,49 +112,49 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ab34b7b5941e6636f1c08f615cbb072ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeed22ee6963b79548f3877b3c905518e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#aeed22ee6963b79548f3877b3c905518e">mNumFaces</a></td></tr>
 <tr class="separator:aeed22ee6963b79548f3877b3c905518e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5abd50282e39563a14734820378b1690"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_vector3_d.html">aiVector3D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#a5abd50282e39563a14734820378b1690">mVertices</a></td></tr>
+<tr class="memitem:a5abd50282e39563a14734820378b1690"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_vector3_d.html">aiVector3D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#a5abd50282e39563a14734820378b1690">mVertices</a></td></tr>
 <tr class="memdesc:a5abd50282e39563a14734820378b1690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertex positions.  <a href="structai_mesh.html#a5abd50282e39563a14734820378b1690">More...</a><br /></td></tr>
 <tr class="separator:a5abd50282e39563a14734820378b1690"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7d23a5c9caf8f647ce96e2abf3da3ef"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_vector3_d.html">aiVector3D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#ac7d23a5c9caf8f647ce96e2abf3da3ef">mNormals</a></td></tr>
+<tr class="memitem:ac7d23a5c9caf8f647ce96e2abf3da3ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_vector3_d.html">aiVector3D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#ac7d23a5c9caf8f647ce96e2abf3da3ef">mNormals</a></td></tr>
 <tr class="memdesc:ac7d23a5c9caf8f647ce96e2abf3da3ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertex normals.  <a href="structai_mesh.html#ac7d23a5c9caf8f647ce96e2abf3da3ef">More...</a><br /></td></tr>
 <tr class="separator:ac7d23a5c9caf8f647ce96e2abf3da3ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37be52ca5c293ef46c1ee10bf7410d86"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_vector3_d.html">aiVector3D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#a37be52ca5c293ef46c1ee10bf7410d86">mTangents</a></td></tr>
+<tr class="memitem:a37be52ca5c293ef46c1ee10bf7410d86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_vector3_d.html">aiVector3D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#a37be52ca5c293ef46c1ee10bf7410d86">mTangents</a></td></tr>
 <tr class="memdesc:a37be52ca5c293ef46c1ee10bf7410d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertex tangents.  <a href="structai_mesh.html#a37be52ca5c293ef46c1ee10bf7410d86">More...</a><br /></td></tr>
 <tr class="separator:a37be52ca5c293ef46c1ee10bf7410d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d2b15fe360d7c6f45c28dced096510a"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_vector3_d.html">aiVector3D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#a4d2b15fe360d7c6f45c28dced096510a">mBitangents</a></td></tr>
+<tr class="memitem:a4d2b15fe360d7c6f45c28dced096510a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_vector3_d.html">aiVector3D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#a4d2b15fe360d7c6f45c28dced096510a">mBitangents</a></td></tr>
 <tr class="memdesc:a4d2b15fe360d7c6f45c28dced096510a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertex bitangents.  <a href="structai_mesh.html#a4d2b15fe360d7c6f45c28dced096510a">More...</a><br /></td></tr>
 <tr class="separator:a4d2b15fe360d7c6f45c28dced096510a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a387fa89e34f4b13f03cfd15c9be1e787"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_color4_d.html">aiColor4D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#a387fa89e34f4b13f03cfd15c9be1e787">mColors</a> [<a class="el" href="out_2install_2x64-_release_2include_2assimp_2mesh_8h.html#a74ea1282873ac4b111b48d2380c26bdc">AI_MAX_NUMBER_OF_COLOR_SETS</a>]</td></tr>
+<tr class="memitem:a387fa89e34f4b13f03cfd15c9be1e787"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_color4_d.html">aiColor4D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#a387fa89e34f4b13f03cfd15c9be1e787">mColors</a> [<a class="el" href="out_2install_2x64-_release_2include_2assimp_2mesh_8h.html#a74ea1282873ac4b111b48d2380c26bdc">AI_MAX_NUMBER_OF_COLOR_SETS</a>]</td></tr>
 <tr class="memdesc:a387fa89e34f4b13f03cfd15c9be1e787"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertex color sets.  <a href="structai_mesh.html#a387fa89e34f4b13f03cfd15c9be1e787">More...</a><br /></td></tr>
 <tr class="separator:a387fa89e34f4b13f03cfd15c9be1e787"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35055266863d76681d371bf3bb4ccd72"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_vector3_d.html">aiVector3D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#a35055266863d76681d371bf3bb4ccd72">mTextureCoords</a> [<a class="el" href="out_2install_2x64-_release_2include_2assimp_2mesh_8h.html#a335874c5058c7f1e866eb953bf192258">AI_MAX_NUMBER_OF_TEXTURECOORDS</a>]</td></tr>
+<tr class="memitem:a35055266863d76681d371bf3bb4ccd72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_vector3_d.html">aiVector3D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#a35055266863d76681d371bf3bb4ccd72">mTextureCoords</a> [<a class="el" href="out_2install_2x64-_release_2include_2assimp_2mesh_8h.html#a335874c5058c7f1e866eb953bf192258">AI_MAX_NUMBER_OF_TEXTURECOORDS</a>]</td></tr>
 <tr class="memdesc:a35055266863d76681d371bf3bb4ccd72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertex texture coordinates, also known as UV channels.  <a href="structai_mesh.html#a35055266863d76681d371bf3bb4ccd72">More...</a><br /></td></tr>
 <tr class="separator:a35055266863d76681d371bf3bb4ccd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdee8e023301b261dd3850cbd46fdda5"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#acdee8e023301b261dd3850cbd46fdda5">mNumUVComponents</a> [<a class="el" href="out_2install_2x64-_release_2include_2assimp_2mesh_8h.html#a335874c5058c7f1e866eb953bf192258">AI_MAX_NUMBER_OF_TEXTURECOORDS</a>]</td></tr>
 <tr class="memdesc:acdee8e023301b261dd3850cbd46fdda5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the number of components for a given UV channel.  <a href="structai_mesh.html#acdee8e023301b261dd3850cbd46fdda5">More...</a><br /></td></tr>
 <tr class="separator:acdee8e023301b261dd3850cbd46fdda5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdeda8b60a83dcf4cefef8b02c11f360"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_face.html">aiFace</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#afdeda8b60a83dcf4cefef8b02c11f360">mFaces</a></td></tr>
+<tr class="memitem:afdeda8b60a83dcf4cefef8b02c11f360"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_face.html">aiFace</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#afdeda8b60a83dcf4cefef8b02c11f360">mFaces</a></td></tr>
 <tr class="memdesc:afdeda8b60a83dcf4cefef8b02c11f360"><td class="mdescLeft">&#160;</td><td class="mdescRight">The faces the mesh is constructed from.  <a href="structai_mesh.html#afdeda8b60a83dcf4cefef8b02c11f360">More...</a><br /></td></tr>
 <tr class="separator:afdeda8b60a83dcf4cefef8b02c11f360"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f9d5425b6300e32a842a94f943fd79e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#a0f9d5425b6300e32a842a94f943fd79e">mNumBones</a></td></tr>
 <tr class="separator:a0f9d5425b6300e32a842a94f943fd79e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0388784814d4534ec011abf9b57e3a8"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_bone.html">aiBone</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#ad0388784814d4534ec011abf9b57e3a8">mBones</a></td></tr>
+<tr class="memitem:ad0388784814d4534ec011abf9b57e3a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_bone.html">aiBone</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#ad0388784814d4534ec011abf9b57e3a8">mBones</a></td></tr>
 <tr class="memdesc:ad0388784814d4534ec011abf9b57e3a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bones of this mesh.  <a href="structai_mesh.html#ad0388784814d4534ec011abf9b57e3a8">More...</a><br /></td></tr>
 <tr class="separator:ad0388784814d4534ec011abf9b57e3a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2807c7ba172115203ed16047ad65f9e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#aa2807c7ba172115203ed16047ad65f9e">mMaterialIndex</a></td></tr>
 <tr class="memdesc:aa2807c7ba172115203ed16047ad65f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The material used by this mesh.  <a href="structai_mesh.html#aa2807c7ba172115203ed16047ad65f9e">More...</a><br /></td></tr>
 <tr class="separator:aa2807c7ba172115203ed16047ad65f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dd9433e0c5b008e3e5aee6c801d3b74"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_string.html">aiString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#a8dd9433e0c5b008e3e5aee6c801d3b74">mName</a></td></tr>
+<tr class="memitem:a8dd9433e0c5b008e3e5aee6c801d3b74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_string.html">aiString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#a8dd9433e0c5b008e3e5aee6c801d3b74">mName</a></td></tr>
 <tr class="separator:a8dd9433e0c5b008e3e5aee6c801d3b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1692a300222b32348ae51779df4a697e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#a1692a300222b32348ae51779df4a697e">mNumAnimMeshes</a></td></tr>
 <tr class="separator:a1692a300222b32348ae51779df4a697e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac9ab8395ffe59078bce9def74065a99"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_anim_mesh.html">aiAnimMesh</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#aac9ab8395ffe59078bce9def74065a99">mAnimMeshes</a></td></tr>
+<tr class="memitem:aac9ab8395ffe59078bce9def74065a99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_anim_mesh.html">aiAnimMesh</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#aac9ab8395ffe59078bce9def74065a99">mAnimMeshes</a></td></tr>
 <tr class="separator:aac9ab8395ffe59078bce9def74065a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1d0b703e2e39ed364252db0daafd733"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="out_2install_2x64-_release_2include_2assimp_2mesh_8h.html#a76b77976372959451a455a148901e70e">aiMorphingMethod</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#ac1d0b703e2e39ed364252db0daafd733">mMethod</a></td></tr>
 <tr class="separator:ac1d0b703e2e39ed364252db0daafd733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade5815b8f019a930e31b3824e867010d"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_a_a_b_b.html">aiAABB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#ade5815b8f019a930e31b3824e867010d">mAABB</a></td></tr>
+<tr class="memitem:ade5815b8f019a930e31b3824e867010d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_a_a_b_b.html">aiAABB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#ade5815b8f019a930e31b3824e867010d">mAABB</a></td></tr>
 <tr class="separator:ade5815b8f019a930e31b3824e867010d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace435bda0a8fea1377057f9880a99419"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_string.html">aiString</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#ace435bda0a8fea1377057f9880a99419">mTextureCoordsNames</a></td></tr>
+<tr class="memitem:ace435bda0a8fea1377057f9880a99419"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_string.html">aiString</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh.html#ace435bda0a8fea1377057f9880a99419">mTextureCoordsNames</a></td></tr>
 <tr class="separator:ace435bda0a8fea1377057f9880a99419"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -139,8 +162,10 @@ Public Attributes</h2></td></tr>
 <p >A mesh represents a geometry or model with a single material.</p>
 <p >It usually consists of a number of vertices and a series of primitives/faces referencing the vertices. In addition there might be a series of bones, each of them addressing a number of vertices with a certain weight. Vertex data is presented in channels with each channel containing a single per-vertex information such as a set of texture coordinates or a normal vector. If a data pointer is non-null, the corresponding data stream is present. From C++-programs you can also use the comfort functions Has*() to test for the presence of various data streams.</p>
 <p >A <a class="el" href="struct_mesh.html">Mesh</a> uses only a single material which is referenced by a material ID. </p><dl class="section note"><dt>Note</dt><dd>The mPositions member is usually not optional. However, vertex positions <em>could</em> be missing if the <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h.html#a64c3b662e066126207bb842fc406a745">AI_SCENE_FLAGS_INCOMPLETE</a> flag is set in <div class="fragment"><div class="line"><a class="code hl_variable" href="structai_scene.html#a4091f10bb81e05db00ebc34f40c48f38">aiScene::mFlags</a></div>
-<div class="ttc" id="astructai_scene_html_a4091f10bb81e05db00ebc34f40c48f38"><div class="ttname"><a href="structai_scene.html#a4091f10bb81e05db00ebc34f40c48f38">aiScene::mFlags</a></div><div class="ttdeci">unsigned int mFlags</div><div class="ttdef"><b>Definition:</b> scene.h:252</div></div>
+<div class="ttc" id="astructai_scene_html_a4091f10bb81e05db00ebc34f40c48f38"><div class="ttname"><a href="structai_scene.html#a4091f10bb81e05db00ebc34f40c48f38">aiScene::mFlags</a></div><div class="ttdeci">unsigned int mFlags</div><div class="ttdef"><b>Definition:</b> <a href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00252">scene.h:252</a></div></div>
 </div><!-- fragment --> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00638">638</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="ade5815b8f019a930e31b3824e867010d" name="ade5815b8f019a930e31b3824e867010d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ade5815b8f019a930e31b3824e867010d">&#9670;&#160;</a></span>mAABB</h2>
@@ -149,11 +174,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_a_a_b_b.html">aiAABB</a> aiMesh::mAABB</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_a_a_b_b.html">aiAABB</a> aiMesh::mAABB</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >The bounding box. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00822">822</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -164,7 +191,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_anim_mesh.html">aiAnimMesh</a> ** aiMesh::mAnimMeshes</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_anim_mesh.html">aiAnimMesh</a> ** aiMesh::mAnimMeshes</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -172,6 +199,8 @@ Public Attributes</h2></td></tr>
 <li>Collada</li>
 <li>gltf </li>
 </ul>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00811">811</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -182,13 +211,15 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_vector3_d.html">aiVector3D</a> * aiMesh::mBitangents</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_vector3_d.html">aiVector3D</a> * aiMesh::mBitangents</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Vertex bitangents. </p>
 <p >The bitangent of a vertex points in the direction of the positive Y texture axis. The array contains normalized vectors, nullptr if not present. The array is mNumVertices in size. </p><dl class="section note"><dt>Note</dt><dd>If the mesh contains tangents, it automatically also contains bitangents. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00718">718</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -199,13 +230,15 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_bone.html">aiBone</a> ** aiMesh::mBones</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_bone.html">aiBone</a> ** aiMesh::mBones</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>The bones of this mesh. </p>
 <p >A bone consists of a name by which it can be found in the frame hierarchy and a set of vertex weights. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00770">770</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -216,13 +249,15 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_color4_d.html">aiColor4D</a> * aiMesh::mColors</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_color4_d.html">aiColor4D</a> * aiMesh::mColors</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Vertex color sets. </p>
 <p >A mesh may contain 0 to <a class="el" href="include_2assimp_2mesh_8h.html#a74ea1282873ac4b111b48d2380c26bdc">AI_MAX_NUMBER_OF_COLOR_SETS</a> vertex colors per vertex. nullptr if not present. Each array is mNumVertices in size if present. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00727">727</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -233,13 +268,15 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_face.html">aiFace</a> * aiMesh::mFaces</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_face.html">aiFace</a> * aiMesh::mFaces</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>The faces the mesh is constructed from. </p>
 <p >Each face refers to a number of vertices by their indices. This array is always present in a mesh, its size is given in mNumFaces. If the <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h.html#ae17f4a0adb51e554db9575cc4e1126f9">AI_SCENE_FLAGS_NON_VERBOSE_FORMAT</a> is NOT set each face references an unique set of vertices. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00757">757</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -258,6 +295,8 @@ Public Attributes</h2></td></tr>
 <p>The material used by this mesh. </p>
 <p >A mesh uses only a single material. If an imported model uses multiple materials, the import splits up the mesh. Use this value as index into the scene's material list. </p>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00779">779</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
+
 </div>
 </div>
 <a id="ac1d0b703e2e39ed364252db0daafd733" name="ac1d0b703e2e39ed364252db0daafd733"></a>
@@ -273,6 +312,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Method of morphing when anim-meshes are specified. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="include_2assimp_2mesh_8h.html#a76b77976372959451a455a148901e70e" title="Enumerates the methods of mesh morphing supported by Assimp.">aiMorphingMethod</a> to learn more about the provided morphing targets. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00817">817</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
+
 </div>
 </div>
 <a id="a8dd9433e0c5b008e3e5aee6c801d3b74" name="a8dd9433e0c5b008e3e5aee6c801d3b74"></a>
@@ -282,7 +323,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_string.html">aiString</a> aiMesh::mName</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_string.html">aiString</a> aiMesh::mName</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -291,6 +332,8 @@ Public Attributes</h2></td></tr>
 <li>importers tend to split meshes up to meet the one-material-per-mesh requirement. Assigning the same (dummy) name to each of the result meshes aids the caller at recovering the original mesh partitioning.</li>
 <li>Vertex animations refer to meshes by their names. </li>
 </ul>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00793">793</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -301,7 +344,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_vector3_d.html">aiVector3D</a> * aiMesh::mNormals</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_vector3_d.html">aiVector3D</a> * aiMesh::mNormals</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -309,6 +352,8 @@ Public Attributes</h2></td></tr>
 <p>Vertex normals. </p>
 <p >The array contains normalized vectors, nullptr if not present. The array is mNumVertices in size. Normals are undefined for point and line primitives. A mesh consisting of points and lines only may not have normal vectors. Meshes with mixed primitive types (i.e. lines and triangles) may have normals, but the normals for vertices that are only referenced by point or line primitives are undefined and set to QNaN (WARN: qNaN compares to inequal to <em>everything</em>, even to qNaN itself. Using code like this to check whether a field is qnan is: </p><div class="fragment"><div class="line"><span class="preprocessor">#define IS_QNAN(f) (f != f)</span></div>
 </div><!-- fragment --><p> still dangerous because even 1.f == 1.f could evaluate to false! ( remember the subtleties of IEEE754 artithmetics). Use stuff like <code>fpclassify</code> instead. </p><dl class="section note"><dt>Note</dt><dd>Normal vectors computed by <a class="el" href="namespace_assimp.html">Assimp</a> are always unit-length. However, this needn't apply for normals that have been taken directly from the model file. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00691">691</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -328,6 +373,8 @@ Public Attributes</h2></td></tr>
 <li>gltf </li>
 </ul>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00801">801</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
+
 </div>
 </div>
 <a id="a0f9d5425b6300e32a842a94f943fd79e" name="a0f9d5425b6300e32a842a94f943fd79e"></a>
@@ -343,6 +390,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The number of bones this mesh contains. Can be 0, in which case the mBones array is nullptr. </p>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00762">762</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
+
 </div>
 </div>
 <a id="aeed22ee6963b79548f3877b3c905518e" name="aeed22ee6963b79548f3877b3c905518e"></a>
@@ -357,6 +406,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >The number of primitives (triangles, polygons, lines) in this mesh. This is also the size of the mFaces array. The maximum value for this member is <a class="el" href="include_2assimp_2mesh_8h.html#aef69217e80411f3fee5aae3dc06b68ba">AI_MAX_FACES</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00659">659</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -375,6 +426,8 @@ Public Attributes</h2></td></tr>
 <p>Specifies the number of components for a given UV channel. </p>
 <p >Up to three channels are supported (UVW, for accessing volume or cube maps). If the value is 2 for a given channel n, the component p.z of mTextureCoords[n][p] is set to 0.0f. If the value is 1 for a given channel, p.y is set to 0.0f, too. </p><dl class="section note"><dt>Note</dt><dd>4D coordinates are not supported </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00747">747</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
+
 </div>
 </div>
 <a id="ab34b7b5941e6636f1c08f615cbb072ef" name="ab34b7b5941e6636f1c08f615cbb072ef"></a>
@@ -389,6 +442,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >The number of vertices in this mesh. This is also the size of all of the per-vertex data arrays. The maximum value for this member is <a class="el" href="include_2assimp_2mesh_8h.html#aa3997d5751b93f15e4c9d86ced093b56">AI_MAX_VERTICES</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00652">652</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -405,6 +460,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Bitwise combination of the members of the <a class="el" href="include_2assimp_2mesh_8h.html#ac352902280db7c3bd8ba64c133b7f03f" title="Enumerates the types of geometric primitives supported by Assimp.">aiPrimitiveType</a> enum. This specifies which types of primitives are present in the mesh. The "SortByPrimitiveType"-Step can be used to make sure the output meshes consist of one primitive type each. </p>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00645">645</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
+
 </div>
 </div>
 <a id="a37be52ca5c293ef46c1ee10bf7410d86" name="a37be52ca5c293ef46c1ee10bf7410d86"></a>
@@ -414,13 +471,15 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_vector3_d.html">aiVector3D</a> * aiMesh::mTangents</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_vector3_d.html">aiVector3D</a> * aiMesh::mTangents</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Vertex tangents. </p>
 <p >The tangent of a vertex points in the direction of the positive X texture axis. The array contains normalized vectors, nullptr if not present. The array is mNumVertices in size. A mesh consisting of points and lines only may not have normal vectors. Meshes with mixed primitive types (i.e. lines and triangles) may have normals, but the normals for vertices that are only referenced by point or line primitives are undefined and set to qNaN. See the <a class="el" href="structai_mesh.html#ac7d23a5c9caf8f647ce96e2abf3da3ef" title="Vertex normals.">mNormals</a> member for a detailed discussion of qNaNs. </p><dl class="section note"><dt>Note</dt><dd>If the mesh contains tangents, it automatically also contains bitangents. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00707">707</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -431,13 +490,15 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_vector3_d.html">aiVector3D</a> * aiMesh::mTextureCoords</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_vector3_d.html">aiVector3D</a> * aiMesh::mTextureCoords</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Vertex texture coordinates, also known as UV channels. </p>
 <p >A mesh may contain 0 to AI_MAX_NUMBER_OF_TEXTURECOORDS channels per vertex. Used and unused (nullptr) channels may go in any order. The array is mNumVertices in size. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00736">736</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -448,11 +509,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_string.html">aiString</a> ** aiMesh::mTextureCoordsNames</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_string.html">aiString</a> ** aiMesh::mTextureCoordsNames</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Vertex UV stream names. Pointer to array of size AI_MAX_NUMBER_OF_TEXTURECOORDS </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00827">827</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -463,13 +526,15 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_vector3_d.html">aiVector3D</a> * aiMesh::mVertices</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_vector3_d.html">aiVector3D</a> * aiMesh::mVertices</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Vertex positions. </p>
 <p >This array is always present in a mesh. The array is mNumVertices in size. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00667">667</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>

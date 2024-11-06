@@ -2,435 +2,435 @@
 \label{include_2assimp_2anim_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/anim.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/anim.h}}
 \mbox{\hyperlink{include_2assimp_2anim_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
-\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{5 \textcolor{comment}{}}
-\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
-\DoxyCodeLine{7 \textcolor{comment}{}}
-\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
-\DoxyCodeLine{9 \textcolor{comment}{}}
-\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
-\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the following}}
-\DoxyCodeLine{12 \textcolor{comment}{conditions are met:}}
-\DoxyCodeLine{13 \textcolor{comment}{}}
-\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
-\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
-\DoxyCodeLine{17 \textcolor{comment}{}}
-\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
-\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
-\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
-\DoxyCodeLine{22 \textcolor{comment}{}}
-\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
-\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
-\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
-\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
-\DoxyCodeLine{27 \textcolor{comment}{}}
-\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
-\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
-\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
-\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
-\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
-\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
-\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
-\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
-\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
-\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
-\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
-\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{40 \textcolor{comment}{*/}}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifndef AI\_ANIM\_H\_INC}}
-\DoxyCodeLine{49 \textcolor{preprocessor}{\#define AI\_ANIM\_H\_INC}}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
-\DoxyCodeLine{52 \textcolor{preprocessor}{\#pragma GCC system\_header}}
-\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{54 }
-\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <assimp/quaternion.h>}}
-\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <assimp/types.h>}}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{58 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{59 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
-\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{61 }
-\DoxyCodeLine{62 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{65 \textcolor{comment}{}\textcolor{keyword}{enum} aiAnimInterpolation \{}
-\DoxyCodeLine{67     aiAnimInterpolation\_Step,}
-\DoxyCodeLine{68 }
-\DoxyCodeLine{70     aiAnimInterpolation\_Linear,}
-\DoxyCodeLine{71 }
-\DoxyCodeLine{73     aiAnimInterpolation\_Spherical\_Linear,}
-\DoxyCodeLine{74 }
-\DoxyCodeLine{76     aiAnimInterpolation\_Cubic\_Spline,}
-\DoxyCodeLine{77 }
-\DoxyCodeLine{79 \textcolor{preprocessor}{\#ifndef SWIG}}
-\DoxyCodeLine{80     \_aiAnimInterpolation\_Force32Bit = INT\_MAX}
-\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{82 \};}
-\DoxyCodeLine{83 }
-\DoxyCodeLine{84 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{86 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_vector_key}{aiVectorKey}} \{}
-\DoxyCodeLine{88     \textcolor{keywordtype}{double} \mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{mTime}};}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{91     C\_STRUCT \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} \mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}};}
-\DoxyCodeLine{92 }
-\DoxyCodeLine{94     C\_ENUM aiAnimInterpolation \mbox{\hyperlink{structai_vector_key_a452853103d895a9a616ca5f005264eef}{mInterpolation}};}
-\DoxyCodeLine{95 }
-\DoxyCodeLine{96 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{97 }
-\DoxyCodeLine{99     \mbox{\hyperlink{structai_vector_key}{aiVectorKey}}() AI\_NO\_EXCEPT}
-\DoxyCodeLine{100             : \mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{mTime}}(0.0), \mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}}(), \mbox{\hyperlink{structai_vector_key_a452853103d895a9a616ca5f005264eef}{mInterpolation}}(aiAnimInterpolation\_Linear) \{\}}
-\DoxyCodeLine{101 }
-\DoxyCodeLine{103     \mbox{\hyperlink{structai_vector_key}{aiVectorKey}}(\textcolor{keywordtype}{double} time, \textcolor{keyword}{const} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} \&value) :}
-\DoxyCodeLine{104             \mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{mTime}}(time), \mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}}(value), \mbox{\hyperlink{structai_vector_key_a452853103d895a9a616ca5f005264eef}{mInterpolation}}(aiAnimInterpolation\_Linear)\{\}}
-\DoxyCodeLine{105 }
-\DoxyCodeLine{106     \textcolor{keyword}{typedef} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} elem\_type;}
-\DoxyCodeLine{107 }
-\DoxyCodeLine{108     \textcolor{comment}{// Comparison operators. For use with std::find();}}
-\DoxyCodeLine{109     \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} \&rhs)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{110         \textcolor{keywordflow}{return} rhs.\mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}} == this-\/>\mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}};}
-\DoxyCodeLine{111     \}}
-\DoxyCodeLine{112 }
-\DoxyCodeLine{113     \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} \&rhs)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{114         \textcolor{keywordflow}{return} rhs.\mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}} != this-\/>\mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}};}
-\DoxyCodeLine{115     \}}
-\DoxyCodeLine{116 }
-\DoxyCodeLine{117     \textcolor{comment}{// Relational operators. For use with std::sort();}}
-\DoxyCodeLine{118     \textcolor{keywordtype}{bool} operator<(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} \&rhs)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{119         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{mTime}} < rhs.\mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{mTime}};}
-\DoxyCodeLine{120     \}}
-\DoxyCodeLine{121 }
-\DoxyCodeLine{122     \textcolor{keywordtype}{bool} operator>(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} \&rhs)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{123         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{mTime}} > rhs.\mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{mTime}};}
-\DoxyCodeLine{124     \}}
-\DoxyCodeLine{125 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
-\DoxyCodeLine{126 \};}
-\DoxyCodeLine{127 }
-\DoxyCodeLine{128 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{131 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_quat_key}{aiQuatKey}} \{}
-\DoxyCodeLine{133     \textcolor{keywordtype}{double} \mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{mTime}};}
-\DoxyCodeLine{134 }
-\DoxyCodeLine{136     C\_STRUCT \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} \mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}};}
-\DoxyCodeLine{137 }
-\DoxyCodeLine{139     C\_ENUM aiAnimInterpolation \mbox{\hyperlink{structai_quat_key_a1fb8cfe7c1ad3979da5147bf6fb83b88}{mInterpolation}};}
-\DoxyCodeLine{140 }
-\DoxyCodeLine{141 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{142     \mbox{\hyperlink{structai_quat_key}{aiQuatKey}}() AI\_NO\_EXCEPT}
-\DoxyCodeLine{143             : \mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{mTime}}(0.0), \mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}}(), \mbox{\hyperlink{structai_quat_key_a1fb8cfe7c1ad3979da5147bf6fb83b88}{mInterpolation}}(aiAnimInterpolation\_Linear) \{\}}
-\DoxyCodeLine{144 }
-\DoxyCodeLine{146     \mbox{\hyperlink{structai_quat_key}{aiQuatKey}}(\textcolor{keywordtype}{double} time, \textcolor{keyword}{const} \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} \&value) :}
-\DoxyCodeLine{147             \mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{mTime}}(time), \mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}}(value), \mbox{\hyperlink{structai_quat_key_a1fb8cfe7c1ad3979da5147bf6fb83b88}{mInterpolation}}(aiAnimInterpolation\_Linear) \{\}}
-\DoxyCodeLine{148 }
-\DoxyCodeLine{149     \textcolor{keyword}{typedef} \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} elem\_type;}
-\DoxyCodeLine{150 }
-\DoxyCodeLine{151     \textcolor{comment}{// Comparison operators. For use with std::find();}}
-\DoxyCodeLine{152     \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{structai_quat_key}{aiQuatKey}} \&rhs)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{153         \textcolor{keywordflow}{return} rhs.\mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}} == this-\/>\mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}};}
-\DoxyCodeLine{154     \}}
-\DoxyCodeLine{155 }
-\DoxyCodeLine{156     \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{structai_quat_key}{aiQuatKey}} \&rhs)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{157         \textcolor{keywordflow}{return} rhs.\mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}} != this-\/>\mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}};}
-\DoxyCodeLine{158     \}}
-\DoxyCodeLine{159 }
-\DoxyCodeLine{160     \textcolor{comment}{// Relational operators. For use with std::sort();}}
-\DoxyCodeLine{161     \textcolor{keywordtype}{bool} operator<(\textcolor{keyword}{const} \mbox{\hyperlink{structai_quat_key}{aiQuatKey}} \&rhs)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{162         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{mTime}} < rhs.\mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{mTime}};}
-\DoxyCodeLine{163     \}}
-\DoxyCodeLine{164 }
-\DoxyCodeLine{165     \textcolor{keywordtype}{bool} operator>(\textcolor{keyword}{const} \mbox{\hyperlink{structai_quat_key}{aiQuatKey}} \&rhs)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{166         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{mTime}} > rhs.\mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{mTime}};}
-\DoxyCodeLine{167     \}}
-\DoxyCodeLine{168 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{169 \};}
-\DoxyCodeLine{170 }
-\DoxyCodeLine{171 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{173 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} \{}
-\DoxyCodeLine{175     \textcolor{keywordtype}{double} \mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{mTime}};}
-\DoxyCodeLine{176 }
-\DoxyCodeLine{181     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}};}
-\DoxyCodeLine{182 }
-\DoxyCodeLine{183 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{184 }
-\DoxyCodeLine{185     \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}}() AI\_NO\_EXCEPT}
-\DoxyCodeLine{186             : \mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{mTime}}(0.0),}
-\DoxyCodeLine{187               \mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}}(0) \{}
-\DoxyCodeLine{188     \}}
-\DoxyCodeLine{189 }
-\DoxyCodeLine{191     \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}}(\textcolor{keywordtype}{double} time, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} value) :}
-\DoxyCodeLine{192             \mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{mTime}}(time), \mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}}(value) \{\}}
-\DoxyCodeLine{193 }
-\DoxyCodeLine{194     \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} elem\_type;}
-\DoxyCodeLine{195 }
-\DoxyCodeLine{196     \textcolor{comment}{// Comparison operators. For use with std::find();}}
-\DoxyCodeLine{197     \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} \&o)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{198         \textcolor{keywordflow}{return} o.\mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}} == this-\/>\mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}};}
-\DoxyCodeLine{199     \}}
-\DoxyCodeLine{200     \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} \&o)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{201         \textcolor{keywordflow}{return} o.\mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}} != this-\/>\mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}};}
-\DoxyCodeLine{202     \}}
-\DoxyCodeLine{203 }
-\DoxyCodeLine{204     \textcolor{comment}{// Relational operators. For use with std::sort();}}
-\DoxyCodeLine{205     \textcolor{keywordtype}{bool} operator<(\textcolor{keyword}{const} \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} \&o)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{206         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{mTime}} < o.\mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{mTime}};}
-\DoxyCodeLine{207     \}}
-\DoxyCodeLine{208     \textcolor{keywordtype}{bool} operator>(\textcolor{keyword}{const} \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} \&o)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{209         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{mTime}} > o.\mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{mTime}};}
-\DoxyCodeLine{210     \}}
-\DoxyCodeLine{211 }
-\DoxyCodeLine{212 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{213 \};}
-\DoxyCodeLine{214 }
-\DoxyCodeLine{215 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{217 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_mesh_morph_key}{aiMeshMorphKey}} \{}
-\DoxyCodeLine{219     \textcolor{keywordtype}{double} \mbox{\hyperlink{structai_mesh_morph_key_a1429195df415bf1288002b45bba30994}{mTime}};}
-\DoxyCodeLine{220 }
-\DoxyCodeLine{225     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *\mbox{\hyperlink{structai_mesh_morph_key_acbf38314be993e72466d29fded5f9f9d}{mValues}};}
-\DoxyCodeLine{226     \textcolor{keywordtype}{double} *mWeights;}
-\DoxyCodeLine{227 }
-\DoxyCodeLine{229     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_morph_key_a28190ef15ed3535c9ae8dc1c8738a6ed}{mNumValuesAndWeights}};}
-\DoxyCodeLine{230 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{231     \mbox{\hyperlink{structai_mesh_morph_key}{aiMeshMorphKey}}() AI\_NO\_EXCEPT}
-\DoxyCodeLine{232             : \mbox{\hyperlink{structai_mesh_morph_key_a1429195df415bf1288002b45bba30994}{mTime}}(0.0),}
-\DoxyCodeLine{233               \mbox{\hyperlink{structai_mesh_morph_key_acbf38314be993e72466d29fded5f9f9d}{mValues}}(\textcolor{keywordtype}{nullptr}),}
-\DoxyCodeLine{234               mWeights(\textcolor{keywordtype}{nullptr}),}
-\DoxyCodeLine{235               \mbox{\hyperlink{structai_mesh_morph_key_a28190ef15ed3535c9ae8dc1c8738a6ed}{mNumValuesAndWeights}}(0) \{}
-\DoxyCodeLine{236     \}}
-\DoxyCodeLine{237 }
-\DoxyCodeLine{238     \mbox{\hyperlink{structai_mesh_morph_key}{\string~aiMeshMorphKey}}() \{}
-\DoxyCodeLine{239         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_morph_key_a28190ef15ed3535c9ae8dc1c8738a6ed}{mNumValuesAndWeights}} \&\& \mbox{\hyperlink{structai_mesh_morph_key_acbf38314be993e72466d29fded5f9f9d}{mValues}} \&\& mWeights) \{}
-\DoxyCodeLine{240             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_morph_key_acbf38314be993e72466d29fded5f9f9d}{mValues}};}
-\DoxyCodeLine{241             \textcolor{keyword}{delete}[] mWeights;}
-\DoxyCodeLine{242         \}}
-\DoxyCodeLine{243     \}}
-\DoxyCodeLine{244 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{245 \};}
-\DoxyCodeLine{246 }
-\DoxyCodeLine{247 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{251 \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cef}{aiAnimBehaviour}} \{}
-\DoxyCodeLine{253     \mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefac580185752c298b2e5bca0dbbef7f5c1}{aiAnimBehaviour\_DEFAULT}} = 0x0,}
-\DoxyCodeLine{254 }
-\DoxyCodeLine{256     \mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefaf6e8fd16ed92f7ec3652c367e15eb798}{aiAnimBehaviour\_CONSTANT}} = 0x1,}
-\DoxyCodeLine{257 }
-\DoxyCodeLine{260     \mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefa735ec243b581565a1ea5c974b07ec260}{aiAnimBehaviour\_LINEAR}} = 0x2,}
-\DoxyCodeLine{261 }
-\DoxyCodeLine{266     \mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefafa0d6cc9c9718af698b436c7c6da836d}{aiAnimBehaviour\_REPEAT}} = 0x3,}
-\DoxyCodeLine{267 }
-\DoxyCodeLine{270 \textcolor{preprocessor}{\#ifndef SWIG}}
-\DoxyCodeLine{271     \mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefa8e18d19abc297d6f6ed86c7a7ab9b4fc}{\_aiAnimBehaviour\_Force32Bit}} = INT\_MAX}
-\DoxyCodeLine{272 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{273 \};}
-\DoxyCodeLine{274 }
-\DoxyCodeLine{275 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{290 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_node_anim}{aiNodeAnim}} \{}
-\DoxyCodeLine{293     C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_node_anim_a22a591381e75214ba03c6aaa770638f3}{mNodeName}};}
-\DoxyCodeLine{294 }
-\DoxyCodeLine{296     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_node_anim_aab725313d31db70adab778a3c125103f}{mNumPositionKeys}};}
-\DoxyCodeLine{297 }
-\DoxyCodeLine{303     C\_STRUCT \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} *\mbox{\hyperlink{structai_node_anim_a0df4e7ac80e152af3a3e4e1f68c2c026}{mPositionKeys}};}
-\DoxyCodeLine{304 }
-\DoxyCodeLine{306     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_node_anim_aca7c78b89c4c64dcdf7619e105e0708c}{mNumRotationKeys}};}
-\DoxyCodeLine{307 }
-\DoxyCodeLine{314     C\_STRUCT \mbox{\hyperlink{structai_quat_key}{aiQuatKey}} *\mbox{\hyperlink{structai_node_anim_a2f22896f1d3c8619b57b6050cde84f1e}{mRotationKeys}};}
-\DoxyCodeLine{315 }
-\DoxyCodeLine{317     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_node_anim_a28fa0fd84571ac79cb45a537192738f6}{mNumScalingKeys}};}
-\DoxyCodeLine{318 }
-\DoxyCodeLine{324     C\_STRUCT \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} *\mbox{\hyperlink{structai_node_anim_a2f450497b713689e54c08b560c25ba57}{mScalingKeys}};}
-\DoxyCodeLine{325 }
-\DoxyCodeLine{331     C\_ENUM \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cef}{aiAnimBehaviour}} \mbox{\hyperlink{structai_node_anim_a305c01b60886a07b69f04b1db6d7d3c5}{mPreState}};}
-\DoxyCodeLine{332 }
-\DoxyCodeLine{338     C\_ENUM \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cef}{aiAnimBehaviour}} \mbox{\hyperlink{structai_node_anim_a93cefd440cbaf587c136eb224d4a0327}{mPostState}};}
-\DoxyCodeLine{339 }
-\DoxyCodeLine{340 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{341     \mbox{\hyperlink{structai_node_anim}{aiNodeAnim}}() AI\_NO\_EXCEPT}
-\DoxyCodeLine{342             : \mbox{\hyperlink{structai_node_anim_aab725313d31db70adab778a3c125103f}{mNumPositionKeys}}(0),}
-\DoxyCodeLine{343               \mbox{\hyperlink{structai_node_anim_a0df4e7ac80e152af3a3e4e1f68c2c026}{mPositionKeys}}(\textcolor{keywordtype}{nullptr}),}
-\DoxyCodeLine{344               \mbox{\hyperlink{structai_node_anim_aca7c78b89c4c64dcdf7619e105e0708c}{mNumRotationKeys}}(0),}
-\DoxyCodeLine{345               \mbox{\hyperlink{structai_node_anim_a2f22896f1d3c8619b57b6050cde84f1e}{mRotationKeys}}(\textcolor{keywordtype}{nullptr}),}
-\DoxyCodeLine{346               \mbox{\hyperlink{structai_node_anim_a28fa0fd84571ac79cb45a537192738f6}{mNumScalingKeys}}(0),}
-\DoxyCodeLine{347               \mbox{\hyperlink{structai_node_anim_a2f450497b713689e54c08b560c25ba57}{mScalingKeys}}(\textcolor{keywordtype}{nullptr}),}
-\DoxyCodeLine{348               \mbox{\hyperlink{structai_node_anim_a305c01b60886a07b69f04b1db6d7d3c5}{mPreState}}(\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefac580185752c298b2e5bca0dbbef7f5c1}{aiAnimBehaviour\_DEFAULT}}),}
-\DoxyCodeLine{349               \mbox{\hyperlink{structai_node_anim_a93cefd440cbaf587c136eb224d4a0327}{mPostState}}(\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefac580185752c298b2e5bca0dbbef7f5c1}{aiAnimBehaviour\_DEFAULT}}) \{}
-\DoxyCodeLine{350         \textcolor{comment}{// empty}}
-\DoxyCodeLine{351     \}}
-\DoxyCodeLine{352 }
-\DoxyCodeLine{353     \mbox{\hyperlink{structai_node_anim}{\string~aiNodeAnim}}() \{}
-\DoxyCodeLine{354         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_node_anim_a0df4e7ac80e152af3a3e4e1f68c2c026}{mPositionKeys}};}
-\DoxyCodeLine{355         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_node_anim_a2f22896f1d3c8619b57b6050cde84f1e}{mRotationKeys}};}
-\DoxyCodeLine{356         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_node_anim_a2f450497b713689e54c08b560c25ba57}{mScalingKeys}};}
-\DoxyCodeLine{357     \}}
-\DoxyCodeLine{358 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
-\DoxyCodeLine{359 \};}
-\DoxyCodeLine{360 }
-\DoxyCodeLine{361 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{367 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_mesh_anim}{aiMeshAnim}} \{}
-\DoxyCodeLine{372     C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_mesh_anim_a20751a739377fdba514c676ef4bda4c7}{mName}};}
-\DoxyCodeLine{373 }
-\DoxyCodeLine{375     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_anim_aa8702d42bf619ccc8414a556f41634d8}{mNumKeys}};}
-\DoxyCodeLine{376 }
-\DoxyCodeLine{378     C\_STRUCT \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} *\mbox{\hyperlink{structai_mesh_anim_a47557fd0782241e97dac2a98636e3091}{mKeys}};}
-\DoxyCodeLine{379 }
-\DoxyCodeLine{380 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{381 }
-\DoxyCodeLine{382     \mbox{\hyperlink{structai_mesh_anim}{aiMeshAnim}}() AI\_NO\_EXCEPT}
-\DoxyCodeLine{383             : \mbox{\hyperlink{structai_mesh_anim_aa8702d42bf619ccc8414a556f41634d8}{mNumKeys}}(),}
-\DoxyCodeLine{384               \mbox{\hyperlink{structai_mesh_anim_a47557fd0782241e97dac2a98636e3091}{mKeys}}() \{\}}
-\DoxyCodeLine{385 }
-\DoxyCodeLine{386     \mbox{\hyperlink{structai_mesh_anim}{\string~aiMeshAnim}}() \{}
-\DoxyCodeLine{387         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_anim_a47557fd0782241e97dac2a98636e3091}{mKeys}};}
-\DoxyCodeLine{388     \}}
-\DoxyCodeLine{389 }
-\DoxyCodeLine{390 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{391 \};}
-\DoxyCodeLine{392 }
-\DoxyCodeLine{393 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{395 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_mesh_morph_anim}{aiMeshMorphAnim}} \{}
-\DoxyCodeLine{400     C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_mesh_morph_anim_a21de91fb9c9fcf58a0bd0c761ea25cf5}{mName}};}
-\DoxyCodeLine{401 }
-\DoxyCodeLine{403     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_morph_anim_af9c8a3e37613a196ed33d2746cf6f0c8}{mNumKeys}};}
-\DoxyCodeLine{404 }
-\DoxyCodeLine{406     C\_STRUCT \mbox{\hyperlink{structai_mesh_morph_key}{aiMeshMorphKey}} *\mbox{\hyperlink{structai_mesh_morph_anim_a6944cba8dfaceba46402ab6136bad520}{mKeys}};}
-\DoxyCodeLine{407 }
-\DoxyCodeLine{408 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{409 }
-\DoxyCodeLine{410     \mbox{\hyperlink{structai_mesh_morph_anim}{aiMeshMorphAnim}}() AI\_NO\_EXCEPT}
-\DoxyCodeLine{411             : \mbox{\hyperlink{structai_mesh_morph_anim_af9c8a3e37613a196ed33d2746cf6f0c8}{mNumKeys}}(),}
-\DoxyCodeLine{412               \mbox{\hyperlink{structai_mesh_morph_anim_a6944cba8dfaceba46402ab6136bad520}{mKeys}}() \{\}}
-\DoxyCodeLine{413 }
-\DoxyCodeLine{414     \mbox{\hyperlink{structai_mesh_morph_anim}{\string~aiMeshMorphAnim}}() \{}
-\DoxyCodeLine{415         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_morph_anim_a6944cba8dfaceba46402ab6136bad520}{mKeys}};}
-\DoxyCodeLine{416     \}}
-\DoxyCodeLine{417 }
-\DoxyCodeLine{418 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{419 \};}
-\DoxyCodeLine{420 }
-\DoxyCodeLine{421 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{424 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_animation}{aiAnimation}} \{}
-\DoxyCodeLine{428     C\_STRUCT \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_animation_a1be7d78d88694173a7ceef658fea77f1}{mName}};}
-\DoxyCodeLine{429 }
-\DoxyCodeLine{431     \textcolor{keywordtype}{double} \mbox{\hyperlink{structai_animation_ae2bbc49320b4b75c05e23e0ab704ece7}{mDuration}};}
-\DoxyCodeLine{432 }
-\DoxyCodeLine{434     \textcolor{keywordtype}{double} \mbox{\hyperlink{structai_animation_afd26a40c3f16b6aa6e150effa3eaeab1}{mTicksPerSecond}};}
-\DoxyCodeLine{435 }
-\DoxyCodeLine{438     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_animation_aebfccf9a9aefa6084566d21e8a30b7e5}{mNumChannels}};}
-\DoxyCodeLine{439 }
-\DoxyCodeLine{442     C\_STRUCT \mbox{\hyperlink{structai_node_anim}{aiNodeAnim}} **\mbox{\hyperlink{structai_animation_a4f3f6bdb38a4549e1ee8d022ec9e8c41}{mChannels}};}
-\DoxyCodeLine{443 }
-\DoxyCodeLine{446     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_animation_ac43aacd8502020174e553501f0b6bf5f}{mNumMeshChannels}};}
-\DoxyCodeLine{447 }
-\DoxyCodeLine{450     C\_STRUCT \mbox{\hyperlink{structai_mesh_anim}{aiMeshAnim}} **\mbox{\hyperlink{structai_animation_ac1a36b038c7a7b640620af37b251dfdd}{mMeshChannels}};}
-\DoxyCodeLine{451 }
-\DoxyCodeLine{454     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_animation_aed9aa50bdf38c9f6064f79f5aab38d59}{mNumMorphMeshChannels}};}
-\DoxyCodeLine{455 }
-\DoxyCodeLine{458     C\_STRUCT \mbox{\hyperlink{structai_mesh_morph_anim}{aiMeshMorphAnim}} **\mbox{\hyperlink{structai_animation_a5a89e92560f907239741df843cbca476}{mMorphMeshChannels}};}
-\DoxyCodeLine{459 }
-\DoxyCodeLine{460 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{461     \mbox{\hyperlink{structai_animation}{aiAnimation}}() AI\_NO\_EXCEPT}
-\DoxyCodeLine{462             : \mbox{\hyperlink{structai_animation_ae2bbc49320b4b75c05e23e0ab704ece7}{mDuration}}(-\/1.),}
-\DoxyCodeLine{463               \mbox{\hyperlink{structai_animation_afd26a40c3f16b6aa6e150effa3eaeab1}{mTicksPerSecond}}(0.),}
-\DoxyCodeLine{464               \mbox{\hyperlink{structai_animation_aebfccf9a9aefa6084566d21e8a30b7e5}{mNumChannels}}(0),}
-\DoxyCodeLine{465               \mbox{\hyperlink{structai_animation_a4f3f6bdb38a4549e1ee8d022ec9e8c41}{mChannels}}(\textcolor{keywordtype}{nullptr}),}
-\DoxyCodeLine{466               \mbox{\hyperlink{structai_animation_ac43aacd8502020174e553501f0b6bf5f}{mNumMeshChannels}}(0),}
-\DoxyCodeLine{467               \mbox{\hyperlink{structai_animation_ac1a36b038c7a7b640620af37b251dfdd}{mMeshChannels}}(\textcolor{keywordtype}{nullptr}),}
-\DoxyCodeLine{468               \mbox{\hyperlink{structai_animation_aed9aa50bdf38c9f6064f79f5aab38d59}{mNumMorphMeshChannels}}(0),}
-\DoxyCodeLine{469               \mbox{\hyperlink{structai_animation_a5a89e92560f907239741df843cbca476}{mMorphMeshChannels}}(\textcolor{keywordtype}{nullptr}) \{}
-\DoxyCodeLine{470         \textcolor{comment}{// empty}}
-\DoxyCodeLine{471     \}}
-\DoxyCodeLine{472 }
-\DoxyCodeLine{473     \mbox{\hyperlink{structai_animation}{\string~aiAnimation}}() \{}
-\DoxyCodeLine{474         \textcolor{comment}{// DO NOT REMOVE THIS ADDITIONAL CHECK}}
-\DoxyCodeLine{475         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_animation_aebfccf9a9aefa6084566d21e8a30b7e5}{mNumChannels}} \&\& \mbox{\hyperlink{structai_animation_a4f3f6bdb38a4549e1ee8d022ec9e8c41}{mChannels}}) \{}
-\DoxyCodeLine{476             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{structai_animation_aebfccf9a9aefa6084566d21e8a30b7e5}{mNumChannels}}; a++) \{}
-\DoxyCodeLine{477                 \textcolor{keyword}{delete} \mbox{\hyperlink{structai_animation_a4f3f6bdb38a4549e1ee8d022ec9e8c41}{mChannels}}[a];}
-\DoxyCodeLine{478             \}}
-\DoxyCodeLine{479 }
-\DoxyCodeLine{480             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_animation_a4f3f6bdb38a4549e1ee8d022ec9e8c41}{mChannels}};}
-\DoxyCodeLine{481         \}}
-\DoxyCodeLine{482         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_animation_ac43aacd8502020174e553501f0b6bf5f}{mNumMeshChannels}} \&\& \mbox{\hyperlink{structai_animation_ac1a36b038c7a7b640620af37b251dfdd}{mMeshChannels}}) \{}
-\DoxyCodeLine{483             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{structai_animation_ac43aacd8502020174e553501f0b6bf5f}{mNumMeshChannels}}; a++) \{}
-\DoxyCodeLine{484                 \textcolor{keyword}{delete} \mbox{\hyperlink{structai_animation_ac1a36b038c7a7b640620af37b251dfdd}{mMeshChannels}}[a];}
-\DoxyCodeLine{485             \}}
-\DoxyCodeLine{486 }
-\DoxyCodeLine{487             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_animation_ac1a36b038c7a7b640620af37b251dfdd}{mMeshChannels}};}
-\DoxyCodeLine{488         \}}
-\DoxyCodeLine{489         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_animation_aed9aa50bdf38c9f6064f79f5aab38d59}{mNumMorphMeshChannels}} \&\& \mbox{\hyperlink{structai_animation_a5a89e92560f907239741df843cbca476}{mMorphMeshChannels}}) \{}
-\DoxyCodeLine{490             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{structai_animation_aed9aa50bdf38c9f6064f79f5aab38d59}{mNumMorphMeshChannels}}; a++) \{}
-\DoxyCodeLine{491                 \textcolor{keyword}{delete} \mbox{\hyperlink{structai_animation_a5a89e92560f907239741df843cbca476}{mMorphMeshChannels}}[a];}
-\DoxyCodeLine{492             \}}
-\DoxyCodeLine{493 }
-\DoxyCodeLine{494             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_animation_a5a89e92560f907239741df843cbca476}{mMorphMeshChannels}};}
-\DoxyCodeLine{495         \}}
-\DoxyCodeLine{496     \}}
-\DoxyCodeLine{497 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
-\DoxyCodeLine{498 \};}
-\DoxyCodeLine{499 }
-\DoxyCodeLine{500 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{501 \}}
-\DoxyCodeLine{502 }
-\DoxyCodeLine{504 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
-\DoxyCodeLine{505 }
-\DoxyCodeLine{506 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{513 \textcolor{comment}{}\textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{514 \textcolor{keyword}{struct }Interpolator \{}
-\DoxyCodeLine{515     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{521 \textcolor{comment}{}    \textcolor{keywordtype}{void} operator()(T \&anim\_out, \textcolor{keyword}{const} T \&a, \textcolor{keyword}{const} T \&b, ai\_real d)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{522         anim\_out = a + (b -\/ a) * d;}
-\DoxyCodeLine{523     \}}
-\DoxyCodeLine{524 \}; \textcolor{comment}{// ! Interpolator <T>}}
-\DoxyCodeLine{525 }
-\DoxyCodeLine{527 }
-\DoxyCodeLine{528 \textcolor{keyword}{template} <>}
-\DoxyCodeLine{529 \textcolor{keyword}{struct }Interpolator<\mbox{\hyperlink{structai_quaternion}{aiQuaternion}}> \{}
-\DoxyCodeLine{530     \textcolor{keywordtype}{void} operator()(\mbox{\hyperlink{structai_quaternion}{aiQuaternion}} \&out, \textcolor{keyword}{const} \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} \&a,}
-\DoxyCodeLine{531             \textcolor{keyword}{const} \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} \&b, ai\_real d)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{532         aiQuaternion::Interpolate(out, a, b, d);}
-\DoxyCodeLine{533     \}}
-\DoxyCodeLine{534 \}; \textcolor{comment}{// ! Interpolator <aiQuaternion>}}
-\DoxyCodeLine{535 }
-\DoxyCodeLine{536 \textcolor{keyword}{template} <>}
-\DoxyCodeLine{537 \textcolor{keyword}{struct }Interpolator<unsigned int> \{}
-\DoxyCodeLine{538     \textcolor{keywordtype}{void} operator()(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&out, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a,}
-\DoxyCodeLine{539             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} b, ai\_real d)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{540         out = d > 0.5f ? b : a;}
-\DoxyCodeLine{541     \}}
-\DoxyCodeLine{542 \}; \textcolor{comment}{// ! Interpolator <aiQuaternion>}}
-\DoxyCodeLine{543 }
-\DoxyCodeLine{544 \textcolor{keyword}{template} <>}
-\DoxyCodeLine{545 \textcolor{keyword}{struct }Interpolator<\mbox{\hyperlink{structai_vector_key}{aiVectorKey}}> \{}
-\DoxyCodeLine{546     \textcolor{keywordtype}{void} operator()(\mbox{\hyperlink{structai_vector3_d}{aiVector3D}} \&out, \textcolor{keyword}{const} \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} \&a,}
-\DoxyCodeLine{547             \textcolor{keyword}{const} \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} \&b, ai\_real d)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{548         Interpolator<aiVector3D> ipl;}
-\DoxyCodeLine{549         ipl(out, a.\mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}}, b.\mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}}, d);}
-\DoxyCodeLine{550     \}}
-\DoxyCodeLine{551 \}; \textcolor{comment}{// ! Interpolator <aiVectorKey>}}
-\DoxyCodeLine{552 }
-\DoxyCodeLine{553 \textcolor{keyword}{template} <>}
-\DoxyCodeLine{554 \textcolor{keyword}{struct }Interpolator<\mbox{\hyperlink{structai_quat_key}{aiQuatKey}}> \{}
-\DoxyCodeLine{555     \textcolor{keywordtype}{void} operator()(\mbox{\hyperlink{structai_quaternion}{aiQuaternion}} \&out, \textcolor{keyword}{const} \mbox{\hyperlink{structai_quat_key}{aiQuatKey}} \&a,}
-\DoxyCodeLine{556             \textcolor{keyword}{const} \mbox{\hyperlink{structai_quat_key}{aiQuatKey}} \&b, ai\_real d)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{557         Interpolator<aiQuaternion> ipl;}
-\DoxyCodeLine{558         ipl(out, a.\mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}}, b.\mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}}, d);}
-\DoxyCodeLine{559     \}}
-\DoxyCodeLine{560 \}; \textcolor{comment}{// ! Interpolator <aiQuatKey>}}
-\DoxyCodeLine{561 }
-\DoxyCodeLine{562 \textcolor{keyword}{template} <>}
-\DoxyCodeLine{563 \textcolor{keyword}{struct }Interpolator<\mbox{\hyperlink{structai_mesh_key}{aiMeshKey}}> \{}
-\DoxyCodeLine{564     \textcolor{keywordtype}{void} operator()(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&out, \textcolor{keyword}{const} \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} \&a,}
-\DoxyCodeLine{565             \textcolor{keyword}{const} \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} \&b, ai\_real d)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{566         Interpolator<unsigned int> ipl;}
-\DoxyCodeLine{567         ipl(out, a.\mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}}, b.\mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}}, d);}
-\DoxyCodeLine{568     \}}
-\DoxyCodeLine{569 \}; \textcolor{comment}{// ! Interpolator <aiQuatKey>}}
-\DoxyCodeLine{570 }
-\DoxyCodeLine{572 }
-\DoxyCodeLine{573 \} \textcolor{comment}{// namespace Assimp}}
-\DoxyCodeLine{574 }
-\DoxyCodeLine{575 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
-\DoxyCodeLine{576 }
-\DoxyCodeLine{577 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_ANIM\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00002}00002 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00003}00003 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00004}00004 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00005}00005 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00006}00006 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00007}00007 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00008}00008 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00009}00009 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00010}00010 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00011}00011 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00012}00012 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00013}00013 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00014}00014 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00015}00015 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00016}00016 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00017}00017 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00018}00018 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00019}00019 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00020}00020 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00021}00021 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00022}00022 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00023}00023 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00024}00024 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00025}00025 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00026}00026 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00027}00027 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00028}00028 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00029}00029 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00030}00030 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00031}00031 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00032}00032 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00033}00033 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00034}00034 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00035}00035 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00036}00036 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00037}00037 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00038}00038 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00039}00039 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00040}00040 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00047}00047 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00048}00048 \textcolor{preprocessor}{\#ifndef AI\_ANIM\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00049}\mbox{\hyperlink{include_2assimp_2anim_8h_afc07ef96362c6baf707f0715739bbbc4}{00049}} \textcolor{preprocessor}{\#define AI\_ANIM\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00051}00051 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00052}00052 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00053}00053 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00055}00055 \textcolor{preprocessor}{\#include <assimp/quaternion.h>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00056}00056 \textcolor{preprocessor}{\#include <assimp/types.h>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00058}00058 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00059}00059 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00060}00060 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00062}00062 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00065}\mbox{\hyperlink{include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20e}{00065}} \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20e}{aiAnimInterpolation}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00067}\mbox{\hyperlink{include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20ea6dd85782a544c93bf9eb6d56abbc9e81}{00067}}     \mbox{\hyperlink{include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20ea6dd85782a544c93bf9eb6d56abbc9e81}{aiAnimInterpolation\_Step}},}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00070}\mbox{\hyperlink{include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da}{00070}}     \mbox{\hyperlink{include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da}{aiAnimInterpolation\_Linear}},}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00073}\mbox{\hyperlink{include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20ea7d3c05c71355cc31c522c51b36329c53}{00073}}     \mbox{\hyperlink{include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20ea7d3c05c71355cc31c522c51b36329c53}{aiAnimInterpolation\_Spherical\_Linear}},}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00076}\mbox{\hyperlink{include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20ea60406dd693bc3c4ede1432107ebec2ad}{00076}}     \mbox{\hyperlink{include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20ea60406dd693bc3c4ede1432107ebec2ad}{aiAnimInterpolation\_Cubic\_Spline}},}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00079}00079 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00080}00080     \mbox{\hyperlink{include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20ea681dc5633593f0a43b468339e8f27fe5}{\_aiAnimInterpolation\_Force32Bit}} = INT\_MAX}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00081}00081 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00082}\mbox{\hyperlink{include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20ea681dc5633593f0a43b468339e8f27fe5}{00082}} \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00084}00084 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00086}\mbox{\hyperlink{structai_vector_key}{00086}} \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_vector_key}{aiVectorKey}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00088}\mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{00088}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{mTime}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00091}\mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{00091}}     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} \mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00094}\mbox{\hyperlink{structai_vector_key_a452853103d895a9a616ca5f005264eef}{00094}}     \mbox{\hyperlink{include_2assimp_2defs_8h_aa8c1788fd9d096036c9e3b6cfe4b1301}{C\_ENUM}} \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20e}{aiAnimInterpolation}} \mbox{\hyperlink{structai_vector_key_a452853103d895a9a616ca5f005264eef}{mInterpolation}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00096}00096 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00099}00099     \mbox{\hyperlink{structai_vector_key}{aiVectorKey}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00100}00100             : \mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{mTime}}(0.0), \mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}}(), \mbox{\hyperlink{structai_vector_key_a452853103d895a9a616ca5f005264eef}{mInterpolation}}(\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da}{aiAnimInterpolation\_Linear}}) \{\}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00103}00103     \mbox{\hyperlink{structai_vector_key}{aiVectorKey}}(\textcolor{keywordtype}{double} time, \textcolor{keyword}{const} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} \&value) :}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00104}00104             \mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{mTime}}(time), \mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}}(value), \mbox{\hyperlink{structai_vector_key_a452853103d895a9a616ca5f005264eef}{mInterpolation}}(\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da}{aiAnimInterpolation\_Linear}})\{\}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00106}00106     \textcolor{keyword}{typedef} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} elem\_type;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00108}00108     \textcolor{comment}{// Comparison operators. For use with std::find();}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00109}00109     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceglm_a3a1034521aa2b584602552cfde969df4}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} \&rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00110}00110         \textcolor{keywordflow}{return} rhs.\mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}} == this-\/>\mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00111}00111     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00113}00113     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceglm_a48b18d1e2196ce32172d4ee26f02a502}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} \&rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00114}00114         \textcolor{keywordflow}{return} rhs.\mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}} != this-\/>\mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00115}00115     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00117}00117     \textcolor{comment}{// Relational operators. For use with std::sort();}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00118}00118     \textcolor{keywordtype}{bool} operator<(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} \&rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00119}00119         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{mTime}} < rhs.\mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{mTime}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00120}00120     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00122}00122     \textcolor{keywordtype}{bool} operator>(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} \&rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00123}00123         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{mTime}} > rhs.\mbox{\hyperlink{structai_vector_key_ab3c43c166434c7a505083d1929f675bc}{mTime}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00124}00124     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00125}00125 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00126}00126 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00128}00128 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00131}\mbox{\hyperlink{structai_quat_key}{00131}} \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_quat_key}{aiQuatKey}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00133}\mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{00133}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{mTime}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00134}00134 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00136}\mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{00136}}     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} \mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00139}\mbox{\hyperlink{structai_quat_key_a1fb8cfe7c1ad3979da5147bf6fb83b88}{00139}}     \mbox{\hyperlink{include_2assimp_2defs_8h_aa8c1788fd9d096036c9e3b6cfe4b1301}{C\_ENUM}} \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20e}{aiAnimInterpolation}} \mbox{\hyperlink{structai_quat_key_a1fb8cfe7c1ad3979da5147bf6fb83b88}{mInterpolation}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00141}00141 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00142}00142     \mbox{\hyperlink{structai_quat_key}{aiQuatKey}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00143}00143             : \mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{mTime}}(0.0), \mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}}(), \mbox{\hyperlink{structai_quat_key_a1fb8cfe7c1ad3979da5147bf6fb83b88}{mInterpolation}}(\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da}{aiAnimInterpolation\_Linear}}) \{\}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00146}00146     \mbox{\hyperlink{structai_quat_key}{aiQuatKey}}(\textcolor{keywordtype}{double} time, \textcolor{keyword}{const} \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} \&value) :}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00147}00147             \mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{mTime}}(time), \mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}}(value), \mbox{\hyperlink{structai_quat_key_a1fb8cfe7c1ad3979da5147bf6fb83b88}{mInterpolation}}(\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2anim_8h_a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da}{aiAnimInterpolation\_Linear}}) \{\}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00149}00149     \textcolor{keyword}{typedef} \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} elem\_type;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00151}00151     \textcolor{comment}{// Comparison operators. For use with std::find();}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00152}00152     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceglm_a3a1034521aa2b584602552cfde969df4}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_quat_key}{aiQuatKey}} \&rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00153}00153         \textcolor{keywordflow}{return} rhs.\mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}} == this-\/>\mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00154}00154     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00156}00156     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceglm_a48b18d1e2196ce32172d4ee26f02a502}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_quat_key}{aiQuatKey}} \&rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00157}00157         \textcolor{keywordflow}{return} rhs.\mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}} != this-\/>\mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00158}00158     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00160}00160     \textcolor{comment}{// Relational operators. For use with std::sort();}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00161}00161     \textcolor{keywordtype}{bool} operator<(\textcolor{keyword}{const} \mbox{\hyperlink{structai_quat_key}{aiQuatKey}} \&rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00162}00162         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{mTime}} < rhs.\mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{mTime}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00163}00163     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00165}00165     \textcolor{keywordtype}{bool} operator>(\textcolor{keyword}{const} \mbox{\hyperlink{structai_quat_key}{aiQuatKey}} \&rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00166}00166         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{mTime}} > rhs.\mbox{\hyperlink{structai_quat_key_afb56b697e491c918bdeb1b32d03bbcf8}{mTime}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00167}00167     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00168}00168 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00169}00169 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00170}00170 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00171}00171 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00173}\mbox{\hyperlink{structai_mesh_key}{00173}} \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00175}\mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{00175}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{mTime}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00181}\mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{00181}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00182}00182 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00183}00183 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00184}00184 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00185}00185     \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00186}00186             : \mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{mTime}}(0.0),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00187}00187               \mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}}(0) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00188}00188     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00189}00189 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00191}00191     \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}}(\textcolor{keywordtype}{double} time, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} value) :}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00192}00192             \mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{mTime}}(time), \mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}}(value) \{\}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00194}00194     \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} elem\_type;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00195}00195 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00196}00196     \textcolor{comment}{// Comparison operators. For use with std::find();}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00197}00197     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceglm_a3a1034521aa2b584602552cfde969df4}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} \&o)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00198}00198         \textcolor{keywordflow}{return} o.\mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}} == this-\/>\mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00199}00199     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00200}00200     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceglm_a48b18d1e2196ce32172d4ee26f02a502}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} \&o)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00201}00201         \textcolor{keywordflow}{return} o.\mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}} != this-\/>\mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00202}00202     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00203}00203 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00204}00204     \textcolor{comment}{// Relational operators. For use with std::sort();}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00205}00205     \textcolor{keywordtype}{bool} operator<(\textcolor{keyword}{const} \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} \&o)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00206}00206         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{mTime}} < o.\mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{mTime}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00207}00207     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00208}00208     \textcolor{keywordtype}{bool} operator>(\textcolor{keyword}{const} \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} \&o)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00209}00209         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{mTime}} > o.\mbox{\hyperlink{structai_mesh_key_a0814e4b14ed162295ba19331410a51ab}{mTime}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00210}00210     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00211}00211 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00212}00212 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00213}00213 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00214}00214 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00215}00215 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00217}\mbox{\hyperlink{structai_mesh_morph_key}{00217}} \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_mesh_morph_key}{aiMeshMorphKey}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00219}\mbox{\hyperlink{structai_mesh_morph_key_a1429195df415bf1288002b45bba30994}{00219}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{structai_mesh_morph_key_a1429195df415bf1288002b45bba30994}{mTime}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00220}00220 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00225}\mbox{\hyperlink{structai_mesh_morph_key_acbf38314be993e72466d29fded5f9f9d}{00225}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *\mbox{\hyperlink{structai_mesh_morph_key_acbf38314be993e72466d29fded5f9f9d}{mValues}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00226}\mbox{\hyperlink{structai_mesh_morph_key_a2261cc608e8be1a2c1839b3e16d6fd7a}{00226}}     \textcolor{keywordtype}{double} *\mbox{\hyperlink{structai_mesh_morph_key_a2261cc608e8be1a2c1839b3e16d6fd7a}{mWeights}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00227}00227 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00229}\mbox{\hyperlink{structai_mesh_morph_key_a28190ef15ed3535c9ae8dc1c8738a6ed}{00229}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_morph_key_a28190ef15ed3535c9ae8dc1c8738a6ed}{mNumValuesAndWeights}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00230}00230 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00231}00231     \mbox{\hyperlink{structai_mesh_morph_key}{aiMeshMorphKey}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00232}00232             : \mbox{\hyperlink{structai_mesh_morph_key_a1429195df415bf1288002b45bba30994}{mTime}}(0.0),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00233}00233               \mbox{\hyperlink{structai_mesh_morph_key_acbf38314be993e72466d29fded5f9f9d}{mValues}}(\textcolor{keywordtype}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00234}00234               \mbox{\hyperlink{structai_mesh_morph_key_a2261cc608e8be1a2c1839b3e16d6fd7a}{mWeights}}(\textcolor{keywordtype}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00235}00235               \mbox{\hyperlink{structai_mesh_morph_key_a28190ef15ed3535c9ae8dc1c8738a6ed}{mNumValuesAndWeights}}(0) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00236}00236     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00238}00238     \mbox{\hyperlink{structai_mesh_morph_key}{\string~aiMeshMorphKey}}() \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00239}00239         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_morph_key_a28190ef15ed3535c9ae8dc1c8738a6ed}{mNumValuesAndWeights}} \&\& \mbox{\hyperlink{structai_mesh_morph_key_acbf38314be993e72466d29fded5f9f9d}{mValues}} \&\& \mbox{\hyperlink{structai_mesh_morph_key_a2261cc608e8be1a2c1839b3e16d6fd7a}{mWeights}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00240}00240             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_morph_key_acbf38314be993e72466d29fded5f9f9d}{mValues}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00241}00241             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_morph_key_a2261cc608e8be1a2c1839b3e16d6fd7a}{mWeights}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00242}00242         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00243}00243     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00244}00244 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00245}00245 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00246}00246 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00247}00247 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00251}\mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cef}{00251}} \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cef}{aiAnimBehaviour}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00253}\mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefac580185752c298b2e5bca0dbbef7f5c1}{00253}}     \mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefac580185752c298b2e5bca0dbbef7f5c1}{aiAnimBehaviour\_DEFAULT}} = 0x0,}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00254}00254 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00256}\mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefaf6e8fd16ed92f7ec3652c367e15eb798}{00256}}     \mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefaf6e8fd16ed92f7ec3652c367e15eb798}{aiAnimBehaviour\_CONSTANT}} = 0x1,}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00257}00257 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00260}\mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefa735ec243b581565a1ea5c974b07ec260}{00260}}     \mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefa735ec243b581565a1ea5c974b07ec260}{aiAnimBehaviour\_LINEAR}} = 0x2,}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00261}00261 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00266}\mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefafa0d6cc9c9718af698b436c7c6da836d}{00266}}     \mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefafa0d6cc9c9718af698b436c7c6da836d}{aiAnimBehaviour\_REPEAT}} = 0x3,}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00267}00267 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00270}00270 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00271}00271     \mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefa8e18d19abc297d6f6ed86c7a7ab9b4fc}{\_aiAnimBehaviour\_Force32Bit}} = INT\_MAX}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00272}00272 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00273}\mbox{\hyperlink{include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefa8e18d19abc297d6f6ed86c7a7ab9b4fc}{00273}} \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00274}00274 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00275}00275 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00290}\mbox{\hyperlink{structai_node_anim}{00290}} \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_node_anim}{aiNodeAnim}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00293}\mbox{\hyperlink{structai_node_anim_a22a591381e75214ba03c6aaa770638f3}{00293}}     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_node_anim_a22a591381e75214ba03c6aaa770638f3}{mNodeName}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00294}00294 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00296}\mbox{\hyperlink{structai_node_anim_aab725313d31db70adab778a3c125103f}{00296}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_node_anim_aab725313d31db70adab778a3c125103f}{mNumPositionKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00297}00297 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00303}\mbox{\hyperlink{structai_node_anim_a0df4e7ac80e152af3a3e4e1f68c2c026}{00303}}     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} *\mbox{\hyperlink{structai_node_anim_a0df4e7ac80e152af3a3e4e1f68c2c026}{mPositionKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00304}00304 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00306}\mbox{\hyperlink{structai_node_anim_aca7c78b89c4c64dcdf7619e105e0708c}{00306}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_node_anim_aca7c78b89c4c64dcdf7619e105e0708c}{mNumRotationKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00307}00307 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00314}\mbox{\hyperlink{structai_node_anim_a2f22896f1d3c8619b57b6050cde84f1e}{00314}}     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_quat_key}{aiQuatKey}} *\mbox{\hyperlink{structai_node_anim_a2f22896f1d3c8619b57b6050cde84f1e}{mRotationKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00315}00315 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00317}\mbox{\hyperlink{structai_node_anim_a28fa0fd84571ac79cb45a537192738f6}{00317}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_node_anim_a28fa0fd84571ac79cb45a537192738f6}{mNumScalingKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00318}00318 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00324}\mbox{\hyperlink{structai_node_anim_a2f450497b713689e54c08b560c25ba57}{00324}}     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} *\mbox{\hyperlink{structai_node_anim_a2f450497b713689e54c08b560c25ba57}{mScalingKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00325}00325 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00331}\mbox{\hyperlink{structai_node_anim_a305c01b60886a07b69f04b1db6d7d3c5}{00331}}     \mbox{\hyperlink{include_2assimp_2defs_8h_aa8c1788fd9d096036c9e3b6cfe4b1301}{C\_ENUM}} \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cef}{aiAnimBehaviour}} \mbox{\hyperlink{structai_node_anim_a305c01b60886a07b69f04b1db6d7d3c5}{mPreState}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00332}00332 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00338}\mbox{\hyperlink{structai_node_anim_a93cefd440cbaf587c136eb224d4a0327}{00338}}     \mbox{\hyperlink{include_2assimp_2defs_8h_aa8c1788fd9d096036c9e3b6cfe4b1301}{C\_ENUM}} \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cef}{aiAnimBehaviour}} \mbox{\hyperlink{structai_node_anim_a93cefd440cbaf587c136eb224d4a0327}{mPostState}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00339}00339 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00340}00340 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00341}00341     \mbox{\hyperlink{structai_node_anim}{aiNodeAnim}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00342}00342             : \mbox{\hyperlink{structai_node_anim_aab725313d31db70adab778a3c125103f}{mNumPositionKeys}}(0),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00343}00343               \mbox{\hyperlink{structai_node_anim_a0df4e7ac80e152af3a3e4e1f68c2c026}{mPositionKeys}}(\textcolor{keywordtype}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00344}00344               \mbox{\hyperlink{structai_node_anim_aca7c78b89c4c64dcdf7619e105e0708c}{mNumRotationKeys}}(0),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00345}00345               \mbox{\hyperlink{structai_node_anim_a2f22896f1d3c8619b57b6050cde84f1e}{mRotationKeys}}(\textcolor{keywordtype}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00346}00346               \mbox{\hyperlink{structai_node_anim_a28fa0fd84571ac79cb45a537192738f6}{mNumScalingKeys}}(0),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00347}00347               \mbox{\hyperlink{structai_node_anim_a2f450497b713689e54c08b560c25ba57}{mScalingKeys}}(\textcolor{keywordtype}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00348}00348               \mbox{\hyperlink{structai_node_anim_a305c01b60886a07b69f04b1db6d7d3c5}{mPreState}}(\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefac580185752c298b2e5bca0dbbef7f5c1}{aiAnimBehaviour\_DEFAULT}}),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00349}00349               \mbox{\hyperlink{structai_node_anim_a93cefd440cbaf587c136eb224d4a0327}{mPostState}}(\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2anim_8h_a201b9e9429b82cd6423ff4a4daf01cefac580185752c298b2e5bca0dbbef7f5c1}{aiAnimBehaviour\_DEFAULT}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00350}00350         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00351}00351     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00352}00352 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00353}00353     \mbox{\hyperlink{structai_node_anim}{\string~aiNodeAnim}}() \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00354}00354         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_node_anim_a0df4e7ac80e152af3a3e4e1f68c2c026}{mPositionKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00355}00355         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_node_anim_a2f22896f1d3c8619b57b6050cde84f1e}{mRotationKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00356}00356         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_node_anim_a2f450497b713689e54c08b560c25ba57}{mScalingKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00357}00357     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00358}00358 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00359}00359 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00360}00360 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00361}00361 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00367}\mbox{\hyperlink{structai_mesh_anim}{00367}} \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_mesh_anim}{aiMeshAnim}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00372}\mbox{\hyperlink{structai_mesh_anim_a20751a739377fdba514c676ef4bda4c7}{00372}}     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_mesh_anim_a20751a739377fdba514c676ef4bda4c7}{mName}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00373}00373 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00375}\mbox{\hyperlink{structai_mesh_anim_aa8702d42bf619ccc8414a556f41634d8}{00375}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_anim_aa8702d42bf619ccc8414a556f41634d8}{mNumKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00376}00376 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00378}\mbox{\hyperlink{structai_mesh_anim_a47557fd0782241e97dac2a98636e3091}{00378}}     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} *\mbox{\hyperlink{structai_mesh_anim_a47557fd0782241e97dac2a98636e3091}{mKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00379}00379 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00380}00380 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00381}00381 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00382}00382     \mbox{\hyperlink{structai_mesh_anim}{aiMeshAnim}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00383}00383             : \mbox{\hyperlink{structai_mesh_anim_aa8702d42bf619ccc8414a556f41634d8}{mNumKeys}}(),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00384}00384               \mbox{\hyperlink{structai_mesh_anim_a47557fd0782241e97dac2a98636e3091}{mKeys}}() \{\}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00385}00385 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00386}00386     \mbox{\hyperlink{structai_mesh_anim}{\string~aiMeshAnim}}() \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00387}00387         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_anim_a47557fd0782241e97dac2a98636e3091}{mKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00388}00388     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00389}00389 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00390}00390 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00391}00391 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00392}00392 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00393}00393 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00395}\mbox{\hyperlink{structai_mesh_morph_anim}{00395}} \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_mesh_morph_anim}{aiMeshMorphAnim}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00400}\mbox{\hyperlink{structai_mesh_morph_anim_a21de91fb9c9fcf58a0bd0c761ea25cf5}{00400}}     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_mesh_morph_anim_a21de91fb9c9fcf58a0bd0c761ea25cf5}{mName}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00401}00401 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00403}\mbox{\hyperlink{structai_mesh_morph_anim_af9c8a3e37613a196ed33d2746cf6f0c8}{00403}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_morph_anim_af9c8a3e37613a196ed33d2746cf6f0c8}{mNumKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00404}00404 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00406}\mbox{\hyperlink{structai_mesh_morph_anim_a6944cba8dfaceba46402ab6136bad520}{00406}}     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_mesh_morph_key}{aiMeshMorphKey}} *\mbox{\hyperlink{structai_mesh_morph_anim_a6944cba8dfaceba46402ab6136bad520}{mKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00407}00407 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00408}00408 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00409}00409 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00410}00410     \mbox{\hyperlink{structai_mesh_morph_anim}{aiMeshMorphAnim}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00411}00411             : \mbox{\hyperlink{structai_mesh_morph_anim_af9c8a3e37613a196ed33d2746cf6f0c8}{mNumKeys}}(),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00412}00412               \mbox{\hyperlink{structai_mesh_morph_anim_a6944cba8dfaceba46402ab6136bad520}{mKeys}}() \{\}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00413}00413 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00414}00414     \mbox{\hyperlink{structai_mesh_morph_anim}{\string~aiMeshMorphAnim}}() \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00415}00415         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_morph_anim_a6944cba8dfaceba46402ab6136bad520}{mKeys}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00416}00416     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00417}00417 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00418}00418 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00419}00419 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00420}00420 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00421}00421 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00424}\mbox{\hyperlink{structai_animation}{00424}} \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_animation}{aiAnimation}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00428}\mbox{\hyperlink{structai_animation_a1be7d78d88694173a7ceef658fea77f1}{00428}}     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_animation_a1be7d78d88694173a7ceef658fea77f1}{mName}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00429}00429 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00431}\mbox{\hyperlink{structai_animation_ae2bbc49320b4b75c05e23e0ab704ece7}{00431}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{structai_animation_ae2bbc49320b4b75c05e23e0ab704ece7}{mDuration}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00432}00432 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00434}\mbox{\hyperlink{structai_animation_afd26a40c3f16b6aa6e150effa3eaeab1}{00434}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{structai_animation_afd26a40c3f16b6aa6e150effa3eaeab1}{mTicksPerSecond}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00435}00435 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00438}\mbox{\hyperlink{structai_animation_aebfccf9a9aefa6084566d21e8a30b7e5}{00438}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_animation_aebfccf9a9aefa6084566d21e8a30b7e5}{mNumChannels}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00439}00439 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00442}\mbox{\hyperlink{structai_animation_a4f3f6bdb38a4549e1ee8d022ec9e8c41}{00442}}     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_node_anim}{aiNodeAnim}} **\mbox{\hyperlink{structai_animation_a4f3f6bdb38a4549e1ee8d022ec9e8c41}{mChannels}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00443}00443 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00446}\mbox{\hyperlink{structai_animation_ac43aacd8502020174e553501f0b6bf5f}{00446}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_animation_ac43aacd8502020174e553501f0b6bf5f}{mNumMeshChannels}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00447}00447 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00450}\mbox{\hyperlink{structai_animation_ac1a36b038c7a7b640620af37b251dfdd}{00450}}     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_mesh_anim}{aiMeshAnim}} **\mbox{\hyperlink{structai_animation_ac1a36b038c7a7b640620af37b251dfdd}{mMeshChannels}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00451}00451 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00454}\mbox{\hyperlink{structai_animation_aed9aa50bdf38c9f6064f79f5aab38d59}{00454}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_animation_aed9aa50bdf38c9f6064f79f5aab38d59}{mNumMorphMeshChannels}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00455}00455 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00458}\mbox{\hyperlink{structai_animation_a5a89e92560f907239741df843cbca476}{00458}}     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_mesh_morph_anim}{aiMeshMorphAnim}} **\mbox{\hyperlink{structai_animation_a5a89e92560f907239741df843cbca476}{mMorphMeshChannels}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00459}00459 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00460}00460 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00461}00461     \mbox{\hyperlink{structai_animation}{aiAnimation}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00462}00462             : \mbox{\hyperlink{structai_animation_ae2bbc49320b4b75c05e23e0ab704ece7}{mDuration}}(-\/1.),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00463}00463               \mbox{\hyperlink{structai_animation_afd26a40c3f16b6aa6e150effa3eaeab1}{mTicksPerSecond}}(0.),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00464}00464               \mbox{\hyperlink{structai_animation_aebfccf9a9aefa6084566d21e8a30b7e5}{mNumChannels}}(0),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00465}00465               \mbox{\hyperlink{structai_animation_a4f3f6bdb38a4549e1ee8d022ec9e8c41}{mChannels}}(\textcolor{keywordtype}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00466}00466               \mbox{\hyperlink{structai_animation_ac43aacd8502020174e553501f0b6bf5f}{mNumMeshChannels}}(0),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00467}00467               \mbox{\hyperlink{structai_animation_ac1a36b038c7a7b640620af37b251dfdd}{mMeshChannels}}(\textcolor{keywordtype}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00468}00468               \mbox{\hyperlink{structai_animation_aed9aa50bdf38c9f6064f79f5aab38d59}{mNumMorphMeshChannels}}(0),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00469}00469               \mbox{\hyperlink{structai_animation_a5a89e92560f907239741df843cbca476}{mMorphMeshChannels}}(\textcolor{keywordtype}{nullptr}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00470}00470         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00471}00471     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00472}00472 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00473}00473     \mbox{\hyperlink{structai_animation}{\string~aiAnimation}}() \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00474}00474         \textcolor{comment}{// DO NOT REMOVE THIS ADDITIONAL CHECK}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00475}00475         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_animation_aebfccf9a9aefa6084566d21e8a30b7e5}{mNumChannels}} \&\& \mbox{\hyperlink{structai_animation_a4f3f6bdb38a4549e1ee8d022ec9e8c41}{mChannels}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00476}00476             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{structai_animation_aebfccf9a9aefa6084566d21e8a30b7e5}{mNumChannels}}; a++) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00477}00477                 \textcolor{keyword}{delete} \mbox{\hyperlink{structai_animation_a4f3f6bdb38a4549e1ee8d022ec9e8c41}{mChannels}}[a];}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00478}00478             \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00479}00479 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00480}00480             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_animation_a4f3f6bdb38a4549e1ee8d022ec9e8c41}{mChannels}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00481}00481         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00482}00482         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_animation_ac43aacd8502020174e553501f0b6bf5f}{mNumMeshChannels}} \&\& \mbox{\hyperlink{structai_animation_ac1a36b038c7a7b640620af37b251dfdd}{mMeshChannels}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00483}00483             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{structai_animation_ac43aacd8502020174e553501f0b6bf5f}{mNumMeshChannels}}; a++) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00484}00484                 \textcolor{keyword}{delete} \mbox{\hyperlink{structai_animation_ac1a36b038c7a7b640620af37b251dfdd}{mMeshChannels}}[a];}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00485}00485             \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00486}00486 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00487}00487             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_animation_ac1a36b038c7a7b640620af37b251dfdd}{mMeshChannels}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00488}00488         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00489}00489         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_animation_aed9aa50bdf38c9f6064f79f5aab38d59}{mNumMorphMeshChannels}} \&\& \mbox{\hyperlink{structai_animation_a5a89e92560f907239741df843cbca476}{mMorphMeshChannels}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00490}00490             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{structai_animation_aed9aa50bdf38c9f6064f79f5aab38d59}{mNumMorphMeshChannels}}; a++) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00491}00491                 \textcolor{keyword}{delete} \mbox{\hyperlink{structai_animation_a5a89e92560f907239741df843cbca476}{mMorphMeshChannels}}[a];}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00492}00492             \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00493}00493 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00494}00494             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_animation_a5a89e92560f907239741df843cbca476}{mMorphMeshChannels}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00495}00495         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00496}00496     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00497}00497 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00498}00498 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00499}00499 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00500}00500 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00501}00501 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00502}00502 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00504}00504 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00505}00505 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00506}00506 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00513}00513 \textcolor{comment}{}\textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00514}00514 \textcolor{keyword}{struct }Interpolator \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00515}00515     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00521}00521 \textcolor{comment}{}    \textcolor{keywordtype}{void} operator()(T \&anim\_out, \textcolor{keyword}{const} T \&a, \textcolor{keyword}{const} T \&b, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\_real}} d)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00522}00522         anim\_out = a + (b -\/ a) * d;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00523}00523     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00524}00524 \}; \textcolor{comment}{// ! Interpolator <T>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00525}00525 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00527}00527 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00528}00528 \textcolor{keyword}{template} <>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00529}00529 \textcolor{keyword}{struct }Interpolator<\mbox{\hyperlink{structai_quaternion}{aiQuaternion}}> \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00530}00530     \textcolor{keywordtype}{void} operator()(\mbox{\hyperlink{structai_quaternion}{aiQuaternion}} \&out, \textcolor{keyword}{const} \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} \&a,}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00531}00531             \textcolor{keyword}{const} \mbox{\hyperlink{structai_quaternion}{aiQuaternion}} \&b, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\_real}} d)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00532}00532         aiQuaternion::Interpolate(out, a, b, d);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00533}00533     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00534}00534 \}; \textcolor{comment}{// ! Interpolator <aiQuaternion>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00535}00535 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00536}00536 \textcolor{keyword}{template} <>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00537}00537 \textcolor{keyword}{struct }Interpolator<unsigned int> \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00538}00538     \textcolor{keywordtype}{void} operator()(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&out, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a,}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00539}00539             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} b, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\_real}} d)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00540}00540         out = d > 0.5f ? b : a;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00541}00541     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00542}00542 \}; \textcolor{comment}{// ! Interpolator <aiQuaternion>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00543}00543 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00544}00544 \textcolor{keyword}{template} <>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00545}00545 \textcolor{keyword}{struct }Interpolator<\mbox{\hyperlink{structai_vector_key}{aiVectorKey}}> \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00546}00546     \textcolor{keywordtype}{void} operator()(\mbox{\hyperlink{structai_vector3_d}{aiVector3D}} \&out, \textcolor{keyword}{const} \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} \&a,}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00547}00547             \textcolor{keyword}{const} \mbox{\hyperlink{structai_vector_key}{aiVectorKey}} \&b, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\_real}} d)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00548}00548         Interpolator<aiVector3D> ipl;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00549}00549         ipl(out, a.\mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}}, b.\mbox{\hyperlink{structai_vector_key_a6f73649028b136a193dac21de35188ad}{mValue}}, d);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00550}00550     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00551}00551 \}; \textcolor{comment}{// ! Interpolator <aiVectorKey>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00552}00552 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00553}00553 \textcolor{keyword}{template} <>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00554}00554 \textcolor{keyword}{struct }Interpolator<\mbox{\hyperlink{structai_quat_key}{aiQuatKey}}> \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00555}00555     \textcolor{keywordtype}{void} operator()(\mbox{\hyperlink{structai_quaternion}{aiQuaternion}} \&out, \textcolor{keyword}{const} \mbox{\hyperlink{structai_quat_key}{aiQuatKey}} \&a,}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00556}00556             \textcolor{keyword}{const} \mbox{\hyperlink{structai_quat_key}{aiQuatKey}} \&b, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\_real}} d)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00557}00557         Interpolator<aiQuaternion> ipl;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00558}00558         ipl(out, a.\mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}}, b.\mbox{\hyperlink{structai_quat_key_a08bf706065137951fd89c5914bb5a2aa}{mValue}}, d);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00559}00559     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00560}00560 \}; \textcolor{comment}{// ! Interpolator <aiQuatKey>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00561}00561 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00562}00562 \textcolor{keyword}{template} <>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00563}00563 \textcolor{keyword}{struct }Interpolator<\mbox{\hyperlink{structai_mesh_key}{aiMeshKey}}> \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00564}00564     \textcolor{keywordtype}{void} operator()(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&out, \textcolor{keyword}{const} \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} \&a,}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00565}00565             \textcolor{keyword}{const} \mbox{\hyperlink{structai_mesh_key}{aiMeshKey}} \&b, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\_real}} d)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00566}00566         Interpolator<unsigned int> ipl;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00567}00567         ipl(out, a.\mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}}, b.\mbox{\hyperlink{structai_mesh_key_abdd5914697609a9d876f63b6ca090a18}{mValue}}, d);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00568}00568     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00569}00569 \}; \textcolor{comment}{// ! Interpolator <aiQuatKey>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00570}00570 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00572}00572 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00573}00573 \} \textcolor{comment}{// namespace Assimp}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00574}00574 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00575}00575 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00576}00576 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2anim_8h_source_l00577}00577 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_ANIM\_H\_INC}}
 
 \end{DoxyCode}

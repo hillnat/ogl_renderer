@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -69,14 +72,19 @@ $(function() {
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all documented namespace members with links to the namespaces they belong to:</div>
+<div class="textblock">Here is a list of all namespace members with links to the namespace documentation for each member:</div>
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
 <li>radialGradient()&#160;:&#160;<a class="el" href="group__gtx__gradient__paint.html#gaaecb1e93de4cbe0758b882812d4da294">glm</a></li>
-<li>radians()&#160;:&#160;<a class="el" href="group__core__func__trigonometric.html#ga61d7a85a28a34160012c115dc8685d71">glm</a></li>
-<li>reflect()&#160;:&#160;<a class="el" href="group__core__func__geometric.html#ga0273e35c12db4cd93bb3ac1fbffe041b">glm</a></li>
-<li>refract()&#160;:&#160;<a class="el" href="group__core__func__geometric.html#gad93cd9874ec4b843223cb90bcc7e4c9b">glm</a></li>
+<li>radians()&#160;:&#160;<a class="el" href="namespaceglm.html#a00577ee752441c79d5bb11d7c29e1627">glm</a></li>
+<li>recompose()&#160;:&#160;<a class="el" href="group__gtx__matrix__decompose.html#ga8f836f4e7cc19ba301fc135d579aa2bc">glm</a></li>
+<li>RED&#160;:&#160;<a class="el" href="namespace_primitives.html#acdb6282d02a6c08942b4c12800b8323e">Primitives</a></li>
+<li>reflect()&#160;:&#160;<a class="el" href="namespaceglm.html#acdc166d33265ec31212f230e9db8db36">glm</a></li>
+<li>reflect2D()&#160;:&#160;<a class="el" href="namespaceglm.html#afcc51a619c18a582656f7eacc8ec3a0e">glm</a></li>
+<li>reflect3D()&#160;:&#160;<a class="el" href="namespaceglm.html#a4d1685bd636aa48ce656f8629c6266e1">glm</a></li>
+<li>refract()&#160;:&#160;<a class="el" href="namespaceglm.html#ae4b0245b42a72957d3026ac365731821">glm</a></li>
 <li>repeat()&#160;:&#160;<a class="el" href="group__ext__scalar__common.html#ga809650c6310ea7c42666e918c117fb6f">glm</a></li>
+<li>return_type_scalar_multiplication&#160;:&#160;<a class="el" href="group__gtx__scalar__multiplication.html#ga68a5dc6ff1dbac4fda02c3b177afa4aa">glm</a></li>
 <li>rgb2YCoCg()&#160;:&#160;<a class="el" href="group__gtx__color__space___y_co_cg.html#ga3a3c1f86c4a1a69a37691bd25756e78a">glm</a></li>
 <li>rgb2YCoCgR()&#160;:&#160;<a class="el" href="group__gtx__color__space___y_co_cg.html#ga07fbe87de445c16b1cd6f237bfc1afda">glm</a></li>
 <li>rgbColor()&#160;:&#160;<a class="el" href="group__gtx__color__space.html#ga4f9e373913d733dce0807df389f7d2b0">glm</a></li>
@@ -90,6 +98,7 @@ $(function() {
 <li>root_two()&#160;:&#160;<a class="el" href="group__gtc__constants.html#ga74e607d29020f100c0d0dc46ce2ca950">glm</a></li>
 <li>root_two_pi()&#160;:&#160;<a class="el" href="group__gtc__constants.html#ga2bcedc575039fe0cd765742f8bbb0bd3">glm</a></li>
 <li>rotate()&#160;:&#160;<a class="el" href="group__ext__matrix__transform.html#ga42613eb0c7deb5f5188fc159df6c8950">glm</a></li>
+<li>rotate_slow()&#160;:&#160;<a class="el" href="namespaceglm.html#ad9722cdcbc4eb66d51a81ba24e50eab9">glm</a></li>
 <li>rotateNormalizedAxis()&#160;:&#160;<a class="el" href="group__gtx__rotate__normalized__axis.html#gafbbff0c6bcc5deb8036cfef4c6fcdd8e">glm</a></li>
 <li>rotateX()&#160;:&#160;<a class="el" href="group__gtx__rotate__vector.html#gac6eaef961618708cb36c1af282ffe31a">glm</a></li>
 <li>rotateY()&#160;:&#160;<a class="el" href="group__gtx__rotate__vector.html#ga919122e3280a912f4bece1d7d3db7d37">glm</a></li>
@@ -100,6 +109,7 @@ $(function() {
 <li>roundMultiple()&#160;:&#160;<a class="el" href="group__gtc__round.html#gab892defcc9c0b0618df7251253dc0fbb">glm</a></li>
 <li>roundPowerOfTwo()&#160;:&#160;<a class="el" href="group__gtc__round.html#gae4e1bf5d1cd179f59261a7342bdcafca">glm</a></li>
 <li>row()&#160;:&#160;<a class="el" href="group__gtc__matrix__access.html#ga259e5ebd0f31ec3f83440f8cae7f5dba">glm</a></li>
+<li>row_major&#160;:&#160;<a class="el" href="namespaceglm_1_1io.html#a3497781803fe594a37177e05ab2a795fad080bb2f932ea4078fd0fc10ea1c991c">glm::io</a></li>
 <li>rowMajor2()&#160;:&#160;<a class="el" href="group__gtx__matrix__major__storage.html#ga5c8cc479202c42538a89410759aed46c">glm</a></li>
 <li>rowMajor3()&#160;:&#160;<a class="el" href="group__gtx__matrix__major__storage.html#gaeea7786b5bba7bfbb62d35d8d6a9edcb">glm</a></li>
 <li>rowMajor4()&#160;:&#160;<a class="el" href="group__gtx__matrix__major__storage.html#ga0de882ad4479b823431c957236a9eebd">glm</a></li>

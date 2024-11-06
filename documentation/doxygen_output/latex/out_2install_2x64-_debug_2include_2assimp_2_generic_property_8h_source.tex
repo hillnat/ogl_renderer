@@ -1,139 +1,139 @@
 \hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source}{}\doxysection{Generic\+Property.\+h}
 \label{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/GenericProperty.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/GenericProperty.h}}
-
+\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
-\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{4 \textcolor{comment}{}}
-\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
-\DoxyCodeLine{6 \textcolor{comment}{}}
-\DoxyCodeLine{7 \textcolor{comment}{All rights reserved.}}
-\DoxyCodeLine{8 \textcolor{comment}{}}
-\DoxyCodeLine{9 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
-\DoxyCodeLine{10 \textcolor{comment}{with or without modification, are permitted provided that the}}
-\DoxyCodeLine{11 \textcolor{comment}{following conditions are met:}}
-\DoxyCodeLine{12 \textcolor{comment}{}}
-\DoxyCodeLine{13 \textcolor{comment}{* Redistributions of source code must retain the above}}
-\DoxyCodeLine{14 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{15 \textcolor{comment}{  following disclaimer.}}
-\DoxyCodeLine{16 \textcolor{comment}{}}
-\DoxyCodeLine{17 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
-\DoxyCodeLine{18 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{19 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
-\DoxyCodeLine{20 \textcolor{comment}{  materials provided with the distribution.}}
-\DoxyCodeLine{21 \textcolor{comment}{}}
-\DoxyCodeLine{22 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
-\DoxyCodeLine{23 \textcolor{comment}{  contributors may be used to endorse or promote products}}
-\DoxyCodeLine{24 \textcolor{comment}{  derived from this software without specific prior}}
-\DoxyCodeLine{25 \textcolor{comment}{  written permission of the assimp team.}}
-\DoxyCodeLine{26 \textcolor{comment}{}}
-\DoxyCodeLine{27 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
-\DoxyCodeLine{28 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
-\DoxyCodeLine{29 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
-\DoxyCodeLine{30 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
-\DoxyCodeLine{31 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
-\DoxyCodeLine{32 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
-\DoxyCodeLine{33 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
-\DoxyCodeLine{34 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
-\DoxyCodeLine{35 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
-\DoxyCodeLine{36 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
-\DoxyCodeLine{37 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
-\DoxyCodeLine{38 \textcolor{comment}{}}
-\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{40 \textcolor{comment}{*/}}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{43 \textcolor{preprocessor}{\#ifndef AI\_GENERIC\_PROPERTY\_H\_INCLUDED}}
-\DoxyCodeLine{44 \textcolor{preprocessor}{\#define AI\_GENERIC\_PROPERTY\_H\_INCLUDED}}
-\DoxyCodeLine{45 }
-\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#    pragma GCC system\_header}}
-\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50 \textcolor{preprocessor}{\#include <assimp/Hash.h>}}
-\DoxyCodeLine{51 \textcolor{preprocessor}{\#include <assimp/ai\_assert.h>}}
-\DoxyCodeLine{52 \textcolor{preprocessor}{\#include <assimp/Importer.hpp>}}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <map>}}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{57 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
-\DoxyCodeLine{58 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} SetGenericProperty(std::map<unsigned int, T> \&list,}
-\DoxyCodeLine{59         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *szName, \textcolor{keyword}{const} T \&value) \{}
-\DoxyCodeLine{60     ai\_assert(\textcolor{keyword}{nullptr} != szName);}
-\DoxyCodeLine{61     \textcolor{keyword}{const} \mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}} hash = SuperFastHash(szName);}
-\DoxyCodeLine{62 }
-\DoxyCodeLine{63     \textcolor{keyword}{typename} std::map<unsigned int, T>::iterator it = list.find(hash);}
-\DoxyCodeLine{64     \textcolor{keywordflow}{if} (it == list.end()) \{}
-\DoxyCodeLine{65         list.insert(std::pair<unsigned int, T>(hash, value));}
-\DoxyCodeLine{66         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{67     \}}
-\DoxyCodeLine{68     (*it).second = value;}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{70     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{71 \}}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{73 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{74 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
-\DoxyCodeLine{75 \textcolor{keyword}{inline} \textcolor{keyword}{const} T \&GetGenericProperty(\textcolor{keyword}{const} std::map<unsigned int, T> \&list,}
-\DoxyCodeLine{76         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *szName, \textcolor{keyword}{const} T \&errorReturn) \{}
-\DoxyCodeLine{77     ai\_assert(\textcolor{keyword}{nullptr} != szName);}
-\DoxyCodeLine{78     \textcolor{keyword}{const} \mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}} hash = SuperFastHash(szName);}
-\DoxyCodeLine{79 }
-\DoxyCodeLine{80     \textcolor{keyword}{typename} std::map<unsigned int, T>::const\_iterator it = list.find(hash);}
-\DoxyCodeLine{81     \textcolor{keywordflow}{if} (it == list.end()) \{}
-\DoxyCodeLine{82         \textcolor{keywordflow}{return} errorReturn;}
-\DoxyCodeLine{83     \}}
-\DoxyCodeLine{84 }
-\DoxyCodeLine{85     \textcolor{keywordflow}{return} (*it).second;}
-\DoxyCodeLine{86 \}}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{88 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{89 \textcolor{comment}{// Special version for pointer types -\/ they will be deleted when replaced with another value}}
-\DoxyCodeLine{90 \textcolor{comment}{// passing nullptr removes the whole property}}
-\DoxyCodeLine{91 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
-\DoxyCodeLine{92 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} SetGenericPropertyPtr(std::map<unsigned int, T *> \&list,}
-\DoxyCodeLine{93         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *szName, T *value, \textcolor{keywordtype}{bool} *bWasExisting = \textcolor{keyword}{nullptr}) \{}
-\DoxyCodeLine{94     ai\_assert(\textcolor{keyword}{nullptr} != szName);}
-\DoxyCodeLine{95     \textcolor{keyword}{const} \mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}} hash = SuperFastHash(szName);}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{97     \textcolor{keyword}{typename} std::map<unsigned int, T *>::iterator it = list.find(hash);}
-\DoxyCodeLine{98     \textcolor{keywordflow}{if} (it == list.end()) \{}
-\DoxyCodeLine{99         \textcolor{keywordflow}{if} (bWasExisting) \{}
-\DoxyCodeLine{100             *bWasExisting = \textcolor{keyword}{false};}
-\DoxyCodeLine{101         \}}
-\DoxyCodeLine{102 }
-\DoxyCodeLine{103         list.insert(std::pair<unsigned int, T *>(hash, value));}
-\DoxyCodeLine{104         \textcolor{keywordflow}{return};}
-\DoxyCodeLine{105     \}}
-\DoxyCodeLine{106     \textcolor{keywordflow}{if} ((*it).second != value) \{}
-\DoxyCodeLine{107         \textcolor{keyword}{delete} (*it).second;}
-\DoxyCodeLine{108         (*it).second = value;}
-\DoxyCodeLine{109     \}}
-\DoxyCodeLine{110     \textcolor{keywordflow}{if} (!value) \{}
-\DoxyCodeLine{111         list.erase(it);}
-\DoxyCodeLine{112     \}}
-\DoxyCodeLine{113     \textcolor{keywordflow}{if} (bWasExisting) \{}
-\DoxyCodeLine{114         *bWasExisting = \textcolor{keyword}{true};}
-\DoxyCodeLine{115     \}}
-\DoxyCodeLine{116 \}}
-\DoxyCodeLine{117 }
-\DoxyCodeLine{118 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{119 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
-\DoxyCodeLine{120 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} HasGenericProperty(\textcolor{keyword}{const} std::map<unsigned int, T> \&list,}
-\DoxyCodeLine{121         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *szName) \{}
-\DoxyCodeLine{122     ai\_assert(\textcolor{keyword}{nullptr} != szName);}
-\DoxyCodeLine{123     \textcolor{keyword}{const} \mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}} hash = SuperFastHash(szName);}
-\DoxyCodeLine{124 }
-\DoxyCodeLine{125     \textcolor{keyword}{typename} std::map<unsigned int, T>::const\_iterator it = list.find(hash);}
-\DoxyCodeLine{126     \textcolor{keywordflow}{if} (it == list.end()) \{}
-\DoxyCodeLine{127         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{128     \}}
-\DoxyCodeLine{129 }
-\DoxyCodeLine{130     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{131 \}}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_GENERIC\_PROPERTY\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00002}00002 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00003}00003 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00004}00004 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00005}00005 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00006}00006 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00007}00007 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00008}00008 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00009}00009 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00010}00010 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00011}00011 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00012}00012 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00013}00013 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00014}00014 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00015}00015 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00016}00016 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00017}00017 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00018}00018 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00019}00019 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00020}00020 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00021}00021 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00022}00022 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00023}00023 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00024}00024 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00025}00025 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00026}00026 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00027}00027 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00028}00028 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00029}00029 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00030}00030 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00031}00031 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00032}00032 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00033}00033 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00034}00034 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00035}00035 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00036}00036 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00037}00037 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00038}00038 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00039}00039 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00040}00040 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00042}00042 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00043}00043 \textcolor{preprocessor}{\#ifndef AI\_GENERIC\_PROPERTY\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00044}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_af514d7cc04d1a005ff18cd5f792ddb85}{00044}} \textcolor{preprocessor}{\#define AI\_GENERIC\_PROPERTY\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00046}00046 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00047}00047 \textcolor{preprocessor}{\#    pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00048}00048 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00050}00050 \textcolor{preprocessor}{\#include <assimp/Hash.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00051}00051 \textcolor{preprocessor}{\#include <assimp/ai\_assert.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00052}00052 \textcolor{preprocessor}{\#include <assimp/Importer.hpp>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00054}00054 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00056}00056 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00057}00057 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00058}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_a85fa8d7a3d4bb630960427916b37a6ab}{00058}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{include_2assimp_2_generic_property_8h_a85fa8d7a3d4bb630960427916b37a6ab}{SetGenericProperty}}(std::map<unsigned int, T> \&list,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00059}00059         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *szName, \textcolor{keyword}{const} T \&value) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00060}00060     \mbox{\hyperlink{include_2assimp_2ai__assert_8h_a8cda16916af68d32c6add71ef3bb7af3}{ai\_assert}}(\textcolor{keyword}{nullptr} != szName);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00061}00061     \textcolor{keyword}{const} uint32\_t hash = \mbox{\hyperlink{include_2assimp_2_hash_8h_ae981f4859f21df7e68c3b7925ed35600}{SuperFastHash}}(szName);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00063}00063     \textcolor{keyword}{typename} std::map<unsigned int, T>::iterator it = list.find(hash);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00064}00064     \textcolor{keywordflow}{if} (it == list.end()) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00065}00065         list.insert(std::pair<unsigned int, T>(hash, value));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00066}00066         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00068}00068     (*it).second = value;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00070}00070     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00071}00071 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00073}00073 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00074}00074 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00075}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_a82034801e2397217a1311bdfb578ef6e}{00075}} \textcolor{keyword}{inline} \textcolor{keyword}{const} T \&\mbox{\hyperlink{include_2assimp_2_generic_property_8h_a82034801e2397217a1311bdfb578ef6e}{GetGenericProperty}}(\textcolor{keyword}{const} std::map<unsigned int, T> \&list,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00076}00076         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *szName, \textcolor{keyword}{const} T \&errorReturn) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00077}00077     \mbox{\hyperlink{include_2assimp_2ai__assert_8h_a8cda16916af68d32c6add71ef3bb7af3}{ai\_assert}}(\textcolor{keyword}{nullptr} != szName);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00078}00078     \textcolor{keyword}{const} uint32\_t hash = \mbox{\hyperlink{include_2assimp_2_hash_8h_ae981f4859f21df7e68c3b7925ed35600}{SuperFastHash}}(szName);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00080}00080     \textcolor{keyword}{typename} std::map<unsigned int, T>::const\_iterator it = list.find(hash);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00081}00081     \textcolor{keywordflow}{if} (it == list.end()) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00082}00082         \textcolor{keywordflow}{return} errorReturn;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00083}00083     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00085}00085     \textcolor{keywordflow}{return} (*it).second;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00086}00086 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00088}00088 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00089}00089 \textcolor{comment}{// Special version for pointer types -\/ they will be deleted when replaced with another value}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00090}00090 \textcolor{comment}{// passing nullptr removes the whole property}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00091}00091 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00092}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_abc74bee46dea616f659b02e3abc50e9d}{00092}} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{include_2assimp_2_generic_property_8h_abc74bee46dea616f659b02e3abc50e9d}{SetGenericPropertyPtr}}(std::map<unsigned int, T *> \&list,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00093}00093         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *szName, T *value, \textcolor{keywordtype}{bool} *bWasExisting = \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00094}00094     \mbox{\hyperlink{include_2assimp_2ai__assert_8h_a8cda16916af68d32c6add71ef3bb7af3}{ai\_assert}}(\textcolor{keyword}{nullptr} != szName);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00095}00095     \textcolor{keyword}{const} uint32\_t hash = \mbox{\hyperlink{include_2assimp_2_hash_8h_ae981f4859f21df7e68c3b7925ed35600}{SuperFastHash}}(szName);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00097}00097     \textcolor{keyword}{typename} std::map<unsigned int, T *>::iterator it = list.find(hash);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00098}00098     \textcolor{keywordflow}{if} (it == list.end()) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00099}00099         \textcolor{keywordflow}{if} (bWasExisting) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00100}00100             *bWasExisting = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00101}00101         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00103}00103         list.insert(std::pair<unsigned int, T *>(hash, value));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00104}00104         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00105}00105     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00106}00106     \textcolor{keywordflow}{if} ((*it).second != value) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00107}00107         \textcolor{keyword}{delete} (*it).second;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00108}00108         (*it).second = value;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00109}00109     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00110}00110     \textcolor{keywordflow}{if} (!value) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00111}00111         list.erase(it);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00112}00112     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00113}00113     \textcolor{keywordflow}{if} (bWasExisting) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00114}00114         *bWasExisting = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00115}00115     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00116}00116 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00118}00118 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00119}00119 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00120}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_aeeac2b9cadb75b0e7f2d328d44cec21e}{00120}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{include_2assimp_2_generic_property_8h_aeeac2b9cadb75b0e7f2d328d44cec21e}{HasGenericProperty}}(\textcolor{keyword}{const} std::map<unsigned int, T> \&list,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00121}00121         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *szName) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00122}00122     \mbox{\hyperlink{include_2assimp_2ai__assert_8h_a8cda16916af68d32c6add71ef3bb7af3}{ai\_assert}}(\textcolor{keyword}{nullptr} != szName);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00123}00123     \textcolor{keyword}{const} uint32\_t hash = \mbox{\hyperlink{include_2assimp_2_hash_8h_ae981f4859f21df7e68c3b7925ed35600}{SuperFastHash}}(szName);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00125}00125     \textcolor{keyword}{typename} std::map<unsigned int, T>::const\_iterator it = list.find(hash);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00126}00126     \textcolor{keywordflow}{if} (it == list.end()) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00127}00127         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00128}00128     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00130}00130     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00131}00131 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_generic_property_8h_source_l00133}00133 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_GENERIC\_PROPERTY\_H\_INCLUDED}}
 
 \end{DoxyCode}

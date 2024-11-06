@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -84,6 +87,15 @@ $(function() {
 <p>Defines the <a class="el" href="structai_light.html">aiLight</a> data structure.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;assimp/types.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for light.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="out_2install_2x64-_debug_2include_2assimp_2light_8h__incl.png" border="0" usemap="#a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2out_2install_2x64-_debug_2include_2assimp_2light_8h" alt=""/></div>
+<map name="a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2out_2install_2x64-_debug_2include_2assimp_2light_8h" id="a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2out_2install_2x64-_debug_2include_2assimp_2light_8h">
+<area shape="rect" title="Defines the aiLight data structure." alt="" coords="5,5,201,84"/>
+<area shape="rect" title=" " alt="" coords="49,132,157,160"/>
+</map>
+</div>
 </div>
 <p><a href="out_2install_2x64-_debug_2include_2assimp_2light_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -92,10 +104,15 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_light.html">aiLight</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a7f9d67609e200bdeea07a539a1433c0f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_debug_2include_2assimp_2light_8h.html#a7f9d67609e200bdeea07a539a1433c0f">AI_LIGHT_H_INC</a></td></tr>
+<tr class="separator:a7f9d67609e200bdeea07a539a1433c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a7a75cb224d903e71e8daede432449766"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_debug_2include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766">aiLightSourceType</a> { <br />
-&#160;&#160;<b>aiLightSource_UNDEFINED</b> = 0x0
+&#160;&#160;<a class="el" href="include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766a7c7578b784f98cab23cbefcf242758eb">aiLightSource_UNDEFINED</a> = 0x0
 , <a class="el" href="include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766ab2dd8e6f09a9ca0efcf22457da2e8724">aiLightSource_DIRECTIONAL</a> = 0x1
 , <a class="el" href="include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766a0f5bf9437cd16516e15c095309476d37">aiLightSource_POINT</a> = 0x2
 , <a class="el" href="include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766a05ef88df7bae63499a8ed950c995e392">aiLightSource_SPOT</a> = 0x3
@@ -103,7 +120,7 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766a586dc7f849733364cb5b28c403759bf3">aiLightSource_AMBIENT</a> = 0x4
 , <a class="el" href="include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766a835d706047f460d4a70bf6a4b5b334b1">aiLightSource_AREA</a> = 0x5
 , <a class="el" href="include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766a110c3b047ed41a1656849921d75e83a1">_aiLightSource_Force32Bit</a> = INT_MAX
-, <b>aiLightSource_UNDEFINED</b> = 0x0
+, <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766a7c7578b784f98cab23cbefcf242758eb">aiLightSource_UNDEFINED</a> = 0x0
 , <br />
 &#160;&#160;<a class="el" href="out_2install_2x64-_debug_2include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766ab2dd8e6f09a9ca0efcf22457da2e8724">aiLightSource_DIRECTIONAL</a> = 0x1
 , <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766a0f5bf9437cd16516e15c095309476d37">aiLightSource_POINT</a> = 0x2
@@ -112,7 +129,7 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="out_2install_2x64-_debug_2include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766a835d706047f460d4a70bf6a4b5b334b1">aiLightSource_AREA</a> = 0x5
 , <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766a110c3b047ed41a1656849921d75e83a1">_aiLightSource_Force32Bit</a> = INT_MAX
-, <b>aiLightSource_UNDEFINED</b> = 0x0
+, <a class="el" href="out_2install_2x64-_release_2include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766a7c7578b784f98cab23cbefcf242758eb">aiLightSource_UNDEFINED</a> = 0x0
 , <a class="el" href="out_2install_2x64-_release_2include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766ab2dd8e6f09a9ca0efcf22457da2e8724">aiLightSource_DIRECTIONAL</a> = 0x1
 , <br />
 &#160;&#160;<a class="el" href="out_2install_2x64-_release_2include_2assimp_2light_8h.html#a7a75cb224d903e71e8daede432449766a0f5bf9437cd16516e15c095309476d37">aiLightSource_POINT</a> = 0x2
@@ -127,7 +144,26 @@ Enumerations</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Defines the <a class="el" href="structai_light.html">aiLight</a> data structure. </p>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+
+<p class="definition">Definition in file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2light_8h_source.html">light.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a7f9d67609e200bdeea07a539a1433c0f" name="a7f9d67609e200bdeea07a539a1433c0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f9d67609e200bdeea07a539a1433c0f">&#9670;&#160;</a></span>AI_LIGHT_H_INC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AI_LIGHT_H_INC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2light_8h_source.html#l00048">48</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2light_8h_source.html">light.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a7a75cb224d903e71e8daede432449766" name="a7a75cb224d903e71e8daede432449766"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a75cb224d903e71e8daede432449766">&#9670;&#160;</a></span>aiLightSourceType</h2>
 
@@ -141,18 +177,7 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 <p >Enumerates all supported types of light sources. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766ab2dd8e6f09a9ca0efcf22457da2e8724" name="a7a75cb224d903e71e8daede432449766ab2dd8e6f09a9ca0efcf22457da2e8724"></a>aiLightSource_DIRECTIONAL&#160;</td><td class="fielddoc"><p >A directional light source has a well-defined direction but is infinitely far away. That's quite a good approximation for sun light. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a0f5bf9437cd16516e15c095309476d37" name="a7a75cb224d903e71e8daede432449766a0f5bf9437cd16516e15c095309476d37"></a>aiLightSource_POINT&#160;</td><td class="fielddoc"><p >A point light source has a well-defined position in space but no direction - it emits light in all directions. A normal bulb is a point light. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a05ef88df7bae63499a8ed950c995e392" name="a7a75cb224d903e71e8daede432449766a05ef88df7bae63499a8ed950c995e392"></a>aiLightSource_SPOT&#160;</td><td class="fielddoc"><p >A spot light source emits light in a specific angle. It has a position and a direction it is pointing to. A good example for a spot light is a light spot in sport arenas. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a586dc7f849733364cb5b28c403759bf3" name="a7a75cb224d903e71e8daede432449766a586dc7f849733364cb5b28c403759bf3"></a>aiLightSource_AMBIENT&#160;</td><td class="fielddoc"><p >The generic light level of the world, including the bounces of all other light sources. Typically, there's at most one ambient light in a scene. This light type doesn't have a valid position, direction, or other properties, just a color. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a835d706047f460d4a70bf6a4b5b334b1" name="a7a75cb224d903e71e8daede432449766a835d706047f460d4a70bf6a4b5b334b1"></a>aiLightSource_AREA&#160;</td><td class="fielddoc"><p >An area light is a rectangle with predefined size that uniformly emits light from one of its sides. The position is center of the rectangle and direction is its normal vector. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a110c3b047ed41a1656849921d75e83a1" name="a7a75cb224d903e71e8daede432449766a110c3b047ed41a1656849921d75e83a1"></a>_aiLightSource_Force32Bit&#160;</td><td class="fielddoc"><p >This value is not used. It is just there to force the compiler to map this enum to a 32 Bit integer. </p>
-</td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a7c7578b784f98cab23cbefcf242758eb" name="a7a75cb224d903e71e8daede432449766a7c7578b784f98cab23cbefcf242758eb"></a>aiLightSource_UNDEFINED&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766ab2dd8e6f09a9ca0efcf22457da2e8724" name="a7a75cb224d903e71e8daede432449766ab2dd8e6f09a9ca0efcf22457da2e8724"></a>aiLightSource_DIRECTIONAL&#160;</td><td class="fielddoc"><p >A directional light source has a well-defined direction but is infinitely far away. That's quite a good approximation for sun light. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a0f5bf9437cd16516e15c095309476d37" name="a7a75cb224d903e71e8daede432449766a0f5bf9437cd16516e15c095309476d37"></a>aiLightSource_POINT&#160;</td><td class="fielddoc"><p >A point light source has a well-defined position in space but no direction - it emits light in all directions. A normal bulb is a point light. </p>
@@ -165,6 +190,20 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a110c3b047ed41a1656849921d75e83a1" name="a7a75cb224d903e71e8daede432449766a110c3b047ed41a1656849921d75e83a1"></a>_aiLightSource_Force32Bit&#160;</td><td class="fielddoc"><p >This value is not used. It is just there to force the compiler to map this enum to a 32 Bit integer. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a7c7578b784f98cab23cbefcf242758eb" name="a7a75cb224d903e71e8daede432449766a7c7578b784f98cab23cbefcf242758eb"></a>aiLightSource_UNDEFINED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766ab2dd8e6f09a9ca0efcf22457da2e8724" name="a7a75cb224d903e71e8daede432449766ab2dd8e6f09a9ca0efcf22457da2e8724"></a>aiLightSource_DIRECTIONAL&#160;</td><td class="fielddoc"><p >A directional light source has a well-defined direction but is infinitely far away. That's quite a good approximation for sun light. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a0f5bf9437cd16516e15c095309476d37" name="a7a75cb224d903e71e8daede432449766a0f5bf9437cd16516e15c095309476d37"></a>aiLightSource_POINT&#160;</td><td class="fielddoc"><p >A point light source has a well-defined position in space but no direction - it emits light in all directions. A normal bulb is a point light. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a05ef88df7bae63499a8ed950c995e392" name="a7a75cb224d903e71e8daede432449766a05ef88df7bae63499a8ed950c995e392"></a>aiLightSource_SPOT&#160;</td><td class="fielddoc"><p >A spot light source emits light in a specific angle. It has a position and a direction it is pointing to. A good example for a spot light is a light spot in sport arenas. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a586dc7f849733364cb5b28c403759bf3" name="a7a75cb224d903e71e8daede432449766a586dc7f849733364cb5b28c403759bf3"></a>aiLightSource_AMBIENT&#160;</td><td class="fielddoc"><p >The generic light level of the world, including the bounces of all other light sources. Typically, there's at most one ambient light in a scene. This light type doesn't have a valid position, direction, or other properties, just a color. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a835d706047f460d4a70bf6a4b5b334b1" name="a7a75cb224d903e71e8daede432449766a835d706047f460d4a70bf6a4b5b334b1"></a>aiLightSource_AREA&#160;</td><td class="fielddoc"><p >An area light is a rectangle with predefined size that uniformly emits light from one of its sides. The position is center of the rectangle and direction is its normal vector. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a110c3b047ed41a1656849921d75e83a1" name="a7a75cb224d903e71e8daede432449766a110c3b047ed41a1656849921d75e83a1"></a>_aiLightSource_Force32Bit&#160;</td><td class="fielddoc"><p >This value is not used. It is just there to force the compiler to map this enum to a 32 Bit integer. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a7c7578b784f98cab23cbefcf242758eb" name="a7a75cb224d903e71e8daede432449766a7c7578b784f98cab23cbefcf242758eb"></a>aiLightSource_UNDEFINED&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766ab2dd8e6f09a9ca0efcf22457da2e8724" name="a7a75cb224d903e71e8daede432449766ab2dd8e6f09a9ca0efcf22457da2e8724"></a>aiLightSource_DIRECTIONAL&#160;</td><td class="fielddoc"><p >A directional light source has a well-defined direction but is infinitely far away. That's quite a good approximation for sun light. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a0f5bf9437cd16516e15c095309476d37" name="a7a75cb224d903e71e8daede432449766a0f5bf9437cd16516e15c095309476d37"></a>aiLightSource_POINT&#160;</td><td class="fielddoc"><p >A point light source has a well-defined position in space but no direction - it emits light in all directions. A normal bulb is a point light. </p>
@@ -178,6 +217,8 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a7a75cb224d903e71e8daede432449766a110c3b047ed41a1656849921d75e83a1" name="a7a75cb224d903e71e8daede432449766a110c3b047ed41a1656849921d75e83a1"></a>_aiLightSource_Force32Bit&#160;</td><td class="fielddoc"><p >This value is not used. It is just there to force the compiler to map this enum to a 32 Bit integer. </p>
 </td></tr>
 </table>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2light_8h_source.html#l00063">63</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2light_8h_source.html">light.h</a>.</p>
 
 </div>
 </div>

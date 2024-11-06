@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -79,6 +82,7 @@ $(function() {
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="class_assimp_1_1_base_importer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Assimp::BaseImporter Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
@@ -86,103 +90,112 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Assimp::BaseImporter:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_base_importer__coll__graph.png" border="0" usemap="#a_assimp_1_1_base_importer_coll__map" alt="Collaboration graph"/></div>
+<map name="a_assimp_1_1_base_importer_coll__map" id="a_assimp_1_1_base_importer_coll__map">
+<area shape="rect" title=" " alt="" coords="13,98,165,126"/>
+<area shape="rect" href="class_assimp_1_1_progress_handler.html" title="CPP&#45;API: Abstract interface for custom progress report receivers." alt="" coords="5,5,173,33"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a9fe6b47937a7c897536cac1513b65eb7"><td class="memItemLeft" align="right" valign="top"><a id="a9fe6b47937a7c897536cac1513b65eb7" name="a9fe6b47937a7c897536cac1513b65eb7"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a> { <br />
-&#160;&#160;<b>ALLOW_EMPTY</b>
-, <b>FORBID_EMPTY</b>
-, <b>ALLOW_EMPTY</b>
-, <b>FORBID_EMPTY</b>
+<tr class="memitem:a9fe6b47937a7c897536cac1513b65eb7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a> { <br />
+&#160;&#160;<a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1">ALLOW_EMPTY</a>
+, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a>
+, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1">ALLOW_EMPTY</a>
+, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a>
 , <br />
-&#160;&#160;<b>ALLOW_EMPTY</b>
-, <b>FORBID_EMPTY</b>
+&#160;&#160;<a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1">ALLOW_EMPTY</a>
+, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a9fe6b47937a7c897536cac1513b65eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to define, if empty files are ok or not. <br /></td></tr>
+<tr class="memdesc:a9fe6b47937a7c897536cac1513b65eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to define, if empty files are ok or not.  <a href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">More...</a><br /></td></tr>
 <tr class="separator:a9fe6b47937a7c897536cac1513b65eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fe6b47937a7c897536cac1513b65eb7"><td class="memItemLeft" align="right" valign="top"><a id="a9fe6b47937a7c897536cac1513b65eb7" name="a9fe6b47937a7c897536cac1513b65eb7"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a> { <br />
-&#160;&#160;<b>ALLOW_EMPTY</b>
-, <b>FORBID_EMPTY</b>
-, <b>ALLOW_EMPTY</b>
-, <b>FORBID_EMPTY</b>
+<tr class="memitem:a9fe6b47937a7c897536cac1513b65eb7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a> { <br />
+&#160;&#160;<a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1">ALLOW_EMPTY</a>
+, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a>
+, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1">ALLOW_EMPTY</a>
+, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a>
 , <br />
-&#160;&#160;<b>ALLOW_EMPTY</b>
-, <b>FORBID_EMPTY</b>
+&#160;&#160;<a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1">ALLOW_EMPTY</a>
+, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a9fe6b47937a7c897536cac1513b65eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to define, if empty files are ok or not. <br /></td></tr>
+<tr class="memdesc:a9fe6b47937a7c897536cac1513b65eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to define, if empty files are ok or not.  <a href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">More...</a><br /></td></tr>
 <tr class="separator:a9fe6b47937a7c897536cac1513b65eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fe6b47937a7c897536cac1513b65eb7"><td class="memItemLeft" align="right" valign="top"><a id="a9fe6b47937a7c897536cac1513b65eb7" name="a9fe6b47937a7c897536cac1513b65eb7"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a> { <br />
-&#160;&#160;<b>ALLOW_EMPTY</b>
-, <b>FORBID_EMPTY</b>
-, <b>ALLOW_EMPTY</b>
-, <b>FORBID_EMPTY</b>
+<tr class="memitem:a9fe6b47937a7c897536cac1513b65eb7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a> { <br />
+&#160;&#160;<a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1">ALLOW_EMPTY</a>
+, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a>
+, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1">ALLOW_EMPTY</a>
+, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a>
 , <br />
-&#160;&#160;<b>ALLOW_EMPTY</b>
-, <b>FORBID_EMPTY</b>
+&#160;&#160;<a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1">ALLOW_EMPTY</a>
+, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a9fe6b47937a7c897536cac1513b65eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to define, if empty files are ok or not. <br /></td></tr>
+<tr class="memdesc:a9fe6b47937a7c897536cac1513b65eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to define, if empty files are ok or not.  <a href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">More...</a><br /></td></tr>
 <tr class="separator:a9fe6b47937a7c897536cac1513b65eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a699aebae893f17b5a5dd415ae7bee7f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a699aebae893f17b5a5dd415ae7bee7f0">BaseImporter</a> () AI_NO_EXCEPT</td></tr>
+<tr class="memitem:a699aebae893f17b5a5dd415ae7bee7f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a699aebae893f17b5a5dd415ae7bee7f0">BaseImporter</a> () <a class="el" href="include_2assimp_2defs_8h.html#ae032f18edd69bf6ba935ef9feb025a96">AI_NO_EXCEPT</a></td></tr>
 <tr class="separator:a699aebae893f17b5a5dd415ae7bee7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa09f8b01894b96c1fcd6a8f22b003deb"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#aa09f8b01894b96c1fcd6a8f22b003deb">~BaseImporter</a> ()=default</td></tr>
 <tr class="separator:aa09f8b01894b96c1fcd6a8f22b003deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13588d3396ba5b7ed1f1cb46e0945cfd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a13588d3396ba5b7ed1f1cb46e0945cfd">CanRead</a> (const std::string &amp;pFile, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler, bool checkSig) const =0</td></tr>
+<tr class="memitem:a13588d3396ba5b7ed1f1cb46e0945cfd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a13588d3396ba5b7ed1f1cb46e0945cfd">CanRead</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler, bool checkSig) <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> =0</td></tr>
 <tr class="separator:a13588d3396ba5b7ed1f1cb46e0945cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f5938785f722ebde616a30160bccde1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structai_scene.html">aiScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a2f5938785f722ebde616a30160bccde1">ReadFile</a> (<a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp, const std::string &amp;pFile, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler)</td></tr>
+<tr class="memitem:a2f5938785f722ebde616a30160bccde1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structai_scene.html">aiScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a2f5938785f722ebde616a30160bccde1">ReadFile</a> (<a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler)</td></tr>
 <tr class="separator:a2f5938785f722ebde616a30160bccde1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a285229c6bf59116b4653944ef7087727"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a285229c6bf59116b4653944ef7087727">GetErrorText</a> () const</td></tr>
+<tr class="memitem:a285229c6bf59116b4653944ef7087727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a285229c6bf59116b4653944ef7087727">GetErrorText</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a285229c6bf59116b4653944ef7087727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27198204f4ef728968df429880564d60"><td class="memItemLeft" align="right" valign="top">const std::exception_ptr &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a27198204f4ef728968df429880564d60">GetException</a> () const</td></tr>
+<tr class="memitem:a27198204f4ef728968df429880564d60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::exception_ptr &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a27198204f4ef728968df429880564d60">GetException</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a27198204f4ef728968df429880564d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac076d9136745e898d43d9ea8f0d0c586"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ac076d9136745e898d43d9ea8f0d0c586">SetupProperties</a> (const <a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp)</td></tr>
+<tr class="memitem:ac076d9136745e898d43d9ea8f0d0c586"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ac076d9136745e898d43d9ea8f0d0c586">SetupProperties</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp)</td></tr>
 <tr class="separator:ac076d9136745e898d43d9ea8f0d0c586"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea402563e886993c7b5c0d489288fa4c"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="structai_importer_desc.html">aiImporterDesc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#aea402563e886993c7b5c0d489288fa4c">GetInfo</a> () const =0</td></tr>
+<tr class="memitem:aea402563e886993c7b5c0d489288fa4c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="structai_importer_desc.html">aiImporterDesc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#aea402563e886993c7b5c0d489288fa4c">GetInfo</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> =0</td></tr>
 <tr class="separator:aea402563e886993c7b5c0d489288fa4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11b61c90b472d900d4f7e2d2f2219dac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a11b61c90b472d900d4f7e2d2f2219dac">SetFileScale</a> (double scale)</td></tr>
 <tr class="separator:a11b61c90b472d900d4f7e2d2f2219dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a658f1192a37e336ba98fe701918b31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a7a658f1192a37e336ba98fe701918b31">GetExtensionList</a> (std::set&lt; std::string &gt; &amp;extensions)</td></tr>
 <tr class="separator:a7a658f1192a37e336ba98fe701918b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a699aebae893f17b5a5dd415ae7bee7f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a699aebae893f17b5a5dd415ae7bee7f0">BaseImporter</a> () AI_NO_EXCEPT</td></tr>
+<tr class="memitem:a699aebae893f17b5a5dd415ae7bee7f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a699aebae893f17b5a5dd415ae7bee7f0">BaseImporter</a> () <a class="el" href="include_2assimp_2defs_8h.html#ae032f18edd69bf6ba935ef9feb025a96">AI_NO_EXCEPT</a></td></tr>
 <tr class="separator:a699aebae893f17b5a5dd415ae7bee7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa09f8b01894b96c1fcd6a8f22b003deb"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#aa09f8b01894b96c1fcd6a8f22b003deb">~BaseImporter</a> ()=default</td></tr>
 <tr class="separator:aa09f8b01894b96c1fcd6a8f22b003deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13588d3396ba5b7ed1f1cb46e0945cfd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a13588d3396ba5b7ed1f1cb46e0945cfd">CanRead</a> (const std::string &amp;pFile, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler, bool checkSig) const =0</td></tr>
+<tr class="memitem:a13588d3396ba5b7ed1f1cb46e0945cfd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a13588d3396ba5b7ed1f1cb46e0945cfd">CanRead</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler, bool checkSig) <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> =0</td></tr>
 <tr class="separator:a13588d3396ba5b7ed1f1cb46e0945cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f5938785f722ebde616a30160bccde1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structai_scene.html">aiScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a2f5938785f722ebde616a30160bccde1">ReadFile</a> (<a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp, const std::string &amp;pFile, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler)</td></tr>
+<tr class="memitem:a2f5938785f722ebde616a30160bccde1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structai_scene.html">aiScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a2f5938785f722ebde616a30160bccde1">ReadFile</a> (<a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler)</td></tr>
 <tr class="separator:a2f5938785f722ebde616a30160bccde1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a285229c6bf59116b4653944ef7087727"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a285229c6bf59116b4653944ef7087727">GetErrorText</a> () const</td></tr>
+<tr class="memitem:a285229c6bf59116b4653944ef7087727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a285229c6bf59116b4653944ef7087727">GetErrorText</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a285229c6bf59116b4653944ef7087727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27198204f4ef728968df429880564d60"><td class="memItemLeft" align="right" valign="top">const std::exception_ptr &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a27198204f4ef728968df429880564d60">GetException</a> () const</td></tr>
+<tr class="memitem:a27198204f4ef728968df429880564d60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::exception_ptr &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a27198204f4ef728968df429880564d60">GetException</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a27198204f4ef728968df429880564d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac076d9136745e898d43d9ea8f0d0c586"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ac076d9136745e898d43d9ea8f0d0c586">SetupProperties</a> (const <a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp)</td></tr>
+<tr class="memitem:ac076d9136745e898d43d9ea8f0d0c586"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ac076d9136745e898d43d9ea8f0d0c586">SetupProperties</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp)</td></tr>
 <tr class="separator:ac076d9136745e898d43d9ea8f0d0c586"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea402563e886993c7b5c0d489288fa4c"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="structai_importer_desc.html">aiImporterDesc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#aea402563e886993c7b5c0d489288fa4c">GetInfo</a> () const =0</td></tr>
+<tr class="memitem:aea402563e886993c7b5c0d489288fa4c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="structai_importer_desc.html">aiImporterDesc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#aea402563e886993c7b5c0d489288fa4c">GetInfo</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> =0</td></tr>
 <tr class="separator:aea402563e886993c7b5c0d489288fa4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11b61c90b472d900d4f7e2d2f2219dac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a11b61c90b472d900d4f7e2d2f2219dac">SetFileScale</a> (double scale)</td></tr>
 <tr class="separator:a11b61c90b472d900d4f7e2d2f2219dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a658f1192a37e336ba98fe701918b31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a7a658f1192a37e336ba98fe701918b31">GetExtensionList</a> (std::set&lt; std::string &gt; &amp;extensions)</td></tr>
 <tr class="separator:a7a658f1192a37e336ba98fe701918b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a699aebae893f17b5a5dd415ae7bee7f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a699aebae893f17b5a5dd415ae7bee7f0">BaseImporter</a> () AI_NO_EXCEPT</td></tr>
+<tr class="memitem:a699aebae893f17b5a5dd415ae7bee7f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a699aebae893f17b5a5dd415ae7bee7f0">BaseImporter</a> () <a class="el" href="include_2assimp_2defs_8h.html#ae032f18edd69bf6ba935ef9feb025a96">AI_NO_EXCEPT</a></td></tr>
 <tr class="separator:a699aebae893f17b5a5dd415ae7bee7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa09f8b01894b96c1fcd6a8f22b003deb"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#aa09f8b01894b96c1fcd6a8f22b003deb">~BaseImporter</a> ()=default</td></tr>
 <tr class="separator:aa09f8b01894b96c1fcd6a8f22b003deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13588d3396ba5b7ed1f1cb46e0945cfd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a13588d3396ba5b7ed1f1cb46e0945cfd">CanRead</a> (const std::string &amp;pFile, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler, bool checkSig) const =0</td></tr>
+<tr class="memitem:a13588d3396ba5b7ed1f1cb46e0945cfd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a13588d3396ba5b7ed1f1cb46e0945cfd">CanRead</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler, bool checkSig) <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> =0</td></tr>
 <tr class="separator:a13588d3396ba5b7ed1f1cb46e0945cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f5938785f722ebde616a30160bccde1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structai_scene.html">aiScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a2f5938785f722ebde616a30160bccde1">ReadFile</a> (<a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp, const std::string &amp;pFile, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler)</td></tr>
+<tr class="memitem:a2f5938785f722ebde616a30160bccde1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structai_scene.html">aiScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a2f5938785f722ebde616a30160bccde1">ReadFile</a> (<a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler)</td></tr>
 <tr class="separator:a2f5938785f722ebde616a30160bccde1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a285229c6bf59116b4653944ef7087727"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a285229c6bf59116b4653944ef7087727">GetErrorText</a> () const</td></tr>
+<tr class="memitem:a285229c6bf59116b4653944ef7087727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a285229c6bf59116b4653944ef7087727">GetErrorText</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a285229c6bf59116b4653944ef7087727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27198204f4ef728968df429880564d60"><td class="memItemLeft" align="right" valign="top">const std::exception_ptr &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a27198204f4ef728968df429880564d60">GetException</a> () const</td></tr>
+<tr class="memitem:a27198204f4ef728968df429880564d60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::exception_ptr &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a27198204f4ef728968df429880564d60">GetException</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a27198204f4ef728968df429880564d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac076d9136745e898d43d9ea8f0d0c586"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ac076d9136745e898d43d9ea8f0d0c586">SetupProperties</a> (const <a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp)</td></tr>
+<tr class="memitem:ac076d9136745e898d43d9ea8f0d0c586"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ac076d9136745e898d43d9ea8f0d0c586">SetupProperties</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp)</td></tr>
 <tr class="separator:ac076d9136745e898d43d9ea8f0d0c586"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea402563e886993c7b5c0d489288fa4c"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="structai_importer_desc.html">aiImporterDesc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#aea402563e886993c7b5c0d489288fa4c">GetInfo</a> () const =0</td></tr>
+<tr class="memitem:aea402563e886993c7b5c0d489288fa4c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="structai_importer_desc.html">aiImporterDesc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#aea402563e886993c7b5c0d489288fa4c">GetInfo</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> =0</td></tr>
 <tr class="separator:aea402563e886993c7b5c0d489288fa4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11b61c90b472d900d4f7e2d2f2219dac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a11b61c90b472d900d4f7e2d2f2219dac">SetFileScale</a> (double scale)</td></tr>
 <tr class="separator:a11b61c90b472d900d4f7e2d2f2219dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,125 +204,209 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:abae9dd2ae64d8fbac94fa8702848f133"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#abae9dd2ae64d8fbac94fa8702848f133">SearchFileHeaderForToken</a> (<a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOSystem, const std::string &amp;file, const char **tokens, std::size_t numTokens, unsigned int searchBytes=200, bool tokensSol=false, bool noGraphBeforeTokens=false)</td></tr>
+<tr class="memitem:abae9dd2ae64d8fbac94fa8702848f133"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#abae9dd2ae64d8fbac94fa8702848f133">SearchFileHeaderForToken</a> (<a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOSystem, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;file, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **tokens, std::size_t numTokens, unsigned int searchBytes=200, bool tokensSol=false, bool noGraphBeforeTokens=false)</td></tr>
 <tr class="separator:abae9dd2ae64d8fbac94fa8702848f133"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a329d0bf67681c92d07fafbb5c327a2f9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a329d0bf67681c92d07fafbb5c327a2f9">SimpleExtensionCheck</a> (const std::string &amp;pFile, const char *ext0, const char *ext1=nullptr, const char *ext2=nullptr, const char *ext3=nullptr)</td></tr>
+<tr class="memitem:a329d0bf67681c92d07fafbb5c327a2f9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a329d0bf67681c92d07fafbb5c327a2f9">SimpleExtensionCheck</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *ext0, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *ext1=nullptr, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *ext2=nullptr, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *ext3=nullptr)</td></tr>
 <tr class="memdesc:a329d0bf67681c92d07fafbb5c327a2f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a file has a specific file extension.  <a href="class_assimp_1_1_base_importer.html#a329d0bf67681c92d07fafbb5c327a2f9">More...</a><br /></td></tr>
 <tr class="separator:a329d0bf67681c92d07fafbb5c327a2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d3456d16f59cd28f456b79eabe206b0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a4d3456d16f59cd28f456b79eabe206b0">HasExtension</a> (const std::string &amp;pFile, const std::set&lt; std::string &gt; &amp;extensions)</td></tr>
+<tr class="memitem:a4d3456d16f59cd28f456b79eabe206b0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a4d3456d16f59cd28f456b79eabe206b0">HasExtension</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::set&lt; std::string &gt; &amp;extensions)</td></tr>
 <tr class="memdesc:a4d3456d16f59cd28f456b79eabe206b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a file has one of the passed file extensions.  <a href="class_assimp_1_1_base_importer.html#a4d3456d16f59cd28f456b79eabe206b0">More...</a><br /></td></tr>
 <tr class="separator:a4d3456d16f59cd28f456b79eabe206b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25edd42695863af078d2bab65077ce6c"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a25edd42695863af078d2bab65077ce6c">GetExtension</a> (const std::string &amp;pFile)</td></tr>
+<tr class="memitem:a25edd42695863af078d2bab65077ce6c"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a25edd42695863af078d2bab65077ce6c">GetExtension</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile)</td></tr>
 <tr class="memdesc:a25edd42695863af078d2bab65077ce6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract file extension from a string.  <a href="class_assimp_1_1_base_importer.html#a25edd42695863af078d2bab65077ce6c">More...</a><br /></td></tr>
 <tr class="separator:a25edd42695863af078d2bab65077ce6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b42085bed85c180f080daab395e8832"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a6b42085bed85c180f080daab395e8832">CheckMagicToken</a> (<a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler, const std::string &amp;pFile, const void *magic, std::size_t num, unsigned int offset=0, unsigned int size=4)</td></tr>
+<tr class="memitem:a6b42085bed85c180f080daab395e8832"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a6b42085bed85c180f080daab395e8832">CheckMagicToken</a> (<a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *magic, std::size_t num, unsigned int offset=0, unsigned int size=4)</td></tr>
 <tr class="memdesc:a6b42085bed85c180f080daab395e8832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a file starts with one or more magic tokens.  <a href="class_assimp_1_1_base_importer.html#a6b42085bed85c180f080daab395e8832">More...</a><br /></td></tr>
 <tr class="separator:a6b42085bed85c180f080daab395e8832"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc318aa0eb85b73f501156a50f3eb703"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#afc318aa0eb85b73f501156a50f3eb703">ConvertToUTF8</a> (std::vector&lt; char &gt; &amp;data)</td></tr>
 <tr class="separator:afc318aa0eb85b73f501156a50f3eb703"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af36cd260cc2e756e95ee89d06d7c76d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#af36cd260cc2e756e95ee89d06d7c76d5">ConvertUTF8toISO8859_1</a> (std::string &amp;data)</td></tr>
 <tr class="separator:af36cd260cc2e756e95ee89d06d7c76d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a82f762127d9cb823276491fa701e3f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a3a82f762127d9cb823276491fa701e3f">TextFileToBuffer</a> (<a class="el" href="class_assimp_1_1_i_o_stream.html">IOStream</a> *stream, std::vector&lt; char &gt; &amp;data, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a> mode=FORBID_EMPTY)</td></tr>
+<tr class="memitem:a3a82f762127d9cb823276491fa701e3f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a3a82f762127d9cb823276491fa701e3f">TextFileToBuffer</a> (<a class="el" href="class_assimp_1_1_i_o_stream.html">IOStream</a> *stream, std::vector&lt; char &gt; &amp;data, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a> mode=<a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a>)</td></tr>
 <tr class="separator:a3a82f762127d9cb823276491fa701e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc1067a6780d7d6dbe457fef8abdb66a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abc1067a6780d7d6dbe457fef8abdb66a"><td class="memTemplItemLeft" align="right" valign="top">static AI_FORCE_INLINE void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#abc1067a6780d7d6dbe457fef8abdb66a">CopyVector</a> (std::vector&lt; T &gt; &amp;vec, T *&amp;out, unsigned int &amp;outLength)</td></tr>
+<tr class="memitem:abc1067a6780d7d6dbe457fef8abdb66a"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#abc1067a6780d7d6dbe457fef8abdb66a">CopyVector</a> (std::vector&lt; T &gt; &amp;vec, T *&amp;out, unsigned int &amp;outLength)</td></tr>
 <tr class="separator:abc1067a6780d7d6dbe457fef8abdb66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ce01553ca65d8cc8f1efc2174845d67"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3ce01553ca65d8cc8f1efc2174845d67"><td class="memTemplItemLeft" align="right" valign="top">static AI_FORCE_INLINE void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a3ce01553ca65d8cc8f1efc2174845d67">CopyVector</a> (std::vector&lt; std::unique_ptr&lt; T &gt; &gt; &amp;vec, T **&amp;out, unsigned int &amp;outLength)</td></tr>
+<tr class="memitem:a3ce01553ca65d8cc8f1efc2174845d67"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a3ce01553ca65d8cc8f1efc2174845d67">CopyVector</a> (std::vector&lt; std::unique_ptr&lt; T &gt; &gt; &amp;vec, T **&amp;out, unsigned int &amp;outLength)</td></tr>
 <tr class="separator:a3ce01553ca65d8cc8f1efc2174845d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abae9dd2ae64d8fbac94fa8702848f133"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#abae9dd2ae64d8fbac94fa8702848f133">SearchFileHeaderForToken</a> (<a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOSystem, const std::string &amp;file, const char **tokens, std::size_t numTokens, unsigned int searchBytes=200, bool tokensSol=false, bool noGraphBeforeTokens=false)</td></tr>
+<tr class="memitem:abae9dd2ae64d8fbac94fa8702848f133"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#abae9dd2ae64d8fbac94fa8702848f133">SearchFileHeaderForToken</a> (<a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOSystem, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;file, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **tokens, std::size_t numTokens, unsigned int searchBytes=200, bool tokensSol=false, bool noGraphBeforeTokens=false)</td></tr>
 <tr class="separator:abae9dd2ae64d8fbac94fa8702848f133"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a329d0bf67681c92d07fafbb5c327a2f9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a329d0bf67681c92d07fafbb5c327a2f9">SimpleExtensionCheck</a> (const std::string &amp;pFile, const char *ext0, const char *ext1=nullptr, const char *ext2=nullptr, const char *ext3=nullptr)</td></tr>
+<tr class="memitem:a329d0bf67681c92d07fafbb5c327a2f9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a329d0bf67681c92d07fafbb5c327a2f9">SimpleExtensionCheck</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *ext0, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *ext1=nullptr, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *ext2=nullptr, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *ext3=nullptr)</td></tr>
 <tr class="memdesc:a329d0bf67681c92d07fafbb5c327a2f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a file has a specific file extension.  <a href="class_assimp_1_1_base_importer.html#a329d0bf67681c92d07fafbb5c327a2f9">More...</a><br /></td></tr>
 <tr class="separator:a329d0bf67681c92d07fafbb5c327a2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d3456d16f59cd28f456b79eabe206b0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a4d3456d16f59cd28f456b79eabe206b0">HasExtension</a> (const std::string &amp;pFile, const std::set&lt; std::string &gt; &amp;extensions)</td></tr>
+<tr class="memitem:a4d3456d16f59cd28f456b79eabe206b0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a4d3456d16f59cd28f456b79eabe206b0">HasExtension</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::set&lt; std::string &gt; &amp;extensions)</td></tr>
 <tr class="memdesc:a4d3456d16f59cd28f456b79eabe206b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a file has one of the passed file extensions.  <a href="class_assimp_1_1_base_importer.html#a4d3456d16f59cd28f456b79eabe206b0">More...</a><br /></td></tr>
 <tr class="separator:a4d3456d16f59cd28f456b79eabe206b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25edd42695863af078d2bab65077ce6c"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a25edd42695863af078d2bab65077ce6c">GetExtension</a> (const std::string &amp;pFile)</td></tr>
+<tr class="memitem:a25edd42695863af078d2bab65077ce6c"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a25edd42695863af078d2bab65077ce6c">GetExtension</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile)</td></tr>
 <tr class="memdesc:a25edd42695863af078d2bab65077ce6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract file extension from a string.  <a href="class_assimp_1_1_base_importer.html#a25edd42695863af078d2bab65077ce6c">More...</a><br /></td></tr>
 <tr class="separator:a25edd42695863af078d2bab65077ce6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b42085bed85c180f080daab395e8832"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a6b42085bed85c180f080daab395e8832">CheckMagicToken</a> (<a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler, const std::string &amp;pFile, const void *magic, std::size_t num, unsigned int offset=0, unsigned int size=4)</td></tr>
+<tr class="memitem:a6b42085bed85c180f080daab395e8832"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a6b42085bed85c180f080daab395e8832">CheckMagicToken</a> (<a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *magic, std::size_t num, unsigned int offset=0, unsigned int size=4)</td></tr>
 <tr class="memdesc:a6b42085bed85c180f080daab395e8832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a file starts with one or more magic tokens.  <a href="class_assimp_1_1_base_importer.html#a6b42085bed85c180f080daab395e8832">More...</a><br /></td></tr>
 <tr class="separator:a6b42085bed85c180f080daab395e8832"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc318aa0eb85b73f501156a50f3eb703"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#afc318aa0eb85b73f501156a50f3eb703">ConvertToUTF8</a> (std::vector&lt; char &gt; &amp;data)</td></tr>
 <tr class="separator:afc318aa0eb85b73f501156a50f3eb703"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af36cd260cc2e756e95ee89d06d7c76d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#af36cd260cc2e756e95ee89d06d7c76d5">ConvertUTF8toISO8859_1</a> (std::string &amp;data)</td></tr>
 <tr class="separator:af36cd260cc2e756e95ee89d06d7c76d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a82f762127d9cb823276491fa701e3f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a3a82f762127d9cb823276491fa701e3f">TextFileToBuffer</a> (<a class="el" href="class_assimp_1_1_i_o_stream.html">IOStream</a> *stream, std::vector&lt; char &gt; &amp;data, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a> mode=FORBID_EMPTY)</td></tr>
+<tr class="memitem:a3a82f762127d9cb823276491fa701e3f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a3a82f762127d9cb823276491fa701e3f">TextFileToBuffer</a> (<a class="el" href="class_assimp_1_1_i_o_stream.html">IOStream</a> *stream, std::vector&lt; char &gt; &amp;data, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a> mode=<a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a>)</td></tr>
 <tr class="separator:a3a82f762127d9cb823276491fa701e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc1067a6780d7d6dbe457fef8abdb66a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abc1067a6780d7d6dbe457fef8abdb66a"><td class="memTemplItemLeft" align="right" valign="top">static AI_FORCE_INLINE void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#abc1067a6780d7d6dbe457fef8abdb66a">CopyVector</a> (std::vector&lt; T &gt; &amp;vec, T *&amp;out, unsigned int &amp;outLength)</td></tr>
+<tr class="memitem:abc1067a6780d7d6dbe457fef8abdb66a"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#abc1067a6780d7d6dbe457fef8abdb66a">CopyVector</a> (std::vector&lt; T &gt; &amp;vec, T *&amp;out, unsigned int &amp;outLength)</td></tr>
 <tr class="separator:abc1067a6780d7d6dbe457fef8abdb66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ce01553ca65d8cc8f1efc2174845d67"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3ce01553ca65d8cc8f1efc2174845d67"><td class="memTemplItemLeft" align="right" valign="top">static AI_FORCE_INLINE void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a3ce01553ca65d8cc8f1efc2174845d67">CopyVector</a> (std::vector&lt; std::unique_ptr&lt; T &gt; &gt; &amp;vec, T **&amp;out, unsigned int &amp;outLength)</td></tr>
+<tr class="memitem:a3ce01553ca65d8cc8f1efc2174845d67"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a3ce01553ca65d8cc8f1efc2174845d67">CopyVector</a> (std::vector&lt; std::unique_ptr&lt; T &gt; &gt; &amp;vec, T **&amp;out, unsigned int &amp;outLength)</td></tr>
 <tr class="separator:a3ce01553ca65d8cc8f1efc2174845d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abae9dd2ae64d8fbac94fa8702848f133"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#abae9dd2ae64d8fbac94fa8702848f133">SearchFileHeaderForToken</a> (<a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOSystem, const std::string &amp;file, const char **tokens, std::size_t numTokens, unsigned int searchBytes=200, bool tokensSol=false, bool noGraphBeforeTokens=false)</td></tr>
+<tr class="memitem:abae9dd2ae64d8fbac94fa8702848f133"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#abae9dd2ae64d8fbac94fa8702848f133">SearchFileHeaderForToken</a> (<a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOSystem, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;file, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **tokens, std::size_t numTokens, unsigned int searchBytes=200, bool tokensSol=false, bool noGraphBeforeTokens=false)</td></tr>
 <tr class="separator:abae9dd2ae64d8fbac94fa8702848f133"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a329d0bf67681c92d07fafbb5c327a2f9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a329d0bf67681c92d07fafbb5c327a2f9">SimpleExtensionCheck</a> (const std::string &amp;pFile, const char *ext0, const char *ext1=nullptr, const char *ext2=nullptr, const char *ext3=nullptr)</td></tr>
+<tr class="memitem:a329d0bf67681c92d07fafbb5c327a2f9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a329d0bf67681c92d07fafbb5c327a2f9">SimpleExtensionCheck</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *ext0, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *ext1=nullptr, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *ext2=nullptr, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *ext3=nullptr)</td></tr>
 <tr class="memdesc:a329d0bf67681c92d07fafbb5c327a2f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a file has a specific file extension.  <a href="class_assimp_1_1_base_importer.html#a329d0bf67681c92d07fafbb5c327a2f9">More...</a><br /></td></tr>
 <tr class="separator:a329d0bf67681c92d07fafbb5c327a2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d3456d16f59cd28f456b79eabe206b0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a4d3456d16f59cd28f456b79eabe206b0">HasExtension</a> (const std::string &amp;pFile, const std::set&lt; std::string &gt; &amp;extensions)</td></tr>
+<tr class="memitem:a4d3456d16f59cd28f456b79eabe206b0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a4d3456d16f59cd28f456b79eabe206b0">HasExtension</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::set&lt; std::string &gt; &amp;extensions)</td></tr>
 <tr class="memdesc:a4d3456d16f59cd28f456b79eabe206b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a file has one of the passed file extensions.  <a href="class_assimp_1_1_base_importer.html#a4d3456d16f59cd28f456b79eabe206b0">More...</a><br /></td></tr>
 <tr class="separator:a4d3456d16f59cd28f456b79eabe206b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25edd42695863af078d2bab65077ce6c"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a25edd42695863af078d2bab65077ce6c">GetExtension</a> (const std::string &amp;pFile)</td></tr>
+<tr class="memitem:a25edd42695863af078d2bab65077ce6c"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a25edd42695863af078d2bab65077ce6c">GetExtension</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile)</td></tr>
 <tr class="memdesc:a25edd42695863af078d2bab65077ce6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract file extension from a string.  <a href="class_assimp_1_1_base_importer.html#a25edd42695863af078d2bab65077ce6c">More...</a><br /></td></tr>
 <tr class="separator:a25edd42695863af078d2bab65077ce6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b42085bed85c180f080daab395e8832"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a6b42085bed85c180f080daab395e8832">CheckMagicToken</a> (<a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler, const std::string &amp;pFile, const void *magic, std::size_t num, unsigned int offset=0, unsigned int size=4)</td></tr>
+<tr class="memitem:a6b42085bed85c180f080daab395e8832"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a6b42085bed85c180f080daab395e8832">CheckMagicToken</a> (<a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *magic, std::size_t num, unsigned int offset=0, unsigned int size=4)</td></tr>
 <tr class="memdesc:a6b42085bed85c180f080daab395e8832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a file starts with one or more magic tokens.  <a href="class_assimp_1_1_base_importer.html#a6b42085bed85c180f080daab395e8832">More...</a><br /></td></tr>
 <tr class="separator:a6b42085bed85c180f080daab395e8832"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc318aa0eb85b73f501156a50f3eb703"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#afc318aa0eb85b73f501156a50f3eb703">ConvertToUTF8</a> (std::vector&lt; char &gt; &amp;data)</td></tr>
 <tr class="separator:afc318aa0eb85b73f501156a50f3eb703"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af36cd260cc2e756e95ee89d06d7c76d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#af36cd260cc2e756e95ee89d06d7c76d5">ConvertUTF8toISO8859_1</a> (std::string &amp;data)</td></tr>
 <tr class="separator:af36cd260cc2e756e95ee89d06d7c76d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a82f762127d9cb823276491fa701e3f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a3a82f762127d9cb823276491fa701e3f">TextFileToBuffer</a> (<a class="el" href="class_assimp_1_1_i_o_stream.html">IOStream</a> *stream, std::vector&lt; char &gt; &amp;data, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a> mode=FORBID_EMPTY)</td></tr>
+<tr class="memitem:a3a82f762127d9cb823276491fa701e3f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a3a82f762127d9cb823276491fa701e3f">TextFileToBuffer</a> (<a class="el" href="class_assimp_1_1_i_o_stream.html">IOStream</a> *stream, std::vector&lt; char &gt; &amp;data, <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a> mode=<a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a>)</td></tr>
 <tr class="separator:a3a82f762127d9cb823276491fa701e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc1067a6780d7d6dbe457fef8abdb66a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abc1067a6780d7d6dbe457fef8abdb66a"><td class="memTemplItemLeft" align="right" valign="top">static AI_FORCE_INLINE void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#abc1067a6780d7d6dbe457fef8abdb66a">CopyVector</a> (std::vector&lt; T &gt; &amp;vec, T *&amp;out, unsigned int &amp;outLength)</td></tr>
+<tr class="memitem:abc1067a6780d7d6dbe457fef8abdb66a"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#abc1067a6780d7d6dbe457fef8abdb66a">CopyVector</a> (std::vector&lt; T &gt; &amp;vec, T *&amp;out, unsigned int &amp;outLength)</td></tr>
 <tr class="separator:abc1067a6780d7d6dbe457fef8abdb66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ce01553ca65d8cc8f1efc2174845d67"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3ce01553ca65d8cc8f1efc2174845d67"><td class="memTemplItemLeft" align="right" valign="top">static AI_FORCE_INLINE void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a3ce01553ca65d8cc8f1efc2174845d67">CopyVector</a> (std::vector&lt; std::unique_ptr&lt; T &gt; &gt; &amp;vec, T **&amp;out, unsigned int &amp;outLength)</td></tr>
+<tr class="memitem:a3ce01553ca65d8cc8f1efc2174845d67"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a3ce01553ca65d8cc8f1efc2174845d67">CopyVector</a> (std::vector&lt; std::unique_ptr&lt; T &gt; &gt; &amp;vec, T **&amp;out, unsigned int &amp;outLength)</td></tr>
 <tr class="separator:a3ce01553ca65d8cc8f1efc2174845d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ac67d9f5ceb26353d27d6be06cccad398"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ac67d9f5ceb26353d27d6be06cccad398">InternReadFile</a> (const std::string &amp;pFile, <a class="el" href="structai_scene.html">aiScene</a> *pScene, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler)=0</td></tr>
+<tr class="memitem:ac67d9f5ceb26353d27d6be06cccad398"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ac67d9f5ceb26353d27d6be06cccad398">InternReadFile</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="structai_scene.html">aiScene</a> *pScene, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler)=0</td></tr>
 <tr class="separator:ac67d9f5ceb26353d27d6be06cccad398"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac67d9f5ceb26353d27d6be06cccad398"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ac67d9f5ceb26353d27d6be06cccad398">InternReadFile</a> (const std::string &amp;pFile, <a class="el" href="structai_scene.html">aiScene</a> *pScene, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler)=0</td></tr>
+<tr class="memitem:ac67d9f5ceb26353d27d6be06cccad398"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ac67d9f5ceb26353d27d6be06cccad398">InternReadFile</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="structai_scene.html">aiScene</a> *pScene, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler)=0</td></tr>
 <tr class="separator:ac67d9f5ceb26353d27d6be06cccad398"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac67d9f5ceb26353d27d6be06cccad398"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ac67d9f5ceb26353d27d6be06cccad398">InternReadFile</a> (const std::string &amp;pFile, <a class="el" href="structai_scene.html">aiScene</a> *pScene, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler)=0</td></tr>
+<tr class="memitem:ac67d9f5ceb26353d27d6be06cccad398"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ac67d9f5ceb26353d27d6be06cccad398">InternReadFile</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;pFile, <a class="el" href="structai_scene.html">aiScene</a> *pScene, <a class="el" href="class_assimp_1_1_i_o_system.html">IOSystem</a> *pIOHandler)=0</td></tr>
 <tr class="separator:ac67d9f5ceb26353d27d6be06cccad398"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ad5bb9d0bff964c79b625c754b3adb04c"><td class="memItemLeft" align="right" valign="top"><a id="ad5bb9d0bff964c79b625c754b3adb04c" name="ad5bb9d0bff964c79b625c754b3adb04c"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>importerScale</b> = 1.0</td></tr>
+<tr class="memitem:ad5bb9d0bff964c79b625c754b3adb04c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ad5bb9d0bff964c79b625c754b3adb04c">importerScale</a> = 1.0</td></tr>
 <tr class="separator:ad5bb9d0bff964c79b625c754b3adb04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af85971f80c5f45fef8c3a3395e4bbe14"><td class="memItemLeft" align="right" valign="top"><a id="af85971f80c5f45fef8c3a3395e4bbe14" name="af85971f80c5f45fef8c3a3395e4bbe14"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>fileScale</b> = 1.0</td></tr>
+<tr class="memitem:af85971f80c5f45fef8c3a3395e4bbe14"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#af85971f80c5f45fef8c3a3395e4bbe14">fileScale</a> = 1.0</td></tr>
 <tr class="separator:af85971f80c5f45fef8c3a3395e4bbe14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd2c9b86479c0c165e5d84d733e53373"><td class="memItemLeft" align="right" valign="top"><a id="abd2c9b86479c0c165e5d84d733e53373" name="abd2c9b86479c0c165e5d84d733e53373"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_ErrorText</b></td></tr>
-<tr class="memdesc:abd2c9b86479c0c165e5d84d733e53373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error description in case there was one. <br /></td></tr>
+<tr class="memitem:abd2c9b86479c0c165e5d84d733e53373"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#abd2c9b86479c0c165e5d84d733e53373">m_ErrorText</a></td></tr>
+<tr class="memdesc:abd2c9b86479c0c165e5d84d733e53373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error description in case there was one.  <a href="class_assimp_1_1_base_importer.html#abd2c9b86479c0c165e5d84d733e53373">More...</a><br /></td></tr>
 <tr class="separator:abd2c9b86479c0c165e5d84d733e53373"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bf84fb733992558272add378e7d9525"><td class="memItemLeft" align="right" valign="top"><a id="a7bf84fb733992558272add378e7d9525" name="a7bf84fb733992558272add378e7d9525"></a>
-std::exception_ptr&#160;</td><td class="memItemRight" valign="bottom"><b>m_Exception</b></td></tr>
-<tr class="memdesc:a7bf84fb733992558272add378e7d9525"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception, in case there was one. <br /></td></tr>
+<tr class="memitem:a7bf84fb733992558272add378e7d9525"><td class="memItemLeft" align="right" valign="top">std::exception_ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#a7bf84fb733992558272add378e7d9525">m_Exception</a></td></tr>
+<tr class="memdesc:a7bf84fb733992558272add378e7d9525"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception, in case there was one.  <a href="class_assimp_1_1_base_importer.html#a7bf84fb733992558272add378e7d9525">More...</a><br /></td></tr>
 <tr class="separator:a7bf84fb733992558272add378e7d9525"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada6abefe7b87ef1f548b6a03dcbd941a"><td class="memItemLeft" align="right" valign="top"><a id="ada6abefe7b87ef1f548b6a03dcbd941a" name="ada6abefe7b87ef1f548b6a03dcbd941a"></a>
-<a class="el" href="class_assimp_1_1_progress_handler.html">ProgressHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_progress</b></td></tr>
-<tr class="memdesc:ada6abefe7b87ef1f548b6a03dcbd941a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently set progress handler. <br /></td></tr>
+<tr class="memitem:ada6abefe7b87ef1f548b6a03dcbd941a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_progress_handler.html">ProgressHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ada6abefe7b87ef1f548b6a03dcbd941a">m_progress</a></td></tr>
+<tr class="memdesc:ada6abefe7b87ef1f548b6a03dcbd941a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently set progress handler.  <a href="class_assimp_1_1_base_importer.html#ada6abefe7b87ef1f548b6a03dcbd941a">More...</a><br /></td></tr>
 <tr class="separator:ada6abefe7b87ef1f548b6a03dcbd941a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ab436d48560abfbe0d0e987a4a6749be0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ab436d48560abfbe0d0e987a4a6749be0">UpdateImporterScale</a> (<a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp)</td></tr>
+<tr class="separator:ab436d48560abfbe0d0e987a4a6749be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab436d48560abfbe0d0e987a4a6749be0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ab436d48560abfbe0d0e987a4a6749be0">UpdateImporterScale</a> (<a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp)</td></tr>
+<tr class="separator:ab436d48560abfbe0d0e987a4a6749be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab436d48560abfbe0d0e987a4a6749be0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ab436d48560abfbe0d0e987a4a6749be0">UpdateImporterScale</a> (<a class="el" href="class_assimp_1_1_importer.html">Importer</a> *pImp)</td></tr>
+<tr class="separator:ab436d48560abfbe0d0e987a4a6749be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:ac81c9c578a539b88828a1e57a4f242cd"><td class="memItemLeft" align="right" valign="top"><a id="ac81c9c578a539b88828a1e57a4f242cd" name="ac81c9c578a539b88828a1e57a4f242cd"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>Importer</b></td></tr>
+<tr class="memitem:ac81c9c578a539b88828a1e57a4f242cd"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_base_importer.html#ac81c9c578a539b88828a1e57a4f242cd">Importer</a></td></tr>
 <tr class="separator:ac81c9c578a539b88828a1e57a4f242cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >FOR IMPORTER PLUGINS ONLY: The <a class="el" href="class_assimp_1_1_base_importer.html">BaseImporter</a> defines a common interface for all importer worker classes.</p>
 <p >The interface defines two functions: <a class="el" href="class_assimp_1_1_base_importer.html#a13588d3396ba5b7ed1f1cb46e0945cfd">CanRead()</a> is used to check if the importer can handle the format of the given file. If an implementation of this function returns true, the importer then calls <a class="el" href="class_assimp_1_1_base_importer.html#a2f5938785f722ebde616a30160bccde1">ReadFile()</a> which imports the given file. ReadFile is not overridable, it just calls <a class="el" href="class_assimp_1_1_base_importer.html#ac67d9f5ceb26353d27d6be06cccad398">InternReadFile()</a> and catches any ImportErrorException that might occur. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00090">90</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a9fe6b47937a7c897536cac1513b65eb7" name="a9fe6b47937a7c897536cac1513b65eb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fe6b47937a7c897536cac1513b65eb7">&#9670;&#160;</a></span>TextFileMode <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">Assimp::BaseImporter::TextFileMode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enum to define, if empty files are ok or not. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1" name="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1"></a>ALLOW_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d" name="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d"></a>FORBID_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1" name="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1"></a>ALLOW_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d" name="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d"></a>FORBID_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1" name="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1"></a>ALLOW_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d" name="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d"></a>FORBID_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00343">343</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
+</div>
+</div>
+<a id="a9fe6b47937a7c897536cac1513b65eb7" name="a9fe6b47937a7c897536cac1513b65eb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fe6b47937a7c897536cac1513b65eb7">&#9670;&#160;</a></span>TextFileMode <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">Assimp::BaseImporter::TextFileMode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enum to define, if empty files are ok or not. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1" name="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1"></a>ALLOW_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d" name="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d"></a>FORBID_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1" name="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1"></a>ALLOW_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d" name="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d"></a>FORBID_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1" name="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1"></a>ALLOW_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d" name="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d"></a>FORBID_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_base_importer_8h_source.html#l00343">343</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
+</div>
+</div>
+<a id="a9fe6b47937a7c897536cac1513b65eb7" name="a9fe6b47937a7c897536cac1513b65eb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fe6b47937a7c897536cac1513b65eb7">&#9670;&#160;</a></span>TextFileMode <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">Assimp::BaseImporter::TextFileMode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enum to define, if empty files are ok or not. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1" name="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1"></a>ALLOW_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d" name="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d"></a>FORBID_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1" name="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1"></a>ALLOW_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d" name="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d"></a>FORBID_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1" name="a9fe6b47937a7c897536cac1513b65eb7a4a55b197c31c4f75617aa4f958d1b4f1"></a>ALLOW_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d" name="a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d"></a>FORBID_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_base_importer_8h_source.html#l00343">343</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a699aebae893f17b5a5dd415ae7bee7f0" name="a699aebae893f17b5a5dd415ae7bee7f0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a699aebae893f17b5a5dd415ae7bee7f0">&#9670;&#160;</a></span>BaseImporter() <span class="overload">[1/3]</span></h2>
 
@@ -324,7 +421,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Importer</b></td></t
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Constructor to be privately used by Importer </p>
+<p >Constructor to be privately used by <a class="el" href="class_assimp_1_1_base_importer.html#ac81c9c578a539b88828a1e57a4f242cd">Importer</a> </p>
 
 </div>
 </div>
@@ -368,7 +465,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Importer</b></td></t
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Constructor to be privately used by Importer </p>
+<p >Constructor to be privately used by <a class="el" href="class_assimp_1_1_base_importer.html#ac81c9c578a539b88828a1e57a4f242cd">Importer</a> </p>
 
 </div>
 </div>
@@ -412,7 +509,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Importer</b></td></t
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Constructor to be privately used by Importer </p>
+<p >Constructor to be privately used by <a class="el" href="class_assimp_1_1_base_importer.html#ac81c9c578a539b88828a1e57a4f242cd">Importer</a> </p>
 
 </div>
 </div>
@@ -455,7 +552,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Importer</b></td></t
         <tr>
           <td class="memname">virtual bool Assimp::BaseImporter::CanRead </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
@@ -508,7 +605,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Importer</b></td></t
         <tr>
           <td class="memname">virtual bool Assimp::BaseImporter::CanRead </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
@@ -561,7 +658,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Importer</b></td></t
         <tr>
           <td class="memname">virtual bool Assimp::BaseImporter::CanRead </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
@@ -620,13 +717,13 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Importer</b></td></t
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const void *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *&#160;</td>
           <td class="paramname"><em>magic</em>, </td>
         </tr>
         <tr>
@@ -694,13 +791,13 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Importer</b></td></t
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const void *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *&#160;</td>
           <td class="paramname"><em>magic</em>, </td>
         </tr>
         <tr>
@@ -768,13 +865,13 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Importer</b></td></t
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const void *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *&#160;</td>
           <td class="paramname"><em>magic</em>, </td>
         </tr>
         <tr>
@@ -1034,7 +1131,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static AI_FORCE_INLINE void Assimp::BaseImporter::CopyVector </td>
+          <td class="memname">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void Assimp::BaseImporter::CopyVector </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; std::unique_ptr&lt; T &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em>, </td>
@@ -1071,6 +1168,8 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00385">385</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
 
 </div>
 </div>
@@ -1086,7 +1185,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static AI_FORCE_INLINE void Assimp::BaseImporter::CopyVector </td>
+          <td class="memname">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void Assimp::BaseImporter::CopyVector </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; std::unique_ptr&lt; T &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em>, </td>
@@ -1123,6 +1222,8 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_base_importer_8h_source.html#l00385">385</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
 
 </div>
 </div>
@@ -1138,7 +1239,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static AI_FORCE_INLINE void Assimp::BaseImporter::CopyVector </td>
+          <td class="memname">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void Assimp::BaseImporter::CopyVector </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; std::unique_ptr&lt; T &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em>, </td>
@@ -1176,6 +1277,8 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_base_importer_8h_source.html#l00385">385</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
 </div>
 </div>
 <a id="abc1067a6780d7d6dbe457fef8abdb66a" name="abc1067a6780d7d6dbe457fef8abdb66a"></a>
@@ -1190,7 +1293,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static AI_FORCE_INLINE void Assimp::BaseImporter::CopyVector </td>
+          <td class="memname">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void Assimp::BaseImporter::CopyVector </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em>, </td>
@@ -1227,6 +1330,8 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00368">368</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
 
 </div>
 </div>
@@ -1242,7 +1347,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static AI_FORCE_INLINE void Assimp::BaseImporter::CopyVector </td>
+          <td class="memname">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void Assimp::BaseImporter::CopyVector </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em>, </td>
@@ -1279,6 +1384,8 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_base_importer_8h_source.html#l00368">368</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
 
 </div>
 </div>
@@ -1294,7 +1401,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static AI_FORCE_INLINE void Assimp::BaseImporter::CopyVector </td>
+          <td class="memname">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void Assimp::BaseImporter::CopyVector </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em>, </td>
@@ -1332,6 +1439,8 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_base_importer_8h_source.html#l00368">368</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
 </div>
 </div>
 <a id="a285229c6bf59116b4653944ef7087727" name="a285229c6bf59116b4653944ef7087727"></a>
@@ -1344,7 +1453,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string &amp; Assimp::BaseImporter::GetErrorText </td>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp; Assimp::BaseImporter::GetErrorText </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1357,6 +1466,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p >Returns the error description of the last error that occurred. If the error is due to a std::exception, this will return the message. Exceptions can also be accessed with <a class="el" href="class_assimp_1_1_base_importer.html#a27198204f4ef728968df429880564d60">GetException()</a>. </p><dl class="section return"><dt>Returns</dt><dd>A description of the last error that occurred. An empty string if there was no error. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00149">149</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
 
 </div>
 </div>
@@ -1370,7 +1481,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string &amp; Assimp::BaseImporter::GetErrorText </td>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp; Assimp::BaseImporter::GetErrorText </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1383,6 +1494,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p >Returns the error description of the last error that occurred. If the error is due to a std::exception, this will return the message. Exceptions can also be accessed with <a class="el" href="class_assimp_1_1_base_importer.html#a27198204f4ef728968df429880564d60">GetException()</a>. </p><dl class="section return"><dt>Returns</dt><dd>A description of the last error that occurred. An empty string if there was no error. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_base_importer_8h_source.html#l00149">149</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
 
 </div>
 </div>
@@ -1396,7 +1509,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string &amp; Assimp::BaseImporter::GetErrorText </td>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp; Assimp::BaseImporter::GetErrorText </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1410,6 +1523,8 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p >Returns the error description of the last error that occurred. If the error is due to a std::exception, this will return the message. Exceptions can also be accessed with <a class="el" href="class_assimp_1_1_base_importer.html#a27198204f4ef728968df429880564d60">GetException()</a>. </p><dl class="section return"><dt>Returns</dt><dd>A description of the last error that occurred. An empty string if there was no error. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_base_importer_8h_source.html#l00149">149</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
 </div>
 </div>
 <a id="a27198204f4ef728968df429880564d60" name="a27198204f4ef728968df429880564d60"></a>
@@ -1422,7 +1537,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::exception_ptr &amp; Assimp::BaseImporter::GetException </td>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::exception_ptr &amp; Assimp::BaseImporter::GetException </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1435,6 +1550,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p >Returns the exception of the last exception that occurred. Note: Exceptions are not the only source of error details, so GetErrorText should be consulted too. </p><dl class="section return"><dt>Returns</dt><dd>The last exception that occurred. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00159">159</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
 
 </div>
 </div>
@@ -1448,7 +1565,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::exception_ptr &amp; Assimp::BaseImporter::GetException </td>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::exception_ptr &amp; Assimp::BaseImporter::GetException </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1461,6 +1578,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p >Returns the exception of the last exception that occurred. Note: Exceptions are not the only source of error details, so GetErrorText should be consulted too. </p><dl class="section return"><dt>Returns</dt><dd>The last exception that occurred. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_base_importer_8h_source.html#l00159">159</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
 
 </div>
 </div>
@@ -1474,7 +1593,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::exception_ptr &amp; Assimp::BaseImporter::GetException </td>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::exception_ptr &amp; Assimp::BaseImporter::GetException </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1487,6 +1606,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p >Returns the exception of the last exception that occurred. Note: Exceptions are not the only source of error details, so GetErrorText should be consulted too. </p><dl class="section return"><dt>Returns</dt><dd>The last exception that occurred. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_base_importer_8h_source.html#l00159">159</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
 
 </div>
 </div>
@@ -1502,7 +1623,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">static std::string Assimp::BaseImporter::GetExtension </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1537,7 +1658,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">static std::string Assimp::BaseImporter::GetExtension </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1572,7 +1693,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">static std::string Assimp::BaseImporter::GetExtension </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1677,7 +1798,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const <a class="el" href="structai_importer_desc.html">aiImporterDesc</a> * Assimp::BaseImporter::GetInfo </td>
+          <td class="memname">virtual <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="structai_importer_desc.html">aiImporterDesc</a> * Assimp::BaseImporter::GetInfo </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1703,7 +1824,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const <a class="el" href="structai_importer_desc.html">aiImporterDesc</a> * Assimp::BaseImporter::GetInfo </td>
+          <td class="memname">virtual <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="structai_importer_desc.html">aiImporterDesc</a> * Assimp::BaseImporter::GetInfo </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1729,7 +1850,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const <a class="el" href="structai_importer_desc.html">aiImporterDesc</a> * Assimp::BaseImporter::GetInfo </td>
+          <td class="memname">virtual <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="structai_importer_desc.html">aiImporterDesc</a> * Assimp::BaseImporter::GetInfo </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1757,13 +1878,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">static bool Assimp::BaseImporter::HasExtension </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::set&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::set&lt; std::string &gt; &amp;&#160;</td>
           <td class="paramname"><em>extensions</em>&#160;</td>
         </tr>
         <tr>
@@ -1803,13 +1924,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">static bool Assimp::BaseImporter::HasExtension </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::set&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::set&lt; std::string &gt; &amp;&#160;</td>
           <td class="paramname"><em>extensions</em>&#160;</td>
         </tr>
         <tr>
@@ -1849,13 +1970,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">static bool Assimp::BaseImporter::HasExtension </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::set&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::set&lt; std::string &gt; &amp;&#160;</td>
           <td class="paramname"><em>extensions</em>&#160;</td>
         </tr>
         <tr>
@@ -1895,7 +2016,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">virtual void Assimp::BaseImporter::InternReadFile </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
@@ -1968,7 +2089,7 @@ there may be no meshes with 0 vertices or faces </li>
         <tr>
           <td class="memname">virtual void Assimp::BaseImporter::InternReadFile </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
@@ -2041,7 +2162,7 @@ there may be no meshes with 0 vertices or faces </li>
         <tr>
           <td class="memname">virtual void Assimp::BaseImporter::InternReadFile </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
@@ -2117,7 +2238,7 @@ there may be no meshes with 0 vertices or faces </li>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
@@ -2136,7 +2257,7 @@ there may be no meshes with 0 vertices or faces </li>
 <p >Imports the given file and returns the imported data. If the import succeeds, ownership of the data is transferred to the caller. If the import fails, nullptr is returned. The function takes care that any partially constructed data is destroyed beforehand.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pImp</td><td>Importer object hosting this loader. </td></tr>
+    <tr><td class="paramname">pImp</td><td><a class="el" href="class_assimp_1_1_base_importer.html#ac81c9c578a539b88828a1e57a4f242cd">Importer</a> object hosting this loader. </td></tr>
     <tr><td class="paramname">pFile</td><td>Path of the file to be imported. </td></tr>
     <tr><td class="paramname">pIOHandler</td><td>IO-Handler used to open this and possible other files. </td></tr>
   </table>
@@ -2162,7 +2283,7 @@ there may be no meshes with 0 vertices or faces </li>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
@@ -2181,7 +2302,7 @@ there may be no meshes with 0 vertices or faces </li>
 <p >Imports the given file and returns the imported data. If the import succeeds, ownership of the data is transferred to the caller. If the import fails, nullptr is returned. The function takes care that any partially constructed data is destroyed beforehand.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pImp</td><td>Importer object hosting this loader. </td></tr>
+    <tr><td class="paramname">pImp</td><td><a class="el" href="class_assimp_1_1_base_importer.html#ac81c9c578a539b88828a1e57a4f242cd">Importer</a> object hosting this loader. </td></tr>
     <tr><td class="paramname">pFile</td><td>Path of the file to be imported. </td></tr>
     <tr><td class="paramname">pIOHandler</td><td>IO-Handler used to open this and possible other files. </td></tr>
   </table>
@@ -2207,7 +2328,7 @@ there may be no meshes with 0 vertices or faces </li>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
@@ -2226,7 +2347,7 @@ there may be no meshes with 0 vertices or faces </li>
 <p >Imports the given file and returns the imported data. If the import succeeds, ownership of the data is transferred to the caller. If the import fails, nullptr is returned. The function takes care that any partially constructed data is destroyed beforehand.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pImp</td><td>Importer object hosting this loader. </td></tr>
+    <tr><td class="paramname">pImp</td><td><a class="el" href="class_assimp_1_1_base_importer.html#ac81c9c578a539b88828a1e57a4f242cd">Importer</a> object hosting this loader. </td></tr>
     <tr><td class="paramname">pFile</td><td>Path of the file to be imported. </td></tr>
     <tr><td class="paramname">pIOHandler</td><td>IO-Handler used to open this and possible other files. </td></tr>
   </table>
@@ -2255,13 +2376,13 @@ there may be no meshes with 0 vertices or faces </li>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>file</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char **&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **&#160;</td>
           <td class="paramname"><em>tokens</em>, </td>
         </tr>
         <tr>
@@ -2333,13 +2454,13 @@ there may be no meshes with 0 vertices or faces </li>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>file</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char **&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **&#160;</td>
           <td class="paramname"><em>tokens</em>, </td>
         </tr>
         <tr>
@@ -2411,13 +2532,13 @@ there may be no meshes with 0 vertices or faces </li>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>file</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char **&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **&#160;</td>
           <td class="paramname"><em>tokens</em>, </td>
         </tr>
         <tr>
@@ -2496,6 +2617,8 @@ there may be no meshes with 0 vertices or faces </li>
 </div><div class="memdoc">
 <p >Will be called only by scale process when scaling is requested. </p>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00180">180</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
 </div>
 </div>
 <a id="a11b61c90b472d900d4f7e2d2f2219dac" name="a11b61c90b472d900d4f7e2d2f2219dac"></a>
@@ -2522,6 +2645,8 @@ there may be no meshes with 0 vertices or faces </li>
 </table>
 </div><div class="memdoc">
 <p >Will be called only by scale process when scaling is requested. </p>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_base_importer_8h_source.html#l00180">180</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
 
 </div>
 </div>
@@ -2550,6 +2675,8 @@ there may be no meshes with 0 vertices or faces </li>
 </div><div class="memdoc">
 <p >Will be called only by scale process when scaling is requested. </p>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_base_importer_8h_source.html#l00180">180</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
 </div>
 </div>
 <a id="ac076d9136745e898d43d9ea8f0d0c586" name="ac076d9136745e898d43d9ea8f0d0c586"></a>
@@ -2564,7 +2691,7 @@ there may be no meshes with 0 vertices or faces </li>
         <tr>
           <td class="memname">virtual void Assimp::BaseImporter::SetupProperties </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_assimp_1_1_importer.html">Importer</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_importer.html">Importer</a> *&#160;</td>
           <td class="paramname"><em>pImp</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2596,7 +2723,7 @@ there may be no meshes with 0 vertices or faces </li>
         <tr>
           <td class="memname">virtual void Assimp::BaseImporter::SetupProperties </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_assimp_1_1_importer.html">Importer</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_importer.html">Importer</a> *&#160;</td>
           <td class="paramname"><em>pImp</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2628,7 +2755,7 @@ there may be no meshes with 0 vertices or faces </li>
         <tr>
           <td class="memname">virtual void Assimp::BaseImporter::SetupProperties </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_assimp_1_1_importer.html">Importer</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_importer.html">Importer</a> *&#160;</td>
           <td class="paramname"><em>pImp</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2660,31 +2787,31 @@ there may be no meshes with 0 vertices or faces </li>
         <tr>
           <td class="memname">static bool Assimp::BaseImporter::SimpleExtensionCheck </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>ext0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>ext1</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>ext2</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>ext3</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -2726,31 +2853,31 @@ there may be no meshes with 0 vertices or faces </li>
         <tr>
           <td class="memname">static bool Assimp::BaseImporter::SimpleExtensionCheck </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>ext0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>ext1</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>ext2</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>ext3</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -2792,31 +2919,31 @@ there may be no meshes with 0 vertices or faces </li>
         <tr>
           <td class="memname">static bool Assimp::BaseImporter::SimpleExtensionCheck </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>pFile</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>ext0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>ext1</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>ext2</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>ext3</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -2871,7 +2998,7 @@ there may be no meshes with 0 vertices or faces </li>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a>&#160;</td>
-          <td class="paramname"><em>mode</em> = <code>FORBID_EMPTY</code>&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2921,7 +3048,7 @@ there may be no meshes with 0 vertices or faces </li>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a>&#160;</td>
-          <td class="paramname"><em>mode</em> = <code>FORBID_EMPTY</code>&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2971,7 +3098,7 @@ there may be no meshes with 0 vertices or faces </li>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7">TextFileMode</a>&#160;</td>
-          <td class="paramname"><em>mode</em> = <code>FORBID_EMPTY</code>&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="class_assimp_1_1_base_importer.html#a9fe6b47937a7c897536cac1513b65eb7a5912e4bf367be3ddde6bc6373d3c277d">FORBID_EMPTY</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2993,6 +3120,236 @@ there may be no meshes with 0 vertices or faces </li>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ab436d48560abfbe0d0e987a4a6749be0" name="ab436d48560abfbe0d0e987a4a6749be0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab436d48560abfbe0d0e987a4a6749be0">&#9670;&#160;</a></span>UpdateImporterScale() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assimp::BaseImporter::UpdateImporterScale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_assimp_1_1_importer.html">Importer</a> *&#160;</td>
+          <td class="paramname"><em>pImp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab436d48560abfbe0d0e987a4a6749be0" name="ab436d48560abfbe0d0e987a4a6749be0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab436d48560abfbe0d0e987a4a6749be0">&#9670;&#160;</a></span>UpdateImporterScale() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assimp::BaseImporter::UpdateImporterScale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_assimp_1_1_importer.html">Importer</a> *&#160;</td>
+          <td class="paramname"><em>pImp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab436d48560abfbe0d0e987a4a6749be0" name="ab436d48560abfbe0d0e987a4a6749be0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab436d48560abfbe0d0e987a4a6749be0">&#9670;&#160;</a></span>UpdateImporterScale() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assimp::BaseImporter::UpdateImporterScale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_assimp_1_1_importer.html">Importer</a> *&#160;</td>
+          <td class="paramname"><em>pImp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="ac81c9c578a539b88828a1e57a4f242cd" name="ac81c9c578a539b88828a1e57a4f242cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac81c9c578a539b88828a1e57a4f242cd">&#9670;&#160;</a></span>Importer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_assimp_1_1_importer.html">Importer</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00091">91</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af85971f80c5f45fef8c3a3395e4bbe14" name="af85971f80c5f45fef8c3a3395e4bbe14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af85971f80c5f45fef8c3a3395e4bbe14">&#9670;&#160;</a></span>fileScale</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Assimp::BaseImporter::fileScale = 1.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00193">193</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
+</div>
+</div>
+<a id="ad5bb9d0bff964c79b625c754b3adb04c" name="ad5bb9d0bff964c79b625c754b3adb04c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5bb9d0bff964c79b625c754b3adb04c">&#9670;&#160;</a></span>importerScale</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Assimp::BaseImporter::importerScale = 1.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00192">192</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
+</div>
+</div>
+<a id="abd2c9b86479c0c165e5d84d733e53373" name="abd2c9b86479c0c165e5d84d733e53373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd2c9b86479c0c165e5d84d733e53373">&#9670;&#160;</a></span>m_ErrorText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Assimp::BaseImporter::m_ErrorText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error description in case there was one. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00403">403</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
+</div>
+</div>
+<a id="a7bf84fb733992558272add378e7d9525" name="a7bf84fb733992558272add378e7d9525"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bf84fb733992558272add378e7d9525">&#9670;&#160;</a></span>m_Exception</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::exception_ptr Assimp::BaseImporter::m_Exception</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The exception, in case there was one. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00405">405</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
+</div>
+</div>
+<a id="ada6abefe7b87ef1f548b6a03dcbd941a" name="ada6abefe7b87ef1f548b6a03dcbd941a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada6abefe7b87ef1f548b6a03dcbd941a">&#9670;&#160;</a></span>m_progress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_assimp_1_1_progress_handler.html">ProgressHandler</a> * Assimp::BaseImporter::m_progress</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Currently set progress handler. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00407">407</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
 
 </div>
 </div>

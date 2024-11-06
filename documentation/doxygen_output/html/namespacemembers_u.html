@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -69,7 +72,7 @@ $(function() {
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all documented namespace members with links to the namespaces they belong to:</div>
+<div class="textblock">Here is a list of all namespace members with links to the namespace documentation for each member:</div>
 
 <h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
 <li>u16&#160;:&#160;<a class="el" href="group__gtc__type__precision.html#gae7a1571503f83d2264ddfa705a6b082a">glm</a></li>
@@ -140,14 +143,16 @@ $(function() {
 <li>u8vec2&#160;:&#160;<a class="el" href="group__ext__vector__uint2__sized.html#ga01e28d0272428f94d22ea6111f0112be">glm</a></li>
 <li>u8vec3&#160;:&#160;<a class="el" href="group__ext__vector__uint3__sized.html#gaa86b325e581afdc643495fbe428c1f1b">glm</a></li>
 <li>u8vec4&#160;:&#160;<a class="el" href="group__ext__vector__uint4__sized.html#ga6c8841fa492bd5b1078b171452fd6974">glm</a></li>
-<li>uaddCarry()&#160;:&#160;<a class="el" href="group__core__func__integer.html#ga69005cfca795a929dec5f08f952a6b54">glm</a></li>
-<li>uint16&#160;:&#160;<a class="el" href="group__ext__scalar__uint__sized.html#ga6201f5c504a50620708b19bae303c32a">glm</a></li>
+<li>uaddCarry()&#160;:&#160;<a class="el" href="namespaceglm.html#a541d30d3289d3a3da69edec69df11a04">glm</a></li>
+<li>UByteBuffer&#160;:&#160;<a class="el" href="namespace_assimp.html#a2eb4315da2826d0a25ee9fd2e45d1a59">Assimp</a></li>
+<li>uint&#160;:&#160;<a class="el" href="namespaceglm.html#a4fd29415871152bfb5abd588334147c8">glm</a></li>
+<li>uint16&#160;:&#160;<a class="el" href="namespaceglm_1_1detail.html#a47b2a7d006d187338e8031a352d1ce56">glm::detail</a>, <a class="el" href="group__ext__scalar__uint__sized.html#ga6201f5c504a50620708b19bae303c32a">glm</a></li>
 <li>uint16_t&#160;:&#160;<a class="el" href="group__gtc__type__precision.html#gac4eb4f43cae8129b00086dc234d3b8fc">glm</a></li>
-<li>uint32&#160;:&#160;<a class="el" href="group__ext__scalar__uint__sized.html#ga22033ef3f73efe1da8e437410adda3be">glm</a></li>
+<li>uint32&#160;:&#160;<a class="el" href="namespaceglm_1_1detail.html#ade6cfbf377022aaa391af8cd50489222">glm::detail</a>, <a class="el" href="group__ext__scalar__uint__sized.html#ga22033ef3f73efe1da8e437410adda3be">glm</a></li>
 <li>uint32_t&#160;:&#160;<a class="el" href="group__gtc__type__precision.html#ga822ca53a9ad412504532838906276a99">glm</a></li>
-<li>uint64&#160;:&#160;<a class="el" href="group__ext__scalar__uint__sized.html#gae3632bf9b37da66233d78930dd06378a">glm</a></li>
+<li>uint64&#160;:&#160;<a class="el" href="namespaceglm_1_1detail.html#ae110ab7b33b51165e9b99e03abe3947e">glm::detail</a>, <a class="el" href="group__ext__scalar__uint__sized.html#gae3632bf9b37da66233d78930dd06378a">glm</a></li>
 <li>uint64_t&#160;:&#160;<a class="el" href="group__gtc__type__precision.html#ga058f57c19e1befdcf12498944bd73e69">glm</a></li>
-<li>uint8&#160;:&#160;<a class="el" href="group__ext__scalar__uint__sized.html#ga536143d82147bb78849bfccffece8bff">glm</a></li>
+<li>uint8&#160;:&#160;<a class="el" href="namespaceglm_1_1detail.html#aef2588f97d090cc19fbbe0c74fe17c8f">glm::detail</a>, <a class="el" href="group__ext__scalar__uint__sized.html#ga536143d82147bb78849bfccffece8bff">glm</a></li>
 <li>uint8_t&#160;:&#160;<a class="el" href="group__gtc__type__precision.html#ga93adf6dd9803408f3e3aaf9dedda352b">glm</a></li>
 <li>uintBitsToFloat()&#160;:&#160;<a class="el" href="group__core__func__common.html#ga774bbb16abffb1644dea6a4cf0f08dac">glm</a></li>
 <li>umat2&#160;:&#160;<a class="el" href="group__ext__matrix__uint2x2.html#ga15021d10f3ef0ef12e3bd575554ce672">glm</a></li>
@@ -162,7 +167,8 @@ $(function() {
 <li>umat4x2&#160;:&#160;<a class="el" href="group__ext__matrix__uint4x2.html#ga00dcd00d36dedad6b61fad86e2948678">glm</a></li>
 <li>umat4x3&#160;:&#160;<a class="el" href="group__ext__matrix__uint4x3.html#ga596dbfbaecd8417786b0b4be2a049541">glm</a></li>
 <li>umat4x4&#160;:&#160;<a class="el" href="group__ext__matrix__uint4x4.html#gab7fae9952be9d68f0109c355d8215c61">glm</a></li>
-<li>umulExtended()&#160;:&#160;<a class="el" href="group__core__func__integer.html#gad22052a7e47d9408ad65ac675abe1663">glm</a></li>
+<li>umulExtended()&#160;:&#160;<a class="el" href="namespaceglm.html#a8d2521311c96c4b426be9857010b6b76">glm</a></li>
+<li>unformatted()&#160;:&#160;<a class="el" href="namespaceglm_1_1io.html#a0ac8ad223ac49d7455f367efa93a193b">glm::io</a></li>
 <li>unpackDouble2x32()&#160;:&#160;<a class="el" href="group__core__func__packing.html#ga5f4296dc5f12f0aa67ac05b8bb322483">glm</a></li>
 <li>unpackF2x11_1x10()&#160;:&#160;<a class="el" href="group__gtc__packing.html#ga8b9c7991eb021d95c778bf5c0b2f7824">glm</a></li>
 <li>unpackF3x9_E1x5()&#160;:&#160;<a class="el" href="group__gtc__packing.html#ga15d8845a31e1e55d493803d0c8cb5910">glm</a></li>
@@ -208,7 +214,7 @@ $(function() {
 <li>unProjectNO()&#160;:&#160;<a class="el" href="group__ext__matrix__projection.html#ga6214935f32f38e1dc13ba66135eb5784">glm</a></li>
 <li>unProjectZO()&#160;:&#160;<a class="el" href="group__ext__matrix__projection.html#ga9b3ec0d9aeea52bbcc8c1fc3fc9830e3">glm</a></li>
 <li>uround()&#160;:&#160;<a class="el" href="group__ext__scalar__common.html#ga9d915647ec33c4110946665f914d3abb">glm</a></li>
-<li>usubBorrow()&#160;:&#160;<a class="el" href="group__core__func__integer.html#gae369510d9076eb8b4cc1798299d3f520">glm</a></li>
+<li>usubBorrow()&#160;:&#160;<a class="el" href="namespaceglm.html#ac7a75ea277a43b855920597adeebb2e3">glm</a></li>
 <li>uvec1&#160;:&#160;<a class="el" href="group__ext__vector__uint1.html#gaa9af4d30c610a988a79d447a184b2103">glm</a></li>
 <li>uvec2&#160;:&#160;<a class="el" href="group__core__vector.html#ga1a8c36c37516ed6f9c13ee66186112ae">glm</a></li>
 <li>uvec3&#160;:&#160;<a class="el" href="group__core__vector.html#gad822584ecec49200b2757f2a2ea16e53">glm</a></li>

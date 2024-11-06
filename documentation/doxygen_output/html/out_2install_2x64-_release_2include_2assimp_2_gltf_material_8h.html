@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -82,60 +85,381 @@ $(function() {
 <p>glTF-specific material macros These will be made generic at some future date  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;assimp/material.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for GltfMaterial.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h__incl.png" border="0" usemap="#a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h" alt=""/></div>
+<map name="a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h" id="a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h">
+<area shape="rect" title="glTF&#45;specific material macros These will be made generic at some future date" alt="" coords="5,5,209,84"/>
+<area shape="rect" title=" " alt="" coords="45,132,169,160"/>
+</map>
+</div>
 </div>
 <p><a href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a8030b47ec2342a1ecd75a4044fe73b8c"><td class="memItemLeft" align="right" valign="top"><a id="a8030b47ec2342a1ecd75a4044fe73b8c" name="a8030b47ec2342a1ecd75a4044fe73b8c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AI_MATKEY_GLTF_PBRMETALLICROUGHNESS_METALLICROUGHNESS_TEXTURE</b>&#160;&#160;&#160;<a class="el" href="thirdparty_2assimp_2include_2assimp_2_material_8h.html#a7dd415ff703a2cc53d1c22ddbbd7dde0a435cc5adea69c96c0c3205a2bde21cce">aiTextureType_UNKNOWN</a>, 0</td></tr>
+<tr class="memitem:a8030b47ec2342a1ecd75a4044fe73b8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a8030b47ec2342a1ecd75a4044fe73b8c">AI_MATKEY_GLTF_PBRMETALLICROUGHNESS_METALLICROUGHNESS_TEXTURE</a>&#160;&#160;&#160;<a class="el" href="thirdparty_2assimp_2include_2assimp_2_material_8h.html#a7dd415ff703a2cc53d1c22ddbbd7dde0a435cc5adea69c96c0c3205a2bde21cce">aiTextureType_UNKNOWN</a>, 0</td></tr>
 <tr class="separator:a8030b47ec2342a1ecd75a4044fe73b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1e95297f0f2f2ea9995dee2e337473d"><td class="memItemLeft" align="right" valign="top"><a id="aa1e95297f0f2f2ea9995dee2e337473d" name="aa1e95297f0f2f2ea9995dee2e337473d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AI_MATKEY_GLTF_ALPHAMODE</b>&#160;&#160;&#160;&quot;$mat.gltf.alphaMode&quot;, 0, 0</td></tr>
+<tr class="memitem:aa1e95297f0f2f2ea9995dee2e337473d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#aa1e95297f0f2f2ea9995dee2e337473d">AI_MATKEY_GLTF_ALPHAMODE</a>&#160;&#160;&#160;&quot;$mat.gltf.alphaMode&quot;, 0, 0</td></tr>
 <tr class="separator:aa1e95297f0f2f2ea9995dee2e337473d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adda58f37ebbaaa81ef3a20b05be6d8e0"><td class="memItemLeft" align="right" valign="top"><a id="adda58f37ebbaaa81ef3a20b05be6d8e0" name="adda58f37ebbaaa81ef3a20b05be6d8e0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AI_MATKEY_GLTF_ALPHACUTOFF</b>&#160;&#160;&#160;&quot;$mat.gltf.alphaCutoff&quot;, 0, 0</td></tr>
+<tr class="memitem:adda58f37ebbaaa81ef3a20b05be6d8e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#adda58f37ebbaaa81ef3a20b05be6d8e0">AI_MATKEY_GLTF_ALPHACUTOFF</a>&#160;&#160;&#160;&quot;$mat.gltf.alphaCutoff&quot;, 0, 0</td></tr>
 <tr class="separator:adda58f37ebbaaa81ef3a20b05be6d8e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b44ca26faf1c3010e838f4a34e0e25a"><td class="memItemLeft" align="right" valign="top"><a id="a2b44ca26faf1c3010e838f4a34e0e25a" name="a2b44ca26faf1c3010e838f4a34e0e25a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>_AI_MATKEY_GLTF_MAPPINGNAME_BASE</b>&#160;&#160;&#160;&quot;$tex.mappingname&quot;</td></tr>
+<tr class="memitem:a2b44ca26faf1c3010e838f4a34e0e25a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a2b44ca26faf1c3010e838f4a34e0e25a">_AI_MATKEY_GLTF_MAPPINGNAME_BASE</a>&#160;&#160;&#160;&quot;$tex.mappingname&quot;</td></tr>
 <tr class="separator:a2b44ca26faf1c3010e838f4a34e0e25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf2a0d14eb7a9ef14c0b737bddd41e9d"><td class="memItemLeft" align="right" valign="top"><a id="adf2a0d14eb7a9ef14c0b737bddd41e9d" name="adf2a0d14eb7a9ef14c0b737bddd41e9d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>_AI_MATKEY_GLTF_MAPPINGID_BASE</b>&#160;&#160;&#160;&quot;$tex.mappingid&quot;</td></tr>
+<tr class="memitem:adf2a0d14eb7a9ef14c0b737bddd41e9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#adf2a0d14eb7a9ef14c0b737bddd41e9d">_AI_MATKEY_GLTF_MAPPINGID_BASE</a>&#160;&#160;&#160;&quot;$tex.mappingid&quot;</td></tr>
 <tr class="separator:adf2a0d14eb7a9ef14c0b737bddd41e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94642b4e663dd7bdf9d55f8e0cf5857d"><td class="memItemLeft" align="right" valign="top"><a id="a94642b4e663dd7bdf9d55f8e0cf5857d" name="a94642b4e663dd7bdf9d55f8e0cf5857d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>_AI_MATKEY_GLTF_MAPPINGFILTER_MAG_BASE</b>&#160;&#160;&#160;&quot;$tex.mappingfiltermag&quot;</td></tr>
+<tr class="memitem:a94642b4e663dd7bdf9d55f8e0cf5857d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a94642b4e663dd7bdf9d55f8e0cf5857d">_AI_MATKEY_GLTF_MAPPINGFILTER_MAG_BASE</a>&#160;&#160;&#160;&quot;$tex.mappingfiltermag&quot;</td></tr>
 <tr class="separator:a94642b4e663dd7bdf9d55f8e0cf5857d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae21c07f167facbff3dfd9b00278b2e75"><td class="memItemLeft" align="right" valign="top"><a id="ae21c07f167facbff3dfd9b00278b2e75" name="ae21c07f167facbff3dfd9b00278b2e75"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>_AI_MATKEY_GLTF_MAPPINGFILTER_MIN_BASE</b>&#160;&#160;&#160;&quot;$tex.mappingfiltermin&quot;</td></tr>
+<tr class="memitem:ae21c07f167facbff3dfd9b00278b2e75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#ae21c07f167facbff3dfd9b00278b2e75">_AI_MATKEY_GLTF_MAPPINGFILTER_MIN_BASE</a>&#160;&#160;&#160;&quot;$tex.mappingfiltermin&quot;</td></tr>
 <tr class="separator:ae21c07f167facbff3dfd9b00278b2e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a568eab3f7f4421684c3419a51bc5c9fa"><td class="memItemLeft" align="right" valign="top"><a id="a568eab3f7f4421684c3419a51bc5c9fa" name="a568eab3f7f4421684c3419a51bc5c9fa"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>_AI_MATKEY_GLTF_SCALE_BASE</b>&#160;&#160;&#160;&quot;$tex.scale&quot;</td></tr>
+<tr class="memitem:a568eab3f7f4421684c3419a51bc5c9fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a568eab3f7f4421684c3419a51bc5c9fa">_AI_MATKEY_GLTF_SCALE_BASE</a>&#160;&#160;&#160;&quot;$tex.scale&quot;</td></tr>
 <tr class="separator:a568eab3f7f4421684c3419a51bc5c9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf3b7556372fc968e5bb10ce11f7822b"><td class="memItemLeft" align="right" valign="top"><a id="adf3b7556372fc968e5bb10ce11f7822b" name="adf3b7556372fc968e5bb10ce11f7822b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>_AI_MATKEY_GLTF_STRENGTH_BASE</b>&#160;&#160;&#160;&quot;$tex.strength&quot;</td></tr>
+<tr class="memitem:adf3b7556372fc968e5bb10ce11f7822b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#adf3b7556372fc968e5bb10ce11f7822b">_AI_MATKEY_GLTF_STRENGTH_BASE</a>&#160;&#160;&#160;&quot;$tex.strength&quot;</td></tr>
 <tr class="separator:adf3b7556372fc968e5bb10ce11f7822b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a255fa52a83d841db61feb7d37e3b1b76"><td class="memItemLeft" align="right" valign="top"><a id="a255fa52a83d841db61feb7d37e3b1b76" name="a255fa52a83d841db61feb7d37e3b1b76"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AI_MATKEY_GLTF_MAPPINGNAME</b>(type,  N)&#160;&#160;&#160;_AI_MATKEY_GLTF_MAPPINGNAME_BASE, type, N</td></tr>
+<tr class="memitem:a255fa52a83d841db61feb7d37e3b1b76"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a255fa52a83d841db61feb7d37e3b1b76">AI_MATKEY_GLTF_MAPPINGNAME</a>(type,  N)&#160;&#160;&#160;<a class="el" href="include_2assimp_2_gltf_material_8h.html#a2b44ca26faf1c3010e838f4a34e0e25a">_AI_MATKEY_GLTF_MAPPINGNAME_BASE</a>, type, N</td></tr>
 <tr class="separator:a255fa52a83d841db61feb7d37e3b1b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a937611dece60c3928311aadaf6002d34"><td class="memItemLeft" align="right" valign="top"><a id="a937611dece60c3928311aadaf6002d34" name="a937611dece60c3928311aadaf6002d34"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AI_MATKEY_GLTF_MAPPINGID</b>(type,  N)&#160;&#160;&#160;_AI_MATKEY_GLTF_MAPPINGID_BASE, type, N</td></tr>
+<tr class="memitem:a937611dece60c3928311aadaf6002d34"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a937611dece60c3928311aadaf6002d34">AI_MATKEY_GLTF_MAPPINGID</a>(type,  N)&#160;&#160;&#160;<a class="el" href="include_2assimp_2_gltf_material_8h.html#adf2a0d14eb7a9ef14c0b737bddd41e9d">_AI_MATKEY_GLTF_MAPPINGID_BASE</a>, type, N</td></tr>
 <tr class="separator:a937611dece60c3928311aadaf6002d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a36fa736e06cbec99b2609278563a2f"><td class="memItemLeft" align="right" valign="top"><a id="a2a36fa736e06cbec99b2609278563a2f" name="a2a36fa736e06cbec99b2609278563a2f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AI_MATKEY_GLTF_MAPPINGFILTER_MAG</b>(type,  N)&#160;&#160;&#160;_AI_MATKEY_GLTF_MAPPINGFILTER_MAG_BASE, type, N</td></tr>
+<tr class="memitem:a2a36fa736e06cbec99b2609278563a2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a2a36fa736e06cbec99b2609278563a2f">AI_MATKEY_GLTF_MAPPINGFILTER_MAG</a>(type,  N)&#160;&#160;&#160;<a class="el" href="include_2assimp_2_gltf_material_8h.html#a94642b4e663dd7bdf9d55f8e0cf5857d">_AI_MATKEY_GLTF_MAPPINGFILTER_MAG_BASE</a>, type, N</td></tr>
 <tr class="separator:a2a36fa736e06cbec99b2609278563a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3484e40af3630963bb880fbe16e5a93"><td class="memItemLeft" align="right" valign="top"><a id="ae3484e40af3630963bb880fbe16e5a93" name="ae3484e40af3630963bb880fbe16e5a93"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AI_MATKEY_GLTF_MAPPINGFILTER_MIN</b>(type,  N)&#160;&#160;&#160;_AI_MATKEY_GLTF_MAPPINGFILTER_MIN_BASE, type, N</td></tr>
+<tr class="memitem:ae3484e40af3630963bb880fbe16e5a93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#ae3484e40af3630963bb880fbe16e5a93">AI_MATKEY_GLTF_MAPPINGFILTER_MIN</a>(type,  N)&#160;&#160;&#160;<a class="el" href="include_2assimp_2_gltf_material_8h.html#ae21c07f167facbff3dfd9b00278b2e75">_AI_MATKEY_GLTF_MAPPINGFILTER_MIN_BASE</a>, type, N</td></tr>
 <tr class="separator:ae3484e40af3630963bb880fbe16e5a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85b168e8b008d310b58898105c601ee3"><td class="memItemLeft" align="right" valign="top"><a id="a85b168e8b008d310b58898105c601ee3" name="a85b168e8b008d310b58898105c601ee3"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AI_MATKEY_GLTF_TEXTURE_SCALE</b>(type,  N)&#160;&#160;&#160;_AI_MATKEY_GLTF_SCALE_BASE, type, N</td></tr>
+<tr class="memitem:a85b168e8b008d310b58898105c601ee3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a85b168e8b008d310b58898105c601ee3">AI_MATKEY_GLTF_TEXTURE_SCALE</a>(type,  N)&#160;&#160;&#160;<a class="el" href="include_2assimp_2_gltf_material_8h.html#a568eab3f7f4421684c3419a51bc5c9fa">_AI_MATKEY_GLTF_SCALE_BASE</a>, type, N</td></tr>
 <tr class="separator:a85b168e8b008d310b58898105c601ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7215ce7e32adebb36c446b5da0fa4482"><td class="memItemLeft" align="right" valign="top"><a id="a7215ce7e32adebb36c446b5da0fa4482" name="a7215ce7e32adebb36c446b5da0fa4482"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AI_MATKEY_GLTF_TEXTURE_STRENGTH</b>(type,  N)&#160;&#160;&#160;_AI_MATKEY_GLTF_STRENGTH_BASE, type, N</td></tr>
+<tr class="memitem:a7215ce7e32adebb36c446b5da0fa4482"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a7215ce7e32adebb36c446b5da0fa4482">AI_MATKEY_GLTF_TEXTURE_STRENGTH</a>(type,  N)&#160;&#160;&#160;<a class="el" href="include_2assimp_2_gltf_material_8h.html#adf3b7556372fc968e5bb10ce11f7822b">_AI_MATKEY_GLTF_STRENGTH_BASE</a>, type, N</td></tr>
 <tr class="separator:a7215ce7e32adebb36c446b5da0fa4482"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >glTF-specific material macros These will be made generic at some future date </p>
-</div></div><!-- contents -->
+
+<p class="definition">Definition in file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a94642b4e663dd7bdf9d55f8e0cf5857d" name="a94642b4e663dd7bdf9d55f8e0cf5857d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94642b4e663dd7bdf9d55f8e0cf5857d">&#9670;&#160;</a></span>_AI_MATKEY_GLTF_MAPPINGFILTER_MAG_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _AI_MATKEY_GLTF_MAPPINGFILTER_MAG_BASE&#160;&#160;&#160;&quot;$tex.mappingfiltermag&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00062">62</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+<a id="ae21c07f167facbff3dfd9b00278b2e75" name="ae21c07f167facbff3dfd9b00278b2e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae21c07f167facbff3dfd9b00278b2e75">&#9670;&#160;</a></span>_AI_MATKEY_GLTF_MAPPINGFILTER_MIN_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _AI_MATKEY_GLTF_MAPPINGFILTER_MIN_BASE&#160;&#160;&#160;&quot;$tex.mappingfiltermin&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00063">63</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+<a id="adf2a0d14eb7a9ef14c0b737bddd41e9d" name="adf2a0d14eb7a9ef14c0b737bddd41e9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf2a0d14eb7a9ef14c0b737bddd41e9d">&#9670;&#160;</a></span>_AI_MATKEY_GLTF_MAPPINGID_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _AI_MATKEY_GLTF_MAPPINGID_BASE&#160;&#160;&#160;&quot;$tex.mappingid&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00061">61</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+<a id="a2b44ca26faf1c3010e838f4a34e0e25a" name="a2b44ca26faf1c3010e838f4a34e0e25a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b44ca26faf1c3010e838f4a34e0e25a">&#9670;&#160;</a></span>_AI_MATKEY_GLTF_MAPPINGNAME_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _AI_MATKEY_GLTF_MAPPINGNAME_BASE&#160;&#160;&#160;&quot;$tex.mappingname&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00060">60</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+<a id="a568eab3f7f4421684c3419a51bc5c9fa" name="a568eab3f7f4421684c3419a51bc5c9fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a568eab3f7f4421684c3419a51bc5c9fa">&#9670;&#160;</a></span>_AI_MATKEY_GLTF_SCALE_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _AI_MATKEY_GLTF_SCALE_BASE&#160;&#160;&#160;&quot;$tex.scale&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00064">64</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+<a id="adf3b7556372fc968e5bb10ce11f7822b" name="adf3b7556372fc968e5bb10ce11f7822b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf3b7556372fc968e5bb10ce11f7822b">&#9670;&#160;</a></span>_AI_MATKEY_GLTF_STRENGTH_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _AI_MATKEY_GLTF_STRENGTH_BASE&#160;&#160;&#160;&quot;$tex.strength&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00065">65</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+<a id="adda58f37ebbaaa81ef3a20b05be6d8e0" name="adda58f37ebbaaa81ef3a20b05be6d8e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adda58f37ebbaaa81ef3a20b05be6d8e0">&#9670;&#160;</a></span>AI_MATKEY_GLTF_ALPHACUTOFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AI_MATKEY_GLTF_ALPHACUTOFF&#160;&#160;&#160;&quot;$mat.gltf.alphaCutoff&quot;, 0, 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00058">58</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+<a id="aa1e95297f0f2f2ea9995dee2e337473d" name="aa1e95297f0f2f2ea9995dee2e337473d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e95297f0f2f2ea9995dee2e337473d">&#9670;&#160;</a></span>AI_MATKEY_GLTF_ALPHAMODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AI_MATKEY_GLTF_ALPHAMODE&#160;&#160;&#160;&quot;$mat.gltf.alphaMode&quot;, 0, 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00057">57</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+<a id="a2a36fa736e06cbec99b2609278563a2f" name="a2a36fa736e06cbec99b2609278563a2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a36fa736e06cbec99b2609278563a2f">&#9670;&#160;</a></span>AI_MATKEY_GLTF_MAPPINGFILTER_MAG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AI_MATKEY_GLTF_MAPPINGFILTER_MAG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">N&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="include_2assimp_2_gltf_material_8h.html#a94642b4e663dd7bdf9d55f8e0cf5857d">_AI_MATKEY_GLTF_MAPPINGFILTER_MAG_BASE</a>, type, N</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00069">69</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+<a id="ae3484e40af3630963bb880fbe16e5a93" name="ae3484e40af3630963bb880fbe16e5a93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3484e40af3630963bb880fbe16e5a93">&#9670;&#160;</a></span>AI_MATKEY_GLTF_MAPPINGFILTER_MIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AI_MATKEY_GLTF_MAPPINGFILTER_MIN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">N&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="include_2assimp_2_gltf_material_8h.html#ae21c07f167facbff3dfd9b00278b2e75">_AI_MATKEY_GLTF_MAPPINGFILTER_MIN_BASE</a>, type, N</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00070">70</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+<a id="a937611dece60c3928311aadaf6002d34" name="a937611dece60c3928311aadaf6002d34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a937611dece60c3928311aadaf6002d34">&#9670;&#160;</a></span>AI_MATKEY_GLTF_MAPPINGID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AI_MATKEY_GLTF_MAPPINGID</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">N&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="include_2assimp_2_gltf_material_8h.html#adf2a0d14eb7a9ef14c0b737bddd41e9d">_AI_MATKEY_GLTF_MAPPINGID_BASE</a>, type, N</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00068">68</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+<a id="a255fa52a83d841db61feb7d37e3b1b76" name="a255fa52a83d841db61feb7d37e3b1b76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a255fa52a83d841db61feb7d37e3b1b76">&#9670;&#160;</a></span>AI_MATKEY_GLTF_MAPPINGNAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AI_MATKEY_GLTF_MAPPINGNAME</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">N&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="include_2assimp_2_gltf_material_8h.html#a2b44ca26faf1c3010e838f4a34e0e25a">_AI_MATKEY_GLTF_MAPPINGNAME_BASE</a>, type, N</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00067">67</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+<a id="a8030b47ec2342a1ecd75a4044fe73b8c" name="a8030b47ec2342a1ecd75a4044fe73b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8030b47ec2342a1ecd75a4044fe73b8c">&#9670;&#160;</a></span>AI_MATKEY_GLTF_PBRMETALLICROUGHNESS_METALLICROUGHNESS_TEXTURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AI_MATKEY_GLTF_PBRMETALLICROUGHNESS_METALLICROUGHNESS_TEXTURE&#160;&#160;&#160;<a class="el" href="thirdparty_2assimp_2include_2assimp_2_material_8h.html#a7dd415ff703a2cc53d1c22ddbbd7dde0a435cc5adea69c96c0c3205a2bde21cce">aiTextureType_UNKNOWN</a>, 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00056">56</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+<a id="a85b168e8b008d310b58898105c601ee3" name="a85b168e8b008d310b58898105c601ee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85b168e8b008d310b58898105c601ee3">&#9670;&#160;</a></span>AI_MATKEY_GLTF_TEXTURE_SCALE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AI_MATKEY_GLTF_TEXTURE_SCALE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">N&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="include_2assimp_2_gltf_material_8h.html#a568eab3f7f4421684c3419a51bc5c9fa">_AI_MATKEY_GLTF_SCALE_BASE</a>, type, N</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00071">71</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+<a id="a7215ce7e32adebb36c446b5da0fa4482" name="a7215ce7e32adebb36c446b5da0fa4482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7215ce7e32adebb36c446b5da0fa4482">&#9670;&#160;</a></span>AI_MATKEY_GLTF_TEXTURE_STRENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AI_MATKEY_GLTF_TEXTURE_STRENGTH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">N&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="include_2assimp_2_gltf_material_8h.html#adf3b7556372fc968e5bb10ce11f7822b">_AI_MATKEY_GLTF_STRENGTH_BASE</a>, type, N</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html#l00072">72</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h_source.html">GltfMaterial.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5

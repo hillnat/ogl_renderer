@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -76,59 +79,59 @@ $(function() {
   <div class="headertitle"><div class="title">_swizzle_func.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="__swizzle__func_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, CONST, A, B)   \</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a90716a40844075cb659ac2df96df47b9">    3</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, CONST, A, B)   \</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">    GLM_FUNC_QUALIFIER vec&lt;2, T, Q&gt; A ## B() CONST                          \</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">    {                                                   \</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">        return vec&lt;2, T, Q&gt;(this-&gt;A, this-&gt;B);          \</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">    }</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, CONST, A, B, C)        \</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#ac2ddc49b43e15405965cb527341681d4">    9</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, CONST, A, B, C)        \</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">    GLM_FUNC_QUALIFIER vec&lt;3, T, Q&gt; A ## B ## C() CONST                         \</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">    {                                                           \</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">        return vec&lt;3, T, Q&gt;(this-&gt;A, this-&gt;B, this-&gt;C);         \</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">    }</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, CONST, A, B, C, D)                 \</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a53d227bc05ad386a43110b5db4352965">   15</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, CONST, A, B, C, D)                 \</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">    GLM_FUNC_QUALIFIER vec&lt;4, T, Q&gt; A ## B ## C ## D() CONST                                    \</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">    {                                                                       \</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">        return vec&lt;4, T, Q&gt;(this-&gt;A, this-&gt;B, this-&gt;C, this-&gt;D);            \</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">    }</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC2_ENTRY_DEF(T, P, L, CONST, A, B)    \</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#aaf5847f48835e17fef8600da62ea2b4c">   21</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC2_ENTRY_DEF(T, P, L, CONST, A, B)    \</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">    template&lt;typename T&gt;                                        \</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">    GLM_FUNC_QUALIFIER vec&lt;L, T, Q&gt; vec&lt;L, T, Q&gt;::A ## B() CONST                    \</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">    {                                                           \</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">        return vec&lt;2, T, Q&gt;(this-&gt;A, this-&gt;B);                  \</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">    }</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC3_ENTRY_DEF(T, P, L, CONST, A, B, C)     \</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#ab3a53563b96317e54ff45b9b17bdc13d">   28</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC3_ENTRY_DEF(T, P, L, CONST, A, B, C)     \</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">    template&lt;typename T&gt;                                            \</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">    GLM_FUNC_QUALIFIER vec&lt;3, T, Q&gt; vec&lt;L, T, Q&gt;::A ## B ## C() CONST                   \</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">    {                                                               \</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">        return vec&lt;3, T, Q&gt;(this-&gt;A, this-&gt;B, this-&gt;C);             \</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">    }</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC4_ENTRY_DEF(T, P, L, CONST, A, B, C, D)      \</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a130d7b4e772f2f6b8a713beecf413390">   35</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC4_ENTRY_DEF(T, P, L, CONST, A, B, C, D)      \</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">    template&lt;typename T&gt;                                                \</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">    GLM_FUNC_QUALIFIER vec&lt;4, T, Q&gt; vec&lt;L, T, Q&gt;::A ## B ## C ## D() CONST                  \</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">    {                                                                   \</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">        return vec&lt;4, T, Q&gt;(this-&gt;A, this-&gt;B, this-&gt;C, this-&gt;D);        \</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">    }</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#define GLM_MUTABLE</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a4feeb5a0a65101478fbc9939fbfcc81c">   42</a></span><span class="preprocessor">#define GLM_MUTABLE</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF2_FROM_VEC2_SWIZZLE(T, P, A, B) \</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a103640f842ba8cda1d79c2f7ae27273a">   44</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF2_FROM_VEC2_SWIZZLE(T, P, A, B) \</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, 2, GLM_MUTABLE, A, B) \</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, 2, GLM_MUTABLE, B, A)</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF_FROM_VEC2(T, P) \</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a5b76e09248f75b42e35237709d208a45">   48</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF_FROM_VEC2(T, P) \</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">    GLM_SWIZZLE_GEN_REF2_FROM_VEC2_SWIZZLE(T, P, x, y) \</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">    GLM_SWIZZLE_GEN_REF2_FROM_VEC2_SWIZZLE(T, P, r, g) \</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">    GLM_SWIZZLE_GEN_REF2_FROM_VEC2_SWIZZLE(T, P, s, t)</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF2_FROM_VEC3_SWIZZLE(T, P, A, B, C) \</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#aef8cdbd0b5ef764909937d1089d8a9fc">   53</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF2_FROM_VEC3_SWIZZLE(T, P, A, B, C) \</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, GLM_MUTABLE, A, B) \</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, GLM_MUTABLE, A, C) \</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, GLM_MUTABLE, B, A) \</span></div>
@@ -136,7 +139,7 @@ $(function() {
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, GLM_MUTABLE, C, A) \</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, GLM_MUTABLE, C, B)</span></div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF3_FROM_VEC3_SWIZZLE(T, P, A, B, C) \</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a5475357ed8f82d5863db91e44ba7a94b">   61</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF3_FROM_VEC3_SWIZZLE(T, P, A, B, C) \</span></div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, GLM_MUTABLE, A, B, C) \</span></div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, GLM_MUTABLE, A, C, B) \</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, GLM_MUTABLE, B, A, C) \</span></div>
@@ -144,16 +147,16 @@ $(function() {
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, GLM_MUTABLE, C, A, B) \</span></div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, GLM_MUTABLE, C, B, A)</span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF_FROM_VEC3_COMP(T, P, A, B, C) \</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a6237edead5a4339e6cf75c427f34f1a4">   69</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF_FROM_VEC3_COMP(T, P, A, B, C) \</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">    GLM_SWIZZLE_GEN_REF3_FROM_VEC3_SWIZZLE(T, P, A, B, C) \</span></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">    GLM_SWIZZLE_GEN_REF2_FROM_VEC3_SWIZZLE(T, P, A, B, C)</span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF_FROM_VEC3(T, P) \</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a689e09db6ab8f1b4bb33ed0a15185d71">   73</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF_FROM_VEC3(T, P) \</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">    GLM_SWIZZLE_GEN_REF_FROM_VEC3_COMP(T, P, x, y, z) \</span></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">    GLM_SWIZZLE_GEN_REF_FROM_VEC3_COMP(T, P, r, g, b) \</span></div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">    GLM_SWIZZLE_GEN_REF_FROM_VEC3_COMP(T, P, s, t, p)</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF2_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a62fd0b6bc23328a64d0c895173a42949">   78</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF2_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, GLM_MUTABLE, A, B) \</span></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, GLM_MUTABLE, A, C) \</span></div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, GLM_MUTABLE, A, D) \</span></div>
@@ -167,7 +170,7 @@ $(function() {
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, GLM_MUTABLE, D, B) \</span></div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, GLM_MUTABLE, D, C)</span></div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF3_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#afb0bb247c45f190d71ce11de399f4bae">   92</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF3_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, , A, B, C) \</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, , A, B, D) \</span></div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, , A, C, B) \</span></div>
@@ -193,7 +196,7 @@ $(function() {
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, , D, C, A) \</span></div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, , D, C, B)</span></div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF4_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a6b3142d281b8fd5ef91ae37c13ec937f">  118</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF4_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, , A, C, B, D) \</span></div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, , A, C, D, B) \</span></div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, , A, D, B, C) \</span></div>
@@ -219,23 +222,23 @@ $(function() {
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, , D, B, A, C) \</span></div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, , D, B, C, A)</span></div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF_FROM_VEC4_COMP(T, P, A, B, C, D) \</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a82447ddb4e47121268784f4c56a2bb11">  144</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF_FROM_VEC4_COMP(T, P, A, B, C, D) \</span></div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="preprocessor">    GLM_SWIZZLE_GEN_REF2_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">    GLM_SWIZZLE_GEN_REF3_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="preprocessor">    GLM_SWIZZLE_GEN_REF4_FROM_VEC4_SWIZZLE(T, P, A, B, C, D)</span></div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF_FROM_VEC4(T, P) \</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a4ccd30ba436112c863d7eb8a647ae2ad">  149</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_REF_FROM_VEC4(T, P) \</span></div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">    GLM_SWIZZLE_GEN_REF_FROM_VEC4_COMP(T, P, x, y, z, w) \</span></div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">    GLM_SWIZZLE_GEN_REF_FROM_VEC4_COMP(T, P, r, g, b, a) \</span></div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="preprocessor">    GLM_SWIZZLE_GEN_REF_FROM_VEC4_COMP(T, P, s, t, p, q)</span></div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC2_FROM_VEC2_SWIZZLE(T, P, A, B) \</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a6d6d1d74109800c97583ba833c734cb5">  154</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC2_FROM_VEC2_SWIZZLE(T, P, A, B) \</span></div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, const, A, A) \</span></div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, const, A, B) \</span></div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, const, B, A) \</span></div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, const, B, B)</span></div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC3_FROM_VEC2_SWIZZLE(T, P, A, B) \</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#afd0e5bf84427b82e6416d25626d6a9b8">  160</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC3_FROM_VEC2_SWIZZLE(T, P, A, B) \</span></div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, A, A, A) \</span></div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, A, A, B) \</span></div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, A, B, A) \</span></div>
@@ -245,7 +248,7 @@ $(function() {
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, B, B, A) \</span></div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, B, B, B)</span></div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC4_FROM_VEC2_SWIZZLE(T, P, A, B) \</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a81b434975228ac8e5d001555c1dd493b">  170</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC4_FROM_VEC2_SWIZZLE(T, P, A, B) \</span></div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, A, A, A, A) \</span></div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, A, A, A, B) \</span></div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, A, A, B, A) \</span></div>
@@ -263,17 +266,17 @@ $(function() {
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, B, B, B, A) \</span></div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, B, B, B, B)</span></div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC_FROM_VEC2_COMP(T, P, A, B) \</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#add277da756ef5afefec3ab6bff039755">  188</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC_FROM_VEC2_COMP(T, P, A, B) \</span></div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_FROM_VEC2_SWIZZLE(T, P, A, B) \</span></div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_FROM_VEC2_SWIZZLE(T, P, A, B) \</span></div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_FROM_VEC2_SWIZZLE(T, P, A, B)</span></div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC_FROM_VEC2(T, P)         \</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#aeb327b34df01b2ae42883615a0674afd">  193</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC_FROM_VEC2(T, P)         \</span></div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC_FROM_VEC2_COMP(T, P, x, y)  \</span></div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC_FROM_VEC2_COMP(T, P, r, g)  \</span></div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC_FROM_VEC2_COMP(T, P, s, t)</span></div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC2_FROM_VEC3_SWIZZLE(T, P, A, B, C) \</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#acc0e5d12b8cbad8b39511fa29b70458e">  198</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC2_FROM_VEC3_SWIZZLE(T, P, A, B, C) \</span></div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, const, A, A) \</span></div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, const, A, B) \</span></div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, const, A, C) \</span></div>
@@ -284,7 +287,7 @@ $(function() {
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, const, C, B) \</span></div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, const, C, C)</span></div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC3_FROM_VEC3_SWIZZLE(T, P, A, B, C) \</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#aa3602433a418e7ee8dbf97332eb94812">  209</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC3_FROM_VEC3_SWIZZLE(T, P, A, B, C) \</span></div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, A, A, A) \</span></div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, A, A, B) \</span></div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, A, A, C) \</span></div>
@@ -313,7 +316,7 @@ $(function() {
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, C, C, B) \</span></div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, C, C, C)</span></div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC4_FROM_VEC3_SWIZZLE(T, P, A, B, C) \</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a18bdd12a80387e16c5e027e7dc3847d5">  238</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC4_FROM_VEC3_SWIZZLE(T, P, A, B, C) \</span></div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, A, A, A, A) \</span></div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, A, A, A, B) \</span></div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, A, A, A, C) \</span></div>
@@ -396,17 +399,17 @@ $(function() {
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, C, C, C, B) \</span></div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, C, C, C, C)</span></div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC_FROM_VEC3_COMP(T, P, A, B, C) \</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a1c46c670c8c5996dfed3e20526fd4985">  321</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC_FROM_VEC3_COMP(T, P, A, B, C) \</span></div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_FROM_VEC3_SWIZZLE(T, P, A, B, C) \</span></div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_FROM_VEC3_SWIZZLE(T, P, A, B, C) \</span></div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_FROM_VEC3_SWIZZLE(T, P, A, B, C)</span></div>
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC_FROM_VEC3(T, P) \</span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a1504fbd23db8599edffb2e24c4e7eb9b">  326</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC_FROM_VEC3(T, P) \</span></div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC_FROM_VEC3_COMP(T, P, x, y, z) \</span></div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC_FROM_VEC3_COMP(T, P, r, g, b) \</span></div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC_FROM_VEC3_COMP(T, P, s, t, p)</span></div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC2_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a78976a20b87ddc4a6aef1ee6ceaff07b">  331</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC2_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, const, A, A) \</span></div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, const, A, B) \</span></div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, const, A, C) \</span></div>
@@ -424,7 +427,7 @@ $(function() {
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, const, D, C) \</span></div>
 <div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_ENTRY(T, P, const, D, D)</span></div>
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC3_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#aa360360e50bf39b1572922af167cba6b">  349</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC3_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, A, A, A) \</span></div>
 <div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, A, A, B) \</span></div>
 <div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, A, A, C) \</span></div>
@@ -490,7 +493,7 @@ $(function() {
 <div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, D, D, C) \</span></div>
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_ENTRY(T, P, const, D, D, D)</span></div>
 <div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span> </div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC4_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a36e53eb98f1ac59f440f7affbc8d874d">  415</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC4_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, A, A, A, A) \</span></div>
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, A, A, A, B) \</span></div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, A, A, A, C) \</span></div>
@@ -748,12 +751,12 @@ $(function() {
 <div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, D, D, D, C) \</span></div>
 <div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_ENTRY(T, P, const, D, D, D, D)</span></div>
 <div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span> </div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC_FROM_VEC4_COMP(T, P, A, B, C, D) \</span></div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a78f285ac9dcf037b9a0f426f98bf58c5">  673</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC_FROM_VEC4_COMP(T, P, A, B, C, D) \</span></div>
 <div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC2_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
 <div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC3_FROM_VEC4_SWIZZLE(T, P, A, B, C, D) \</span></div>
 <div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC4_FROM_VEC4_SWIZZLE(T, P, A, B, C, D)</span></div>
 <div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span> </div>
-<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC_FROM_VEC4(T, P) \</span></div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno"><a class="line" href="__swizzle__func_8hpp.html#a5b83369170c691722331d9bbfa7545f6">  678</a></span><span class="preprocessor">#define GLM_SWIZZLE_GEN_VEC_FROM_VEC4(T, P) \</span></div>
 <div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC_FROM_VEC4_COMP(T, P, x, y, z, w) \</span></div>
 <div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC_FROM_VEC4_COMP(T, P, r, g, b, a) \</span></div>
 <div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span><span class="preprocessor">    GLM_SWIZZLE_GEN_VEC_FROM_VEC4_COMP(T, P, s, t, p, q)</span></div>

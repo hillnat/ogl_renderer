@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -119,7 +122,7 @@ $(function() {
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#ifndef AI_SCENE_H_INC</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#define AI_SCENE_H_INC</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="thirdparty_2assimp_2out_2install_2x64-_release_2include_2assimp_2_scene_8h.html#a056ad49744f1123b1d21e008612e2fc8">   47</a></span><span class="preprocessor">#define AI_SCENE_H_INC</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#ifdef __GNUC__</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#   pragma GCC system_header</span></div>
@@ -146,22 +149,22 @@ $(function() {
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">// -------------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment"></span><span class="comment">// -------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">struct </span>ASSIMP_API <a class="code hl_struct" href="structai_node.html">aiNode</a> {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    C_STRUCT <a class="code hl_struct" href="structai_string.html">aiString</a> mName;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">struct </span><a class="code hl_define" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> <a class="code hl_struct" href="structai_node.html">aiNode</a> {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_string.html">aiString</a> mName;</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    C_STRUCT <a class="code hl_struct" href="structai_matrix4x4.html">aiMatrix4x4</a> mTransformation;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_matrix4x4.html">aiMatrix4x4</a> mTransformation;</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    C_STRUCT <a class="code hl_struct" href="structai_node.html">aiNode</a>* mParent;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_node.html">aiNode</a>* mParent;</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mNumChildren;</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    C_STRUCT <a class="code hl_struct" href="structai_node.html">aiNode</a>** mChildren;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_node.html">aiNode</a>** mChildren;</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mNumMeshes;</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>* mMeshes;</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    C_STRUCT <a class="code hl_struct" href="structai_metadata.html">aiMetadata</a>* mMetaData;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_metadata.html">aiMetadata</a>* mMetaData;</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <a class="code hl_struct" href="structai_node.html">aiNode</a>();</div>
@@ -204,42 +207,42 @@ $(function() {
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="comment">// -------------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="comment"></span><span class="comment">// -------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="keyword">struct </span>ASSIMP_API <a class="code hl_struct" href="structai_scene.html">aiScene</a> {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="keyword">struct </span><a class="code hl_define" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> <a class="code hl_struct" href="structai_scene.html">aiScene</a> {</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mFlags;</div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    C_STRUCT <a class="code hl_struct" href="structai_node.html">aiNode</a>* mRootNode;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_node.html">aiNode</a>* mRootNode;</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mNumMeshes;</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    C_STRUCT <a class="code hl_struct" href="structai_mesh.html">aiMesh</a>** mMeshes;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_mesh.html">aiMesh</a>** mMeshes;</div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mNumMaterials;</div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    C_STRUCT <a class="code hl_struct" href="structai_material.html">aiMaterial</a>** mMaterials;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_material.html">aiMaterial</a>** mMaterials;</div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mNumAnimations;</div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    C_STRUCT <a class="code hl_struct" href="structai_animation.html">aiAnimation</a>** mAnimations;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_animation.html">aiAnimation</a>** mAnimations;</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mNumTextures;</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    C_STRUCT <a class="code hl_struct" href="structai_texture.html">aiTexture</a>** mTextures;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_texture.html">aiTexture</a>** mTextures;</div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
 <div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mNumLights;</div>
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    C_STRUCT <a class="code hl_struct" href="structai_light.html">aiLight</a>** mLights;</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_light.html">aiLight</a>** mLights;</div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mNumCameras;</div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    C_STRUCT <a class="code hl_struct" href="structai_camera.html">aiCamera</a>** mCameras;</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_camera.html">aiCamera</a>** mCameras;</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    C_STRUCT <a class="code hl_struct" href="structai_metadata.html">aiMetadata</a>* mMetaData;</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_metadata.html">aiMetadata</a>* mMetaData;</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    C_STRUCT <a class="code hl_struct" href="structai_string.html">aiString</a> mName;</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_string.html">aiString</a> mName;</div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span> </div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mNumSkeletons;</div>
 <div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span> </div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    C_STRUCT <a class="code hl_struct" href="structai_skeleton.html">aiSkeleton</a> **mSkeletons;</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    <a class="code hl_define" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="code hl_struct" href="structai_skeleton.html">aiSkeleton</a> **mSkeletons;</div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span> </div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span><span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
@@ -330,19 +333,21 @@ $(function() {
 <div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span><span class="preprocessor">#endif </span></div>
 <div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span> </div>
 <div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span><span class="preprocessor">#endif </span><span class="comment">// AI_SCENE_H_INC</span></div>
-<div class="ttc" id="astructai_animation_html"><div class="ttname"><a href="structai_animation.html">aiAnimation</a></div><div class="ttdef"><b>Definition:</b> anim.h:424</div></div>
-<div class="ttc" id="astructai_camera_html"><div class="ttname"><a href="structai_camera.html">aiCamera</a></div><div class="ttdef"><b>Definition:</b> camera.h:103</div></div>
-<div class="ttc" id="astructai_light_html"><div class="ttname"><a href="structai_light.html">aiLight</a></div><div class="ttdef"><b>Definition:</b> light.h:115</div></div>
-<div class="ttc" id="astructai_material_html"><div class="ttname"><a href="structai_material.html">aiMaterial</a></div><div class="ttdoc">Data structure for a material.</div><div class="ttdef"><b>Definition:</b> material.h:712</div></div>
-<div class="ttc" id="astructai_matrix4x4_html"><div class="ttname"><a href="structai_matrix4x4.html">aiMatrix4x4</a></div><div class="ttdef"><b>Definition:</b> matrix4x4.h:271</div></div>
-<div class="ttc" id="astructai_mesh_html"><div class="ttname"><a href="structai_mesh.html">aiMesh</a></div><div class="ttdoc">enum aiMorphingMethod</div><div class="ttdef"><b>Definition:</b> mesh.h:638</div></div>
-<div class="ttc" id="astructai_metadata_html"><div class="ttname"><a href="structai_metadata.html">aiMetadata</a></div><div class="ttdef"><b>Definition:</b> metadata.h:156</div></div>
-<div class="ttc" id="astructai_node_html"><div class="ttname"><a href="structai_node.html">aiNode</a></div><div class="ttdef"><b>Definition:</b> scene.h:82</div></div>
-<div class="ttc" id="astructai_scene_html"><div class="ttname"><a href="structai_scene.html">aiScene</a></div><div class="ttdef"><b>Definition:</b> scene.h:246</div></div>
-<div class="ttc" id="astructai_skeleton_html"><div class="ttname"><a href="structai_skeleton.html">aiSkeleton</a></div><div class="ttdoc">A skeleton represents the bone hierarchy of an animation.</div><div class="ttdef"><b>Definition:</b> mesh.h:1140</div></div>
-<div class="ttc" id="astructai_string_html"><div class="ttname"><a href="structai_string.html">aiString</a></div><div class="ttdoc">Represents an UTF-8 string, zero byte terminated.</div><div class="ttdef"><b>Definition:</b> types.h:267</div></div>
-<div class="ttc" id="astructai_string_html_a2e03d8ac36c4a65e4650088710bbdd6d"><div class="ttname"><a href="structai_string.html#a2e03d8ac36c4a65e4650088710bbdd6d">aiString::data</a></div><div class="ttdeci">char data[AI_MAXLEN]</div><div class="ttdef"><b>Definition:</b> types.h:395</div></div>
-<div class="ttc" id="astructai_texture_html"><div class="ttname"><a href="structai_texture.html">aiTexture</a></div><div class="ttdef"><b>Definition:</b> texture.h:132</div></div>
+<div class="ttc" id="ainclude_2assimp_2defs_8h_html_a7d617d307e656cb6ff315ba71ff958d4"><div class="ttname"><a href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a></div><div class="ttdeci">#define ASSIMP_API</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2defs_8h_source.html#l00163">defs.h:163</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2defs_8h_html_ab51df4230ceb602bbc1bc109c432a6a0"><div class="ttname"><a href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a></div><div class="ttdeci">#define C_STRUCT</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2defs_8h_source.html#l00229">defs.h:229</a></div></div>
+<div class="ttc" id="astructai_animation_html"><div class="ttname"><a href="structai_animation.html">aiAnimation</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2anim_8h_source.html#l00424">anim.h:424</a></div></div>
+<div class="ttc" id="astructai_camera_html"><div class="ttname"><a href="structai_camera.html">aiCamera</a></div><div class="ttdef"><b>Definition:</b> <a href="thirdparty_2assimp_2include_2assimp_2_camera_8h_source.html#l00103">camera.h:103</a></div></div>
+<div class="ttc" id="astructai_light_html"><div class="ttname"><a href="structai_light.html">aiLight</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2light_8h_source.html#l00115">light.h:115</a></div></div>
+<div class="ttc" id="astructai_material_html"><div class="ttname"><a href="structai_material.html">aiMaterial</a></div><div class="ttdoc">Data structure for a material.</div><div class="ttdef"><b>Definition:</b> <a href="thirdparty_2assimp_2include_2assimp_2_material_8h_source.html#l00710">material.h:712</a></div></div>
+<div class="ttc" id="astructai_matrix4x4_html"><div class="ttname"><a href="structai_matrix4x4.html">aiMatrix4x4</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2matrix4x4_8h_source.html#l00271">matrix4x4.h:271</a></div></div>
+<div class="ttc" id="astructai_mesh_html"><div class="ttname"><a href="structai_mesh.html">aiMesh</a></div><div class="ttdoc">enum aiMorphingMethod</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2mesh_8h_source.html#l00638">mesh.h:638</a></div></div>
+<div class="ttc" id="astructai_metadata_html"><div class="ttname"><a href="structai_metadata.html">aiMetadata</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2metadata_8h_source.html#l00156">metadata.h:156</a></div></div>
+<div class="ttc" id="astructai_node_html"><div class="ttname"><a href="structai_node.html">aiNode</a></div><div class="ttdef"><b>Definition:</b> <a href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00082">scene.h:82</a></div></div>
+<div class="ttc" id="astructai_scene_html"><div class="ttname"><a href="structai_scene.html">aiScene</a></div><div class="ttdef"><b>Definition:</b> <a href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00246">scene.h:246</a></div></div>
+<div class="ttc" id="astructai_skeleton_html"><div class="ttname"><a href="structai_skeleton.html">aiSkeleton</a></div><div class="ttdoc">A skeleton represents the bone hierarchy of an animation.</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2mesh_8h_source.html#l01140">mesh.h:1140</a></div></div>
+<div class="ttc" id="astructai_string_html"><div class="ttname"><a href="structai_string.html">aiString</a></div><div class="ttdoc">Represents an UTF-8 string, zero byte terminated.</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2types_8h_source.html#l00267">types.h:267</a></div></div>
+<div class="ttc" id="astructai_string_html_a2e03d8ac36c4a65e4650088710bbdd6d"><div class="ttname"><a href="structai_string.html#a2e03d8ac36c4a65e4650088710bbdd6d">aiString::data</a></div><div class="ttdeci">char data[AI_MAXLEN]</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2types_8h_source.html#l00395">types.h:395</a></div></div>
+<div class="ttc" id="astructai_texture_html"><div class="ttname"><a href="structai_texture.html">aiTexture</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2texture_8h_source.html#l00132">texture.h:132</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

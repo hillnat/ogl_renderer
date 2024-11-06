@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -74,16 +77,25 @@ $(function() {
   <div class="headertitle"><div class="title">GLM_GTX_raw_data<div class="ingroups"><a class="el" href="group__gtx.html">Experimental extensions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Collaboration diagram for GLM_GTX_raw_data:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__gtx__raw__data.png" border="0" usemap="#agroup____gtx____raw____data" alt=""/></div>
+<map name="agroup____gtx____raw____data" id="agroup____gtx____raw____data">
+<area shape="rect" href="group__gtx.html" title="Experimental features not specified by GLSL specification." alt="" coords="5,5,167,33"/>
+<area shape="rect" title=" " alt="" coords="215,5,355,33"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gacd7fe1f2ad60a57f7d7ad4f1e6836efd"><td class="memItemLeft" align="right" valign="top">typedef detail::uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gtx__raw__data.html#gacd7fe1f2ad60a57f7d7ad4f1e6836efd">glm::byte</a></td></tr>
+<tr class="memitem:gacd7fe1f2ad60a57f7d7ad4f1e6836efd"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="namespaceglm_1_1detail.html#aef2588f97d090cc19fbbe0c74fe17c8f">detail::uint8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gtx__raw__data.html#gacd7fe1f2ad60a57f7d7ad4f1e6836efd">glm::byte</a></td></tr>
 <tr class="separator:gacd7fe1f2ad60a57f7d7ad4f1e6836efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5617a479d471021b5c773c5e969ba46d"><td class="memItemLeft" align="right" valign="top">typedef detail::uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gtx__raw__data.html#ga5617a479d471021b5c773c5e969ba46d">glm::word</a></td></tr>
+<tr class="memitem:ga5617a479d471021b5c773c5e969ba46d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="namespaceglm_1_1detail.html#a47b2a7d006d187338e8031a352d1ce56">detail::uint16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gtx__raw__data.html#ga5617a479d471021b5c773c5e969ba46d">glm::word</a></td></tr>
 <tr class="separator:ga5617a479d471021b5c773c5e969ba46d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1fc2589df6d44e923cd1820cf14805cf"><td class="memItemLeft" align="right" valign="top">typedef detail::uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gtx__raw__data.html#ga1fc2589df6d44e923cd1820cf14805cf">glm::dword</a></td></tr>
+<tr class="memitem:ga1fc2589df6d44e923cd1820cf14805cf"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="namespaceglm_1_1detail.html#ade6cfbf377022aaa391af8cd50489222">detail::uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gtx__raw__data.html#ga1fc2589df6d44e923cd1820cf14805cf">glm::dword</a></td></tr>
 <tr class="separator:ga1fc2589df6d44e923cd1820cf14805cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga32447af289e879589883c9b7e3be1246"><td class="memItemLeft" align="right" valign="top">typedef detail::uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gtx__raw__data.html#ga32447af289e879589883c9b7e3be1246">glm::qword</a></td></tr>
+<tr class="memitem:ga32447af289e879589883c9b7e3be1246"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="namespaceglm_1_1detail.html#ae110ab7b33b51165e9b99e03abe3947e">detail::uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gtx__raw__data.html#ga32447af289e879589883c9b7e3be1246">glm::qword</a></td></tr>
 <tr class="separator:ga32447af289e879589883c9b7e3be1246"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -97,11 +109,13 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef detail::uint8 <a class="el" href="group__gtx__raw__data.html#gacd7fe1f2ad60a57f7d7ad4f1e6836efd">glm::byte</a></td>
+          <td class="memname">typedef <a class="el" href="namespaceglm_1_1detail.html#aef2588f97d090cc19fbbe0c74fe17c8f">detail::uint8</a> <a class="el" href="group__gtx__raw__data.html#gacd7fe1f2ad60a57f7d7ad4f1e6836efd">glm::byte</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Type for byte numbers. From GLM_GTX_raw_data extension. </p>
+
+<p class="definition">Definition at line <a class="el" href="raw__data_8hpp_source.html#l00032">32</a> of file <a class="el" href="raw__data_8hpp_source.html">raw_data.hpp</a>.</p>
 
 </div>
 </div>
@@ -112,11 +126,13 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef detail::uint32 <a class="el" href="group__gtx__raw__data.html#ga1fc2589df6d44e923cd1820cf14805cf">glm::dword</a></td>
+          <td class="memname">typedef <a class="el" href="namespaceglm_1_1detail.html#ade6cfbf377022aaa391af8cd50489222">detail::uint32</a> <a class="el" href="group__gtx__raw__data.html#ga1fc2589df6d44e923cd1820cf14805cf">glm::dword</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Type for dword numbers. From GLM_GTX_raw_data extension. </p>
+
+<p class="definition">Definition at line <a class="el" href="raw__data_8hpp_source.html#l00040">40</a> of file <a class="el" href="raw__data_8hpp_source.html">raw_data.hpp</a>.</p>
 
 </div>
 </div>
@@ -127,11 +143,13 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef detail::uint64 <a class="el" href="group__gtx__raw__data.html#ga32447af289e879589883c9b7e3be1246">glm::qword</a></td>
+          <td class="memname">typedef <a class="el" href="namespaceglm_1_1detail.html#ae110ab7b33b51165e9b99e03abe3947e">detail::uint64</a> <a class="el" href="group__gtx__raw__data.html#ga32447af289e879589883c9b7e3be1246">glm::qword</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Type for qword numbers. From GLM_GTX_raw_data extension. </p>
+
+<p class="definition">Definition at line <a class="el" href="raw__data_8hpp_source.html#l00044">44</a> of file <a class="el" href="raw__data_8hpp_source.html">raw_data.hpp</a>.</p>
 
 </div>
 </div>
@@ -142,11 +160,13 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef detail::uint16 <a class="el" href="group__gtx__raw__data.html#ga5617a479d471021b5c773c5e969ba46d">glm::word</a></td>
+          <td class="memname">typedef <a class="el" href="namespaceglm_1_1detail.html#a47b2a7d006d187338e8031a352d1ce56">detail::uint16</a> <a class="el" href="group__gtx__raw__data.html#ga5617a479d471021b5c773c5e969ba46d">glm::word</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Type for word numbers. From GLM_GTX_raw_data extension. </p>
+
+<p class="definition">Definition at line <a class="el" href="raw__data_8hpp_source.html#l00036">36</a> of file <a class="el" href="raw__data_8hpp_source.html">raw_data.hpp</a>.</p>
 
 </div>
 </div>

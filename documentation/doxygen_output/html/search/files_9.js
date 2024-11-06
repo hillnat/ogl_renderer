@@ -1,9 +1,15 @@
 var searchData=
 [
-  ['light_2eh_0',['light.h',['../include_2assimp_2light_8h.html',1,'(Global Namespace)'],['../out_2install_2x64-_debug_2include_2assimp_2light_8h.html',1,'(Global Namespace)'],['../out_2install_2x64-_release_2include_2assimp_2light_8h.html',1,'(Global Namespace)']]],
-  ['linesplitter_2eh_1',['LineSplitter.h',['../include_2assimp_2_line_splitter_8h.html',1,'(Global Namespace)'],['../out_2install_2x64-_debug_2include_2assimp_2_line_splitter_8h.html',1,'(Global Namespace)'],['../out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h.html',1,'(Global Namespace)']]],
-  ['log_5fbase_2ehpp_2',['log_base.hpp',['../log__base_8hpp.html',1,'']]],
-  ['logaux_2eh_3',['LogAux.h',['../include_2assimp_2_log_aux_8h.html',1,'(Global Namespace)'],['../out_2install_2x64-_debug_2include_2assimp_2_log_aux_8h.html',1,'(Global Namespace)'],['../out_2install_2x64-_release_2include_2assimp_2_log_aux_8h.html',1,'(Global Namespace)']]],
-  ['logger_2ehpp_4',['Logger.hpp',['../include_2assimp_2_logger_8hpp.html',1,'(Global Namespace)'],['../out_2install_2x64-_debug_2include_2assimp_2_logger_8hpp.html',1,'(Global Namespace)'],['../out_2install_2x64-_release_2include_2assimp_2_logger_8hpp.html',1,'(Global Namespace)']]],
-  ['logstream_2ehpp_5',['LogStream.hpp',['../include_2assimp_2_log_stream_8hpp.html',1,'(Global Namespace)'],['../out_2install_2x64-_debug_2include_2assimp_2_log_stream_8hpp.html',1,'(Global Namespace)'],['../out_2install_2x64-_release_2include_2assimp_2_log_stream_8hpp.html',1,'(Global Namespace)']]]
+  ['importer_2ehpp_0',['Importer.hpp',['../include_2assimp_2_importer_8hpp.html',1,'(Global Namespace)'],['../out_2install_2x64-_debug_2include_2assimp_2_importer_8hpp.html',1,'(Global Namespace)'],['../out_2install_2x64-_release_2include_2assimp_2_importer_8hpp.html',1,'(Global Namespace)']]],
+  ['importerdesc_2eh_1',['importerdesc.h',['../include_2assimp_2importerdesc_8h.html',1,'(Global Namespace)'],['../out_2install_2x64-_debug_2include_2assimp_2importerdesc_8h.html',1,'(Global Namespace)'],['../out_2install_2x64-_release_2include_2assimp_2importerdesc_8h.html',1,'(Global Namespace)']]],
+  ['integer_2eh_2',['integer.h',['../integer_8h.html',1,'']]],
+  ['integer_2ehpp_3',['integer.hpp',['../gtc_2integer_8hpp.html',1,'(Global Namespace)'],['../gtx_2integer_8hpp.html',1,'(Global Namespace)'],['../integer_8hpp.html',1,'(Global Namespace)']]],
+  ['integer_2einl_4',['integer.inl',['../gtc_2integer_8inl.html',1,'(Global Namespace)'],['../gtx_2integer_8inl.html',1,'(Global Namespace)']]],
+  ['intersect_2ehpp_5',['intersect.hpp',['../intersect_8hpp.html',1,'']]],
+  ['intersect_2einl_6',['intersect.inl',['../intersect_8inl.html',1,'']]],
+  ['io_2ehpp_7',['io.hpp',['../io_8hpp.html',1,'']]],
+  ['io_2einl_8',['io.inl',['../io_8inl.html',1,'']]],
+  ['iostream_2ehpp_9',['IOStream.hpp',['../include_2assimp_2_i_o_stream_8hpp.html',1,'(Global Namespace)'],['../out_2install_2x64-_debug_2include_2assimp_2_i_o_stream_8hpp.html',1,'(Global Namespace)'],['../out_2install_2x64-_release_2include_2assimp_2_i_o_stream_8hpp.html',1,'(Global Namespace)']]],
+  ['iostreambuffer_2eh_10',['IOStreamBuffer.h',['../include_2assimp_2_i_o_stream_buffer_8h.html',1,'(Global Namespace)'],['../out_2install_2x64-_debug_2include_2assimp_2_i_o_stream_buffer_8h.html',1,'(Global Namespace)'],['../out_2install_2x64-_release_2include_2assimp_2_i_o_stream_buffer_8h.html',1,'(Global Namespace)']]],
+  ['iosystem_2ehpp_11',['IOSystem.hpp',['../include_2assimp_2_i_o_system_8hpp.html',1,'(Global Namespace)'],['../out_2install_2x64-_debug_2include_2assimp_2_i_o_system_8hpp.html',1,'(Global Namespace)'],['../out_2install_2x64-_release_2include_2assimp_2_i_o_system_8hpp.html',1,'(Global Namespace)']]]
 ];

@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -76,6 +79,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_assimp_1_1_xml_node_iterator-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Assimp::XmlNodeIterator Class Reference</div></div>
 </div><!--header-->
@@ -127,87 +131,92 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac91f7e3201cb252deb653b4aaed41207"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac91f7e3201cb252deb653b4aaed41207">XmlNodeIterator</a> (XmlNode &amp;parent, <a class="el" href="class_assimp_1_1_xml_node_iterator.html#a8b2559c1b090867a20f54892b3391c1b">IterationMode</a> mode)</td></tr>
+<tr class="memitem:ac91f7e3201cb252deb653b4aaed41207"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac91f7e3201cb252deb653b4aaed41207">XmlNodeIterator</a> (<a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;parent, <a class="el" href="class_assimp_1_1_xml_node_iterator.html#a8b2559c1b090867a20f54892b3391c1b">IterationMode</a> mode)</td></tr>
 <tr class="memdesc:ac91f7e3201cb252deb653b4aaed41207"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class constructor.  <a href="class_assimp_1_1_xml_node_iterator.html#ac91f7e3201cb252deb653b4aaed41207">More...</a><br /></td></tr>
 <tr class="separator:ac91f7e3201cb252deb653b4aaed41207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="memItemLeft" align="right" valign="top"><a id="ad0ef7ae6788b36d61cd061403c97e3e8" name="ad0ef7ae6788b36d61cd061403c97e3e8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>~XmlNodeIterator</b> ()=default</td></tr>
-<tr class="memdesc:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class destructor, default implementation. <br /></td></tr>
+<tr class="memitem:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ad0ef7ae6788b36d61cd061403c97e3e8">~XmlNodeIterator</a> ()=default</td></tr>
+<tr class="memdesc:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class destructor, default implementation.  <a href="class_assimp_1_1_xml_node_iterator.html#ad0ef7ae6788b36d61cd061403c97e3e8">More...</a><br /></td></tr>
 <tr class="separator:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71e766fc388e15793cc892f70d770c31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a71e766fc388e15793cc892f70d770c31">collectChildrenPreOrder</a> (XmlNode &amp;node)</td></tr>
+<tr class="memitem:a71e766fc388e15793cc892f70d770c31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a71e766fc388e15793cc892f70d770c31">collectChildrenPreOrder</a> (<a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;node)</td></tr>
 <tr class="memdesc:a71e766fc388e15793cc892f70d770c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will iterate through all children in pre-order iteration.  <a href="class_assimp_1_1_xml_node_iterator.html#a71e766fc388e15793cc892f70d770c31">More...</a><br /></td></tr>
 <tr class="separator:a71e766fc388e15793cc892f70d770c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca9024c882f07991467e05676123d035"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#aca9024c882f07991467e05676123d035">collectChildrenPostOrder</a> (XmlNode &amp;node)</td></tr>
+<tr class="memitem:aca9024c882f07991467e05676123d035"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#aca9024c882f07991467e05676123d035">collectChildrenPostOrder</a> (<a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;node)</td></tr>
 <tr class="memdesc:aca9024c882f07991467e05676123d035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will iterate through all children in post-order iteration.  <a href="class_assimp_1_1_xml_node_iterator.html#aca9024c882f07991467e05676123d035">More...</a><br /></td></tr>
 <tr class="separator:aca9024c882f07991467e05676123d035"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5817a15765681eb544ac1e8c44ce33aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a5817a15765681eb544ac1e8c44ce33aa">getNext</a> (XmlNode &amp;next)</td></tr>
+<tr class="memitem:a5817a15765681eb544ac1e8c44ce33aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a5817a15765681eb544ac1e8c44ce33aa">getNext</a> (<a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;next)</td></tr>
 <tr class="memdesc:a5817a15765681eb544ac1e8c44ce33aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will iterate through all collected nodes.  <a href="class_assimp_1_1_xml_node_iterator.html#a5817a15765681eb544ac1e8c44ce33aa">More...</a><br /></td></tr>
 <tr class="separator:a5817a15765681eb544ac1e8c44ce33aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2d21217d2921169efec5f318a0c594e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac2d21217d2921169efec5f318a0c594e">size</a> () const</td></tr>
+<tr class="memitem:ac2d21217d2921169efec5f318a0c594e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac2d21217d2921169efec5f318a0c594e">size</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="memdesc:ac2d21217d2921169efec5f318a0c594e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will return the number of collected nodes.  <a href="class_assimp_1_1_xml_node_iterator.html#ac2d21217d2921169efec5f318a0c594e">More...</a><br /></td></tr>
 <tr class="separator:ac2d21217d2921169efec5f318a0c594e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8937d559903bfe99ee6ea280025cce8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac8937d559903bfe99ee6ea280025cce8">isEmpty</a> () const</td></tr>
+<tr class="memitem:ac8937d559903bfe99ee6ea280025cce8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac8937d559903bfe99ee6ea280025cce8">isEmpty</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="memdesc:ac8937d559903bfe99ee6ea280025cce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true, if the node is empty.  <a href="class_assimp_1_1_xml_node_iterator.html#ac8937d559903bfe99ee6ea280025cce8">More...</a><br /></td></tr>
 <tr class="separator:ac8937d559903bfe99ee6ea280025cce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4638e2eaf70a0b64963c00735c7a15dd"><td class="memItemLeft" align="right" valign="top"><a id="a4638e2eaf70a0b64963c00735c7a15dd" name="a4638e2eaf70a0b64963c00735c7a15dd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
-<tr class="memdesc:a4638e2eaf70a0b64963c00735c7a15dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will clear all collected nodes. <br /></td></tr>
+<tr class="memitem:a4638e2eaf70a0b64963c00735c7a15dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a4638e2eaf70a0b64963c00735c7a15dd">clear</a> ()</td></tr>
+<tr class="memdesc:a4638e2eaf70a0b64963c00735c7a15dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will clear all collected nodes.  <a href="class_assimp_1_1_xml_node_iterator.html#a4638e2eaf70a0b64963c00735c7a15dd">More...</a><br /></td></tr>
 <tr class="separator:a4638e2eaf70a0b64963c00735c7a15dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac91f7e3201cb252deb653b4aaed41207"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac91f7e3201cb252deb653b4aaed41207">XmlNodeIterator</a> (XmlNode &amp;parent, <a class="el" href="class_assimp_1_1_xml_node_iterator.html#a8b2559c1b090867a20f54892b3391c1b">IterationMode</a> mode)</td></tr>
+<tr class="memitem:ac91f7e3201cb252deb653b4aaed41207"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac91f7e3201cb252deb653b4aaed41207">XmlNodeIterator</a> (<a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;parent, <a class="el" href="class_assimp_1_1_xml_node_iterator.html#a8b2559c1b090867a20f54892b3391c1b">IterationMode</a> mode)</td></tr>
 <tr class="memdesc:ac91f7e3201cb252deb653b4aaed41207"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class constructor.  <a href="class_assimp_1_1_xml_node_iterator.html#ac91f7e3201cb252deb653b4aaed41207">More...</a><br /></td></tr>
 <tr class="separator:ac91f7e3201cb252deb653b4aaed41207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="memItemLeft" align="right" valign="top"><a id="ad0ef7ae6788b36d61cd061403c97e3e8" name="ad0ef7ae6788b36d61cd061403c97e3e8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>~XmlNodeIterator</b> ()=default</td></tr>
-<tr class="memdesc:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class destructor, default implementation. <br /></td></tr>
+<tr class="memitem:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ad0ef7ae6788b36d61cd061403c97e3e8">~XmlNodeIterator</a> ()=default</td></tr>
+<tr class="memdesc:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class destructor, default implementation.  <a href="class_assimp_1_1_xml_node_iterator.html#ad0ef7ae6788b36d61cd061403c97e3e8">More...</a><br /></td></tr>
 <tr class="separator:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71e766fc388e15793cc892f70d770c31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a71e766fc388e15793cc892f70d770c31">collectChildrenPreOrder</a> (XmlNode &amp;node)</td></tr>
+<tr class="memitem:a71e766fc388e15793cc892f70d770c31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a71e766fc388e15793cc892f70d770c31">collectChildrenPreOrder</a> (<a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;node)</td></tr>
 <tr class="memdesc:a71e766fc388e15793cc892f70d770c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will iterate through all children in pre-order iteration.  <a href="class_assimp_1_1_xml_node_iterator.html#a71e766fc388e15793cc892f70d770c31">More...</a><br /></td></tr>
 <tr class="separator:a71e766fc388e15793cc892f70d770c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca9024c882f07991467e05676123d035"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#aca9024c882f07991467e05676123d035">collectChildrenPostOrder</a> (XmlNode &amp;node)</td></tr>
+<tr class="memitem:aca9024c882f07991467e05676123d035"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#aca9024c882f07991467e05676123d035">collectChildrenPostOrder</a> (<a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;node)</td></tr>
 <tr class="memdesc:aca9024c882f07991467e05676123d035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will iterate through all children in post-order iteration.  <a href="class_assimp_1_1_xml_node_iterator.html#aca9024c882f07991467e05676123d035">More...</a><br /></td></tr>
 <tr class="separator:aca9024c882f07991467e05676123d035"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5817a15765681eb544ac1e8c44ce33aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a5817a15765681eb544ac1e8c44ce33aa">getNext</a> (XmlNode &amp;next)</td></tr>
+<tr class="memitem:a5817a15765681eb544ac1e8c44ce33aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a5817a15765681eb544ac1e8c44ce33aa">getNext</a> (<a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;next)</td></tr>
 <tr class="memdesc:a5817a15765681eb544ac1e8c44ce33aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will iterate through all collected nodes.  <a href="class_assimp_1_1_xml_node_iterator.html#a5817a15765681eb544ac1e8c44ce33aa">More...</a><br /></td></tr>
 <tr class="separator:a5817a15765681eb544ac1e8c44ce33aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2d21217d2921169efec5f318a0c594e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac2d21217d2921169efec5f318a0c594e">size</a> () const</td></tr>
+<tr class="memitem:ac2d21217d2921169efec5f318a0c594e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac2d21217d2921169efec5f318a0c594e">size</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="memdesc:ac2d21217d2921169efec5f318a0c594e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will return the number of collected nodes.  <a href="class_assimp_1_1_xml_node_iterator.html#ac2d21217d2921169efec5f318a0c594e">More...</a><br /></td></tr>
 <tr class="separator:ac2d21217d2921169efec5f318a0c594e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8937d559903bfe99ee6ea280025cce8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac8937d559903bfe99ee6ea280025cce8">isEmpty</a> () const</td></tr>
+<tr class="memitem:ac8937d559903bfe99ee6ea280025cce8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac8937d559903bfe99ee6ea280025cce8">isEmpty</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="memdesc:ac8937d559903bfe99ee6ea280025cce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true, if the node is empty.  <a href="class_assimp_1_1_xml_node_iterator.html#ac8937d559903bfe99ee6ea280025cce8">More...</a><br /></td></tr>
 <tr class="separator:ac8937d559903bfe99ee6ea280025cce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4638e2eaf70a0b64963c00735c7a15dd"><td class="memItemLeft" align="right" valign="top"><a id="a4638e2eaf70a0b64963c00735c7a15dd" name="a4638e2eaf70a0b64963c00735c7a15dd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
-<tr class="memdesc:a4638e2eaf70a0b64963c00735c7a15dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will clear all collected nodes. <br /></td></tr>
+<tr class="memitem:a4638e2eaf70a0b64963c00735c7a15dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a4638e2eaf70a0b64963c00735c7a15dd">clear</a> ()</td></tr>
+<tr class="memdesc:a4638e2eaf70a0b64963c00735c7a15dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will clear all collected nodes.  <a href="class_assimp_1_1_xml_node_iterator.html#a4638e2eaf70a0b64963c00735c7a15dd">More...</a><br /></td></tr>
 <tr class="separator:a4638e2eaf70a0b64963c00735c7a15dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac91f7e3201cb252deb653b4aaed41207"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac91f7e3201cb252deb653b4aaed41207">XmlNodeIterator</a> (XmlNode &amp;parent, <a class="el" href="class_assimp_1_1_xml_node_iterator.html#a8b2559c1b090867a20f54892b3391c1b">IterationMode</a> mode)</td></tr>
+<tr class="memitem:ac91f7e3201cb252deb653b4aaed41207"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac91f7e3201cb252deb653b4aaed41207">XmlNodeIterator</a> (<a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;parent, <a class="el" href="class_assimp_1_1_xml_node_iterator.html#a8b2559c1b090867a20f54892b3391c1b">IterationMode</a> mode)</td></tr>
 <tr class="memdesc:ac91f7e3201cb252deb653b4aaed41207"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class constructor.  <a href="class_assimp_1_1_xml_node_iterator.html#ac91f7e3201cb252deb653b4aaed41207">More...</a><br /></td></tr>
 <tr class="separator:ac91f7e3201cb252deb653b4aaed41207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="memItemLeft" align="right" valign="top"><a id="ad0ef7ae6788b36d61cd061403c97e3e8" name="ad0ef7ae6788b36d61cd061403c97e3e8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>~XmlNodeIterator</b> ()=default</td></tr>
-<tr class="memdesc:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class destructor, default implementation. <br /></td></tr>
+<tr class="memitem:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ad0ef7ae6788b36d61cd061403c97e3e8">~XmlNodeIterator</a> ()=default</td></tr>
+<tr class="memdesc:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class destructor, default implementation.  <a href="class_assimp_1_1_xml_node_iterator.html#ad0ef7ae6788b36d61cd061403c97e3e8">More...</a><br /></td></tr>
 <tr class="separator:ad0ef7ae6788b36d61cd061403c97e3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71e766fc388e15793cc892f70d770c31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a71e766fc388e15793cc892f70d770c31">collectChildrenPreOrder</a> (XmlNode &amp;node)</td></tr>
+<tr class="memitem:a71e766fc388e15793cc892f70d770c31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a71e766fc388e15793cc892f70d770c31">collectChildrenPreOrder</a> (<a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;node)</td></tr>
 <tr class="memdesc:a71e766fc388e15793cc892f70d770c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will iterate through all children in pre-order iteration.  <a href="class_assimp_1_1_xml_node_iterator.html#a71e766fc388e15793cc892f70d770c31">More...</a><br /></td></tr>
 <tr class="separator:a71e766fc388e15793cc892f70d770c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca9024c882f07991467e05676123d035"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#aca9024c882f07991467e05676123d035">collectChildrenPostOrder</a> (XmlNode &amp;node)</td></tr>
+<tr class="memitem:aca9024c882f07991467e05676123d035"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#aca9024c882f07991467e05676123d035">collectChildrenPostOrder</a> (<a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;node)</td></tr>
 <tr class="memdesc:aca9024c882f07991467e05676123d035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will iterate through all children in post-order iteration.  <a href="class_assimp_1_1_xml_node_iterator.html#aca9024c882f07991467e05676123d035">More...</a><br /></td></tr>
 <tr class="separator:aca9024c882f07991467e05676123d035"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5817a15765681eb544ac1e8c44ce33aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a5817a15765681eb544ac1e8c44ce33aa">getNext</a> (XmlNode &amp;next)</td></tr>
+<tr class="memitem:a5817a15765681eb544ac1e8c44ce33aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a5817a15765681eb544ac1e8c44ce33aa">getNext</a> (<a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;next)</td></tr>
 <tr class="memdesc:a5817a15765681eb544ac1e8c44ce33aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will iterate through all collected nodes.  <a href="class_assimp_1_1_xml_node_iterator.html#a5817a15765681eb544ac1e8c44ce33aa">More...</a><br /></td></tr>
 <tr class="separator:a5817a15765681eb544ac1e8c44ce33aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2d21217d2921169efec5f318a0c594e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac2d21217d2921169efec5f318a0c594e">size</a> () const</td></tr>
+<tr class="memitem:ac2d21217d2921169efec5f318a0c594e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac2d21217d2921169efec5f318a0c594e">size</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="memdesc:ac2d21217d2921169efec5f318a0c594e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will return the number of collected nodes.  <a href="class_assimp_1_1_xml_node_iterator.html#ac2d21217d2921169efec5f318a0c594e">More...</a><br /></td></tr>
 <tr class="separator:ac2d21217d2921169efec5f318a0c594e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8937d559903bfe99ee6ea280025cce8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac8937d559903bfe99ee6ea280025cce8">isEmpty</a> () const</td></tr>
+<tr class="memitem:ac8937d559903bfe99ee6ea280025cce8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ac8937d559903bfe99ee6ea280025cce8">isEmpty</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="memdesc:ac8937d559903bfe99ee6ea280025cce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true, if the node is empty.  <a href="class_assimp_1_1_xml_node_iterator.html#ac8937d559903bfe99ee6ea280025cce8">More...</a><br /></td></tr>
 <tr class="separator:ac8937d559903bfe99ee6ea280025cce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4638e2eaf70a0b64963c00735c7a15dd"><td class="memItemLeft" align="right" valign="top"><a id="a4638e2eaf70a0b64963c00735c7a15dd" name="a4638e2eaf70a0b64963c00735c7a15dd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
-<tr class="memdesc:a4638e2eaf70a0b64963c00735c7a15dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will clear all collected nodes. <br /></td></tr>
+<tr class="memitem:a4638e2eaf70a0b64963c00735c7a15dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a4638e2eaf70a0b64963c00735c7a15dd">clear</a> ()</td></tr>
+<tr class="memdesc:a4638e2eaf70a0b64963c00735c7a15dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will clear all collected nodes.  <a href="class_assimp_1_1_xml_node_iterator.html#a4638e2eaf70a0b64963c00735c7a15dd">More...</a><br /></td></tr>
 <tr class="separator:a4638e2eaf70a0b64963c00735c7a15dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5c9a2eb07656df0267a01e7d8f6ceefb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a5c9a2eb07656df0267a01e7d8f6ceefb">mParent</a></td></tr>
+<tr class="separator:a5c9a2eb07656df0267a01e7d8f6ceefb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada2c8ca5ffe63da1fab8c83ff1ba505c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#ada2c8ca5ffe63da1fab8c83ff1ba505c">mNodes</a></td></tr>
+<tr class="separator:ada2c8ca5ffe63da1fab8c83ff1ba505c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91b37042a3a746e89a3a37bb2ad0f1df"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_xml_node_iterator.html#a91b37042a3a746e89a3a37bb2ad0f1df">mIndex</a></td></tr>
+<tr class="separator:a91b37042a3a746e89a3a37bb2ad0f1df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This class declares an iterator to loop through all children of the root node. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00510">510</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a8b2559c1b090867a20f54892b3391c1b" name="a8b2559c1b090867a20f54892b3391c1b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8b2559c1b090867a20f54892b3391c1b">&#9670;&#160;</a></span>IterationMode <span class="overload">[1/3]</span></h2>
@@ -236,6 +245,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 <tr><td class="fieldname"><a id="a8b2559c1b090867a20f54892b3391c1baeae8931a4ed717e9ea1297565b341b2e" name="a8b2559c1b090867a20f54892b3391c1baeae8931a4ed717e9ea1297565b341b2e"></a>PostOrderMode&#160;</td><td class="fielddoc"><p >Post-ordering, continue the iteration, get the values. </p>
 </td></tr>
 </table>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00513">513</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
 
 </div>
 </div>
@@ -267,6 +278,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 </td></tr>
 </table>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html#l00513">513</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+
 </div>
 </div>
 <a id="a8b2559c1b090867a20f54892b3391c1b" name="a8b2559c1b090867a20f54892b3391c1b"></a>
@@ -297,6 +310,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 </td></tr>
 </table>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html#l00513">513</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -312,7 +327,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
         <tr>
           <td class="memname">Assimp::XmlNodeIterator::XmlNodeIterator </td>
           <td>(</td>
-          <td class="paramtype">XmlNode &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;&#160;</td>
           <td class="paramname"><em>parent</em>, </td>
         </tr>
         <tr>
@@ -342,6 +357,45 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00520">520</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207_cgraph.png" border="0" usemap="#aclass_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207_cgraph" id="aclass_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207_cgraph">
+<area shape="rect" title="The class constructor." alt="" coords="5,76,174,121"/>
+<area shape="rect" href="class_assimp_1_1_xml_node_iterator.html#aca9024c882f07991467e05676123d035" title="Will iterate through all children in post&#45;order iteration." alt="" coords="222,29,393,74"/>
+<area shape="rect" href="class_assimp_1_1_xml_node_iterator.html#a71e766fc388e15793cc892f70d770c31" title="Will iterate through all children in pre&#45;order iteration." alt="" coords="223,123,392,167"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad0ef7ae6788b36d61cd061403c97e3e8" name="ad0ef7ae6788b36d61cd061403c97e3e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ef7ae6788b36d61cd061403c97e3e8">&#9670;&#160;</a></span>~XmlNodeIterator() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::XmlNodeIterator::~XmlNodeIterator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The class destructor, default implementation. </p>
 
 </div>
 </div>
@@ -357,7 +411,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
         <tr>
           <td class="memname">Assimp::XmlNodeIterator::XmlNodeIterator </td>
           <td>(</td>
-          <td class="paramtype">XmlNode &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;&#160;</td>
           <td class="paramname"><em>parent</em>, </td>
         </tr>
         <tr>
@@ -387,6 +441,45 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html#l00520">520</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207_cgraph.png" border="0" usemap="#aclass_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207_cgraph" id="aclass_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207_cgraph">
+<area shape="rect" title="The class constructor." alt="" coords="5,76,174,121"/>
+<area shape="rect" href="class_assimp_1_1_xml_node_iterator.html#aca9024c882f07991467e05676123d035" title="Will iterate through all children in post&#45;order iteration." alt="" coords="222,29,393,74"/>
+<area shape="rect" href="class_assimp_1_1_xml_node_iterator.html#a71e766fc388e15793cc892f70d770c31" title="Will iterate through all children in pre&#45;order iteration." alt="" coords="223,123,392,167"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad0ef7ae6788b36d61cd061403c97e3e8" name="ad0ef7ae6788b36d61cd061403c97e3e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ef7ae6788b36d61cd061403c97e3e8">&#9670;&#160;</a></span>~XmlNodeIterator() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::XmlNodeIterator::~XmlNodeIterator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The class destructor, default implementation. </p>
 
 </div>
 </div>
@@ -402,7 +495,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
         <tr>
           <td class="memname">Assimp::XmlNodeIterator::XmlNodeIterator </td>
           <td>(</td>
-          <td class="paramtype">XmlNode &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;&#160;</td>
           <td class="paramname"><em>parent</em>, </td>
         </tr>
         <tr>
@@ -433,9 +526,135 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html#l00520">520</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207_cgraph.png" border="0" usemap="#aclass_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207_cgraph" id="aclass_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207_cgraph">
+<area shape="rect" title="The class constructor." alt="" coords="5,76,174,121"/>
+<area shape="rect" href="class_assimp_1_1_xml_node_iterator.html#aca9024c882f07991467e05676123d035" title="Will iterate through all children in post&#45;order iteration." alt="" coords="222,29,393,74"/>
+<area shape="rect" href="class_assimp_1_1_xml_node_iterator.html#a71e766fc388e15793cc892f70d770c31" title="Will iterate through all children in pre&#45;order iteration." alt="" coords="223,123,392,167"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad0ef7ae6788b36d61cd061403c97e3e8" name="ad0ef7ae6788b36d61cd061403c97e3e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ef7ae6788b36d61cd061403c97e3e8">&#9670;&#160;</a></span>~XmlNodeIterator() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::XmlNodeIterator::~XmlNodeIterator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The class destructor, default implementation. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4638e2eaf70a0b64963c00735c7a15dd" name="a4638e2eaf70a0b64963c00735c7a15dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4638e2eaf70a0b64963c00735c7a15dd">&#9670;&#160;</a></span>clear() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assimp::XmlNodeIterator::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Will clear all collected nodes. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00583">583</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+
+</div>
+</div>
+<a id="a4638e2eaf70a0b64963c00735c7a15dd" name="a4638e2eaf70a0b64963c00735c7a15dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4638e2eaf70a0b64963c00735c7a15dd">&#9670;&#160;</a></span>clear() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assimp::XmlNodeIterator::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Will clear all collected nodes. </p>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html#l00583">583</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+
+</div>
+</div>
+<a id="a4638e2eaf70a0b64963c00735c7a15dd" name="a4638e2eaf70a0b64963c00735c7a15dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4638e2eaf70a0b64963c00735c7a15dd">&#9670;&#160;</a></span>clear() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assimp::XmlNodeIterator::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Will clear all collected nodes. </p>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html#l00583">583</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+
+</div>
+</div>
 <a id="aca9024c882f07991467e05676123d035" name="aca9024c882f07991467e05676123d035"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aca9024c882f07991467e05676123d035">&#9670;&#160;</a></span>collectChildrenPostOrder() <span class="overload">[1/3]</span></h2>
 
@@ -448,7 +667,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
         <tr>
           <td class="memname">void Assimp::XmlNodeIterator::collectChildrenPostOrder </td>
           <td>(</td>
-          <td class="paramtype">XmlNode &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
           <td></td>
         </tr>
@@ -467,6 +686,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00547">547</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_cgraph.png" border="0" usemap="#aclass_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_cgraph" id="aclass_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_cgraph">
+<area shape="rect" title="Will iterate through all children in post&#45;order iteration." alt="" coords="5,29,177,74"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_icgraph.png" border="0" usemap="#aclass_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_icgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_icgraph" id="aclass_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_icgraph">
+<area shape="rect" title="Will iterate through all children in post&#45;order iteration." alt="" coords="222,29,393,74"/>
+<area shape="rect" href="class_assimp_1_1_xml_node_iterator.html#ac91f7e3201cb252deb653b4aaed41207" title="The class constructor." alt="" coords="5,29,174,74"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -482,7 +720,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
         <tr>
           <td class="memname">void Assimp::XmlNodeIterator::collectChildrenPostOrder </td>
           <td>(</td>
-          <td class="paramtype">XmlNode &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
           <td></td>
         </tr>
@@ -501,6 +739,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html#l00547">547</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_cgraph.png" border="0" usemap="#aclass_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_cgraph" id="aclass_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_cgraph">
+<area shape="rect" title="Will iterate through all children in post&#45;order iteration." alt="" coords="5,29,177,74"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -516,7 +764,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
         <tr>
           <td class="memname">void Assimp::XmlNodeIterator::collectChildrenPostOrder </td>
           <td>(</td>
-          <td class="paramtype">XmlNode &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
           <td></td>
         </tr>
@@ -536,6 +784,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html#l00547">547</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_cgraph.png" border="0" usemap="#aclass_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_cgraph" id="aclass_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035_cgraph">
+<area shape="rect" title="Will iterate through all children in post&#45;order iteration." alt="" coords="5,29,177,74"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a71e766fc388e15793cc892f70d770c31" name="a71e766fc388e15793cc892f70d770c31"></a>
@@ -550,7 +808,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
         <tr>
           <td class="memname">void Assimp::XmlNodeIterator::collectChildrenPreOrder </td>
           <td>(</td>
-          <td class="paramtype">XmlNode &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
           <td></td>
         </tr>
@@ -569,6 +827,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00536">536</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_cgraph.png" border="0" usemap="#aclass_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_cgraph" id="aclass_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_cgraph">
+<area shape="rect" title="Will iterate through all children in pre&#45;order iteration." alt="" coords="5,29,174,74"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_icgraph.png" border="0" usemap="#aclass_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_icgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_icgraph" id="aclass_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_icgraph">
+<area shape="rect" title="Will iterate through all children in pre&#45;order iteration." alt="" coords="222,29,390,74"/>
+<area shape="rect" href="class_assimp_1_1_xml_node_iterator.html#ac91f7e3201cb252deb653b4aaed41207" title="The class constructor." alt="" coords="5,29,174,74"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -584,7 +861,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
         <tr>
           <td class="memname">void Assimp::XmlNodeIterator::collectChildrenPreOrder </td>
           <td>(</td>
-          <td class="paramtype">XmlNode &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
           <td></td>
         </tr>
@@ -603,6 +880,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html#l00536">536</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_cgraph.png" border="0" usemap="#aclass_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_cgraph" id="aclass_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_cgraph">
+<area shape="rect" title="Will iterate through all children in pre&#45;order iteration." alt="" coords="5,29,174,74"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -618,7 +905,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
         <tr>
           <td class="memname">void Assimp::XmlNodeIterator::collectChildrenPreOrder </td>
           <td>(</td>
-          <td class="paramtype">XmlNode &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
           <td></td>
         </tr>
@@ -638,6 +925,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html#l00536">536</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_cgraph.png" border="0" usemap="#aclass_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_cgraph" id="aclass_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31_cgraph">
+<area shape="rect" title="Will iterate through all children in pre&#45;order iteration." alt="" coords="5,29,174,74"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a5817a15765681eb544ac1e8c44ce33aa" name="a5817a15765681eb544ac1e8c44ce33aa"></a>
@@ -652,7 +949,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
         <tr>
           <td class="memname">bool Assimp::XmlNodeIterator::getNext </td>
           <td>(</td>
-          <td class="paramtype">XmlNode &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;&#160;</td>
           <td class="paramname"><em>next</em></td><td>)</td>
           <td></td>
         </tr>
@@ -672,6 +969,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true, if there is a node left. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00559">559</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
 
 </div>
 </div>
@@ -687,7 +986,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
         <tr>
           <td class="memname">bool Assimp::XmlNodeIterator::getNext </td>
           <td>(</td>
-          <td class="paramtype">XmlNode &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;&#160;</td>
           <td class="paramname"><em>next</em></td><td>)</td>
           <td></td>
         </tr>
@@ -707,6 +1006,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true, if there is a node left. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html#l00559">559</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
 
 </div>
 </div>
@@ -722,7 +1023,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
         <tr>
           <td class="memname">bool Assimp::XmlNodeIterator::getNext </td>
           <td>(</td>
-          <td class="paramtype">XmlNode &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp;&#160;</td>
           <td class="paramname"><em>next</em></td><td>)</td>
           <td></td>
         </tr>
@@ -742,6 +1043,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true, if there is a node left. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html#l00559">559</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
 
 </div>
 </div>
@@ -771,6 +1074,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 <p>Returns true, if the node is empty. </p>
 <dl class="section return"><dt>Returns</dt><dd>true, if the node is empty, false if not. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00578">578</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+
 </div>
 </div>
 <a id="ac8937d559903bfe99ee6ea280025cce8" name="ac8937d559903bfe99ee6ea280025cce8"></a>
@@ -798,6 +1103,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 
 <p>Returns true, if the node is empty. </p>
 <dl class="section return"><dt>Returns</dt><dd>true, if the node is empty, false if not. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html#l00578">578</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
 
 </div>
 </div>
@@ -827,6 +1134,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 <p>Returns true, if the node is empty. </p>
 <dl class="section return"><dt>Returns</dt><dd>true, if the node is empty, false if not. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html#l00578">578</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+
 </div>
 </div>
 <a id="ac2d21217d2921169efec5f318a0c594e" name="ac2d21217d2921169efec5f318a0c594e"></a>
@@ -854,6 +1163,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 
 <p>Will return the number of collected nodes. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of collected nodes. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00572">572</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
 
 </div>
 </div>
@@ -883,6 +1194,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 <p>Will return the number of collected nodes. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of collected nodes. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html#l00572">572</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+
 </div>
 </div>
 <a id="ac2d21217d2921169efec5f318a0c594e" name="ac2d21217d2921169efec5f318a0c594e"></a>
@@ -910,6 +1223,81 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 
 <p>Will return the number of collected nodes. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of collected nodes. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html#l00572">572</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a91b37042a3a746e89a3a37bb2ad0f1df" name="a91b37042a3a746e89a3a37bb2ad0f1df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91b37042a3a746e89a3a37bb2ad0f1df">&#9670;&#160;</a></span>mIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Assimp::XmlNodeIterator::mIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00595">595</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+
+</div>
+</div>
+<a id="ada2c8ca5ffe63da1fab8c83ff1ba505c" name="ada2c8ca5ffe63da1fab8c83ff1ba505c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada2c8ca5ffe63da1fab8c83ff1ba505c">&#9670;&#160;</a></span>mNodes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &gt; Assimp::XmlNodeIterator::mNodes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00594">594</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+
+</div>
+</div>
+<a id="a5c9a2eb07656df0267a01e7d8f6ceefb" name="a5c9a2eb07656df0267a01e7d8f6ceefb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c9a2eb07656df0267a01e7d8f6ceefb">&#9670;&#160;</a></span>mParent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> &amp; Assimp::XmlNodeIterator::mParent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00593">593</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
 
 </div>
 </div>

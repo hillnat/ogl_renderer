@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -72,8 +75,10 @@ $(function() {
 &#160;
 
 <h3><a id="index_f" name="index_f"></a>- f -</h3><ul>
-<li>faceforward()&#160;:&#160;<a class="el" href="group__core__func__geometric.html#ga18df0a788b02833be044c484e5501577">glm</a></li>
+<li>faceforward()&#160;:&#160;<a class="el" href="namespaceglm.html#ad32c7f0f9f0ca45467adbb4a1db5184d">glm</a></li>
 <li>factorial()&#160;:&#160;<a class="el" href="group__gtx__integer.html#ga8cbd3120905f398ec321b5d1836e08fb">glm</a></li>
+<li>fade()&#160;:&#160;<a class="el" href="namespaceglm_1_1detail.html#ac182f6288b0be7f5eff5cf3f63af2873">glm::detail</a></li>
+<li>fast_atof()&#160;:&#160;<a class="el" href="namespace_assimp.html#a5528fa5dfe30cfbb445f48b469649ec8">Assimp</a></li>
 <li>fast_atoreal_move()&#160;:&#160;<a class="el" href="namespace_assimp.html#a4b486541edb9e5bdda47cb9e73f9e877">Assimp</a></li>
 <li>fastAcos()&#160;:&#160;<a class="el" href="group__gtx__fast__trigonometry.html#ga9721d63356e5d94fdc4b393a426ab26b">glm</a></li>
 <li>fastAsin()&#160;:&#160;<a class="el" href="group__gtx__fast__trigonometry.html#ga562cb62c51fbfe7fac7db0bce706b81f">glm</a></li>
@@ -102,10 +107,16 @@ $(function() {
 <li>findNSB()&#160;:&#160;<a class="el" href="group__ext__scalar__integer.html#ga2777901e41ad6e1e9d0ad6cc855d1075">glm</a></li>
 <li>fliplr()&#160;:&#160;<a class="el" href="group__gtx__matrix__factorisation.html#gaf44ef34db04c55013bc3d9eee990b80c">glm</a></li>
 <li>flipud()&#160;:&#160;<a class="el" href="group__gtx__matrix__factorisation.html#ga904aa227f3fc40a3ae08fe0f6810b5ad">glm</a></li>
+<li>float2half()&#160;:&#160;<a class="el" href="namespaceglm_1_1detail.html#a35cfc58b7112bdadd2610cf9f1780255">glm::detail</a></li>
+<li>float2packed10()&#160;:&#160;<a class="el" href="namespaceglm_1_1detail.html#a066e984b6ff1a54325e8d11afed5a0f9">glm::detail</a></li>
+<li>float2packed11()&#160;:&#160;<a class="el" href="namespaceglm_1_1detail.html#af3fe5d54f7627eb98c3493ee0a4b6fba">glm::detail</a></li>
 <li>float_distance()&#160;:&#160;<a class="el" href="group__gtc__ulp.html#ga20e63c8483e37c9cdd7d9dc037815696">glm</a></li>
 <li>floatBitsToInt()&#160;:&#160;<a class="el" href="group__core__func__common.html#gaa1d88c3add475fa8f3a5163e19c6baf8">glm</a></li>
 <li>floatBitsToUint()&#160;:&#160;<a class="el" href="group__core__func__common.html#ga1b01fa18fd2b3450f18ff43f98dfbe8b">glm</a></li>
 <li>floatDistance()&#160;:&#160;<a class="el" href="group__ext__scalar__ulp.html#ga9f531d81a978cdffac7c8257d513f59b">glm</a></li>
+<li>floatNormalize()&#160;:&#160;<a class="el" href="namespaceglm.html#ad1211a92ade7a13768d45a8fa45c0fe7">glm</a></li>
+<li>floatTo10bit()&#160;:&#160;<a class="el" href="namespaceglm_1_1detail.html#a2be3138712a0811602a183614221ad5c">glm::detail</a></li>
+<li>floatTo11bit()&#160;:&#160;<a class="el" href="namespaceglm_1_1detail.html#a62edbdbe89fe6282dd7909e6e4703796">glm::detail</a></li>
 <li>floor()&#160;:&#160;<a class="el" href="group__core__func__common.html#gac433646923ab80af6d9964f1570855d5">glm</a></li>
 <li>floor_log2()&#160;:&#160;<a class="el" href="group__gtx__integer.html#ga7011b4e1c1e1ed492149b028feacc00e">glm</a></li>
 <li>floorMultiple()&#160;:&#160;<a class="el" href="group__gtc__round.html#ga2ffa3cd5f2ea746ee1bf57c46da6315e">glm</a></li>
@@ -114,6 +125,8 @@ $(function() {
 <li>fmax()&#160;:&#160;<a class="el" href="group__ext__scalar__common.html#ga36920478565cf608e93064283ce06421">glm</a></li>
 <li>fmin()&#160;:&#160;<a class="el" href="group__ext__scalar__common.html#ga7b2b438a765e2a62098c79eb212f28f0">glm</a></li>
 <li>fmod()&#160;:&#160;<a class="el" href="group__gtx__common.html#ga22feecd4248d9ef34b079a091f273281">glm</a></li>
+<li>format()&#160;:&#160;<a class="el" href="namespaceglm_1_1detail.html#a68246a31833ebe9f0ea35c16d8bb51f1">glm::detail</a></li>
+<li>formatted()&#160;:&#160;<a class="el" href="namespaceglm_1_1io.html#a05207ede58f2b3657b594dfa593ad4f3">glm::io</a></li>
 <li>four_over_pi()&#160;:&#160;<a class="el" href="group__gtc__constants.html#ga753950e5140e4ea6a88e4a18ba61dc09">glm</a></li>
 <li>fract()&#160;:&#160;<a class="el" href="group__core__func__common.html#ga8ba89e40e55ae5cdf228548f9b7639c7">glm</a></li>
 <li>frexp()&#160;:&#160;<a class="el" href="group__core__func__common.html#gaddf5ef73283c171730e0bcc11833fa81">glm</a></li>

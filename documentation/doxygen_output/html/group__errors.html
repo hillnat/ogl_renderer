@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -77,6 +80,15 @@ $(function() {
 
 <p>Error codes.  
 <a href="#details">More...</a></p>
+<div class="dynheader">
+Collaboration diagram for Error codes:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__errors.png" border="0" usemap="#agroup____errors" alt=""/></div>
+<map name="agroup____errors" id="agroup____errors">
+<area shape="rect" title="Error codes." alt="" coords="194,14,281,42"/>
+<area shape="rect" href="group__init.html" title="Functions and types related to initialization and error handling." alt="" coords="5,5,146,50"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
@@ -147,6 +159,8 @@ Macros</h2></td></tr>
 <p >@analysis The installed graphics driver does not support the requested API, or does not support it via the chosen context creation API. Below are a few examples.</p>
 <dl class="section user"><dt></dt><dd>Some pre-installed Windows graphics drivers do not support OpenGL. AMD only supports OpenGL ES via EGL, while Nvidia and Intel only support it via a WGL or GLX extension. macOS does not provide OpenGL ES at all. The Mesa EGL, OpenGL and OpenGL ES libraries do not interface with the Nvidia binary driver. Older graphics drivers do not support Vulkan. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00734">734</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
+
 </div>
 </div>
 <a id="ga09d6943923a70ddef3a085f5baee786c" name="ga09d6943923a70ddef3a085f5baee786c"></a>
@@ -164,6 +178,8 @@ Macros</h2></td></tr>
 <p>The specified cursor shape is not available. </p>
 <p >The specified standard cursor shape is not available, either because the current platform cursor theme does not provide it or because it is not available on the platform.</p>
 <p >@analysis Platform or system settings limitation. Pick another <a class="el" href="group__shapes.html">standard cursor shape</a> or create a custom cursor. </p>
+
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00800">800</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
 
 </div>
 </div>
@@ -184,6 +200,8 @@ Macros</h2></td></tr>
 <p >@analysis Platform or platform version limitation. The error can be ignored unless the feature is critical to the application.</p>
 <dl class="section user"><dt></dt><dd>A function call that emits this error has no effect other than the error and updating any existing out parameters. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00814">814</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
+
 </div>
 </div>
 <a id="ga5dda77e023e83151e8bd55a6758f946a" name="ga5dda77e023e83151e8bd55a6758f946a"></a>
@@ -202,6 +220,8 @@ Macros</h2></td></tr>
 <p >The requested feature has not yet been implemented in GLFW for this platform.</p>
 <p >@analysis An incomplete implementation of GLFW for this platform, hopefully fixed in a future release. The error can be ignored unless the feature is critical to the application.</p>
 <dl class="section user"><dt></dt><dd>A function call that emits this error has no effect other than the error and updating any existing out parameters. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00827">827</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
 
 </div>
 </div>
@@ -223,6 +243,8 @@ Macros</h2></td></tr>
 <p >@analysis If emitted during window creation, one or more hard constraints did not match any of the available pixel formats. If your application is sufficiently flexible, downgrade your requirements and try again. Otherwise, inform the user that their machine does not match your requirements.</p>
 <dl class="section user"><dt></dt><dd>If emitted when querying the clipboard, ignore the error or report it to the user, as appropriate. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00781">781</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
+
 </div>
 </div>
 <a id="ga76f6bb9c4eea73db675f096b404593ce" name="ga76f6bb9c4eea73db675f096b404593ce"></a>
@@ -240,6 +262,8 @@ Macros</h2></td></tr>
 <p>One of the arguments to the function was an invalid enum value. </p>
 <p >One of the arguments to the function was an invalid enum value, for example requesting <a class="el" href="group__window.html#gaf78ed8e417dbcc1e354906cc2708c982">GLFW_RED_BITS</a> with <a class="el" href="group__window.html#ga1bb0c7e100418e284dbb800789c63d40">glfwGetWindowAttrib</a>.</p>
 <p >@analysis Application programmer error. Fix the offending call. </p>
+
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00699">699</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
 
 </div>
 </div>
@@ -260,6 +284,8 @@ Macros</h2></td></tr>
 <p >Requesting a valid but unavailable OpenGL or OpenGL ES version will instead result in a <a class="el" href="group__errors.html#gad16c5565b4a69f9c2a9ac2c0dbc89462">GLFW_VERSION_UNAVAILABLE</a> error.</p>
 <p >@analysis Application programmer error. Fix the offending call. </p>
 
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00710">710</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
+
 </div>
 </div>
 <a id="gaa8290386e9528ccb9e42a3a4e16fc0d0" name="gaa8290386e9528ccb9e42a3a4e16fc0d0"></a>
@@ -277,6 +303,8 @@ Macros</h2></td></tr>
 <p>No context is current for this thread. </p>
 <p >This occurs if a GLFW function was called that needs and operates on the current OpenGL or OpenGL ES context but no context is current on the calling thread. One such function is <a class="el" href="group__context.html#ga12a595c06947cec4967c6e1f14210a8a">glfwSwapInterval</a>.</p>
 <p >@analysis Application programmer error. Ensure a context is current before calling functions that require a current context. </p>
+
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00691">691</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
 
 </div>
 </div>
@@ -296,6 +324,8 @@ Macros</h2></td></tr>
 <p >No error has occurred.</p>
 <p >@analysis Yay. </p>
 
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00672">672</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
+
 </div>
 </div>
 <a id="gacff24d2757da752ae4c80bf452356487" name="gacff24d2757da752ae4c80bf452356487"></a>
@@ -313,6 +343,8 @@ Macros</h2></td></tr>
 <p>The specified window does not have an OpenGL or OpenGL ES context. </p>
 <p >A window that does not have an OpenGL or OpenGL ES context was passed to a function that requires it to have one.</p>
 <p >@analysis Application programmer error. Fix the offending call. </p>
+
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00789">789</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
 
 </div>
 </div>
@@ -332,6 +364,8 @@ Macros</h2></td></tr>
 <p >This occurs if a GLFW function was called that must not be called unless the library is initialized.</p>
 <p >@analysis Application programmer error. Initialize GLFW before calling any function that requires initialization. </p>
 
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00681">681</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
+
 </div>
 </div>
 <a id="ga9023953a2bcb98c2906afd071d21ee7f" name="ga9023953a2bcb98c2906afd071d21ee7f"></a>
@@ -350,6 +384,8 @@ Macros</h2></td></tr>
 <p >A memory allocation failed.</p>
 <p >@analysis A bug in GLFW or the underlying operating system. Report the bug to our <a href="https://github.com/glfw/glfw/issues">issue tracker</a>. </p>
 
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00718">718</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
+
 </div>
 </div>
 <a id="gad44162d78100ea5e87cdd38426b8c7a1" name="gad44162d78100ea5e87cdd38426b8c7a1"></a>
@@ -367,6 +403,8 @@ Macros</h2></td></tr>
 <p>A platform-specific error occurred that does not match any of the more specific categories. </p>
 <p >A platform-specific error occurred that does not match any of the more specific categories.</p>
 <p >@analysis A bug or configuration error in GLFW, the underlying operating system or its drivers, or a lack of required resources. Report the issue to our <a href="https://github.com/glfw/glfw/issues">issue tracker</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00762">762</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
 
 </div>
 </div>
@@ -388,6 +426,8 @@ Macros</h2></td></tr>
 <p >@analysis Failure to detect any platform usually only happens on non-macOS Unix systems, either when no window system is running or the program was run from a terminal that does not have the necessary environment variables. Fall back to a different platform if possible or notify the user that no usable platform was detected.</p>
 <p >Failure to detect a specific platform may have the same cause as above or be because support for that platform was not compiled in. Call <a class="el" href="group__init.html#ga7b57ba0946498e8621f4d969bbcecfba">glfwPlatformSupported</a> to check whether a specific platform is supported by a library binary. </p>
 
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00849">849</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
+
 </div>
 </div>
 <a id="gad16c5565b4a69f9c2a9ac2c0dbc89462" name="gad16c5565b4a69f9c2a9ac2c0dbc89462"></a>
@@ -406,6 +446,8 @@ Macros</h2></td></tr>
 <p >The requested OpenGL or OpenGL ES version (including any requested context or framebuffer hints) is not available on this machine.</p>
 <p >@analysis The machine does not support your requirements. If your application is sufficiently flexible, downgrade your requirements and try again. Otherwise, inform the user that their machine does not match your requirements.</p>
 <dl class="section user"><dt></dt><dd>Future invalid OpenGL and OpenGL ES versions, for example OpenGL 4.8 if 5.0 comes out before the 4.x series gets that far, also fail with this error and not <a class="el" href="group__errors.html#gaaf2ef9aa8202c2b82ac2d921e554c687">GLFW_INVALID_VALUE</a>, because GLFW cannot know what future versions will exist. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l00751">751</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
 
 </div>
 </div>

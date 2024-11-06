@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -24,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
-   <div id="projectbrief">Graphics &amp; Physics engine in C++ with OpenGL</div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -74,6 +75,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_rigidbody-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Rigidbody Class Reference</div></div>
 </div><!--header-->
@@ -85,10 +87,8 @@ Collaboration diagram for Rigidbody:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_rigidbody__coll__graph.png" border="0" usemap="#a_rigidbody_coll__map" alt="Collaboration graph"/></div>
 <map name="a_rigidbody_coll__map" id="a_rigidbody_coll__map">
-<area shape="rect" title=" " alt="" coords="83,187,162,213"/>
-<area shape="rect" href="class_transform.html" title=" " alt="" coords="5,96,86,123"/>
-<area shape="rect" title=" " alt="" coords="20,5,71,32"/>
-<area shape="rect" title=" " alt="" coords="174,96,224,123"/>
+<area shape="rect" title=" " alt="" coords="6,98,84,126"/>
+<area shape="rect" href="class_transform.html" title=" " alt="" coords="5,5,85,33"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -122,6 +122,11 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aac501b7f51395b8ec3204b0353c91db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a161f81a10b39514161d0f1fb473bcd8a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#a161f81a10b39514161d0f1fb473bcd8a">isResting</a> = false</td></tr>
 <tr class="separator:a161f81a10b39514161d0f1fb473bcd8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af0c0462d9ce155d6ee5395f494d4360f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rigidbody.html#af0c0462d9ce155d6ee5395f494d4360f">restingVelThreshold</a> = 0.5f</td></tr>
+<tr class="separator:af0c0462d9ce155d6ee5395f494d4360f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -242,8 +247,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_cgraph.png" border="0" usemap="#aclass_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_cgraph" alt=""/></div>
 <map name="aclass_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_cgraph" id="aclass_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_cgraph">
-<area shape="rect" title="Adds force, factoring in mass" alt="" coords="5,5,149,32"/>
-<area shape="rect" href="class_rigidbody.html#ab633f234942f4142cb4128883c6c9aa6" title="Adds force, ignoring mass" alt="" coords="197,5,367,32"/>
+<area shape="rect" title="Adds force, factoring in mass" alt="" coords="5,5,147,33"/>
+<area shape="rect" href="class_rigidbody.html#ab633f234942f4142cb4128883c6c9aa6" title="Adds force, ignoring mass" alt="" coords="195,5,362,33"/>
+<area shape="rect" href="namespaceglm.html#abcd8538aa95a8963803ec42c2fd654cd" title=" " alt="" coords="410,5,497,33"/>
+<area shape="rect" href="group__core__func__common.html#ga439e60a72eadecfeda2df5449c613a64" title=" " alt="" coords="545,5,618,33"/>
 </map>
 </div>
 <div class="dynheader">
@@ -251,11 +258,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_icgraph.png" border="0" usemap="#aclass_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_icgraph" alt=""/></div>
 <map name="aclass_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_icgraph" id="aclass_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2_icgraph">
-<area shape="rect" title="Adds force, factoring in mass" alt="" coords="578,31,722,57"/>
-<area shape="rect" href="class_physics.html#a736d261010f60931a23fb0ce91700225" title="Resolves a collision between one sphere RigidBody and one plane RigidBody" alt="" coords="328,5,526,32"/>
-<area shape="rect" href="class_physics.html#aa343c30848ec0030d0c73719cbcabc05" title="Resolves a collision between two sphere Rigidbodies" alt="" coords="324,56,530,83"/>
-<area shape="rect" href="class_physics.html#a5dcd928dfbdca3feaefc1d9ca070683a" title="Executes the physics tick on all physics objects in vector" alt="" coords="103,31,276,57"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,55,57"/>
+<area shape="rect" title="Adds force, factoring in mass" alt="" coords="563,32,705,60"/>
+<area shape="rect" href="class_physics.html#a736d261010f60931a23fb0ce91700225" title="Resolves a collision between one sphere RigidBody and one plane RigidBody" alt="" coords="322,5,511,33"/>
+<area shape="rect" href="class_physics.html#aa343c30848ec0030d0c73719cbcabc05" title="Resolves a collision between two sphere Rigidbodies" alt="" coords="317,57,515,85"/>
+<area shape="rect" href="class_physics.html#a5dcd928dfbdca3feaefc1d9ca070683a" title="Executes the physics tick on all physics objects in vector" alt="" coords="103,32,269,60"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,32,55,60"/>
 </map>
 </div>
 
@@ -287,17 +294,27 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_rigidbody_8cpp_source.html#l00023">23</a> of file <a class="el" href="_rigidbody_8cpp_source.html">Rigidbody.cpp</a>.</p>
 <div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_rigidbody_ab633f234942f4142cb4128883c6c9aa6_cgraph.png" border="0" usemap="#aclass_rigidbody_ab633f234942f4142cb4128883c6c9aa6_cgraph" alt=""/></div>
+<map name="aclass_rigidbody_ab633f234942f4142cb4128883c6c9aa6_cgraph" id="aclass_rigidbody_ab633f234942f4142cb4128883c6c9aa6_cgraph">
+<area shape="rect" title="Adds force, ignoring mass" alt="" coords="5,5,173,33"/>
+<area shape="rect" href="namespaceglm.html#abcd8538aa95a8963803ec42c2fd654cd" title=" " alt="" coords="221,5,308,33"/>
+<area shape="rect" href="group__core__func__common.html#ga439e60a72eadecfeda2df5449c613a64" title=" " alt="" coords="356,5,428,33"/>
+</map>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_rigidbody_ab633f234942f4142cb4128883c6c9aa6_icgraph.png" border="0" usemap="#aclass_rigidbody_ab633f234942f4142cb4128883c6c9aa6_icgraph" alt=""/></div>
 <map name="aclass_rigidbody_ab633f234942f4142cb4128883c6c9aa6_icgraph" id="aclass_rigidbody_ab633f234942f4142cb4128883c6c9aa6_icgraph">
-<area shape="rect" title="Adds force, ignoring mass" alt="" coords="786,56,956,83"/>
-<area shape="rect" href="class_rigidbody.html#ad968aba72e2d80dc282ce7a2f2639ca2" title="Adds force, factoring in mass" alt="" coords="586,31,730,57"/>
-<area shape="rect" href="class_rigidbody.html#a3489a4d160049331712e71179e7ecebd" title="Executes a physics tick on this object" alt="" coords="578,81,738,108"/>
-<area shape="rect" href="class_physics.html#a736d261010f60931a23fb0ce91700225" title="Resolves a collision between one sphere RigidBody and one plane RigidBody" alt="" coords="328,5,526,32"/>
-<area shape="rect" href="class_physics.html#aa343c30848ec0030d0c73719cbcabc05" title="Resolves a collision between two sphere Rigidbodies" alt="" coords="324,56,530,83"/>
-<area shape="rect" href="class_physics.html#a5dcd928dfbdca3feaefc1d9ca070683a" title="Executes the physics tick on all physics objects in vector" alt="" coords="103,31,276,57"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,55,57"/>
+<area shape="rect" title="Adds force, ignoring mass" alt="" coords="769,57,936,85"/>
+<area shape="rect" href="class_rigidbody.html#ad968aba72e2d80dc282ce7a2f2639ca2" title="Adds force, factoring in mass" alt="" coords="571,31,713,58"/>
+<area shape="rect" href="class_rigidbody.html#a3489a4d160049331712e71179e7ecebd" title="Executes a physics tick on this object" alt="" coords="563,83,721,110"/>
+<area shape="rect" href="class_physics.html#a736d261010f60931a23fb0ce91700225" title="Resolves a collision between one sphere RigidBody and one plane RigidBody" alt="" coords="322,5,511,33"/>
+<area shape="rect" href="class_physics.html#aa343c30848ec0030d0c73719cbcabc05" title="Resolves a collision between two sphere Rigidbodies" alt="" coords="317,57,515,85"/>
+<area shape="rect" href="class_physics.html#a5dcd928dfbdca3feaefc1d9ca070683a" title="Executes the physics tick on all physics objects in vector" alt="" coords="103,32,269,60"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,32,55,60"/>
 </map>
 </div>
 
@@ -333,9 +350,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_rigidbody_a3489a4d160049331712e71179e7ecebd_cgraph.png" border="0" usemap="#aclass_rigidbody_a3489a4d160049331712e71179e7ecebd_cgraph" alt=""/></div>
 <map name="aclass_rigidbody_a3489a4d160049331712e71179e7ecebd_cgraph" id="aclass_rigidbody_a3489a4d160049331712e71179e7ecebd_cgraph">
-<area shape="rect" title="Executes a physics tick on this object" alt="" coords="5,31,165,57"/>
-<area shape="rect" href="class_rigidbody.html#ab633f234942f4142cb4128883c6c9aa6" title="Adds force, ignoring mass" alt="" coords="217,5,388,32"/>
-<area shape="rect" href="class_transform.html#abd54bc9cc0def3dd94cce058b49082b8" title="Translates our matrix, disregarding rotation" alt="" coords="213,56,392,83"/>
+<area shape="rect" title="Executes a physics tick on this object" alt="" coords="5,32,163,60"/>
+<area shape="rect" href="class_rigidbody.html#ab633f234942f4142cb4128883c6c9aa6" title="Adds force, ignoring mass" alt="" coords="216,5,383,33"/>
+<area shape="rect" href="class_transform.html#abd54bc9cc0def3dd94cce058b49082b8" title="Translates our matrix, disregarding rotation" alt="" coords="211,57,388,85"/>
+<area shape="rect" href="namespaceglm.html#abcd8538aa95a8963803ec42c2fd654cd" title=" " alt="" coords="436,5,523,33"/>
+<area shape="rect" href="group__core__func__common.html#ga439e60a72eadecfeda2df5449c613a64" title=" " alt="" coords="571,5,644,33"/>
 </map>
 </div>
 
@@ -419,6 +438,30 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_rigidbody_8h_source.html#l00031">31</a> of file <a class="el" href="_rigidbody_8h_source.html">Rigidbody.h</a>.</p>
+
+</div>
+</div>
+<a id="af0c0462d9ce155d6ee5395f494d4360f" name="af0c0462d9ce155d6ee5395f494d4360f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0c0462d9ce155d6ee5395f494d4360f">&#9670;&#160;</a></span>restingVelThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> float Rigidbody::restingVelThreshold = 0.5f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_rigidbody_8h_source.html#l00008">8</a> of file <a class="el" href="_rigidbody_8h_source.html">Rigidbody.h</a>.</p>
 
 </div>
 </div>

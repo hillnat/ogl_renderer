@@ -2,99 +2,99 @@
 \label{include_2assimp_2_null_logger_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/NullLogger.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/NullLogger.hpp}}
 \mbox{\hyperlink{include_2assimp_2_null_logger_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
-\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{4 \textcolor{comment}{}}
-\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
-\DoxyCodeLine{6 \textcolor{comment}{}}
-\DoxyCodeLine{7 \textcolor{comment}{}}
-\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
-\DoxyCodeLine{9 \textcolor{comment}{}}
-\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
-\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the}}
-\DoxyCodeLine{12 \textcolor{comment}{following conditions are met:}}
-\DoxyCodeLine{13 \textcolor{comment}{}}
-\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
-\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
-\DoxyCodeLine{17 \textcolor{comment}{}}
-\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
-\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
-\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
-\DoxyCodeLine{22 \textcolor{comment}{}}
-\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
-\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
-\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
-\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
-\DoxyCodeLine{27 \textcolor{comment}{}}
-\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
-\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
-\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
-\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
-\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
-\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
-\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
-\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
-\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
-\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
-\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
-\DoxyCodeLine{39 \textcolor{comment}{}}
-\DoxyCodeLine{40 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{41 \textcolor{comment}{*/}}
-\DoxyCodeLine{42 }
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifndef INCLUDED\_AI\_NULLLOGGER\_H}}
-\DoxyCodeLine{49 \textcolor{preprocessor}{\#define INCLUDED\_AI\_NULLLOGGER\_H}}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
-\DoxyCodeLine{52 \textcolor{preprocessor}{\#pragma GCC system\_header}}
-\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{54 }
-\DoxyCodeLine{55 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp}{Logger.hpp}}"{}}}
-\DoxyCodeLine{56 }
-\DoxyCodeLine{57 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{64 \textcolor{comment}{}\textcolor{keyword}{class }ASSIMP\_API \mbox{\hyperlink{class_assimp_1_1_null_logger}{NullLogger}}}
-\DoxyCodeLine{65     : \textcolor{keyword}{public} \mbox{\hyperlink{class_assimp_1_1_logger}{Logger}} \{}
-\DoxyCodeLine{66 }
-\DoxyCodeLine{67 \textcolor{keyword}{public}:}
-\DoxyCodeLine{68 }
-\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_null_logger_af354ebbd382b7097a55d364794a45631}{OnDebug}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message) \{}
-\DoxyCodeLine{71         (void)message; \textcolor{comment}{//this avoids compiler warnings}}
-\DoxyCodeLine{72     \}}
-\DoxyCodeLine{73 }
-\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_null_logger_aa1817f1e94f406931d138a510b32e16e}{OnVerboseDebug}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *message) \{}
-\DoxyCodeLine{76         (void)message; \textcolor{comment}{//this avoids compiler warnings}}
-\DoxyCodeLine{77     \}}
-\DoxyCodeLine{78 }
-\DoxyCodeLine{80     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_null_logger_a12d2b0048d17a819c8c00277ad1394c5}{OnInfo}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message) \{}
-\DoxyCodeLine{81         (void)message; \textcolor{comment}{//this avoids compiler warnings}}
-\DoxyCodeLine{82     \}}
-\DoxyCodeLine{83 }
-\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_null_logger_a9a04c2b9e3d4bc9eec8f693ed8115f24}{OnWarn}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message) \{}
-\DoxyCodeLine{86         (void)message; \textcolor{comment}{//this avoids compiler warnings}}
-\DoxyCodeLine{87     \}}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{90     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_null_logger_a4fbf66103757fafcff891fb04b4ee714}{OnError}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message) \{}
-\DoxyCodeLine{91         (void)message; \textcolor{comment}{//this avoids compiler warnings}}
-\DoxyCodeLine{92     \}}
-\DoxyCodeLine{93 }
-\DoxyCodeLine{95     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_null_logger_a31c05ecaee392b5fd34fd2dfd1cca559}{attachStream}}(\mbox{\hyperlink{class_assimp_1_1_log_stream}{LogStream}} *pStream, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} severity) \{}
-\DoxyCodeLine{96         (void)pStream; (void)severity; \textcolor{comment}{//this avoids compiler warnings}}
-\DoxyCodeLine{97         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{98     \}}
-\DoxyCodeLine{99 }
-\DoxyCodeLine{101     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_null_logger_a071c06bd70831e2e5da932ca806423d8}{detachStream}}(\mbox{\hyperlink{class_assimp_1_1_log_stream}{LogStream}} *pStream, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} severity) \{}
-\DoxyCodeLine{102         (void)pStream; (void)severity; \textcolor{comment}{//this avoids compiler warnings}}
-\DoxyCodeLine{103         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{104     \}}
-\DoxyCodeLine{105 }
-\DoxyCodeLine{106 \textcolor{keyword}{private}:}
-\DoxyCodeLine{107 \};}
-\DoxyCodeLine{108 \}}
-\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_NULLLOGGER\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00002}00002 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00003}00003 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00004}00004 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00005}00005 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00006}00006 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00007}00007 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00008}00008 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00009}00009 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00010}00010 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00011}00011 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00012}00012 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00013}00013 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00014}00014 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00015}00015 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00016}00016 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00017}00017 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00018}00018 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00019}00019 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00020}00020 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00021}00021 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00022}00022 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00023}00023 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00024}00024 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00025}00025 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00026}00026 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00027}00027 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00028}00028 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00029}00029 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00030}00030 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00031}00031 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00032}00032 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00033}00033 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00034}00034 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00035}00035 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00036}00036 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00037}00037 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00038}00038 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00039}00039 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00040}00040 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00041}00041 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00047}00047 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00048}00048 \textcolor{preprocessor}{\#ifndef INCLUDED\_AI\_NULLLOGGER\_H}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00049}\mbox{\hyperlink{include_2assimp_2_null_logger_8hpp_a50416d8a712954276dead0c968596c1e}{00049}} \textcolor{preprocessor}{\#define INCLUDED\_AI\_NULLLOGGER\_H}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00051}00051 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00052}00052 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00053}00053 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00055}00055 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_logger_8hpp}{Logger.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00057}00057 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00059}00059 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00064}\mbox{\hyperlink{class_assimp_1_1_null_logger}{00064}} \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{include_2assimp_2defs_8h_a7d617d307e656cb6ff315ba71ff958d4}{ASSIMP\_API}} \mbox{\hyperlink{class_assimp_1_1_null_logger}{NullLogger}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00065}00065     : \textcolor{keyword}{public} \mbox{\hyperlink{class_assimp_1_1_logger}{Logger}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00067}00067 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00070}\mbox{\hyperlink{class_assimp_1_1_null_logger_af354ebbd382b7097a55d364794a45631}{00070}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_null_logger_af354ebbd382b7097a55d364794a45631}{OnDebug}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00071}00071         (void)message; \textcolor{comment}{//this avoids compiler warnings}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00072}00072     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00075}\mbox{\hyperlink{class_assimp_1_1_null_logger_aa1817f1e94f406931d138a510b32e16e}{00075}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_null_logger_aa1817f1e94f406931d138a510b32e16e}{OnVerboseDebug}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *message) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00076}00076         (void)message; \textcolor{comment}{//this avoids compiler warnings}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00077}00077     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00080}\mbox{\hyperlink{class_assimp_1_1_null_logger_a12d2b0048d17a819c8c00277ad1394c5}{00080}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_null_logger_a12d2b0048d17a819c8c00277ad1394c5}{OnInfo}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00081}00081         (void)message; \textcolor{comment}{//this avoids compiler warnings}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00082}00082     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00085}\mbox{\hyperlink{class_assimp_1_1_null_logger_a9a04c2b9e3d4bc9eec8f693ed8115f24}{00085}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_null_logger_a9a04c2b9e3d4bc9eec8f693ed8115f24}{OnWarn}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00086}00086         (void)message; \textcolor{comment}{//this avoids compiler warnings}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00087}00087     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00090}\mbox{\hyperlink{class_assimp_1_1_null_logger_a4fbf66103757fafcff891fb04b4ee714}{00090}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_null_logger_a4fbf66103757fafcff891fb04b4ee714}{OnError}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* message) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00091}00091         (void)message; \textcolor{comment}{//this avoids compiler warnings}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00092}00092     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00095}\mbox{\hyperlink{class_assimp_1_1_null_logger_a31c05ecaee392b5fd34fd2dfd1cca559}{00095}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_null_logger_a31c05ecaee392b5fd34fd2dfd1cca559}{attachStream}}(\mbox{\hyperlink{class_assimp_1_1_log_stream}{LogStream}} *pStream, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} severity) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00096}00096         (void)pStream; (void)severity; \textcolor{comment}{//this avoids compiler warnings}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00097}00097         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00098}00098     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00101}\mbox{\hyperlink{class_assimp_1_1_null_logger_a071c06bd70831e2e5da932ca806423d8}{00101}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_null_logger_a071c06bd70831e2e5da932ca806423d8}{detachStream}}(\mbox{\hyperlink{class_assimp_1_1_log_stream}{LogStream}} *pStream, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} severity) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00102}00102         (void)pStream; (void)severity; \textcolor{comment}{//this avoids compiler warnings}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00103}00103         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00104}00104     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00106}00106 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00107}00107 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00108}00108 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_null_logger_8hpp_source_l00109}00109 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_NULLLOGGER\_H\_INCLUDED}}
 
 \end{DoxyCode}

@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -77,18 +80,29 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="include_2assimp_2anim_8h_source.html">anim.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for aiVectorKey:</div>
+<div class="dyncontent">
+<div class="center"><img src="structai_vector_key__coll__graph.png" border="0" usemap="#aai_vector_key_coll__map" alt="Collaboration graph"/></div>
+<map name="aai_vector_key_coll__map" id="aai_vector_key_coll__map">
+<area shape="rect" title=" " alt="" coords="5,98,96,126"/>
+<area shape="rect" href="structai_vector3_d.html" title=" " alt="" coords="8,5,93,33"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ab3c43c166434c7a505083d1929f675bc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_vector_key.html#ab3c43c166434c7a505083d1929f675bc">mTime</a></td></tr>
 <tr class="separator:ab3c43c166434c7a505083d1929f675bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f73649028b136a193dac21de35188ad"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_vector3_d.html">aiVector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_vector_key.html#a6f73649028b136a193dac21de35188ad">mValue</a></td></tr>
+<tr class="memitem:a6f73649028b136a193dac21de35188ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_vector3_d.html">aiVector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_vector_key.html#a6f73649028b136a193dac21de35188ad">mValue</a></td></tr>
 <tr class="separator:a6f73649028b136a193dac21de35188ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a452853103d895a9a616ca5f005264eef"><td class="memItemLeft" align="right" valign="top">C_ENUM aiAnimInterpolation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_vector_key.html#a452853103d895a9a616ca5f005264eef">mInterpolation</a></td></tr>
+<tr class="memitem:a452853103d895a9a616ca5f005264eef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#aa8c1788fd9d096036c9e3b6cfe4b1301">C_ENUM</a> <a class="el" href="out_2install_2x64-_release_2include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20e">aiAnimInterpolation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_vector_key.html#a452853103d895a9a616ca5f005264eef">mInterpolation</a></td></tr>
 <tr class="separator:a452853103d895a9a616ca5f005264eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A time-value pair specifying a certain 3D vector for the given time. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2anim_8h_source.html#l00086">86</a> of file <a class="el" href="include_2assimp_2anim_8h_source.html">anim.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a452853103d895a9a616ca5f005264eef" name="a452853103d895a9a616ca5f005264eef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a452853103d895a9a616ca5f005264eef">&#9670;&#160;</a></span>mInterpolation</h2>
@@ -97,11 +111,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_ENUM aiAnimInterpolation aiVectorKey::mInterpolation</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#aa8c1788fd9d096036c9e3b6cfe4b1301">C_ENUM</a> <a class="el" href="out_2install_2x64-_release_2include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20e">aiAnimInterpolation</a> aiVectorKey::mInterpolation</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >The interpolation setting of this key </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2anim_8h_source.html#l00094">94</a> of file <a class="el" href="include_2assimp_2anim_8h_source.html">anim.h</a>.</p>
 
 </div>
 </div>
@@ -118,6 +134,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >The time of this key </p>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2anim_8h_source.html#l00088">88</a> of file <a class="el" href="include_2assimp_2anim_8h_source.html">anim.h</a>.</p>
+
 </div>
 </div>
 <a id="a6f73649028b136a193dac21de35188ad" name="a6f73649028b136a193dac21de35188ad"></a>
@@ -127,11 +145,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_vector3_d.html">aiVector3D</a> aiVectorKey::mValue</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_vector3_d.html">aiVector3D</a> aiVectorKey::mValue</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >The value of this key </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2anim_8h_source.html#l00091">91</a> of file <a class="el" href="include_2assimp_2anim_8h_source.html">anim.h</a>.</p>
 
 </div>
 </div>

@@ -6,6 +6,8 @@ Defines generic C routines to access memory-\/mapped files.
 
 
 {\ttfamily \#include $<$assimp/types.\+h$>$}\newline
+Include dependency graph for cfileio.\+h\+:
+% FIG 0
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -13,35 +15,132 @@ struct \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}}
 \begin{DoxyCompactList}\small\item\em C-\/\+API\+: File system callbacks. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structai_file}{ai\+File}}
 \begin{DoxyCompactList}\small\item\em C-\/\+API\+: File callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2cfileio_8h_ae0c842cece18608e0566cbe270c97d2e}{AI\+\_\+\+FILEIO\+\_\+\+H\+\_\+\+INC}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a21d0825136cd8be942613ff77479045d}\label{include_2assimp_2cfileio_8h_a21d0825136cd8be942613ff77479045d}} 
-typedef size\+\_\+t($\ast$ {\bfseries ai\+File\+Write\+Proc}) (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$, const char $\ast$, size\+\_\+t, size\+\_\+t)
+typedef size\+\_\+t($\ast$ \mbox{\hyperlink{include_2assimp_2cfileio_8h_a21d0825136cd8be942613ff77479045d}{ai\+File\+Write\+Proc}}) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$, size\+\_\+t, size\+\_\+t)
 \item 
-\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a482e6ebea846d515ef23556d0f1717f4}\label{include_2assimp_2cfileio_8h_a482e6ebea846d515ef23556d0f1717f4}} 
-typedef size\+\_\+t($\ast$ {\bfseries ai\+File\+Read\+Proc}) (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$, char $\ast$, size\+\_\+t, size\+\_\+t)
+typedef size\+\_\+t($\ast$ \mbox{\hyperlink{include_2assimp_2cfileio_8h_a482e6ebea846d515ef23556d0f1717f4}{ai\+File\+Read\+Proc}}) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$, char $\ast$, size\+\_\+t, size\+\_\+t)
 \item 
-\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a30d575ddf8f46426ecb12c95f92b1686}\label{include_2assimp_2cfileio_8h_a30d575ddf8f46426ecb12c95f92b1686}} 
-typedef size\+\_\+t($\ast$ {\bfseries ai\+File\+Tell\+Proc}) (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$)
+typedef size\+\_\+t($\ast$ \mbox{\hyperlink{include_2assimp_2cfileio_8h_a30d575ddf8f46426ecb12c95f92b1686}{ai\+File\+Tell\+Proc}}) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$)
 \item 
-\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a49a7a4a25167c7aa03dfe80ae5bdd959}\label{include_2assimp_2cfileio_8h_a49a7a4a25167c7aa03dfe80ae5bdd959}} 
-typedef void($\ast$ {\bfseries ai\+File\+Flush\+Proc}) (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$)
+typedef void($\ast$ \mbox{\hyperlink{include_2assimp_2cfileio_8h_a49a7a4a25167c7aa03dfe80ae5bdd959}{ai\+File\+Flush\+Proc}}) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$)
 \item 
-\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a9d44e516b1ce6ef3da4295045d6ec217}\label{include_2assimp_2cfileio_8h_a9d44e516b1ce6ef3da4295045d6ec217}} 
-typedef C\+\_\+\+ENUM \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{ai\+Return}}($\ast$ {\bfseries ai\+File\+Seek}) (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$, size\+\_\+t, C\+\_\+\+ENUM \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786}{ai\+Origin}})
+typedef \mbox{\hyperlink{include_2assimp_2defs_8h_aa8c1788fd9d096036c9e3b6cfe4b1301}{C\+\_\+\+ENUM}} \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{ai\+Return}}($\ast$ \mbox{\hyperlink{include_2assimp_2cfileio_8h_a9d44e516b1ce6ef3da4295045d6ec217}{ai\+File\+Seek}}) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$, size\+\_\+t, \mbox{\hyperlink{include_2assimp_2defs_8h_aa8c1788fd9d096036c9e3b6cfe4b1301}{C\+\_\+\+ENUM}} \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786}{ai\+Origin}})
 \item 
-\mbox{\Hypertarget{include_2assimp_2cfileio_8h_acf147febf5749700fdbca46189ef66c0}\label{include_2assimp_2cfileio_8h_acf147febf5749700fdbca46189ef66c0}} 
-typedef C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$($\ast$ {\bfseries ai\+File\+Open\+Proc}) (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}} $\ast$, const char $\ast$, const char $\ast$)
+typedef \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$($\ast$ \mbox{\hyperlink{include_2assimp_2cfileio_8h_acf147febf5749700fdbca46189ef66c0}{ai\+File\+Open\+Proc}}) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}} $\ast$, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$)
 \item 
-\mbox{\Hypertarget{include_2assimp_2cfileio_8h_ab6e7f26b63f2d1ed9655e97bd4ebd38c}\label{include_2assimp_2cfileio_8h_ab6e7f26b63f2d1ed9655e97bd4ebd38c}} 
-typedef void($\ast$ {\bfseries ai\+File\+Close\+Proc}) (C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}} $\ast$, C\+\_\+\+STRUCT \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$)
+typedef void($\ast$ \mbox{\hyperlink{include_2assimp_2cfileio_8h_ab6e7f26b63f2d1ed9655e97bd4ebd38c}{ai\+File\+Close\+Proc}}) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}} $\ast$, \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$)
 \item 
-\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a176132d0cd51c96302089ff3f8a8ee1c}\label{include_2assimp_2cfileio_8h_a176132d0cd51c96302089ff3f8a8ee1c}} 
-typedef char $\ast$ {\bfseries ai\+User\+Data}
+typedef char $\ast$ \mbox{\hyperlink{include_2assimp_2cfileio_8h_a176132d0cd51c96302089ff3f8a8ee1c}{ai\+User\+Data}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Defines generic C routines to access memory-\/mapped files. 
+
+
+
+Definition in file \mbox{\hyperlink{include_2assimp_2cfileio_8h_source}{cfileio.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_ae0c842cece18608e0566cbe270c97d2e}\label{include_2assimp_2cfileio_8h_ae0c842cece18608e0566cbe270c97d2e}} 
+\index{cfileio.h@{cfileio.h}!AI\_FILEIO\_H\_INC@{AI\_FILEIO\_H\_INC}}
+\index{AI\_FILEIO\_H\_INC@{AI\_FILEIO\_H\_INC}!cfileio.h@{cfileio.h}}
+\doxysubsubsection{\texorpdfstring{AI\_FILEIO\_H\_INC}{AI\_FILEIO\_H\_INC}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+FILEIO\+\_\+\+H\+\_\+\+INC}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2cfileio_8h_source_l00047}{47}} of file \mbox{\hyperlink{include_2assimp_2cfileio_8h_source}{cfileio.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_ab6e7f26b63f2d1ed9655e97bd4ebd38c}\label{include_2assimp_2cfileio_8h_ab6e7f26b63f2d1ed9655e97bd4ebd38c}} 
+\index{cfileio.h@{cfileio.h}!aiFileCloseProc@{aiFileCloseProc}}
+\index{aiFileCloseProc@{aiFileCloseProc}!cfileio.h@{cfileio.h}}
+\doxysubsubsection{\texorpdfstring{aiFileCloseProc}{aiFileCloseProc}}
+{\footnotesize\ttfamily typedef void($\ast$ ai\+File\+Close\+Proc) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}} $\ast$, \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2cfileio_8h_source_l00071}{71}} of file \mbox{\hyperlink{include_2assimp_2cfileio_8h_source}{cfileio.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a49a7a4a25167c7aa03dfe80ae5bdd959}\label{include_2assimp_2cfileio_8h_a49a7a4a25167c7aa03dfe80ae5bdd959}} 
+\index{cfileio.h@{cfileio.h}!aiFileFlushProc@{aiFileFlushProc}}
+\index{aiFileFlushProc@{aiFileFlushProc}!cfileio.h@{cfileio.h}}
+\doxysubsubsection{\texorpdfstring{aiFileFlushProc}{aiFileFlushProc}}
+{\footnotesize\ttfamily typedef void($\ast$ ai\+File\+Flush\+Proc) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2cfileio_8h_source_l00066}{66}} of file \mbox{\hyperlink{include_2assimp_2cfileio_8h_source}{cfileio.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_acf147febf5749700fdbca46189ef66c0}\label{include_2assimp_2cfileio_8h_acf147febf5749700fdbca46189ef66c0}} 
+\index{cfileio.h@{cfileio.h}!aiFileOpenProc@{aiFileOpenProc}}
+\index{aiFileOpenProc@{aiFileOpenProc}!cfileio.h@{cfileio.h}}
+\doxysubsubsection{\texorpdfstring{aiFileOpenProc}{aiFileOpenProc}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$($\ast$ ai\+File\+Open\+Proc) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file_i_o}{ai\+File\+IO}} $\ast$, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2cfileio_8h_source_l00070}{70}} of file \mbox{\hyperlink{include_2assimp_2cfileio_8h_source}{cfileio.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a482e6ebea846d515ef23556d0f1717f4}\label{include_2assimp_2cfileio_8h_a482e6ebea846d515ef23556d0f1717f4}} 
+\index{cfileio.h@{cfileio.h}!aiFileReadProc@{aiFileReadProc}}
+\index{aiFileReadProc@{aiFileReadProc}!cfileio.h@{cfileio.h}}
+\doxysubsubsection{\texorpdfstring{aiFileReadProc}{aiFileReadProc}}
+{\footnotesize\ttfamily typedef size\+\_\+t($\ast$ ai\+File\+Read\+Proc) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$, char $\ast$, size\+\_\+t, size\+\_\+t)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2cfileio_8h_source_l00064}{64}} of file \mbox{\hyperlink{include_2assimp_2cfileio_8h_source}{cfileio.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a9d44e516b1ce6ef3da4295045d6ec217}\label{include_2assimp_2cfileio_8h_a9d44e516b1ce6ef3da4295045d6ec217}} 
+\index{cfileio.h@{cfileio.h}!aiFileSeek@{aiFileSeek}}
+\index{aiFileSeek@{aiFileSeek}!cfileio.h@{cfileio.h}}
+\doxysubsubsection{\texorpdfstring{aiFileSeek}{aiFileSeek}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{include_2assimp_2defs_8h_aa8c1788fd9d096036c9e3b6cfe4b1301}{C\+\_\+\+ENUM}} \mbox{\hyperlink{include_2assimp_2types_8h_a1f78dfb65090aa930cabb984c8abe711}{ai\+Return}}($\ast$ ai\+File\+Seek) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$, size\+\_\+t, \mbox{\hyperlink{include_2assimp_2defs_8h_aa8c1788fd9d096036c9e3b6cfe4b1301}{C\+\_\+\+ENUM}} \mbox{\hyperlink{include_2assimp_2types_8h_ac50fbaa57d78776ca99e42104d9b2786}{ai\+Origin}})}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2cfileio_8h_source_l00067}{67}} of file \mbox{\hyperlink{include_2assimp_2cfileio_8h_source}{cfileio.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a30d575ddf8f46426ecb12c95f92b1686}\label{include_2assimp_2cfileio_8h_a30d575ddf8f46426ecb12c95f92b1686}} 
+\index{cfileio.h@{cfileio.h}!aiFileTellProc@{aiFileTellProc}}
+\index{aiFileTellProc@{aiFileTellProc}!cfileio.h@{cfileio.h}}
+\doxysubsubsection{\texorpdfstring{aiFileTellProc}{aiFileTellProc}}
+{\footnotesize\ttfamily typedef size\+\_\+t($\ast$ ai\+File\+Tell\+Proc) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2cfileio_8h_source_l00065}{65}} of file \mbox{\hyperlink{include_2assimp_2cfileio_8h_source}{cfileio.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a21d0825136cd8be942613ff77479045d}\label{include_2assimp_2cfileio_8h_a21d0825136cd8be942613ff77479045d}} 
+\index{cfileio.h@{cfileio.h}!aiFileWriteProc@{aiFileWriteProc}}
+\index{aiFileWriteProc@{aiFileWriteProc}!cfileio.h@{cfileio.h}}
+\doxysubsubsection{\texorpdfstring{aiFileWriteProc}{aiFileWriteProc}}
+{\footnotesize\ttfamily typedef size\+\_\+t($\ast$ ai\+File\+Write\+Proc) (\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_file}{ai\+File}} $\ast$, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$, size\+\_\+t, size\+\_\+t)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2cfileio_8h_source_l00063}{63}} of file \mbox{\hyperlink{include_2assimp_2cfileio_8h_source}{cfileio.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2cfileio_8h_a176132d0cd51c96302089ff3f8a8ee1c}\label{include_2assimp_2cfileio_8h_a176132d0cd51c96302089ff3f8a8ee1c}} 
+\index{cfileio.h@{cfileio.h}!aiUserData@{aiUserData}}
+\index{aiUserData@{aiUserData}!cfileio.h@{cfileio.h}}
+\doxysubsubsection{\texorpdfstring{aiUserData}{aiUserData}}
+{\footnotesize\ttfamily typedef char$\ast$ \mbox{\hyperlink{include_2assimp_2cfileio_8h_a176132d0cd51c96302089ff3f8a8ee1c}{ai\+User\+Data}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2cfileio_8h_source_l00074}{74}} of file \mbox{\hyperlink{include_2assimp_2cfileio_8h_source}{cfileio.\+h}}.
 

@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -126,23 +129,23 @@ $(function() {
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#include &lt;assimp/material.h&gt;</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#define AI_MATKEY_GLTF_PBRMETALLICROUGHNESS_METALLICROUGHNESS_TEXTURE aiTextureType_UNKNOWN, 0</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#define AI_MATKEY_GLTF_ALPHAMODE &quot;$mat.gltf.alphaMode&quot;</span>, 0, 0</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#define AI_MATKEY_GLTF_ALPHACUTOFF &quot;$mat.gltf.alphaCutoff&quot;</span>, 0, 0</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a8030b47ec2342a1ecd75a4044fe73b8c">   56</a></span><span class="preprocessor">#define AI_MATKEY_GLTF_PBRMETALLICROUGHNESS_METALLICROUGHNESS_TEXTURE aiTextureType_UNKNOWN, 0</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#aa1e95297f0f2f2ea9995dee2e337473d">   57</a></span><span class="preprocessor">#define AI_MATKEY_GLTF_ALPHAMODE &quot;$mat.gltf.alphaMode&quot;</span>, 0, 0</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#adda58f37ebbaaa81ef3a20b05be6d8e0">   58</a></span><span class="preprocessor">#define AI_MATKEY_GLTF_ALPHACUTOFF &quot;$mat.gltf.alphaCutoff&quot;</span>, 0, 0</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#define _AI_MATKEY_GLTF_MAPPINGNAME_BASE &quot;$tex.mappingname&quot;</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#define _AI_MATKEY_GLTF_MAPPINGID_BASE &quot;$tex.mappingid&quot;</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#define _AI_MATKEY_GLTF_MAPPINGFILTER_MAG_BASE &quot;$tex.mappingfiltermag&quot;</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#define _AI_MATKEY_GLTF_MAPPINGFILTER_MIN_BASE &quot;$tex.mappingfiltermin&quot;</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#define _AI_MATKEY_GLTF_SCALE_BASE &quot;$tex.scale&quot;</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#define _AI_MATKEY_GLTF_STRENGTH_BASE &quot;$tex.strength&quot;</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a2b44ca26faf1c3010e838f4a34e0e25a">   60</a></span><span class="preprocessor">#define _AI_MATKEY_GLTF_MAPPINGNAME_BASE &quot;$tex.mappingname&quot;</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#adf2a0d14eb7a9ef14c0b737bddd41e9d">   61</a></span><span class="preprocessor">#define _AI_MATKEY_GLTF_MAPPINGID_BASE &quot;$tex.mappingid&quot;</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a94642b4e663dd7bdf9d55f8e0cf5857d">   62</a></span><span class="preprocessor">#define _AI_MATKEY_GLTF_MAPPINGFILTER_MAG_BASE &quot;$tex.mappingfiltermag&quot;</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#ae21c07f167facbff3dfd9b00278b2e75">   63</a></span><span class="preprocessor">#define _AI_MATKEY_GLTF_MAPPINGFILTER_MIN_BASE &quot;$tex.mappingfiltermin&quot;</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a568eab3f7f4421684c3419a51bc5c9fa">   64</a></span><span class="preprocessor">#define _AI_MATKEY_GLTF_SCALE_BASE &quot;$tex.scale&quot;</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#adf3b7556372fc968e5bb10ce11f7822b">   65</a></span><span class="preprocessor">#define _AI_MATKEY_GLTF_STRENGTH_BASE &quot;$tex.strength&quot;</span></div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#define AI_MATKEY_GLTF_MAPPINGNAME(type, N) _AI_MATKEY_GLTF_MAPPINGNAME_BASE, type, N</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#define AI_MATKEY_GLTF_MAPPINGID(type, N) _AI_MATKEY_GLTF_MAPPINGID_BASE, type, N</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#define AI_MATKEY_GLTF_MAPPINGFILTER_MAG(type, N) _AI_MATKEY_GLTF_MAPPINGFILTER_MAG_BASE, type, N</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#define AI_MATKEY_GLTF_MAPPINGFILTER_MIN(type, N) _AI_MATKEY_GLTF_MAPPINGFILTER_MIN_BASE, type, N</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#define AI_MATKEY_GLTF_TEXTURE_SCALE(type, N) _AI_MATKEY_GLTF_SCALE_BASE, type, N</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#define AI_MATKEY_GLTF_TEXTURE_STRENGTH(type, N) _AI_MATKEY_GLTF_STRENGTH_BASE, type, N</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a255fa52a83d841db61feb7d37e3b1b76">   67</a></span><span class="preprocessor">#define AI_MATKEY_GLTF_MAPPINGNAME(type, N) _AI_MATKEY_GLTF_MAPPINGNAME_BASE, type, N</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a937611dece60c3928311aadaf6002d34">   68</a></span><span class="preprocessor">#define AI_MATKEY_GLTF_MAPPINGID(type, N) _AI_MATKEY_GLTF_MAPPINGID_BASE, type, N</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a2a36fa736e06cbec99b2609278563a2f">   69</a></span><span class="preprocessor">#define AI_MATKEY_GLTF_MAPPINGFILTER_MAG(type, N) _AI_MATKEY_GLTF_MAPPINGFILTER_MAG_BASE, type, N</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#ae3484e40af3630963bb880fbe16e5a93">   70</a></span><span class="preprocessor">#define AI_MATKEY_GLTF_MAPPINGFILTER_MIN(type, N) _AI_MATKEY_GLTF_MAPPINGFILTER_MIN_BASE, type, N</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a85b168e8b008d310b58898105c601ee3">   71</a></span><span class="preprocessor">#define AI_MATKEY_GLTF_TEXTURE_SCALE(type, N) _AI_MATKEY_GLTF_SCALE_BASE, type, N</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_gltf_material_8h.html#a7215ce7e32adebb36c446b5da0fa4482">   72</a></span><span class="preprocessor">#define AI_MATKEY_GLTF_TEXTURE_STRENGTH(type, N) _AI_MATKEY_GLTF_STRENGTH_BASE, type, N</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->

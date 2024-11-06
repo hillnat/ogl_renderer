@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -120,7 +123,7 @@ $(function() {
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#ifndef INCLUDED_AI_NULLLOGGER_H</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#define INCLUDED_AI_NULLLOGGER_H</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_null_logger_8hpp.html#a50416d8a712954276dead0c968596c1e">   49</a></span><span class="preprocessor">#define INCLUDED_AI_NULLLOGGER_H</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#ifdef __GNUC__</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#pragma GCC system_header</span></div>
@@ -131,7 +134,7 @@ $(function() {
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_assimp.html">Assimp</a> {</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">// ---------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"></span><span class="keyword">class </span>ASSIMP_API NullLogger</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"></span><span class="keyword">class </span><a class="code hl_define" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> NullLogger</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    : <span class="keyword">public</span> Logger {</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">public</span>:</div>
@@ -170,15 +173,16 @@ $(function() {
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>};</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#endif </span><span class="comment">// !! AI_NULLLOGGER_H_INCLUDED</span></div>
-<div class="ttc" id="aclass_assimp_1_1_log_stream_html"><div class="ttname"><a href="class_assimp_1_1_log_stream.html">Assimp::LogStream</a></div><div class="ttdoc">CPP-API: Abstract interface for log stream implementations.</div><div class="ttdef"><b>Definition:</b> LogStream.hpp:69</div></div>
-<div class="ttc" id="aclass_assimp_1_1_null_logger_html_a071c06bd70831e2e5da932ca806423d8"><div class="ttname"><a href="class_assimp_1_1_null_logger.html#a071c06bd70831e2e5da932ca806423d8">Assimp::NullLogger::detachStream</a></div><div class="ttdeci">bool detachStream(LogStream *pStream, unsigned int severity)</div><div class="ttdoc">Detach a still attached stream from logger.</div><div class="ttdef"><b>Definition:</b> NullLogger.hpp:101</div></div>
-<div class="ttc" id="aclass_assimp_1_1_null_logger_html_a12d2b0048d17a819c8c00277ad1394c5"><div class="ttname"><a href="class_assimp_1_1_null_logger.html#a12d2b0048d17a819c8c00277ad1394c5">Assimp::NullLogger::OnInfo</a></div><div class="ttdeci">void OnInfo(const char *message)</div><div class="ttdoc">Logs an info message.</div><div class="ttdef"><b>Definition:</b> NullLogger.hpp:80</div></div>
-<div class="ttc" id="aclass_assimp_1_1_null_logger_html_a31c05ecaee392b5fd34fd2dfd1cca559"><div class="ttname"><a href="class_assimp_1_1_null_logger.html#a31c05ecaee392b5fd34fd2dfd1cca559">Assimp::NullLogger::attachStream</a></div><div class="ttdeci">bool attachStream(LogStream *pStream, unsigned int severity)</div><div class="ttdoc">Detach a still attached stream from logger.</div><div class="ttdef"><b>Definition:</b> NullLogger.hpp:95</div></div>
-<div class="ttc" id="aclass_assimp_1_1_null_logger_html_a4fbf66103757fafcff891fb04b4ee714"><div class="ttname"><a href="class_assimp_1_1_null_logger.html#a4fbf66103757fafcff891fb04b4ee714">Assimp::NullLogger::OnError</a></div><div class="ttdeci">void OnError(const char *message)</div><div class="ttdoc">Logs an error message.</div><div class="ttdef"><b>Definition:</b> NullLogger.hpp:90</div></div>
-<div class="ttc" id="aclass_assimp_1_1_null_logger_html_a9a04c2b9e3d4bc9eec8f693ed8115f24"><div class="ttname"><a href="class_assimp_1_1_null_logger.html#a9a04c2b9e3d4bc9eec8f693ed8115f24">Assimp::NullLogger::OnWarn</a></div><div class="ttdeci">void OnWarn(const char *message)</div><div class="ttdoc">Logs a warning message.</div><div class="ttdef"><b>Definition:</b> NullLogger.hpp:85</div></div>
-<div class="ttc" id="aclass_assimp_1_1_null_logger_html_aa1817f1e94f406931d138a510b32e16e"><div class="ttname"><a href="class_assimp_1_1_null_logger.html#aa1817f1e94f406931d138a510b32e16e">Assimp::NullLogger::OnVerboseDebug</a></div><div class="ttdeci">void OnVerboseDebug(const char *message)</div><div class="ttdoc">Logs a verbose debug message.</div><div class="ttdef"><b>Definition:</b> NullLogger.hpp:75</div></div>
-<div class="ttc" id="aclass_assimp_1_1_null_logger_html_af354ebbd382b7097a55d364794a45631"><div class="ttname"><a href="class_assimp_1_1_null_logger.html#af354ebbd382b7097a55d364794a45631">Assimp::NullLogger::OnDebug</a></div><div class="ttdeci">void OnDebug(const char *message)</div><div class="ttdoc">Logs a debug message.</div><div class="ttdef"><b>Definition:</b> NullLogger.hpp:70</div></div>
-<div class="ttc" id="anamespace_assimp_html"><div class="ttname"><a href="namespace_assimp.html">Assimp</a></div><div class="ttdef"><b>Definition:</b> AssertHandler.h:50</div></div>
+<div class="ttc" id="aclass_assimp_1_1_log_stream_html"><div class="ttname"><a href="class_assimp_1_1_log_stream.html">Assimp::LogStream</a></div><div class="ttdoc">CPP-API: Abstract interface for log stream implementations.</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_log_stream_8hpp_source.html#l00065">LogStream.hpp:69</a></div></div>
+<div class="ttc" id="aclass_assimp_1_1_null_logger_html_a071c06bd70831e2e5da932ca806423d8"><div class="ttname"><a href="class_assimp_1_1_null_logger.html#a071c06bd70831e2e5da932ca806423d8">Assimp::NullLogger::detachStream</a></div><div class="ttdeci">bool detachStream(LogStream *pStream, unsigned int severity)</div><div class="ttdoc">Detach a still attached stream from logger.</div><div class="ttdef"><b>Definition:</b> <a href="out_2install_2x64-_release_2include_2assimp_2_null_logger_8hpp_source.html#l00101">NullLogger.hpp:101</a></div></div>
+<div class="ttc" id="aclass_assimp_1_1_null_logger_html_a12d2b0048d17a819c8c00277ad1394c5"><div class="ttname"><a href="class_assimp_1_1_null_logger.html#a12d2b0048d17a819c8c00277ad1394c5">Assimp::NullLogger::OnInfo</a></div><div class="ttdeci">void OnInfo(const char *message)</div><div class="ttdoc">Logs an info message.</div><div class="ttdef"><b>Definition:</b> <a href="out_2install_2x64-_release_2include_2assimp_2_null_logger_8hpp_source.html#l00080">NullLogger.hpp:80</a></div></div>
+<div class="ttc" id="aclass_assimp_1_1_null_logger_html_a31c05ecaee392b5fd34fd2dfd1cca559"><div class="ttname"><a href="class_assimp_1_1_null_logger.html#a31c05ecaee392b5fd34fd2dfd1cca559">Assimp::NullLogger::attachStream</a></div><div class="ttdeci">bool attachStream(LogStream *pStream, unsigned int severity)</div><div class="ttdoc">Detach a still attached stream from logger.</div><div class="ttdef"><b>Definition:</b> <a href="out_2install_2x64-_release_2include_2assimp_2_null_logger_8hpp_source.html#l00095">NullLogger.hpp:95</a></div></div>
+<div class="ttc" id="aclass_assimp_1_1_null_logger_html_a4fbf66103757fafcff891fb04b4ee714"><div class="ttname"><a href="class_assimp_1_1_null_logger.html#a4fbf66103757fafcff891fb04b4ee714">Assimp::NullLogger::OnError</a></div><div class="ttdeci">void OnError(const char *message)</div><div class="ttdoc">Logs an error message.</div><div class="ttdef"><b>Definition:</b> <a href="out_2install_2x64-_release_2include_2assimp_2_null_logger_8hpp_source.html#l00090">NullLogger.hpp:90</a></div></div>
+<div class="ttc" id="aclass_assimp_1_1_null_logger_html_a9a04c2b9e3d4bc9eec8f693ed8115f24"><div class="ttname"><a href="class_assimp_1_1_null_logger.html#a9a04c2b9e3d4bc9eec8f693ed8115f24">Assimp::NullLogger::OnWarn</a></div><div class="ttdeci">void OnWarn(const char *message)</div><div class="ttdoc">Logs a warning message.</div><div class="ttdef"><b>Definition:</b> <a href="out_2install_2x64-_release_2include_2assimp_2_null_logger_8hpp_source.html#l00085">NullLogger.hpp:85</a></div></div>
+<div class="ttc" id="aclass_assimp_1_1_null_logger_html_aa1817f1e94f406931d138a510b32e16e"><div class="ttname"><a href="class_assimp_1_1_null_logger.html#aa1817f1e94f406931d138a510b32e16e">Assimp::NullLogger::OnVerboseDebug</a></div><div class="ttdeci">void OnVerboseDebug(const char *message)</div><div class="ttdoc">Logs a verbose debug message.</div><div class="ttdef"><b>Definition:</b> <a href="out_2install_2x64-_release_2include_2assimp_2_null_logger_8hpp_source.html#l00075">NullLogger.hpp:75</a></div></div>
+<div class="ttc" id="aclass_assimp_1_1_null_logger_html_af354ebbd382b7097a55d364794a45631"><div class="ttname"><a href="class_assimp_1_1_null_logger.html#af354ebbd382b7097a55d364794a45631">Assimp::NullLogger::OnDebug</a></div><div class="ttdeci">void OnDebug(const char *message)</div><div class="ttdoc">Logs a debug message.</div><div class="ttdef"><b>Definition:</b> <a href="out_2install_2x64-_release_2include_2assimp_2_null_logger_8hpp_source.html#l00070">NullLogger.hpp:70</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2defs_8h_html_a7d617d307e656cb6ff315ba71ff958d4"><div class="ttname"><a href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a></div><div class="ttdeci">#define ASSIMP_API</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2defs_8h_source.html#l00163">defs.h:163</a></div></div>
+<div class="ttc" id="anamespace_assimp_html"><div class="ttname"><a href="namespace_assimp.html">Assimp</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_assert_handler_8h_source.html#l00050">AssertHandler.h:50</a></div></div>
 <div class="ttc" id="aout_2install_2x64-_release_2include_2assimp_2_logger_8hpp_html"><div class="ttname"><a href="out_2install_2x64-_release_2include_2assimp_2_logger_8hpp.html">Logger.hpp</a></div><div class="ttdoc">Abstract base class 'Logger', base of the logging system.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -120,7 +123,7 @@ $(function() {
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#ifndef AI_MATRIX4X4_H_INC</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#define AI_MATRIX4X4_H_INC</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="include_2assimp_2matrix4x4_8h.html#aa85c005ba717f92919de6c4b4bcb6dc9">   48</a></span><span class="preprocessor">#define AI_MATRIX4X4_H_INC</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#ifdef __GNUC__</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#   pragma GCC system_header</span></div>
@@ -140,7 +143,7 @@ $(function() {
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">class </span>aiMatrix4x4t {</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    aiMatrix4x4t() AI_NO_EXCEPT;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    aiMatrix4x4t() <a class="code hl_define" href="include_2assimp_2defs_8h.html#ae032f18edd69bf6ba935ef9feb025a96">AI_NO_EXCEPT</a>;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    aiMatrix4x4t (  TReal _a1, TReal _a2, TReal _a3, TReal _a4,</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                    TReal _b1, TReal _b2, TReal _b3, TReal _b4,</div>
@@ -148,60 +151,60 @@ $(function() {
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                    TReal _d1, TReal _d2, TReal _d3, TReal _d4);</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    explicit aiMatrix4x4t( const aiMatrix3x3t&lt;TReal&gt;&amp; m);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    explicit aiMatrix4x4t( <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiMatrix3x3t&lt;TReal&gt;&amp; m);</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    aiMatrix4x4t(const aiVector3t&lt;TReal&gt;&amp; scaling, const aiQuaterniont&lt;TReal&gt;&amp; rotation,</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        const aiVector3t&lt;TReal&gt;&amp; position);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    aiMatrix4x4t(<a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiVector3t&lt;TReal&gt;&amp; scaling, <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiQuaterniont&lt;TReal&gt;&amp; rotation,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiVector3t&lt;TReal&gt;&amp; position);</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">// array access operators</span></div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment"></span>    TReal* operator[]       (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p_iIndex);</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    const TReal* operator[] (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p_iIndex) const;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> TReal* operator[] (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p_iIndex) <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>;</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="comment">// comparison operators</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordtype">bool</span> operator== (const aiMatrix4x4t&amp; m) const;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordtype">bool</span> operator!= (const aiMatrix4x4t&amp; m) const;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordtype">bool</span> operator== (<a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiMatrix4x4t&amp; m) <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordtype">bool</span> operator!= (<a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiMatrix4x4t&amp; m) <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>;</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">bool</span> Equal(const aiMatrix4x4t &amp;m, TReal epsilon = ai_epsilon) const;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">bool</span> Equal(<a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiMatrix4x4t &amp;m, TReal epsilon = <a class="code hl_define" href="include_2assimp_2defs_8h.html#acb916693da7ef13a2350c170af2418aa">ai_epsilon</a>) <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>;</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">// matrix multiplication.</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    aiMatrix4x4t&amp; operator *= (const aiMatrix4x4t&amp; m);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    aiMatrix4x4t  operator *  (const aiMatrix4x4t&amp; m) const;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    aiMatrix4x4t operator * (const TReal&amp; aFloat) const;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    aiMatrix4x4t operator + (const aiMatrix4x4t&amp; aMatrix) const;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    aiMatrix4x4t&amp; operator *= (<a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiMatrix4x4t&amp; m);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    aiMatrix4x4t  operator *  (<a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiMatrix4x4t&amp; m) <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    aiMatrix4x4t operator * (<a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> TReal&amp; aFloat) <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    aiMatrix4x4t operator + (<a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiMatrix4x4t&amp; aMatrix) <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>;</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    template &lt;typename TOther&gt;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    operator aiMatrix4x4t&lt;TOther&gt; () const;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    operator aiMatrix4x4t&lt;TOther&gt; () <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>;</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment"></span>    aiMatrix4x4t&amp; Transpose();</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment"></span>    aiMatrix4x4t&amp; Inverse();</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    TReal Determinant() const;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    TReal Determinant() <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>;</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment"></span>    inline <span class="keywordtype">bool</span> IsIdentity(const TReal</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            epsilon = AI_CONFIG_CHECK_IDENTITY_MATRIX_EPSILON_DEFAULT) const;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment"></span>    inline <span class="keywordtype">bool</span> IsIdentity(<a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> TReal</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            epsilon = <a class="code hl_define" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a4ba3d321e34dd8c6ccee130ea25915ab">AI_CONFIG_CHECK_IDENTITY_MATRIX_EPSILON_DEFAULT</a>) <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>;</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment"></span>    <span class="keywordtype">void</span> Decompose (aiVector3t&lt;TReal&gt;&amp; scaling, aiQuaterniont&lt;TReal&gt;&amp; rotation,</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        aiVector3t&lt;TReal&gt;&amp; position) const;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        aiVector3t&lt;TReal&gt;&amp; position) <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>;</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="comment"></span>    <span class="keywordtype">void</span> Decompose(aiVector3t&lt;TReal&gt;&amp; pScaling, aiVector3t&lt;TReal&gt;&amp; pRotation, aiVector3t&lt;TReal&gt;&amp; pPosition) const;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="comment"></span>    <span class="keywordtype">void</span> Decompose(aiVector3t&lt;TReal&gt;&amp; pScaling, aiVector3t&lt;TReal&gt;&amp; pRotation, aiVector3t&lt;TReal&gt;&amp; pPosition) <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>;</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment"></span>    <span class="keywordtype">void</span> Decompose(aiVector3t&lt;TReal&gt;&amp; pScaling, aiVector3t&lt;TReal&gt;&amp; pRotationAxis, TReal&amp; pRotationAngle, aiVector3t&lt;TReal&gt;&amp; pPosition) const;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment"></span>    <span class="keywordtype">void</span> Decompose(aiVector3t&lt;TReal&gt;&amp; pScaling, aiVector3t&lt;TReal&gt;&amp; pRotationAxis, TReal&amp; pRotationAngle, aiVector3t&lt;TReal&gt;&amp; pPosition) <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>;</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="comment"></span>    <span class="keywordtype">void</span> DecomposeNoScaling (aiQuaterniont&lt;TReal&gt;&amp; rotation,</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        aiVector3t&lt;TReal&gt;&amp; position) const;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        aiVector3t&lt;TReal&gt;&amp; position) <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>;</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="comment"></span>    aiMatrix4x4t&amp; FromEulerAnglesXYZ(TReal x, TReal y, TReal z);</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    aiMatrix4x4t&amp; FromEulerAnglesXYZ(const aiVector3t&lt;TReal&gt;&amp; blubb);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    aiMatrix4x4t&amp; FromEulerAnglesXYZ(<a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiVector3t&lt;TReal&gt;&amp; blubb);</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="comment"></span>    static aiMatrix4x4t&amp; RotationX(TReal a, aiMatrix4x4t&amp; out);</div>
@@ -213,19 +216,19 @@ $(function() {
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment"></span>    static aiMatrix4x4t&amp; RotationZ(TReal a, aiMatrix4x4t&amp; out);</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment"></span>    static aiMatrix4x4t&amp; Rotation(TReal a, const aiVector3t&lt;TReal&gt;&amp; axis,</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment"></span>    static aiMatrix4x4t&amp; Rotation(TReal a, <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiVector3t&lt;TReal&gt;&amp; axis,</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            aiMatrix4x4t&amp; out);</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="comment"></span>    static aiMatrix4x4t&amp; Translation( const aiVector3t&lt;TReal&gt;&amp; v,</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="comment"></span>    static aiMatrix4x4t&amp; Translation( <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiVector3t&lt;TReal&gt;&amp; v,</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>            aiMatrix4x4t&amp; out);</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="comment"></span>    static aiMatrix4x4t&amp; Scaling( const aiVector3t&lt;TReal&gt;&amp; v, aiMatrix4x4t&amp; out);</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="comment"></span>    static aiMatrix4x4t&amp; Scaling( <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiVector3t&lt;TReal&gt;&amp; v, aiMatrix4x4t&amp; out);</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="comment"></span>    static aiMatrix4x4t&amp; FromToMatrix(const aiVector3t&lt;TReal&gt;&amp; from,</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            const aiVector3t&lt;TReal&gt;&amp; to, aiMatrix4x4t&amp; out);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="comment"></span>    static aiMatrix4x4t&amp; FromToMatrix(<a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiVector3t&lt;TReal&gt;&amp; from,</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> aiVector3t&lt;TReal&gt;&amp; to, aiMatrix4x4t&amp; out);</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    TReal a1, a2, a3, a4;</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    TReal b1, b2, b3, b4;</div>
@@ -233,22 +236,31 @@ $(function() {
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    TReal d1, d2, d3, d4;</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>};</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>typedef aiMatrix4x4t&lt;ai_real&gt; <a class="code hl_struct" href="structai_matrix4x4.html">aiMatrix4x4</a>;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>typedef aiMatrix4x4t&lt;<a class="code hl_typedef" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a>&gt; <a class="code hl_struct" href="structai_matrix4x4.html">aiMatrix4x4</a>;</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="structai_matrix4x4.html">  271</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structai_matrix4x4.html">aiMatrix4x4</a> {</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    ai_real a1, a2, a3, a4;</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    ai_real b1, b2, b3, b4;</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    ai_real c1, c2, c3, c4;</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    ai_real d1, d2, d3, d4;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno"><a class="line" href="structai_matrix4x4.html#a719e76cb6dd33a62946227fbcf61eb44">  272</a></span>    <a class="code hl_typedef" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a> <a class="code hl_variable" href="structai_matrix4x4.html#a719e76cb6dd33a62946227fbcf61eb44">a1</a>, a2, a3, a4;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno"><a class="line" href="structai_matrix4x4.html#acbc8a0e50a085e4274e2adbbcbd3f019">  273</a></span>    <a class="code hl_typedef" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a> <a class="code hl_variable" href="structai_matrix4x4.html#acbc8a0e50a085e4274e2adbbcbd3f019">b1</a>, b2, b3, b4;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="structai_matrix4x4.html#a3a083e56eb0bb6b12bf454973d921577">  274</a></span>    <a class="code hl_typedef" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a> <a class="code hl_variable" href="structai_matrix4x4.html#a3a083e56eb0bb6b12bf454973d921577">c1</a>, c2, c3, c4;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno"><a class="line" href="structai_matrix4x4.html#a399b7ec1d410283d5ee5651208f5f8b8">  275</a></span>    <a class="code hl_typedef" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a> <a class="code hl_variable" href="structai_matrix4x4.html#a399b7ec1d410283d5ee5651208f5f8b8">d1</a>, d2, d3, d4;</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>};</div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="preprocessor">#endif </span><span class="comment">// __cplusplus</span></div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="preprocessor">#endif </span><span class="comment">// AI_MATRIX4X4_H_INC</span></div>
-<div class="ttc" id="astructai_matrix4x4_html"><div class="ttname"><a href="structai_matrix4x4.html">aiMatrix4x4</a></div><div class="ttdef"><b>Definition:</b> matrix4x4.h:271</div></div>
+<div class="ttc" id="abuild_2x64-_debug_2include_2assimp_2config_8h_html_a4ba3d321e34dd8c6ccee130ea25915ab"><div class="ttname"><a href="build_2x64-_debug_2include_2assimp_2config_8h.html#a4ba3d321e34dd8c6ccee130ea25915ab">AI_CONFIG_CHECK_IDENTITY_MATRIX_EPSILON_DEFAULT</a></div><div class="ttdeci">#define AI_CONFIG_CHECK_IDENTITY_MATRIX_EPSILON_DEFAULT</div><div class="ttdef"><b>Definition:</b> <a href="build_2x64-_debug_2include_2assimp_2config_8h_source.html#l00240">config.h:240</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2defs_8h_html_acb916693da7ef13a2350c170af2418aa"><div class="ttname"><a href="include_2assimp_2defs_8h.html#acb916693da7ef13a2350c170af2418aa">ai_epsilon</a></div><div class="ttdeci">#define ai_epsilon</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2defs_8h_source.html#l00294">defs.h:294</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2defs_8h_html_ae032f18edd69bf6ba935ef9feb025a96"><div class="ttname"><a href="include_2assimp_2defs_8h.html#ae032f18edd69bf6ba935ef9feb025a96">AI_NO_EXCEPT</a></div><div class="ttdeci">#define AI_NO_EXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2defs_8h_source.html#l00324">defs.h:324</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2defs_8h_html_af221f9bbc3e0dc43a46efaaac6dab067"><div class="ttname"><a href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a></div><div class="ttdeci">float ai_real</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2defs_8h_source.html#l00264">defs.h:264</a></div></div>
+<div class="ttc" id="astructai_matrix4x4_html"><div class="ttname"><a href="structai_matrix4x4.html">aiMatrix4x4</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2matrix4x4_8h_source.html#l00271">matrix4x4.h:271</a></div></div>
+<div class="ttc" id="astructai_matrix4x4_html_a399b7ec1d410283d5ee5651208f5f8b8"><div class="ttname"><a href="structai_matrix4x4.html#a399b7ec1d410283d5ee5651208f5f8b8">aiMatrix4x4::d1</a></div><div class="ttdeci">ai_real d1</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2matrix4x4_8h_source.html#l00275">matrix4x4.h:275</a></div></div>
+<div class="ttc" id="astructai_matrix4x4_html_a3a083e56eb0bb6b12bf454973d921577"><div class="ttname"><a href="structai_matrix4x4.html#a3a083e56eb0bb6b12bf454973d921577">aiMatrix4x4::c1</a></div><div class="ttdeci">ai_real c1</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2matrix4x4_8h_source.html#l00274">matrix4x4.h:274</a></div></div>
+<div class="ttc" id="astructai_matrix4x4_html_a719e76cb6dd33a62946227fbcf61eb44"><div class="ttname"><a href="structai_matrix4x4.html#a719e76cb6dd33a62946227fbcf61eb44">aiMatrix4x4::a1</a></div><div class="ttdeci">ai_real a1</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2matrix4x4_8h_source.html#l00272">matrix4x4.h:272</a></div></div>
+<div class="ttc" id="astructai_matrix4x4_html_acbc8a0e50a085e4274e2adbbcbd3f019"><div class="ttname"><a href="structai_matrix4x4.html#acbc8a0e50a085e4274e2adbbcbd3f019">aiMatrix4x4::b1</a></div><div class="ttdeci">ai_real b1</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2matrix4x4_8h_source.html#l00273">matrix4x4.h:273</a></div></div>
+<div class="ttc" id="ax64-_debug_2contrib_2zlib_2zconf_8h_html_a2c212835823e3c54a8ab6d95c652660e"><div class="ttname"><a href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></div><div class="ttdeci">#define const</div><div class="ttdef"><b>Definition:</b> <a href="x64-_debug_2contrib_2zlib_2zconf_8h_source.html#l00235">zconf.h:235</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

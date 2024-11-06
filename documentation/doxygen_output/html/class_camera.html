@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -24,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
-   <div id="projectbrief">Graphics &amp; Physics engine in C++ with OpenGL</div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -79,15 +80,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="_camera_8h_source.html">Camera.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ogl__renderer_2renderer_2_camera_8h_source.html">Camera.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Camera:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_camera__coll__graph.png" border="0" usemap="#a_camera_coll__map" alt="Collaboration graph"/></div>
 <map name="a_camera_coll__map" id="a_camera_coll__map">
-<area shape="rect" title=" " alt="" coords="26,187,94,213"/>
-<area shape="rect" href="class_transform.html" title=" " alt="" coords="129,96,209,123"/>
-<area shape="rect" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" title=" " alt="" coords="12,98,78,126"/>
+<area shape="rect" href="class_transform.html" title=" " alt="" coords="5,5,85,33"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -96,19 +96,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a01f94c3543f56ede7af49dc778f19331"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a01f94c3543f56ede7af49dc778f19331">Camera</a> ()</td></tr>
 <tr class="separator:a01f94c3543f56ede7af49dc778f19331"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade59c8e9e1ccf81c92d69722ed070718"><td class="memItemLeft" align="right" valign="top">mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ade59c8e9e1ccf81c92d69722ed070718">viewMatrix</a> ()</td></tr>
-<tr class="memdesc:ade59c8e9e1ccf81c92d69722ed070718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses glm::lookAt to build a view matrix from cameraTransform   <a href="class_camera.html#ade59c8e9e1ccf81c92d69722ed070718">More...</a><br /></td></tr>
+<tr class="memdesc:ade59c8e9e1ccf81c92d69722ed070718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses <a class="el" href="group__ext__matrix__transform.html#ga894735fbf8f3d25628c127712d0285f7">glm::lookAt</a> to build a view matrix from cameraTransform   <a href="class_camera.html#ade59c8e9e1ccf81c92d69722ed070718">More...</a><br /></td></tr>
 <tr class="separator:ade59c8e9e1ccf81c92d69722ed070718"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a07b41576d8be5553720b17b7a9dbb8e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_transform.html">Transform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a07b41576d8be5553720b17b7a9dbb8e7">cameraTransform</a></td></tr>
 <tr class="separator:a07b41576d8be5553720b17b7a9dbb8e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac419b0874d75e3f1616b4505bdc5c959"><td class="memItemLeft" align="right" valign="top">const mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ac419b0874d75e3f1616b4505bdc5c959">projectionMatrix</a> = glm::perspective(glm::radians(90.f), 1600.f / 900.f, 0.01f, 50000.f)</td></tr>
+<tr class="memitem:ac419b0874d75e3f1616b4505bdc5c959"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ac419b0874d75e3f1616b4505bdc5c959">projectionMatrix</a> = <a class="el" href="group__ext__matrix__clip__space.html#ga9e13be491fd69a438c8fda440cf0156e">glm::perspective</a>(<a class="el" href="namespaceglm.html#a00577ee752441c79d5bb11d7c29e1627">glm::radians</a>(90.f), 1600.f / 900.f, 0.01f, 50000.f)</td></tr>
 <tr class="separator:ac419b0874d75e3f1616b4505bdc5c959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_camera_8h_source.html#l00003">3</a> of file <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ogl__renderer_2renderer_2_camera_8h_source.html#l00003">3</a> of file <a class="el" href="ogl__renderer_2renderer_2_camera_8h_source.html">Camera.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a01f94c3543f56ede7af49dc778f19331" name="a01f94c3543f56ede7af49dc778f19331"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a01f94c3543f56ede7af49dc778f19331">&#9670;&#160;</a></span>Camera()</h2>
@@ -133,7 +133,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8h_source.html#l00006">6</a> of file <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ogl__renderer_2renderer_2_camera_8h_source.html#l00006">6</a> of file <a class="el" href="ogl__renderer_2renderer_2_camera_8h_source.html">Camera.h</a>.</p>
 
 </div>
 </div>
@@ -161,20 +161,26 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Uses glm::lookAt to build a view matrix from cameraTransform  </p>
+<p>Uses <a class="el" href="group__ext__matrix__transform.html#ga894735fbf8f3d25628c127712d0285f7">glm::lookAt</a> to build a view matrix from cameraTransform  </p>
 <dl class="section return"><dt>Returns</dt><dd>The view matrix of this camera</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_camera_8h_source.html#l00015">15</a> of file <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ogl__renderer_2renderer_2_camera_8h_source.html#l00015">15</a> of file <a class="el" href="ogl__renderer_2renderer_2_camera_8h_source.html">Camera.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_camera_ade59c8e9e1ccf81c92d69722ed070718_cgraph.png" border="0" usemap="#aclass_camera_ade59c8e9e1ccf81c92d69722ed070718_cgraph" alt=""/></div>
 <map name="aclass_camera_ade59c8e9e1ccf81c92d69722ed070718_cgraph" id="aclass_camera_ade59c8e9e1ccf81c92d69722ed070718_cgraph">
-<area shape="rect" title="Uses glm::lookAt to build a view matrix from cameraTransform" alt="" coords="5,56,144,83"/>
-<area shape="rect" href="class_transform.html#a3fbf814bbd069c57d1b3579a56893b3e" title="Our local forward vector" alt="" coords="202,5,338,32"/>
-<area shape="rect" href="class_transform.html#a482ec8a49b08f224b2ec513dc27f47b5" title="Gets the position of this transform" alt="" coords="192,56,348,83"/>
-<area shape="rect" href="class_transform.html#ae0ce3a189b726c18e21c2eb1990f4464" title="Our local up vector" alt="" coords="217,107,322,133"/>
-<area shape="rect" href="class_transform.html#aa12429358147b70bdfd11af25a99f660" title=" " alt="" coords="396,48,584,91"/>
+<area shape="rect" title="Uses glm::lookAt to build a view matrix from cameraTransform" alt="" coords="5,84,145,112"/>
+<area shape="rect" href="class_transform.html#a3fbf814bbd069c57d1b3579a56893b3e" title="Our local forward vector" alt="" coords="201,5,338,33"/>
+<area shape="rect" href="class_transform.html#a482ec8a49b08f224b2ec513dc27f47b5" title="Gets the position of this transform" alt="" coords="193,57,346,85"/>
+<area shape="rect" href="group__ext__matrix__transform.html#ga894735fbf8f3d25628c127712d0285f7" title=" " alt="" coords="225,109,314,137"/>
+<area shape="rect" href="class_transform.html#ae0ce3a189b726c18e21c2eb1990f4464" title="Our local up vector" alt="" coords="217,161,322,189"/>
+<area shape="rect" href="class_transform.html#aa12429358147b70bdfd11af25a99f660" title=" " alt="" coords="394,41,578,86"/>
+<area shape="rect" href="group__ext__matrix__transform.html#gab2850421652778eeef6830e4fb1ea346" title=" " alt="" coords="434,109,538,137"/>
+<area shape="rect" href="group__ext__matrix__transform.html#ga55e33da75ea7e0f877059cc6f181cd2b" title=" " alt="" coords="434,161,539,189"/>
+<area shape="rect" href="group__core__func__geometric.html#ga1882f52ee88a161ed86dea9905a6da91" title=" " alt="" coords="639,83,722,110"/>
+<area shape="rect" href="namespaceglm.html#aee4f67dd98afd5ecd486c06bbf72211d" title=" " alt="" coords="645,135,716,162"/>
+<area shape="rect" href="group__core__func__geometric.html#ga5c6c1379961d4589035a390856f2d66c" title=" " alt="" coords="626,187,735,214"/>
 </map>
 </div>
 <div class="dynheader">
@@ -182,9 +188,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_camera_ade59c8e9e1ccf81c92d69722ed070718_icgraph.png" border="0" usemap="#aclass_camera_ade59c8e9e1ccf81c92d69722ed070718_icgraph" alt=""/></div>
 <map name="aclass_camera_ade59c8e9e1ccf81c92d69722ed070718_icgraph" id="aclass_camera_ade59c8e9e1ccf81c92d69722ed070718_icgraph">
-<area shape="rect" title="Uses glm::lookAt to build a view matrix from cameraTransform" alt="" coords="274,5,412,32"/>
-<area shape="rect" href="class_scene.html#af1231c8f794238d9fb79e5f413e0108f" title="Draw all gameObjects using cameras[0] as a camera, accounting for all lights" alt="" coords="103,5,226,32"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,32"/>
+<area shape="rect" title="Uses glm::lookAt to build a view matrix from cameraTransform" alt="" coords="271,5,410,33"/>
+<area shape="rect" href="class_scene.html#af1231c8f794238d9fb79e5f413e0108f" title="Draw all gameObjects using cameras[0] as a camera, accounting for all lights" alt="" coords="103,5,223,33"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,33"/>
 </map>
 </div>
 
@@ -203,7 +209,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8h_source.html#l00009">9</a> of file <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ogl__renderer_2renderer_2_camera_8h_source.html#l00009">9</a> of file <a class="el" href="ogl__renderer_2renderer_2_camera_8h_source.html">Camera.h</a>.</p>
 
 </div>
 </div>
@@ -214,17 +220,17 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const mat4 Camera::projectionMatrix = glm::perspective(glm::radians(90.f), 1600.f / 900.f, 0.01f, 50000.f)</td>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> mat4 Camera::projectionMatrix = <a class="el" href="group__ext__matrix__clip__space.html#ga9e13be491fd69a438c8fda440cf0156e">glm::perspective</a>(<a class="el" href="namespaceglm.html#a00577ee752441c79d5bb11d7c29e1627">glm::radians</a>(90.f), 1600.f / 900.f, 0.01f, 50000.f)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_camera_8h_source.html#l00010">10</a> of file <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ogl__renderer_2renderer_2_camera_8h_source.html#l00010">10</a> of file <a class="el" href="ogl__renderer_2renderer_2_camera_8h_source.html">Camera.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/s239074/Documents/ogl_renderer/ogl_renderer/renderer/<a class="el" href="_camera_8h_source.html">Camera.h</a></li>
+<li>C:/Users/s239074/Documents/ogl_renderer/ogl_renderer/renderer/<a class="el" href="ogl__renderer_2renderer_2_camera_8h_source.html">Camera.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

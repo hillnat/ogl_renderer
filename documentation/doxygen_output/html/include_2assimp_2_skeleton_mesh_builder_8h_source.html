@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -120,7 +123,7 @@ $(function() {
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#ifndef AI_SKELETONMESHBUILDER_H_INC</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define AI_SKELETONMESHBUILDER_H_INC</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="include_2assimp_2_skeleton_mesh_builder_8h.html#a5a78fd0b76f9509d8551319b0c2471fc">   51</a></span><span class="preprocessor">#define AI_SKELETONMESHBUILDER_H_INC</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#ifdef __GNUC__</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#pragma GCC system_header</span></div>
@@ -136,7 +139,7 @@ $(function() {
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_assimp.html">Assimp</a> {</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">// ---------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_assimp_1_1_skeleton_mesh_builder.html">   72</a></span><span class="comment"></span><span class="keyword">class </span>ASSIMP_API <a class="code hl_class" href="class_assimp_1_1_skeleton_mesh_builder.html">SkeletonMeshBuilder</a> {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_assimp_1_1_skeleton_mesh_builder.html">   72</a></span><span class="comment"></span><span class="keyword">class </span><a class="code hl_define" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> <a class="code hl_class" href="class_assimp_1_1_skeleton_mesh_builder.html">SkeletonMeshBuilder</a> {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_assimp_1_1_skeleton_mesh_builder.html#a4b10beaafb523e6b5e838f8a979a9759">   83</a></span><span class="comment"></span>    <a class="code hl_function" href="class_assimp_1_1_skeleton_mesh_builder.html#a4b10beaafb523e6b5e838f8a979a9759">SkeletonMeshBuilder</a>(<a class="code hl_struct" href="structai_scene.html">aiScene</a> *pScene, <a class="code hl_struct" href="structai_node.html">aiNode</a> *root = <span class="keyword">nullptr</span>,</div>
@@ -153,37 +156,45 @@ $(function() {
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_assimp_1_1_skeleton_mesh_builder.html#a4f3b0826232d2ae440c1fe3b278a4466">  102</a></span><span class="comment"></span>    <a class="code hl_struct" href="structai_material.html">aiMaterial</a> *<a class="code hl_function" href="class_assimp_1_1_skeleton_mesh_builder.html#a4f3b0826232d2ae440c1fe3b278a4466">CreateMaterial</a>();</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    std::vector&lt;aiVector3D&gt; mVertices;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_assimp_1_1_skeleton_mesh_builder.html#a6904020cc6f2ed55a2cc8c50aa61c14d">  106</a></span>    std::vector&lt;aiVector3D&gt; <a class="code hl_variable" href="class_assimp_1_1_skeleton_mesh_builder.html#a6904020cc6f2ed55a2cc8c50aa61c14d">mVertices</a>;</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">struct </span>Face {</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mIndices[3];</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        Face();</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        Face(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p0, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p1, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p2) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="struct_assimp_1_1_skeleton_mesh_builder_1_1_face.html">  109</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_assimp_1_1_skeleton_mesh_builder_1_1_face.html">Face</a> {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="struct_assimp_1_1_skeleton_mesh_builder_1_1_face.html#ad68b2f18ec6d46ce154894a82431da09">  110</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mIndices[3];</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="struct_assimp_1_1_skeleton_mesh_builder_1_1_face.html#a298da8f02cfd0b838bd1087fd90dd456">  111</a></span>        <a class="code hl_function" href="struct_assimp_1_1_skeleton_mesh_builder_1_1_face.html#a298da8f02cfd0b838bd1087fd90dd456">Face</a>();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="struct_assimp_1_1_skeleton_mesh_builder_1_1_face.html#a7fc75208520cf77334eef02bc3d437f1">  112</a></span>        <a class="code hl_function" href="struct_assimp_1_1_skeleton_mesh_builder_1_1_face.html#a7fc75208520cf77334eef02bc3d437f1">Face</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p0, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p1, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p2) {</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            mIndices[0] = p0;</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            mIndices[1] = p1;</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            mIndices[2] = p2;</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        }</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    };</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    std::vector&lt;Face&gt; mFaces;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="class_assimp_1_1_skeleton_mesh_builder.html#a87fc8b2507f50787fd79ea3dc22a6c83">  118</a></span>    std::vector&lt;Face&gt; <a class="code hl_variable" href="class_assimp_1_1_skeleton_mesh_builder.html#a87fc8b2507f50787fd79ea3dc22a6c83">mFaces</a>;</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    std::vector&lt;aiBone *&gt; mBones;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="class_assimp_1_1_skeleton_mesh_builder.html#a560dba87de245555651c60666bc61508">  121</a></span>    std::vector&lt;aiBone *&gt; <a class="code hl_variable" href="class_assimp_1_1_skeleton_mesh_builder.html#a560dba87de245555651c60666bc61508">mBones</a>;</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">bool</span> mKnobsOnly;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_assimp_1_1_skeleton_mesh_builder.html#a7c11e753afce4016fdb94d70b9b32ec9">  123</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_assimp_1_1_skeleton_mesh_builder.html#a7c11e753afce4016fdb94d70b9b32ec9">mKnobsOnly</a>;</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>};</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>} <span class="comment">// end of namespace Assimp</span></div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#endif </span><span class="comment">// AI_SKELETONMESHBUILDER_H_INC</span></div>
-<div class="ttc" id="aclass_assimp_1_1_skeleton_mesh_builder_html"><div class="ttname"><a href="class_assimp_1_1_skeleton_mesh_builder.html">Assimp::SkeletonMeshBuilder</a></div><div class="ttdef"><b>Definition:</b> SkeletonMeshBuilder.h:72</div></div>
+<div class="ttc" id="aclass_assimp_1_1_skeleton_mesh_builder_html"><div class="ttname"><a href="class_assimp_1_1_skeleton_mesh_builder.html">Assimp::SkeletonMeshBuilder</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_skeleton_mesh_builder_8h_source.html#l00072">SkeletonMeshBuilder.h:72</a></div></div>
 <div class="ttc" id="aclass_assimp_1_1_skeleton_mesh_builder_html_a25f00032c6427bbb5045d0791ed03ddb"><div class="ttname"><a href="class_assimp_1_1_skeleton_mesh_builder.html#a25f00032c6427bbb5045d0791ed03ddb">Assimp::SkeletonMeshBuilder::CreateMesh</a></div><div class="ttdeci">aiMesh * CreateMesh()</div></div>
 <div class="ttc" id="aclass_assimp_1_1_skeleton_mesh_builder_html_a4b10beaafb523e6b5e838f8a979a9759"><div class="ttname"><a href="class_assimp_1_1_skeleton_mesh_builder.html#a4b10beaafb523e6b5e838f8a979a9759">Assimp::SkeletonMeshBuilder::SkeletonMeshBuilder</a></div><div class="ttdeci">SkeletonMeshBuilder(aiScene *pScene, aiNode *root=nullptr, bool bKnobsOnly=false)</div></div>
 <div class="ttc" id="aclass_assimp_1_1_skeleton_mesh_builder_html_a4f3b0826232d2ae440c1fe3b278a4466"><div class="ttname"><a href="class_assimp_1_1_skeleton_mesh_builder.html#a4f3b0826232d2ae440c1fe3b278a4466">Assimp::SkeletonMeshBuilder::CreateMaterial</a></div><div class="ttdeci">aiMaterial * CreateMaterial()</div></div>
+<div class="ttc" id="aclass_assimp_1_1_skeleton_mesh_builder_html_a560dba87de245555651c60666bc61508"><div class="ttname"><a href="class_assimp_1_1_skeleton_mesh_builder.html#a560dba87de245555651c60666bc61508">Assimp::SkeletonMeshBuilder::mBones</a></div><div class="ttdeci">std::vector&lt; aiBone * &gt; mBones</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_skeleton_mesh_builder_8h_source.html#l00121">SkeletonMeshBuilder.h:121</a></div></div>
+<div class="ttc" id="aclass_assimp_1_1_skeleton_mesh_builder_html_a6904020cc6f2ed55a2cc8c50aa61c14d"><div class="ttname"><a href="class_assimp_1_1_skeleton_mesh_builder.html#a6904020cc6f2ed55a2cc8c50aa61c14d">Assimp::SkeletonMeshBuilder::mVertices</a></div><div class="ttdeci">std::vector&lt; aiVector3D &gt; mVertices</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_skeleton_mesh_builder_8h_source.html#l00106">SkeletonMeshBuilder.h:106</a></div></div>
+<div class="ttc" id="aclass_assimp_1_1_skeleton_mesh_builder_html_a7c11e753afce4016fdb94d70b9b32ec9"><div class="ttname"><a href="class_assimp_1_1_skeleton_mesh_builder.html#a7c11e753afce4016fdb94d70b9b32ec9">Assimp::SkeletonMeshBuilder::mKnobsOnly</a></div><div class="ttdeci">bool mKnobsOnly</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_skeleton_mesh_builder_8h_source.html#l00123">SkeletonMeshBuilder.h:123</a></div></div>
+<div class="ttc" id="aclass_assimp_1_1_skeleton_mesh_builder_html_a87fc8b2507f50787fd79ea3dc22a6c83"><div class="ttname"><a href="class_assimp_1_1_skeleton_mesh_builder.html#a87fc8b2507f50787fd79ea3dc22a6c83">Assimp::SkeletonMeshBuilder::mFaces</a></div><div class="ttdeci">std::vector&lt; Face &gt; mFaces</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_skeleton_mesh_builder_8h_source.html#l00118">SkeletonMeshBuilder.h:118</a></div></div>
 <div class="ttc" id="aclass_assimp_1_1_skeleton_mesh_builder_html_acd4f082475e9fe7c0d6f76025d961908"><div class="ttname"><a href="class_assimp_1_1_skeleton_mesh_builder.html#acd4f082475e9fe7c0d6f76025d961908">Assimp::SkeletonMeshBuilder::CreateGeometry</a></div><div class="ttdeci">void CreateGeometry(const aiNode *pNode)</div></div>
-<div class="ttc" id="anamespace_assimp_html"><div class="ttname"><a href="namespace_assimp.html">Assimp</a></div><div class="ttdef"><b>Definition:</b> AssertHandler.h:50</div></div>
-<div class="ttc" id="astructai_material_html"><div class="ttname"><a href="structai_material.html">aiMaterial</a></div><div class="ttdoc">Data structure for a material.</div><div class="ttdef"><b>Definition:</b> material.h:712</div></div>
-<div class="ttc" id="astructai_mesh_html"><div class="ttname"><a href="structai_mesh.html">aiMesh</a></div><div class="ttdoc">enum aiMorphingMethod</div><div class="ttdef"><b>Definition:</b> mesh.h:638</div></div>
-<div class="ttc" id="astructai_node_html"><div class="ttname"><a href="structai_node.html">aiNode</a></div><div class="ttdef"><b>Definition:</b> scene.h:82</div></div>
-<div class="ttc" id="astructai_scene_html"><div class="ttname"><a href="structai_scene.html">aiScene</a></div><div class="ttdef"><b>Definition:</b> scene.h:246</div></div>
+<div class="ttc" id="ainclude_2assimp_2defs_8h_html_a7d617d307e656cb6ff315ba71ff958d4"><div class="ttname"><a href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a></div><div class="ttdeci">#define ASSIMP_API</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2defs_8h_source.html#l00163">defs.h:163</a></div></div>
+<div class="ttc" id="anamespace_assimp_html"><div class="ttname"><a href="namespace_assimp.html">Assimp</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_assert_handler_8h_source.html#l00050">AssertHandler.h:50</a></div></div>
+<div class="ttc" id="astruct_assimp_1_1_skeleton_mesh_builder_1_1_face_html"><div class="ttname"><a href="struct_assimp_1_1_skeleton_mesh_builder_1_1_face.html">Assimp::SkeletonMeshBuilder::Face</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_skeleton_mesh_builder_8h_source.html#l00109">SkeletonMeshBuilder.h:109</a></div></div>
+<div class="ttc" id="astruct_assimp_1_1_skeleton_mesh_builder_1_1_face_html_a298da8f02cfd0b838bd1087fd90dd456"><div class="ttname"><a href="struct_assimp_1_1_skeleton_mesh_builder_1_1_face.html#a298da8f02cfd0b838bd1087fd90dd456">Assimp::SkeletonMeshBuilder::Face::Face</a></div><div class="ttdeci">Face()</div></div>
+<div class="ttc" id="astruct_assimp_1_1_skeleton_mesh_builder_1_1_face_html_a7fc75208520cf77334eef02bc3d437f1"><div class="ttname"><a href="struct_assimp_1_1_skeleton_mesh_builder_1_1_face.html#a7fc75208520cf77334eef02bc3d437f1">Assimp::SkeletonMeshBuilder::Face::Face</a></div><div class="ttdeci">Face(unsigned int p0, unsigned int p1, unsigned int p2)</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_skeleton_mesh_builder_8h_source.html#l00112">SkeletonMeshBuilder.h:112</a></div></div>
+<div class="ttc" id="astructai_material_html"><div class="ttname"><a href="structai_material.html">aiMaterial</a></div><div class="ttdoc">Data structure for a material.</div><div class="ttdef"><b>Definition:</b> <a href="thirdparty_2assimp_2include_2assimp_2_material_8h_source.html#l00710">material.h:712</a></div></div>
+<div class="ttc" id="astructai_mesh_html"><div class="ttname"><a href="structai_mesh.html">aiMesh</a></div><div class="ttdoc">enum aiMorphingMethod</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2mesh_8h_source.html#l00638">mesh.h:638</a></div></div>
+<div class="ttc" id="astructai_node_html"><div class="ttname"><a href="structai_node.html">aiNode</a></div><div class="ttdef"><b>Definition:</b> <a href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00082">scene.h:82</a></div></div>
+<div class="ttc" id="astructai_scene_html"><div class="ttname"><a href="structai_scene.html">aiScene</a></div><div class="ttdef"><b>Definition:</b> <a href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00246">scene.h:246</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

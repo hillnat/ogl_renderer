@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -74,14 +77,23 @@ $(function() {
   <div class="headertitle"><div class="title">GLM_GTX_functions<div class="ingroups"><a class="el" href="group__gtx.html">Experimental extensions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Collaboration diagram for GLM_GTX_functions:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__gtx__functions.png" border="0" usemap="#agroup____gtx____functions" alt=""/></div>
+<map name="agroup____gtx____functions" id="agroup____gtx____functions">
+<area shape="rect" href="group__gtx.html" title="Experimental features not specified by GLSL specification." alt="" coords="5,5,167,33"/>
+<area shape="rect" title=" " alt="" coords="215,5,352,33"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga0b50b197ff74261a0fad90f4b8d24702"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ga0b50b197ff74261a0fad90f4b8d24702"><td class="memTemplItemLeft" align="right" valign="top">GLM_FUNC_DECL T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__gtx__functions.html#ga0b50b197ff74261a0fad90f4b8d24702">glm::gauss</a> (T x, T ExpectedValue, T StandardDeviation)</td></tr>
+<tr class="memitem:ga0b50b197ff74261a0fad90f4b8d24702"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__gtx__functions.html#ga0b50b197ff74261a0fad90f4b8d24702">glm::gauss</a> (T x, T ExpectedValue, T StandardDeviation)</td></tr>
 <tr class="separator:ga0b50b197ff74261a0fad90f4b8d24702"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad19ec8754a83c0b9a8dc16b7e60705ab"><td class="memTemplParams" colspan="2">template&lt;typename T , <a class="el" href="namespaceglm.html#a36ed105b07c7746804d7fdc7cc90ff25">qualifier</a> Q&gt; </td></tr>
-<tr class="memitem:gad19ec8754a83c0b9a8dc16b7e60705ab"><td class="memTemplItemLeft" align="right" valign="top">GLM_FUNC_DECL T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__gtx__functions.html#gad19ec8754a83c0b9a8dc16b7e60705ab">glm::gauss</a> (<a class="el" href="structglm_1_1vec.html">vec</a>&lt; 2, T, Q &gt; const &amp;Coord, <a class="el" href="structglm_1_1vec.html">vec</a>&lt; 2, T, Q &gt; const &amp;ExpectedValue, <a class="el" href="structglm_1_1vec.html">vec</a>&lt; 2, T, Q &gt; const &amp;StandardDeviation)</td></tr>
+<tr class="memitem:gad19ec8754a83c0b9a8dc16b7e60705ab"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__gtx__functions.html#gad19ec8754a83c0b9a8dc16b7e60705ab">glm::gauss</a> (<a class="el" href="structglm_1_1vec.html">vec</a>&lt; 2, T, Q &gt; <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> &amp;Coord, <a class="el" href="structglm_1_1vec.html">vec</a>&lt; 2, T, Q &gt; <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> &amp;ExpectedValue, <a class="el" href="structglm_1_1vec.html">vec</a>&lt; 2, T, Q &gt; <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> &amp;StandardDeviation)</td></tr>
 <tr class="separator:gad19ec8754a83c0b9a8dc16b7e60705ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -97,7 +109,7 @@ Functions</h2></td></tr>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">GLM_FUNC_DECL T glm::gauss </td>
+          <td class="memname"><a class="el" href="setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> T glm::gauss </td>
           <td>(</td>
           <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -124,6 +136,18 @@ template&lt;typename T &gt; </div>
 <p >1D gauss function</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__gtc__epsilon.html">GLM_GTC_epsilon</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="functions_8inl_source.html#l00008">8</a> of file <a class="el" href="functions_8inl_source.html">functions.inl</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__gtx__functions_ga0b50b197ff74261a0fad90f4b8d24702_cgraph.png" border="0" usemap="#agroup__gtx__functions_ga0b50b197ff74261a0fad90f4b8d24702_cgraph" alt=""/></div>
+<map name="agroup__gtx__functions_ga0b50b197ff74261a0fad90f4b8d24702_cgraph" id="agroup__gtx__functions_ga0b50b197ff74261a0fad90f4b8d24702_cgraph">
+<area shape="rect" title=" " alt="" coords="5,68,91,96"/>
+<area shape="rect" href="group__core__func__exponential.html#gaf6342f49d902286a599ceb86036236ce" title=" " alt="" coords="139,29,212,57"/>
+<area shape="rect" href="group__core__func__exponential.html#ga1f904e09827e939a56e4158f45ca8ede" title=" " alt="" coords="139,105,213,133"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="gad19ec8754a83c0b9a8dc16b7e60705ab" name="gad19ec8754a83c0b9a8dc16b7e60705ab"></a>
@@ -135,21 +159,21 @@ template&lt;typename T &gt; </div>
 template&lt;typename T , <a class="el" href="namespaceglm.html#a36ed105b07c7746804d7fdc7cc90ff25">qualifier</a> Q&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">GLM_FUNC_DECL T glm::gauss </td>
+          <td class="memname"><a class="el" href="setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> T glm::gauss </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structglm_1_1vec.html">vec</a>&lt; 2, T, Q &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structglm_1_1vec.html">vec</a>&lt; 2, T, Q &gt; <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> &amp;&#160;</td>
           <td class="paramname"><em>Coord</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structglm_1_1vec.html">vec</a>&lt; 2, T, Q &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structglm_1_1vec.html">vec</a>&lt; 2, T, Q &gt; <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> &amp;&#160;</td>
           <td class="paramname"><em>ExpectedValue</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structglm_1_1vec.html">vec</a>&lt; 2, T, Q &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structglm_1_1vec.html">vec</a>&lt; 2, T, Q &gt; <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> &amp;&#160;</td>
           <td class="paramname"><em>StandardDeviation</em>&#160;</td>
         </tr>
         <tr>
@@ -161,6 +185,17 @@ template&lt;typename T , <a class="el" href="namespaceglm.html#a36ed105b07c77468
 </div><div class="memdoc">
 <p >2D gauss function</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__gtc__epsilon.html">GLM_GTC_epsilon</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="functions_8inl_source.html#l00019">19</a> of file <a class="el" href="functions_8inl_source.html">functions.inl</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__gtx__functions_gad19ec8754a83c0b9a8dc16b7e60705ab_cgraph.png" border="0" usemap="#agroup__gtx__functions_gad19ec8754a83c0b9a8dc16b7e60705ab_cgraph" alt=""/></div>
+<map name="agroup__gtx__functions_gad19ec8754a83c0b9a8dc16b7e60705ab_cgraph" id="agroup__gtx__functions_gad19ec8754a83c0b9a8dc16b7e60705ab_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,91,57"/>
+<area shape="rect" href="group__core__func__exponential.html#gaf6342f49d902286a599ceb86036236ce" title=" " alt="" coords="139,29,212,57"/>
+</map>
+</div>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['warn_0',['Warn',['../class_assimp_1_1_logger.html#acd0b52a87d6fc11e957ed2c6e2ad75b6a62cd939d32f50320c695c897a5793dcf',1,'Assimp::Logger']]]
+  ['normal_0',['NORMAL',['../class_assimp_1_1_logger.html#a8b6248a0fd062431e8572556350d29e6a3bc91952c98d7ca18720d32a6e3a29d8',1,'Assimp::Logger']]]
 ];

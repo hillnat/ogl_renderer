@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -80,23 +83,83 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a2822289fb74abf4302647eb64e529e48"><td class="memItemLeft" align="right" valign="top"><a id="a2822289fb74abf4302647eb64e529e48" name="a2822289fb74abf4302647eb64e529e48"></a>
-std::vector&lt; <a class="el" href="structai_vector3_d.html">aiVector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mPositions</b></td></tr>
-<tr class="memdesc:a2822289fb74abf4302647eb64e529e48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertex positions. <br /></td></tr>
+<tr class="memitem:a2822289fb74abf4302647eb64e529e48"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structai_vector3_d.html">aiVector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_mesh_with_smoothing_groups.html#a2822289fb74abf4302647eb64e529e48">mPositions</a></td></tr>
+<tr class="memdesc:a2822289fb74abf4302647eb64e529e48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertex positions.  <a href="struct_mesh_with_smoothing_groups.html#a2822289fb74abf4302647eb64e529e48">More...</a><br /></td></tr>
 <tr class="separator:a2822289fb74abf4302647eb64e529e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c8831f449ec37f44a7fd167da2131bc"><td class="memItemLeft" align="right" valign="top"><a id="a5c8831f449ec37f44a7fd167da2131bc" name="a5c8831f449ec37f44a7fd167da2131bc"></a>
-std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mFaces</b></td></tr>
-<tr class="memdesc:a5c8831f449ec37f44a7fd167da2131bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Face lists. <br /></td></tr>
+<tr class="memitem:a5c8831f449ec37f44a7fd167da2131bc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_mesh_with_smoothing_groups.html#a5c8831f449ec37f44a7fd167da2131bc">mFaces</a></td></tr>
+<tr class="memdesc:a5c8831f449ec37f44a7fd167da2131bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Face lists.  <a href="struct_mesh_with_smoothing_groups.html#a5c8831f449ec37f44a7fd167da2131bc">More...</a><br /></td></tr>
 <tr class="separator:a5c8831f449ec37f44a7fd167da2131bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a985606352d665c47dadbc80dd1ebb6f4"><td class="memItemLeft" align="right" valign="top"><a id="a985606352d665c47dadbc80dd1ebb6f4" name="a985606352d665c47dadbc80dd1ebb6f4"></a>
-std::vector&lt; <a class="el" href="structai_vector3_d.html">aiVector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mNormals</b></td></tr>
-<tr class="memdesc:a985606352d665c47dadbc80dd1ebb6f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of normal vectors. <br /></td></tr>
+<tr class="memitem:a985606352d665c47dadbc80dd1ebb6f4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structai_vector3_d.html">aiVector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_mesh_with_smoothing_groups.html#a985606352d665c47dadbc80dd1ebb6f4">mNormals</a></td></tr>
+<tr class="memdesc:a985606352d665c47dadbc80dd1ebb6f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of normal vectors.  <a href="struct_mesh_with_smoothing_groups.html#a985606352d665c47dadbc80dd1ebb6f4">More...</a><br /></td></tr>
 <tr class="separator:a985606352d665c47dadbc80dd1ebb6f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
 struct MeshWithSmoothingGroups&lt; T &gt;</div><p >Helper structure representing a mesh whose faces have smoothing groups assigned. This allows us to reuse the code for normal computations from smoothings groups for several loaders (3DS, ASE). All of them use face structures which inherit from <a class="el" href="struct_face_with_smoothing_group.html">FaceWithSmoothingGroup</a>, but as they add extra members and need to be copied by value we need to use a template here. </p>
-</div><hr/>The documentation for this struct was generated from the following files:<ul>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_smoothing_groups_8h_source.html#l00092">92</a> of file <a class="el" href="include_2assimp_2_smoothing_groups_8h_source.html">SmoothingGroups.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a5c8831f449ec37f44a7fd167da2131bc" name="a5c8831f449ec37f44a7fd167da2131bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c8831f449ec37f44a7fd167da2131bc">&#9670;&#160;</a></span>mFaces</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; T &gt; <a class="el" href="struct_mesh_with_smoothing_groups.html">MeshWithSmoothingGroups</a>&lt; T &gt;::mFaces</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Face lists. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_smoothing_groups_8h_source.html#l00098">98</a> of file <a class="el" href="include_2assimp_2_smoothing_groups_8h_source.html">SmoothingGroups.h</a>.</p>
+
+</div>
+</div>
+<a id="a985606352d665c47dadbc80dd1ebb6f4" name="a985606352d665c47dadbc80dd1ebb6f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a985606352d665c47dadbc80dd1ebb6f4">&#9670;&#160;</a></span>mNormals</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structai_vector3_d.html">aiVector3D</a> &gt; <a class="el" href="struct_mesh_with_smoothing_groups.html">MeshWithSmoothingGroups</a>&lt; T &gt;::mNormals</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List of normal vectors. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_smoothing_groups_8h_source.html#l00101">101</a> of file <a class="el" href="include_2assimp_2_smoothing_groups_8h_source.html">SmoothingGroups.h</a>.</p>
+
+</div>
+</div>
+<a id="a2822289fb74abf4302647eb64e529e48" name="a2822289fb74abf4302647eb64e529e48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2822289fb74abf4302647eb64e529e48">&#9670;&#160;</a></span>mPositions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structai_vector3_d.html">aiVector3D</a> &gt; <a class="el" href="struct_mesh_with_smoothing_groups.html">MeshWithSmoothingGroups</a>&lt; T &gt;::mPositions</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vertex positions. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_smoothing_groups_8h_source.html#l00095">95</a> of file <a class="el" href="include_2assimp_2_smoothing_groups_8h_source.html">SmoothingGroups.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>C:/Users/s239074/Documents/ogl_renderer/thirdparty/assimp/include/assimp/<a class="el" href="include_2assimp_2_smoothing_groups_8h_source.html">SmoothingGroups.h</a></li>
 <li>C:/Users/s239074/Documents/ogl_renderer/thirdparty/assimp/out/install/x64-Debug/include/assimp/<a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_smoothing_groups_8h_source.html">SmoothingGroups.h</a></li>
 <li>C:/Users/s239074/Documents/ogl_renderer/thirdparty/assimp/out/install/x64-Release/include/assimp/<a class="el" href="out_2install_2x64-_release_2include_2assimp_2_smoothing_groups_8h_source.html">SmoothingGroups.h</a></li>

@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -85,6 +88,16 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;assimp/aabb.h&gt;</code><br />
 <code>#include &lt;assimp/types.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for mesh.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="include_2assimp_2mesh_8h__incl.png" border="0" usemap="#a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2include_2assimp_2mesh_8h" alt=""/></div>
+<map name="a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2include_2assimp_2mesh_8h" id="a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2include_2assimp_2mesh_8h">
+<area shape="rect" title="Declares the data structures in which the imported geometry is returned by ASSIMP: aiMesh,..." alt="" coords="22,5,225,67"/>
+<area shape="rect" title=" " alt="" coords="5,115,111,143"/>
+<area shape="rect" title=" " alt="" coords="134,115,243,143"/>
+</map>
+</div>
 </div>
 <p><a href="include_2assimp_2mesh_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -114,8 +127,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a36a6bf06f217a4c962f1ec24b1633482"><td class="memItemLeft" align="right" valign="top"><a id="a36a6bf06f217a4c962f1ec24b1633482" name="a36a6bf06f217a4c962f1ec24b1633482"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AI_MESH_H_INC</b></td></tr>
+<tr class="memitem:a36a6bf06f217a4c962f1ec24b1633482"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2assimp_2mesh_8h.html#a36a6bf06f217a4c962f1ec24b1633482">AI_MESH_H_INC</a></td></tr>
 <tr class="separator:a36a6bf06f217a4c962f1ec24b1633482"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a380f3ab069e89b3a1ed975577600438b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2assimp_2mesh_8h.html#a380f3ab069e89b3a1ed975577600438b">AI_MAX_FACE_INDICES</a>&#160;&#160;&#160;0x7fff</td></tr>
 <tr class="separator:a380f3ab069e89b3a1ed975577600438b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,9 +141,8 @@ Macros</h2></td></tr>
 <tr class="separator:a74ea1282873ac4b111b48d2380c26bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a335874c5058c7f1e866eb953bf192258"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2assimp_2mesh_8h.html#a335874c5058c7f1e866eb953bf192258">AI_MAX_NUMBER_OF_TEXTURECOORDS</a>&#160;&#160;&#160;0x8</td></tr>
 <tr class="separator:a335874c5058c7f1e866eb953bf192258"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ec9a1223f48501cb972e3d2866c344c"><td class="memItemLeft" align="right" valign="top"><a id="a2ec9a1223f48501cb972e3d2866c344c" name="a2ec9a1223f48501cb972e3d2866c344c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AI_PRIMITIVE_TYPE_FOR_N_INDICES</b>(n)&#160;&#160;&#160;    ((n) &gt; 3 ? <a class="el" href="include_2assimp_2mesh_8h.html#ac352902280db7c3bd8ba64c133b7f03faea762261e9efd0313baa0b3193b43253">aiPrimitiveType_POLYGON</a> : (<a class="el" href="include_2assimp_2mesh_8h.html#ac352902280db7c3bd8ba64c133b7f03f">aiPrimitiveType</a>)(1u &lt;&lt; ((n)-1)))</td></tr>
-<tr class="memdesc:a2ec9a1223f48501cb972e3d2866c344c"><td class="mdescLeft">&#160;</td><td class="mdescRight">enum aiPrimitiveType <br /></td></tr>
+<tr class="memitem:a2ec9a1223f48501cb972e3d2866c344c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2assimp_2mesh_8h.html#a2ec9a1223f48501cb972e3d2866c344c">AI_PRIMITIVE_TYPE_FOR_N_INDICES</a>(n)&#160;&#160;&#160;    ((n) &gt; 3 ? <a class="el" href="include_2assimp_2mesh_8h.html#ac352902280db7c3bd8ba64c133b7f03faea762261e9efd0313baa0b3193b43253">aiPrimitiveType_POLYGON</a> : (<a class="el" href="include_2assimp_2mesh_8h.html#ac352902280db7c3bd8ba64c133b7f03f">aiPrimitiveType</a>)(1u &lt;&lt; ((n)-1)))</td></tr>
+<tr class="memdesc:a2ec9a1223f48501cb972e3d2866c344c"><td class="mdescLeft">&#160;</td><td class="mdescRight">enum aiPrimitiveType  <a href="include_2assimp_2mesh_8h.html#a2ec9a1223f48501cb972e3d2866c344c">More...</a><br /></td></tr>
 <tr class="separator:a2ec9a1223f48501cb972e3d2866c344c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -189,6 +200,8 @@ Enumerations</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Declares the data structures in which the imported geometry is returned by ASSIMP: <a class="el" href="structai_mesh.html" title="enum aiMorphingMethod">aiMesh</a>, <a class="el" href="structai_face.html" title="A single face in a mesh, referring to multiple vertices.">aiFace</a> and <a class="el" href="structai_bone.html" title="A single bone of a mesh.">aiBone</a> data structures. </p>
+
+<p class="definition">Definition in file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a565e88bbf36ef4957f1229609e51b7f6" name="a565e88bbf36ef4957f1229609e51b7f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a565e88bbf36ef4957f1229609e51b7f6">&#9670;&#160;</a></span>AI_MAX_BONE_WEIGHTS</h2>
@@ -202,6 +215,8 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >Maximum number of indices per face (polygon). </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00084">84</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -218,6 +233,8 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 <p >Maximum number of indices per face (polygon). </p>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00077">77</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
+
 </div>
 </div>
 <a id="aef69217e80411f3fee5aae3dc06b68ba" name="aef69217e80411f3fee5aae3dc06b68ba"></a>
@@ -232,6 +249,8 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >Maximum number of faces per mesh. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00098">98</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -248,6 +267,8 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 <p >Supported number of vertex color sets per mesh. </p>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00105">105</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
+
 </div>
 </div>
 <a id="a335874c5058c7f1e866eb953bf192258" name="a335874c5058c7f1e866eb953bf192258"></a>
@@ -262,6 +283,8 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >Supported number of texture coord sets (UV(W) channels) per mesh </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00112">112</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -278,6 +301,46 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 <p >Maximum number of vertices per mesh. <br  />
  </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00091">91</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
+
+</div>
+</div>
+<a id="a36a6bf06f217a4c962f1ec24b1633482" name="a36a6bf06f217a4c962f1ec24b1633482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36a6bf06f217a4c962f1ec24b1633482">&#9670;&#160;</a></span>AI_MESH_H_INC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AI_MESH_H_INC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00048">48</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
+
+</div>
+</div>
+<a id="a2ec9a1223f48501cb972e3d2866c344c" name="a2ec9a1223f48501cb972e3d2866c344c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ec9a1223f48501cb972e3d2866c344c">&#9670;&#160;</a></span>AI_PRIMITIVE_TYPE_FOR_N_INDICES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AI_PRIMITIVE_TYPE_FOR_N_INDICES</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n</td><td>)</td>
+          <td>&#160;&#160;&#160;    ((n) &gt; 3 ? <a class="el" href="include_2assimp_2mesh_8h.html#ac352902280db7c3bd8ba64c133b7f03faea762261e9efd0313baa0b3193b43253">aiPrimitiveType_POLYGON</a> : (<a class="el" href="include_2assimp_2mesh_8h.html#ac352902280db7c3bd8ba64c133b7f03f">aiPrimitiveType</a>)(1u &lt;&lt; ((n)-1)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>enum aiPrimitiveType </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00459">459</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -333,6 +396,8 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a76b77976372959451a455a148901e70ea07c9fe9d673b15bb3a798860f330b124" name="a76b77976372959451a455a148901e70ea07c9fe9d673b15bb3a798860f330b124"></a>_aiMorphingMethod_Force32Bit&#160;</td><td class="fielddoc"><p >This value is not used. It is just here to force the compiler to map this enum to a 32 Bit integer. </p>
 </td></tr>
 </table>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00598">598</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>
@@ -418,6 +483,8 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="ac352902280db7c3bd8ba64c133b7f03fa6cc0d20689875344a59dc56d8baf08f8" name="ac352902280db7c3bd8ba64c133b7f03fa6cc0d20689875344a59dc56d8baf08f8"></a>_aiPrimitiveType_Force32Bit&#160;</td><td class="fielddoc"><p >This value is not used. It is just here to force the compiler to map this enum to a 32 Bit integer. </p>
 </td></tr>
 </table>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2mesh_8h_source.html#l00397">397</a> of file <a class="el" href="include_2assimp_2mesh_8h_source.html">mesh.h</a>.</p>
 
 </div>
 </div>

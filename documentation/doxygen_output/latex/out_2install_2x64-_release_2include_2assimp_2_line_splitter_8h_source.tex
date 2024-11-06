@@ -2,250 +2,250 @@
 \label{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/LineSplitter.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/LineSplitter.h}}
 \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
-\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{4 \textcolor{comment}{}}
-\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
-\DoxyCodeLine{6 \textcolor{comment}{}}
-\DoxyCodeLine{7 \textcolor{comment}{All rights reserved.}}
-\DoxyCodeLine{8 \textcolor{comment}{}}
-\DoxyCodeLine{9 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
-\DoxyCodeLine{10 \textcolor{comment}{with or without modification, are permitted provided that the}}
-\DoxyCodeLine{11 \textcolor{comment}{following conditions are met:}}
-\DoxyCodeLine{12 \textcolor{comment}{}}
-\DoxyCodeLine{13 \textcolor{comment}{* Redistributions of source code must retain the above}}
-\DoxyCodeLine{14 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{15 \textcolor{comment}{  following disclaimer.}}
-\DoxyCodeLine{16 \textcolor{comment}{}}
-\DoxyCodeLine{17 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
-\DoxyCodeLine{18 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{19 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
-\DoxyCodeLine{20 \textcolor{comment}{  materials provided with the distribution.}}
-\DoxyCodeLine{21 \textcolor{comment}{}}
-\DoxyCodeLine{22 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
-\DoxyCodeLine{23 \textcolor{comment}{  contributors may be used to endorse or promote products}}
-\DoxyCodeLine{24 \textcolor{comment}{  derived from this software without specific prior}}
-\DoxyCodeLine{25 \textcolor{comment}{  written permission of the assimp team.}}
-\DoxyCodeLine{26 \textcolor{comment}{}}
-\DoxyCodeLine{27 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
-\DoxyCodeLine{28 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
-\DoxyCodeLine{29 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
-\DoxyCodeLine{30 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
-\DoxyCodeLine{31 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
-\DoxyCodeLine{32 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
-\DoxyCodeLine{33 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
-\DoxyCodeLine{34 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
-\DoxyCodeLine{35 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
-\DoxyCodeLine{36 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
-\DoxyCodeLine{37 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
-\DoxyCodeLine{38 \textcolor{comment}{}}
-\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{40 \textcolor{comment}{*/}}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{46 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#ifndef INCLUDED\_LINE\_SPLITTER\_H}}
-\DoxyCodeLine{48 \textcolor{preprocessor}{\#define INCLUDED\_LINE\_SPLITTER\_H}}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
-\DoxyCodeLine{51 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
-\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <stdexcept>}}
-\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <assimp/StreamReader.h>}}
-\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <assimp/ParsingUtils.h>}}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{58 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{60 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{78 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{79 \textcolor{keyword}{class }LineSplitter \{}
-\DoxyCodeLine{80 \textcolor{keyword}{public}:}
-\DoxyCodeLine{81     \textcolor{keyword}{typedef} \textcolor{keywordtype}{size\_t} line\_idx;}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{83     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{87 \textcolor{comment}{}    \mbox{\hyperlink{class_assimp_1_1_line_splitter_a72441b81e4b31974c093fdd2e893b067}{LineSplitter}}(\mbox{\hyperlink{class_assimp_1_1_stream_reader}{StreamReaderLE}}\& stream, \textcolor{keywordtype}{bool} skip\_empty\_lines = \textcolor{keyword}{true}, \textcolor{keywordtype}{bool} trim = \textcolor{keyword}{true});}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{89     \mbox{\hyperlink{class_assimp_1_1_line_splitter}{\string~LineSplitter}}() = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{90 }
-\DoxyCodeLine{91     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{93 \textcolor{comment}{}    \mbox{\hyperlink{class_assimp_1_1_line_splitter}{LineSplitter}}\& \mbox{\hyperlink{class_assimp_1_1_line_splitter_a206d19a8fed6b114ac16001ace38d5fc}{operator++}}();}
-\DoxyCodeLine{94 }
-\DoxyCodeLine{95     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{96     \mbox{\hyperlink{class_assimp_1_1_line_splitter}{LineSplitter}}\& \mbox{\hyperlink{class_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517}{operator++}}(\textcolor{keywordtype}{int});}
-\DoxyCodeLine{97 }
-\DoxyCodeLine{98     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{100 \textcolor{comment}{}    \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_assimp_1_1_line_splitter_ac6ba3911a72d452fb8930a812fea6d7e}{operator[] }}(\textcolor{keywordtype}{size\_t} idx) \textcolor{keyword}{const};}
-\DoxyCodeLine{101 }
-\DoxyCodeLine{102     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{104 \textcolor{comment}{}    \textcolor{keyword}{template} <\textcolor{keywordtype}{size\_t} N>}
-\DoxyCodeLine{105     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_line_splitter_a05e6ea1868bc931c754ef332a4866ae3}{get\_tokens}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* (\&tokens)[N]) \textcolor{keyword}{const};}
-\DoxyCodeLine{106 }
-\DoxyCodeLine{107     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{109 \textcolor{comment}{}    \textcolor{keyword}{const} std::string* \mbox{\hyperlink{class_assimp_1_1_line_splitter_a175ad7f4d2d0316ceb762259fbe62d26}{operator -\/> }}() \textcolor{keyword}{const};}
-\DoxyCodeLine{110 }
-\DoxyCodeLine{111     std::string operator* () \textcolor{keyword}{const};}
-\DoxyCodeLine{112 }
-\DoxyCodeLine{113     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *getEnd() \textcolor{keyword}{const};}
-\DoxyCodeLine{114 }
-\DoxyCodeLine{115     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{117 \textcolor{comment}{}    \textcolor{keyword}{operator} bool() \textcolor{keyword}{const};}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{119     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{121 \textcolor{comment}{}    \textcolor{keyword}{operator} line\_idx() \textcolor{keyword}{const};}
-\DoxyCodeLine{122 }
-\DoxyCodeLine{123     line\_idx get\_index() \textcolor{keyword}{const};}
-\DoxyCodeLine{124 }
-\DoxyCodeLine{125     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{127 \textcolor{comment}{}    \mbox{\hyperlink{class_assimp_1_1_stream_reader}{StreamReaderLE}}\& \mbox{\hyperlink{class_assimp_1_1_line_splitter_a405da224022f6544751f0b47dde14b5b}{get\_stream}}();}
-\DoxyCodeLine{128 }
-\DoxyCodeLine{129     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{131 \textcolor{comment}{}    \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_line_splitter_ad63e70a9e0991a1e5df59a333e088b8d}{match\_start}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* check);}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{135 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_line_splitter_ae5987477ec7ea8c4b4d58615df0a3ad1}{swallow\_next\_increment}}();}
-\DoxyCodeLine{136 }
-\DoxyCodeLine{137     \mbox{\hyperlink{class_assimp_1_1_line_splitter}{LineSplitter}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_line_splitter}{LineSplitter}} \& ) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{138     \mbox{\hyperlink{class_assimp_1_1_line_splitter}{LineSplitter}}(\mbox{\hyperlink{class_assimp_1_1_line_splitter}{LineSplitter}} \&\&) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{139     \mbox{\hyperlink{class_assimp_1_1_line_splitter}{LineSplitter}} \&operator = ( \textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_line_splitter}{LineSplitter}} \& ) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{140 }
-\DoxyCodeLine{141 \textcolor{keyword}{private}:}
-\DoxyCodeLine{142     line\_idx mIdx;}
-\DoxyCodeLine{143     std::string mCur;}
-\DoxyCodeLine{144     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *mEnd;}
-\DoxyCodeLine{145     \mbox{\hyperlink{class_assimp_1_1_stream_reader}{StreamReaderLE}}\& mStream;}
-\DoxyCodeLine{146     \textcolor{keywordtype}{bool} mSwallow, mSkip\_empty\_lines, mTrim;}
-\DoxyCodeLine{147 \};}
-\DoxyCodeLine{148 }
-\DoxyCodeLine{149 AI\_FORCE\_INLINE \mbox{\hyperlink{class_assimp_1_1_line_splitter_a04e78a827cbd501d920a9bb8245b817f}{LineSplitter::LineSplitter}}(\mbox{\hyperlink{class_assimp_1_1_stream_reader}{StreamReaderLE}}\& stream, \textcolor{keywordtype}{bool} skip\_empty\_lines, \textcolor{keywordtype}{bool} trim ) :}
-\DoxyCodeLine{150         mIdx(0),}
-\DoxyCodeLine{151         mCur(),}
-\DoxyCodeLine{152         mEnd(nullptr),}
-\DoxyCodeLine{153         mStream(stream),}
-\DoxyCodeLine{154         mSwallow(),}
-\DoxyCodeLine{155         mSkip\_empty\_lines(skip\_empty\_lines),}
-\DoxyCodeLine{156         mTrim(trim) \{}
-\DoxyCodeLine{157     mCur.reserve(1024);}
-\DoxyCodeLine{158     mEnd = mCur.c\_str() + 1024;}
-\DoxyCodeLine{159     \mbox{\hyperlink{class_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517}{operator++}}();}
-\DoxyCodeLine{160     mIdx = 0;}
-\DoxyCodeLine{161 \}}
-\DoxyCodeLine{162 }
-\DoxyCodeLine{163 AI\_FORCE\_INLINE LineSplitter\& \mbox{\hyperlink{class_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517}{LineSplitter::operator++}}() \{}
-\DoxyCodeLine{164     \textcolor{keywordflow}{if} (mSwallow) \{}
-\DoxyCodeLine{165         mSwallow = \textcolor{keyword}{false};}
-\DoxyCodeLine{166         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{167     \}}
-\DoxyCodeLine{168 }
-\DoxyCodeLine{169     \textcolor{keywordflow}{if} (!*\textcolor{keyword}{this}) \{}
-\DoxyCodeLine{170         \textcolor{keywordflow}{throw} std::logic\_error(\textcolor{stringliteral}{"{}End of file, no more lines to be retrieved."{}});}
-\DoxyCodeLine{171     \}}
-\DoxyCodeLine{172 }
-\DoxyCodeLine{173     \textcolor{keywordtype}{char} s;}
-\DoxyCodeLine{174     mCur.clear();}
-\DoxyCodeLine{175     \textcolor{keywordflow}{while} (mStream.\mbox{\hyperlink{class_assimp_1_1_stream_reader_aa33c8a16974f75b94f66276833df4ae3}{GetRemainingSize}}() \&\& (s = mStream.\mbox{\hyperlink{class_assimp_1_1_stream_reader_a04b5d66012c771bb3c33c0580d8d8464}{GetI1}}(), 1)) \{}
-\DoxyCodeLine{176         \textcolor{keywordflow}{if} (s == \textcolor{charliteral}{'\(\backslash\)n'} || s == \textcolor{charliteral}{'\(\backslash\)r'}) \{}
-\DoxyCodeLine{177             \textcolor{keywordflow}{if} (mSkip\_empty\_lines) \{}
-\DoxyCodeLine{178                 \textcolor{keywordflow}{while} (mStream.\mbox{\hyperlink{class_assimp_1_1_stream_reader_aa33c8a16974f75b94f66276833df4ae3}{GetRemainingSize}}() \&\& ((s = mStream.\mbox{\hyperlink{class_assimp_1_1_stream_reader_a04b5d66012c771bb3c33c0580d8d8464}{GetI1}}()) == \textcolor{charliteral}{' '} || s == \textcolor{charliteral}{'\(\backslash\)r'} || s == \textcolor{charliteral}{'\(\backslash\)n'}));}
-\DoxyCodeLine{179                 \textcolor{keywordflow}{if} (mStream.\mbox{\hyperlink{class_assimp_1_1_stream_reader_aa33c8a16974f75b94f66276833df4ae3}{GetRemainingSize}}()) \{}
-\DoxyCodeLine{180                     mStream.\mbox{\hyperlink{class_assimp_1_1_stream_reader_a78aaca82e5097b4c31297a9553d74b05}{IncPtr}}(-\/1);}
-\DoxyCodeLine{181                 \}}
-\DoxyCodeLine{182             \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{183                 \textcolor{comment}{// skip both potential line terminators but don't read past this line.}}
-\DoxyCodeLine{184                 \textcolor{keywordflow}{if} (mStream.\mbox{\hyperlink{class_assimp_1_1_stream_reader_aa33c8a16974f75b94f66276833df4ae3}{GetRemainingSize}}() \&\& (s == \textcolor{charliteral}{'\(\backslash\)r'} \&\& mStream.\mbox{\hyperlink{class_assimp_1_1_stream_reader_a04b5d66012c771bb3c33c0580d8d8464}{GetI1}}() != \textcolor{charliteral}{'\(\backslash\)n'})) \{}
-\DoxyCodeLine{185                     mStream.\mbox{\hyperlink{class_assimp_1_1_stream_reader_a78aaca82e5097b4c31297a9553d74b05}{IncPtr}}(-\/1);}
-\DoxyCodeLine{186                 \}}
-\DoxyCodeLine{187                 \textcolor{keywordflow}{if} (mTrim) \{}
-\DoxyCodeLine{188                     \textcolor{keywordflow}{while} (mStream.\mbox{\hyperlink{class_assimp_1_1_stream_reader_aa33c8a16974f75b94f66276833df4ae3}{GetRemainingSize}}() \&\& ((s = mStream.\mbox{\hyperlink{class_assimp_1_1_stream_reader_a04b5d66012c771bb3c33c0580d8d8464}{GetI1}}()) == \textcolor{charliteral}{' '} || s == \textcolor{charliteral}{'\(\backslash\)t'}));}
-\DoxyCodeLine{189                     \textcolor{keywordflow}{if} (mStream.\mbox{\hyperlink{class_assimp_1_1_stream_reader_aa33c8a16974f75b94f66276833df4ae3}{GetRemainingSize}}()) \{}
-\DoxyCodeLine{190                         mStream.\mbox{\hyperlink{class_assimp_1_1_stream_reader_a78aaca82e5097b4c31297a9553d74b05}{IncPtr}}(-\/1);}
-\DoxyCodeLine{191                     \}}
-\DoxyCodeLine{192                 \}}
-\DoxyCodeLine{193             \}}
-\DoxyCodeLine{194             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{195         \}}
-\DoxyCodeLine{196         mCur += s;}
-\DoxyCodeLine{197     \}}
-\DoxyCodeLine{198     ++mIdx;}
-\DoxyCodeLine{199 }
-\DoxyCodeLine{200     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{201 \}}
-\DoxyCodeLine{202 }
-\DoxyCodeLine{203 AI\_FORCE\_INLINE LineSplitter \&\mbox{\hyperlink{class_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517}{LineSplitter::operator++}}(\textcolor{keywordtype}{int}) \{}
-\DoxyCodeLine{204     \textcolor{keywordflow}{return} ++(*this);}
-\DoxyCodeLine{205 \}}
-\DoxyCodeLine{206 }
-\DoxyCodeLine{207 AI\_FORCE\_INLINE \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{class_assimp_1_1_line_splitter_ac6ba3911a72d452fb8930a812fea6d7e}{LineSplitter::operator[] }}(\textcolor{keywordtype}{size\_t} idx)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{208     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* s = \mbox{\hyperlink{class_assimp_1_1_line_splitter_a175ad7f4d2d0316ceb762259fbe62d26}{operator-\/>}}()-\/>c\_str();}
-\DoxyCodeLine{209 }
-\DoxyCodeLine{210     SkipSpaces(\&s, mEnd);}
-\DoxyCodeLine{211     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < idx; ++i) \{}
-\DoxyCodeLine{212         \textcolor{keywordflow}{for} (; !IsSpace(*s); ++s) \{}
-\DoxyCodeLine{213             \textcolor{keywordflow}{if} (IsLineEnd(*s)) \{}
-\DoxyCodeLine{214                 \textcolor{keywordflow}{throw} std::range\_error(\textcolor{stringliteral}{"{}Token index out of range, EOL reached"{}});}
-\DoxyCodeLine{215             \}}
-\DoxyCodeLine{216         \}}
-\DoxyCodeLine{217         SkipSpaces(\&s, mEnd);}
-\DoxyCodeLine{218     \}}
-\DoxyCodeLine{219     \textcolor{keywordflow}{return} s;}
-\DoxyCodeLine{220 \}}
-\DoxyCodeLine{221 }
-\DoxyCodeLine{222 \textcolor{keyword}{template} <\textcolor{keywordtype}{size\_t} N>}
-\DoxyCodeLine{223 AI\_FORCE\_INLINE \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_line_splitter_a05e6ea1868bc931c754ef332a4866ae3}{LineSplitter::get\_tokens}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* (\&tokens)[N])\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{224     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* s = \mbox{\hyperlink{class_assimp_1_1_line_splitter_a175ad7f4d2d0316ceb762259fbe62d26}{operator-\/>}}()-\/>c\_str();}
-\DoxyCodeLine{225 }
-\DoxyCodeLine{226     SkipSpaces(\&s, mEnd);}
-\DoxyCodeLine{227     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < N; ++i) \{}
-\DoxyCodeLine{228         \textcolor{keywordflow}{if} (IsLineEnd(*s)) \{}
-\DoxyCodeLine{229             \textcolor{keywordflow}{throw} std::range\_error(\textcolor{stringliteral}{"{}Token count out of range, EOL reached"{}});}
-\DoxyCodeLine{230         \}}
-\DoxyCodeLine{231         tokens[i] = s;}
-\DoxyCodeLine{232 }
-\DoxyCodeLine{233         \textcolor{keywordflow}{for} (; *s \&\& !IsSpace(*s); ++s);}
-\DoxyCodeLine{234         SkipSpaces(\&s, mEnd);}
-\DoxyCodeLine{235     \}}
-\DoxyCodeLine{236 \}}
-\DoxyCodeLine{237 }
-\DoxyCodeLine{238 AI\_FORCE\_INLINE \textcolor{keyword}{const} std::string* \mbox{\hyperlink{class_assimp_1_1_line_splitter_a175ad7f4d2d0316ceb762259fbe62d26}{LineSplitter::operator -\/> }}()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{239     \textcolor{keywordflow}{return} \&mCur;}
-\DoxyCodeLine{240 \}}
-\DoxyCodeLine{241 }
-\DoxyCodeLine{242 AI\_FORCE\_INLINE std::string LineSplitter::operator* ()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{243     \textcolor{keywordflow}{return} mCur;}
-\DoxyCodeLine{244 \}}
-\DoxyCodeLine{245 }
-\DoxyCodeLine{246 AI\_FORCE\_INLINE \textcolor{keyword}{const} \textcolor{keywordtype}{char}* LineSplitter::getEnd()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{247     \textcolor{keywordflow}{return} mEnd;}
-\DoxyCodeLine{248 \}}
-\DoxyCodeLine{249 }
-\DoxyCodeLine{250 AI\_FORCE\_INLINE LineSplitter::operator bool()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{251     \textcolor{keywordflow}{return} mStream.GetRemainingSize() > 0;}
-\DoxyCodeLine{252 \}}
-\DoxyCodeLine{253 }
-\DoxyCodeLine{254 AI\_FORCE\_INLINE LineSplitter::operator line\_idx()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{255     \textcolor{keywordflow}{return} mIdx;}
-\DoxyCodeLine{256 \}}
-\DoxyCodeLine{257 }
-\DoxyCodeLine{258 AI\_FORCE\_INLINE LineSplitter::line\_idx LineSplitter::get\_index()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{259     \textcolor{keywordflow}{return} mIdx;}
-\DoxyCodeLine{260 \}}
-\DoxyCodeLine{261 }
-\DoxyCodeLine{262 AI\_FORCE\_INLINE StreamReaderLE \&\mbox{\hyperlink{class_assimp_1_1_line_splitter_ae919ea1da66a85422681c0fbcb4986fe}{LineSplitter::get\_stream}}() \{}
-\DoxyCodeLine{263     \textcolor{keywordflow}{return} mStream;}
-\DoxyCodeLine{264 \}}
-\DoxyCodeLine{265 }
-\DoxyCodeLine{266 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_line_splitter_a8606ba6e4f8ce5601dcfe46d98d5b643}{LineSplitter::match\_start}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* check) \{}
-\DoxyCodeLine{267     \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} len = ::strlen(check);}
-\DoxyCodeLine{268 }
-\DoxyCodeLine{269     \textcolor{keywordflow}{return} len <= mCur.length() \&\& std::equal(check, check + len, mCur.begin());}
-\DoxyCodeLine{270 \}}
-\DoxyCodeLine{271 }
-\DoxyCodeLine{272 AI\_FORCE\_INLINE \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_line_splitter_a8efabfd26849a7f1379dfda1eeb44c0c}{LineSplitter::swallow\_next\_increment}}() \{}
-\DoxyCodeLine{273     mSwallow = \textcolor{keyword}{true};}
-\DoxyCodeLine{274 \}}
-\DoxyCodeLine{275 }
-\DoxyCodeLine{276 \} \textcolor{comment}{// Namespace Assimp}}
-\DoxyCodeLine{277 }
-\DoxyCodeLine{278 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INCLUDED\_LINE\_SPLITTER\_H}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00002}00002 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00003}00003 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00004}00004 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00005}00005 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00006}00006 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00007}00007 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00008}00008 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00009}00009 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00010}00010 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00011}00011 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00012}00012 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00013}00013 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00014}00014 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00015}00015 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00016}00016 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00017}00017 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00018}00018 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00019}00019 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00020}00020 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00021}00021 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00022}00022 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00023}00023 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00024}00024 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00025}00025 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00026}00026 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00027}00027 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00028}00028 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00029}00029 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00030}00030 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00031}00031 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00032}00032 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00033}00033 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00034}00034 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00035}00035 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00036}00036 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00037}00037 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00038}00038 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00039}00039 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00040}00040 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00046}00046 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00047}00047 \textcolor{preprocessor}{\#ifndef INCLUDED\_LINE\_SPLITTER\_H}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00048}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_ab82185fe893a51df0f1b8daa82495ddd}{00048}} \textcolor{preprocessor}{\#define INCLUDED\_LINE\_SPLITTER\_H}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00050}00050 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00051}00051 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00052}00052 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00054}00054 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00055}00055 \textcolor{preprocessor}{\#include <assimp/StreamReader.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00056}00056 \textcolor{preprocessor}{\#include <assimp/ParsingUtils.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00058}00058 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00060}00060 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00078}00078 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00079}00079 \textcolor{keyword}{class }LineSplitter \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00080}00080 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00081}\mbox{\hyperlink{class_assimp_1_1_line_splitter_aef56da1bb83d87c439d181cbce523068}{00081}}     \textcolor{keyword}{typedef} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_line_splitter_aef56da1bb83d87c439d181cbce523068}{line\_idx}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00083}00083     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00087}\mbox{\hyperlink{class_assimp_1_1_line_splitter_a72441b81e4b31974c093fdd2e893b067}{00087}} \textcolor{comment}{}    \mbox{\hyperlink{class_assimp_1_1_line_splitter_a72441b81e4b31974c093fdd2e893b067}{LineSplitter}}(\mbox{\hyperlink{class_assimp_1_1_stream_reader}{StreamReaderLE}}\& stream, \textcolor{keywordtype}{bool} skip\_empty\_lines = \textcolor{keyword}{true}, \textcolor{keywordtype}{bool} trim = \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00089}\mbox{\hyperlink{class_assimp_1_1_line_splitter_a0fd4d399771c7a475011feb059d946ab}{00089}}     \mbox{\hyperlink{class_assimp_1_1_line_splitter_a0fd4d399771c7a475011feb059d946ab}{\string~LineSplitter}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00091}00091     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00093}\mbox{\hyperlink{class_assimp_1_1_line_splitter_a206d19a8fed6b114ac16001ace38d5fc}{00093}} \textcolor{comment}{}    \mbox{\hyperlink{class_assimp_1_1_line_splitter}{LineSplitter}}\& \mbox{\hyperlink{class_assimp_1_1_line_splitter_a206d19a8fed6b114ac16001ace38d5fc}{operator++}}();}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00095}00095     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00096}\mbox{\hyperlink{class_assimp_1_1_line_splitter_a0fe5160b03fee78abecad477af7111f6}{00096}}     \mbox{\hyperlink{class_assimp_1_1_line_splitter}{LineSplitter}}\& \mbox{\hyperlink{class_assimp_1_1_line_splitter_a0fe5160b03fee78abecad477af7111f6}{operator++}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00098}00098     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00100}\mbox{\hyperlink{class_assimp_1_1_line_splitter_ae2a83986a6a49b32740b0fa9403f2808}{00100}} \textcolor{comment}{}    \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_assimp_1_1_line_splitter_ac6ba3911a72d452fb8930a812fea6d7e}{operator[] }}(\textcolor{keywordtype}{size\_t} idx) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00102}00102     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00104}00104 \textcolor{comment}{}    \textcolor{keyword}{template} <\textcolor{keywordtype}{size\_t} N>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00105}\mbox{\hyperlink{class_assimp_1_1_line_splitter_a05e6ea1868bc931c754ef332a4866ae3}{00105}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_line_splitter_a05e6ea1868bc931c754ef332a4866ae3}{get\_tokens}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* (\&tokens)[N]) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00107}00107     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00109}\mbox{\hyperlink{class_assimp_1_1_line_splitter_a6ced66186017cbc98a51965f7edb043b}{00109}} \textcolor{comment}{}    \textcolor{keyword}{const} std::string* \mbox{\hyperlink{class_assimp_1_1_line_splitter_a175ad7f4d2d0316ceb762259fbe62d26}{operator -\/> }}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00111}\mbox{\hyperlink{class_assimp_1_1_line_splitter_a750c652d4371c7aa2ce74b06449cbc18}{00111}}     std::string \mbox{\hyperlink{class_assimp_1_1_line_splitter_a903381cf5cbc7a1684116ddd71604ae5}{operator* }}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00113}\mbox{\hyperlink{class_assimp_1_1_line_splitter_a1ad31292b4829957c3409368230ee8ec}{00113}}     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{class_assimp_1_1_line_splitter_a1ad31292b4829957c3409368230ee8ec}{getEnd}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00115}00115     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00117}\mbox{\hyperlink{class_assimp_1_1_line_splitter_af6e748ce22ac04d704d620a4eeb9ffe7}{00117}} \textcolor{comment}{}    \textcolor{keyword}{operator} bool() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00119}00119     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00121}\mbox{\hyperlink{class_assimp_1_1_line_splitter_ae05da91429c6055766ac4a7c1a37caab}{00121}} \textcolor{comment}{}    \textcolor{keyword}{operator} \mbox{\hyperlink{class_assimp_1_1_line_splitter_aef56da1bb83d87c439d181cbce523068}{line\_idx}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00123}\mbox{\hyperlink{class_assimp_1_1_line_splitter_af0d8c7edec42b576a3f06e632c27701e}{00123}}     \mbox{\hyperlink{class_assimp_1_1_line_splitter_aef56da1bb83d87c439d181cbce523068}{line\_idx}} \mbox{\hyperlink{class_assimp_1_1_line_splitter_af0d8c7edec42b576a3f06e632c27701e}{get\_index}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00125}00125     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00127}\mbox{\hyperlink{class_assimp_1_1_line_splitter_a405da224022f6544751f0b47dde14b5b}{00127}} \textcolor{comment}{}    \mbox{\hyperlink{class_assimp_1_1_stream_reader}{StreamReaderLE}}\& \mbox{\hyperlink{class_assimp_1_1_line_splitter_a405da224022f6544751f0b47dde14b5b}{get\_stream}}();}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00129}00129     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00131}\mbox{\hyperlink{class_assimp_1_1_line_splitter_ad63e70a9e0991a1e5df59a333e088b8d}{00131}} \textcolor{comment}{}    \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_line_splitter_ad63e70a9e0991a1e5df59a333e088b8d}{match\_start}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* check);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00133}00133     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00135}\mbox{\hyperlink{class_assimp_1_1_line_splitter_ae5987477ec7ea8c4b4d58615df0a3ad1}{00135}} \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_line_splitter_ae5987477ec7ea8c4b4d58615df0a3ad1}{swallow\_next\_increment}}();}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00137}\mbox{\hyperlink{class_assimp_1_1_line_splitter_a99db4079d27847780cc22c6d395b96b9}{00137}}     \mbox{\hyperlink{class_assimp_1_1_line_splitter_a99db4079d27847780cc22c6d395b96b9}{LineSplitter}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_line_splitter}{LineSplitter}} \& ) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00138}\mbox{\hyperlink{class_assimp_1_1_line_splitter_a7f8159192166a79badfb4f2cfaea5fde}{00138}}     \mbox{\hyperlink{class_assimp_1_1_line_splitter_a7f8159192166a79badfb4f2cfaea5fde}{LineSplitter}}(\mbox{\hyperlink{class_assimp_1_1_line_splitter}{LineSplitter}} \&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00139}\mbox{\hyperlink{class_assimp_1_1_line_splitter_a0ccb9c0cd85b9417f6640f7a35db6d5b}{00139}}     \mbox{\hyperlink{class_assimp_1_1_line_splitter}{LineSplitter}} \&\mbox{\hyperlink{class_assimp_1_1_line_splitter_a0ccb9c0cd85b9417f6640f7a35db6d5b}{operator = }}( \textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_line_splitter}{LineSplitter}} \& ) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00141}00141 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00142}00142     \mbox{\hyperlink{class_assimp_1_1_line_splitter_aef56da1bb83d87c439d181cbce523068}{line\_idx}} \mbox{\hyperlink{class_assimp_1_1_line_splitter_ac442e59062c37d5b886a9d5e619100bb}{mIdx}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00143}00143     std::string \mbox{\hyperlink{class_assimp_1_1_line_splitter_a7cde4e6ddd5f2c450790c80281d62669}{mCur}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00144}00144     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{class_assimp_1_1_line_splitter_a516713ecec241d5b206424725706193f}{mEnd}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00145}00145     \mbox{\hyperlink{class_assimp_1_1_stream_reader}{StreamReaderLE}}\& \mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00146}00146     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_line_splitter_a5ca2516ae7da68064fe06b702d0c0e70}{mSwallow}}, \mbox{\hyperlink{class_assimp_1_1_line_splitter_a088e3e7bbe43c4a30c9bbbcd2b80182a}{mSkip\_empty\_lines}}, \mbox{\hyperlink{class_assimp_1_1_line_splitter_a7058917cd5f7103fd9941509ef80fd0c}{mTrim}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00147}00147 \};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00149}00149 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \mbox{\hyperlink{class_assimp_1_1_line_splitter_a04e78a827cbd501d920a9bb8245b817f}{LineSplitter::LineSplitter}}(\mbox{\hyperlink{class_assimp_1_1_stream_reader}{StreamReaderLE}}\& stream, \textcolor{keywordtype}{bool} skip\_empty\_lines, \textcolor{keywordtype}{bool} trim ) :}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00150}00150         mIdx(0),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00151}00151         mCur(),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00152}00152         mEnd(nullptr),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00153}00153         mStream(stream),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00154}00154         mSwallow(),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00155}00155         mSkip\_empty\_lines(skip\_empty\_lines),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00156}00156         mTrim(trim) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00157}00157     \mbox{\hyperlink{class_assimp_1_1_line_splitter_a7cde4e6ddd5f2c450790c80281d62669}{mCur}}.reserve(1024);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00158}00158     \mbox{\hyperlink{class_assimp_1_1_line_splitter_a516713ecec241d5b206424725706193f}{mEnd}} = \mbox{\hyperlink{class_assimp_1_1_line_splitter_a7cde4e6ddd5f2c450790c80281d62669}{mCur}}.c\_str() + 1024;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00159}00159     \mbox{\hyperlink{class_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517}{operator++}}();}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00160}00160     \mbox{\hyperlink{class_assimp_1_1_line_splitter_ac442e59062c37d5b886a9d5e619100bb}{mIdx}} = 0;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00161}00161 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00163}00163 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} LineSplitter\& \mbox{\hyperlink{class_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517}{LineSplitter::operator++}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00164}00164     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_assimp_1_1_line_splitter_a5ca2516ae7da68064fe06b702d0c0e70}{mSwallow}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00165}00165         \mbox{\hyperlink{class_assimp_1_1_line_splitter_a5ca2516ae7da68064fe06b702d0c0e70}{mSwallow}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00166}00166         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00167}00167     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00168}00168 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00169}00169     \textcolor{keywordflow}{if} (!*\textcolor{keyword}{this}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00170}00170         \textcolor{keywordflow}{throw} std::logic\_error(\textcolor{stringliteral}{"{}End of file, no more lines to be retrieved."{}});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00171}00171     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00173}00173     \textcolor{keywordtype}{char} s;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00174}00174     \mbox{\hyperlink{class_assimp_1_1_line_splitter_a7cde4e6ddd5f2c450790c80281d62669}{mCur}}.clear();}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00175}00175     \textcolor{keywordflow}{while} (\mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}}.\mbox{\hyperlink{class_assimp_1_1_stream_reader_aa33c8a16974f75b94f66276833df4ae3}{GetRemainingSize}}() \&\& (s = \mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}}.\mbox{\hyperlink{class_assimp_1_1_stream_reader_a04b5d66012c771bb3c33c0580d8d8464}{GetI1}}(), 1)) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00176}00176         \textcolor{keywordflow}{if} (s == \textcolor{charliteral}{'\(\backslash\)n'} || s == \textcolor{charliteral}{'\(\backslash\)r'}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00177}00177             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_assimp_1_1_line_splitter_a088e3e7bbe43c4a30c9bbbcd2b80182a}{mSkip\_empty\_lines}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00178}00178                 \textcolor{keywordflow}{while} (\mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}}.\mbox{\hyperlink{class_assimp_1_1_stream_reader_aa33c8a16974f75b94f66276833df4ae3}{GetRemainingSize}}() \&\& ((s = \mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}}.\mbox{\hyperlink{class_assimp_1_1_stream_reader_a04b5d66012c771bb3c33c0580d8d8464}{GetI1}}()) == \textcolor{charliteral}{' '} || s == \textcolor{charliteral}{'\(\backslash\)r'} || s == \textcolor{charliteral}{'\(\backslash\)n'}));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00179}00179                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}}.\mbox{\hyperlink{class_assimp_1_1_stream_reader_aa33c8a16974f75b94f66276833df4ae3}{GetRemainingSize}}()) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00180}00180                     \mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}}.\mbox{\hyperlink{class_assimp_1_1_stream_reader_a78aaca82e5097b4c31297a9553d74b05}{IncPtr}}(-\/1);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00181}00181                 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00182}00182             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00183}00183                 \textcolor{comment}{// skip both potential line terminators but don't read past this line.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00184}00184                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}}.\mbox{\hyperlink{class_assimp_1_1_stream_reader_aa33c8a16974f75b94f66276833df4ae3}{GetRemainingSize}}() \&\& (s == \textcolor{charliteral}{'\(\backslash\)r'} \&\& \mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}}.\mbox{\hyperlink{class_assimp_1_1_stream_reader_a04b5d66012c771bb3c33c0580d8d8464}{GetI1}}() != \textcolor{charliteral}{'\(\backslash\)n'})) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00185}00185                     \mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}}.\mbox{\hyperlink{class_assimp_1_1_stream_reader_a78aaca82e5097b4c31297a9553d74b05}{IncPtr}}(-\/1);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00186}00186                 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00187}00187                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_assimp_1_1_line_splitter_a7058917cd5f7103fd9941509ef80fd0c}{mTrim}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00188}00188                     \textcolor{keywordflow}{while} (\mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}}.\mbox{\hyperlink{class_assimp_1_1_stream_reader_aa33c8a16974f75b94f66276833df4ae3}{GetRemainingSize}}() \&\& ((s = \mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}}.\mbox{\hyperlink{class_assimp_1_1_stream_reader_a04b5d66012c771bb3c33c0580d8d8464}{GetI1}}()) == \textcolor{charliteral}{' '} || s == \textcolor{charliteral}{'\(\backslash\)t'}));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00189}00189                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}}.\mbox{\hyperlink{class_assimp_1_1_stream_reader_aa33c8a16974f75b94f66276833df4ae3}{GetRemainingSize}}()) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00190}00190                         \mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}}.\mbox{\hyperlink{class_assimp_1_1_stream_reader_a78aaca82e5097b4c31297a9553d74b05}{IncPtr}}(-\/1);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00191}00191                     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00192}00192                 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00193}00193             \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00194}00194             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00195}00195         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00196}00196         \mbox{\hyperlink{class_assimp_1_1_line_splitter_a7cde4e6ddd5f2c450790c80281d62669}{mCur}} += s;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00197}00197     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00198}00198     ++\mbox{\hyperlink{class_assimp_1_1_line_splitter_ac442e59062c37d5b886a9d5e619100bb}{mIdx}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00199}00199 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00200}00200     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00201}00201 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00203}00203 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} LineSplitter \&\mbox{\hyperlink{class_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517}{LineSplitter::operator++}}(\textcolor{keywordtype}{int}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00204}00204     \textcolor{keywordflow}{return} ++(*this);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00205}00205 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00206}00206 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00207}00207 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{class_assimp_1_1_line_splitter_ac6ba3911a72d452fb8930a812fea6d7e}{LineSplitter::operator[] }}(\textcolor{keywordtype}{size\_t} idx)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00208}00208     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* s = \mbox{\hyperlink{class_assimp_1_1_line_splitter_a175ad7f4d2d0316ceb762259fbe62d26}{operator-\/>}}()-\/>c\_str();}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00209}00209 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00210}00210     \mbox{\hyperlink{namespace_assimp_a77e1d122d82c1e0905f5dc37ca72c0dc}{SkipSpaces}}(\&s, \mbox{\hyperlink{class_assimp_1_1_line_splitter_a516713ecec241d5b206424725706193f}{mEnd}});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00211}00211     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < idx; ++i) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00212}00212         \textcolor{keywordflow}{for} (; !\mbox{\hyperlink{namespace_assimp_a2dc3cfed4430c305908c17c403ced49c}{IsSpace}}(*s); ++s) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00213}00213             \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespace_assimp_a99092e9b63e3e8bb88dc63e141d7157f}{IsLineEnd}}(*s)) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00214}00214                 \textcolor{keywordflow}{throw} std::range\_error(\textcolor{stringliteral}{"{}Token index out of range, EOL reached"{}});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00215}00215             \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00216}00216         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00217}00217         \mbox{\hyperlink{namespace_assimp_a77e1d122d82c1e0905f5dc37ca72c0dc}{SkipSpaces}}(\&s, \mbox{\hyperlink{class_assimp_1_1_line_splitter_a516713ecec241d5b206424725706193f}{mEnd}});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00218}00218     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00219}00219     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00220}00220 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00221}00221 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00222}00222 \textcolor{keyword}{template} <\textcolor{keywordtype}{size\_t} N>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00223}00223 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_line_splitter_a05e6ea1868bc931c754ef332a4866ae3}{LineSplitter::get\_tokens}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* (\&tokens)[N])\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00224}00224     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* s = \mbox{\hyperlink{class_assimp_1_1_line_splitter_a175ad7f4d2d0316ceb762259fbe62d26}{operator-\/>}}()-\/>c\_str();}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00225}00225 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00226}00226     \mbox{\hyperlink{namespace_assimp_a77e1d122d82c1e0905f5dc37ca72c0dc}{SkipSpaces}}(\&s, \mbox{\hyperlink{class_assimp_1_1_line_splitter_a516713ecec241d5b206424725706193f}{mEnd}});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00227}00227     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < N; ++i) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00228}00228         \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespace_assimp_a99092e9b63e3e8bb88dc63e141d7157f}{IsLineEnd}}(*s)) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00229}00229             \textcolor{keywordflow}{throw} std::range\_error(\textcolor{stringliteral}{"{}Token count out of range, EOL reached"{}});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00230}00230         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00231}00231         tokens[i] = s;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00232}00232 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00233}00233         \textcolor{keywordflow}{for} (; *s \&\& !\mbox{\hyperlink{namespace_assimp_a2dc3cfed4430c305908c17c403ced49c}{IsSpace}}(*s); ++s);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00234}00234         \mbox{\hyperlink{namespace_assimp_a77e1d122d82c1e0905f5dc37ca72c0dc}{SkipSpaces}}(\&s, \mbox{\hyperlink{class_assimp_1_1_line_splitter_a516713ecec241d5b206424725706193f}{mEnd}});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00235}00235     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00236}00236 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00238}00238 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keyword}{const} std::string* \mbox{\hyperlink{class_assimp_1_1_line_splitter_a175ad7f4d2d0316ceb762259fbe62d26}{LineSplitter::operator -\/> }}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00239}00239     \textcolor{keywordflow}{return} \&\mbox{\hyperlink{class_assimp_1_1_line_splitter_a7cde4e6ddd5f2c450790c80281d62669}{mCur}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00240}00240 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00241}00241 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00242}00242 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} std::string \mbox{\hyperlink{class_assimp_1_1_line_splitter_a903381cf5cbc7a1684116ddd71604ae5}{LineSplitter::operator* }}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00243}00243     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_assimp_1_1_line_splitter_a7cde4e6ddd5f2c450790c80281d62669}{mCur}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00244}00244 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00245}00245 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00246}00246 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_assimp_1_1_line_splitter_a72e2e2a6661c0b0bcce0792d71bda4f1}{LineSplitter::getEnd}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00247}00247     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_assimp_1_1_line_splitter_a516713ecec241d5b206424725706193f}{mEnd}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00248}00248 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00249}00249 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00250}00250 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} LineSplitter::operator bool()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00251}00251     \textcolor{keywordflow}{return} mStream.GetRemainingSize() > 0;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00252}00252 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00253}00253 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00254}00254 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} LineSplitter::operator line\_idx()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00255}00255     \textcolor{keywordflow}{return} mIdx;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00256}00256 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00257}00257 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00258}00258 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \mbox{\hyperlink{class_assimp_1_1_line_splitter_aef56da1bb83d87c439d181cbce523068}{LineSplitter::line\_idx}} \mbox{\hyperlink{class_assimp_1_1_line_splitter_ab1696c3d2355b38f7beb5fb2a2497b2d}{LineSplitter::get\_index}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00259}00259     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_assimp_1_1_line_splitter_ac442e59062c37d5b886a9d5e619100bb}{mIdx}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00260}00260 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00261}00261 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00262}00262 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \mbox{\hyperlink{namespace_assimp_ae1f004ccb8f551efc9c3249184f66eef}{StreamReaderLE}} \&\mbox{\hyperlink{class_assimp_1_1_line_splitter_ae919ea1da66a85422681c0fbcb4986fe}{LineSplitter::get\_stream}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00263}00263     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_assimp_1_1_line_splitter_ad0a89c57b790269acca8a9d1e6bc715a}{mStream}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00264}00264 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00265}00265 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00266}00266 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_line_splitter_a8606ba6e4f8ce5601dcfe46d98d5b643}{LineSplitter::match\_start}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* check) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00267}00267     \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} len = ::strlen(check);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00268}00268 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00269}00269     \textcolor{keywordflow}{return} len <= \mbox{\hyperlink{class_assimp_1_1_line_splitter_a7cde4e6ddd5f2c450790c80281d62669}{mCur}}.length() \&\& std::equal(check, check + len, \mbox{\hyperlink{class_assimp_1_1_line_splitter_a7cde4e6ddd5f2c450790c80281d62669}{mCur}}.begin());}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00270}00270 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00271}00271 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00272}00272 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_line_splitter_a8efabfd26849a7f1379dfda1eeb44c0c}{LineSplitter::swallow\_next\_increment}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00273}00273     \mbox{\hyperlink{class_assimp_1_1_line_splitter_a5ca2516ae7da68064fe06b702d0c0e70}{mSwallow}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00274}00274 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00275}00275 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00276}00276 \} \textcolor{comment}{// Namespace Assimp}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00277}00277 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source_l00278}00278 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INCLUDED\_LINE\_SPLITTER\_H}}
 
 \end{DoxyCode}

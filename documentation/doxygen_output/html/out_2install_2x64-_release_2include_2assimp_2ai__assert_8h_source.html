@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -119,7 +122,7 @@ $(function() {
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#ifndef AI_ASSERT_H_INC</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#define AI_ASSERT_H_INC</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2ai__assert_8h.html#ae1267b269964b4aee81b369846396541">   48</a></span><span class="preprocessor">#define AI_ASSERT_H_INC</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#include &lt;assimp/defs.h&gt;</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
@@ -127,7 +130,7 @@ $(function() {
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_assimp.html">Assimp</a> {</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>ASSIMP_API <span class="keywordtype">void</span> <a class="code hl_function" href="namespace_assimp.html#aee0be0a7697ffab9038d27ffc6cb5065">aiAssertViolation</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* failedExpression, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keywordtype">int</span> line);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><a class="code hl_define" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespace_assimp.html#aee0be0a7697ffab9038d27ffc6cb5065">aiAssertViolation</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* failedExpression, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keywordtype">int</span> line);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif</span></div>
@@ -137,12 +140,13 @@ $(function() {
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#   define ai_assert(expression) (void)((!!(expression)) || (Assimp::aiAssertViolation(#expression, __FILE__, __LINE__), 0))</span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#   define ai_assert_entry() ai_assert(false)</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#   define  ai_assert(expression)</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#   define  ai_assert_entry()</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2ai__assert_8h.html#a8cda16916af68d32c6add71ef3bb7af3">   70</a></span><span class="preprocessor">#   define  ai_assert(expression)</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2ai__assert_8h.html#a7bad754cbbec2ed5b5bc29f539241ae9">   71</a></span><span class="preprocessor">#   define  ai_assert_entry()</span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif </span><span class="comment">// ASSIMP_BUILD_DEBUG</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif </span><span class="comment">// AI_ASSERT_H_INC</span></div>
-<div class="ttc" id="anamespace_assimp_html"><div class="ttname"><a href="namespace_assimp.html">Assimp</a></div><div class="ttdef"><b>Definition:</b> AssertHandler.h:50</div></div>
+<div class="ttc" id="ainclude_2assimp_2defs_8h_html_a7d617d307e656cb6ff315ba71ff958d4"><div class="ttname"><a href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a></div><div class="ttdeci">#define ASSIMP_API</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2defs_8h_source.html#l00163">defs.h:163</a></div></div>
+<div class="ttc" id="anamespace_assimp_html"><div class="ttname"><a href="namespace_assimp.html">Assimp</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_assert_handler_8h_source.html#l00050">AssertHandler.h:50</a></div></div>
 <div class="ttc" id="anamespace_assimp_html_aee0be0a7697ffab9038d27ffc6cb5065"><div class="ttname"><a href="namespace_assimp.html#aee0be0a7697ffab9038d27ffc6cb5065">Assimp::aiAssertViolation</a></div><div class="ttdeci">ASSIMP_API void aiAssertViolation(const char *failedExpression, const char *file, int line)</div><div class="ttdoc">Dispatches an assert violation to the assert handler.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

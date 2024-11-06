@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -85,6 +88,16 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;assimp/quaternion.h&gt;</code><br />
 <code>#include &lt;assimp/types.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for anim.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="include_2assimp_2anim_8h__incl.png" border="0" usemap="#a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2include_2assimp_2anim_8h" alt=""/></div>
+<map name="a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2include_2assimp_2anim_8h" id="a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2include_2assimp_2anim_8h">
+<area shape="rect" title="Defines the data structures in which the imported animations are returned." alt="" coords="48,5,248,67"/>
+<area shape="rect" title=" " alt="" coords="5,115,144,143"/>
+<area shape="rect" title=" " alt="" coords="168,115,277,143"/>
+</map>
+</div>
 </div>
 <p><a href="include_2assimp_2anim_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -107,27 +120,32 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_animation.html">aiAnimation</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:afc07ef96362c6baf707f0715739bbbc4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2assimp_2anim_8h.html#afc07ef96362c6baf707f0715739bbbc4">AI_ANIM_H_INC</a></td></tr>
+<tr class="separator:afc07ef96362c6baf707f0715739bbbc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a8909b10fd942fa3f138e1923cc52d20e"><td class="memItemLeft" align="right" valign="top"><a id="a8909b10fd942fa3f138e1923cc52d20e" name="a8909b10fd942fa3f138e1923cc52d20e"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>aiAnimInterpolation</b> { <br />
-&#160;&#160;<b>aiAnimInterpolation_Step</b>
-, <b>aiAnimInterpolation_Linear</b>
-, <b>aiAnimInterpolation_Spherical_Linear</b>
-, <b>aiAnimInterpolation_Cubic_Spline</b>
+<tr class="memitem:a8909b10fd942fa3f138e1923cc52d20e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20e">aiAnimInterpolation</a> { <br />
+&#160;&#160;<a class="el" href="include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea6dd85782a544c93bf9eb6d56abbc9e81">aiAnimInterpolation_Step</a>
+, <a class="el" href="include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da">aiAnimInterpolation_Linear</a>
+, <a class="el" href="include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea7d3c05c71355cc31c522c51b36329c53">aiAnimInterpolation_Spherical_Linear</a>
+, <a class="el" href="include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea60406dd693bc3c4ede1432107ebec2ad">aiAnimInterpolation_Cubic_Spline</a>
 , <br />
-&#160;&#160;<b>_aiAnimInterpolation_Force32Bit</b> = INT_MAX
-, <b>aiAnimInterpolation_Step</b>
-, <b>aiAnimInterpolation_Linear</b>
-, <b>aiAnimInterpolation_Spherical_Linear</b>
+&#160;&#160;<a class="el" href="include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea681dc5633593f0a43b468339e8f27fe5">_aiAnimInterpolation_Force32Bit</a> = INT_MAX
+, <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea6dd85782a544c93bf9eb6d56abbc9e81">aiAnimInterpolation_Step</a>
+, <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da">aiAnimInterpolation_Linear</a>
+, <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea7d3c05c71355cc31c522c51b36329c53">aiAnimInterpolation_Spherical_Linear</a>
 , <br />
-&#160;&#160;<b>aiAnimInterpolation_Cubic_Spline</b>
-, <b>_aiAnimInterpolation_Force32Bit</b> = INT_MAX
-, <b>aiAnimInterpolation_Step</b>
-, <b>aiAnimInterpolation_Linear</b>
+&#160;&#160;<a class="el" href="out_2install_2x64-_debug_2include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea60406dd693bc3c4ede1432107ebec2ad">aiAnimInterpolation_Cubic_Spline</a>
+, <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea681dc5633593f0a43b468339e8f27fe5">_aiAnimInterpolation_Force32Bit</a> = INT_MAX
+, <a class="el" href="out_2install_2x64-_release_2include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea6dd85782a544c93bf9eb6d56abbc9e81">aiAnimInterpolation_Step</a>
+, <a class="el" href="out_2install_2x64-_release_2include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da">aiAnimInterpolation_Linear</a>
 , <br />
-&#160;&#160;<b>aiAnimInterpolation_Spherical_Linear</b>
-, <b>aiAnimInterpolation_Cubic_Spline</b>
-, <b>_aiAnimInterpolation_Force32Bit</b> = INT_MAX
+&#160;&#160;<a class="el" href="out_2install_2x64-_release_2include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea7d3c05c71355cc31c522c51b36329c53">aiAnimInterpolation_Spherical_Linear</a>
+, <a class="el" href="out_2install_2x64-_release_2include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea60406dd693bc3c4ede1432107ebec2ad">aiAnimInterpolation_Cubic_Spline</a>
+, <a class="el" href="out_2install_2x64-_release_2include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20ea681dc5633593f0a43b468339e8f27fe5">_aiAnimInterpolation_Force32Bit</a> = INT_MAX
 <br />
  }</td></tr>
 <tr class="separator:a8909b10fd942fa3f138e1923cc52d20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,7 +174,26 @@ Enumerations</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Defines the data structures in which the imported animations are returned. </p>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+
+<p class="definition">Definition in file <a class="el" href="include_2assimp_2anim_8h_source.html">anim.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="afc07ef96362c6baf707f0715739bbbc4" name="afc07ef96362c6baf707f0715739bbbc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc07ef96362c6baf707f0715739bbbc4">&#9670;&#160;</a></span>AI_ANIM_H_INC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AI_ANIM_H_INC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2anim_8h_source.html#l00049">49</a> of file <a class="el" href="include_2assimp_2anim_8h_source.html">anim.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a201b9e9429b82cd6423ff4a4daf01cef" name="a201b9e9429b82cd6423ff4a4daf01cef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a201b9e9429b82cd6423ff4a4daf01cef">&#9670;&#160;</a></span>aiAnimBehaviour</h2>
 
@@ -207,6 +244,41 @@ time is t, use the value at (t-n) % (|m-n|).
  </p>
 </td></tr>
 </table>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2anim_8h_source.html#l00251">251</a> of file <a class="el" href="include_2assimp_2anim_8h_source.html">anim.h</a>.</p>
+
+</div>
+</div>
+<a id="a8909b10fd942fa3f138e1923cc52d20e" name="a8909b10fd942fa3f138e1923cc52d20e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8909b10fd942fa3f138e1923cc52d20e">&#9670;&#160;</a></span>aiAnimInterpolation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="include_2assimp_2anim_8h.html#a8909b10fd942fa3f138e1923cc52d20e">aiAnimInterpolation</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea6dd85782a544c93bf9eb6d56abbc9e81" name="a8909b10fd942fa3f138e1923cc52d20ea6dd85782a544c93bf9eb6d56abbc9e81"></a>aiAnimInterpolation_Step&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da" name="a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da"></a>aiAnimInterpolation_Linear&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea7d3c05c71355cc31c522c51b36329c53" name="a8909b10fd942fa3f138e1923cc52d20ea7d3c05c71355cc31c522c51b36329c53"></a>aiAnimInterpolation_Spherical_Linear&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea60406dd693bc3c4ede1432107ebec2ad" name="a8909b10fd942fa3f138e1923cc52d20ea60406dd693bc3c4ede1432107ebec2ad"></a>aiAnimInterpolation_Cubic_Spline&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea681dc5633593f0a43b468339e8f27fe5" name="a8909b10fd942fa3f138e1923cc52d20ea681dc5633593f0a43b468339e8f27fe5"></a>_aiAnimInterpolation_Force32Bit&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea6dd85782a544c93bf9eb6d56abbc9e81" name="a8909b10fd942fa3f138e1923cc52d20ea6dd85782a544c93bf9eb6d56abbc9e81"></a>aiAnimInterpolation_Step&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da" name="a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da"></a>aiAnimInterpolation_Linear&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea7d3c05c71355cc31c522c51b36329c53" name="a8909b10fd942fa3f138e1923cc52d20ea7d3c05c71355cc31c522c51b36329c53"></a>aiAnimInterpolation_Spherical_Linear&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea60406dd693bc3c4ede1432107ebec2ad" name="a8909b10fd942fa3f138e1923cc52d20ea60406dd693bc3c4ede1432107ebec2ad"></a>aiAnimInterpolation_Cubic_Spline&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea681dc5633593f0a43b468339e8f27fe5" name="a8909b10fd942fa3f138e1923cc52d20ea681dc5633593f0a43b468339e8f27fe5"></a>_aiAnimInterpolation_Force32Bit&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea6dd85782a544c93bf9eb6d56abbc9e81" name="a8909b10fd942fa3f138e1923cc52d20ea6dd85782a544c93bf9eb6d56abbc9e81"></a>aiAnimInterpolation_Step&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da" name="a8909b10fd942fa3f138e1923cc52d20ea3cd2cdf5097e3dc7bfbaac7e69f579da"></a>aiAnimInterpolation_Linear&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea7d3c05c71355cc31c522c51b36329c53" name="a8909b10fd942fa3f138e1923cc52d20ea7d3c05c71355cc31c522c51b36329c53"></a>aiAnimInterpolation_Spherical_Linear&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea60406dd693bc3c4ede1432107ebec2ad" name="a8909b10fd942fa3f138e1923cc52d20ea60406dd693bc3c4ede1432107ebec2ad"></a>aiAnimInterpolation_Cubic_Spline&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8909b10fd942fa3f138e1923cc52d20ea681dc5633593f0a43b468339e8f27fe5" name="a8909b10fd942fa3f138e1923cc52d20ea681dc5633593f0a43b468339e8f27fe5"></a>_aiAnimInterpolation_Force32Bit&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2anim_8h_source.html#l00065">65</a> of file <a class="el" href="include_2assimp_2anim_8h_source.html">anim.h</a>.</p>
 
 </div>
 </div>

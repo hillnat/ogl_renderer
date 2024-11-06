@@ -2,221 +2,221 @@
 \label{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/postprocess.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/postprocess.h}}
 \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
-\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{4 \textcolor{comment}{}}
-\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
-\DoxyCodeLine{6 \textcolor{comment}{}}
-\DoxyCodeLine{7 \textcolor{comment}{}}
-\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
-\DoxyCodeLine{9 \textcolor{comment}{}}
-\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
-\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the}}
-\DoxyCodeLine{12 \textcolor{comment}{following conditions are met:}}
-\DoxyCodeLine{13 \textcolor{comment}{}}
-\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
-\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
-\DoxyCodeLine{17 \textcolor{comment}{}}
-\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
-\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
-\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
-\DoxyCodeLine{22 \textcolor{comment}{}}
-\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
-\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
-\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
-\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
-\DoxyCodeLine{27 \textcolor{comment}{}}
-\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
-\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
-\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
-\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
-\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
-\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
-\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
-\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
-\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
-\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
-\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
-\DoxyCodeLine{39 \textcolor{comment}{}}
-\DoxyCodeLine{40 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{41 \textcolor{comment}{*/}}
-\DoxyCodeLine{42 }
-\DoxyCodeLine{46 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#ifndef AI\_POSTPROCESS\_H\_INC}}
-\DoxyCodeLine{48 \textcolor{preprocessor}{\#define AI\_POSTPROCESS\_H\_INC}}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50 \textcolor{preprocessor}{\#include <assimp/types.h>}}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
-\DoxyCodeLine{53 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
-\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{57 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
-\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{60 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{71 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{72 \textcolor{keyword}{enum} \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410}{aiPostProcessSteps}}}
-\DoxyCodeLine{73 \{}
-\DoxyCodeLine{74 }
-\DoxyCodeLine{75     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{85 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a8857a0e30688127a82c7b8939958c6dc}{aiProcess\_CalcTangentSpace}} = 0x1,}
-\DoxyCodeLine{86 }
-\DoxyCodeLine{87     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{99 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a444a6c9d8b63e6dc9e1e2e1edd3cbcd4}{aiProcess\_JoinIdenticalVertices}} = 0x2,}
-\DoxyCodeLine{100 }
-\DoxyCodeLine{101     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{115 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a133fd1162674e68bf8cd17070898a936}{aiProcess\_MakeLeftHanded}} = 0x4,}
-\DoxyCodeLine{116 }
-\DoxyCodeLine{117     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{131 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a9c3de834f0307f31fa2b1b6d05dd592b}{aiProcess\_Triangulate}} = 0x8,}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{157 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a0ab270168bd7a707c0f279045c265e08}{aiProcess\_RemoveComponent}} = 0x10,}
-\DoxyCodeLine{158 }
-\DoxyCodeLine{159     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{171 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a4e0d60129724464915ebc5533a9bba78}{aiProcess\_GenNormals}} = 0x20,}
-\DoxyCodeLine{172 }
-\DoxyCodeLine{173     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{188 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a6afb4fee42eca4482674859196cb8685}{aiProcess\_GenSmoothNormals}} = 0x40,}
-\DoxyCodeLine{189 }
-\DoxyCodeLine{190     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{207 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a7bb8f16468032a3ba9a23fa37df82174}{aiProcess\_SplitLargeMeshes}} = 0x80,}
-\DoxyCodeLine{208 }
-\DoxyCodeLine{209     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{233 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a6e50fab95214a33996e28fae3efc7582}{aiProcess\_PreTransformVertices}} = 0x100,}
-\DoxyCodeLine{234 }
-\DoxyCodeLine{235     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{249 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a9fc450a103aa2831c145c49bc56c9439}{aiProcess\_LimitBoneWeights}} = 0x200,}
-\DoxyCodeLine{250 }
-\DoxyCodeLine{251     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{277 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa}{aiProcess\_ValidateDataStructure}} = 0x400,}
-\DoxyCodeLine{278 }
-\DoxyCodeLine{279     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{292 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a16979c68f93d283c6886abf580d557b1}{aiProcess\_ImproveCacheLocality}} = 0x800,}
-\DoxyCodeLine{293 }
-\DoxyCodeLine{294     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{313 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a052d2921c33cd21141480b8f25524bb1}{aiProcess\_RemoveRedundantMaterials}} = 0x1000,}
-\DoxyCodeLine{314 }
-\DoxyCodeLine{315     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{327 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a620b08f185e87a67a3efd9295eed6e82}{aiProcess\_FixInfacingNormals}} = 0x2000,}
-\DoxyCodeLine{328 }
-\DoxyCodeLine{329 }
-\DoxyCodeLine{330 }
-\DoxyCodeLine{331     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{340 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a1814162ab2122ee45c8e2ec56660717c}{aiProcess\_PopulateArmatureData}} = 0x4000,}
-\DoxyCodeLine{341 }
-\DoxyCodeLine{342     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{354 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ab4484f73635d633cd79973bac1431ed6}{aiProcess\_SortByPType}} = 0x8000,}
-\DoxyCodeLine{355 }
-\DoxyCodeLine{356     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{397 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ae1311236ea7a55b7355c5aa535586ad0}{aiProcess\_FindDegenerates}} = 0x10000,}
-\DoxyCodeLine{398 }
-\DoxyCodeLine{399     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{412 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a42a93fc16a7a3b6df509bab503945421}{aiProcess\_FindInvalidData}} = 0x20000,}
-\DoxyCodeLine{413 }
-\DoxyCodeLine{414     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{429 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410aa4ae05f45c5682ab245cf8e87986426f}{aiProcess\_GenUVCoords}} = 0x40000,}
-\DoxyCodeLine{430 }
-\DoxyCodeLine{431     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{446 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a87577c60885b193571a10237341b237f}{aiProcess\_TransformUVCoords}} = 0x80000,}
-\DoxyCodeLine{447 }
-\DoxyCodeLine{448     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{461 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a4982e6ac69991617b1481bce00d1fc0e}{aiProcess\_FindInstances}} = 0x100000,}
-\DoxyCodeLine{462 }
-\DoxyCodeLine{463     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{472 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410af5fe0d6ee720c91359dc61cb849f2ebf}{aiProcess\_OptimizeMeshes}}  = 0x200000,}
-\DoxyCodeLine{473 }
-\DoxyCodeLine{474 }
-\DoxyCodeLine{475     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{501 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a3bf6b8cb30289fd27fb2734d67a0889f}{aiProcess\_OptimizeGraph}}  = 0x400000,}
-\DoxyCodeLine{502 }
-\DoxyCodeLine{503     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{521 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a06922b6a1f1cd8186f9fdafb471c813e}{aiProcess\_FlipUVs}} = 0x800000,}
-\DoxyCodeLine{522 }
-\DoxyCodeLine{523     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{536 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a429a11bf7ace46f039f55de895505d4a}{aiProcess\_FlipWindingOrder}}  = 0x1000000,}
-\DoxyCodeLine{537 }
-\DoxyCodeLine{538     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{542 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ac662c1d8f4e37cdf2a54023b174da192}{aiProcess\_SplitByBoneCount}}  = 0x2000000,}
-\DoxyCodeLine{543 }
-\DoxyCodeLine{544     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{557 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a8e14bca58301e2ee29cf928156c3a9f9}{aiProcess\_Debone}}  = 0x4000000,}
-\DoxyCodeLine{558 }
-\DoxyCodeLine{559 }
-\DoxyCodeLine{560 }
-\DoxyCodeLine{561     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{571 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a9290b1203f1cbe8883606fc09dc3e93e}{aiProcess\_GlobalScale}} = 0x8000000,}
-\DoxyCodeLine{572 }
-\DoxyCodeLine{573     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{582 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ac8889361ff08f3da78792ace616c47e0}{aiProcess\_EmbedTextures}}  = 0x10000000,}
-\DoxyCodeLine{583 }
-\DoxyCodeLine{584     \textcolor{comment}{// aiProcess\_GenEntityMeshes = 0x100000,}}
-\DoxyCodeLine{585     \textcolor{comment}{// aiProcess\_OptimizeAnimations = 0x200000}}
-\DoxyCodeLine{586     \textcolor{comment}{// aiProcess\_FixTexturePaths = 0x200000}}
-\DoxyCodeLine{587 }
-\DoxyCodeLine{588 }
-\DoxyCodeLine{589     aiProcess\_ForceGenNormals = 0x20000000,}
-\DoxyCodeLine{590 }
-\DoxyCodeLine{591     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{601 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a4d499b6b8ce7c1cdaf3ef3935ad17ce8}{aiProcess\_DropNormals}} = 0x40000000,}
-\DoxyCodeLine{602 }
-\DoxyCodeLine{603     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{606 \textcolor{comment}{}    aiProcess\_GenBoundingBoxes = 0x80000000}
-\DoxyCodeLine{607 \};}
-\DoxyCodeLine{608 }
-\DoxyCodeLine{609 }
-\DoxyCodeLine{610 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{621 \textcolor{comment}{}\textcolor{preprocessor}{\#define aiProcess\_ConvertToLeftHanded ( \(\backslash\)}}
-\DoxyCodeLine{622 \textcolor{preprocessor}{    aiProcess\_MakeLeftHanded     | \(\backslash\)}}
-\DoxyCodeLine{623 \textcolor{preprocessor}{    aiProcess\_FlipUVs            | \(\backslash\)}}
-\DoxyCodeLine{624 \textcolor{preprocessor}{    aiProcess\_FlipWindingOrder   | \(\backslash\)}}
-\DoxyCodeLine{625 \textcolor{preprocessor}{    0 )}}
-\DoxyCodeLine{626 }
-\DoxyCodeLine{627 }
-\DoxyCodeLine{628 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{642 \textcolor{comment}{}\textcolor{preprocessor}{\#define aiProcessPreset\_TargetRealtime\_Fast ( \(\backslash\)}}
-\DoxyCodeLine{643 \textcolor{preprocessor}{    aiProcess\_CalcTangentSpace      |  \(\backslash\)}}
-\DoxyCodeLine{644 \textcolor{preprocessor}{    aiProcess\_GenNormals            |  \(\backslash\)}}
-\DoxyCodeLine{645 \textcolor{preprocessor}{    aiProcess\_JoinIdenticalVertices |  \(\backslash\)}}
-\DoxyCodeLine{646 \textcolor{preprocessor}{    aiProcess\_Triangulate           |  \(\backslash\)}}
-\DoxyCodeLine{647 \textcolor{preprocessor}{    aiProcess\_GenUVCoords           |  \(\backslash\)}}
-\DoxyCodeLine{648 \textcolor{preprocessor}{    aiProcess\_SortByPType           |  \(\backslash\)}}
-\DoxyCodeLine{649 \textcolor{preprocessor}{    0 )}}
-\DoxyCodeLine{650 }
-\DoxyCodeLine{651  \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{667 \textcolor{comment}{}\textcolor{preprocessor}{\#define aiProcessPreset\_TargetRealtime\_Quality ( \(\backslash\)}}
-\DoxyCodeLine{668 \textcolor{preprocessor}{    aiProcess\_CalcTangentSpace              |  \(\backslash\)}}
-\DoxyCodeLine{669 \textcolor{preprocessor}{    aiProcess\_GenSmoothNormals              |  \(\backslash\)}}
-\DoxyCodeLine{670 \textcolor{preprocessor}{    aiProcess\_JoinIdenticalVertices         |  \(\backslash\)}}
-\DoxyCodeLine{671 \textcolor{preprocessor}{    aiProcess\_ImproveCacheLocality          |  \(\backslash\)}}
-\DoxyCodeLine{672 \textcolor{preprocessor}{    aiProcess\_LimitBoneWeights              |  \(\backslash\)}}
-\DoxyCodeLine{673 \textcolor{preprocessor}{    aiProcess\_RemoveRedundantMaterials      |  \(\backslash\)}}
-\DoxyCodeLine{674 \textcolor{preprocessor}{    aiProcess\_SplitLargeMeshes              |  \(\backslash\)}}
-\DoxyCodeLine{675 \textcolor{preprocessor}{    aiProcess\_Triangulate                   |  \(\backslash\)}}
-\DoxyCodeLine{676 \textcolor{preprocessor}{    aiProcess\_GenUVCoords                   |  \(\backslash\)}}
-\DoxyCodeLine{677 \textcolor{preprocessor}{    aiProcess\_SortByPType                   |  \(\backslash\)}}
-\DoxyCodeLine{678 \textcolor{preprocessor}{    aiProcess\_FindDegenerates               |  \(\backslash\)}}
-\DoxyCodeLine{679 \textcolor{preprocessor}{    aiProcess\_FindInvalidData               |  \(\backslash\)}}
-\DoxyCodeLine{680 \textcolor{preprocessor}{    0 )}}
-\DoxyCodeLine{681 }
-\DoxyCodeLine{682  \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{697 \textcolor{comment}{}\textcolor{preprocessor}{\#define aiProcessPreset\_TargetRealtime\_MaxQuality ( \(\backslash\)}}
-\DoxyCodeLine{698 \textcolor{preprocessor}{    aiProcessPreset\_TargetRealtime\_Quality   |  \(\backslash\)}}
-\DoxyCodeLine{699 \textcolor{preprocessor}{    aiProcess\_FindInstances                  |  \(\backslash\)}}
-\DoxyCodeLine{700 \textcolor{preprocessor}{    aiProcess\_ValidateDataStructure          |  \(\backslash\)}}
-\DoxyCodeLine{701 \textcolor{preprocessor}{    aiProcess\_OptimizeMeshes                 |  \(\backslash\)}}
-\DoxyCodeLine{702 \textcolor{preprocessor}{    0 )}}
-\DoxyCodeLine{703 }
-\DoxyCodeLine{704 }
-\DoxyCodeLine{705 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{706 \} \textcolor{comment}{// end of extern "{}C"{}}}
-\DoxyCodeLine{707 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{708 }
-\DoxyCodeLine{709 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_POSTPROCESS\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00002}00002 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00003}00003 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00004}00004 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00005}00005 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00006}00006 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00007}00007 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00008}00008 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00009}00009 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00010}00010 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00011}00011 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00012}00012 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00013}00013 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00014}00014 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00015}00015 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00016}00016 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00017}00017 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00018}00018 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00019}00019 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00020}00020 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00021}00021 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00022}00022 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00023}00023 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00024}00024 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00025}00025 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00026}00026 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00027}00027 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00028}00028 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00029}00029 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00030}00030 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00031}00031 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00032}00032 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00033}00033 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00034}00034 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00035}00035 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00036}00036 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00037}00037 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00038}00038 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00039}00039 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00040}00040 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00041}00041 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00046}00046 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00047}00047 \textcolor{preprocessor}{\#ifndef AI\_POSTPROCESS\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00048}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a200ca079124fc0497c1fb811efe9479f}{00048}} \textcolor{preprocessor}{\#define AI\_POSTPROCESS\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00050}00050 \textcolor{preprocessor}{\#include <assimp/types.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00052}00052 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00053}00053 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00054}00054 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00056}00056 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00057}00057 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00058}00058 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00060}00060 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00071}00071 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00072}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410}{00072}} \textcolor{keyword}{enum} \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410}{aiPostProcessSteps}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00073}00073 \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00075}00075     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00085}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a8857a0e30688127a82c7b8939958c6dc}{00085}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a8857a0e30688127a82c7b8939958c6dc}{aiProcess\_CalcTangentSpace}} = 0x1,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00087}00087     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00099}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a444a6c9d8b63e6dc9e1e2e1edd3cbcd4}{00099}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a444a6c9d8b63e6dc9e1e2e1edd3cbcd4}{aiProcess\_JoinIdenticalVertices}} = 0x2,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00101}00101     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00115}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a133fd1162674e68bf8cd17070898a936}{00115}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a133fd1162674e68bf8cd17070898a936}{aiProcess\_MakeLeftHanded}} = 0x4,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00117}00117     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00131}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a9c3de834f0307f31fa2b1b6d05dd592b}{00131}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a9c3de834f0307f31fa2b1b6d05dd592b}{aiProcess\_Triangulate}} = 0x8,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00133}00133     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00157}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a0ab270168bd7a707c0f279045c265e08}{00157}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a0ab270168bd7a707c0f279045c265e08}{aiProcess\_RemoveComponent}} = 0x10,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00158}00158 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00159}00159     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00171}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a4e0d60129724464915ebc5533a9bba78}{00171}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a4e0d60129724464915ebc5533a9bba78}{aiProcess\_GenNormals}} = 0x20,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00173}00173     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00188}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a6afb4fee42eca4482674859196cb8685}{00188}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a6afb4fee42eca4482674859196cb8685}{aiProcess\_GenSmoothNormals}} = 0x40,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00189}00189 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00190}00190     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00207}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a7bb8f16468032a3ba9a23fa37df82174}{00207}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a7bb8f16468032a3ba9a23fa37df82174}{aiProcess\_SplitLargeMeshes}} = 0x80,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00209}00209     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00233}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a6e50fab95214a33996e28fae3efc7582}{00233}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a6e50fab95214a33996e28fae3efc7582}{aiProcess\_PreTransformVertices}} = 0x100,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00234}00234 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00235}00235     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00249}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a9fc450a103aa2831c145c49bc56c9439}{00249}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a9fc450a103aa2831c145c49bc56c9439}{aiProcess\_LimitBoneWeights}} = 0x200,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00250}00250 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00251}00251     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00277}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa}{00277}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa}{aiProcess\_ValidateDataStructure}} = 0x400,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00278}00278 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00279}00279     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00292}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a16979c68f93d283c6886abf580d557b1}{00292}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a16979c68f93d283c6886abf580d557b1}{aiProcess\_ImproveCacheLocality}} = 0x800,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00293}00293 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00294}00294     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00313}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a052d2921c33cd21141480b8f25524bb1}{00313}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a052d2921c33cd21141480b8f25524bb1}{aiProcess\_RemoveRedundantMaterials}} = 0x1000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00314}00314 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00315}00315     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00327}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a620b08f185e87a67a3efd9295eed6e82}{00327}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a620b08f185e87a67a3efd9295eed6e82}{aiProcess\_FixInfacingNormals}} = 0x2000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00328}00328 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00329}00329 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00330}00330 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00331}00331     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00340}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a1814162ab2122ee45c8e2ec56660717c}{00340}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a1814162ab2122ee45c8e2ec56660717c}{aiProcess\_PopulateArmatureData}} = 0x4000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00341}00341 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00342}00342     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00354}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ab4484f73635d633cd79973bac1431ed6}{00354}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ab4484f73635d633cd79973bac1431ed6}{aiProcess\_SortByPType}} = 0x8000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00355}00355 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00356}00356     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00397}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ae1311236ea7a55b7355c5aa535586ad0}{00397}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ae1311236ea7a55b7355c5aa535586ad0}{aiProcess\_FindDegenerates}} = 0x10000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00398}00398 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00399}00399     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00412}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a42a93fc16a7a3b6df509bab503945421}{00412}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a42a93fc16a7a3b6df509bab503945421}{aiProcess\_FindInvalidData}} = 0x20000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00413}00413 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00414}00414     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00429}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410aa4ae05f45c5682ab245cf8e87986426f}{00429}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410aa4ae05f45c5682ab245cf8e87986426f}{aiProcess\_GenUVCoords}} = 0x40000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00430}00430 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00431}00431     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00446}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a87577c60885b193571a10237341b237f}{00446}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a87577c60885b193571a10237341b237f}{aiProcess\_TransformUVCoords}} = 0x80000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00447}00447 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00448}00448     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00461}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a4982e6ac69991617b1481bce00d1fc0e}{00461}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a4982e6ac69991617b1481bce00d1fc0e}{aiProcess\_FindInstances}} = 0x100000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00462}00462 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00463}00463     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00472}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410af5fe0d6ee720c91359dc61cb849f2ebf}{00472}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410af5fe0d6ee720c91359dc61cb849f2ebf}{aiProcess\_OptimizeMeshes}}  = 0x200000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00473}00473 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00474}00474 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00475}00475     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00501}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a3bf6b8cb30289fd27fb2734d67a0889f}{00501}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a3bf6b8cb30289fd27fb2734d67a0889f}{aiProcess\_OptimizeGraph}}  = 0x400000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00502}00502 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00503}00503     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00521}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a06922b6a1f1cd8186f9fdafb471c813e}{00521}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a06922b6a1f1cd8186f9fdafb471c813e}{aiProcess\_FlipUVs}} = 0x800000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00522}00522 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00523}00523     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00536}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a429a11bf7ace46f039f55de895505d4a}{00536}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a429a11bf7ace46f039f55de895505d4a}{aiProcess\_FlipWindingOrder}}  = 0x1000000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00537}00537 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00538}00538     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00542}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ac662c1d8f4e37cdf2a54023b174da192}{00542}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ac662c1d8f4e37cdf2a54023b174da192}{aiProcess\_SplitByBoneCount}}  = 0x2000000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00543}00543 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00544}00544     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00557}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a8e14bca58301e2ee29cf928156c3a9f9}{00557}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a8e14bca58301e2ee29cf928156c3a9f9}{aiProcess\_Debone}}  = 0x4000000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00558}00558 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00559}00559 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00560}00560 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00561}00561     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00571}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a9290b1203f1cbe8883606fc09dc3e93e}{00571}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a9290b1203f1cbe8883606fc09dc3e93e}{aiProcess\_GlobalScale}} = 0x8000000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00572}00572 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00573}00573     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00582}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ac8889361ff08f3da78792ace616c47e0}{00582}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410ac8889361ff08f3da78792ace616c47e0}{aiProcess\_EmbedTextures}}  = 0x10000000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00583}00583 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00584}00584     \textcolor{comment}{// aiProcess\_GenEntityMeshes = 0x100000,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00585}00585     \textcolor{comment}{// aiProcess\_OptimizeAnimations = 0x200000}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00586}00586     \textcolor{comment}{// aiProcess\_FixTexturePaths = 0x200000}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00587}00587 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00588}00588 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00589}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a72367a4d49efd4a42394cc5c377c1353}{00589}}     \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a72367a4d49efd4a42394cc5c377c1353}{aiProcess\_ForceGenNormals}} = 0x20000000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00590}00590 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00591}00591     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00601}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a4d499b6b8ce7c1cdaf3ef3935ad17ce8}{00601}} \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a4d499b6b8ce7c1cdaf3ef3935ad17ce8}{aiProcess\_DropNormals}} = 0x40000000,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00602}00602 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00603}00603     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00606}00606 \textcolor{comment}{}    \mbox{\hyperlink{include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a26bd09ed23ff03da0b2c3d64ee7018bf}{aiProcess\_GenBoundingBoxes}} = 0x80000000}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00607}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a64795260b95f5a4b3f3dc1be4f52e410a26bd09ed23ff03da0b2c3d64ee7018bf}{00607}} \};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00608}00608 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00609}00609 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00610}00610 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00621}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_acd2361a766665ce2dbfb3eae201b784d}{00621}} \textcolor{comment}{}\textcolor{preprocessor}{\#define aiProcess\_ConvertToLeftHanded ( \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00622}00622 \textcolor{preprocessor}{    aiProcess\_MakeLeftHanded     | \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00623}00623 \textcolor{preprocessor}{    aiProcess\_FlipUVs            | \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00624}00624 \textcolor{preprocessor}{    aiProcess\_FlipWindingOrder   | \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00625}00625 \textcolor{preprocessor}{    0 )}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00626}00626 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00627}00627 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00628}00628 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00642}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_ac72dfcb11eae3f0403430b2d9bd6aaac}{00642}} \textcolor{comment}{}\textcolor{preprocessor}{\#define aiProcessPreset\_TargetRealtime\_Fast ( \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00643}00643 \textcolor{preprocessor}{    aiProcess\_CalcTangentSpace      |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00644}00644 \textcolor{preprocessor}{    aiProcess\_GenNormals            |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00645}00645 \textcolor{preprocessor}{    aiProcess\_JoinIdenticalVertices |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00646}00646 \textcolor{preprocessor}{    aiProcess\_Triangulate           |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00647}00647 \textcolor{preprocessor}{    aiProcess\_GenUVCoords           |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00648}00648 \textcolor{preprocessor}{    aiProcess\_SortByPType           |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00649}00649 \textcolor{preprocessor}{    0 )}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00650}00650 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00651}00651  \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00667}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_a450d38c62891ec72077a011098ee4412}{00667}} \textcolor{comment}{}\textcolor{preprocessor}{\#define aiProcessPreset\_TargetRealtime\_Quality ( \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00668}00668 \textcolor{preprocessor}{    aiProcess\_CalcTangentSpace              |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00669}00669 \textcolor{preprocessor}{    aiProcess\_GenSmoothNormals              |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00670}00670 \textcolor{preprocessor}{    aiProcess\_JoinIdenticalVertices         |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00671}00671 \textcolor{preprocessor}{    aiProcess\_ImproveCacheLocality          |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00672}00672 \textcolor{preprocessor}{    aiProcess\_LimitBoneWeights              |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00673}00673 \textcolor{preprocessor}{    aiProcess\_RemoveRedundantMaterials      |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00674}00674 \textcolor{preprocessor}{    aiProcess\_SplitLargeMeshes              |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00675}00675 \textcolor{preprocessor}{    aiProcess\_Triangulate                   |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00676}00676 \textcolor{preprocessor}{    aiProcess\_GenUVCoords                   |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00677}00677 \textcolor{preprocessor}{    aiProcess\_SortByPType                   |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00678}00678 \textcolor{preprocessor}{    aiProcess\_FindDegenerates               |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00679}00679 \textcolor{preprocessor}{    aiProcess\_FindInvalidData               |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00680}00680 \textcolor{preprocessor}{    0 )}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00681}00681 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00682}00682  \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00697}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_aaa612ed3f167a8999405d53fc309594b}{00697}} \textcolor{comment}{}\textcolor{preprocessor}{\#define aiProcessPreset\_TargetRealtime\_MaxQuality ( \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00698}00698 \textcolor{preprocessor}{    aiProcessPreset\_TargetRealtime\_Quality   |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00699}00699 \textcolor{preprocessor}{    aiProcess\_FindInstances                  |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00700}00700 \textcolor{preprocessor}{    aiProcess\_ValidateDataStructure          |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00701}00701 \textcolor{preprocessor}{    aiProcess\_OptimizeMeshes                 |  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00702}00702 \textcolor{preprocessor}{    0 )}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00703}00703 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00704}00704 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00705}00705 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00706}00706 \} \textcolor{comment}{// end of extern "{}C"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00707}00707 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00708}00708 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2postprocess_8h_source_l00709}00709 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_POSTPROCESS\_H\_INC}}
 
 \end{DoxyCode}

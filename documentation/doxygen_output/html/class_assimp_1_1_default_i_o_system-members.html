@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -117,22 +120,23 @@ $(function() {
   <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#a023615aecc7a609a4d7743b743bb4c62">IOSystem</a>() AI_NO_EXCEPT=default</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#a023615aecc7a609a4d7743b743bb4c62">IOSystem</a>() AI_NO_EXCEPT=default</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#a023615aecc7a609a4d7743b743bb4c62">IOSystem</a>() AI_NO_EXCEPT=default</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_default_i_o_system.html#ad26d41f2fc89746a6861af8f82bc9ad2">Open</a>(const char *pFile, const char *pMode=&quot;rb&quot;) override</td><td class="entry"><a class="el" href="class_assimp_1_1_default_i_o_system.html">Assimp::DefaultIOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#afb81db1f34642e684d90a0e180fbc4cf">m_pathStack</a></td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_default_i_o_system.html#ad26d41f2fc89746a6861af8f82bc9ad2">Open</a>(const char *pFile, const char *pMode=&quot;rb&quot;) override</td><td class="entry"><a class="el" href="class_assimp_1_1_default_i_o_system.html">Assimp::DefaultIOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_default_i_o_system.html#ad26d41f2fc89746a6861af8f82bc9ad2">Open</a>(const char *pFile, const char *pMode=&quot;rb&quot;) override</td><td class="entry"><a class="el" href="class_assimp_1_1_default_i_o_system.html">Assimp::DefaultIOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#aef35fabc9bd49fb83bfd4f12a94083c3">Assimp::IOSystem::Open</a>(const std::string &amp;pFile, const std::string &amp;pMode=std::string(&quot;rb&quot;))</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#aa00f3ee1c44576364e8ce00206fb9dd2">PopDirectory</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#a4564abb11d22b1e2087076f70922ca71">PopDirectory</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_default_i_o_system.html#ad26d41f2fc89746a6861af8f82bc9ad2">Open</a>(const char *pFile, const char *pMode=&quot;rb&quot;) override</td><td class="entry"><a class="el" href="class_assimp_1_1_default_i_o_system.html">Assimp::DefaultIOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#aef35fabc9bd49fb83bfd4f12a94083c3">Assimp::IOSystem::Open</a>(const std::string &amp;pFile, const std::string &amp;pMode=std::string(&quot;rb&quot;))</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#aa00f3ee1c44576364e8ce00206fb9dd2">PopDirectory</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#a4564abb11d22b1e2087076f70922ca71">PopDirectory</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#a07c2c93fac300df44c756174fcea71e8">PushDirectory</a>(const std::string &amp;path)</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#ab2ba986c7ce02c38b318f33be181645c">PushDirectory</a>(const std::string &amp;path)</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#a4564abb11d22b1e2087076f70922ca71">PopDirectory</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#a07c2c93fac300df44c756174fcea71e8">PushDirectory</a>(const std::string &amp;path)</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#ab2ba986c7ce02c38b318f33be181645c">PushDirectory</a>(const std::string &amp;path)</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#a1f3180cefbb447b4b8c628dcaf95fc69">StackSize</a>() const</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#adb69c7c385f976bb083b8c62ad3fb1b0">StackSize</a>() const</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#ab2ba986c7ce02c38b318f33be181645c">PushDirectory</a>(const std::string &amp;path)</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#a1f3180cefbb447b4b8c628dcaf95fc69">StackSize</a>() const</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#adb69c7c385f976bb083b8c62ad3fb1b0">StackSize</a>() const</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#a7d09695c971f1e92f977c534a8a4b0c6">~IOSystem</a>()=default</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#adb69c7c385f976bb083b8c62ad3fb1b0">StackSize</a>() const</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#a7d09695c971f1e92f977c534a8a4b0c6">~IOSystem</a>()=default</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#a7d09695c971f1e92f977c534a8a4b0c6">~IOSystem</a>()=default</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html#a7d09695c971f1e92f977c534a8a4b0c6">~IOSystem</a>()=default</td><td class="entry"><a class="el" href="class_assimp_1_1_i_o_system.html">Assimp::IOSystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

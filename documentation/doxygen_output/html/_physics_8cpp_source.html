@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -24,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
-   <div id="projectbrief">Graphics &amp; Physics engine in C++ with OpenGL</div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -214,7 +215,7 @@ $(function() {
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="preprocessor">#pragma endregion</span></div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#pragma region Point Checks</span></div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="class_physics.html#a43a34c220d1557ea1ead38fff9599f60">  136</a></span>vec3 <a class="code hl_function" href="class_physics.html#a43a34c220d1557ea1ead38fff9599f60">Physics::GetClosestPointToSphere</a>(vec3 spherePos, <span class="keywordtype">float</span> sphereRadius, vec3 targetPoint) {<span class="comment">//Direction from sphere center to target point, times sphere radius</span></div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    vec3 dir = glm::normalize(targetPoint - spherePos);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    vec3 dir = <a class="code hl_function" href="group__core__func__geometric.html#ga5c6c1379961d4589035a390856f2d66c">glm::normalize</a>(targetPoint - spherePos);</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordflow">return</span> spherePos + (dir * sphereRadius);<span class="comment">//Return the position of the sphere, plus our direction times radius</span></div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>}</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="class_physics.html#aefefcb8706ba7e6178ae14c7dfe3e9cc">  140</a></span>vec3 <a class="code hl_function" href="class_physics.html#aefefcb8706ba7e6178ae14c7dfe3e9cc">Physics::GetClosestPointToAABB</a>(vec3 targetPoint, <a class="code hl_struct" href="struct_a_a_b_b.html">AABB</a> aabb) {</div>
@@ -265,9 +266,10 @@ $(function() {
 <div class="ttc" id="aclass_rigidbody_html_ae72c531ed1c6b56f60ed4f62c7870f90"><div class="ttname"><a href="class_rigidbody.html#ae72c531ed1c6b56f60ed4f62c7870f90">Rigidbody::attachedTransform</a></div><div class="ttdeci">Transform * attachedTransform</div><div class="ttdef"><b>Definition:</b> <a href="_rigidbody_8h_source.html#l00028">Rigidbody.h:28</a></div></div>
 <div class="ttc" id="aclass_transform_html_a482ec8a49b08f224b2ec513dc27f47b5"><div class="ttname"><a href="class_transform.html#a482ec8a49b08f224b2ec513dc27f47b5">Transform::GetPosition</a></div><div class="ttdeci">vec3 GetPosition()</div><div class="ttdoc">Gets the position of this transform</div><div class="ttdef"><b>Definition:</b> <a href="_transform_8cpp_source.html#l00033">Transform.cpp:33</a></div></div>
 <div class="ttc" id="aclass_transform_html_abd54bc9cc0def3dd94cce058b49082b8"><div class="ttname"><a href="class_transform.html#abd54bc9cc0def3dd94cce058b49082b8">Transform::TranslateGlobal</a></div><div class="ttdeci">void TranslateGlobal(vec3 translation)</div><div class="ttdoc">Translates our matrix, disregarding rotation</div><div class="ttdef"><b>Definition:</b> <a href="_transform_8cpp_source.html#l00013">Transform.cpp:13</a></div></div>
-<div class="ttc" id="astruct_a_a_b_b_html"><div class="ttname"><a href="struct_a_a_b_b.html">AABB</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_a_b_b_8h_source.html#l00004">AABB.h:4</a></div></div>
-<div class="ttc" id="astruct_a_a_b_b_html_aa81f22712bea85145f75cff926b8e27e"><div class="ttname"><a href="struct_a_a_b_b.html#aa81f22712bea85145f75cff926b8e27e">AABB::size</a></div><div class="ttdeci">glm::vec3 size</div><div class="ttdoc">The half extents of our object</div><div class="ttdef"><b>Definition:</b> <a href="_a_a_b_b_8h_source.html#l00012">AABB.h:12</a></div></div>
-<div class="ttc" id="astruct_a_a_b_b_html_ab30670352ac9a39800c2e409e58427ab"><div class="ttname"><a href="struct_a_a_b_b.html#ab30670352ac9a39800c2e409e58427ab">AABB::pos</a></div><div class="ttdeci">glm::vec3 pos</div><div class="ttdoc">The center position of this AABB</div><div class="ttdef"><b>Definition:</b> <a href="_a_a_b_b_8h_source.html#l00008">AABB.h:8</a></div></div>
+<div class="ttc" id="agroup__core__func__geometric_html_ga5c6c1379961d4589035a390856f2d66c"><div class="ttname"><a href="group__core__func__geometric.html#ga5c6c1379961d4589035a390856f2d66c">glm::normalize</a></div><div class="ttdeci">GLM_FUNC_QUALIFIER vec&lt; L, T, Q &gt; normalize(vec&lt; L, T, Q &gt; const &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="func__geometric_8inl_source.html#l00190">func_geometric.inl:190</a></div></div>
+<div class="ttc" id="astruct_a_a_b_b_html"><div class="ttname"><a href="struct_a_a_b_b.html">AABB</a></div><div class="ttdef"><b>Definition:</b> <a href="ogl__renderer_2physics_2_a_a_b_b_8h_source.html#l00004">AABB.h:4</a></div></div>
+<div class="ttc" id="astruct_a_a_b_b_html_aa81f22712bea85145f75cff926b8e27e"><div class="ttname"><a href="struct_a_a_b_b.html#aa81f22712bea85145f75cff926b8e27e">AABB::size</a></div><div class="ttdeci">glm::vec3 size</div><div class="ttdoc">The half extents of our object</div><div class="ttdef"><b>Definition:</b> <a href="ogl__renderer_2physics_2_a_a_b_b_8h_source.html#l00012">AABB.h:12</a></div></div>
+<div class="ttc" id="astruct_a_a_b_b_html_ab30670352ac9a39800c2e409e58427ab"><div class="ttname"><a href="struct_a_a_b_b.html#ab30670352ac9a39800c2e409e58427ab">AABB::pos</a></div><div class="ttdeci">glm::vec3 pos</div><div class="ttdoc">The center position of this AABB</div><div class="ttdef"><b>Definition:</b> <a href="ogl__renderer_2physics_2_a_a_b_b_8h_source.html#l00008">AABB.h:8</a></div></div>
 <div class="ttc" id="astruct_col_rb_pair_html"><div class="ttname"><a href="struct_col_rb_pair.html">ColRbPair</a></div><div class="ttdef"><b>Definition:</b> <a href="_col_rb_pair_8h_source.html#l00005">ColRbPair.h:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -83,7 +86,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aed051e2996a96ca3a53e069f9b93da0c"><td class="memItemLeft" align="right" valign="top">ai_uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_string.html#aed051e2996a96ca3a53e069f9b93da0c">length</a></td></tr>
+<tr class="memitem:aed051e2996a96ca3a53e069f9b93da0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2types_8h.html#a62b54a3ae3ae350c86fe848e22cb5b0a">ai_uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_string.html#aed051e2996a96ca3a53e069f9b93da0c">length</a></td></tr>
 <tr class="separator:aed051e2996a96ca3a53e069f9b93da0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e03d8ac36c4a65e4650088710bbdd6d"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_string.html#a2e03d8ac36c4a65e4650088710bbdd6d">data</a> [<a class="el" href="out_2install_2x64-_release_2include_2assimp_2types_8h.html#a05bb3e785337d0adccfaf53847ca73d9">AI_MAXLEN</a>]</td></tr>
 <tr class="separator:a2e03d8ac36c4a65e4650088710bbdd6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -94,6 +97,8 @@ Public Attributes</h2></td></tr>
 <p >Most text file loaders provide proper Unicode input file handling, special unicode characters are correctly transcoded to UTF8 and are kept throughout the libraries' import pipeline.</p>
 <p >For most applications, it will be absolutely sufficient to interpret the <a class="el" href="structai_string.html" title="Represents an UTF-8 string, zero byte terminated.">aiString</a> as ASCII data and work with it as one would work with a plain char*. Windows users in need of proper support for i.e asian characters can use the MultiByteToWideChar(), WideCharToMultiByte() WinAPI functionality to convert the UTF-8 strings to their working character set (i.e. MBCS, WideChar).</p>
 <p >We use this representation instead of std::string to be C-compatible. The (binary) length of such a string is limited to AI_MAXLEN characters (including the the terminating zero). </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2types_8h_source.html#l00267">267</a> of file <a class="el" href="include_2assimp_2types_8h_source.html">types.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a2e03d8ac36c4a65e4650088710bbdd6d" name="a2e03d8ac36c4a65e4650088710bbdd6d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e03d8ac36c4a65e4650088710bbdd6d">&#9670;&#160;</a></span>data</h2>
@@ -108,6 +113,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >String buffer. Size limit is AI_MAXLEN </p>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2types_8h_source.html#l00395">395</a> of file <a class="el" href="include_2assimp_2types_8h_source.html">types.h</a>.</p>
+
 </div>
 </div>
 <a id="aed051e2996a96ca3a53e069f9b93da0c" name="aed051e2996a96ca3a53e069f9b93da0c"></a>
@@ -117,11 +124,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ai_uint32 aiString::length</td>
+          <td class="memname"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2types_8h.html#a62b54a3ae3ae350c86fe848e22cb5b0a">ai_uint32</a> aiString::length</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Binary length of the string excluding the terminal 0. This is NOT the logical length of strings containing UTF-8 multi-byte sequences! It's the number of bytes from the beginning of the string to its end. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2types_8h_source.html#l00392">392</a> of file <a class="el" href="include_2assimp_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>

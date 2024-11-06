@@ -1,25 +1,5 @@
 var searchData=
 [
-  ['magenta_0',['MAGENTA',['../namespace_primitives.html#a3720f56590ac684ce0bb492d87ddd7e7',1,'Primitives']]],
-  ['main_1',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_2',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['makeline_3',['MakeLine',['../namespace_primitives.html#a11b32e1752c92d6df86bcd3877b6bd65',1,'Primitives']]],
-  ['makemesh_4',['MakeMesh',['../_renderer_8cpp.html#a8ef764af2191aa3698be69712f6adfc0',1,'MakeMesh(const vertex *const verts, GLsizei vertCount, const GLuint *indices, GLsizei indexCount):&#160;Renderer.cpp'],['../_renderer_8cpp.html#aaa3d18276994ddea176f6fe95181c5eb',1,'MakeMesh(const vector&lt; vertex &gt; verts, const vector&lt; GLuint &gt; indices):&#160;Renderer.cpp'],['../_renderer_8h.html#adf9593d997c74943c9176b08c9eaf5ba',1,'MakeMesh(const vertex *const verts, GLsizei vertCount, const GLuint *indices, const GLsizei indexCount):&#160;Renderer.cpp'],['../_renderer_8h.html#aaa3d18276994ddea176f6fe95181c5eb',1,'MakeMesh(const vector&lt; vertex &gt; verts, const vector&lt; GLuint &gt; indices):&#160;Renderer.cpp']]],
-  ['makeplane_5',['MakePlane',['../namespace_primitives.html#a03774cd0af30bf294d51bcd43d937ff3',1,'Primitives']]],
-  ['makeshader_6',['MakeShader',['../_renderer_8cpp.html#acd35887a99e6bde81f36020e87aae28d',1,'MakeShader(const char *vertshader, const char *fragshader):&#160;Renderer.cpp'],['../_renderer_8cpp.html#a2f1bdd33eed50e86614d4c8076a6b33c',1,'MakeShader(const string &amp;vertshader, const string &amp;fragshader):&#160;Renderer.cpp'],['../_renderer_8h.html#a0674084217f98c96fd3472c4f50a93da',1,'MakeShader(const char *vertShader, const char *fragShader):&#160;Renderer.cpp'],['../_renderer_8h.html#a24835f94c1bdc58bdad9745211ee718c',1,'MakeShader(const string &amp;vertShader, const string &amp;fragShader):&#160;Renderer.cpp']]],
-  ['makesphere_7',['MakeSphere',['../namespace_primitives.html#ab1b6ee053dfdd05c13a82f08607c78c3',1,'Primitives']]],
-  ['maketexture_8',['MakeTexture',['../_renderer_8cpp.html#a4200fd24c96e771a51d8cb0caeb20cb3',1,'MakeTexture(unsigned width, unsigned height, unsigned channels, const unsigned char *pixels):&#160;Renderer.cpp'],['../_renderer_8h.html#a4200fd24c96e771a51d8cb0caeb20cb3',1,'MakeTexture(unsigned width, unsigned height, unsigned channels, const unsigned char *pixels):&#160;Renderer.cpp']]],
-  ['mass_9',['mass',['../class_rigidbody.html#a0ff47d17bcd8629f60b5b36de8a5357c',1,'Rigidbody']]],
-  ['material_10',['Material',['../class_material.html',1,'']]],
-  ['material_11',['material',['../class_game_object.html#ae96b21c69e34f42fbe118f526331a701',1,'GameObject']]],
-  ['material_12',['Material',['../class_material.html#a5f6b3e7a54f37efac92aab314371f3a8',1,'Material']]],
-  ['material_2ecpp_13',['Material.cpp',['../_material_8cpp.html',1,'']]],
-  ['material_2eh_14',['Material.h',['../_material_8h.html',1,'']]],
-  ['matrix_15',['matrix',['../class_transform.html#af9379d72988e3270f942168efeff1239',1,'Transform']]],
-  ['mesh_16',['Mesh',['../struct_mesh.html',1,'']]],
-  ['mesh_17',['mesh',['../class_game_object.html#ab71d151ed20c6cf0132bffd347903608',1,'GameObject']]],
-  ['meshimporter_18',['MeshImporter',['../namespace_mesh_importer.html',1,'']]],
-  ['meshimporter_2ecpp_19',['MeshImporter.cpp',['../_mesh_importer_8cpp.html',1,'']]],
-  ['meshimporter_2eh_20',['MeshImporter.h',['../_mesh_importer_8h.html',1,'']]],
-  ['mouse1_5fpressed_21',['Mouse1_Pressed',['../class_context.html#a17e0516739864eb7050f693ccf5d671b',1,'Context']]]
+  ['joystick_20hat_20states_0',['Joystick hat states',['../group__hat__state.html',1,'']]],
+  ['joysticks_1',['Joysticks',['../group__joysticks.html',1,'']]]
 ];

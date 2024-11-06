@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -69,11 +72,16 @@ $(function() {
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
+<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>d&#160;:&#160;<a class="el" href="structai_plane.html#a3a1fee6c44184dfd0bba7f82deae1dd2">aiPlane</a></li>
+<li>d1&#160;:&#160;<a class="el" href="structai_matrix4x4.html#a399b7ec1d410283d5ee5651208f5f8b8">aiMatrix4x4</a></li>
+<li>d2&#160;:&#160;<a class="el" href="structai_matrix4x4.html#a7e9425aa2d96cfb57a5cf5b016b6d61a">aiMatrix4x4</a></li>
+<li>d3&#160;:&#160;<a class="el" href="structai_matrix4x4.html#afa2a9f0af28baa983bbaace4bec8a7b8">aiMatrix4x4</a></li>
+<li>d4&#160;:&#160;<a class="el" href="structai_matrix4x4.html#a6dac85b6dd1f54a22124d6bdde81e857">aiMatrix4x4</a></li>
 <li>D_Pressed()&#160;:&#160;<a class="el" href="class_context.html#a637e95805a80426269f06136b9566959">Context</a></li>
-<li>data&#160;:&#160;<a class="el" href="structai_buffer.html#a90f931ac0ee8bdd0c9e89c206da0b05b">aiBuffer</a>, <a class="el" href="structai_export_data_blob.html#a6fc6dcff8be3b209a1da7141b11d716d">aiExportDataBlob</a>, <a class="el" href="structai_string.html#a2e03d8ac36c4a65e4650088710bbdd6d">aiString</a></li>
+<li>data&#160;:&#160;<a class="el" href="structai_buffer.html#a90f931ac0ee8bdd0c9e89c206da0b05b">aiBuffer</a>, <a class="el" href="structai_export_data_blob.html#a6fc6dcff8be3b209a1da7141b11d716d">aiExportDataBlob</a>, <a class="el" href="structai_string.html#a2e03d8ac36c4a65e4650088710bbdd6d">aiString</a>, <a class="el" href="unionglm_1_1detail_1_1i10i10i10i2.html#ae21289d4599fb476d793031c2734b65e">glm::detail::i10i10i10i2</a>, <a class="el" href="structglm_1_1detail_1_1storage_1_1type.html#a4f504f12210a0424ce891a6b64b33127">glm::detail::storage&lt; L, T, is_aligned &gt;::type</a>, <a class="el" href="unionglm_1_1detail_1_1u10u10u10u2.html#a766de298319d02c30646427d96e458fc">glm::detail::u10u10u10u2</a>, <a class="el" href="unionglm_1_1detail_1_1u3u3u2.html#a8d1fa43cb3eeddc8affdf06531bce0de">glm::detail::u3u3u2</a>, <a class="el" href="unionglm_1_1detail_1_1u4u4.html#a5ca212cb3c28aec447b815d83fc605b1">glm::detail::u4u4</a>, <a class="el" href="unionglm_1_1detail_1_1u4u4u4u4.html#af7b4d782c3faffa26c812ba47e267b10">glm::detail::u4u4u4u4</a>, <a class="el" href="unionglm_1_1detail_1_1u5u5u5u1.html#ae6d7ee11899a2f02de0f20cb9fc4ea3d">glm::detail::u5u5u5u1</a>, <a class="el" href="unionglm_1_1detail_1_1u5u6u5.html#ab64a0f1f05239404a0bbbdbc8bb317e3">glm::detail::u5u6u5</a>, <a class="el" href="unionglm_1_1detail_1_1u9u9u9e5.html#a6ae1fe6e231b1a92237fcbfb460488ac">glm::detail::u9u9u9e5</a></li>
 <li>DeadlyErrorBase()&#160;:&#160;<a class="el" href="class_deadly_error_base.html#af100784aff998fbbdd4119fc8e7c45b9">DeadlyErrorBase</a></li>
 <li>DeadlyExportError()&#160;:&#160;<a class="el" href="class_deadly_export_error.html#a6ad6cb9df4baa6a7bbf175e4d53fd7a2">DeadlyExportError</a></li>
 <li>DeadlyImportError()&#160;:&#160;<a class="el" href="class_deadly_import_error.html#a56646b7d96a8d9b48804165a3b7404a5">DeadlyImportError</a></li>
@@ -81,11 +89,31 @@ $(function() {
 <li>debug()&#160;:&#160;<a class="el" href="class_assimp_1_1_logger.html#a3b10454ab4c0949f251062376d9c4161">Assimp::Logger</a></li>
 <li>Debugging&#160;:&#160;<a class="el" href="class_assimp_1_1_logger.html#acd0b52a87d6fc11e957ed2c6e2ad75b6a942288b3194f45b89d20c53b658b9609">Assimp::Logger</a></li>
 <li>DEBUGGING&#160;:&#160;<a class="el" href="class_assimp_1_1_logger.html#a8b6248a0fd062431e8572556350d29e6aac1018ab1c31e71bd6b1d8625bdda8b3">Assimp::Logger</a></li>
-<li>DefaultIOStream()&#160;:&#160;<a class="el" href="class_assimp_1_1_default_i_o_stream.html#a758137bbfd20a2127820b87f17ec9697">Assimp::DefaultIOStream</a></li>
+<li>DefaultIOStream()&#160;:&#160;<a class="el" href="class_assimp_1_1_default_i_o_stream.html#ab8c2f3d94762e9d9e766d0cb194df304">Assimp::DefaultIOStream</a></li>
+<li>DefaultIOSystem&#160;:&#160;<a class="el" href="class_assimp_1_1_default_i_o_stream.html#ad4277f7b4a409cd35aea5f8ee983dc7d">Assimp::DefaultIOStream</a></li>
+<li>DefaultLogger()&#160;:&#160;<a class="el" href="class_assimp_1_1_default_logger.html#ac89e8018f7e97327a6b91abbe36178e1">Assimp::DefaultLogger</a></li>
 <li>DeleteFile()&#160;:&#160;<a class="el" href="class_assimp_1_1_i_o_system.html#abdfad399fdbdc9bbf2ffd193f4107bf2">Assimp::IOSystem</a>, <a class="el" href="class_assimp_1_1_memory_i_o_system.html#a33ab4be233b42e36da124adb9d3b3a99">Assimp::MemoryIOSystem</a></li>
+<li>delim_left&#160;:&#160;<a class="el" href="classglm_1_1io_1_1format__punct.html#ab1beed331269a39b06d17d02cf727d7c">glm::io::format_punct&lt; CTy &gt;</a></li>
+<li>delim_right&#160;:&#160;<a class="el" href="classglm_1_1io_1_1format__punct.html#a62fb1280404360463ec5af7144aa0949">glm::io::format_punct&lt; CTy &gt;</a></li>
+<li>delimeter()&#160;:&#160;<a class="el" href="structglm_1_1io_1_1delimeter.html#a5c1db62fae08a4c96eaf336781a4b53d">glm::io::delimeter&lt; CTy &gt;</a></li>
 <li>description&#160;:&#160;<a class="el" href="structai_export_format_desc.html#ab614f352c19063b8bf01c867ddd9d8cf">aiExportFormatDesc</a></li>
+<li>destHeight&#160;:&#160;<a class="el" href="struct_g_l_x_pipe_rect.html#a858b0ea6642e451495aff35cfefbd083">GLXPipeRect</a></li>
+<li>destWidth&#160;:&#160;<a class="el" href="struct_g_l_x_pipe_rect.html#a3c07991d2a8fb6e973eae834650b3dad">GLXPipeRect</a></li>
+<li>destXOrigin&#160;:&#160;<a class="el" href="struct_g_l_x_pipe_rect.html#a8b7b941894ad3420326d7e9fa885bb71">GLXPipeRect</a></li>
+<li>destYOrigin&#160;:&#160;<a class="el" href="struct_g_l_x_pipe_rect.html#aef7766b02ef07c20a11e89da5878b469">GLXPipeRect</a></li>
 <li>detachStream()&#160;:&#160;<a class="el" href="class_assimp_1_1_default_logger.html#a6313f4734baa0a5776891c839538e054">Assimp::DefaultLogger</a>, <a class="el" href="class_assimp_1_1_logger.html#a04168fe42b575cb37e71478ee0411d24">Assimp::Logger</a>, <a class="el" href="class_assimp_1_1_null_logger.html#a071c06bd70831e2e5da932ca806423d8">Assimp::NullLogger</a></li>
+<li>DeviceName&#160;:&#160;<a class="el" href="struct___g_p_u___d_e_v_i_c_e.html#a604bfab61f1a2c5d1e635837d369ba14">_GPU_DEVICE</a></li>
+<li>DeviceString&#160;:&#160;<a class="el" href="struct___g_p_u___d_e_v_i_c_e.html#aff8b7920ccc85afcd6f325da6cdb0b73">_GPU_DEVICE</a></li>
+<li>dib_size&#160;:&#160;<a class="el" href="struct_assimp_1_1_bitmap_1_1_d_i_b.html#adcd35a1a496c610183aa8d1477020a0a">Assimp::Bitmap::DIB</a></li>
+<li>diff&#160;:&#160;<a class="el" href="class_assimp_1_1_stream_reader.html#a1dade8369d64d45d210c6266c0f00539">Assimp::StreamReader&lt; SwapEndianness, RuntimeSwitch &gt;</a></li>
+<li>dir&#160;:&#160;<a class="el" href="structai_ray.html#a635d9120af2654716e5e7952d837282b">aiRay</a></li>
+<li>direction&#160;:&#160;<a class="el" href="struct_light.html#a1795f8e5d182b3c80a770e33e04f390c">Light</a></li>
+<li>display&#160;:&#160;<a class="el" href="struct_g_l_x_buffer_clobber_event_s_g_i_x.html#afef060d81026da75c846727f4a3de9d4">GLXBufferClobberEventSGIX</a>, <a class="el" href="struct_g_l_x_pbuffer_clobber_event.html#aeb49bb93cc59448e75d66170a39596d1">GLXPbufferClobberEvent</a></li>
+<li>Double&#160;:&#160;<a class="el" href="union___i_e_e_e_double.html#a27117ca968c03c76473d67288a285488">_IEEEDouble</a></li>
 <li>DownArrow_Pressed()&#160;:&#160;<a class="el" href="class_context.html#ac3611d247372af83e4d7adc3cadb7752">Context</a></li>
+<li>draw_type&#160;:&#160;<a class="el" href="struct_g_l_x_buffer_clobber_event_s_g_i_x.html#a25c31e8cbec0919f74a1e93ae74175b1">GLXBufferClobberEventSGIX</a>, <a class="el" href="struct_g_l_x_pbuffer_clobber_event.html#a243f92b79d3cfbde73eab02815be2320">GLXPbufferClobberEvent</a></li>
+<li>drawable&#160;:&#160;<a class="el" href="struct_g_l_x_buffer_clobber_event_s_g_i_x.html#a9c45674193ed80a79261c3b7518ee04f">GLXBufferClobberEventSGIX</a>, <a class="el" href="struct_g_l_x_pbuffer_clobber_event.html#a388908b766e35205c1a461ea8b60439f">GLXPbufferClobberEvent</a></li>
+<li>dual&#160;:&#160;<a class="el" href="structglm_1_1tdualquat.html#a575a0e3f07a666b7b59d956eb49b4efe">glm::tdualquat&lt; T, Q &gt;</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,486 +1,486 @@
 \hypertarget{include_2assimp_2_xml_parser_8h_source}{}\doxysection{Xml\+Parser.\+h}
 \label{include_2assimp_2_xml_parser_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/XmlParser.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/XmlParser.h}}
-
+\mbox{\hyperlink{include_2assimp_2_xml_parser_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
-\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{4 \textcolor{comment}{}}
-\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
-\DoxyCodeLine{6 \textcolor{comment}{}}
-\DoxyCodeLine{7 \textcolor{comment}{All rights reserved.}}
-\DoxyCodeLine{8 \textcolor{comment}{}}
-\DoxyCodeLine{9 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
-\DoxyCodeLine{10 \textcolor{comment}{with or without modification, are permitted provided that the}}
-\DoxyCodeLine{11 \textcolor{comment}{following conditions are met:}}
-\DoxyCodeLine{12 \textcolor{comment}{}}
-\DoxyCodeLine{13 \textcolor{comment}{* Redistributions of source code must retain the above}}
-\DoxyCodeLine{14 \textcolor{comment}{copyright notice, this list of conditions and the}}
-\DoxyCodeLine{15 \textcolor{comment}{following disclaimer.}}
-\DoxyCodeLine{16 \textcolor{comment}{}}
-\DoxyCodeLine{17 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
-\DoxyCodeLine{18 \textcolor{comment}{copyright notice, this list of conditions and the}}
-\DoxyCodeLine{19 \textcolor{comment}{following disclaimer in the documentation and/or other}}
-\DoxyCodeLine{20 \textcolor{comment}{materials provided with the distribution.}}
-\DoxyCodeLine{21 \textcolor{comment}{}}
-\DoxyCodeLine{22 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
-\DoxyCodeLine{23 \textcolor{comment}{contributors may be used to endorse or promote products}}
-\DoxyCodeLine{24 \textcolor{comment}{derived from this software without specific prior}}
-\DoxyCodeLine{25 \textcolor{comment}{written permission of the assimp team.}}
-\DoxyCodeLine{26 \textcolor{comment}{}}
-\DoxyCodeLine{27 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
-\DoxyCodeLine{28 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
-\DoxyCodeLine{29 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
-\DoxyCodeLine{30 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
-\DoxyCodeLine{31 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
-\DoxyCodeLine{32 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
-\DoxyCodeLine{33 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
-\DoxyCodeLine{34 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
-\DoxyCodeLine{35 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
-\DoxyCodeLine{36 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
-\DoxyCodeLine{37 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
-\DoxyCodeLine{38 \textcolor{comment}{}}
-\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{40 \textcolor{comment}{*/}}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifndef INCLUDED\_AI\_IRRXML\_WRAPPER}}
-\DoxyCodeLine{43 \textcolor{preprocessor}{\#define INCLUDED\_AI\_IRRXML\_WRAPPER}}
-\DoxyCodeLine{44 }
-\DoxyCodeLine{45 \textcolor{preprocessor}{\#include <assimp/ai\_assert.h>}}
-\DoxyCodeLine{46 \textcolor{preprocessor}{\#include <assimp/StringUtils.h>}}
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#include <assimp/DefaultLogger.hpp>}}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49 \textcolor{preprocessor}{\#include "{}BaseImporter.h"{}}}
-\DoxyCodeLine{50 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_i_o_stream_8hpp}{IOStream.hpp}}"{}}}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52 \textcolor{preprocessor}{\#include <pugixml.hpp>}}
-\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <utility>}}
-\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{59 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate}{find\_node\_by\_name\_predicate}} \{}
-\DoxyCodeLine{61     \mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_adfc30389a498101201da86a072e6dc24}{find\_node\_by\_name\_predicate}}() = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{62 }
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64     std::string \mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_a3677b7c442c60148d2c31bade1d68258}{mName}}; }
-\DoxyCodeLine{65     \mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_adfc30389a498101201da86a072e6dc24}{find\_node\_by\_name\_predicate}}(\textcolor{keyword}{const} std::string \&name) :}
-\DoxyCodeLine{66             \mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_a3677b7c442c60148d2c31bade1d68258}{mName}}(name) \{}
-\DoxyCodeLine{67         \textcolor{comment}{// empty}}
-\DoxyCodeLine{68     \}}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{70     \textcolor{keywordtype}{bool} operator()(pugi::xml\_node node)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{71         \textcolor{keywordflow}{return} node.name() == \mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_a3677b7c442c60148d2c31bade1d68258}{mName}};}
-\DoxyCodeLine{72     \}}
-\DoxyCodeLine{73 \};}
-\DoxyCodeLine{74 }
-\DoxyCodeLine{77 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{78 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_assimp_1_1_node_converter}{NodeConverter}} \{}
-\DoxyCodeLine{79 \textcolor{keyword}{public}:}
-\DoxyCodeLine{80     \textcolor{keyword}{static} \textcolor{keywordtype}{int} to\_int(TNodeType \&node, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *attribName) \{}
-\DoxyCodeLine{81         ai\_assert(\textcolor{keyword}{nullptr} != attribName);}
-\DoxyCodeLine{82         \textcolor{keywordflow}{return} node.attribute(attribName).to\_int();}
-\DoxyCodeLine{83     \}}
-\DoxyCodeLine{84 \};}
-\DoxyCodeLine{85 }
-\DoxyCodeLine{86 \textcolor{keyword}{using }XmlNode = pugi::xml\_node;}
-\DoxyCodeLine{87 \textcolor{keyword}{using }XmlAttribute = pugi::xml\_attribute;}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{104 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{105 \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_t_xml_parser}{TXmlParser}} \{}
-\DoxyCodeLine{106 \textcolor{keyword}{public}:}
-\DoxyCodeLine{108     \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5af7c6b3f5e9ba39d7f5e026f1e71114}{TXmlParser}}();}
-\DoxyCodeLine{109 }
-\DoxyCodeLine{111     \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aa9a04a2b248e686230f02d06e71ad2b9}{\string~TXmlParser}}();}
-\DoxyCodeLine{112 }
-\DoxyCodeLine{114     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a58de4b287ba8545b3e4fb7a060f48dd1}{clear}}();}
-\DoxyCodeLine{115 }
-\DoxyCodeLine{119     TNodeType *\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a0dd4c9b26f4edebc4ea8a83ca953b1f2}{findNode}}(\textcolor{keyword}{const} std::string \&name);}
-\DoxyCodeLine{120 }
-\DoxyCodeLine{124     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aed2fce5401880ca824eb9a4530ec7c9a}{hasNode}}(\textcolor{keyword}{const} std::string \&name);}
-\DoxyCodeLine{125 }
-\DoxyCodeLine{129     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a832c8f496948e43402767853d25b9a4c}{parse}}(\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} *stream);}
-\DoxyCodeLine{130 }
-\DoxyCodeLine{133     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a2526e06cd264068515dcb39213a8bafb}{hasRoot}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{134 }
-\DoxyCodeLine{137     pugi::xml\_document *\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a018c506e8b30dddb5b65c1d8faafd052}{getDocument}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{138 }
-\DoxyCodeLine{141     \textcolor{keyword}{const} TNodeType \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a4a7ce66b2bf437a40c5123cdca6632dd}{getRootNode}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{142 }
-\DoxyCodeLine{145     TNodeType \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a4a7ce66b2bf437a40c5123cdca6632dd}{getRootNode}}();}
-\DoxyCodeLine{146 }
-\DoxyCodeLine{151     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aed2fce5401880ca824eb9a4530ec7c9a}{hasNode}}(XmlNode \&node, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name);}
-\DoxyCodeLine{152 }
-\DoxyCodeLine{157     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a42160d2672a91bffb285d7ebcbfffb3e}{hasAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name);}
-\DoxyCodeLine{158 }
-\DoxyCodeLine{164     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5b37ef1693f70dc06be863be06e6795c}{getUIntAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&val);}
-\DoxyCodeLine{165 }
-\DoxyCodeLine{171     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_abedfc914d258dadc1a477aa063d54070}{getIntAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{int} \&val);}
-\DoxyCodeLine{172 }
-\DoxyCodeLine{178     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a53e7d905d4e6de714d2e27b156079342}{getRealAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, ai\_real \&val);}
-\DoxyCodeLine{179 }
-\DoxyCodeLine{185     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_ab6499dd42b506bb07e3dca0fccbcc3a1}{getFloatAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{float} \&val);}
-\DoxyCodeLine{186 }
-\DoxyCodeLine{192     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5cd1cd7c6f3a912ba969c14d71a5d660}{getDoubleAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{double} \&val);}
-\DoxyCodeLine{193 }
-\DoxyCodeLine{199     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a22c2be0aae836a6d40fdecaa738fa14d}{getStdStrAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, std::string \&val);}
-\DoxyCodeLine{200 }
-\DoxyCodeLine{206     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a3cbdfdfa4dfdfd97a426e28a717ca163}{getBoolAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{bool} \&val);}
-\DoxyCodeLine{207 }
-\DoxyCodeLine{212     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aed1c533c85b7003aae19be82775c3f7e}{getValueAsString}}(XmlNode \&node, std::string \&text);}
-\DoxyCodeLine{213 }
-\DoxyCodeLine{218     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_adc9a0fa7efd1317fa96d7d7611e91528}{getValueAsReal}}(XmlNode \&node, ai\_real \&v);}
-\DoxyCodeLine{219 }
-\DoxyCodeLine{224     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_afb3f4d344680c126de749f8e6dced7bb}{getValueAsFloat}}(XmlNode \&node, \textcolor{keywordtype}{float} \&v);}
-\DoxyCodeLine{225 }
-\DoxyCodeLine{230     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a62ede496339aa8ba8715fdc45442456c}{getValueAsInt}}(XmlNode \&node, \textcolor{keywordtype}{int} \&v);}
-\DoxyCodeLine{231 }
-\DoxyCodeLine{236     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a49204198028bbece0bf1f80ebfd88fb0}{getValueAsBool}}(XmlNode \&node, \textcolor{keywordtype}{bool} \&v);}
-\DoxyCodeLine{237 }
-\DoxyCodeLine{238 \textcolor{keyword}{private}:}
-\DoxyCodeLine{239     pugi::xml\_document *mDoc;}
-\DoxyCodeLine{240     TNodeType mCurrent;}
-\DoxyCodeLine{241     std::vector<char> mData;}
-\DoxyCodeLine{242 \};}
-\DoxyCodeLine{243 }
-\DoxyCodeLine{244 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{245 \textcolor{keyword}{inline} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5af7c6b3f5e9ba39d7f5e026f1e71114}{TXmlParser<TNodeType>::TXmlParser}}() :}
-\DoxyCodeLine{246         mDoc(nullptr),}
-\DoxyCodeLine{247         mData() \{}
-\DoxyCodeLine{248     \textcolor{comment}{// empty}}
-\DoxyCodeLine{249 \}}
-\DoxyCodeLine{250 }
-\DoxyCodeLine{251 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{252 \textcolor{keyword}{inline} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aa9a04a2b248e686230f02d06e71ad2b9}{TXmlParser<TNodeType>::\string~TXmlParser}}() \{}
-\DoxyCodeLine{253     clear();}
-\DoxyCodeLine{254 \}}
-\DoxyCodeLine{255 }
-\DoxyCodeLine{256 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{257 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a58de4b287ba8545b3e4fb7a060f48dd1}{TXmlParser<TNodeType>::clear}}() \{}
-\DoxyCodeLine{258     \textcolor{keywordflow}{if} (mData.empty()) \{}
-\DoxyCodeLine{259         \textcolor{keywordflow}{if} (mDoc) \{}
-\DoxyCodeLine{260             \textcolor{keyword}{delete} mDoc;}
-\DoxyCodeLine{261         \}}
-\DoxyCodeLine{262         mDoc = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{263         \textcolor{keywordflow}{return};}
-\DoxyCodeLine{264     \}}
-\DoxyCodeLine{265 }
-\DoxyCodeLine{266     mData.clear();}
-\DoxyCodeLine{267     \textcolor{keyword}{delete} mDoc;}
-\DoxyCodeLine{268     mDoc = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{269 \}}
-\DoxyCodeLine{270 }
-\DoxyCodeLine{271 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{272 \textcolor{keyword}{inline} TNodeType *\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a0dd4c9b26f4edebc4ea8a83ca953b1f2}{TXmlParser<TNodeType>::findNode}}(\textcolor{keyword}{const} std::string \&name) \{}
-\DoxyCodeLine{273     \textcolor{keywordflow}{if} (name.empty()) \{}
-\DoxyCodeLine{274         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{275     \}}
-\DoxyCodeLine{276 }
-\DoxyCodeLine{277     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == mDoc) \{}
-\DoxyCodeLine{278         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{279     \}}
-\DoxyCodeLine{280 }
-\DoxyCodeLine{281     \mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate}{find\_node\_by\_name\_predicate}} predicate(name);}
-\DoxyCodeLine{282     mCurrent = mDoc-\/>find\_node(std::move(predicate));}
-\DoxyCodeLine{283     \textcolor{keywordflow}{if} (mCurrent.empty()) \{}
-\DoxyCodeLine{284         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{285     \}}
-\DoxyCodeLine{286 }
-\DoxyCodeLine{287     \textcolor{keywordflow}{return} \&mCurrent;}
-\DoxyCodeLine{288 \}}
-\DoxyCodeLine{289 }
-\DoxyCodeLine{290 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{291 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aed2fce5401880ca824eb9a4530ec7c9a}{TXmlParser<TNodeType>::hasNode}}(\textcolor{keyword}{const} std::string \&name) \{}
-\DoxyCodeLine{292     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr} != findNode(name);}
-\DoxyCodeLine{293 \}}
-\DoxyCodeLine{294 }
-\DoxyCodeLine{295 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{296 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a832c8f496948e43402767853d25b9a4c}{TXmlParser<TNodeType>::parse}}(\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} *stream) \{}
-\DoxyCodeLine{297     \textcolor{keywordflow}{if} (hasRoot()) \{}
-\DoxyCodeLine{298         clear();}
-\DoxyCodeLine{299     \}}
-\DoxyCodeLine{300 }
-\DoxyCodeLine{301     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == stream) \{}
-\DoxyCodeLine{302         ASSIMP\_LOG\_DEBUG(\textcolor{stringliteral}{"{}Stream is nullptr."{}});}
-\DoxyCodeLine{303         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{304     \}}
-\DoxyCodeLine{305 }
-\DoxyCodeLine{306     \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} len = stream-\/>\mbox{\hyperlink{class_assimp_1_1_i_o_stream_aaa01183d197fb714f28d6c611b6fa058}{FileSize}}();}
-\DoxyCodeLine{307     mData.resize(len + 1);}
-\DoxyCodeLine{308     memset(\&mData[0], \textcolor{charliteral}{'\(\backslash\)0'}, len + 1);}
-\DoxyCodeLine{309     stream-\/>\mbox{\hyperlink{class_assimp_1_1_i_o_stream_ae376f641020989d61863b9c6f55c7abf}{Read}}(\&mData[0], 1, len);}
-\DoxyCodeLine{310 }
-\DoxyCodeLine{311     mDoc = \textcolor{keyword}{new} pugi::xml\_document();}
-\DoxyCodeLine{312     \textcolor{comment}{// load\_string assumes native encoding (aka always utf-\/8 per build options)}}
-\DoxyCodeLine{313     \textcolor{comment}{//pugi::xml\_parse\_result parse\_result = mDoc-\/>load\_string(\&mData[0], pugi::parse\_full);}}
-\DoxyCodeLine{314      pugi::xml\_parse\_result parse\_result = mDoc-\/>load\_buffer(\&mData[0], mData.size(), pugi::parse\_full);}
-\DoxyCodeLine{315     \textcolor{keywordflow}{if} (parse\_result.status == pugi::status\_ok) \{}
-\DoxyCodeLine{316         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{317     \}}
-\DoxyCodeLine{318 }
-\DoxyCodeLine{319     ASSIMP\_LOG\_DEBUG(\textcolor{stringliteral}{"{}Error while parse xml."{}}, std::string(parse\_result.description()), \textcolor{stringliteral}{"{} @ "{}}, parse\_result.offset);}
-\DoxyCodeLine{320 }
-\DoxyCodeLine{321     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{322 \}}
-\DoxyCodeLine{323 }
-\DoxyCodeLine{324 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{325 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a2526e06cd264068515dcb39213a8bafb}{TXmlParser<TNodeType>::hasRoot}}()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{326     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr} != mDoc;}
-\DoxyCodeLine{327 \}}
-\DoxyCodeLine{328 }
-\DoxyCodeLine{329 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{330 pugi::xml\_document *\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a018c506e8b30dddb5b65c1d8faafd052}{TXmlParser<TNodeType>::getDocument}}()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{331     \textcolor{keywordflow}{return} mDoc;}
-\DoxyCodeLine{332 \}}
-\DoxyCodeLine{333 }
-\DoxyCodeLine{334 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{335 \textcolor{keyword}{const} TNodeType \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a4a7ce66b2bf437a40c5123cdca6632dd}{TXmlParser<TNodeType>::getRootNode}}()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{336     \textcolor{keyword}{static} pugi::xml\_node none;}
-\DoxyCodeLine{337     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == mDoc) \{}
-\DoxyCodeLine{338         \textcolor{keywordflow}{return} none;}
-\DoxyCodeLine{339     \}}
-\DoxyCodeLine{340     \textcolor{keywordflow}{return} mDoc-\/>root();}
-\DoxyCodeLine{341 \}}
-\DoxyCodeLine{342 }
-\DoxyCodeLine{343 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{344 TNodeType \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a4a7ce66b2bf437a40c5123cdca6632dd}{TXmlParser<TNodeType>::getRootNode}}() \{}
-\DoxyCodeLine{345     \textcolor{keyword}{static} pugi::xml\_node none;}
-\DoxyCodeLine{346     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == mDoc) \{}
-\DoxyCodeLine{347         \textcolor{keywordflow}{return} none;}
-\DoxyCodeLine{348     \}}
-\DoxyCodeLine{349 }
-\DoxyCodeLine{350     \textcolor{keywordflow}{return} mDoc-\/>root();}
-\DoxyCodeLine{351 \}}
-\DoxyCodeLine{352 }
-\DoxyCodeLine{353 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{354 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aed2fce5401880ca824eb9a4530ec7c9a}{TXmlParser<TNodeType>::hasNode}}(XmlNode \&node, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name) \{}
-\DoxyCodeLine{355     pugi::xml\_node child = node.find\_child(\mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate}{find\_node\_by\_name\_predicate}}(name));}
-\DoxyCodeLine{356     \textcolor{keywordflow}{return} !child.empty();}
-\DoxyCodeLine{357 \}}
-\DoxyCodeLine{358 }
-\DoxyCodeLine{359 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{360 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a42160d2672a91bffb285d7ebcbfffb3e}{TXmlParser<TNodeType>::hasAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name) \{}
-\DoxyCodeLine{361     pugi::xml\_attribute attr = xmlNode.attribute(name);}
-\DoxyCodeLine{362     \textcolor{keywordflow}{return} !attr.empty();}
-\DoxyCodeLine{363 \}}
-\DoxyCodeLine{364 }
-\DoxyCodeLine{365 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{366 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5b37ef1693f70dc06be863be06e6795c}{TXmlParser<TNodeType>::getUIntAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&val) \{}
-\DoxyCodeLine{367     pugi::xml\_attribute attr = xmlNode.attribute(name);}
-\DoxyCodeLine{368     \textcolor{keywordflow}{if} (attr.empty()) \{}
-\DoxyCodeLine{369         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{370     \}}
-\DoxyCodeLine{371 }
-\DoxyCodeLine{372     val = attr.as\_uint();}
-\DoxyCodeLine{373     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{374 \}}
-\DoxyCodeLine{375 }
-\DoxyCodeLine{376 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{377 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_abedfc914d258dadc1a477aa063d54070}{TXmlParser<TNodeType>::getIntAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{int} \&val) \{}
-\DoxyCodeLine{378     pugi::xml\_attribute attr = xmlNode.attribute(name);}
-\DoxyCodeLine{379     \textcolor{keywordflow}{if} (attr.empty()) \{}
-\DoxyCodeLine{380         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{381     \}}
-\DoxyCodeLine{382 }
-\DoxyCodeLine{383     val = attr.as\_int();}
-\DoxyCodeLine{384     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{385 \}}
-\DoxyCodeLine{386 }
-\DoxyCodeLine{387 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{388 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a53e7d905d4e6de714d2e27b156079342}{TXmlParser<TNodeType>::getRealAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, ai\_real \&val) \{}
-\DoxyCodeLine{389     pugi::xml\_attribute attr = xmlNode.attribute(name);}
-\DoxyCodeLine{390     \textcolor{keywordflow}{if} (attr.empty()) \{}
-\DoxyCodeLine{391         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{392     \}}
-\DoxyCodeLine{393 \textcolor{preprocessor}{\#ifdef ASSIMP\_DOUBLE\_PRECISION}}
-\DoxyCodeLine{394     val = attr.as\_double();}
-\DoxyCodeLine{395 \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{396     val = attr.as\_float();}
-\DoxyCodeLine{397 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{398     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{399 \}}
-\DoxyCodeLine{400 }
-\DoxyCodeLine{401 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{402 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_ab6499dd42b506bb07e3dca0fccbcc3a1}{TXmlParser<TNodeType>::getFloatAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{float} \&val) \{}
-\DoxyCodeLine{403     pugi::xml\_attribute attr = xmlNode.attribute(name);}
-\DoxyCodeLine{404     \textcolor{keywordflow}{if} (attr.empty()) \{}
-\DoxyCodeLine{405         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{406     \}}
-\DoxyCodeLine{407 }
-\DoxyCodeLine{408     val = attr.as\_float();}
-\DoxyCodeLine{409 }
-\DoxyCodeLine{410     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{411 \}}
-\DoxyCodeLine{412 }
-\DoxyCodeLine{413 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{414 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5cd1cd7c6f3a912ba969c14d71a5d660}{TXmlParser<TNodeType>::getDoubleAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{double} \&val) \{}
-\DoxyCodeLine{415     pugi::xml\_attribute attr = xmlNode.attribute(name);}
-\DoxyCodeLine{416     \textcolor{keywordflow}{if} (attr.empty()) \{}
-\DoxyCodeLine{417         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{418     \}}
-\DoxyCodeLine{419 }
-\DoxyCodeLine{420     val = attr.as\_double();}
-\DoxyCodeLine{421 }
-\DoxyCodeLine{422     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{423 \}}
-\DoxyCodeLine{424 }
-\DoxyCodeLine{425 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{426 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a22c2be0aae836a6d40fdecaa738fa14d}{TXmlParser<TNodeType>::getStdStrAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, std::string \&val) \{}
-\DoxyCodeLine{427     pugi::xml\_attribute attr = xmlNode.attribute(name);}
-\DoxyCodeLine{428     \textcolor{keywordflow}{if} (attr.empty()) \{}
-\DoxyCodeLine{429         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{430     \}}
-\DoxyCodeLine{431 }
-\DoxyCodeLine{432     val = attr.as\_string();}
-\DoxyCodeLine{433 }
-\DoxyCodeLine{434     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{435 \}}
-\DoxyCodeLine{436 }
-\DoxyCodeLine{437 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{438 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a3cbdfdfa4dfdfd97a426e28a717ca163}{TXmlParser<TNodeType>::getBoolAttribute}}(XmlNode \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{bool} \&val) \{}
-\DoxyCodeLine{439     pugi::xml\_attribute attr = xmlNode.attribute(name);}
-\DoxyCodeLine{440     \textcolor{keywordflow}{if} (attr.empty()) \{}
-\DoxyCodeLine{441         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{442     \}}
-\DoxyCodeLine{443 }
-\DoxyCodeLine{444     val = attr.as\_bool();}
-\DoxyCodeLine{445 }
-\DoxyCodeLine{446     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{447 \}}
-\DoxyCodeLine{448 }
-\DoxyCodeLine{449 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{450 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aed1c533c85b7003aae19be82775c3f7e}{TXmlParser<TNodeType>::getValueAsString}}(XmlNode \&node, std::string \&text) \{}
-\DoxyCodeLine{451     text = std::string();}
-\DoxyCodeLine{452     \textcolor{keywordflow}{if} (node.empty()) \{}
-\DoxyCodeLine{453         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{454     \}}
-\DoxyCodeLine{455 }
-\DoxyCodeLine{456     text = node.text().as\_string();}
-\DoxyCodeLine{457     text = ai\_trim(text);}
-\DoxyCodeLine{458 }
-\DoxyCodeLine{459     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{460 \}}
-\DoxyCodeLine{461 }
-\DoxyCodeLine{462 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{463 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_adc9a0fa7efd1317fa96d7d7611e91528}{TXmlParser<TNodeType>::getValueAsReal}}(XmlNode\& node, ai\_real\& v) \{}
-\DoxyCodeLine{464     \textcolor{keywordflow}{if} (node.empty()) \{}
-\DoxyCodeLine{465         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{466     \}}
-\DoxyCodeLine{467 }
-\DoxyCodeLine{468     v = node.text().as\_float();}
-\DoxyCodeLine{469 }
-\DoxyCodeLine{470     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{471 \}}
-\DoxyCodeLine{472 }
-\DoxyCodeLine{473 }
-\DoxyCodeLine{474 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{475 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_afb3f4d344680c126de749f8e6dced7bb}{TXmlParser<TNodeType>::getValueAsFloat}}(XmlNode \&node, \textcolor{keywordtype}{float} \&v) \{}
-\DoxyCodeLine{476     \textcolor{keywordflow}{if} (node.empty()) \{}
-\DoxyCodeLine{477         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{478     \}}
-\DoxyCodeLine{479 }
-\DoxyCodeLine{480     v = node.text().as\_float();}
-\DoxyCodeLine{481 }
-\DoxyCodeLine{482     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{483 \}}
-\DoxyCodeLine{484 }
-\DoxyCodeLine{485 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{486 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a62ede496339aa8ba8715fdc45442456c}{TXmlParser<TNodeType>::getValueAsInt}}(XmlNode \&node, \textcolor{keywordtype}{int} \&v) \{}
-\DoxyCodeLine{487     \textcolor{keywordflow}{if} (node.empty()) \{}
-\DoxyCodeLine{488         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{489     \}}
-\DoxyCodeLine{490 }
-\DoxyCodeLine{491     v = node.text().as\_int();}
-\DoxyCodeLine{492 }
-\DoxyCodeLine{493     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{494 \}}
-\DoxyCodeLine{495 }
-\DoxyCodeLine{496 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
-\DoxyCodeLine{497 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a49204198028bbece0bf1f80ebfd88fb0}{TXmlParser<TNodeType>::getValueAsBool}}(XmlNode \&node, \textcolor{keywordtype}{bool} \&v) \{}
-\DoxyCodeLine{498     \textcolor{keywordflow}{if} (node.empty()) \{}
-\DoxyCodeLine{499         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{500     \}}
-\DoxyCodeLine{501 }
-\DoxyCodeLine{502     v = node.text().as\_bool();}
-\DoxyCodeLine{503 }
-\DoxyCodeLine{504     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{505 \}}
-\DoxyCodeLine{506 }
-\DoxyCodeLine{507 \textcolor{keyword}{using }\mbox{\hyperlink{class_assimp_1_1_t_xml_parser}{XmlParser}} = \mbox{\hyperlink{class_assimp_1_1_t_xml_parser}{TXmlParser<pugi::xml\_node>}};}
-\DoxyCodeLine{508 }
-\DoxyCodeLine{510 \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator}{XmlNodeIterator}} \{}
-\DoxyCodeLine{511 \textcolor{keyword}{public}:}
-\DoxyCodeLine{513     \textcolor{keyword}{enum} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a8b2559c1b090867a20f54892b3391c1b}{IterationMode}} \{}
-\DoxyCodeLine{514         \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a8b2559c1b090867a20f54892b3391c1ba3232103afbea90315acfa4fc08a64d7b}{PreOrderMode}}, }
-\DoxyCodeLine{515         \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a8b2559c1b090867a20f54892b3391c1baeae8931a4ed717e9ea1297565b341b2e}{PostOrderMode}} }
-\DoxyCodeLine{516     \};}
-\DoxyCodeLine{520     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207}{XmlNodeIterator}}(XmlNode \&parent, \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a8b2559c1b090867a20f54892b3391c1b}{IterationMode}} mode) :}
-\DoxyCodeLine{521             mParent(parent),}
-\DoxyCodeLine{522             mNodes(),}
-\DoxyCodeLine{523             mIndex(0) \{}
-\DoxyCodeLine{524         \textcolor{keywordflow}{if} (mode == \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a8b2559c1b090867a20f54892b3391c1ba3232103afbea90315acfa4fc08a64d7b}{PreOrderMode}}) \{}
-\DoxyCodeLine{525             \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31}{collectChildrenPreOrder}}(parent);}
-\DoxyCodeLine{526         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{527             \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035}{collectChildrenPostOrder}}(parent);}
-\DoxyCodeLine{528         \}}
-\DoxyCodeLine{529     \}}
-\DoxyCodeLine{530 }
-\DoxyCodeLine{532     \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ad0ef7ae6788b36d61cd061403c97e3e8}{\string~XmlNodeIterator}}() = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{533 }
-\DoxyCodeLine{536     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31}{collectChildrenPreOrder}}(XmlNode \&node) \{}
-\DoxyCodeLine{537         \textcolor{keywordflow}{if} (node != mParent \&\& node.type() == pugi::node\_element) \{}
-\DoxyCodeLine{538             mNodes.push\_back(node);}
-\DoxyCodeLine{539         \}}
-\DoxyCodeLine{540         \textcolor{keywordflow}{for} (XmlNode currentNode : node.children()) \{}
-\DoxyCodeLine{541             \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31}{collectChildrenPreOrder}}(currentNode);}
-\DoxyCodeLine{542         \}}
-\DoxyCodeLine{543     \}}
-\DoxyCodeLine{544 }
-\DoxyCodeLine{547     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035}{collectChildrenPostOrder}}(XmlNode \&node) \{}
-\DoxyCodeLine{548         \textcolor{keywordflow}{for} (XmlNode currentNode = node.first\_child(); currentNode; currentNode = currentNode.next\_sibling()) \{}
-\DoxyCodeLine{549             \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035}{collectChildrenPostOrder}}(currentNode);}
-\DoxyCodeLine{550         \}}
-\DoxyCodeLine{551         \textcolor{keywordflow}{if} (node != mParent) \{}
-\DoxyCodeLine{552             mNodes.push\_back(node);}
-\DoxyCodeLine{553         \}}
-\DoxyCodeLine{554     \}}
-\DoxyCodeLine{555 }
-\DoxyCodeLine{559     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a5817a15765681eb544ac1e8c44ce33aa}{getNext}}(XmlNode \&next) \{}
-\DoxyCodeLine{560         \textcolor{keywordflow}{if} (mIndex == mNodes.size()) \{}
-\DoxyCodeLine{561             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{562         \}}
-\DoxyCodeLine{563 }
-\DoxyCodeLine{564         next = mNodes[mIndex];}
-\DoxyCodeLine{565         ++mIndex;}
-\DoxyCodeLine{566 }
-\DoxyCodeLine{567         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{568     \}}
-\DoxyCodeLine{569 }
-\DoxyCodeLine{572     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ac2d21217d2921169efec5f318a0c594e}{size}}()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{573         \textcolor{keywordflow}{return} mNodes.size();}
-\DoxyCodeLine{574     \}}
-\DoxyCodeLine{575 }
-\DoxyCodeLine{578     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ac8937d559903bfe99ee6ea280025cce8}{isEmpty}}()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{579         \textcolor{keywordflow}{return} mNodes.empty();}
-\DoxyCodeLine{580     \}}
-\DoxyCodeLine{581 }
-\DoxyCodeLine{583     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a4638e2eaf70a0b64963c00735c7a15dd}{clear}}() \{}
-\DoxyCodeLine{584         \textcolor{keywordflow}{if} (mNodes.empty()) \{}
-\DoxyCodeLine{585             \textcolor{keywordflow}{return};}
-\DoxyCodeLine{586         \}}
-\DoxyCodeLine{587 }
-\DoxyCodeLine{588         mNodes.clear();}
-\DoxyCodeLine{589         mIndex = 0;}
-\DoxyCodeLine{590     \}}
-\DoxyCodeLine{591 }
-\DoxyCodeLine{592 \textcolor{keyword}{private}:}
-\DoxyCodeLine{593     XmlNode \&mParent;}
-\DoxyCodeLine{594     std::vector<XmlNode> mNodes;}
-\DoxyCodeLine{595     \textcolor{keywordtype}{size\_t} mIndex;}
-\DoxyCodeLine{596 \};}
-\DoxyCodeLine{597 }
-\DoxyCodeLine{598 \} \textcolor{comment}{// namespace Assimp}}
-\DoxyCodeLine{599 }
-\DoxyCodeLine{600 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! INCLUDED\_AI\_IRRXML\_WRAPPER}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00002}00002 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00003}00003 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00004}00004 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00005}00005 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00006}00006 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00007}00007 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00008}00008 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00009}00009 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00010}00010 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00011}00011 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00012}00012 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00013}00013 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00014}00014 \textcolor{comment}{copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00015}00015 \textcolor{comment}{following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00016}00016 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00017}00017 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00018}00018 \textcolor{comment}{copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00019}00019 \textcolor{comment}{following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00020}00020 \textcolor{comment}{materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00021}00021 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00022}00022 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00023}00023 \textcolor{comment}{contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00024}00024 \textcolor{comment}{derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00025}00025 \textcolor{comment}{written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00026}00026 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00027}00027 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00028}00028 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00029}00029 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00030}00030 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00031}00031 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00032}00032 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00033}00033 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00034}00034 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00035}00035 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00036}00036 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00037}00037 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00038}00038 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00039}00039 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00040}00040 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00042}00042 \textcolor{preprocessor}{\#ifndef INCLUDED\_AI\_IRRXML\_WRAPPER}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00043}00043 \textcolor{preprocessor}{\#define INCLUDED\_AI\_IRRXML\_WRAPPER}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00045}00045 \textcolor{preprocessor}{\#include <assimp/ai\_assert.h>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00046}00046 \textcolor{preprocessor}{\#include <assimp/StringUtils.h>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00047}00047 \textcolor{preprocessor}{\#include <assimp/DefaultLogger.hpp>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00049}00049 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_base_importer_8h}{BaseImporter.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00050}00050 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_i_o_stream_8hpp}{IOStream.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00052}00052 \textcolor{preprocessor}{\#include <pugixml.hpp>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00053}00053 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00054}00054 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00056}00056 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00059}\mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate}{00059}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate}{find\_node\_by\_name\_predicate}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00061}\mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_adfc30389a498101201da86a072e6dc24}{00061}}     \mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_adfc30389a498101201da86a072e6dc24}{find\_node\_by\_name\_predicate}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00064}\mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_a3677b7c442c60148d2c31bade1d68258}{00064}}     std::string \mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_a3677b7c442c60148d2c31bade1d68258}{mName}}; }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00065}\mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_a2d92cd69778af0800edce233960fcc2f}{00065}}     \mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_a2d92cd69778af0800edce233960fcc2f}{find\_node\_by\_name\_predicate}}(\textcolor{keyword}{const} std::string \&name) :}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00066}00066             \mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_a3677b7c442c60148d2c31bade1d68258}{mName}}(name) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00067}00067         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00068}00068     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00070}\mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_aa703a34885dac2249ccd2edc70bc4139}{00070}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_aa703a34885dac2249ccd2edc70bc4139}{operator()}}(pugi::xml\_node node)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00071}00071         \textcolor{keywordflow}{return} node.name() == \mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate_a3677b7c442c60148d2c31bade1d68258}{mName}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00072}00072     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00073}00073 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00077}00077 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00078}\mbox{\hyperlink{struct_assimp_1_1_node_converter}{00078}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_assimp_1_1_node_converter}{NodeConverter}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00079}00079 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00080}\mbox{\hyperlink{struct_assimp_1_1_node_converter_a344e06e7e40ca0bde0c80b15b88f324e}{00080}}     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_assimp_1_1_node_converter_a344e06e7e40ca0bde0c80b15b88f324e}{to\_int}}(TNodeType \&node, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *attribName) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00081}00081         \mbox{\hyperlink{include_2assimp_2ai__assert_8h_a8cda16916af68d32c6add71ef3bb7af3}{ai\_assert}}(\textcolor{keyword}{nullptr} != attribName);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00082}00082         \textcolor{keywordflow}{return} node.attribute(attribName).to\_int();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00083}00083     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00084}00084 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00086}\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{00086}} \textcolor{keyword}{using }\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} = pugi::xml\_node;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00087}\mbox{\hyperlink{namespace_assimp_a39b031370e5aba8e0f587ee4b3c18214}{00087}} \textcolor{keyword}{using }\mbox{\hyperlink{namespace_assimp_a39b031370e5aba8e0f587ee4b3c18214}{XmlAttribute}} = pugi::xml\_attribute;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00104}00104 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00105}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser}{00105}} \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_t_xml_parser}{TXmlParser}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00106}00106 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00108}00108     \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5af7c6b3f5e9ba39d7f5e026f1e71114}{TXmlParser}}();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00111}00111     \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aa9a04a2b248e686230f02d06e71ad2b9}{\string~TXmlParser}}();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00114}00114     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a58de4b287ba8545b3e4fb7a060f48dd1}{clear}}();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00119}00119     TNodeType *\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a0dd4c9b26f4edebc4ea8a83ca953b1f2}{findNode}}(\textcolor{keyword}{const} std::string \&name);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00124}00124     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aed2fce5401880ca824eb9a4530ec7c9a}{hasNode}}(\textcolor{keyword}{const} std::string \&name);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00129}00129     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a832c8f496948e43402767853d25b9a4c}{parse}}(\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} *stream);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00133}00133     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a2526e06cd264068515dcb39213a8bafb}{hasRoot}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00134}00134 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00137}00137     pugi::xml\_document *\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a018c506e8b30dddb5b65c1d8faafd052}{getDocument}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00141}00141     \textcolor{keyword}{const} TNodeType \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a4a7ce66b2bf437a40c5123cdca6632dd}{getRootNode}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00145}00145     TNodeType \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a4a7ce66b2bf437a40c5123cdca6632dd}{getRootNode}}();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00146}00146 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00151}00151     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aed2fce5401880ca824eb9a4530ec7c9a}{hasNode}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&node, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00157}00157     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a42160d2672a91bffb285d7ebcbfffb3e}{hasAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00158}00158 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00164}00164     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5b37ef1693f70dc06be863be06e6795c}{getUIntAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&val);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00171}00171     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_abedfc914d258dadc1a477aa063d54070}{getIntAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{int} \&val);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00178}00178     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a53e7d905d4e6de714d2e27b156079342}{getRealAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\_real}} \&val);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00179}00179 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00185}00185     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_ab6499dd42b506bb07e3dca0fccbcc3a1}{getFloatAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{float} \&val);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00186}00186 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00192}00192     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5cd1cd7c6f3a912ba969c14d71a5d660}{getDoubleAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{double} \&val);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00199}00199     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a22c2be0aae836a6d40fdecaa738fa14d}{getStdStrAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, std::string \&val);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00200}00200 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00206}00206     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a3cbdfdfa4dfdfd97a426e28a717ca163}{getBoolAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{bool} \&val);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00207}00207 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00212}00212     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aed1c533c85b7003aae19be82775c3f7e}{getValueAsString}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&node, std::string \&text);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00213}00213 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00218}00218     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_adc9a0fa7efd1317fa96d7d7611e91528}{getValueAsReal}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&node, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\_real}} \&v);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00219}00219 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00224}00224     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_afb3f4d344680c126de749f8e6dced7bb}{getValueAsFloat}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&node, \textcolor{keywordtype}{float} \&v);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00225}00225 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00230}00230     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a62ede496339aa8ba8715fdc45442456c}{getValueAsInt}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&node, \textcolor{keywordtype}{int} \&v);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00231}00231 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00236}00236     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a49204198028bbece0bf1f80ebfd88fb0}{getValueAsBool}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&node, \textcolor{keywordtype}{bool} \&v);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00238}00238 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00239}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a1ce039c461c69f6e8723e09b2d8a3ca4}{00239}}     pugi::xml\_document *\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a1ce039c461c69f6e8723e09b2d8a3ca4}{mDoc}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00240}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a716771d7bbbbceb3be5ff8fdfb53bb1e}{00240}}     TNodeType \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a716771d7bbbbceb3be5ff8fdfb53bb1e}{mCurrent}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00241}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a25a7a39d2d12fb04c31a87d6e41a9898}{00241}}     std::vector<char> \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a25a7a39d2d12fb04c31a87d6e41a9898}{mData}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00242}00242 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00243}00243 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00244}00244 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00245}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5af7c6b3f5e9ba39d7f5e026f1e71114}{00245}} \textcolor{keyword}{inline} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5af7c6b3f5e9ba39d7f5e026f1e71114}{TXmlParser<TNodeType>::TXmlParser}}() :}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00246}00246         mDoc(nullptr),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00247}00247         mData() \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00248}00248     \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00249}00249 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00250}00250 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00251}00251 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00252}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aa9a04a2b248e686230f02d06e71ad2b9}{00252}} \textcolor{keyword}{inline} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aa9a04a2b248e686230f02d06e71ad2b9}{TXmlParser<TNodeType>::\string~TXmlParser}}() \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00253}00253     clear();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00254}00254 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00255}00255 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00256}00256 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00257}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a58de4b287ba8545b3e4fb7a060f48dd1}{00257}} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a58de4b287ba8545b3e4fb7a060f48dd1}{TXmlParser<TNodeType>::clear}}() \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00258}00258     \textcolor{keywordflow}{if} (mData.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00259}00259         \textcolor{keywordflow}{if} (mDoc) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00260}00260             \textcolor{keyword}{delete} mDoc;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00261}00261         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00262}00262         mDoc = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00263}00263         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00264}00264     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00265}00265 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00266}00266     mData.clear();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00267}00267     \textcolor{keyword}{delete} mDoc;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00268}00268     mDoc = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00269}00269 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00270}00270 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00271}00271 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00272}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a0dd4c9b26f4edebc4ea8a83ca953b1f2}{00272}} \textcolor{keyword}{inline} TNodeType *\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a0dd4c9b26f4edebc4ea8a83ca953b1f2}{TXmlParser<TNodeType>::findNode}}(\textcolor{keyword}{const} std::string \&name) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00273}00273     \textcolor{keywordflow}{if} (name.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00274}00274         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00275}00275     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00276}00276 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00277}00277     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == mDoc) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00278}00278         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00279}00279     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00280}00280 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00281}00281     \mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate}{find\_node\_by\_name\_predicate}} predicate(name);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00282}00282     mCurrent = mDoc-\/>find\_node(std::move(predicate));}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00283}00283     \textcolor{keywordflow}{if} (mCurrent.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00284}00284         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00285}00285     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00286}00286 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00287}00287     \textcolor{keywordflow}{return} \&mCurrent;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00288}00288 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00289}00289 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00290}00290 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00291}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aed2fce5401880ca824eb9a4530ec7c9a}{00291}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aed2fce5401880ca824eb9a4530ec7c9a}{TXmlParser<TNodeType>::hasNode}}(\textcolor{keyword}{const} std::string \&name) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00292}00292     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr} != findNode(name);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00293}00293 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00294}00294 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00295}00295 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00296}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a832c8f496948e43402767853d25b9a4c}{00296}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a832c8f496948e43402767853d25b9a4c}{TXmlParser<TNodeType>::parse}}(\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} *stream) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00297}00297     \textcolor{keywordflow}{if} (hasRoot()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00298}00298         clear();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00299}00299     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00300}00300 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00301}00301     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == stream) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00302}00302         \mbox{\hyperlink{include_2assimp_2_logger_8hpp_a1a20dc2c2ad4ba28557c1c53375589c9}{ASSIMP\_LOG\_DEBUG}}(\textcolor{stringliteral}{"{}Stream is nullptr."{}});}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00303}00303         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00304}00304     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00305}00305 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00306}00306     \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} len = stream-\/>\mbox{\hyperlink{class_assimp_1_1_i_o_stream_aaa01183d197fb714f28d6c611b6fa058}{FileSize}}();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00307}00307     mData.resize(len + 1);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00308}00308     memset(\&mData[0], \textcolor{charliteral}{'\(\backslash\)0'}, len + 1);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00309}00309     stream-\/>\mbox{\hyperlink{class_assimp_1_1_i_o_stream_ae376f641020989d61863b9c6f55c7abf}{Read}}(\&mData[0], 1, len);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00310}00310 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00311}00311     mDoc = \textcolor{keyword}{new} pugi::xml\_document();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00312}00312     \textcolor{comment}{// load\_string assumes native encoding (aka always utf-\/8 per build options)}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00313}00313     \textcolor{comment}{//pugi::xml\_parse\_result parse\_result = mDoc-\/>load\_string(\&mData[0], pugi::parse\_full);}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00314}00314      pugi::xml\_parse\_result parse\_result = mDoc-\/>load\_buffer(\&mData[0], mData.size(), pugi::parse\_full);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00315}00315     \textcolor{keywordflow}{if} (parse\_result.status == pugi::status\_ok) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00316}00316         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00317}00317     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00318}00318 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00319}00319     \mbox{\hyperlink{include_2assimp_2_logger_8hpp_a1a20dc2c2ad4ba28557c1c53375589c9}{ASSIMP\_LOG\_DEBUG}}(\textcolor{stringliteral}{"{}Error while parse xml."{}}, std::string(parse\_result.description()), \textcolor{stringliteral}{"{} @ "{}}, parse\_result.offset);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00320}00320 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00321}00321     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00322}00322 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00323}00323 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00324}00324 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00325}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a2526e06cd264068515dcb39213a8bafb}{00325}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a2526e06cd264068515dcb39213a8bafb}{TXmlParser<TNodeType>::hasRoot}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00326}00326     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr} != mDoc;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00327}00327 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00328}00328 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00329}00329 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00330}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a018c506e8b30dddb5b65c1d8faafd052}{00330}} pugi::xml\_document *\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a018c506e8b30dddb5b65c1d8faafd052}{TXmlParser<TNodeType>::getDocument}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00331}00331     \textcolor{keywordflow}{return} mDoc;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00332}00332 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00333}00333 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00334}00334 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00335}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a4a7ce66b2bf437a40c5123cdca6632dd}{00335}} \textcolor{keyword}{const} TNodeType \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a4a7ce66b2bf437a40c5123cdca6632dd}{TXmlParser<TNodeType>::getRootNode}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00336}00336     \textcolor{keyword}{static} pugi::xml\_node none;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00337}00337     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == mDoc) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00338}00338         \textcolor{keywordflow}{return} none;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00339}00339     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00340}00340     \textcolor{keywordflow}{return} mDoc-\/>root();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00341}00341 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00342}00342 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00343}00343 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00344}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a619611e6bed3bc865a63c81e54ff59c7}{00344}} TNodeType \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a4a7ce66b2bf437a40c5123cdca6632dd}{TXmlParser<TNodeType>::getRootNode}}() \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00345}00345     \textcolor{keyword}{static} pugi::xml\_node none;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00346}00346     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == mDoc) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00347}00347         \textcolor{keywordflow}{return} none;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00348}00348     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00349}00349 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00350}00350     \textcolor{keywordflow}{return} mDoc-\/>root();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00351}00351 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00352}00352 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00353}00353 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00354}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a94d6637072ffac55471f2caa588bc798}{00354}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aed2fce5401880ca824eb9a4530ec7c9a}{TXmlParser<TNodeType>::hasNode}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&node, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00355}00355     pugi::xml\_node child = node.find\_child(\mbox{\hyperlink{struct_assimp_1_1find__node__by__name__predicate}{find\_node\_by\_name\_predicate}}(name));}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00356}00356     \textcolor{keywordflow}{return} !child.empty();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00357}00357 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00358}00358 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00359}00359 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00360}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a42160d2672a91bffb285d7ebcbfffb3e}{00360}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a42160d2672a91bffb285d7ebcbfffb3e}{TXmlParser<TNodeType>::hasAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00361}00361     pugi::xml\_attribute attr = xmlNode.attribute(name);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00362}00362     \textcolor{keywordflow}{return} !attr.empty();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00363}00363 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00364}00364 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00365}00365 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00366}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5b37ef1693f70dc06be863be06e6795c}{00366}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5b37ef1693f70dc06be863be06e6795c}{TXmlParser<TNodeType>::getUIntAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&val) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00367}00367     pugi::xml\_attribute attr = xmlNode.attribute(name);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00368}00368     \textcolor{keywordflow}{if} (attr.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00369}00369         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00370}00370     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00371}00371 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00372}00372     val = attr.as\_uint();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00373}00373     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00374}00374 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00375}00375 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00376}00376 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00377}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_abedfc914d258dadc1a477aa063d54070}{00377}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_abedfc914d258dadc1a477aa063d54070}{TXmlParser<TNodeType>::getIntAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{int} \&val) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00378}00378     pugi::xml\_attribute attr = xmlNode.attribute(name);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00379}00379     \textcolor{keywordflow}{if} (attr.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00380}00380         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00381}00381     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00382}00382 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00383}00383     val = attr.as\_int();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00384}00384     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00385}00385 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00386}00386 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00387}00387 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00388}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a53e7d905d4e6de714d2e27b156079342}{00388}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a53e7d905d4e6de714d2e27b156079342}{TXmlParser<TNodeType>::getRealAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\_real}} \&val) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00389}00389     pugi::xml\_attribute attr = xmlNode.attribute(name);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00390}00390     \textcolor{keywordflow}{if} (attr.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00391}00391         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00392}00392     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00393}00393 \textcolor{preprocessor}{\#ifdef ASSIMP\_DOUBLE\_PRECISION}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00394}00394     val = attr.as\_double();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00395}00395 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00396}00396     val = attr.as\_float();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00397}00397 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00398}00398     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00399}00399 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00400}00400 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00401}00401 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00402}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_ab6499dd42b506bb07e3dca0fccbcc3a1}{00402}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_ab6499dd42b506bb07e3dca0fccbcc3a1}{TXmlParser<TNodeType>::getFloatAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{float} \&val) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00403}00403     pugi::xml\_attribute attr = xmlNode.attribute(name);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00404}00404     \textcolor{keywordflow}{if} (attr.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00405}00405         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00406}00406     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00407}00407 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00408}00408     val = attr.as\_float();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00409}00409 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00410}00410     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00411}00411 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00412}00412 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00413}00413 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00414}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5cd1cd7c6f3a912ba969c14d71a5d660}{00414}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a5cd1cd7c6f3a912ba969c14d71a5d660}{TXmlParser<TNodeType>::getDoubleAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{double} \&val) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00415}00415     pugi::xml\_attribute attr = xmlNode.attribute(name);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00416}00416     \textcolor{keywordflow}{if} (attr.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00417}00417         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00418}00418     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00419}00419 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00420}00420     val = attr.as\_double();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00421}00421 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00422}00422     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00423}00423 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00424}00424 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00425}00425 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00426}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a22c2be0aae836a6d40fdecaa738fa14d}{00426}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a22c2be0aae836a6d40fdecaa738fa14d}{TXmlParser<TNodeType>::getStdStrAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, std::string \&val) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00427}00427     pugi::xml\_attribute attr = xmlNode.attribute(name);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00428}00428     \textcolor{keywordflow}{if} (attr.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00429}00429         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00430}00430     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00431}00431 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00432}00432     val = attr.as\_string();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00433}00433 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00434}00434     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00435}00435 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00436}00436 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00437}00437 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00438}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a3cbdfdfa4dfdfd97a426e28a717ca163}{00438}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a3cbdfdfa4dfdfd97a426e28a717ca163}{TXmlParser<TNodeType>::getBoolAttribute}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&xmlNode, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keywordtype}{bool} \&val) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00439}00439     pugi::xml\_attribute attr = xmlNode.attribute(name);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00440}00440     \textcolor{keywordflow}{if} (attr.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00441}00441         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00442}00442     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00443}00443 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00444}00444     val = attr.as\_bool();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00445}00445 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00446}00446     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00447}00447 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00448}00448 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00449}00449 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00450}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aed1c533c85b7003aae19be82775c3f7e}{00450}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_aed1c533c85b7003aae19be82775c3f7e}{TXmlParser<TNodeType>::getValueAsString}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&node, std::string \&text) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00451}00451     text = std::string();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00452}00452     \textcolor{keywordflow}{if} (node.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00453}00453         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00454}00454     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00455}00455 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00456}00456     text = node.text().as\_string();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00457}00457     text = \mbox{\hyperlink{include_2assimp_2_string_utils_8h_a52f95a4fa5310644e58c4ad1e7037caf}{ai\_trim}}(text);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00458}00458 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00459}00459     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00460}00460 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00461}00461 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00462}00462 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00463}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_adc9a0fa7efd1317fa96d7d7611e91528}{00463}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_adc9a0fa7efd1317fa96d7d7611e91528}{TXmlParser<TNodeType>::getValueAsReal}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}}\& node, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\_real}}\& v) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00464}00464     \textcolor{keywordflow}{if} (node.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00465}00465         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00466}00466     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00467}00467 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00468}00468     v = node.text().as\_float();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00469}00469 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00470}00470     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00471}00471 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00472}00472 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00473}00473 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00474}00474 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00475}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_afb3f4d344680c126de749f8e6dced7bb}{00475}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_afb3f4d344680c126de749f8e6dced7bb}{TXmlParser<TNodeType>::getValueAsFloat}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&node, \textcolor{keywordtype}{float} \&v) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00476}00476     \textcolor{keywordflow}{if} (node.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00477}00477         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00478}00478     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00479}00479 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00480}00480     v = node.text().as\_float();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00481}00481 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00482}00482     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00483}00483 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00484}00484 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00485}00485 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00486}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a62ede496339aa8ba8715fdc45442456c}{00486}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a62ede496339aa8ba8715fdc45442456c}{TXmlParser<TNodeType>::getValueAsInt}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&node, \textcolor{keywordtype}{int} \&v) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00487}00487     \textcolor{keywordflow}{if} (node.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00488}00488         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00489}00489     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00490}00490 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00491}00491     v = node.text().as\_int();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00492}00492 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00493}00493     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00494}00494 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00495}00495 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00496}00496 \textcolor{keyword}{template} <\textcolor{keyword}{class} TNodeType>}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00497}\mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a49204198028bbece0bf1f80ebfd88fb0}{00497}} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_t_xml_parser_a49204198028bbece0bf1f80ebfd88fb0}{TXmlParser<TNodeType>::getValueAsBool}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&node, \textcolor{keywordtype}{bool} \&v) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00498}00498     \textcolor{keywordflow}{if} (node.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00499}00499         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00500}00500     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00501}00501 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00502}00502     v = node.text().as\_bool();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00503}00503 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00504}00504     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00505}00505 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00506}00506 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00507}\mbox{\hyperlink{namespace_assimp_ac1f9ddc766331a128a2d8b033b360a72}{00507}} \textcolor{keyword}{using }\mbox{\hyperlink{class_assimp_1_1_t_xml_parser}{XmlParser}} = \mbox{\hyperlink{class_assimp_1_1_t_xml_parser}{TXmlParser<pugi::xml\_node>}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00508}00508 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00510}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator}{00510}} \textcolor{keyword}{class }\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator}{XmlNodeIterator}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00511}00511 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00513}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a8b2559c1b090867a20f54892b3391c1b}{00513}}     \textcolor{keyword}{enum} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a8b2559c1b090867a20f54892b3391c1b}{IterationMode}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00514}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a8b2559c1b090867a20f54892b3391c1ba3232103afbea90315acfa4fc08a64d7b}{00514}}         \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a8b2559c1b090867a20f54892b3391c1ba3232103afbea90315acfa4fc08a64d7b}{PreOrderMode}}, }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00515}00515         \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a8b2559c1b090867a20f54892b3391c1baeae8931a4ed717e9ea1297565b341b2e}{PostOrderMode}} }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00516}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a8b2559c1b090867a20f54892b3391c1baeae8931a4ed717e9ea1297565b341b2e}{00516}}     \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00520}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207}{00520}}     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ac91f7e3201cb252deb653b4aaed41207}{XmlNodeIterator}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&parent, \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a8b2559c1b090867a20f54892b3391c1b}{IterationMode}} mode) :}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00521}00521             \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a5c9a2eb07656df0267a01e7d8f6ceefb}{mParent}}(parent),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00522}00522             \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ada2c8ca5ffe63da1fab8c83ff1ba505c}{mNodes}}(),}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00523}00523             \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a91b37042a3a746e89a3a37bb2ad0f1df}{mIndex}}(0) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00524}00524         \textcolor{keywordflow}{if} (mode == \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a8b2559c1b090867a20f54892b3391c1ba3232103afbea90315acfa4fc08a64d7b}{PreOrderMode}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00525}00525             \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31}{collectChildrenPreOrder}}(parent);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00526}00526         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00527}00527             \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035}{collectChildrenPostOrder}}(parent);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00528}00528         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00529}00529     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00530}00530 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00532}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ad0ef7ae6788b36d61cd061403c97e3e8}{00532}}     \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ad0ef7ae6788b36d61cd061403c97e3e8}{\string~XmlNodeIterator}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00533}00533 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00536}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31}{00536}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31}{collectChildrenPreOrder}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&node) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00537}00537         \textcolor{keywordflow}{if} (node != \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a5c9a2eb07656df0267a01e7d8f6ceefb}{mParent}} \&\& node.type() == pugi::node\_element) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00538}00538             \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ada2c8ca5ffe63da1fab8c83ff1ba505c}{mNodes}}.push\_back(node);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00539}00539         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00540}00540         \textcolor{keywordflow}{for} (\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} currentNode : node.children()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00541}00541             \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a71e766fc388e15793cc892f70d770c31}{collectChildrenPreOrder}}(currentNode);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00542}00542         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00543}00543     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00544}00544 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00547}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035}{00547}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035}{collectChildrenPostOrder}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&node) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00548}00548         \textcolor{keywordflow}{for} (\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} currentNode = node.first\_child(); currentNode; currentNode = currentNode.next\_sibling()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00549}00549             \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_aca9024c882f07991467e05676123d035}{collectChildrenPostOrder}}(currentNode);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00550}00550         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00551}00551         \textcolor{keywordflow}{if} (node != \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a5c9a2eb07656df0267a01e7d8f6ceefb}{mParent}}) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00552}00552             \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ada2c8ca5ffe63da1fab8c83ff1ba505c}{mNodes}}.push\_back(node);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00553}00553         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00554}00554     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00555}00555 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00559}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a5817a15765681eb544ac1e8c44ce33aa}{00559}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a5817a15765681eb544ac1e8c44ce33aa}{getNext}}(\mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&next) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00560}00560         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a91b37042a3a746e89a3a37bb2ad0f1df}{mIndex}} == \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ada2c8ca5ffe63da1fab8c83ff1ba505c}{mNodes}}.size()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00561}00561             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00562}00562         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00563}00563 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00564}00564         next = \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ada2c8ca5ffe63da1fab8c83ff1ba505c}{mNodes}}[\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a91b37042a3a746e89a3a37bb2ad0f1df}{mIndex}}];}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00565}00565         ++\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a91b37042a3a746e89a3a37bb2ad0f1df}{mIndex}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00566}00566 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00567}00567         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00568}00568     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00569}00569 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00572}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ac2d21217d2921169efec5f318a0c594e}{00572}}     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ac2d21217d2921169efec5f318a0c594e}{size}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00573}00573         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ada2c8ca5ffe63da1fab8c83ff1ba505c}{mNodes}}.size();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00574}00574     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00575}00575 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00578}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ac8937d559903bfe99ee6ea280025cce8}{00578}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ac8937d559903bfe99ee6ea280025cce8}{isEmpty}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00579}00579         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ada2c8ca5ffe63da1fab8c83ff1ba505c}{mNodes}}.empty();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00580}00580     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00581}00581 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00583}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a4638e2eaf70a0b64963c00735c7a15dd}{00583}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a4638e2eaf70a0b64963c00735c7a15dd}{clear}}() \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00584}00584         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ada2c8ca5ffe63da1fab8c83ff1ba505c}{mNodes}}.empty()) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00585}00585             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00586}00586         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00587}00587 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00588}00588         \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ada2c8ca5ffe63da1fab8c83ff1ba505c}{mNodes}}.clear();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00589}00589         \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a91b37042a3a746e89a3a37bb2ad0f1df}{mIndex}} = 0;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00590}00590     \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00591}00591 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00592}00592 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00593}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a5c9a2eb07656df0267a01e7d8f6ceefb}{00593}}     \mbox{\hyperlink{namespace_assimp_af7fe906c227a19aea9aaf197846ee8fe}{XmlNode}} \&\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a5c9a2eb07656df0267a01e7d8f6ceefb}{mParent}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00594}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ada2c8ca5ffe63da1fab8c83ff1ba505c}{00594}}     std::vector<XmlNode> \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_ada2c8ca5ffe63da1fab8c83ff1ba505c}{mNodes}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00595}\mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a91b37042a3a746e89a3a37bb2ad0f1df}{00595}}     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_xml_node_iterator_a91b37042a3a746e89a3a37bb2ad0f1df}{mIndex}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00596}00596 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00597}00597 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00598}00598 \} \textcolor{comment}{// namespace Assimp}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00599}00599 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_xml_parser_8h_source_l00600}00600 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! INCLUDED\_AI\_IRRXML\_WRAPPER}}
 
 \end{DoxyCode}

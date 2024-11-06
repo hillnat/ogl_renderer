@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['iterationmode_0',['IterationMode',['../class_assimp_1_1_xml_node_iterator.html#a8b2559c1b090867a20f54892b3391c1b',1,'Assimp::XmlNodeIterator::IterationMode()'],['../class_assimp_1_1_xml_node_iterator.html#a8b2559c1b090867a20f54892b3391c1b',1,'Assimp::XmlNodeIterator::IterationMode()'],['../class_assimp_1_1_xml_node_iterator.html#a8b2559c1b090867a20f54892b3391c1b',1,'Assimp::XmlNodeIterator::IterationMode()']]]
+  ['errorseverity_0',['ErrorSeverity',['../class_assimp_1_1_logger.html#acd0b52a87d6fc11e957ed2c6e2ad75b6',1,'Assimp::Logger::ErrorSeverity()'],['../class_assimp_1_1_logger.html#acd0b52a87d6fc11e957ed2c6e2ad75b6',1,'Assimp::Logger::ErrorSeverity()'],['../class_assimp_1_1_logger.html#acd0b52a87d6fc11e957ed2c6e2ad75b6',1,'Assimp::Logger::ErrorSeverity()']]]
 ];

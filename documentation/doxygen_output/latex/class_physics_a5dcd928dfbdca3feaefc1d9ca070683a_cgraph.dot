@@ -2,8 +2,8 @@ digraph "Physics::UpdateAllBodies"
 {
  // LATEX_PDF_SIZE
   bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  edge [fontname=Terminal,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Terminal,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
   Node1 [label="Physics::UpdateAllBodies",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Executes the physics tick on all physics objects in vector"];
   Node1 -> Node2 [color="steelblue1",style="solid"];
@@ -16,13 +16,17 @@ digraph "Physics::UpdateAllBodies"
   Node5 [label="Rigidbody::AddForce",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_rigidbody.html#ad968aba72e2d80dc282ce7a2f2639ca2",tooltip="Adds force, factoring in mass"];
   Node5 -> Node6 [color="steelblue1",style="solid"];
   Node6 [label="Rigidbody::AddForcePure",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_rigidbody.html#ab633f234942f4142cb4128883c6c9aa6",tooltip="Adds force, ignoring mass"];
-  Node4 -> Node7 [color="steelblue1",style="solid"];
-  Node7 [label="Transform::GetPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transform.html#a482ec8a49b08f224b2ec513dc27f47b5",tooltip="Gets the position of this transform"];
+  Node6 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="glm::length",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceglm.html#abcd8538aa95a8963803ec42c2fd654cd",tooltip=" "];
   Node7 -> Node8 [color="steelblue1",style="solid"];
-  Node8 [label="Transform::GetAccumParent\lPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transform.html#aa12429358147b70bdfd11af25a99f660",tooltip=" "];
-  Node8 -> Node8 [color="steelblue1",style="solid"];
-  Node1 -> Node9 [color="steelblue1",style="solid"];
-  Node9 [label="Physics::ResolveSphereSphere",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_physics.html#aa343c30848ec0030d0c73719cbcabc05",tooltip="Resolves a collision between two sphere Rigidbodies"];
-  Node9 -> Node5 [color="steelblue1",style="solid"];
-  Node9 -> Node7 [color="steelblue1",style="solid"];
+  Node8 [label="glm::abs",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__core__func__common.html#ga439e60a72eadecfeda2df5449c613a64",tooltip=" "];
+  Node4 -> Node9 [color="steelblue1",style="solid"];
+  Node9 [label="Transform::GetPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transform.html#a482ec8a49b08f224b2ec513dc27f47b5",tooltip="Gets the position of this transform"];
+  Node9 -> Node10 [color="steelblue1",style="solid"];
+  Node10 [label="Transform::GetAccumParent\lPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transform.html#aa12429358147b70bdfd11af25a99f660",tooltip=" "];
+  Node10 -> Node10 [color="steelblue1",style="solid"];
+  Node1 -> Node11 [color="steelblue1",style="solid"];
+  Node11 [label="Physics::ResolveSphereSphere",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_physics.html#aa343c30848ec0030d0c73719cbcabc05",tooltip="Resolves a collision between two sphere Rigidbodies"];
+  Node11 -> Node5 [color="steelblue1",style="solid"];
+  Node11 -> Node9 [color="steelblue1",style="solid"];
 }

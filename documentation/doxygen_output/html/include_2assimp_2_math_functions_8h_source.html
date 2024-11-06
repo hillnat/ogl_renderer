@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -126,10 +129,10 @@ $(function() {
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_assimp.html">Assimp</a> {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">namespace </span>Math {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespace_assimp_1_1_math.html">   56</a></span><span class="keyword">namespace </span>Math {</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> IntegerType&gt;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="include_2assimp_2_math_functions_8h.html#a35dbf295d7708e2cffd2428d8d8f109a">   63</a></span><span class="keyword">inline</span> IntegerType <a class="code hl_function" href="include_2assimp_2_math_functions_8h.html#a35dbf295d7708e2cffd2428d8d8f109a">gcd</a>( IntegerType a, IntegerType b ) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="namespace_assimp_1_1_math.html#a35dbf295d7708e2cffd2428d8d8f109a">   63</a></span><span class="keyword">inline</span> IntegerType <a class="code hl_function" href="namespace_assimp_1_1_math.html#a35dbf295d7708e2cffd2428d8d8f109a">gcd</a>( IntegerType a, IntegerType b ) {</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">const</span> IntegerType zero = (IntegerType)0;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">while</span> ( <span class="keyword">true</span> ) {</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">if</span> ( a == zero ) {</div>
@@ -145,30 +148,30 @@ $(function() {
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> IntegerType &gt;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="include_2assimp_2_math_functions_8h.html#a918eb7bddac3741e7cf72dd900a90a0c">   83</a></span><span class="keyword">inline</span> IntegerType <a class="code hl_function" href="include_2assimp_2_math_functions_8h.html#a918eb7bddac3741e7cf72dd900a90a0c">lcm</a>( IntegerType a, IntegerType b ) {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">const</span> IntegerType t = <a class="code hl_function" href="include_2assimp_2_math_functions_8h.html#a35dbf295d7708e2cffd2428d8d8f109a">gcd</a> (a,b);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="namespace_assimp_1_1_math.html#a918eb7bddac3741e7cf72dd900a90a0c">   83</a></span><span class="keyword">inline</span> IntegerType <a class="code hl_function" href="namespace_assimp_1_1_math.html#a918eb7bddac3741e7cf72dd900a90a0c">lcm</a>( IntegerType a, IntegerType b ) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">const</span> IntegerType t = <a class="code hl_function" href="namespace_assimp_1_1_math.html#a35dbf295d7708e2cffd2428d8d8f109a">gcd</a> (a,b);</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">if</span> (!t) {</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">return</span> t;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">return</span> a / t * b;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="include_2assimp_2_math_functions_8h.html#a4888f797601d1606f958740c3697e9bc">   93</a></span><span class="keyword">inline</span> T <a class="code hl_function" href="include_2assimp_2_math_functions_8h.html#a4888f797601d1606f958740c3697e9bc">getEpsilon</a>() {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="namespace_assimp_1_1_math.html#a4888f797601d1606f958740c3697e9bc">   93</a></span><span class="keyword">inline</span> T <a class="code hl_function" href="namespace_assimp_1_1_math.html#a4888f797601d1606f958740c3697e9bc">getEpsilon</a>() {</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> std::numeric_limits&lt;T&gt;::epsilon();</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="include_2assimp_2_math_functions_8h.html#a9f95c3394fa9c7d61ce0c0db8e933931">  100</a></span><span class="keyword">inline</span> T <a class="code hl_function" href="include_2assimp_2_math_functions_8h.html#a9f95c3394fa9c7d61ce0c0db8e933931">aiPi</a>() {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="namespace_assimp_1_1_math.html#a9f95c3394fa9c7d61ce0c0db8e933931">  100</a></span><span class="keyword">inline</span> T <a class="code hl_function" href="namespace_assimp_1_1_math.html#a9f95c3394fa9c7d61ce0c0db8e933931">aiPi</a>() {</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(3.14159265358979323846);</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>} <span class="comment">// namespace Math</span></div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>} <span class="comment">// namespace Assimp</span></div>
-<div class="ttc" id="ainclude_2assimp_2_math_functions_8h_html_a35dbf295d7708e2cffd2428d8d8f109a"><div class="ttname"><a href="include_2assimp_2_math_functions_8h.html#a35dbf295d7708e2cffd2428d8d8f109a">Assimp::Math::gcd</a></div><div class="ttdeci">IntegerType gcd(IntegerType a, IntegerType b)</div><div class="ttdoc">Will return the greatest common divisor.</div><div class="ttdef"><b>Definition:</b> MathFunctions.h:63</div></div>
-<div class="ttc" id="ainclude_2assimp_2_math_functions_8h_html_a4888f797601d1606f958740c3697e9bc"><div class="ttname"><a href="include_2assimp_2_math_functions_8h.html#a4888f797601d1606f958740c3697e9bc">Assimp::Math::getEpsilon</a></div><div class="ttdeci">T getEpsilon()</div><div class="ttdoc">Will return the smallest epsilon-value for the requested type.</div><div class="ttdef"><b>Definition:</b> MathFunctions.h:93</div></div>
-<div class="ttc" id="ainclude_2assimp_2_math_functions_8h_html_a918eb7bddac3741e7cf72dd900a90a0c"><div class="ttname"><a href="include_2assimp_2_math_functions_8h.html#a918eb7bddac3741e7cf72dd900a90a0c">Assimp::Math::lcm</a></div><div class="ttdeci">IntegerType lcm(IntegerType a, IntegerType b)</div><div class="ttdoc">Will return the greatest common divisor.</div><div class="ttdef"><b>Definition:</b> MathFunctions.h:83</div></div>
-<div class="ttc" id="ainclude_2assimp_2_math_functions_8h_html_a9f95c3394fa9c7d61ce0c0db8e933931"><div class="ttname"><a href="include_2assimp_2_math_functions_8h.html#a9f95c3394fa9c7d61ce0c0db8e933931">Assimp::Math::aiPi</a></div><div class="ttdeci">T aiPi()</div><div class="ttdoc">Will return the constant PI for the requested type.</div><div class="ttdef"><b>Definition:</b> MathFunctions.h:100</div></div>
-<div class="ttc" id="anamespace_assimp_html"><div class="ttname"><a href="namespace_assimp.html">Assimp</a></div><div class="ttdef"><b>Definition:</b> AssertHandler.h:50</div></div>
+<div class="ttc" id="anamespace_assimp_1_1_math_html_a35dbf295d7708e2cffd2428d8d8f109a"><div class="ttname"><a href="namespace_assimp_1_1_math.html#a35dbf295d7708e2cffd2428d8d8f109a">Assimp::Math::gcd</a></div><div class="ttdeci">IntegerType gcd(IntegerType a, IntegerType b)</div><div class="ttdoc">Will return the greatest common divisor.</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_math_functions_8h_source.html#l00063">MathFunctions.h:63</a></div></div>
+<div class="ttc" id="anamespace_assimp_1_1_math_html_a4888f797601d1606f958740c3697e9bc"><div class="ttname"><a href="namespace_assimp_1_1_math.html#a4888f797601d1606f958740c3697e9bc">Assimp::Math::getEpsilon</a></div><div class="ttdeci">T getEpsilon()</div><div class="ttdoc">Will return the smallest epsilon-value for the requested type.</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_math_functions_8h_source.html#l00093">MathFunctions.h:93</a></div></div>
+<div class="ttc" id="anamespace_assimp_1_1_math_html_a918eb7bddac3741e7cf72dd900a90a0c"><div class="ttname"><a href="namespace_assimp_1_1_math.html#a918eb7bddac3741e7cf72dd900a90a0c">Assimp::Math::lcm</a></div><div class="ttdeci">IntegerType lcm(IntegerType a, IntegerType b)</div><div class="ttdoc">Will return the greatest common divisor.</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_math_functions_8h_source.html#l00083">MathFunctions.h:83</a></div></div>
+<div class="ttc" id="anamespace_assimp_1_1_math_html_a9f95c3394fa9c7d61ce0c0db8e933931"><div class="ttname"><a href="namespace_assimp_1_1_math.html#a9f95c3394fa9c7d61ce0c0db8e933931">Assimp::Math::aiPi</a></div><div class="ttdeci">T aiPi()</div><div class="ttdoc">Will return the constant PI for the requested type.</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_math_functions_8h_source.html#l00100">MathFunctions.h:100</a></div></div>
+<div class="ttc" id="anamespace_assimp_html"><div class="ttname"><a href="namespace_assimp.html">Assimp</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_assert_handler_8h_source.html#l00050">AssertHandler.h:50</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

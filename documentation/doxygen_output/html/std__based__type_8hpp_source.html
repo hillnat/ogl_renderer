@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -111,17 +114,18 @@ $(function() {
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}<span class="comment">//namespace glm</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#include &quot;std_based_type.inl&quot;</span></div>
-<div class="ttc" id="agroup__gtx__std__based__type_html_ga2bb2915bb83bb9d7a2967fe20aa7d2a5"><div class="ttname"><a href="group__gtx__std__based__type.html#ga2bb2915bb83bb9d7a2967fe20aa7d2a5">glm::size4_t</a></div><div class="ttdeci">vec&lt; 4, std::size_t, defaultp &gt; size4_t</div><div class="ttdef"><b>Definition:</b> std_based_type.hpp:61</div></div>
-<div class="ttc" id="agroup__gtx__std__based__type_html_ga2da33d9da32b31af75f036d948b54de5"><div class="ttname"><a href="group__gtx__std__based__type.html#ga2da33d9da32b31af75f036d948b54de5">glm::size3</a></div><div class="ttdeci">vec&lt; 3, std::size_t, defaultp &gt; size3</div><div class="ttdef"><b>Definition:</b> std_based_type.hpp:41</div></div>
-<div class="ttc" id="agroup__gtx__std__based__type_html_ga432937b68775c79e4556150e769c6e6b"><div class="ttname"><a href="group__gtx__std__based__type.html#ga432937b68775c79e4556150e769c6e6b">glm::size2</a></div><div class="ttdeci">vec&lt; 2, std::size_t, defaultp &gt; size2</div><div class="ttdef"><b>Definition:</b> std_based_type.hpp:37</div></div>
-<div class="ttc" id="agroup__gtx__std__based__type_html_ga5bf40bbca3cb66bbd7cc0c389c3c0c56"><div class="ttname"><a href="group__gtx__std__based__type.html#ga5bf40bbca3cb66bbd7cc0c389c3c0c56">glm::size1_t</a></div><div class="ttdeci">vec&lt; 1, std::size_t, defaultp &gt; size1_t</div><div class="ttdef"><b>Definition:</b> std_based_type.hpp:49</div></div>
-<div class="ttc" id="agroup__gtx__std__based__type_html_ga6051b5077b52ff8ea48a5207d5076aa5"><div class="ttname"><a href="group__gtx__std__based__type.html#ga6051b5077b52ff8ea48a5207d5076aa5">glm::size4</a></div><div class="ttdeci">vec&lt; 4, std::size_t, defaultp &gt; size4</div><div class="ttdef"><b>Definition:</b> std_based_type.hpp:45</div></div>
-<div class="ttc" id="agroup__gtx__std__based__type_html_ga701549a040be1f2f6f661ddecde337de"><div class="ttname"><a href="group__gtx__std__based__type.html#ga701549a040be1f2f6f661ddecde337de">glm::size2_t</a></div><div class="ttdeci">vec&lt; 2, std::size_t, defaultp &gt; size2_t</div><div class="ttdef"><b>Definition:</b> std_based_type.hpp:53</div></div>
-<div class="ttc" id="agroup__gtx__std__based__type_html_gaf0ec088c61853e4ed8155ef66b3760a2"><div class="ttname"><a href="group__gtx__std__based__type.html#gaf0ec088c61853e4ed8155ef66b3760a2">glm::size3_t</a></div><div class="ttdeci">vec&lt; 3, std::size_t, defaultp &gt; size3_t</div><div class="ttdef"><b>Definition:</b> std_based_type.hpp:57</div></div>
-<div class="ttc" id="agroup__gtx__std__based__type_html_gaf471290b8165697d088a943263fc8af1"><div class="ttname"><a href="group__gtx__std__based__type.html#gaf471290b8165697d088a943263fc8af1">glm::size1</a></div><div class="ttdeci">vec&lt; 1, std::size_t, defaultp &gt; size1</div><div class="ttdef"><b>Definition:</b> std_based_type.hpp:33</div></div>
-<div class="ttc" id="anamespaceglm_html"><div class="ttname"><a href="namespaceglm.html">glm</a></div><div class="ttdoc">Core features</div><div class="ttdef"><b>Definition:</b> common.hpp:21</div></div>
-<div class="ttc" id="astructglm_1_1vec_html"><div class="ttname"><a href="structglm_1_1vec.html">glm::vec</a></div><div class="ttdef"><b>Definition:</b> qualifier.hpp:35</div></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#include &quot;<a class="code" href="std__based__type_8inl.html">std_based_type.inl</a>&quot;</span></div>
+<div class="ttc" id="agroup__gtx__std__based__type_html_ga2bb2915bb83bb9d7a2967fe20aa7d2a5"><div class="ttname"><a href="group__gtx__std__based__type.html#ga2bb2915bb83bb9d7a2967fe20aa7d2a5">glm::size4_t</a></div><div class="ttdeci">vec&lt; 4, std::size_t, defaultp &gt; size4_t</div><div class="ttdef"><b>Definition:</b> <a href="std__based__type_8hpp_source.html#l00061">std_based_type.hpp:61</a></div></div>
+<div class="ttc" id="agroup__gtx__std__based__type_html_ga2da33d9da32b31af75f036d948b54de5"><div class="ttname"><a href="group__gtx__std__based__type.html#ga2da33d9da32b31af75f036d948b54de5">glm::size3</a></div><div class="ttdeci">vec&lt; 3, std::size_t, defaultp &gt; size3</div><div class="ttdef"><b>Definition:</b> <a href="std__based__type_8hpp_source.html#l00041">std_based_type.hpp:41</a></div></div>
+<div class="ttc" id="agroup__gtx__std__based__type_html_ga432937b68775c79e4556150e769c6e6b"><div class="ttname"><a href="group__gtx__std__based__type.html#ga432937b68775c79e4556150e769c6e6b">glm::size2</a></div><div class="ttdeci">vec&lt; 2, std::size_t, defaultp &gt; size2</div><div class="ttdef"><b>Definition:</b> <a href="std__based__type_8hpp_source.html#l00037">std_based_type.hpp:37</a></div></div>
+<div class="ttc" id="agroup__gtx__std__based__type_html_ga5bf40bbca3cb66bbd7cc0c389c3c0c56"><div class="ttname"><a href="group__gtx__std__based__type.html#ga5bf40bbca3cb66bbd7cc0c389c3c0c56">glm::size1_t</a></div><div class="ttdeci">vec&lt; 1, std::size_t, defaultp &gt; size1_t</div><div class="ttdef"><b>Definition:</b> <a href="std__based__type_8hpp_source.html#l00049">std_based_type.hpp:49</a></div></div>
+<div class="ttc" id="agroup__gtx__std__based__type_html_ga6051b5077b52ff8ea48a5207d5076aa5"><div class="ttname"><a href="group__gtx__std__based__type.html#ga6051b5077b52ff8ea48a5207d5076aa5">glm::size4</a></div><div class="ttdeci">vec&lt; 4, std::size_t, defaultp &gt; size4</div><div class="ttdef"><b>Definition:</b> <a href="std__based__type_8hpp_source.html#l00045">std_based_type.hpp:45</a></div></div>
+<div class="ttc" id="agroup__gtx__std__based__type_html_ga701549a040be1f2f6f661ddecde337de"><div class="ttname"><a href="group__gtx__std__based__type.html#ga701549a040be1f2f6f661ddecde337de">glm::size2_t</a></div><div class="ttdeci">vec&lt; 2, std::size_t, defaultp &gt; size2_t</div><div class="ttdef"><b>Definition:</b> <a href="std__based__type_8hpp_source.html#l00053">std_based_type.hpp:53</a></div></div>
+<div class="ttc" id="agroup__gtx__std__based__type_html_gaf0ec088c61853e4ed8155ef66b3760a2"><div class="ttname"><a href="group__gtx__std__based__type.html#gaf0ec088c61853e4ed8155ef66b3760a2">glm::size3_t</a></div><div class="ttdeci">vec&lt; 3, std::size_t, defaultp &gt; size3_t</div><div class="ttdef"><b>Definition:</b> <a href="std__based__type_8hpp_source.html#l00057">std_based_type.hpp:57</a></div></div>
+<div class="ttc" id="agroup__gtx__std__based__type_html_gaf471290b8165697d088a943263fc8af1"><div class="ttname"><a href="group__gtx__std__based__type.html#gaf471290b8165697d088a943263fc8af1">glm::size1</a></div><div class="ttdeci">vec&lt; 1, std::size_t, defaultp &gt; size1</div><div class="ttdef"><b>Definition:</b> <a href="std__based__type_8hpp_source.html#l00033">std_based_type.hpp:33</a></div></div>
+<div class="ttc" id="anamespaceglm_html"><div class="ttname"><a href="namespaceglm.html">glm</a></div><div class="ttdoc">Core features</div><div class="ttdef"><b>Definition:</b> <a href="common_8hpp_source.html#l00020">common.hpp:21</a></div></div>
+<div class="ttc" id="astd__based__type_8inl_html"><div class="ttname"><a href="std__based__type_8inl.html">std_based_type.inl</a></div></div>
+<div class="ttc" id="astructglm_1_1vec_html"><div class="ttname"><a href="structglm_1_1vec.html">glm::vec</a></div><div class="ttdef"><b>Definition:</b> <a href="qualifier_8hpp_source.html#l00035">qualifier.hpp:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

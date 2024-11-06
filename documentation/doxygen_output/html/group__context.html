@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -87,19 +90,19 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gafd76c93e15ec8b0b90506a9936a46185"><td class="memItemLeft" align="right" valign="top">GLFWAPI void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__context.html#gafd76c93e15ec8b0b90506a9936a46185">glfwMakeContextCurrent</a> (<a class="el" href="group__window.html#ga3c96d80d363e67d13a41b5d1821f3242">GLFWwindow</a> *window)</td></tr>
+<tr class="memitem:gafd76c93e15ec8b0b90506a9936a46185"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glfw3_8h.html#a56da5036b2cc259351ae22fd6439bb47">GLFWAPI</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__context.html#gafd76c93e15ec8b0b90506a9936a46185">glfwMakeContextCurrent</a> (<a class="el" href="group__window.html#ga3c96d80d363e67d13a41b5d1821f3242">GLFWwindow</a> *window)</td></tr>
 <tr class="memdesc:gafd76c93e15ec8b0b90506a9936a46185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes the context of the specified window current for the calling thread.  <a href="group__context.html#gafd76c93e15ec8b0b90506a9936a46185">More...</a><br /></td></tr>
 <tr class="separator:gafd76c93e15ec8b0b90506a9936a46185"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab5fde1ef6238bfb82c7a2293f86172de"><td class="memItemLeft" align="right" valign="top">GLFWAPI <a class="el" href="group__window.html#ga3c96d80d363e67d13a41b5d1821f3242">GLFWwindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__context.html#gab5fde1ef6238bfb82c7a2293f86172de">glfwGetCurrentContext</a> (void)</td></tr>
+<tr class="memitem:gab5fde1ef6238bfb82c7a2293f86172de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glfw3_8h.html#a56da5036b2cc259351ae22fd6439bb47">GLFWAPI</a> <a class="el" href="group__window.html#ga3c96d80d363e67d13a41b5d1821f3242">GLFWwindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__context.html#gab5fde1ef6238bfb82c7a2293f86172de">glfwGetCurrentContext</a> (void)</td></tr>
 <tr class="memdesc:gab5fde1ef6238bfb82c7a2293f86172de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the window whose context is current on the calling thread.  <a href="group__context.html#gab5fde1ef6238bfb82c7a2293f86172de">More...</a><br /></td></tr>
 <tr class="separator:gab5fde1ef6238bfb82c7a2293f86172de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga12a595c06947cec4967c6e1f14210a8a"><td class="memItemLeft" align="right" valign="top">GLFWAPI void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__context.html#ga12a595c06947cec4967c6e1f14210a8a">glfwSwapInterval</a> (int interval)</td></tr>
+<tr class="memitem:ga12a595c06947cec4967c6e1f14210a8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glfw3_8h.html#a56da5036b2cc259351ae22fd6439bb47">GLFWAPI</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__context.html#ga12a595c06947cec4967c6e1f14210a8a">glfwSwapInterval</a> (int interval)</td></tr>
 <tr class="memdesc:ga12a595c06947cec4967c6e1f14210a8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the swap interval for the current context.  <a href="group__context.html#ga12a595c06947cec4967c6e1f14210a8a">More...</a><br /></td></tr>
 <tr class="separator:ga12a595c06947cec4967c6e1f14210a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9a28c712d35f9e43534e1d03b051c04c"><td class="memItemLeft" align="right" valign="top">GLFWAPI int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__context.html#ga9a28c712d35f9e43534e1d03b051c04c">glfwExtensionSupported</a> (const char *extension)</td></tr>
+<tr class="memitem:ga9a28c712d35f9e43534e1d03b051c04c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glfw3_8h.html#a56da5036b2cc259351ae22fd6439bb47">GLFWAPI</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__context.html#ga9a28c712d35f9e43534e1d03b051c04c">glfwExtensionSupported</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *extension)</td></tr>
 <tr class="memdesc:ga9a28c712d35f9e43534e1d03b051c04c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the specified extension is available.  <a href="group__context.html#ga9a28c712d35f9e43534e1d03b051c04c">More...</a><br /></td></tr>
 <tr class="separator:ga9a28c712d35f9e43534e1d03b051c04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0e8af175218929615c16e74938c10f2a"><td class="memItemLeft" align="right" valign="top">GLFWAPI <a class="el" href="group__context.html#ga3d47c2d2fbe0be9c505d0e04e91a133c">GLFWglproc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__context.html#ga0e8af175218929615c16e74938c10f2a">glfwGetProcAddress</a> (const char *procname)</td></tr>
+<tr class="memitem:ga0e8af175218929615c16e74938c10f2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glfw3_8h.html#a56da5036b2cc259351ae22fd6439bb47">GLFWAPI</a> <a class="el" href="group__context.html#ga3d47c2d2fbe0be9c505d0e04e91a133c">GLFWglproc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__context.html#ga0e8af175218929615c16e74938c10f2a">glfwGetProcAddress</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *procname)</td></tr>
 <tr class="memdesc:ga0e8af175218929615c16e74938c10f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the address of the specified function for the current context.  <a href="group__context.html#ga0e8af175218929615c16e74938c10f2a">More...</a><br /></td></tr>
 <tr class="separator:ga0e8af175218929615c16e74938c10f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -126,6 +129,8 @@ Functions</h2></td></tr>
 <a class="el" href="group__context.html#ga0e8af175218929615c16e74938c10f2a">glfwGetProcAddress</a></dd></dl>
 <dl class="section since"><dt>Since</dt><dd>Added in version 3.0. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="glfw3_8h_source.html#l01365">1365</a> of file <a class="el" href="glfw3_8h_source.html">glfw3.h</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
@@ -136,9 +141,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">GLFWAPI int glfwExtensionSupported </td>
+          <td class="memname"><a class="el" href="glfw3_8h.html#a56da5036b2cc259351ae22fd6439bb47">GLFWAPI</a> int glfwExtensionSupported </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>extension</em></td><td>)</td>
           <td></td>
         </tr>
@@ -173,7 +178,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">GLFWAPI <a class="el" href="group__window.html#ga3c96d80d363e67d13a41b5d1821f3242">GLFWwindow</a> * glfwGetCurrentContext </td>
+          <td class="memname"><a class="el" href="glfw3_8h.html#a56da5036b2cc259351ae22fd6439bb47">GLFWAPI</a> <a class="el" href="group__window.html#ga3c96d80d363e67d13a41b5d1821f3242">GLFWwindow</a> * glfwGetCurrentContext </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -201,9 +206,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">GLFWAPI <a class="el" href="group__context.html#ga3d47c2d2fbe0be9c505d0e04e91a133c">GLFWglproc</a> glfwGetProcAddress </td>
+          <td class="memname"><a class="el" href="glfw3_8h.html#a56da5036b2cc259351ae22fd6439bb47">GLFWAPI</a> <a class="el" href="group__context.html#ga3d47c2d2fbe0be9c505d0e04e91a133c">GLFWglproc</a> glfwGetProcAddress </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>procname</em></td><td>)</td>
           <td></td>
         </tr>
@@ -241,7 +246,7 @@ This function may return a non-<code>NULL</code> address despite the associated 
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">GLFWAPI void glfwMakeContextCurrent </td>
+          <td class="memname"><a class="el" href="glfw3_8h.html#a56da5036b2cc259351ae22fd6439bb47">GLFWAPI</a> void glfwMakeContextCurrent </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__window.html#ga3c96d80d363e67d13a41b5d1821f3242">GLFWwindow</a> *&#160;</td>
           <td class="paramname"><em>window</em></td><td>)</td>
@@ -269,6 +274,16 @@ This function may return a non-<code>NULL</code> address despite the associated 
 <dd>
 <a class="el" href="group__context.html#gab5fde1ef6238bfb82c7a2293f86172de">glfwGetCurrentContext</a></dd></dl>
 <dl class="section since"><dt>Since</dt><dd>Added in version 3.0. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__context_gafd76c93e15ec8b0b90506a9936a46185_icgraph.png" border="0" usemap="#agroup__context_gafd76c93e15ec8b0b90506a9936a46185_icgraph" alt=""/></div>
+<map name="agroup__context_gafd76c93e15ec8b0b90506a9936a46185_icgraph" id="agroup__context_gafd76c93e15ec8b0b90506a9936a46185_icgraph">
+<area shape="rect" title="Makes the context of the specified window current for the calling thread." alt="" coords="274,5,437,33"/>
+<area shape="rect" href="class_context.html#ac092592027d44949396a8e16069fcab4" title="Initiliazes the context window, and additional GPU setup" alt="" coords="103,5,226,33"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,33"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -279,7 +294,7 @@ This function may return a non-<code>NULL</code> address despite the associated 
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">GLFWAPI void glfwSwapInterval </td>
+          <td class="memname"><a class="el" href="glfw3_8h.html#a56da5036b2cc259351ae22fd6439bb47">GLFWAPI</a> void glfwSwapInterval </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>interval</em></td><td>)</td>

@@ -2,10 +2,24 @@ digraph "LoadTexture"
 {
  // LATEX_PDF_SIZE
   bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  edge [fontname=Terminal,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Terminal,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
   Node1 [label="LoadTexture",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Loads a texture from file"];
   Node1 -> Node2 [color="steelblue1",style="solid"];
   Node2 [label="MakeTexture",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_renderer_8cpp.html#a4200fd24c96e771a51d8cb0caeb20cb3",tooltip="Builds a texture"];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="glBindTexture",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$glew_8h.html#a940f58f3728713267a58e2d09ff602b2",tooltip=" "];
+  Node2 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="glGenTextures",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$glew_8h.html#a99e77ebf136a8c511226cf705049a305",tooltip=" "];
+  Node2 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="glTexImage2D",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$glew_8h.html#ae0c4b34c030bad60c4e2b94cd0a6d804",tooltip=" "];
+  Node2 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="glTexParameteri",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$glew_8h.html#ac8dbabff536e520bc700960dadd8d787",tooltip=" "];
+  Node1 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="stbi_image_free",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$stb__image_8h.html#ad3e11bb44412a7ba348acfbad09caacb",tooltip=" "];
+  Node1 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="stbi_load",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$stb__image_8h.html#ad3fc296ba0778df0a8094e20da82deab",tooltip=" "];
+  Node1 -> Node9 [color="steelblue1",style="solid"];
+  Node9 [label="stbi_set_flip_vertically\l_on_load",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$stb__image_8h.html#ab89c177fc52f1bb2dc1c05e48129a0a4",tooltip=" "];
 }

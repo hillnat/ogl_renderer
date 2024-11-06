@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -142,15 +145,18 @@ $(function() {
   <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a2526e06cd264068515dcb39213a8bafb">hasRoot</a>() const</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a2526e06cd264068515dcb39213a8bafb">hasRoot</a>() const</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a2526e06cd264068515dcb39213a8bafb">hasRoot</a>() const</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a832c8f496948e43402767853d25b9a4c">parse</a>(IOStream *stream)</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a716771d7bbbbceb3be5ff8fdfb53bb1e">mCurrent</a></td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a25a7a39d2d12fb04c31a87d6e41a9898">mData</a></td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a1ce039c461c69f6e8723e09b2d8a3ca4">mDoc</a></td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a832c8f496948e43402767853d25b9a4c">parse</a>(IOStream *stream)</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a832c8f496948e43402767853d25b9a4c">parse</a>(IOStream *stream)</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a5af7c6b3f5e9ba39d7f5e026f1e71114">TXmlParser</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a5af7c6b3f5e9ba39d7f5e026f1e71114">TXmlParser</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a832c8f496948e43402767853d25b9a4c">parse</a>(IOStream *stream)</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a5af7c6b3f5e9ba39d7f5e026f1e71114">TXmlParser</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a5af7c6b3f5e9ba39d7f5e026f1e71114">TXmlParser</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#aa9a04a2b248e686230f02d06e71ad2b9">~TXmlParser</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#aa9a04a2b248e686230f02d06e71ad2b9">~TXmlParser</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#a5af7c6b3f5e9ba39d7f5e026f1e71114">TXmlParser</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#aa9a04a2b248e686230f02d06e71ad2b9">~TXmlParser</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#aa9a04a2b248e686230f02d06e71ad2b9">~TXmlParser</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html#aa9a04a2b248e686230f02d06e71ad2b9">~TXmlParser</a>()</td><td class="entry"><a class="el" href="class_assimp_1_1_t_xml_parser.html">Assimp::TXmlParser&lt; TNodeType &gt;</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

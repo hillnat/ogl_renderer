@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -77,19 +80,31 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="include_2assimp_2metadata_8h_source.html">metadata.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for aiMetadata:</div>
+<div class="dyncontent">
+<div class="center"><img src="structai_metadata__coll__graph.png" border="0" usemap="#aai_metadata_coll__map" alt="Collaboration graph"/></div>
+<map name="aai_metadata_coll__map" id="aai_metadata_coll__map">
+<area shape="rect" title=" " alt="" coords="51,98,136,126"/>
+<area shape="rect" href="structai_string.html" title="Represents an UTF&#45;8 string, zero byte terminated." alt="" coords="5,5,70,33"/>
+<area shape="rect" href="structai_metadata_entry.html" title=" " alt="" coords="94,5,208,33"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a32c4587c53dd402a5878ffc94088e528"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_metadata.html#a32c4587c53dd402a5878ffc94088e528">mNumProperties</a></td></tr>
 <tr class="separator:a32c4587c53dd402a5878ffc94088e528"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e35ba6bd06869df68b0cbf95fa236c2"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_string.html">aiString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_metadata.html#a7e35ba6bd06869df68b0cbf95fa236c2">mKeys</a></td></tr>
+<tr class="memitem:a7e35ba6bd06869df68b0cbf95fa236c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_string.html">aiString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_metadata.html#a7e35ba6bd06869df68b0cbf95fa236c2">mKeys</a></td></tr>
 <tr class="separator:a7e35ba6bd06869df68b0cbf95fa236c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1993c41d93b8c22e1fc8985172d2cc3e"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_metadata_entry.html">aiMetadataEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_metadata.html#a1993c41d93b8c22e1fc8985172d2cc3e">mValues</a></td></tr>
+<tr class="memitem:a1993c41d93b8c22e1fc8985172d2cc3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_metadata_entry.html">aiMetadataEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_metadata.html#a1993c41d93b8c22e1fc8985172d2cc3e">mValues</a></td></tr>
 <tr class="separator:a1993c41d93b8c22e1fc8985172d2cc3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Container for holding metadata.</p>
 <p >Metadata is a key-value store using string keys and values. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2metadata_8h_source.html#l00156">156</a> of file <a class="el" href="include_2assimp_2metadata_8h_source.html">metadata.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a7e35ba6bd06869df68b0cbf95fa236c2" name="a7e35ba6bd06869df68b0cbf95fa236c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e35ba6bd06869df68b0cbf95fa236c2">&#9670;&#160;</a></span>mKeys</h2>
@@ -98,11 +113,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_string.html">aiString</a> * aiMetadata::mKeys</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_string.html">aiString</a> * aiMetadata::mKeys</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Arrays of keys, may not be NULL. Entries in this array may not be NULL as well. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2metadata_8h_source.html#l00161">161</a> of file <a class="el" href="include_2assimp_2metadata_8h_source.html">metadata.h</a>.</p>
 
 </div>
 </div>
@@ -119,6 +136,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Length of the mKeys and mValues arrays, respectively </p>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2metadata_8h_source.html#l00158">158</a> of file <a class="el" href="include_2assimp_2metadata_8h_source.html">metadata.h</a>.</p>
+
 </div>
 </div>
 <a id="a1993c41d93b8c22e1fc8985172d2cc3e" name="a1993c41d93b8c22e1fc8985172d2cc3e"></a>
@@ -128,11 +147,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_metadata_entry.html">aiMetadataEntry</a> * aiMetadata::mValues</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_metadata_entry.html">aiMetadataEntry</a> * aiMetadata::mValues</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Arrays of values, may not be NULL. Entries in this array may be NULL if the corresponding property key has no assigned value. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2metadata_8h_source.html#l00165">165</a> of file <a class="el" href="include_2assimp_2metadata_8h_source.html">metadata.h</a>.</p>
 
 </div>
 </div>

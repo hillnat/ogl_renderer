@@ -2,262 +2,262 @@
 \label{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/ParsingUtils.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/ParsingUtils.h}}
 \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
-\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{4 \textcolor{comment}{}}
-\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
-\DoxyCodeLine{6 \textcolor{comment}{}}
-\DoxyCodeLine{7 \textcolor{comment}{All rights reserved.}}
-\DoxyCodeLine{8 \textcolor{comment}{}}
-\DoxyCodeLine{9 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
-\DoxyCodeLine{10 \textcolor{comment}{with or without modification, are permitted provided that the}}
-\DoxyCodeLine{11 \textcolor{comment}{following conditions are met:}}
-\DoxyCodeLine{12 \textcolor{comment}{}}
-\DoxyCodeLine{13 \textcolor{comment}{* Redistributions of source code must retain the above}}
-\DoxyCodeLine{14 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{15 \textcolor{comment}{  following disclaimer.}}
-\DoxyCodeLine{16 \textcolor{comment}{}}
-\DoxyCodeLine{17 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
-\DoxyCodeLine{18 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{19 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
-\DoxyCodeLine{20 \textcolor{comment}{  materials provided with the distribution.}}
-\DoxyCodeLine{21 \textcolor{comment}{}}
-\DoxyCodeLine{22 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
-\DoxyCodeLine{23 \textcolor{comment}{  contributors may be used to endorse or promote products}}
-\DoxyCodeLine{24 \textcolor{comment}{  derived from this software without specific prior}}
-\DoxyCodeLine{25 \textcolor{comment}{  written permission of the assimp team.}}
-\DoxyCodeLine{26 \textcolor{comment}{}}
-\DoxyCodeLine{27 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
-\DoxyCodeLine{28 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
-\DoxyCodeLine{29 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
-\DoxyCodeLine{30 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
-\DoxyCodeLine{31 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
-\DoxyCodeLine{32 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
-\DoxyCodeLine{33 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
-\DoxyCodeLine{34 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
-\DoxyCodeLine{35 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
-\DoxyCodeLine{36 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
-\DoxyCodeLine{37 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
-\DoxyCodeLine{38 \textcolor{comment}{}}
-\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{40 \textcolor{comment}{*/}}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{45 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef AI\_PARSING\_UTILS\_H\_INC}}
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#define AI\_PARSING\_UTILS\_H\_INC}}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
-\DoxyCodeLine{50 \textcolor{preprocessor}{\#pragma GCC system\_header}}
-\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{52 }
-\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <assimp/StringComparison.h>}}
-\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <assimp/StringUtils.h>}}
-\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <assimp/defs.h>}}
-\DoxyCodeLine{56 }
-\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{58 \textcolor{preprocessor}{\#include <algorithm>}}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{60 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
-\DoxyCodeLine{61 }
-\DoxyCodeLine{62 \textcolor{comment}{// NOTE: the functions below are mostly intended as replacement for}}
-\DoxyCodeLine{63 \textcolor{comment}{// std::upper, std::lower, std::isupper, std::islower, std::isspace.}}
-\DoxyCodeLine{64 \textcolor{comment}{// we don't bother of locales. We don't want them. We want reliable}}
-\DoxyCodeLine{65 \textcolor{comment}{// (i.e. identical) results across all locales.}}
-\DoxyCodeLine{66 }
-\DoxyCodeLine{67 \textcolor{comment}{// The functions below accept any character type, but know only}}
-\DoxyCodeLine{68 \textcolor{comment}{// about ASCII. However, UTF-\/32 is the only safe ASCII superset to}}
-\DoxyCodeLine{69 \textcolor{comment}{// use since it doesn't have multi-\/byte sequences.}}
-\DoxyCodeLine{70 }
-\DoxyCodeLine{71 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} BufferSize = 4096;}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{73 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{74 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
-\DoxyCodeLine{75 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IsUpper(char\_t in) \{}
-\DoxyCodeLine{76     \textcolor{keywordflow}{return} (in >= (char\_t)\textcolor{charliteral}{'A'} \&\& in <= (char\_t)\textcolor{charliteral}{'Z'});}
-\DoxyCodeLine{77 \}}
-\DoxyCodeLine{78 }
-\DoxyCodeLine{79 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{80 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
-\DoxyCodeLine{81 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IsLower(char\_t in) \{}
-\DoxyCodeLine{82     \textcolor{keywordflow}{return} (in >= (char\_t)\textcolor{charliteral}{'a'} \&\& in <= (char\_t)\textcolor{charliteral}{'z'});}
-\DoxyCodeLine{83 \}}
-\DoxyCodeLine{84 }
-\DoxyCodeLine{85 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{86 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
-\DoxyCodeLine{87 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IsSpace(char\_t in) \{}
-\DoxyCodeLine{88     \textcolor{keywordflow}{return} (in == (char\_t)\textcolor{charliteral}{' '} || in == (char\_t)\textcolor{charliteral}{'\(\backslash\)t'});}
-\DoxyCodeLine{89 \}}
-\DoxyCodeLine{90 }
-\DoxyCodeLine{91 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{92 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
-\DoxyCodeLine{93 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IsLineEnd(char\_t in) \{}
-\DoxyCodeLine{94     \textcolor{keywordflow}{return} (in == (char\_t)\textcolor{charliteral}{'\(\backslash\)r'} || in == (char\_t)\textcolor{charliteral}{'\(\backslash\)n'} || in == (char\_t)\textcolor{charliteral}{'\(\backslash\)0'} || in == (char\_t)\textcolor{charliteral}{'\(\backslash\)f'});}
-\DoxyCodeLine{95 \}}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{97 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{98 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
-\DoxyCodeLine{99 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IsSpaceOrNewLine(char\_t in) \{}
-\DoxyCodeLine{100     \textcolor{keywordflow}{return} IsSpace<char\_t>(in) || IsLineEnd<char\_t>(in);}
-\DoxyCodeLine{101 \}}
-\DoxyCodeLine{102 }
-\DoxyCodeLine{103 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{104 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
-\DoxyCodeLine{105 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} SkipSpaces(\textcolor{keyword}{const} char\_t *in, \textcolor{keyword}{const} char\_t **out, \textcolor{keyword}{const} char\_t *end) \{}
-\DoxyCodeLine{106     \textcolor{keywordflow}{while} ((*in == (char\_t)\textcolor{charliteral}{' '} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)t'}) \&\& in != end) \{}
-\DoxyCodeLine{107         ++in;}
-\DoxyCodeLine{108     \}}
-\DoxyCodeLine{109     *out = in;}
-\DoxyCodeLine{110     \textcolor{keywordflow}{return} !IsLineEnd<char\_t>(*in);}
-\DoxyCodeLine{111 \}}
-\DoxyCodeLine{112 }
-\DoxyCodeLine{113 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{114 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
-\DoxyCodeLine{115 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} SkipSpaces(\textcolor{keyword}{const} char\_t **inout, \textcolor{keyword}{const} char\_t *end) \{}
-\DoxyCodeLine{116     \textcolor{keywordflow}{return} SkipSpaces<char\_t>(*inout, inout, end);}
-\DoxyCodeLine{117 \}}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{119 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{120 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
-\DoxyCodeLine{121 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} SkipLine(\textcolor{keyword}{const} char\_t *in, \textcolor{keyword}{const} char\_t **out, \textcolor{keyword}{const} char\_t *end) \{}
-\DoxyCodeLine{122     \textcolor{keywordflow}{while} ((*in != (char\_t)\textcolor{charliteral}{'\(\backslash\)r'} \&\& *in != (char\_t)\textcolor{charliteral}{'\(\backslash\)n'} \&\& *in != (char\_t)\textcolor{charliteral}{'\(\backslash\)0'}) \&\& in != end) \{}
-\DoxyCodeLine{123         ++in;}
-\DoxyCodeLine{124     \}}
-\DoxyCodeLine{125 }
-\DoxyCodeLine{126     \textcolor{comment}{// files are opened in binary mode. Ergo there are both NL and CR}}
-\DoxyCodeLine{127     \textcolor{keywordflow}{while} ((*in == (char\_t)\textcolor{charliteral}{'\(\backslash\)r'} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)n'}) \&\& in != end) \{}
-\DoxyCodeLine{128         ++in;}
-\DoxyCodeLine{129     \}}
-\DoxyCodeLine{130     *out = in;}
-\DoxyCodeLine{131     \textcolor{keywordflow}{return} *in != (char\_t)\textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{132 \}}
-\DoxyCodeLine{133 }
-\DoxyCodeLine{134 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{135 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
-\DoxyCodeLine{136 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} SkipLine(\textcolor{keyword}{const} char\_t **inout, \textcolor{keyword}{const} char\_t *end) \{}
-\DoxyCodeLine{137     \textcolor{keywordflow}{return} SkipLine<char\_t>(*inout, inout, end);}
-\DoxyCodeLine{138 \}}
-\DoxyCodeLine{139 }
-\DoxyCodeLine{140 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{141 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
-\DoxyCodeLine{142 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} SkipSpacesAndLineEnd(\textcolor{keyword}{const} char\_t *in, \textcolor{keyword}{const} char\_t **out, \textcolor{keyword}{const} char\_t  *end) \{}
-\DoxyCodeLine{143     \textcolor{keywordflow}{while} ((*in == (char\_t)\textcolor{charliteral}{' '} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)t'} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)r'} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)n'}) \&\& in != end) \{}
-\DoxyCodeLine{144         ++in;}
-\DoxyCodeLine{145     \}}
-\DoxyCodeLine{146     *out = in;}
-\DoxyCodeLine{147     \textcolor{keywordflow}{return} *in != \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{148 \}}
-\DoxyCodeLine{149 }
-\DoxyCodeLine{150 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{151 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
-\DoxyCodeLine{152 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} SkipSpacesAndLineEnd(\textcolor{keyword}{const} char\_t **inout, \textcolor{keyword}{const} char\_t *end) \{}
-\DoxyCodeLine{153     \textcolor{keywordflow}{return} SkipSpacesAndLineEnd<char\_t>(*inout, inout, end);}
-\DoxyCodeLine{154 \}}
-\DoxyCodeLine{155 }
-\DoxyCodeLine{156 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{157 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
-\DoxyCodeLine{158 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} GetNextLine(\textcolor{keyword}{const} char\_t *\&buffer, char\_t out[BufferSize]) \{}
-\DoxyCodeLine{159     \textcolor{keywordflow}{if} ((char\_t)\textcolor{charliteral}{'\(\backslash\)0'} == *buffer) \{}
-\DoxyCodeLine{160         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{161     \}}
-\DoxyCodeLine{162 }
-\DoxyCodeLine{163     \textcolor{keywordtype}{char} *\_out = out;}
-\DoxyCodeLine{164     \textcolor{keywordtype}{char} *\textcolor{keyword}{const} end = \_out + BufferSize;}
-\DoxyCodeLine{165     \textcolor{keywordflow}{while} (!IsLineEnd(*buffer) \&\& \_out < end) \{}
-\DoxyCodeLine{166         *\_out++ = *buffer++;}
-\DoxyCodeLine{167     \}}
-\DoxyCodeLine{168     *\_out = (char\_t)\textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{169 }
-\DoxyCodeLine{170     \textcolor{keywordflow}{while} (IsLineEnd(*buffer) \&\& \textcolor{charliteral}{'\(\backslash\)0'} != *buffer) \{}
-\DoxyCodeLine{171         ++buffer;}
-\DoxyCodeLine{172     \}}
-\DoxyCodeLine{173 }
-\DoxyCodeLine{174     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{175 \}}
-\DoxyCodeLine{176 }
-\DoxyCodeLine{177 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{178 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
-\DoxyCodeLine{179 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} IsNumeric(char\_t in) \{}
-\DoxyCodeLine{180     \textcolor{keywordflow}{return} (in >= \textcolor{charliteral}{'0'} \&\& in <= \textcolor{charliteral}{'9'}) || \textcolor{charliteral}{'-\/'} == in || \textcolor{charliteral}{'+'} == in;}
-\DoxyCodeLine{181 \}}
-\DoxyCodeLine{182 }
-\DoxyCodeLine{183 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{184 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
-\DoxyCodeLine{185 AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} TokenMatch(char\_t *\&in, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *token, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} len) \{}
-\DoxyCodeLine{186     \textcolor{keywordflow}{if} (!::strncmp(token, in, len) \&\& IsSpaceOrNewLine(in[len])) \{}
-\DoxyCodeLine{187         \textcolor{keywordflow}{if} (in[len] != \textcolor{charliteral}{'\(\backslash\)0'}) \{}
-\DoxyCodeLine{188             in += len + 1;}
-\DoxyCodeLine{189         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{190             \textcolor{comment}{// If EOF after the token make sure we don't go past end of buffer}}
-\DoxyCodeLine{191             in += len;}
-\DoxyCodeLine{192         \}}
-\DoxyCodeLine{193         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{194     \}}
-\DoxyCodeLine{195 }
-\DoxyCodeLine{196     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{197 \}}
-\DoxyCodeLine{198 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{204 \textcolor{comment}{}AI\_FORCE\_INLINE \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a3bd333f65bd8da9590190ed27987e47f}{TokenMatchI}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\&in, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *token, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} len) \{}
-\DoxyCodeLine{205     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespace_assimp_a5718d462fef0070afea1d4ac4e65d4d8}{ASSIMP\_strincmp}}(token, in, len) \&\& IsSpaceOrNewLine(in[len])) \{}
-\DoxyCodeLine{206         in += len + 1;}
-\DoxyCodeLine{207         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{208     \}}
-\DoxyCodeLine{209     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{210 \}}
-\DoxyCodeLine{211 }
-\DoxyCodeLine{212 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{213 AI\_FORCE\_INLINE \textcolor{keywordtype}{void} SkipToken(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\&in, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *end) \{}
-\DoxyCodeLine{214     SkipSpaces(\&in, end);}
-\DoxyCodeLine{215     \textcolor{keywordflow}{while} (!IsSpaceOrNewLine(*in)) \{}
-\DoxyCodeLine{216         ++in;}
-\DoxyCodeLine{217     \}}
-\DoxyCodeLine{218 \}}
-\DoxyCodeLine{219 }
-\DoxyCodeLine{220 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{221 AI\_FORCE\_INLINE std::string GetNextToken(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\&in, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *end) \{}
-\DoxyCodeLine{222     SkipSpacesAndLineEnd(\&in, end);}
-\DoxyCodeLine{223     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *cur = in;}
-\DoxyCodeLine{224     \textcolor{keywordflow}{while} (!IsSpaceOrNewLine(*in)) \{}
-\DoxyCodeLine{225         ++in;}
-\DoxyCodeLine{226     \}}
-\DoxyCodeLine{227     \textcolor{keywordflow}{return} std::string(cur, (\textcolor{keywordtype}{size\_t})(in -\/ cur));}
-\DoxyCodeLine{228 \}}
-\DoxyCodeLine{229 }
-\DoxyCodeLine{230 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{237 \textcolor{comment}{}\textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{string}\_type>}
-\DoxyCodeLine{238 AI\_FORCE\_INLINE \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespace_assimp_a0e0c2d9e4239076705ccee261d0c2e70}{tokenize}}(\textcolor{keyword}{const} string\_type \&str, std::vector<string\_type> \&tokens,}
-\DoxyCodeLine{239         \textcolor{keyword}{const} string\_type \&delimiters) \{}
-\DoxyCodeLine{240     \textcolor{comment}{// Skip delimiters at beginning.}}
-\DoxyCodeLine{241     \textcolor{keyword}{typename} string\_type::size\_type lastPos = str.find\_first\_not\_of(delimiters, 0);}
-\DoxyCodeLine{242 }
-\DoxyCodeLine{243     \textcolor{comment}{// Find first "{}non-\/delimiter"{}.}}
-\DoxyCodeLine{244     \textcolor{keyword}{typename} string\_type::size\_type pos = str.find\_first\_of(delimiters, lastPos);}
-\DoxyCodeLine{245     \textcolor{keywordflow}{while} (string\_type::npos != pos || string\_type::npos != lastPos) \{}
-\DoxyCodeLine{246         \textcolor{comment}{// Found a token, add it to the vector.}}
-\DoxyCodeLine{247         string\_type tmp = str.substr(lastPos, pos -\/ lastPos);}
-\DoxyCodeLine{248         \textcolor{keywordflow}{if} (!tmp.empty() \&\& \textcolor{charliteral}{' '} != tmp[0])}
-\DoxyCodeLine{249             tokens.push\_back(tmp);}
-\DoxyCodeLine{250 }
-\DoxyCodeLine{251         \textcolor{comment}{// Skip delimiters.  Note the "{}not\_of"{}}}
-\DoxyCodeLine{252         lastPos = str.find\_first\_not\_of(delimiters, pos);}
-\DoxyCodeLine{253 }
-\DoxyCodeLine{254         \textcolor{comment}{// Find next "{}non-\/delimiter"{}}}
-\DoxyCodeLine{255         pos = str.find\_first\_of(delimiters, lastPos);}
-\DoxyCodeLine{256     \}}
-\DoxyCodeLine{257 }
-\DoxyCodeLine{258     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(tokens.size());}
-\DoxyCodeLine{259 \}}
-\DoxyCodeLine{260 }
-\DoxyCodeLine{261 \textcolor{keyword}{inline} std::string ai\_stdStrToLower(\textcolor{keyword}{const} std::string \&str) \{}
-\DoxyCodeLine{262     std::string out(str);}
-\DoxyCodeLine{263     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < str.size(); ++i) \{}
-\DoxyCodeLine{264         out[i] = (char) tolower((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})out[i]);}
-\DoxyCodeLine{265     \}}
-\DoxyCodeLine{266     \textcolor{keywordflow}{return} out;}
-\DoxyCodeLine{267 \}}
-\DoxyCodeLine{268 }
-\DoxyCodeLine{269 \} \textcolor{comment}{// namespace Assimp}}
-\DoxyCodeLine{270 }
-\DoxyCodeLine{271 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// ! AI\_PARSING\_UTILS\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00002}00002 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00003}00003 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00004}00004 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00005}00005 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00006}00006 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00007}00007 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00008}00008 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00009}00009 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00010}00010 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00011}00011 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00012}00012 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00013}00013 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00014}00014 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00015}00015 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00016}00016 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00017}00017 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00018}00018 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00019}00019 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00020}00020 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00021}00021 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00022}00022 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00023}00023 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00024}00024 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00025}00025 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00026}00026 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00027}00027 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00028}00028 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00029}00029 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00030}00030 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00031}00031 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00032}00032 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00033}00033 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00034}00034 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00035}00035 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00036}00036 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00037}00037 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00038}00038 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00039}00039 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00040}00040 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00045}00045 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00046}00046 \textcolor{preprocessor}{\#ifndef AI\_PARSING\_UTILS\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00047}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_a1d0b610b6fd23f4a1be0957a10e10044}{00047}} \textcolor{preprocessor}{\#define AI\_PARSING\_UTILS\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00049}00049 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00050}00050 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00051}00051 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00053}00053 \textcolor{preprocessor}{\#include <assimp/StringComparison.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00054}00054 \textcolor{preprocessor}{\#include <assimp/StringUtils.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00055}00055 \textcolor{preprocessor}{\#include <assimp/defs.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00057}00057 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00058}00058 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00060}00060 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00062}00062 \textcolor{comment}{// NOTE: the functions below are mostly intended as replacement for}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00063}00063 \textcolor{comment}{// std::upper, std::lower, std::isupper, std::islower, std::isspace.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00064}00064 \textcolor{comment}{// we don't bother of locales. We don't want them. We want reliable}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00065}00065 \textcolor{comment}{// (i.e. identical) results across all locales.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00067}00067 \textcolor{comment}{// The functions below accept any character type, but know only}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00068}00068 \textcolor{comment}{// about ASCII. However, UTF-\/32 is the only safe ASCII superset to}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00069}00069 \textcolor{comment}{// use since it doesn't have multi-\/byte sequences.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00071}\mbox{\hyperlink{namespace_assimp_a20dc8581fd6ec886730e4cb443066f87}{00071}} \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespace_assimp_a20dc8581fd6ec886730e4cb443066f87}{BufferSize}} = 4096;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00073}00073 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00074}00074 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00075}00075 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a704d02684243c28d97f16184ca7da160}{IsUpper}}(char\_t in) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00076}00076     \textcolor{keywordflow}{return} (in >= (char\_t)\textcolor{charliteral}{'A'} \&\& in <= (char\_t)\textcolor{charliteral}{'Z'});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00077}00077 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00079}00079 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00080}00080 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00081}00081 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a9b1362fc8d49819d06aae521117255aa}{IsLower}}(char\_t in) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00082}00082     \textcolor{keywordflow}{return} (in >= (char\_t)\textcolor{charliteral}{'a'} \&\& in <= (char\_t)\textcolor{charliteral}{'z'});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00083}00083 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00085}00085 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00086}00086 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00087}00087 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a2dc3cfed4430c305908c17c403ced49c}{IsSpace}}(char\_t in) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00088}00088     \textcolor{keywordflow}{return} (in == (char\_t)\textcolor{charliteral}{' '} || in == (char\_t)\textcolor{charliteral}{'\(\backslash\)t'});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00089}00089 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00091}00091 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00092}00092 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00093}00093 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a99092e9b63e3e8bb88dc63e141d7157f}{IsLineEnd}}(char\_t in) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00094}00094     \textcolor{keywordflow}{return} (in == (char\_t)\textcolor{charliteral}{'\(\backslash\)r'} || in == (char\_t)\textcolor{charliteral}{'\(\backslash\)n'} || in == (char\_t)\textcolor{charliteral}{'\(\backslash\)0'} || in == (char\_t)\textcolor{charliteral}{'\(\backslash\)f'});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00095}00095 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00097}00097 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00098}00098 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00099}00099 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a3883df5611e6ba0bd986fd5694c47e35}{IsSpaceOrNewLine}}(char\_t in) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00100}00100     \textcolor{keywordflow}{return} IsSpace<char\_t>(in) || IsLineEnd<char\_t>(in);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00101}00101 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00103}00103 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00104}00104 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00105}00105 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a77e1d122d82c1e0905f5dc37ca72c0dc}{SkipSpaces}}(\textcolor{keyword}{const} char\_t *in, \textcolor{keyword}{const} char\_t **out, \textcolor{keyword}{const} char\_t *end) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00106}00106     \textcolor{keywordflow}{while} ((*in == (char\_t)\textcolor{charliteral}{' '} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)t'}) \&\& in != end) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00107}00107         ++in;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00108}00108     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00109}00109     *out = in;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00110}00110     \textcolor{keywordflow}{return} !IsLineEnd<char\_t>(*in);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00111}00111 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00113}00113 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00114}00114 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00115}00115 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a77e1d122d82c1e0905f5dc37ca72c0dc}{SkipSpaces}}(\textcolor{keyword}{const} char\_t **inout, \textcolor{keyword}{const} char\_t *end) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00116}00116     \textcolor{keywordflow}{return} SkipSpaces<char\_t>(*inout, inout, end);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00117}00117 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00119}00119 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00120}00120 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00121}00121 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a476258ae0b76954ccf1a95ab45305f58}{SkipLine}}(\textcolor{keyword}{const} char\_t *in, \textcolor{keyword}{const} char\_t **out, \textcolor{keyword}{const} char\_t *end) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00122}00122     \textcolor{keywordflow}{while} ((*in != (char\_t)\textcolor{charliteral}{'\(\backslash\)r'} \&\& *in != (char\_t)\textcolor{charliteral}{'\(\backslash\)n'} \&\& *in != (char\_t)\textcolor{charliteral}{'\(\backslash\)0'}) \&\& in != end) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00123}00123         ++in;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00124}00124     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00126}00126     \textcolor{comment}{// files are opened in binary mode. Ergo there are both NL and CR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00127}00127     \textcolor{keywordflow}{while} ((*in == (char\_t)\textcolor{charliteral}{'\(\backslash\)r'} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)n'}) \&\& in != end) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00128}00128         ++in;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00129}00129     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00130}00130     *out = in;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00131}00131     \textcolor{keywordflow}{return} *in != (char\_t)\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00132}00132 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00134}00134 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00135}00135 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00136}00136 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a476258ae0b76954ccf1a95ab45305f58}{SkipLine}}(\textcolor{keyword}{const} char\_t **inout, \textcolor{keyword}{const} char\_t *end) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00137}00137     \textcolor{keywordflow}{return} SkipLine<char\_t>(*inout, inout, end);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00138}00138 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00139}00139 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00140}00140 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00141}00141 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00142}00142 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a7fded9895754c979f0755aab49b97fd2}{SkipSpacesAndLineEnd}}(\textcolor{keyword}{const} char\_t *in, \textcolor{keyword}{const} char\_t **out, \textcolor{keyword}{const} char\_t  *end) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00143}00143     \textcolor{keywordflow}{while} ((*in == (char\_t)\textcolor{charliteral}{' '} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)t'} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)r'} || *in == (char\_t)\textcolor{charliteral}{'\(\backslash\)n'}) \&\& in != end) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00144}00144         ++in;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00145}00145     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00146}00146     *out = in;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00147}00147     \textcolor{keywordflow}{return} *in != \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00148}00148 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00150}00150 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00151}00151 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00152}00152 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a7fded9895754c979f0755aab49b97fd2}{SkipSpacesAndLineEnd}}(\textcolor{keyword}{const} char\_t **inout, \textcolor{keyword}{const} char\_t *end) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00153}00153     \textcolor{keywordflow}{return} SkipSpacesAndLineEnd<char\_t>(*inout, inout, end);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00154}00154 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00156}00156 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00157}00157 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00158}00158 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_afe5a72a3537a830b13ce020af6dd3161}{GetNextLine}}(\textcolor{keyword}{const} char\_t *\&buffer, char\_t out[\mbox{\hyperlink{namespace_assimp_a20dc8581fd6ec886730e4cb443066f87}{BufferSize}}]) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00159}00159     \textcolor{keywordflow}{if} ((char\_t)\textcolor{charliteral}{'\(\backslash\)0'} == *buffer) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00160}00160         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00161}00161     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00163}00163     \textcolor{keywordtype}{char} *\_out = out;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00164}00164     \textcolor{keywordtype}{char} *\textcolor{keyword}{const} \mbox{\hyperlink{group__gtx__range_ga4f3f6c88014b286c884c7fd76c1a6584}{end}} = \_out + \mbox{\hyperlink{namespace_assimp_a20dc8581fd6ec886730e4cb443066f87}{BufferSize}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00165}00165     \textcolor{keywordflow}{while} (!\mbox{\hyperlink{namespace_assimp_a99092e9b63e3e8bb88dc63e141d7157f}{IsLineEnd}}(*buffer) \&\& \_out < end) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00166}00166         *\_out++ = *buffer++;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00167}00167     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00168}00168     *\_out = (char\_t)\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00170}00170     \textcolor{keywordflow}{while} (\mbox{\hyperlink{namespace_assimp_a99092e9b63e3e8bb88dc63e141d7157f}{IsLineEnd}}(*buffer) \&\& \textcolor{charliteral}{'\(\backslash\)0'} != *buffer) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00171}00171         ++buffer;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00172}00172     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00173}00173 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00174}00174     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00175}00175 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00177}00177 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00178}00178 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00179}00179 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a66776110eb3e45aecf16baebd71ca713}{IsNumeric}}(char\_t in) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00180}00180     \textcolor{keywordflow}{return} (in >= \textcolor{charliteral}{'0'} \&\& in <= \textcolor{charliteral}{'9'}) || \textcolor{charliteral}{'-\/'} == in || \textcolor{charliteral}{'+'} == in;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00181}00181 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00182}00182 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00183}00183 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00184}00184 \textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{char}\_t>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00185}00185 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_ae4567ff539c9f9fc2b63598edbd3d4be}{TokenMatch}}(char\_t *\&in, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *token, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} len) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00186}00186     \textcolor{keywordflow}{if} (!::strncmp(token, in, len) \&\& \mbox{\hyperlink{namespace_assimp_a3883df5611e6ba0bd986fd5694c47e35}{IsSpaceOrNewLine}}(in[len])) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00187}00187         \textcolor{keywordflow}{if} (in[len] != \textcolor{charliteral}{'\(\backslash\)0'}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00188}00188             in += len + 1;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00189}00189         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00190}00190             \textcolor{comment}{// If EOF after the token make sure we don't go past end of buffer}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00191}00191             in += len;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00192}00192         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00193}00193         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00194}00194     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00195}00195 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00196}00196     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00197}00197 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00198}00198 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00204}00204 \textcolor{comment}{}\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_assimp_a3bd333f65bd8da9590190ed27987e47f}{TokenMatchI}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\&in, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *token, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} len) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00205}00205     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespace_assimp_a5718d462fef0070afea1d4ac4e65d4d8}{ASSIMP\_strincmp}}(token, in, len) \&\& \mbox{\hyperlink{namespace_assimp_a3883df5611e6ba0bd986fd5694c47e35}{IsSpaceOrNewLine}}(in[len])) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00206}00206         in += len + 1;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00207}00207         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00208}00208     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00209}00209     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00210}00210 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00211}00211 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00212}00212 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00213}00213 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_assimp_adfc8bd80961fc1047f705a80a80f3536}{SkipToken}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\&in, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *end) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00214}00214     \mbox{\hyperlink{namespace_assimp_a77e1d122d82c1e0905f5dc37ca72c0dc}{SkipSpaces}}(\&in, end);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00215}00215     \textcolor{keywordflow}{while} (!\mbox{\hyperlink{namespace_assimp_a3883df5611e6ba0bd986fd5694c47e35}{IsSpaceOrNewLine}}(*in)) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00216}00216         ++in;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00217}00217     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00218}00218 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00219}00219 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00220}00220 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00221}00221 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} std::string \mbox{\hyperlink{namespace_assimp_a17e1ae1e1c4b2e04771407f0ba0d205a}{GetNextToken}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\&in, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *end) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00222}00222     \mbox{\hyperlink{namespace_assimp_a7fded9895754c979f0755aab49b97fd2}{SkipSpacesAndLineEnd}}(\&in, end);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00223}00223     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *cur = in;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00224}00224     \textcolor{keywordflow}{while} (!\mbox{\hyperlink{namespace_assimp_a3883df5611e6ba0bd986fd5694c47e35}{IsSpaceOrNewLine}}(*in)) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00225}00225         ++in;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00226}00226     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00227}00227     \textcolor{keywordflow}{return} std::string(cur, (\textcolor{keywordtype}{size\_t})(in -\/ cur));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00228}00228 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00229}00229 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00230}00230 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00237}00237 \textcolor{comment}{}\textcolor{keyword}{template} <\textcolor{keyword}{class} \textcolor{keywordtype}{string}\_type>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00238}00238 \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\_FORCE\_INLINE}} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespace_assimp_a0e0c2d9e4239076705ccee261d0c2e70}{tokenize}}(\textcolor{keyword}{const} string\_type \&str, std::vector<string\_type> \&tokens,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00239}00239         \textcolor{keyword}{const} string\_type \&delimiters) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00240}00240     \textcolor{comment}{// Skip delimiters at beginning.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00241}00241     \textcolor{keyword}{typename} string\_type::size\_type lastPos = str.find\_first\_not\_of(delimiters, 0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00242}00242 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00243}00243     \textcolor{comment}{// Find first "{}non-\/delimiter"{}.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00244}00244     \textcolor{keyword}{typename} string\_type::size\_type pos = str.find\_first\_of(delimiters, lastPos);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00245}00245     \textcolor{keywordflow}{while} (string\_type::npos != pos || string\_type::npos != lastPos) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00246}00246         \textcolor{comment}{// Found a token, add it to the vector.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00247}00247         string\_type tmp = str.substr(lastPos, pos -\/ lastPos);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00248}00248         \textcolor{keywordflow}{if} (!tmp.empty() \&\& \textcolor{charliteral}{' '} != tmp[0])}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00249}00249             tokens.push\_back(tmp);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00250}00250 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00251}00251         \textcolor{comment}{// Skip delimiters.  Note the "{}not\_of"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00252}00252         lastPos = str.find\_first\_not\_of(delimiters, pos);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00253}00253 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00254}00254         \textcolor{comment}{// Find next "{}non-\/delimiter"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00255}00255         pos = str.find\_first\_of(delimiters, lastPos);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00256}00256     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00257}00257 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00258}00258     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(tokens.size());}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00259}00259 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00260}00260 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00261}00261 \textcolor{keyword}{inline} std::string \mbox{\hyperlink{namespace_assimp_a791c7116274a21bd2df15a70e3064676}{ai\_stdStrToLower}}(\textcolor{keyword}{const} std::string \&str) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00262}00262     std::string out(str);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00263}00263     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < str.size(); ++i) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00264}00264         out[i] = (char) tolower((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char})out[i]);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00265}00265     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00266}00266     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00267}00267 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00268}00268 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00269}00269 \} \textcolor{comment}{// namespace Assimp}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00270}00270 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source_l00271}00271 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// ! AI\_PARSING\_UTILS\_H\_INC}}
 
 \end{DoxyCode}

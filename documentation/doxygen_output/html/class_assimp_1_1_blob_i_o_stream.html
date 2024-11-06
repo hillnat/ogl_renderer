@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -75,6 +78,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_assimp_1_1_blob_i_o_stream-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Assimp::BlobIOStream Class Reference</div></div>
 </div><!--header-->
@@ -84,181 +89,209 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for Assimp::BlobIOStream:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_assimp_1_1_blob_i_o_stream.png" usemap="#Assimp::BlobIOStream_map" alt=""/>
-  <map id="Assimp::BlobIOStream_map" name="Assimp::BlobIOStream_map">
-<area href="class_assimp_1_1_i_o_stream.html" title="CPP-API: Class to handle file I/O for C++." alt="Assimp::IOStream" shape="rect" coords="0,168,195,192"/>
-<area href="class_assimp_1_1_i_o_stream.html" title="CPP-API: Class to handle file I/O for C++." alt="Assimp::IOStream" shape="rect" coords="410,168,605,192"/>
-<area href="class_assimp_1_1_i_o_stream.html" title="CPP-API: Class to handle file I/O for C++." alt="Assimp::IOStream" shape="rect" coords="820,168,1015,192"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_assimp_1_1_blob_i_o_stream__inherit__graph.png" border="0" usemap="#a_assimp_1_1_blob_i_o_stream_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_assimp_1_1_blob_i_o_stream_inherit__map" id="a_assimp_1_1_blob_i_o_stream_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,81,158,109"/>
+<area shape="rect" href="class_assimp_1_1_i_o_stream.html" title="CPP&#45;API: Class to handle file I/O for C++." alt="" coords="18,5,145,33"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for Assimp::BlobIOStream:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_blob_i_o_stream__coll__graph.png" border="0" usemap="#a_assimp_1_1_blob_i_o_stream_coll__map" alt="Collaboration graph"/></div>
+<map name="a_assimp_1_1_blob_i_o_stream_coll__map" id="a_assimp_1_1_blob_i_o_stream_coll__map">
+<area shape="rect" title=" " alt="" coords="5,175,158,203"/>
+<area shape="rect" href="class_assimp_1_1_i_o_stream.html" title="CPP&#45;API: Class to handle file I/O for C++." alt="" coords="18,82,145,110"/>
+<area shape="rect" href="class_assimp_1_1_blob_i_o_system.html" title=" " alt="" coords="169,82,322,110"/>
+<area shape="rect" href="class_assimp_1_1_i_o_system.html" title="CPP&#45;API: Interface to the file system." alt="" coords="181,5,310,33"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8f35d99f46306fe8e7b7fb02d8b09f38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a8f35d99f46306fe8e7b7fb02d8b09f38">BlobIOStream</a> (<a class="el" href="class_assimp_1_1_blob_i_o_system.html">BlobIOSystem</a> *creator, const std::string &amp;file, size_t initial=4096)</td></tr>
+<tr class="memitem:a8f35d99f46306fe8e7b7fb02d8b09f38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a8f35d99f46306fe8e7b7fb02d8b09f38">BlobIOStream</a> (<a class="el" href="class_assimp_1_1_blob_i_o_system.html">BlobIOSystem</a> *<a class="el" href="class_assimp_1_1_blob_i_o_stream.html#acce7e544886a2cd7da808666f3e3c467">creator</a>, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;<a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a3514f94a363e3c628207679fe56b2ad0">file</a>, size_t <a class="el" href="class_assimp_1_1_blob_i_o_stream.html#aea5ee46166027f83a377d8e9f1974628">initial</a>=4096)</td></tr>
 <tr class="memdesc:a8f35d99f46306fe8e7b7fb02d8b09f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class constructor with all needed parameters.  <a href="class_assimp_1_1_blob_i_o_stream.html#a8f35d99f46306fe8e7b7fb02d8b09f38">More...</a><br /></td></tr>
 <tr class="separator:a8f35d99f46306fe8e7b7fb02d8b09f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12c18de13363e35ee9a08550fcfbc41f"><td class="memItemLeft" align="right" valign="top"><a id="a12c18de13363e35ee9a08550fcfbc41f" name="a12c18de13363e35ee9a08550fcfbc41f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>~BlobIOStream</b> () override</td></tr>
-<tr class="memdesc:a12c18de13363e35ee9a08550fcfbc41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class destructor. <br /></td></tr>
+<tr class="memitem:a12c18de13363e35ee9a08550fcfbc41f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a12c18de13363e35ee9a08550fcfbc41f">~BlobIOStream</a> () override</td></tr>
+<tr class="memdesc:a12c18de13363e35ee9a08550fcfbc41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class destructor.  <a href="class_assimp_1_1_blob_i_o_stream.html#a12c18de13363e35ee9a08550fcfbc41f">More...</a><br /></td></tr>
 <tr class="separator:a12c18de13363e35ee9a08550fcfbc41f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae81d57b624c32b519d6049394d5aa1cb"><td class="memItemLeft" align="right" valign="top"><a id="ae81d57b624c32b519d6049394d5aa1cb" name="ae81d57b624c32b519d6049394d5aa1cb"></a>
-<a class="el" href="structai_export_data_blob.html">aiExportDataBlob</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetBlob</b> ()</td></tr>
+<tr class="memitem:ae81d57b624c32b519d6049394d5aa1cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structai_export_data_blob.html">aiExportDataBlob</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#ae81d57b624c32b519d6049394d5aa1cb">GetBlob</a> ()</td></tr>
 <tr class="separator:ae81d57b624c32b519d6049394d5aa1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7c647f5fee4cf0f34efdb637b08a6a3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#af7c647f5fee4cf0f34efdb637b08a6a3">Read</a> (void *, size_t, size_t) override</td></tr>
 <tr class="memdesc:af7c647f5fee4cf0f34efdb637b08a6a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read from the file.  <a href="class_assimp_1_1_blob_i_o_stream.html#af7c647f5fee4cf0f34efdb637b08a6a3">More...</a><br /></td></tr>
 <tr class="separator:af7c647f5fee4cf0f34efdb637b08a6a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ee82399ab9d8ea7d099311ca8daae31"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a4ee82399ab9d8ea7d099311ca8daae31">Write</a> (const void *pvBuffer, size_t pSize, size_t pCount) override</td></tr>
+<tr class="memitem:a4ee82399ab9d8ea7d099311ca8daae31"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a4ee82399ab9d8ea7d099311ca8daae31">Write</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *pvBuffer, size_t pSize, size_t pCount) override</td></tr>
 <tr class="memdesc:a4ee82399ab9d8ea7d099311ca8daae31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the file.  <a href="class_assimp_1_1_blob_i_o_stream.html#a4ee82399ab9d8ea7d099311ca8daae31">More...</a><br /></td></tr>
 <tr class="separator:a4ee82399ab9d8ea7d099311ca8daae31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9438feded7e3d11fe884a5c8bf58e01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2types_8h.html#a1f78dfb65090aa930cabb984c8abe711">aiReturn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#ac9438feded7e3d11fe884a5c8bf58e01">Seek</a> (size_t pOffset, <a class="el" href="include_2assimp_2types_8h.html#ac50fbaa57d78776ca99e42104d9b2786">aiOrigin</a> pOrigin) override</td></tr>
 <tr class="memdesc:ac9438feded7e3d11fe884a5c8bf58e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the read/write cursor of the file.  <a href="class_assimp_1_1_blob_i_o_stream.html#ac9438feded7e3d11fe884a5c8bf58e01">More...</a><br /></td></tr>
 <tr class="separator:ac9438feded7e3d11fe884a5c8bf58e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade466c822b6f0930c2744eb4ac799a4d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#ade466c822b6f0930c2744eb4ac799a4d">Tell</a> () const override</td></tr>
+<tr class="memitem:ade466c822b6f0930c2744eb4ac799a4d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#ade466c822b6f0930c2744eb4ac799a4d">Tell</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> override</td></tr>
 <tr class="memdesc:ade466c822b6f0930c2744eb4ac799a4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current position of the read/write cursor.  <a href="class_assimp_1_1_blob_i_o_stream.html#ade466c822b6f0930c2744eb4ac799a4d">More...</a><br /></td></tr>
 <tr class="separator:ade466c822b6f0930c2744eb4ac799a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5381f03b7609df4883ce2b1d1e30b61f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a5381f03b7609df4883ce2b1d1e30b61f">FileSize</a> () const override</td></tr>
+<tr class="memitem:a5381f03b7609df4883ce2b1d1e30b61f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a5381f03b7609df4883ce2b1d1e30b61f">FileSize</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> override</td></tr>
 <tr class="memdesc:a5381f03b7609df4883ce2b1d1e30b61f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns filesize Returns the filesize.  <a href="class_assimp_1_1_blob_i_o_stream.html#a5381f03b7609df4883ce2b1d1e30b61f">More...</a><br /></td></tr>
 <tr class="separator:a5381f03b7609df4883ce2b1d1e30b61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a586a52bd8dbadb1ea579f80bbaad68bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a586a52bd8dbadb1ea579f80bbaad68bd">Flush</a> () override</td></tr>
 <tr class="memdesc:a586a52bd8dbadb1ea579f80bbaad68bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush the contents of the file buffer (for writers) See fflush() for more details.  <a href="class_assimp_1_1_blob_i_o_stream.html#a586a52bd8dbadb1ea579f80bbaad68bd">More...</a><br /></td></tr>
 <tr class="separator:a586a52bd8dbadb1ea579f80bbaad68bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f35d99f46306fe8e7b7fb02d8b09f38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a8f35d99f46306fe8e7b7fb02d8b09f38">BlobIOStream</a> (<a class="el" href="class_assimp_1_1_blob_i_o_system.html">BlobIOSystem</a> *creator, const std::string &amp;file, size_t initial=4096)</td></tr>
+<tr class="memitem:a8f35d99f46306fe8e7b7fb02d8b09f38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a8f35d99f46306fe8e7b7fb02d8b09f38">BlobIOStream</a> (<a class="el" href="class_assimp_1_1_blob_i_o_system.html">BlobIOSystem</a> *<a class="el" href="class_assimp_1_1_blob_i_o_stream.html#acce7e544886a2cd7da808666f3e3c467">creator</a>, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;<a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a3514f94a363e3c628207679fe56b2ad0">file</a>, size_t <a class="el" href="class_assimp_1_1_blob_i_o_stream.html#aea5ee46166027f83a377d8e9f1974628">initial</a>=4096)</td></tr>
 <tr class="memdesc:a8f35d99f46306fe8e7b7fb02d8b09f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class constructor with all needed parameters.  <a href="class_assimp_1_1_blob_i_o_stream.html#a8f35d99f46306fe8e7b7fb02d8b09f38">More...</a><br /></td></tr>
 <tr class="separator:a8f35d99f46306fe8e7b7fb02d8b09f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12c18de13363e35ee9a08550fcfbc41f"><td class="memItemLeft" align="right" valign="top"><a id="a12c18de13363e35ee9a08550fcfbc41f" name="a12c18de13363e35ee9a08550fcfbc41f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>~BlobIOStream</b> () override</td></tr>
-<tr class="memdesc:a12c18de13363e35ee9a08550fcfbc41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class destructor. <br /></td></tr>
+<tr class="memitem:a12c18de13363e35ee9a08550fcfbc41f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a12c18de13363e35ee9a08550fcfbc41f">~BlobIOStream</a> () override</td></tr>
+<tr class="memdesc:a12c18de13363e35ee9a08550fcfbc41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class destructor.  <a href="class_assimp_1_1_blob_i_o_stream.html#a12c18de13363e35ee9a08550fcfbc41f">More...</a><br /></td></tr>
 <tr class="separator:a12c18de13363e35ee9a08550fcfbc41f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae81d57b624c32b519d6049394d5aa1cb"><td class="memItemLeft" align="right" valign="top"><a id="ae81d57b624c32b519d6049394d5aa1cb" name="ae81d57b624c32b519d6049394d5aa1cb"></a>
-<a class="el" href="structai_export_data_blob.html">aiExportDataBlob</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetBlob</b> ()</td></tr>
+<tr class="memitem:ae81d57b624c32b519d6049394d5aa1cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structai_export_data_blob.html">aiExportDataBlob</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#ae81d57b624c32b519d6049394d5aa1cb">GetBlob</a> ()</td></tr>
 <tr class="separator:ae81d57b624c32b519d6049394d5aa1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7c647f5fee4cf0f34efdb637b08a6a3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#af7c647f5fee4cf0f34efdb637b08a6a3">Read</a> (void *, size_t, size_t) override</td></tr>
 <tr class="memdesc:af7c647f5fee4cf0f34efdb637b08a6a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read from the file.  <a href="class_assimp_1_1_blob_i_o_stream.html#af7c647f5fee4cf0f34efdb637b08a6a3">More...</a><br /></td></tr>
 <tr class="separator:af7c647f5fee4cf0f34efdb637b08a6a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ee82399ab9d8ea7d099311ca8daae31"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a4ee82399ab9d8ea7d099311ca8daae31">Write</a> (const void *pvBuffer, size_t pSize, size_t pCount) override</td></tr>
+<tr class="memitem:a4ee82399ab9d8ea7d099311ca8daae31"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a4ee82399ab9d8ea7d099311ca8daae31">Write</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *pvBuffer, size_t pSize, size_t pCount) override</td></tr>
 <tr class="memdesc:a4ee82399ab9d8ea7d099311ca8daae31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the file.  <a href="class_assimp_1_1_blob_i_o_stream.html#a4ee82399ab9d8ea7d099311ca8daae31">More...</a><br /></td></tr>
 <tr class="separator:a4ee82399ab9d8ea7d099311ca8daae31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9438feded7e3d11fe884a5c8bf58e01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2types_8h.html#a1f78dfb65090aa930cabb984c8abe711">aiReturn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#ac9438feded7e3d11fe884a5c8bf58e01">Seek</a> (size_t pOffset, <a class="el" href="include_2assimp_2types_8h.html#ac50fbaa57d78776ca99e42104d9b2786">aiOrigin</a> pOrigin) override</td></tr>
 <tr class="memdesc:ac9438feded7e3d11fe884a5c8bf58e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the read/write cursor of the file.  <a href="class_assimp_1_1_blob_i_o_stream.html#ac9438feded7e3d11fe884a5c8bf58e01">More...</a><br /></td></tr>
 <tr class="separator:ac9438feded7e3d11fe884a5c8bf58e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade466c822b6f0930c2744eb4ac799a4d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#ade466c822b6f0930c2744eb4ac799a4d">Tell</a> () const override</td></tr>
+<tr class="memitem:ade466c822b6f0930c2744eb4ac799a4d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#ade466c822b6f0930c2744eb4ac799a4d">Tell</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> override</td></tr>
 <tr class="memdesc:ade466c822b6f0930c2744eb4ac799a4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current position of the read/write cursor.  <a href="class_assimp_1_1_blob_i_o_stream.html#ade466c822b6f0930c2744eb4ac799a4d">More...</a><br /></td></tr>
 <tr class="separator:ade466c822b6f0930c2744eb4ac799a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5381f03b7609df4883ce2b1d1e30b61f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a5381f03b7609df4883ce2b1d1e30b61f">FileSize</a> () const override</td></tr>
+<tr class="memitem:a5381f03b7609df4883ce2b1d1e30b61f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a5381f03b7609df4883ce2b1d1e30b61f">FileSize</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> override</td></tr>
 <tr class="memdesc:a5381f03b7609df4883ce2b1d1e30b61f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns filesize Returns the filesize.  <a href="class_assimp_1_1_blob_i_o_stream.html#a5381f03b7609df4883ce2b1d1e30b61f">More...</a><br /></td></tr>
 <tr class="separator:a5381f03b7609df4883ce2b1d1e30b61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a586a52bd8dbadb1ea579f80bbaad68bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a586a52bd8dbadb1ea579f80bbaad68bd">Flush</a> () override</td></tr>
 <tr class="memdesc:a586a52bd8dbadb1ea579f80bbaad68bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush the contents of the file buffer (for writers) See fflush() for more details.  <a href="class_assimp_1_1_blob_i_o_stream.html#a586a52bd8dbadb1ea579f80bbaad68bd">More...</a><br /></td></tr>
 <tr class="separator:a586a52bd8dbadb1ea579f80bbaad68bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f35d99f46306fe8e7b7fb02d8b09f38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a8f35d99f46306fe8e7b7fb02d8b09f38">BlobIOStream</a> (<a class="el" href="class_assimp_1_1_blob_i_o_system.html">BlobIOSystem</a> *creator, const std::string &amp;file, size_t initial=4096)</td></tr>
+<tr class="memitem:a8f35d99f46306fe8e7b7fb02d8b09f38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a8f35d99f46306fe8e7b7fb02d8b09f38">BlobIOStream</a> (<a class="el" href="class_assimp_1_1_blob_i_o_system.html">BlobIOSystem</a> *<a class="el" href="class_assimp_1_1_blob_i_o_stream.html#acce7e544886a2cd7da808666f3e3c467">creator</a>, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;<a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a3514f94a363e3c628207679fe56b2ad0">file</a>, size_t <a class="el" href="class_assimp_1_1_blob_i_o_stream.html#aea5ee46166027f83a377d8e9f1974628">initial</a>=4096)</td></tr>
 <tr class="memdesc:a8f35d99f46306fe8e7b7fb02d8b09f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class constructor with all needed parameters.  <a href="class_assimp_1_1_blob_i_o_stream.html#a8f35d99f46306fe8e7b7fb02d8b09f38">More...</a><br /></td></tr>
 <tr class="separator:a8f35d99f46306fe8e7b7fb02d8b09f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12c18de13363e35ee9a08550fcfbc41f"><td class="memItemLeft" align="right" valign="top"><a id="a12c18de13363e35ee9a08550fcfbc41f" name="a12c18de13363e35ee9a08550fcfbc41f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>~BlobIOStream</b> () override</td></tr>
-<tr class="memdesc:a12c18de13363e35ee9a08550fcfbc41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class destructor. <br /></td></tr>
+<tr class="memitem:a12c18de13363e35ee9a08550fcfbc41f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a12c18de13363e35ee9a08550fcfbc41f">~BlobIOStream</a> () override</td></tr>
+<tr class="memdesc:a12c18de13363e35ee9a08550fcfbc41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class destructor.  <a href="class_assimp_1_1_blob_i_o_stream.html#a12c18de13363e35ee9a08550fcfbc41f">More...</a><br /></td></tr>
 <tr class="separator:a12c18de13363e35ee9a08550fcfbc41f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae81d57b624c32b519d6049394d5aa1cb"><td class="memItemLeft" align="right" valign="top"><a id="ae81d57b624c32b519d6049394d5aa1cb" name="ae81d57b624c32b519d6049394d5aa1cb"></a>
-<a class="el" href="structai_export_data_blob.html">aiExportDataBlob</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetBlob</b> ()</td></tr>
+<tr class="memitem:ae81d57b624c32b519d6049394d5aa1cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structai_export_data_blob.html">aiExportDataBlob</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#ae81d57b624c32b519d6049394d5aa1cb">GetBlob</a> ()</td></tr>
 <tr class="separator:ae81d57b624c32b519d6049394d5aa1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7c647f5fee4cf0f34efdb637b08a6a3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#af7c647f5fee4cf0f34efdb637b08a6a3">Read</a> (void *, size_t, size_t) override</td></tr>
 <tr class="memdesc:af7c647f5fee4cf0f34efdb637b08a6a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read from the file.  <a href="class_assimp_1_1_blob_i_o_stream.html#af7c647f5fee4cf0f34efdb637b08a6a3">More...</a><br /></td></tr>
 <tr class="separator:af7c647f5fee4cf0f34efdb637b08a6a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ee82399ab9d8ea7d099311ca8daae31"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a4ee82399ab9d8ea7d099311ca8daae31">Write</a> (const void *pvBuffer, size_t pSize, size_t pCount) override</td></tr>
+<tr class="memitem:a4ee82399ab9d8ea7d099311ca8daae31"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a4ee82399ab9d8ea7d099311ca8daae31">Write</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *pvBuffer, size_t pSize, size_t pCount) override</td></tr>
 <tr class="memdesc:a4ee82399ab9d8ea7d099311ca8daae31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the file.  <a href="class_assimp_1_1_blob_i_o_stream.html#a4ee82399ab9d8ea7d099311ca8daae31">More...</a><br /></td></tr>
 <tr class="separator:a4ee82399ab9d8ea7d099311ca8daae31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9438feded7e3d11fe884a5c8bf58e01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2types_8h.html#a1f78dfb65090aa930cabb984c8abe711">aiReturn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#ac9438feded7e3d11fe884a5c8bf58e01">Seek</a> (size_t pOffset, <a class="el" href="include_2assimp_2types_8h.html#ac50fbaa57d78776ca99e42104d9b2786">aiOrigin</a> pOrigin) override</td></tr>
 <tr class="memdesc:ac9438feded7e3d11fe884a5c8bf58e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the read/write cursor of the file.  <a href="class_assimp_1_1_blob_i_o_stream.html#ac9438feded7e3d11fe884a5c8bf58e01">More...</a><br /></td></tr>
 <tr class="separator:ac9438feded7e3d11fe884a5c8bf58e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade466c822b6f0930c2744eb4ac799a4d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#ade466c822b6f0930c2744eb4ac799a4d">Tell</a> () const override</td></tr>
+<tr class="memitem:ade466c822b6f0930c2744eb4ac799a4d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#ade466c822b6f0930c2744eb4ac799a4d">Tell</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> override</td></tr>
 <tr class="memdesc:ade466c822b6f0930c2744eb4ac799a4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current position of the read/write cursor.  <a href="class_assimp_1_1_blob_i_o_stream.html#ade466c822b6f0930c2744eb4ac799a4d">More...</a><br /></td></tr>
 <tr class="separator:ade466c822b6f0930c2744eb4ac799a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5381f03b7609df4883ce2b1d1e30b61f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a5381f03b7609df4883ce2b1d1e30b61f">FileSize</a> () const override</td></tr>
+<tr class="memitem:a5381f03b7609df4883ce2b1d1e30b61f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a5381f03b7609df4883ce2b1d1e30b61f">FileSize</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> override</td></tr>
 <tr class="memdesc:a5381f03b7609df4883ce2b1d1e30b61f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns filesize Returns the filesize.  <a href="class_assimp_1_1_blob_i_o_stream.html#a5381f03b7609df4883ce2b1d1e30b61f">More...</a><br /></td></tr>
 <tr class="separator:a5381f03b7609df4883ce2b1d1e30b61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a586a52bd8dbadb1ea579f80bbaad68bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a586a52bd8dbadb1ea579f80bbaad68bd">Flush</a> () override</td></tr>
 <tr class="memdesc:a586a52bd8dbadb1ea579f80bbaad68bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush the contents of the file buffer (for writers) See fflush() for more details.  <a href="class_assimp_1_1_blob_i_o_stream.html#a586a52bd8dbadb1ea579f80bbaad68bd">More...</a><br /></td></tr>
 <tr class="separator:a586a52bd8dbadb1ea579f80bbaad68bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_assimp_1_1_i_o_stream"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_assimp_1_1_i_o_stream')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_assimp_1_1_i_o_stream.html">Assimp::IOStream</a></td></tr>
-<tr class="memitem:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top"><a id="a37f36a2106a7d02e737c1ce2d9578524" name="a37f36a2106a7d02e737c1ce2d9578524"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~IOStream</b> ()=default</td></tr>
-<tr class="memdesc:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. Deleting the object closes the underlying file, alternatively you may use <a class="el" href="class_assimp_1_1_i_o_system.html#a8c334d60f04bceeb6bd0157d21723f3e" title="Closes the given file and releases all resources associated with it.">IOSystem::Close()</a> to release the file. <br /></td></tr>
+<tr class="memitem:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a37f36a2106a7d02e737c1ce2d9578524">~IOStream</a> ()=default</td></tr>
+<tr class="memdesc:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. Deleting the object closes the underlying file, alternatively you may use <a class="el" href="class_assimp_1_1_i_o_system.html#a8c334d60f04bceeb6bd0157d21723f3e" title="Closes the given file and releases all resources associated with it.">IOSystem::Close()</a> to release the file.  <a href="class_assimp_1_1_i_o_stream.html#a37f36a2106a7d02e737c1ce2d9578524">More...</a><br /></td></tr>
 <tr class="separator:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae376f641020989d61863b9c6f55c7abf inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#ae376f641020989d61863b9c6f55c7abf">Read</a> (void *pvBuffer, size_t pSize, size_t pCount)=0</td></tr>
 <tr class="memdesc:ae376f641020989d61863b9c6f55c7abf inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read from the file.  <a href="class_assimp_1_1_i_o_stream.html#ae376f641020989d61863b9c6f55c7abf">More...</a><br /></td></tr>
 <tr class="separator:ae376f641020989d61863b9c6f55c7abf inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0ca4aae1b8c4d00db391ac3a4171f7b inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#ad0ca4aae1b8c4d00db391ac3a4171f7b">Write</a> (const void *pvBuffer, size_t pSize, size_t pCount)=0</td></tr>
+<tr class="memitem:ad0ca4aae1b8c4d00db391ac3a4171f7b inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#ad0ca4aae1b8c4d00db391ac3a4171f7b">Write</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *pvBuffer, size_t pSize, size_t pCount)=0</td></tr>
 <tr class="memdesc:ad0ca4aae1b8c4d00db391ac3a4171f7b inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the file.  <a href="class_assimp_1_1_i_o_stream.html#ad0ca4aae1b8c4d00db391ac3a4171f7b">More...</a><br /></td></tr>
 <tr class="separator:ad0ca4aae1b8c4d00db391ac3a4171f7b inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ed0dddf418ab08cf3fc21f3f3032220 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="include_2assimp_2types_8h.html#a1f78dfb65090aa930cabb984c8abe711">aiReturn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a5ed0dddf418ab08cf3fc21f3f3032220">Seek</a> (size_t pOffset, <a class="el" href="include_2assimp_2types_8h.html#ac50fbaa57d78776ca99e42104d9b2786">aiOrigin</a> pOrigin)=0</td></tr>
 <tr class="memdesc:a5ed0dddf418ab08cf3fc21f3f3032220 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the read/write cursor of the file.  <a href="class_assimp_1_1_i_o_stream.html#a5ed0dddf418ab08cf3fc21f3f3032220">More...</a><br /></td></tr>
 <tr class="separator:a5ed0dddf418ab08cf3fc21f3f3032220 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a316ac6cd16b5a493d1313f792c806194 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a316ac6cd16b5a493d1313f792c806194">Tell</a> () const =0</td></tr>
+<tr class="memitem:a316ac6cd16b5a493d1313f792c806194 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a316ac6cd16b5a493d1313f792c806194">Tell</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> =0</td></tr>
 <tr class="memdesc:a316ac6cd16b5a493d1313f792c806194 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current position of the read/write cursor.  <a href="class_assimp_1_1_i_o_stream.html#a316ac6cd16b5a493d1313f792c806194">More...</a><br /></td></tr>
 <tr class="separator:a316ac6cd16b5a493d1313f792c806194 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa01183d197fb714f28d6c611b6fa058 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#aaa01183d197fb714f28d6c611b6fa058">FileSize</a> () const =0</td></tr>
+<tr class="memitem:aaa01183d197fb714f28d6c611b6fa058 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#aaa01183d197fb714f28d6c611b6fa058">FileSize</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> =0</td></tr>
 <tr class="memdesc:aaa01183d197fb714f28d6c611b6fa058 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns filesize Returns the filesize.  <a href="class_assimp_1_1_i_o_stream.html#aaa01183d197fb714f28d6c611b6fa058">More...</a><br /></td></tr>
 <tr class="separator:aaa01183d197fb714f28d6c611b6fa058 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c19952446ece90924b246f087417899 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a7c19952446ece90924b246f087417899">Flush</a> ()=0</td></tr>
 <tr class="memdesc:a7c19952446ece90924b246f087417899 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush the contents of the file buffer (for writers) See fflush() for more details.  <a href="class_assimp_1_1_i_o_stream.html#a7c19952446ece90924b246f087417899">More...</a><br /></td></tr>
 <tr class="separator:a7c19952446ece90924b246f087417899 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top"><a id="a37f36a2106a7d02e737c1ce2d9578524" name="a37f36a2106a7d02e737c1ce2d9578524"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~IOStream</b> ()=default</td></tr>
-<tr class="memdesc:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. Deleting the object closes the underlying file, alternatively you may use <a class="el" href="class_assimp_1_1_i_o_system.html#a8c334d60f04bceeb6bd0157d21723f3e" title="Closes the given file and releases all resources associated with it.">IOSystem::Close()</a> to release the file. <br /></td></tr>
+<tr class="memitem:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a37f36a2106a7d02e737c1ce2d9578524">~IOStream</a> ()=default</td></tr>
+<tr class="memdesc:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. Deleting the object closes the underlying file, alternatively you may use <a class="el" href="class_assimp_1_1_i_o_system.html#a8c334d60f04bceeb6bd0157d21723f3e" title="Closes the given file and releases all resources associated with it.">IOSystem::Close()</a> to release the file.  <a href="class_assimp_1_1_i_o_stream.html#a37f36a2106a7d02e737c1ce2d9578524">More...</a><br /></td></tr>
 <tr class="separator:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae376f641020989d61863b9c6f55c7abf inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#ae376f641020989d61863b9c6f55c7abf">Read</a> (void *pvBuffer, size_t pSize, size_t pCount)=0</td></tr>
 <tr class="memdesc:ae376f641020989d61863b9c6f55c7abf inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read from the file.  <a href="class_assimp_1_1_i_o_stream.html#ae376f641020989d61863b9c6f55c7abf">More...</a><br /></td></tr>
 <tr class="separator:ae376f641020989d61863b9c6f55c7abf inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0ca4aae1b8c4d00db391ac3a4171f7b inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#ad0ca4aae1b8c4d00db391ac3a4171f7b">Write</a> (const void *pvBuffer, size_t pSize, size_t pCount)=0</td></tr>
+<tr class="memitem:ad0ca4aae1b8c4d00db391ac3a4171f7b inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#ad0ca4aae1b8c4d00db391ac3a4171f7b">Write</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *pvBuffer, size_t pSize, size_t pCount)=0</td></tr>
 <tr class="memdesc:ad0ca4aae1b8c4d00db391ac3a4171f7b inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the file.  <a href="class_assimp_1_1_i_o_stream.html#ad0ca4aae1b8c4d00db391ac3a4171f7b">More...</a><br /></td></tr>
 <tr class="separator:ad0ca4aae1b8c4d00db391ac3a4171f7b inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ed0dddf418ab08cf3fc21f3f3032220 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="include_2assimp_2types_8h.html#a1f78dfb65090aa930cabb984c8abe711">aiReturn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a5ed0dddf418ab08cf3fc21f3f3032220">Seek</a> (size_t pOffset, <a class="el" href="include_2assimp_2types_8h.html#ac50fbaa57d78776ca99e42104d9b2786">aiOrigin</a> pOrigin)=0</td></tr>
 <tr class="memdesc:a5ed0dddf418ab08cf3fc21f3f3032220 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the read/write cursor of the file.  <a href="class_assimp_1_1_i_o_stream.html#a5ed0dddf418ab08cf3fc21f3f3032220">More...</a><br /></td></tr>
 <tr class="separator:a5ed0dddf418ab08cf3fc21f3f3032220 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a316ac6cd16b5a493d1313f792c806194 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a316ac6cd16b5a493d1313f792c806194">Tell</a> () const =0</td></tr>
+<tr class="memitem:a316ac6cd16b5a493d1313f792c806194 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a316ac6cd16b5a493d1313f792c806194">Tell</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> =0</td></tr>
 <tr class="memdesc:a316ac6cd16b5a493d1313f792c806194 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current position of the read/write cursor.  <a href="class_assimp_1_1_i_o_stream.html#a316ac6cd16b5a493d1313f792c806194">More...</a><br /></td></tr>
 <tr class="separator:a316ac6cd16b5a493d1313f792c806194 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa01183d197fb714f28d6c611b6fa058 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#aaa01183d197fb714f28d6c611b6fa058">FileSize</a> () const =0</td></tr>
+<tr class="memitem:aaa01183d197fb714f28d6c611b6fa058 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#aaa01183d197fb714f28d6c611b6fa058">FileSize</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> =0</td></tr>
 <tr class="memdesc:aaa01183d197fb714f28d6c611b6fa058 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns filesize Returns the filesize.  <a href="class_assimp_1_1_i_o_stream.html#aaa01183d197fb714f28d6c611b6fa058">More...</a><br /></td></tr>
 <tr class="separator:aaa01183d197fb714f28d6c611b6fa058 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c19952446ece90924b246f087417899 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a7c19952446ece90924b246f087417899">Flush</a> ()=0</td></tr>
 <tr class="memdesc:a7c19952446ece90924b246f087417899 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush the contents of the file buffer (for writers) See fflush() for more details.  <a href="class_assimp_1_1_i_o_stream.html#a7c19952446ece90924b246f087417899">More...</a><br /></td></tr>
 <tr class="separator:a7c19952446ece90924b246f087417899 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top"><a id="a37f36a2106a7d02e737c1ce2d9578524" name="a37f36a2106a7d02e737c1ce2d9578524"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~IOStream</b> ()=default</td></tr>
-<tr class="memdesc:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. Deleting the object closes the underlying file, alternatively you may use <a class="el" href="class_assimp_1_1_i_o_system.html#a8c334d60f04bceeb6bd0157d21723f3e" title="Closes the given file and releases all resources associated with it.">IOSystem::Close()</a> to release the file. <br /></td></tr>
+<tr class="memitem:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a37f36a2106a7d02e737c1ce2d9578524">~IOStream</a> ()=default</td></tr>
+<tr class="memdesc:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. Deleting the object closes the underlying file, alternatively you may use <a class="el" href="class_assimp_1_1_i_o_system.html#a8c334d60f04bceeb6bd0157d21723f3e" title="Closes the given file and releases all resources associated with it.">IOSystem::Close()</a> to release the file.  <a href="class_assimp_1_1_i_o_stream.html#a37f36a2106a7d02e737c1ce2d9578524">More...</a><br /></td></tr>
 <tr class="separator:a37f36a2106a7d02e737c1ce2d9578524 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae376f641020989d61863b9c6f55c7abf inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#ae376f641020989d61863b9c6f55c7abf">Read</a> (void *pvBuffer, size_t pSize, size_t pCount)=0</td></tr>
 <tr class="memdesc:ae376f641020989d61863b9c6f55c7abf inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read from the file.  <a href="class_assimp_1_1_i_o_stream.html#ae376f641020989d61863b9c6f55c7abf">More...</a><br /></td></tr>
 <tr class="separator:ae376f641020989d61863b9c6f55c7abf inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0ca4aae1b8c4d00db391ac3a4171f7b inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#ad0ca4aae1b8c4d00db391ac3a4171f7b">Write</a> (const void *pvBuffer, size_t pSize, size_t pCount)=0</td></tr>
+<tr class="memitem:ad0ca4aae1b8c4d00db391ac3a4171f7b inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#ad0ca4aae1b8c4d00db391ac3a4171f7b">Write</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *pvBuffer, size_t pSize, size_t pCount)=0</td></tr>
 <tr class="memdesc:ad0ca4aae1b8c4d00db391ac3a4171f7b inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the file.  <a href="class_assimp_1_1_i_o_stream.html#ad0ca4aae1b8c4d00db391ac3a4171f7b">More...</a><br /></td></tr>
 <tr class="separator:ad0ca4aae1b8c4d00db391ac3a4171f7b inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ed0dddf418ab08cf3fc21f3f3032220 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="include_2assimp_2types_8h.html#a1f78dfb65090aa930cabb984c8abe711">aiReturn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a5ed0dddf418ab08cf3fc21f3f3032220">Seek</a> (size_t pOffset, <a class="el" href="include_2assimp_2types_8h.html#ac50fbaa57d78776ca99e42104d9b2786">aiOrigin</a> pOrigin)=0</td></tr>
 <tr class="memdesc:a5ed0dddf418ab08cf3fc21f3f3032220 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the read/write cursor of the file.  <a href="class_assimp_1_1_i_o_stream.html#a5ed0dddf418ab08cf3fc21f3f3032220">More...</a><br /></td></tr>
 <tr class="separator:a5ed0dddf418ab08cf3fc21f3f3032220 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a316ac6cd16b5a493d1313f792c806194 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a316ac6cd16b5a493d1313f792c806194">Tell</a> () const =0</td></tr>
+<tr class="memitem:a316ac6cd16b5a493d1313f792c806194 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a316ac6cd16b5a493d1313f792c806194">Tell</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> =0</td></tr>
 <tr class="memdesc:a316ac6cd16b5a493d1313f792c806194 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current position of the read/write cursor.  <a href="class_assimp_1_1_i_o_stream.html#a316ac6cd16b5a493d1313f792c806194">More...</a><br /></td></tr>
 <tr class="separator:a316ac6cd16b5a493d1313f792c806194 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa01183d197fb714f28d6c611b6fa058 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#aaa01183d197fb714f28d6c611b6fa058">FileSize</a> () const =0</td></tr>
+<tr class="memitem:aaa01183d197fb714f28d6c611b6fa058 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#aaa01183d197fb714f28d6c611b6fa058">FileSize</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> =0</td></tr>
 <tr class="memdesc:aaa01183d197fb714f28d6c611b6fa058 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns filesize Returns the filesize.  <a href="class_assimp_1_1_i_o_stream.html#aaa01183d197fb714f28d6c611b6fa058">More...</a><br /></td></tr>
 <tr class="separator:aaa01183d197fb714f28d6c611b6fa058 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c19952446ece90924b246f087417899 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a7c19952446ece90924b246f087417899">Flush</a> ()=0</td></tr>
 <tr class="memdesc:a7c19952446ece90924b246f087417899 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush the contents of the file buffer (for writers) See fflush() for more details.  <a href="class_assimp_1_1_i_o_stream.html#a7c19952446ece90924b246f087417899">More...</a><br /></td></tr>
 <tr class="separator:a7c19952446ece90924b246f087417899 inherit pub_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a9cf9828edeb38e0d70c3ff0784f46216"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a9cf9828edeb38e0d70c3ff0784f46216">Grow</a> (size_t need=0)</td></tr>
+<tr class="separator:a9cf9828edeb38e0d70c3ff0784f46216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cf9828edeb38e0d70c3ff0784f46216"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a9cf9828edeb38e0d70c3ff0784f46216">Grow</a> (size_t need=0)</td></tr>
+<tr class="separator:a9cf9828edeb38e0d70c3ff0784f46216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cf9828edeb38e0d70c3ff0784f46216"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a9cf9828edeb38e0d70c3ff0784f46216">Grow</a> (size_t need=0)</td></tr>
+<tr class="separator:a9cf9828edeb38e0d70c3ff0784f46216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a32a457aee2db7ff1498dd64c83e5a074"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a32a457aee2db7ff1498dd64c83e5a074">buffer</a></td></tr>
+<tr class="separator:a32a457aee2db7ff1498dd64c83e5a074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae439326641887108b324b580a9d58ed5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#ae439326641887108b324b580a9d58ed5">cur_size</a></td></tr>
+<tr class="separator:ae439326641887108b324b580a9d58ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aee0eb61f46e2f7c7867a527dd29e38"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a6aee0eb61f46e2f7c7867a527dd29e38">file_size</a></td></tr>
+<tr class="separator:a6aee0eb61f46e2f7c7867a527dd29e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5483134b78159cc971ce60040f6ce69f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a5483134b78159cc971ce60040f6ce69f">cursor</a></td></tr>
+<tr class="separator:a5483134b78159cc971ce60040f6ce69f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea5ee46166027f83a377d8e9f1974628"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#aea5ee46166027f83a377d8e9f1974628">initial</a></td></tr>
+<tr class="separator:aea5ee46166027f83a377d8e9f1974628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3514f94a363e3c628207679fe56b2ad0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#a3514f94a363e3c628207679fe56b2ad0">file</a></td></tr>
+<tr class="separator:a3514f94a363e3c628207679fe56b2ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acce7e544886a2cd7da808666f3e3c467"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_blob_i_o_system.html">BlobIOSystem</a> *<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_blob_i_o_stream.html#acce7e544886a2cd7da808666f3e3c467">creator</a></td></tr>
+<tr class="separator:acce7e544886a2cd7da808666f3e3c467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_assimp_1_1_i_o_stream"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_assimp_1_1_i_o_stream')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_assimp_1_1_i_o_stream.html">Assimp::IOStream</a></td></tr>
-<tr class="memitem:a5bbd3d47eb659614e148e329bd5c3583 inherit pro_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a5bbd3d47eb659614e148e329bd5c3583">IOStream</a> () AI_NO_EXCEPT=default</td></tr>
+<tr class="memitem:a5bbd3d47eb659614e148e329bd5c3583 inherit pro_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a5bbd3d47eb659614e148e329bd5c3583">IOStream</a> () <a class="el" href="include_2assimp_2defs_8h.html#ae032f18edd69bf6ba935ef9feb025a96">AI_NO_EXCEPT</a>=default</td></tr>
 <tr class="separator:a5bbd3d47eb659614e148e329bd5c3583 inherit pro_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bbd3d47eb659614e148e329bd5c3583 inherit pro_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a5bbd3d47eb659614e148e329bd5c3583">IOStream</a> () AI_NO_EXCEPT=default</td></tr>
+<tr class="memitem:a5bbd3d47eb659614e148e329bd5c3583 inherit pro_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a5bbd3d47eb659614e148e329bd5c3583">IOStream</a> () <a class="el" href="include_2assimp_2defs_8h.html#ae032f18edd69bf6ba935ef9feb025a96">AI_NO_EXCEPT</a>=default</td></tr>
 <tr class="separator:a5bbd3d47eb659614e148e329bd5c3583 inherit pro_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bbd3d47eb659614e148e329bd5c3583 inherit pro_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a5bbd3d47eb659614e148e329bd5c3583">IOStream</a> () AI_NO_EXCEPT=default</td></tr>
+<tr class="memitem:a5bbd3d47eb659614e148e329bd5c3583 inherit pro_methods_class_assimp_1_1_i_o_stream"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_i_o_stream.html#a5bbd3d47eb659614e148e329bd5c3583">IOStream</a> () <a class="el" href="include_2assimp_2defs_8h.html#ae032f18edd69bf6ba935ef9feb025a96">AI_NO_EXCEPT</a>=default</td></tr>
 <tr class="separator:a5bbd3d47eb659614e148e329bd5c3583 inherit pro_methods_class_assimp_1_1_i_o_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Redirect <a class="el" href="class_assimp_1_1_i_o_stream.html" title="CPP-API: Class to handle file I/O for C++.">IOStream</a> to a blob </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00067">67</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8f35d99f46306fe8e7b7fb02d8b09f38" name="a8f35d99f46306fe8e7b7fb02d8b09f38"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8f35d99f46306fe8e7b7fb02d8b09f38">&#9670;&#160;</a></span>BlobIOStream() <span class="overload">[1/3]</span></h2>
@@ -278,7 +311,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>file</em>, </td>
         </tr>
         <tr>
@@ -309,6 +342,47 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00073">73</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="a12c18de13363e35ee9a08550fcfbc41f" name="a12c18de13363e35ee9a08550fcfbc41f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12c18de13363e35ee9a08550fcfbc41f">&#9670;&#160;</a></span>~BlobIOStream() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::BlobIOStream::~BlobIOStream </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The class destructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00314">314</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_blob_i_o_stream_a12c18de13363e35ee9a08550fcfbc41f_cgraph.png" border="0" usemap="#aclass_assimp_1_1_blob_i_o_stream_a12c18de13363e35ee9a08550fcfbc41f_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_blob_i_o_stream_a12c18de13363e35ee9a08550fcfbc41f_cgraph" id="aclass_assimp_1_1_blob_i_o_stream_a12c18de13363e35ee9a08550fcfbc41f_cgraph">
+<area shape="rect" title="The class destructor." alt="" coords="5,5,158,50"/>
+<area shape="rect" href="class_assimp_1_1_blob_i_o_system.html#a54d97cba240908302b508c770c11e9f0" title=" " alt="" coords="206,5,359,50"/>
+<area shape="rect" href="class_assimp_1_1_blob_i_o_stream.html#ae81d57b624c32b519d6049394d5aa1cb" title=" " alt="" coords="407,5,559,50"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -330,7 +404,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>file</em>, </td>
         </tr>
         <tr>
@@ -361,6 +435,35 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html#l00073">73</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="a12c18de13363e35ee9a08550fcfbc41f" name="a12c18de13363e35ee9a08550fcfbc41f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12c18de13363e35ee9a08550fcfbc41f">&#9670;&#160;</a></span>~BlobIOStream() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::BlobIOStream::~BlobIOStream </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The class destructor. </p>
 
 </div>
 </div>
@@ -382,7 +485,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>file</em>, </td>
         </tr>
         <tr>
@@ -413,6 +516,35 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html#l00073">73</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="a12c18de13363e35ee9a08550fcfbc41f" name="a12c18de13363e35ee9a08550fcfbc41f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12c18de13363e35ee9a08550fcfbc41f">&#9670;&#160;</a></span>~BlobIOStream() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::BlobIOStream::~BlobIOStream </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The class destructor. </p>
 
 </div>
 </div>
@@ -444,6 +576,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#aaa01183d197fb714f28d6c611b6fa058">Assimp::IOStream</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00152">152</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
 </div>
 </div>
 <a id="a5381f03b7609df4883ce2b1d1e30b61f" name="a5381f03b7609df4883ce2b1d1e30b61f"></a>
@@ -472,6 +606,8 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns filesize Returns the filesize. </p>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#aaa01183d197fb714f28d6c611b6fa058">Assimp::IOStream</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html#l00152">152</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
 
 </div>
 </div>
@@ -502,6 +638,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#aaa01183d197fb714f28d6c611b6fa058">Assimp::IOStream</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html#l00152">152</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
 </div>
 </div>
 <a id="a586a52bd8dbadb1ea579f80bbaad68bd" name="a586a52bd8dbadb1ea579f80bbaad68bd"></a>
@@ -530,6 +668,8 @@ Additional Inherited Members</h2></td></tr>
 <p>Flush the contents of the file buffer (for writers) See fflush() for more details. </p>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#a7c19952446ece90924b246f087417899">Assimp::IOStream</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00157">157</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
 
 </div>
 </div>
@@ -560,6 +700,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#a7c19952446ece90924b246f087417899">Assimp::IOStream</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html#l00157">157</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
 </div>
 </div>
 <a id="a586a52bd8dbadb1ea579f80bbaad68bd" name="a586a52bd8dbadb1ea579f80bbaad68bd"></a>
@@ -588,6 +730,193 @@ Additional Inherited Members</h2></td></tr>
 <p>Flush the contents of the file buffer (for writers) See fflush() for more details. </p>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#a7c19952446ece90924b246f087417899">Assimp::IOStream</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html#l00157">157</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="ae81d57b624c32b519d6049394d5aa1cb" name="ae81d57b624c32b519d6049394d5aa1cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae81d57b624c32b519d6049394d5aa1cb">&#9670;&#160;</a></span>GetBlob() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structai_export_data_blob.html">aiExportDataBlob</a> * Assimp::BlobIOStream::GetBlob </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00089">89</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_blob_i_o_stream_ae81d57b624c32b519d6049394d5aa1cb_icgraph.png" border="0" usemap="#aclass_assimp_1_1_blob_i_o_stream_ae81d57b624c32b519d6049394d5aa1cb_icgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_blob_i_o_stream_ae81d57b624c32b519d6049394d5aa1cb_icgraph" id="aclass_assimp_1_1_blob_i_o_stream_ae81d57b624c32b519d6049394d5aa1cb_icgraph">
+<area shape="rect" title=" " alt="" coords="407,5,559,50"/>
+<area shape="rect" href="class_assimp_1_1_blob_i_o_system.html#a54d97cba240908302b508c770c11e9f0" title=" " alt="" coords="206,5,359,50"/>
+<area shape="rect" href="class_assimp_1_1_blob_i_o_stream.html#a12c18de13363e35ee9a08550fcfbc41f" title="The class destructor." alt="" coords="5,5,158,50"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae81d57b624c32b519d6049394d5aa1cb" name="ae81d57b624c32b519d6049394d5aa1cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae81d57b624c32b519d6049394d5aa1cb">&#9670;&#160;</a></span>GetBlob() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structai_export_data_blob.html">aiExportDataBlob</a> * Assimp::BlobIOStream::GetBlob </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html#l00089">89</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="ae81d57b624c32b519d6049394d5aa1cb" name="ae81d57b624c32b519d6049394d5aa1cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae81d57b624c32b519d6049394d5aa1cb">&#9670;&#160;</a></span>GetBlob() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structai_export_data_blob.html">aiExportDataBlob</a> * Assimp::BlobIOStream::GetBlob </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html#l00089">89</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="a9cf9828edeb38e0d70c3ff0784f46216" name="a9cf9828edeb38e0d70c3ff0784f46216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cf9828edeb38e0d70c3ff0784f46216">&#9670;&#160;</a></span>Grow() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assimp::BlobIOStream::Grow </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>need</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00163">163</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_blob_i_o_stream_a9cf9828edeb38e0d70c3ff0784f46216_icgraph.png" border="0" usemap="#aclass_assimp_1_1_blob_i_o_stream_a9cf9828edeb38e0d70c3ff0784f46216_icgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_blob_i_o_stream_a9cf9828edeb38e0d70c3ff0784f46216_icgraph" id="aclass_assimp_1_1_blob_i_o_stream_a9cf9828edeb38e0d70c3ff0784f46216_icgraph">
+<area shape="rect" title=" " alt="" coords="206,40,358,85"/>
+<area shape="rect" href="class_assimp_1_1_blob_i_o_stream.html#ac9438feded7e3d11fe884a5c8bf58e01" title="Set the read/write cursor of the file." alt="" coords="5,5,158,50"/>
+<area shape="rect" href="class_assimp_1_1_blob_i_o_stream.html#a4ee82399ab9d8ea7d099311ca8daae31" title="Write to the file." alt="" coords="5,75,158,119"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9cf9828edeb38e0d70c3ff0784f46216" name="a9cf9828edeb38e0d70c3ff0784f46216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cf9828edeb38e0d70c3ff0784f46216">&#9670;&#160;</a></span>Grow() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assimp::BlobIOStream::Grow </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>need</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html#l00163">163</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="a9cf9828edeb38e0d70c3ff0784f46216" name="a9cf9828edeb38e0d70c3ff0784f46216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cf9828edeb38e0d70c3ff0784f46216">&#9670;&#160;</a></span>Grow() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assimp::BlobIOStream::Grow </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>need</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html#l00163">163</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
 
 </div>
 </div>
@@ -636,6 +965,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#ae376f641020989d61863b9c6f55c7abf">Assimp::IOStream</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00100">100</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
 </div>
 </div>
 <a id="af7c647f5fee4cf0f34efdb637b08a6a3" name="af7c647f5fee4cf0f34efdb637b08a6a3"></a>
@@ -682,6 +1013,8 @@ Additional Inherited Members</h2></td></tr>
 <p >See fread() for more details This fails for write-only files </p>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#ae376f641020989d61863b9c6f55c7abf">Assimp::IOStream</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html#l00100">100</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
 
 </div>
 </div>
@@ -730,6 +1063,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#ae376f641020989d61863b9c6f55c7abf">Assimp::IOStream</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html#l00100">100</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
 </div>
 </div>
 <a id="ac9438feded7e3d11fe884a5c8bf58e01" name="ac9438feded7e3d11fe884a5c8bf58e01"></a>
@@ -770,6 +1105,17 @@ Additional Inherited Members</h2></td></tr>
 <p >Note that the offset is <em>negative</em> for aiOrigin_END. See fseek() for more details </p>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#a5ed0dddf418ab08cf3fc21f3f3032220">Assimp::IOStream</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00119">119</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01_cgraph.png" border="0" usemap="#aclass_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01_cgraph" id="aclass_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01_cgraph">
+<area shape="rect" title="Set the read/write cursor of the file." alt="" coords="5,5,158,50"/>
+<area shape="rect" href="class_assimp_1_1_blob_i_o_stream.html#a9cf9828edeb38e0d70c3ff0784f46216" title=" " alt="" coords="206,5,358,50"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -812,6 +1158,17 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#a5ed0dddf418ab08cf3fc21f3f3032220">Assimp::IOStream</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html#l00119">119</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01_cgraph.png" border="0" usemap="#aclass_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01_cgraph" id="aclass_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01_cgraph">
+<area shape="rect" title="Set the read/write cursor of the file." alt="" coords="5,5,158,50"/>
+<area shape="rect" href="class_assimp_1_1_blob_i_o_stream.html#a9cf9828edeb38e0d70c3ff0784f46216" title=" " alt="" coords="206,5,358,50"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ac9438feded7e3d11fe884a5c8bf58e01" name="ac9438feded7e3d11fe884a5c8bf58e01"></a>
@@ -853,6 +1210,17 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#a5ed0dddf418ab08cf3fc21f3f3032220">Assimp::IOStream</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html#l00119">119</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01_cgraph.png" border="0" usemap="#aclass_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01_cgraph" id="aclass_assimp_1_1_blob_i_o_stream_ac9438feded7e3d11fe884a5c8bf58e01_cgraph">
+<area shape="rect" title="Set the read/write cursor of the file." alt="" coords="5,5,158,50"/>
+<area shape="rect" href="class_assimp_1_1_blob_i_o_stream.html#a9cf9828edeb38e0d70c3ff0784f46216" title=" " alt="" coords="206,5,358,50"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ade466c822b6f0930c2744eb4ac799a4d" name="ade466c822b6f0930c2744eb4ac799a4d"></a>
@@ -882,6 +1250,8 @@ Additional Inherited Members</h2></td></tr>
 <p >See ftell() for more details </p>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#a316ac6cd16b5a493d1313f792c806194">Assimp::IOStream</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00147">147</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
 
 </div>
 </div>
@@ -913,6 +1283,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#a316ac6cd16b5a493d1313f792c806194">Assimp::IOStream</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html#l00147">147</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
 </div>
 </div>
 <a id="ade466c822b6f0930c2744eb4ac799a4d" name="ade466c822b6f0930c2744eb4ac799a4d"></a>
@@ -943,6 +1315,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#a316ac6cd16b5a493d1313f792c806194">Assimp::IOStream</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html#l00147">147</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
 </div>
 </div>
 <a id="a4ee82399ab9d8ea7d099311ca8daae31" name="a4ee82399ab9d8ea7d099311ca8daae31"></a>
@@ -957,7 +1331,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">size_t Assimp::BlobIOStream::Write </td>
           <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *&#160;</td>
           <td class="paramname"><em>pvBuffer</em>, </td>
         </tr>
         <tr>
@@ -989,6 +1363,17 @@ Additional Inherited Members</h2></td></tr>
 <p >See fwrite() for more details This fails for read-only files </p>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#ad0ca4aae1b8c4d00db391ac3a4171f7b">Assimp::IOStream</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00105">105</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31_cgraph.png" border="0" usemap="#aclass_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31_cgraph" id="aclass_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31_cgraph">
+<area shape="rect" title="Write to the file." alt="" coords="5,5,158,50"/>
+<area shape="rect" href="class_assimp_1_1_blob_i_o_stream.html#a9cf9828edeb38e0d70c3ff0784f46216" title=" " alt="" coords="206,5,358,50"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1004,7 +1389,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">size_t Assimp::BlobIOStream::Write </td>
           <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *&#160;</td>
           <td class="paramname"><em>pvBuffer</em>, </td>
         </tr>
         <tr>
@@ -1036,6 +1421,17 @@ Additional Inherited Members</h2></td></tr>
 <p >See fwrite() for more details This fails for read-only files </p>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#ad0ca4aae1b8c4d00db391ac3a4171f7b">Assimp::IOStream</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html#l00105">105</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31_cgraph.png" border="0" usemap="#aclass_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31_cgraph" id="aclass_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31_cgraph">
+<area shape="rect" title="Write to the file." alt="" coords="5,5,158,50"/>
+<area shape="rect" href="class_assimp_1_1_blob_i_o_stream.html#a9cf9828edeb38e0d70c3ff0784f46216" title=" " alt="" coords="206,5,358,50"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1051,7 +1447,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">size_t Assimp::BlobIOStream::Write </td>
           <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> void *&#160;</td>
           <td class="paramname"><em>pvBuffer</em>, </td>
         </tr>
         <tr>
@@ -1083,6 +1479,186 @@ Additional Inherited Members</h2></td></tr>
 <p >See fwrite() for more details This fails for read-only files </p>
 
 <p>Implements <a class="el" href="class_assimp_1_1_i_o_stream.html#ad0ca4aae1b8c4d00db391ac3a4171f7b">Assimp::IOStream</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html#l00105">105</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31_cgraph.png" border="0" usemap="#aclass_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31_cgraph" id="aclass_assimp_1_1_blob_i_o_stream_a4ee82399ab9d8ea7d099311ca8daae31_cgraph">
+<area shape="rect" title="Write to the file." alt="" coords="5,5,158,50"/>
+<area shape="rect" href="class_assimp_1_1_blob_i_o_stream.html#a9cf9828edeb38e0d70c3ff0784f46216" title=" " alt="" coords="206,5,358,50"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a32a457aee2db7ff1498dd64c83e5a074" name="a32a457aee2db7ff1498dd64c83e5a074"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32a457aee2db7ff1498dd64c83e5a074">&#9670;&#160;</a></span>buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t * Assimp::BlobIOStream::buffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00184">184</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="acce7e544886a2cd7da808666f3e3c467" name="acce7e544886a2cd7da808666f3e3c467"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acce7e544886a2cd7da808666f3e3c467">&#9670;&#160;</a></span>creator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_assimp_1_1_blob_i_o_system.html">BlobIOSystem</a> *<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> Assimp::BlobIOStream::creator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00188">188</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="ae439326641887108b324b580a9d58ed5" name="ae439326641887108b324b580a9d58ed5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae439326641887108b324b580a9d58ed5">&#9670;&#160;</a></span>cur_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Assimp::BlobIOStream::cur_size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00185">185</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="a5483134b78159cc971ce60040f6ce69f" name="a5483134b78159cc971ce60040f6ce69f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5483134b78159cc971ce60040f6ce69f">&#9670;&#160;</a></span>cursor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Assimp::BlobIOStream::cursor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00185">185</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="a3514f94a363e3c628207679fe56b2ad0" name="a3514f94a363e3c628207679fe56b2ad0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3514f94a363e3c628207679fe56b2ad0">&#9670;&#160;</a></span>file</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string Assimp::BlobIOStream::file</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00187">187</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="a6aee0eb61f46e2f7c7867a527dd29e38" name="a6aee0eb61f46e2f7c7867a527dd29e38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aee0eb61f46e2f7c7867a527dd29e38">&#9670;&#160;</a></span>file_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Assimp::BlobIOStream::file_size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00185">185</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="aea5ee46166027f83a377d8e9f1974628" name="aea5ee46166027f83a377d8e9f1974628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea5ee46166027f83a377d8e9f1974628">&#9670;&#160;</a></span>initial</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Assimp::BlobIOStream::initial</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html#l00185">185</a> of file <a class="el" href="include_2assimp_2_blob_i_o_system_8h_source.html">BlobIOSystem.h</a>.</p>
 
 </div>
 </div>

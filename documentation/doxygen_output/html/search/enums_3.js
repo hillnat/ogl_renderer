@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logseverity_0',['LogSeverity',['../class_assimp_1_1_logger.html#a8b6248a0fd062431e8572556350d29e6',1,'Assimp::Logger::LogSeverity()'],['../class_assimp_1_1_logger.html#a8b6248a0fd062431e8572556350d29e6',1,'Assimp::Logger::LogSeverity()'],['../class_assimp_1_1_logger.html#a8b6248a0fd062431e8572556350d29e6',1,'Assimp::Logger::LogSeverity()']]]
+  ['gentypeenum_0',['genTypeEnum',['../namespaceglm_1_1detail.html#a2b685825395a537617a73f60d1f21e60',1,'glm::detail']]]
 ];

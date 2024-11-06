@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -76,7 +79,7 @@ $(function() {
   <div class="headertitle"><div class="title">SmoothingGroups.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<a href="out_2install_2x64-_release_2include_2assimp_2_smoothing_groups_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">Open Asset Import Library (assimp)</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">----------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"></span> </div>
@@ -120,7 +123,7 @@ $(function() {
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#ifndef AI_SMOOTHINGGROUPS_H_INC</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#define AI_SMOOTHINGGROUPS_H_INC</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_smoothing_groups_8h.html#a560d64cdce788040de6574855904742a">   48</a></span><span class="preprocessor">#define AI_SMOOTHINGGROUPS_H_INC</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#ifdef __GNUC__</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#   pragma GCC system_header</span></div>
@@ -133,7 +136,7 @@ $(function() {
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">// ---------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment"></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_face_with_smoothing_group.html">FaceWithSmoothingGroup</a> {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_struct" href="struct_face_with_smoothing_group.html">FaceWithSmoothingGroup</a>() AI_NO_EXCEPT</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="struct_face_with_smoothing_group.html#a738863875f8b39cbe2876db1497b4266">   62</a></span>    <a class="code hl_function" href="struct_face_with_smoothing_group.html#a738863875f8b39cbe2876db1497b4266">FaceWithSmoothingGroup</a>() <a class="code hl_define" href="include_2assimp_2defs_8h.html#ae032f18edd69bf6ba935ef9feb025a96">AI_NO_EXCEPT</a></div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    : <a class="code hl_variable" href="struct_face_with_smoothing_group.html#a72cd31e856bc2f8819259faebf88273d">mIndices</a>()</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    , <a class="code hl_variable" href="struct_face_with_smoothing_group.html#a686bc8272adeb1b5c376483ebfab3ec1">iSmoothGroup</a>(0) {</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="comment">// in debug builds set all indices to a common magic value</span></div>
@@ -145,9 +148,9 @@ $(function() {
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_typedef" href="group__gtc__type__precision.html#ga822ca53a9ad412504532838906276a99">uint32_t</a> <a class="code hl_variable" href="struct_face_with_smoothing_group.html#a72cd31e856bc2f8819259faebf88273d">mIndices</a>[3];</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    uint32_t <a class="code hl_variable" href="struct_face_with_smoothing_group.html#a72cd31e856bc2f8819259faebf88273d">mIndices</a>[3];</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_typedef" href="group__gtc__type__precision.html#ga822ca53a9ad412504532838906276a99">uint32_t</a> <a class="code hl_variable" href="struct_face_with_smoothing_group.html#a686bc8272adeb1b5c376483ebfab3ec1">iSmoothGroup</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    uint32_t <a class="code hl_variable" href="struct_face_with_smoothing_group.html#a686bc8272adeb1b5c376483ebfab3ec1">iSmoothGroup</a>;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">// ---------------------------------------------------------------------------</span></div>
@@ -163,21 +166,24 @@ $(function() {
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">// ---------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment"></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keywordtype">void</span> ComputeNormalsWithSmoothingsGroups(<a class="code hl_struct" href="struct_mesh_with_smoothing_groups.html">MeshWithSmoothingGroups&lt;T&gt;</a>&amp; sMesh);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keywordtype">void</span> <a class="code hl_function" href="out_2install_2x64-_release_2include_2assimp_2_smoothing_groups_8h.html#a8213a64aefeba1a25b9c82573d779140">ComputeNormalsWithSmoothingsGroups</a>(<a class="code hl_struct" href="struct_mesh_with_smoothing_groups.html">MeshWithSmoothingGroups&lt;T&gt;</a>&amp; sMesh);</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">// include implementations</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#include &quot;SmoothingGroups.inl&quot;</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#include &quot;<a class="code" href="out_2install_2x64-_release_2include_2assimp_2_smoothing_groups_8inl.html">SmoothingGroups.inl</a>&quot;</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#endif </span><span class="comment">// !! AI_SMOOTHINGGROUPS_H_INC</span></div>
-<div class="ttc" id="agroup__gtc__type__precision_html_ga822ca53a9ad412504532838906276a99"><div class="ttname"><a href="group__gtc__type__precision.html#ga822ca53a9ad412504532838906276a99">glm::uint32_t</a></div><div class="ttdeci">uint32 uint32_t</div><div class="ttdef"><b>Definition:</b> fwd.hpp:131</div></div>
-<div class="ttc" id="astruct_face_with_smoothing_group_html"><div class="ttname"><a href="struct_face_with_smoothing_group.html">FaceWithSmoothingGroup</a></div><div class="ttdef"><b>Definition:</b> SmoothingGroups.h:61</div></div>
-<div class="ttc" id="astruct_face_with_smoothing_group_html_a686bc8272adeb1b5c376483ebfab3ec1"><div class="ttname"><a href="struct_face_with_smoothing_group.html#a686bc8272adeb1b5c376483ebfab3ec1">FaceWithSmoothingGroup::iSmoothGroup</a></div><div class="ttdeci">uint32_t iSmoothGroup</div><div class="ttdoc">specifies to which smoothing group the face belongs to</div><div class="ttdef"><b>Definition:</b> SmoothingGroups.h:80</div></div>
-<div class="ttc" id="astruct_face_with_smoothing_group_html_a72cd31e856bc2f8819259faebf88273d"><div class="ttname"><a href="struct_face_with_smoothing_group.html#a72cd31e856bc2f8819259faebf88273d">FaceWithSmoothingGroup::mIndices</a></div><div class="ttdeci">uint32_t mIndices[3]</div><div class="ttdef"><b>Definition:</b> SmoothingGroups.h:77</div></div>
-<div class="ttc" id="astruct_mesh_with_smoothing_groups_html"><div class="ttname"><a href="struct_mesh_with_smoothing_groups.html">MeshWithSmoothingGroups</a></div><div class="ttdef"><b>Definition:</b> SmoothingGroups.h:93</div></div>
-<div class="ttc" id="astruct_mesh_with_smoothing_groups_html_a2822289fb74abf4302647eb64e529e48"><div class="ttname"><a href="struct_mesh_with_smoothing_groups.html#a2822289fb74abf4302647eb64e529e48">MeshWithSmoothingGroups::mPositions</a></div><div class="ttdeci">std::vector&lt; aiVector3D &gt; mPositions</div><div class="ttdoc">Vertex positions.</div><div class="ttdef"><b>Definition:</b> SmoothingGroups.h:95</div></div>
-<div class="ttc" id="astruct_mesh_with_smoothing_groups_html_a5c8831f449ec37f44a7fd167da2131bc"><div class="ttname"><a href="struct_mesh_with_smoothing_groups.html#a5c8831f449ec37f44a7fd167da2131bc">MeshWithSmoothingGroups::mFaces</a></div><div class="ttdeci">std::vector&lt; T &gt; mFaces</div><div class="ttdoc">Face lists.</div><div class="ttdef"><b>Definition:</b> SmoothingGroups.h:98</div></div>
-<div class="ttc" id="astruct_mesh_with_smoothing_groups_html_a985606352d665c47dadbc80dd1ebb6f4"><div class="ttname"><a href="struct_mesh_with_smoothing_groups.html#a985606352d665c47dadbc80dd1ebb6f4">MeshWithSmoothingGroups::mNormals</a></div><div class="ttdeci">std::vector&lt; aiVector3D &gt; mNormals</div><div class="ttdoc">List of normal vectors.</div><div class="ttdef"><b>Definition:</b> SmoothingGroups.h:101</div></div>
+<div class="ttc" id="ainclude_2assimp_2defs_8h_html_ae032f18edd69bf6ba935ef9feb025a96"><div class="ttname"><a href="include_2assimp_2defs_8h.html#ae032f18edd69bf6ba935ef9feb025a96">AI_NO_EXCEPT</a></div><div class="ttdeci">#define AI_NO_EXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2defs_8h_source.html#l00324">defs.h:324</a></div></div>
+<div class="ttc" id="aout_2install_2x64-_release_2include_2assimp_2_smoothing_groups_8h_html_a8213a64aefeba1a25b9c82573d779140"><div class="ttname"><a href="out_2install_2x64-_release_2include_2assimp_2_smoothing_groups_8h.html#a8213a64aefeba1a25b9c82573d779140">ComputeNormalsWithSmoothingsGroups</a></div><div class="ttdeci">void ComputeNormalsWithSmoothingsGroups(MeshWithSmoothingGroups&lt; T &gt; &amp;sMesh)</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_smoothing_groups_8inl_source.html#l00060">SmoothingGroups.inl:60</a></div></div>
+<div class="ttc" id="aout_2install_2x64-_release_2include_2assimp_2_smoothing_groups_8inl_html"><div class="ttname"><a href="out_2install_2x64-_release_2include_2assimp_2_smoothing_groups_8inl.html">SmoothingGroups.inl</a></div></div>
+<div class="ttc" id="astruct_face_with_smoothing_group_html"><div class="ttname"><a href="struct_face_with_smoothing_group.html">FaceWithSmoothingGroup</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_smoothing_groups_8h_source.html#l00061">SmoothingGroups.h:61</a></div></div>
+<div class="ttc" id="astruct_face_with_smoothing_group_html_a686bc8272adeb1b5c376483ebfab3ec1"><div class="ttname"><a href="struct_face_with_smoothing_group.html#a686bc8272adeb1b5c376483ebfab3ec1">FaceWithSmoothingGroup::iSmoothGroup</a></div><div class="ttdeci">uint32_t iSmoothGroup</div><div class="ttdoc">specifies to which smoothing group the face belongs to</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_smoothing_groups_8h_source.html#l00080">SmoothingGroups.h:80</a></div></div>
+<div class="ttc" id="astruct_face_with_smoothing_group_html_a72cd31e856bc2f8819259faebf88273d"><div class="ttname"><a href="struct_face_with_smoothing_group.html#a72cd31e856bc2f8819259faebf88273d">FaceWithSmoothingGroup::mIndices</a></div><div class="ttdeci">uint32_t mIndices[3]</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_smoothing_groups_8h_source.html#l00077">SmoothingGroups.h:77</a></div></div>
+<div class="ttc" id="astruct_face_with_smoothing_group_html_a738863875f8b39cbe2876db1497b4266"><div class="ttname"><a href="struct_face_with_smoothing_group.html#a738863875f8b39cbe2876db1497b4266">FaceWithSmoothingGroup::FaceWithSmoothingGroup</a></div><div class="ttdeci">FaceWithSmoothingGroup() AI_NO_EXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="out_2install_2x64-_release_2include_2assimp_2_smoothing_groups_8h_source.html#l00062">SmoothingGroups.h:62</a></div></div>
+<div class="ttc" id="astruct_mesh_with_smoothing_groups_html"><div class="ttname"><a href="struct_mesh_with_smoothing_groups.html">MeshWithSmoothingGroups</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_smoothing_groups_8h_source.html#l00092">SmoothingGroups.h:93</a></div></div>
+<div class="ttc" id="astruct_mesh_with_smoothing_groups_html_a2822289fb74abf4302647eb64e529e48"><div class="ttname"><a href="struct_mesh_with_smoothing_groups.html#a2822289fb74abf4302647eb64e529e48">MeshWithSmoothingGroups::mPositions</a></div><div class="ttdeci">std::vector&lt; aiVector3D &gt; mPositions</div><div class="ttdoc">Vertex positions.</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_smoothing_groups_8h_source.html#l00095">SmoothingGroups.h:95</a></div></div>
+<div class="ttc" id="astruct_mesh_with_smoothing_groups_html_a5c8831f449ec37f44a7fd167da2131bc"><div class="ttname"><a href="struct_mesh_with_smoothing_groups.html#a5c8831f449ec37f44a7fd167da2131bc">MeshWithSmoothingGroups::mFaces</a></div><div class="ttdeci">std::vector&lt; T &gt; mFaces</div><div class="ttdoc">Face lists.</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_smoothing_groups_8h_source.html#l00098">SmoothingGroups.h:98</a></div></div>
+<div class="ttc" id="astruct_mesh_with_smoothing_groups_html_a985606352d665c47dadbc80dd1ebb6f4"><div class="ttname"><a href="struct_mesh_with_smoothing_groups.html#a985606352d665c47dadbc80dd1ebb6f4">MeshWithSmoothingGroups::mNormals</a></div><div class="ttdeci">std::vector&lt; aiVector3D &gt; mNormals</div><div class="ttdoc">List of normal vectors.</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_smoothing_groups_8h_source.html#l00101">SmoothingGroups.h:101</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

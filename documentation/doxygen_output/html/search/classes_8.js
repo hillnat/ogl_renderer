@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['texture_0',['Texture',['../struct_texture.html',1,'']]],
-  ['transform_1',['Transform',['../class_transform.html',1,'']]]
+  ['header_0',['Header',['../struct_assimp_1_1_bitmap_1_1_header.html',1,'Assimp::Bitmap']]]
 ];

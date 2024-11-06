@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -76,157 +79,165 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_assimp_1_1_line_splitter-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Assimp::LineSplitter Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Assimp::LineSplitter:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_line_splitter__coll__graph.png" border="0" usemap="#a_assimp_1_1_line_splitter_coll__map" alt="Collaboration graph"/></div>
+<map name="a_assimp_1_1_line_splitter_coll__map" id="a_assimp_1_1_line_splitter_coll__map">
+<area shape="rect" title=" " alt="" coords="55,115,192,143"/>
+<area shape="rect" href="class_assimp_1_1_stream_reader.html" title=" " alt="" coords="5,5,242,50"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aef56da1bb83d87c439d181cbce523068"><td class="memItemLeft" align="right" valign="top"><a id="aef56da1bb83d87c439d181cbce523068" name="aef56da1bb83d87c439d181cbce523068"></a>
-typedef size_t&#160;</td><td class="memItemRight" valign="bottom"><b>line_idx</b></td></tr>
+<tr class="memitem:aef56da1bb83d87c439d181cbce523068"><td class="memItemLeft" align="right" valign="top">typedef size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">line_idx</a></td></tr>
 <tr class="separator:aef56da1bb83d87c439d181cbce523068"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef56da1bb83d87c439d181cbce523068"><td class="memItemLeft" align="right" valign="top"><a id="aef56da1bb83d87c439d181cbce523068" name="aef56da1bb83d87c439d181cbce523068"></a>
-typedef size_t&#160;</td><td class="memItemRight" valign="bottom"><b>line_idx</b></td></tr>
+<tr class="memitem:aef56da1bb83d87c439d181cbce523068"><td class="memItemLeft" align="right" valign="top">typedef size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">line_idx</a></td></tr>
 <tr class="separator:aef56da1bb83d87c439d181cbce523068"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef56da1bb83d87c439d181cbce523068"><td class="memItemLeft" align="right" valign="top"><a id="aef56da1bb83d87c439d181cbce523068" name="aef56da1bb83d87c439d181cbce523068"></a>
-typedef size_t&#160;</td><td class="memItemRight" valign="bottom"><b>line_idx</b></td></tr>
+<tr class="memitem:aef56da1bb83d87c439d181cbce523068"><td class="memItemLeft" align="right" valign="top">typedef size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">line_idx</a></td></tr>
 <tr class="separator:aef56da1bb83d87c439d181cbce523068"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a04e78a827cbd501d920a9bb8245b817f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a04e78a827cbd501d920a9bb8245b817f">LineSplitter</a> (<a class="el" href="class_assimp_1_1_stream_reader.html">StreamReaderLE</a> &amp;stream, bool skip_empty_lines=true, bool trim=true)</td></tr>
+<tr class="memitem:a04e78a827cbd501d920a9bb8245b817f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a04e78a827cbd501d920a9bb8245b817f">LineSplitter</a> (<a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a> &amp;stream, bool skip_empty_lines=true, bool trim=true)</td></tr>
 <tr class="separator:a04e78a827cbd501d920a9bb8245b817f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fd4d399771c7a475011feb059d946ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a0fd4d399771c7a475011feb059d946ab">~LineSplitter</a> ()=default</td></tr>
+<tr class="separator:a0fd4d399771c7a475011feb059d946ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ba3e0ed296b5604153bef3fac798517"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a1ba3e0ed296b5604153bef3fac798517">operator++</a> ()</td></tr>
 <tr class="separator:a1ba3e0ed296b5604153bef3fac798517"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af41717d32478918c52051c4d2f1c2788"><td class="memItemLeft" align="right" valign="top"><a id="af41717d32478918c52051c4d2f1c2788" name="af41717d32478918c52051c4d2f1c2788"></a>
-<a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> (int)</td></tr>
+<tr class="memitem:af41717d32478918c52051c4d2f1c2788"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#af41717d32478918c52051c4d2f1c2788">operator++</a> (int)</td></tr>
 <tr class="separator:af41717d32478918c52051c4d2f1c2788"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6ba3911a72d452fb8930a812fea6d7e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ac6ba3911a72d452fb8930a812fea6d7e">operator[]</a> (size_t idx) const</td></tr>
+<tr class="memitem:ac6ba3911a72d452fb8930a812fea6d7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ac6ba3911a72d452fb8930a812fea6d7e">operator[]</a> (size_t idx) <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:ac6ba3911a72d452fb8930a812fea6d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05e6ea1868bc931c754ef332a4866ae3"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
-<tr class="memitem:a05e6ea1868bc931c754ef332a4866ae3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a05e6ea1868bc931c754ef332a4866ae3">get_tokens</a> (const char *(&amp;tokens)[N]) const</td></tr>
+<tr class="memitem:a05e6ea1868bc931c754ef332a4866ae3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a05e6ea1868bc931c754ef332a4866ae3">get_tokens</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *(&amp;tokens)[N]) <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a05e6ea1868bc931c754ef332a4866ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a175ad7f4d2d0316ceb762259fbe62d26"><td class="memItemLeft" align="right" valign="top">const std::string *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a175ad7f4d2d0316ceb762259fbe62d26">operator-&gt;</a> () const</td></tr>
+<tr class="memitem:a175ad7f4d2d0316ceb762259fbe62d26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a175ad7f4d2d0316ceb762259fbe62d26">operator-&gt;</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a175ad7f4d2d0316ceb762259fbe62d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a903381cf5cbc7a1684116ddd71604ae5"><td class="memItemLeft" align="right" valign="top"><a id="a903381cf5cbc7a1684116ddd71604ae5" name="a903381cf5cbc7a1684116ddd71604ae5"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> () const</td></tr>
+<tr class="memitem:a903381cf5cbc7a1684116ddd71604ae5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a903381cf5cbc7a1684116ddd71604ae5">operator*</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a903381cf5cbc7a1684116ddd71604ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72e2e2a6661c0b0bcce0792d71bda4f1"><td class="memItemLeft" align="right" valign="top"><a id="a72e2e2a6661c0b0bcce0792d71bda4f1" name="a72e2e2a6661c0b0bcce0792d71bda4f1"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>getEnd</b> () const</td></tr>
+<tr class="memitem:a72e2e2a6661c0b0bcce0792d71bda4f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a72e2e2a6661c0b0bcce0792d71bda4f1">getEnd</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a72e2e2a6661c0b0bcce0792d71bda4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7e5e843fc2b8623fcd869d358a424aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#aa7e5e843fc2b8623fcd869d358a424aa">operator bool</a> () const</td></tr>
+<tr class="memitem:aa7e5e843fc2b8623fcd869d358a424aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#aa7e5e843fc2b8623fcd869d358a424aa">operator bool</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:aa7e5e843fc2b8623fcd869d358a424aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4192fd5557f07dc9d4c6d137858e4592"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a4192fd5557f07dc9d4c6d137858e4592">operator line_idx</a> () const</td></tr>
+<tr class="memitem:a4192fd5557f07dc9d4c6d137858e4592"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a4192fd5557f07dc9d4c6d137858e4592">operator line_idx</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a4192fd5557f07dc9d4c6d137858e4592"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1696c3d2355b38f7beb5fb2a2497b2d"><td class="memItemLeft" align="right" valign="top"><a id="ab1696c3d2355b38f7beb5fb2a2497b2d" name="ab1696c3d2355b38f7beb5fb2a2497b2d"></a>
-line_idx&#160;</td><td class="memItemRight" valign="bottom"><b>get_index</b> () const</td></tr>
+<tr class="memitem:ab1696c3d2355b38f7beb5fb2a2497b2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">line_idx</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ab1696c3d2355b38f7beb5fb2a2497b2d">get_index</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:ab1696c3d2355b38f7beb5fb2a2497b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae919ea1da66a85422681c0fbcb4986fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_stream_reader.html">StreamReaderLE</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ae919ea1da66a85422681c0fbcb4986fe">get_stream</a> ()</td></tr>
+<tr class="memitem:ae919ea1da66a85422681c0fbcb4986fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ae919ea1da66a85422681c0fbcb4986fe">get_stream</a> ()</td></tr>
 <tr class="separator:ae919ea1da66a85422681c0fbcb4986fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8606ba6e4f8ce5601dcfe46d98d5b643"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a8606ba6e4f8ce5601dcfe46d98d5b643">match_start</a> (const char *check)</td></tr>
+<tr class="memitem:a8606ba6e4f8ce5601dcfe46d98d5b643"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a8606ba6e4f8ce5601dcfe46d98d5b643">match_start</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *check)</td></tr>
 <tr class="separator:a8606ba6e4f8ce5601dcfe46d98d5b643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8efabfd26849a7f1379dfda1eeb44c0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a8efabfd26849a7f1379dfda1eeb44c0c">swallow_next_increment</a> ()</td></tr>
 <tr class="separator:a8efabfd26849a7f1379dfda1eeb44c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99db4079d27847780cc22c6d395b96b9"><td class="memItemLeft" align="right" valign="top"><a id="a99db4079d27847780cc22c6d395b96b9" name="a99db4079d27847780cc22c6d395b96b9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LineSplitter</b> (const <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;)=delete</td></tr>
+<tr class="memitem:a99db4079d27847780cc22c6d395b96b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a99db4079d27847780cc22c6d395b96b9">LineSplitter</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;)=delete</td></tr>
 <tr class="separator:a99db4079d27847780cc22c6d395b96b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f8159192166a79badfb4f2cfaea5fde"><td class="memItemLeft" align="right" valign="top"><a id="a7f8159192166a79badfb4f2cfaea5fde" name="a7f8159192166a79badfb4f2cfaea5fde"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LineSplitter</b> (<a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&amp;)=delete</td></tr>
+<tr class="memitem:a7f8159192166a79badfb4f2cfaea5fde"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a7f8159192166a79badfb4f2cfaea5fde">LineSplitter</a> (<a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:a7f8159192166a79badfb4f2cfaea5fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ccb9c0cd85b9417f6640f7a35db6d5b"><td class="memItemLeft" align="right" valign="top"><a id="a0ccb9c0cd85b9417f6640f7a35db6d5b" name="a0ccb9c0cd85b9417f6640f7a35db6d5b"></a>
-<a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;)=delete</td></tr>
+<tr class="memitem:a0ccb9c0cd85b9417f6640f7a35db6d5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a0ccb9c0cd85b9417f6640f7a35db6d5b">operator=</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;)=delete</td></tr>
 <tr class="separator:a0ccb9c0cd85b9417f6640f7a35db6d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72441b81e4b31974c093fdd2e893b067"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a72441b81e4b31974c093fdd2e893b067">LineSplitter</a> (<a class="el" href="class_assimp_1_1_stream_reader.html">StreamReaderLE</a> &amp;stream, bool skip_empty_lines=true, bool trim=true)</td></tr>
+<tr class="memitem:a72441b81e4b31974c093fdd2e893b067"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a72441b81e4b31974c093fdd2e893b067">LineSplitter</a> (<a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a> &amp;stream, bool skip_empty_lines=true, bool trim=true)</td></tr>
 <tr class="separator:a72441b81e4b31974c093fdd2e893b067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fd4d399771c7a475011feb059d946ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a0fd4d399771c7a475011feb059d946ab">~LineSplitter</a> ()=default</td></tr>
+<tr class="separator:a0fd4d399771c7a475011feb059d946ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a206d19a8fed6b114ac16001ace38d5fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a206d19a8fed6b114ac16001ace38d5fc">operator++</a> ()</td></tr>
 <tr class="separator:a206d19a8fed6b114ac16001ace38d5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fe5160b03fee78abecad477af7111f6"><td class="memItemLeft" align="right" valign="top"><a id="a0fe5160b03fee78abecad477af7111f6" name="a0fe5160b03fee78abecad477af7111f6"></a>
-<a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> (int)</td></tr>
+<tr class="memitem:a0fe5160b03fee78abecad477af7111f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a0fe5160b03fee78abecad477af7111f6">operator++</a> (int)</td></tr>
 <tr class="separator:a0fe5160b03fee78abecad477af7111f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2a83986a6a49b32740b0fa9403f2808"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ae2a83986a6a49b32740b0fa9403f2808">operator[]</a> (size_t idx) const</td></tr>
+<tr class="memitem:ae2a83986a6a49b32740b0fa9403f2808"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ae2a83986a6a49b32740b0fa9403f2808">operator[]</a> (size_t idx) <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:ae2a83986a6a49b32740b0fa9403f2808"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05e6ea1868bc931c754ef332a4866ae3"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
-<tr class="memitem:a05e6ea1868bc931c754ef332a4866ae3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a05e6ea1868bc931c754ef332a4866ae3">get_tokens</a> (const char *(&amp;tokens)[N]) const</td></tr>
+<tr class="memitem:a05e6ea1868bc931c754ef332a4866ae3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a05e6ea1868bc931c754ef332a4866ae3">get_tokens</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *(&amp;tokens)[N]) <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a05e6ea1868bc931c754ef332a4866ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ced66186017cbc98a51965f7edb043b"><td class="memItemLeft" align="right" valign="top">const std::string *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a6ced66186017cbc98a51965f7edb043b">operator-&gt;</a> () const</td></tr>
+<tr class="memitem:a6ced66186017cbc98a51965f7edb043b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a6ced66186017cbc98a51965f7edb043b">operator-&gt;</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a6ced66186017cbc98a51965f7edb043b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a750c652d4371c7aa2ce74b06449cbc18"><td class="memItemLeft" align="right" valign="top"><a id="a750c652d4371c7aa2ce74b06449cbc18" name="a750c652d4371c7aa2ce74b06449cbc18"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> () const</td></tr>
+<tr class="memitem:a750c652d4371c7aa2ce74b06449cbc18"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a750c652d4371c7aa2ce74b06449cbc18">operator*</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a750c652d4371c7aa2ce74b06449cbc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ad31292b4829957c3409368230ee8ec"><td class="memItemLeft" align="right" valign="top"><a id="a1ad31292b4829957c3409368230ee8ec" name="a1ad31292b4829957c3409368230ee8ec"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>getEnd</b> () const</td></tr>
+<tr class="memitem:a1ad31292b4829957c3409368230ee8ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a1ad31292b4829957c3409368230ee8ec">getEnd</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a1ad31292b4829957c3409368230ee8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6e748ce22ac04d704d620a4eeb9ffe7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#af6e748ce22ac04d704d620a4eeb9ffe7">operator bool</a> () const</td></tr>
+<tr class="memitem:af6e748ce22ac04d704d620a4eeb9ffe7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#af6e748ce22ac04d704d620a4eeb9ffe7">operator bool</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:af6e748ce22ac04d704d620a4eeb9ffe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae05da91429c6055766ac4a7c1a37caab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ae05da91429c6055766ac4a7c1a37caab">operator line_idx</a> () const</td></tr>
+<tr class="memitem:ae05da91429c6055766ac4a7c1a37caab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ae05da91429c6055766ac4a7c1a37caab">operator line_idx</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:ae05da91429c6055766ac4a7c1a37caab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0d8c7edec42b576a3f06e632c27701e"><td class="memItemLeft" align="right" valign="top"><a id="af0d8c7edec42b576a3f06e632c27701e" name="af0d8c7edec42b576a3f06e632c27701e"></a>
-line_idx&#160;</td><td class="memItemRight" valign="bottom"><b>get_index</b> () const</td></tr>
+<tr class="memitem:af0d8c7edec42b576a3f06e632c27701e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">line_idx</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#af0d8c7edec42b576a3f06e632c27701e">get_index</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:af0d8c7edec42b576a3f06e632c27701e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a405da224022f6544751f0b47dde14b5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_stream_reader.html">StreamReaderLE</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a405da224022f6544751f0b47dde14b5b">get_stream</a> ()</td></tr>
+<tr class="memitem:a405da224022f6544751f0b47dde14b5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a405da224022f6544751f0b47dde14b5b">get_stream</a> ()</td></tr>
 <tr class="separator:a405da224022f6544751f0b47dde14b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad63e70a9e0991a1e5df59a333e088b8d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ad63e70a9e0991a1e5df59a333e088b8d">match_start</a> (const char *check)</td></tr>
+<tr class="memitem:ad63e70a9e0991a1e5df59a333e088b8d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ad63e70a9e0991a1e5df59a333e088b8d">match_start</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *check)</td></tr>
 <tr class="separator:ad63e70a9e0991a1e5df59a333e088b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5987477ec7ea8c4b4d58615df0a3ad1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ae5987477ec7ea8c4b4d58615df0a3ad1">swallow_next_increment</a> ()</td></tr>
 <tr class="separator:ae5987477ec7ea8c4b4d58615df0a3ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99db4079d27847780cc22c6d395b96b9"><td class="memItemLeft" align="right" valign="top"><a id="a99db4079d27847780cc22c6d395b96b9" name="a99db4079d27847780cc22c6d395b96b9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LineSplitter</b> (const <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;)=delete</td></tr>
+<tr class="memitem:a99db4079d27847780cc22c6d395b96b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a99db4079d27847780cc22c6d395b96b9">LineSplitter</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;)=delete</td></tr>
 <tr class="separator:a99db4079d27847780cc22c6d395b96b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f8159192166a79badfb4f2cfaea5fde"><td class="memItemLeft" align="right" valign="top"><a id="a7f8159192166a79badfb4f2cfaea5fde" name="a7f8159192166a79badfb4f2cfaea5fde"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LineSplitter</b> (<a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&amp;)=delete</td></tr>
+<tr class="memitem:a7f8159192166a79badfb4f2cfaea5fde"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a7f8159192166a79badfb4f2cfaea5fde">LineSplitter</a> (<a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:a7f8159192166a79badfb4f2cfaea5fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ccb9c0cd85b9417f6640f7a35db6d5b"><td class="memItemLeft" align="right" valign="top"><a id="a0ccb9c0cd85b9417f6640f7a35db6d5b" name="a0ccb9c0cd85b9417f6640f7a35db6d5b"></a>
-<a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;)=delete</td></tr>
+<tr class="memitem:a0ccb9c0cd85b9417f6640f7a35db6d5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a0ccb9c0cd85b9417f6640f7a35db6d5b">operator=</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;)=delete</td></tr>
 <tr class="separator:a0ccb9c0cd85b9417f6640f7a35db6d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72441b81e4b31974c093fdd2e893b067"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a72441b81e4b31974c093fdd2e893b067">LineSplitter</a> (<a class="el" href="class_assimp_1_1_stream_reader.html">StreamReaderLE</a> &amp;stream, bool skip_empty_lines=true, bool trim=true)</td></tr>
+<tr class="memitem:a72441b81e4b31974c093fdd2e893b067"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a72441b81e4b31974c093fdd2e893b067">LineSplitter</a> (<a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a> &amp;stream, bool skip_empty_lines=true, bool trim=true)</td></tr>
 <tr class="separator:a72441b81e4b31974c093fdd2e893b067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fd4d399771c7a475011feb059d946ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a0fd4d399771c7a475011feb059d946ab">~LineSplitter</a> ()=default</td></tr>
+<tr class="separator:a0fd4d399771c7a475011feb059d946ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a206d19a8fed6b114ac16001ace38d5fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a206d19a8fed6b114ac16001ace38d5fc">operator++</a> ()</td></tr>
 <tr class="separator:a206d19a8fed6b114ac16001ace38d5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fe5160b03fee78abecad477af7111f6"><td class="memItemLeft" align="right" valign="top"><a id="a0fe5160b03fee78abecad477af7111f6" name="a0fe5160b03fee78abecad477af7111f6"></a>
-<a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> (int)</td></tr>
+<tr class="memitem:a0fe5160b03fee78abecad477af7111f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a0fe5160b03fee78abecad477af7111f6">operator++</a> (int)</td></tr>
 <tr class="separator:a0fe5160b03fee78abecad477af7111f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2a83986a6a49b32740b0fa9403f2808"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ae2a83986a6a49b32740b0fa9403f2808">operator[]</a> (size_t idx) const</td></tr>
+<tr class="memitem:ae2a83986a6a49b32740b0fa9403f2808"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ae2a83986a6a49b32740b0fa9403f2808">operator[]</a> (size_t idx) <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:ae2a83986a6a49b32740b0fa9403f2808"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05e6ea1868bc931c754ef332a4866ae3"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
-<tr class="memitem:a05e6ea1868bc931c754ef332a4866ae3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a05e6ea1868bc931c754ef332a4866ae3">get_tokens</a> (const char *(&amp;tokens)[N]) const</td></tr>
+<tr class="memitem:a05e6ea1868bc931c754ef332a4866ae3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a05e6ea1868bc931c754ef332a4866ae3">get_tokens</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *(&amp;tokens)[N]) <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a05e6ea1868bc931c754ef332a4866ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ced66186017cbc98a51965f7edb043b"><td class="memItemLeft" align="right" valign="top">const std::string *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a6ced66186017cbc98a51965f7edb043b">operator-&gt;</a> () const</td></tr>
+<tr class="memitem:a6ced66186017cbc98a51965f7edb043b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a6ced66186017cbc98a51965f7edb043b">operator-&gt;</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a6ced66186017cbc98a51965f7edb043b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a750c652d4371c7aa2ce74b06449cbc18"><td class="memItemLeft" align="right" valign="top"><a id="a750c652d4371c7aa2ce74b06449cbc18" name="a750c652d4371c7aa2ce74b06449cbc18"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> () const</td></tr>
+<tr class="memitem:a750c652d4371c7aa2ce74b06449cbc18"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a750c652d4371c7aa2ce74b06449cbc18">operator*</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a750c652d4371c7aa2ce74b06449cbc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ad31292b4829957c3409368230ee8ec"><td class="memItemLeft" align="right" valign="top"><a id="a1ad31292b4829957c3409368230ee8ec" name="a1ad31292b4829957c3409368230ee8ec"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>getEnd</b> () const</td></tr>
+<tr class="memitem:a1ad31292b4829957c3409368230ee8ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a1ad31292b4829957c3409368230ee8ec">getEnd</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a1ad31292b4829957c3409368230ee8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6e748ce22ac04d704d620a4eeb9ffe7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#af6e748ce22ac04d704d620a4eeb9ffe7">operator bool</a> () const</td></tr>
+<tr class="memitem:af6e748ce22ac04d704d620a4eeb9ffe7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#af6e748ce22ac04d704d620a4eeb9ffe7">operator bool</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:af6e748ce22ac04d704d620a4eeb9ffe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae05da91429c6055766ac4a7c1a37caab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ae05da91429c6055766ac4a7c1a37caab">operator line_idx</a> () const</td></tr>
+<tr class="memitem:ae05da91429c6055766ac4a7c1a37caab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ae05da91429c6055766ac4a7c1a37caab">operator line_idx</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:ae05da91429c6055766ac4a7c1a37caab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0d8c7edec42b576a3f06e632c27701e"><td class="memItemLeft" align="right" valign="top"><a id="af0d8c7edec42b576a3f06e632c27701e" name="af0d8c7edec42b576a3f06e632c27701e"></a>
-line_idx&#160;</td><td class="memItemRight" valign="bottom"><b>get_index</b> () const</td></tr>
+<tr class="memitem:af0d8c7edec42b576a3f06e632c27701e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">line_idx</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#af0d8c7edec42b576a3f06e632c27701e">get_index</a> () <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:af0d8c7edec42b576a3f06e632c27701e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a405da224022f6544751f0b47dde14b5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_stream_reader.html">StreamReaderLE</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a405da224022f6544751f0b47dde14b5b">get_stream</a> ()</td></tr>
+<tr class="memitem:a405da224022f6544751f0b47dde14b5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a405da224022f6544751f0b47dde14b5b">get_stream</a> ()</td></tr>
 <tr class="separator:a405da224022f6544751f0b47dde14b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad63e70a9e0991a1e5df59a333e088b8d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ad63e70a9e0991a1e5df59a333e088b8d">match_start</a> (const char *check)</td></tr>
+<tr class="memitem:ad63e70a9e0991a1e5df59a333e088b8d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ad63e70a9e0991a1e5df59a333e088b8d">match_start</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *check)</td></tr>
 <tr class="separator:ad63e70a9e0991a1e5df59a333e088b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5987477ec7ea8c4b4d58615df0a3ad1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ae5987477ec7ea8c4b4d58615df0a3ad1">swallow_next_increment</a> ()</td></tr>
 <tr class="separator:ae5987477ec7ea8c4b4d58615df0a3ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99db4079d27847780cc22c6d395b96b9"><td class="memItemLeft" align="right" valign="top"><a id="a99db4079d27847780cc22c6d395b96b9" name="a99db4079d27847780cc22c6d395b96b9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LineSplitter</b> (const <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;)=delete</td></tr>
+<tr class="memitem:a99db4079d27847780cc22c6d395b96b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a99db4079d27847780cc22c6d395b96b9">LineSplitter</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;)=delete</td></tr>
 <tr class="separator:a99db4079d27847780cc22c6d395b96b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f8159192166a79badfb4f2cfaea5fde"><td class="memItemLeft" align="right" valign="top"><a id="a7f8159192166a79badfb4f2cfaea5fde" name="a7f8159192166a79badfb4f2cfaea5fde"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LineSplitter</b> (<a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&amp;)=delete</td></tr>
+<tr class="memitem:a7f8159192166a79badfb4f2cfaea5fde"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a7f8159192166a79badfb4f2cfaea5fde">LineSplitter</a> (<a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:a7f8159192166a79badfb4f2cfaea5fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ccb9c0cd85b9417f6640f7a35db6d5b"><td class="memItemLeft" align="right" valign="top"><a id="a0ccb9c0cd85b9417f6640f7a35db6d5b" name="a0ccb9c0cd85b9417f6640f7a35db6d5b"></a>
-<a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;)=delete</td></tr>
+<tr class="memitem:a0ccb9c0cd85b9417f6640f7a35db6d5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a0ccb9c0cd85b9417f6640f7a35db6d5b">operator=</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;)=delete</td></tr>
 <tr class="separator:a0ccb9c0cd85b9417f6640f7a35db6d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae158d72bee4278a3cc78db1f92b58be6"><td class="memTemplParams" colspan="2"><a id="ae158d72bee4278a3cc78db1f92b58be6" name="ae158d72bee4278a3cc78db1f92b58be6"></a>
-template&lt;size_t N&gt; </td></tr>
-<tr class="memitem:ae158d72bee4278a3cc78db1f92b58be6"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>get_tokens</b> (const char *(&amp;tokens)[N]) const</td></tr>
+<tr class="memitem:ae158d72bee4278a3cc78db1f92b58be6"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:ae158d72bee4278a3cc78db1f92b58be6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ae158d72bee4278a3cc78db1f92b58be6">get_tokens</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *(&amp;tokens)[N]) <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:ae158d72bee4278a3cc78db1f92b58be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac442e59062c37d5b886a9d5e619100bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">line_idx</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ac442e59062c37d5b886a9d5e619100bb">mIdx</a></td></tr>
+<tr class="separator:ac442e59062c37d5b886a9d5e619100bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cde4e6ddd5f2c450790c80281d62669"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a7cde4e6ddd5f2c450790c80281d62669">mCur</a></td></tr>
+<tr class="separator:a7cde4e6ddd5f2c450790c80281d62669"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a516713ecec241d5b206424725706193f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a516713ecec241d5b206424725706193f">mEnd</a></td></tr>
+<tr class="separator:a516713ecec241d5b206424725706193f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0a89c57b790269acca8a9d1e6bc715a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#ad0a89c57b790269acca8a9d1e6bc715a">mStream</a></td></tr>
+<tr class="separator:ad0a89c57b790269acca8a9d1e6bc715a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca2516ae7da68064fe06b702d0c0e70"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a5ca2516ae7da68064fe06b702d0c0e70">mSwallow</a></td></tr>
+<tr class="separator:a5ca2516ae7da68064fe06b702d0c0e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a088e3e7bbe43c4a30c9bbbcd2b80182a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a088e3e7bbe43c4a30c9bbbcd2b80182a">mSkip_empty_lines</a></td></tr>
+<tr class="separator:a088e3e7bbe43c4a30c9bbbcd2b80182a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7058917cd5f7103fd9941509ef80fd0c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assimp_1_1_line_splitter.html#a7058917cd5f7103fd9941509ef80fd0c">mTrim</a></td></tr>
+<tr class="separator:a7058917cd5f7103fd9941509ef80fd0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Usage: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span>(<a class="code hl_class" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> splitter(stream);splitter;++splitter) {</div>
@@ -240,20 +251,72 @@ template&lt;size_t N&gt; </td></tr>
 <div class="line">       <span class="keywordflow">if</span> (strtol(splitter[2]) &gt; 5) { .. }</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    ASSIMP_LOG_VERBOSE_DEBUG(<span class="stringliteral">&quot;Current line is: &quot;</span>, splitter.get_index());</div>
+<div class="line">    <a class="code hl_define" href="include_2assimp_2_logger_8hpp.html#a2e93a38394c31960fa5a2f51a7c32da9">ASSIMP_LOG_VERBOSE_DEBUG</a>(<span class="stringliteral">&quot;Current line is: &quot;</span>, splitter.get_index());</div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_assimp_1_1_line_splitter_html"><div class="ttname"><a href="class_assimp_1_1_line_splitter.html">Assimp::LineSplitter</a></div><div class="ttdef"><b>Definition:</b> LineSplitter.h:79</div></div>
-</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="ttc" id="aclass_assimp_1_1_line_splitter_html"><div class="ttname"><a href="class_assimp_1_1_line_splitter.html">Assimp::LineSplitter</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_line_splitter_8h_source.html#l00079">LineSplitter.h:79</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2_logger_8hpp_html_a2e93a38394c31960fa5a2f51a7c32da9"><div class="ttname"><a href="include_2assimp_2_logger_8hpp.html#a2e93a38394c31960fa5a2f51a7c32da9">ASSIMP_LOG_VERBOSE_DEBUG</a></div><div class="ttdeci">#define ASSIMP_LOG_VERBOSE_DEBUG(...)</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_logger_8hpp_source.html#l00297">Logger.hpp:297</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00079">79</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="aef56da1bb83d87c439d181cbce523068" name="aef56da1bb83d87c439d181cbce523068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef56da1bb83d87c439d181cbce523068">&#9670;&#160;</a></span>line_idx <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef size_t <a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">Assimp::LineSplitter::line_idx</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00081">81</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+
+</div>
+</div>
+<a id="aef56da1bb83d87c439d181cbce523068" name="aef56da1bb83d87c439d181cbce523068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef56da1bb83d87c439d181cbce523068">&#9670;&#160;</a></span>line_idx <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef size_t <a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">Assimp::LineSplitter::line_idx</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_line_splitter_8h_source.html#l00081">81</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+
+</div>
+</div>
+<a id="aef56da1bb83d87c439d181cbce523068" name="aef56da1bb83d87c439d181cbce523068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef56da1bb83d87c439d181cbce523068">&#9670;&#160;</a></span>line_idx <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef size_t <a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">Assimp::LineSplitter::line_idx</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source.html#l00081">81</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a04e78a827cbd501d920a9bb8245b817f" name="a04e78a827cbd501d920a9bb8245b817f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04e78a827cbd501d920a9bb8245b817f">&#9670;&#160;</a></span>LineSplitter() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a04e78a827cbd501d920a9bb8245b817f">&#9670;&#160;</a></span>LineSplitter() <span class="overload">[1/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AI_FORCE_INLINE Assimp::LineSplitter::LineSplitter </td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> Assimp::LineSplitter::LineSplitter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_assimp_1_1_stream_reader.html">StreamReaderLE</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a> &amp;&#160;</td>
           <td class="paramname"><em>stream</em>, </td>
         </tr>
         <tr>
@@ -277,10 +340,101 @@ template&lt;size_t N&gt; </td></tr>
 </div><div class="memdoc">
 <p >construct from existing stream reader note: trim is <em>always</em> assumed true if skyp_empty_lines==true </p>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00149">149</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_line_splitter_a04e78a827cbd501d920a9bb8245b817f_cgraph.png" border="0" usemap="#aclass_assimp_1_1_line_splitter_a04e78a827cbd501d920a9bb8245b817f_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_line_splitter_a04e78a827cbd501d920a9bb8245b817f_cgraph" id="aclass_assimp_1_1_line_splitter_a04e78a827cbd501d920a9bb8245b817f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,75,142,119"/>
+<area shape="rect" href="class_assimp_1_1_line_splitter.html#a1ba3e0ed296b5604153bef3fac798517" title=" " alt="" coords="190,75,326,119"/>
+<area shape="rect" href="class_assimp_1_1_stream_reader.html#a04b5d66012c771bb3c33c0580d8d8464" title=" " alt="" coords="374,5,528,50"/>
+<area shape="rect" href="class_assimp_1_1_stream_reader.html#aa33c8a16974f75b94f66276833df4ae3" title="Get the remaining stream size (to the end of the stream)" alt="" coords="374,75,528,119"/>
+<area shape="rect" href="class_assimp_1_1_stream_reader.html#a78aaca82e5097b4c31297a9553d74b05" title=" " alt="" coords="374,144,528,189"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0fd4d399771c7a475011feb059d946ab" name="a0fd4d399771c7a475011feb059d946ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fd4d399771c7a475011feb059d946ab">&#9670;&#160;</a></span>~LineSplitter() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::LineSplitter::~LineSplitter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a99db4079d27847780cc22c6d395b96b9" name="a99db4079d27847780cc22c6d395b96b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99db4079d27847780cc22c6d395b96b9">&#9670;&#160;</a></span>LineSplitter() <span class="overload">[2/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::LineSplitter::LineSplitter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7f8159192166a79badfb4f2cfaea5fde" name="a7f8159192166a79badfb4f2cfaea5fde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f8159192166a79badfb4f2cfaea5fde">&#9670;&#160;</a></span>LineSplitter() <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::LineSplitter::LineSplitter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a id="a72441b81e4b31974c093fdd2e893b067" name="a72441b81e4b31974c093fdd2e893b067"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72441b81e4b31974c093fdd2e893b067">&#9670;&#160;</a></span>LineSplitter() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a72441b81e4b31974c093fdd2e893b067">&#9670;&#160;</a></span>LineSplitter() <span class="overload">[4/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -288,7 +442,7 @@ template&lt;size_t N&gt; </td></tr>
         <tr>
           <td class="memname">Assimp::LineSplitter::LineSplitter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_assimp_1_1_stream_reader.html">StreamReaderLE</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a> &amp;&#160;</td>
           <td class="paramname"><em>stream</em>, </td>
         </tr>
         <tr>
@@ -314,8 +468,85 @@ template&lt;size_t N&gt; </td></tr>
 
 </div>
 </div>
+<a id="a0fd4d399771c7a475011feb059d946ab" name="a0fd4d399771c7a475011feb059d946ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fd4d399771c7a475011feb059d946ab">&#9670;&#160;</a></span>~LineSplitter() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::LineSplitter::~LineSplitter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a99db4079d27847780cc22c6d395b96b9" name="a99db4079d27847780cc22c6d395b96b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99db4079d27847780cc22c6d395b96b9">&#9670;&#160;</a></span>LineSplitter() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::LineSplitter::LineSplitter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7f8159192166a79badfb4f2cfaea5fde" name="a7f8159192166a79badfb4f2cfaea5fde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f8159192166a79badfb4f2cfaea5fde">&#9670;&#160;</a></span>LineSplitter() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::LineSplitter::LineSplitter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a72441b81e4b31974c093fdd2e893b067" name="a72441b81e4b31974c093fdd2e893b067"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72441b81e4b31974c093fdd2e893b067">&#9670;&#160;</a></span>LineSplitter() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a72441b81e4b31974c093fdd2e893b067">&#9670;&#160;</a></span>LineSplitter() <span class="overload">[7/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -323,7 +554,7 @@ template&lt;size_t N&gt; </td></tr>
         <tr>
           <td class="memname">Assimp::LineSplitter::LineSplitter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_assimp_1_1_stream_reader.html">StreamReaderLE</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a> &amp;&#160;</td>
           <td class="paramname"><em>stream</em>, </td>
         </tr>
         <tr>
@@ -346,10 +577,140 @@ template&lt;size_t N&gt; </td></tr>
       </table>
 </div><div class="memdoc">
 <p >construct from existing stream reader note: trim is <em>always</em> assumed true if skyp_empty_lines==true </p>
+
+</div>
+</div>
+<a id="a0fd4d399771c7a475011feb059d946ab" name="a0fd4d399771c7a475011feb059d946ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fd4d399771c7a475011feb059d946ab">&#9670;&#160;</a></span>~LineSplitter() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::LineSplitter::~LineSplitter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a99db4079d27847780cc22c6d395b96b9" name="a99db4079d27847780cc22c6d395b96b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99db4079d27847780cc22c6d395b96b9">&#9670;&#160;</a></span>LineSplitter() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::LineSplitter::LineSplitter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7f8159192166a79badfb4f2cfaea5fde" name="a7f8159192166a79badfb4f2cfaea5fde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f8159192166a79badfb4f2cfaea5fde">&#9670;&#160;</a></span>LineSplitter() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assimp::LineSplitter::LineSplitter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab1696c3d2355b38f7beb5fb2a2497b2d" name="ab1696c3d2355b38f7beb5fb2a2497b2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1696c3d2355b38f7beb5fb2a2497b2d">&#9670;&#160;</a></span>get_index() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">LineSplitter::line_idx</a> Assimp::LineSplitter::get_index </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00258">258</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+
+</div>
+</div>
+<a id="af0d8c7edec42b576a3f06e632c27701e" name="af0d8c7edec42b576a3f06e632c27701e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0d8c7edec42b576a3f06e632c27701e">&#9670;&#160;</a></span>get_index() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">line_idx</a> Assimp::LineSplitter::get_index </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af0d8c7edec42b576a3f06e632c27701e" name="af0d8c7edec42b576a3f06e632c27701e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0d8c7edec42b576a3f06e632c27701e">&#9670;&#160;</a></span>get_index() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">line_idx</a> Assimp::LineSplitter::get_index </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae919ea1da66a85422681c0fbcb4986fe" name="ae919ea1da66a85422681c0fbcb4986fe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae919ea1da66a85422681c0fbcb4986fe">&#9670;&#160;</a></span>get_stream() <span class="overload">[1/3]</span></h2>
 
@@ -357,7 +718,7 @@ template&lt;size_t N&gt; </td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AI_FORCE_INLINE <a class="el" href="class_assimp_1_1_stream_reader.html">StreamReaderLE</a> &amp; Assimp::LineSplitter::get_stream </td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a> &amp; Assimp::LineSplitter::get_stream </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -365,6 +726,8 @@ template&lt;size_t N&gt; </td></tr>
       </table>
 </div><div class="memdoc">
 <p >access the underlying stream object </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00262">262</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
 
 </div>
 </div>
@@ -375,7 +738,7 @@ template&lt;size_t N&gt; </td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_assimp_1_1_stream_reader.html">StreamReaderLE</a> &amp; Assimp::LineSplitter::get_stream </td>
+          <td class="memname"><a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a> &amp; Assimp::LineSplitter::get_stream </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -393,7 +756,7 @@ template&lt;size_t N&gt; </td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_assimp_1_1_stream_reader.html">StreamReaderLE</a> &amp; Assimp::LineSplitter::get_stream </td>
+          <td class="memname"><a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a> &amp; Assimp::LineSplitter::get_stream </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -405,7 +768,7 @@ template&lt;size_t N&gt; </td></tr>
 </div>
 </div>
 <a id="a05e6ea1868bc931c754ef332a4866ae3" name="a05e6ea1868bc931c754ef332a4866ae3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05e6ea1868bc931c754ef332a4866ae3">&#9670;&#160;</a></span>get_tokens() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e6ea1868bc931c754ef332a4866ae3">&#9670;&#160;</a></span>get_tokens() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -415,7 +778,62 @@ template&lt;size_t N&gt; </div>
         <tr>
           <td class="memname">void Assimp::LineSplitter::get_tokens </td>
           <td>(</td>
-          <td class="paramtype">const char *(&amp;)&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *(&amp;)&#160;</td>
+          <td class="paramname"><em>tokens</em>[N]</td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >extract the start positions of N tokens from the current line </p>
+
+</div>
+</div>
+<a id="ae158d72bee4278a3cc78db1f92b58be6" name="ae158d72bee4278a3cc78db1f92b58be6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae158d72bee4278a3cc78db1f92b58be6">&#9670;&#160;</a></span>get_tokens() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void Assimp::LineSplitter::get_tokens </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *(&amp;)&#160;</td>
+          <td class="paramname"><em>tokens</em>[N]</td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00223">223</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_line_splitter_ae158d72bee4278a3cc78db1f92b58be6_cgraph.png" border="0" usemap="#aclass_assimp_1_1_line_splitter_ae158d72bee4278a3cc78db1f92b58be6_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_line_splitter_ae158d72bee4278a3cc78db1f92b58be6_cgraph" id="aclass_assimp_1_1_line_splitter_ae158d72bee4278a3cc78db1f92b58be6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,142,124"/>
+<area shape="rect" href="namespace_assimp.html#a99092e9b63e3e8bb88dc63e141d7157f" title=" " alt="" coords="194,5,322,33"/>
+<area shape="rect" href="namespace_assimp.html#a2dc3cfed4430c305908c17c403ced49c" title=" " alt="" coords="199,57,316,85"/>
+<area shape="rect" href="class_assimp_1_1_line_splitter.html#a175ad7f4d2d0316ceb762259fbe62d26" title=" " alt="" coords="190,109,326,154"/>
+<area shape="rect" href="namespace_assimp.html#a77e1d122d82c1e0905f5dc37ca72c0dc" title=" " alt="" coords="190,177,326,205"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a05e6ea1868bc931c754ef332a4866ae3" name="a05e6ea1868bc931c754ef332a4866ae3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e6ea1868bc931c754ef332a4866ae3">&#9670;&#160;</a></span>get_tokens() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assimp::LineSplitter::get_tokens </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *(&amp;)&#160;</td>
           <td class="paramname"><em>tokens</em>[N]</td><td>)</td>
           <td> const</td>
         </tr>
@@ -426,7 +844,7 @@ template&lt;size_t N&gt; </div>
 </div>
 </div>
 <a id="a05e6ea1868bc931c754ef332a4866ae3" name="a05e6ea1868bc931c754ef332a4866ae3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05e6ea1868bc931c754ef332a4866ae3">&#9670;&#160;</a></span>get_tokens() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e6ea1868bc931c754ef332a4866ae3">&#9670;&#160;</a></span>get_tokens() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -436,7 +854,7 @@ template&lt;size_t N&gt; </div>
         <tr>
           <td class="memname">void Assimp::LineSplitter::get_tokens </td>
           <td>(</td>
-          <td class="paramtype">const char *(&amp;)&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *(&amp;)&#160;</td>
           <td class="paramname"><em>tokens</em>[N]</td><td>)</td>
           <td> const</td>
         </tr>
@@ -446,24 +864,56 @@ template&lt;size_t N&gt; </div>
 
 </div>
 </div>
-<a id="a05e6ea1868bc931c754ef332a4866ae3" name="a05e6ea1868bc931c754ef332a4866ae3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05e6ea1868bc931c754ef332a4866ae3">&#9670;&#160;</a></span>get_tokens() <span class="overload">[3/3]</span></h2>
+<a id="a72e2e2a6661c0b0bcce0792d71bda4f1" name="a72e2e2a6661c0b0bcce0792d71bda4f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72e2e2a6661c0b0bcce0792d71bda4f1">&#9670;&#160;</a></span>getEnd() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void Assimp::LineSplitter::get_tokens </td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * Assimp::LineSplitter::getEnd </td>
           <td>(</td>
-          <td class="paramtype">const char *(&amp;)&#160;</td>
-          <td class="paramname"><em>tokens</em>[N]</td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >extract the start positions of N tokens from the current line </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00246">246</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+
+</div>
+</div>
+<a id="a1ad31292b4829957c3409368230ee8ec" name="a1ad31292b4829957c3409368230ee8ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ad31292b4829957c3409368230ee8ec">&#9670;&#160;</a></span>getEnd() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * Assimp::LineSplitter::getEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ad31292b4829957c3409368230ee8ec" name="a1ad31292b4829957c3409368230ee8ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ad31292b4829957c3409368230ee8ec">&#9670;&#160;</a></span>getEnd() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * Assimp::LineSplitter::getEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -474,15 +924,17 @@ template&lt;size_t N&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AI_FORCE_INLINE bool Assimp::LineSplitter::match_start </td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::LineSplitter::match_start </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>check</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >!strcmp((*this)-&gt;substr(0,strlen(check)),check) </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00266">266</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
 
 </div>
 </div>
@@ -495,7 +947,7 @@ template&lt;size_t N&gt; </div>
         <tr>
           <td class="memname">bool Assimp::LineSplitter::match_start </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>check</em></td><td>)</td>
           <td></td>
         </tr>
@@ -514,7 +966,7 @@ template&lt;size_t N&gt; </div>
         <tr>
           <td class="memname">bool Assimp::LineSplitter::match_start </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>check</em></td><td>)</td>
           <td></td>
         </tr>
@@ -531,7 +983,7 @@ template&lt;size_t N&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AI_FORCE_INLINE Assimp::LineSplitter::operator bool </td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> Assimp::LineSplitter::operator bool </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -539,6 +991,8 @@ template&lt;size_t N&gt; </div>
       </table>
 </div><div class="memdoc">
 <p >boolean context </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00250">250</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
 
 </div>
 </div>
@@ -585,7 +1039,7 @@ template&lt;size_t N&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AI_FORCE_INLINE Assimp::LineSplitter::operator line_idx </td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> Assimp::LineSplitter::operator <a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">line_idx</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -593,6 +1047,8 @@ template&lt;size_t N&gt; </div>
       </table>
 </div><div class="memdoc">
 <p >line indices are zero-based, empty lines are included </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00254">254</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
 
 </div>
 </div>
@@ -603,7 +1059,7 @@ template&lt;size_t N&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Assimp::LineSplitter::operator line_idx </td>
+          <td class="memname">Assimp::LineSplitter::operator <a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">line_idx</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -621,7 +1077,7 @@ template&lt;size_t N&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Assimp::LineSplitter::operator line_idx </td>
+          <td class="memname">Assimp::LineSplitter::operator <a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">line_idx</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -632,14 +1088,67 @@ template&lt;size_t N&gt; </div>
 
 </div>
 </div>
+<a id="a903381cf5cbc7a1684116ddd71604ae5" name="a903381cf5cbc7a1684116ddd71604ae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a903381cf5cbc7a1684116ddd71604ae5">&#9670;&#160;</a></span>operator*() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> std::string Assimp::LineSplitter::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00242">242</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+
+</div>
+</div>
+<a id="a750c652d4371c7aa2ce74b06449cbc18" name="a750c652d4371c7aa2ce74b06449cbc18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a750c652d4371c7aa2ce74b06449cbc18">&#9670;&#160;</a></span>operator*() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Assimp::LineSplitter::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a750c652d4371c7aa2ce74b06449cbc18" name="a750c652d4371c7aa2ce74b06449cbc18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a750c652d4371c7aa2ce74b06449cbc18">&#9670;&#160;</a></span>operator*() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Assimp::LineSplitter::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a1ba3e0ed296b5604153bef3fac798517" name="a1ba3e0ed296b5604153bef3fac798517"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ba3e0ed296b5604153bef3fac798517">&#9670;&#160;</a></span>operator++() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ba3e0ed296b5604153bef3fac798517">&#9670;&#160;</a></span>operator++() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AI_FORCE_INLINE <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp; Assimp::LineSplitter::operator++ </td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp; Assimp::LineSplitter::operator++ </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -648,10 +1157,32 @@ template&lt;size_t N&gt; </div>
 </div><div class="memdoc">
 <p >pseudo-iterator increment </p>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00163">163</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517_cgraph.png" border="0" usemap="#aclass_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517_cgraph" id="aclass_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517_cgraph">
+<area shape="rect" title=" " alt="" coords="5,75,142,119"/>
+<area shape="rect" href="class_assimp_1_1_stream_reader.html#a04b5d66012c771bb3c33c0580d8d8464" title=" " alt="" coords="190,5,344,50"/>
+<area shape="rect" href="class_assimp_1_1_stream_reader.html#aa33c8a16974f75b94f66276833df4ae3" title="Get the remaining stream size (to the end of the stream)" alt="" coords="190,75,344,119"/>
+<area shape="rect" href="class_assimp_1_1_stream_reader.html#a78aaca82e5097b4c31297a9553d74b05" title=" " alt="" coords="190,144,344,189"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517_icgraph.png" border="0" usemap="#aclass_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517_icgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517_icgraph" id="aclass_assimp_1_1_line_splitter_a1ba3e0ed296b5604153bef3fac798517_icgraph">
+<area shape="rect" title=" " alt="" coords="190,5,326,50"/>
+<area shape="rect" href="class_assimp_1_1_line_splitter.html#a04e78a827cbd501d920a9bb8245b817f" title=" " alt="" coords="5,5,142,50"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a206d19a8fed6b114ac16001ace38d5fc" name="a206d19a8fed6b114ac16001ace38d5fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a206d19a8fed6b114ac16001ace38d5fc">&#9670;&#160;</a></span>operator++() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a206d19a8fed6b114ac16001ace38d5fc">&#9670;&#160;</a></span>operator++() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -669,7 +1200,7 @@ template&lt;size_t N&gt; </div>
 </div>
 </div>
 <a id="a206d19a8fed6b114ac16001ace38d5fc" name="a206d19a8fed6b114ac16001ace38d5fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a206d19a8fed6b114ac16001ace38d5fc">&#9670;&#160;</a></span>operator++() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a206d19a8fed6b114ac16001ace38d5fc">&#9670;&#160;</a></span>operator++() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -683,6 +1214,62 @@ template&lt;size_t N&gt; </div>
       </table>
 </div><div class="memdoc">
 <p >pseudo-iterator increment </p>
+
+</div>
+</div>
+<a id="af41717d32478918c52051c4d2f1c2788" name="af41717d32478918c52051c4d2f1c2788"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af41717d32478918c52051c4d2f1c2788">&#9670;&#160;</a></span>operator++() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp; Assimp::LineSplitter::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00203">203</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+
+</div>
+</div>
+<a id="a0fe5160b03fee78abecad477af7111f6" name="a0fe5160b03fee78abecad477af7111f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fe5160b03fee78abecad477af7111f6">&#9670;&#160;</a></span>operator++() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp; Assimp::LineSplitter::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0fe5160b03fee78abecad477af7111f6" name="a0fe5160b03fee78abecad477af7111f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fe5160b03fee78abecad477af7111f6">&#9670;&#160;</a></span>operator++() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp; Assimp::LineSplitter::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -693,7 +1280,7 @@ template&lt;size_t N&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AI_FORCE_INLINE const std::string * Assimp::LineSplitter::operator-&gt; </td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string * Assimp::LineSplitter::operator-&gt; </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -701,6 +1288,18 @@ template&lt;size_t N&gt; </div>
       </table>
 </div><div class="memdoc">
 <p >member access </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00238">238</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_line_splitter_a175ad7f4d2d0316ceb762259fbe62d26_icgraph.png" border="0" usemap="#aclass_assimp_1_1_line_splitter_a175ad7f4d2d0316ceb762259fbe62d26_icgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_line_splitter_a175ad7f4d2d0316ceb762259fbe62d26_icgraph" id="aclass_assimp_1_1_line_splitter_a175ad7f4d2d0316ceb762259fbe62d26_icgraph">
+<area shape="rect" title=" " alt="" coords="190,40,326,85"/>
+<area shape="rect" href="class_assimp_1_1_line_splitter.html#ae158d72bee4278a3cc78db1f92b58be6" title=" " alt="" coords="5,5,142,50"/>
+<area shape="rect" href="class_assimp_1_1_line_splitter.html#ac6ba3911a72d452fb8930a812fea6d7e" title=" " alt="" coords="5,75,142,119"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -711,7 +1310,7 @@ template&lt;size_t N&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string * Assimp::LineSplitter::operator-&gt; </td>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string * Assimp::LineSplitter::operator-&gt; </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -729,7 +1328,7 @@ template&lt;size_t N&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string * Assimp::LineSplitter::operator-&gt; </td>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string * Assimp::LineSplitter::operator-&gt; </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -740,6 +1339,84 @@ template&lt;size_t N&gt; </div>
 
 </div>
 </div>
+<a id="a0ccb9c0cd85b9417f6640f7a35db6d5b" name="a0ccb9c0cd85b9417f6640f7a35db6d5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ccb9c0cd85b9417f6640f7a35db6d5b">&#9670;&#160;</a></span>operator=() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp; Assimp::LineSplitter::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ccb9c0cd85b9417f6640f7a35db6d5b" name="a0ccb9c0cd85b9417f6640f7a35db6d5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ccb9c0cd85b9417f6640f7a35db6d5b">&#9670;&#160;</a></span>operator=() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp; Assimp::LineSplitter::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ccb9c0cd85b9417f6640f7a35db6d5b" name="a0ccb9c0cd85b9417f6640f7a35db6d5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ccb9c0cd85b9417f6640f7a35db6d5b">&#9670;&#160;</a></span>operator=() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp; Assimp::LineSplitter::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="class_assimp_1_1_line_splitter.html">LineSplitter</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac6ba3911a72d452fb8930a812fea6d7e" name="ac6ba3911a72d452fb8930a812fea6d7e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac6ba3911a72d452fb8930a812fea6d7e">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/3]</span></h2>
 
@@ -747,7 +1424,7 @@ template&lt;size_t N&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AI_FORCE_INLINE const char * Assimp::LineSplitter::operator[] </td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * Assimp::LineSplitter::operator[] </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>idx</em></td><td>)</td>
@@ -756,6 +1433,20 @@ template&lt;size_t N&gt; </div>
       </table>
 </div><div class="memdoc">
 <p >get a pointer to the beginning of a particular token </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00207">207</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_assimp_1_1_line_splitter_ac6ba3911a72d452fb8930a812fea6d7e_cgraph.png" border="0" usemap="#aclass_assimp_1_1_line_splitter_ac6ba3911a72d452fb8930a812fea6d7e_cgraph" alt=""/></div>
+<map name="aclass_assimp_1_1_line_splitter_ac6ba3911a72d452fb8930a812fea6d7e_cgraph" id="aclass_assimp_1_1_line_splitter_ac6ba3911a72d452fb8930a812fea6d7e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,142,124"/>
+<area shape="rect" href="namespace_assimp.html#a99092e9b63e3e8bb88dc63e141d7157f" title=" " alt="" coords="194,5,322,33"/>
+<area shape="rect" href="namespace_assimp.html#a2dc3cfed4430c305908c17c403ced49c" title=" " alt="" coords="199,57,316,85"/>
+<area shape="rect" href="class_assimp_1_1_line_splitter.html#a175ad7f4d2d0316ceb762259fbe62d26" title=" " alt="" coords="190,109,326,154"/>
+<area shape="rect" href="namespace_assimp.html#a77e1d122d82c1e0905f5dc37ca72c0dc" title=" " alt="" coords="190,177,326,205"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -766,7 +1457,7 @@ template&lt;size_t N&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char * Assimp::LineSplitter::operator[] </td>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * Assimp::LineSplitter::operator[] </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>idx</em></td><td>)</td>
@@ -785,7 +1476,7 @@ template&lt;size_t N&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char * Assimp::LineSplitter::operator[] </td>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * Assimp::LineSplitter::operator[] </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>idx</em></td><td>)</td>
@@ -804,7 +1495,7 @@ template&lt;size_t N&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AI_FORCE_INLINE void Assimp::LineSplitter::swallow_next_increment </td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void Assimp::LineSplitter::swallow_next_increment </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -812,6 +1503,8 @@ template&lt;size_t N&gt; </div>
       </table>
 </div><div class="memdoc">
 <p >swallow the next call to ++, return the previous value. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00272">272</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
 
 </div>
 </div>
@@ -848,6 +1541,175 @@ template&lt;size_t N&gt; </div>
       </table>
 </div><div class="memdoc">
 <p >swallow the next call to ++, return the previous value. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a7cde4e6ddd5f2c450790c80281d62669" name="a7cde4e6ddd5f2c450790c80281d62669"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cde4e6ddd5f2c450790c80281d62669">&#9670;&#160;</a></span>mCur</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Assimp::LineSplitter::mCur</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00143">143</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+
+</div>
+</div>
+<a id="a516713ecec241d5b206424725706193f" name="a516713ecec241d5b206424725706193f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a516713ecec241d5b206424725706193f">&#9670;&#160;</a></span>mEnd</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * Assimp::LineSplitter::mEnd</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00144">144</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+
+</div>
+</div>
+<a id="ac442e59062c37d5b886a9d5e619100bb" name="ac442e59062c37d5b886a9d5e619100bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac442e59062c37d5b886a9d5e619100bb">&#9670;&#160;</a></span>mIdx</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_assimp_1_1_line_splitter.html#aef56da1bb83d87c439d181cbce523068">line_idx</a> Assimp::LineSplitter::mIdx</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00142">142</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+
+</div>
+</div>
+<a id="a088e3e7bbe43c4a30c9bbbcd2b80182a" name="a088e3e7bbe43c4a30c9bbbcd2b80182a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a088e3e7bbe43c4a30c9bbbcd2b80182a">&#9670;&#160;</a></span>mSkip_empty_lines</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Assimp::LineSplitter::mSkip_empty_lines</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00146">146</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+
+</div>
+</div>
+<a id="ad0a89c57b790269acca8a9d1e6bc715a" name="ad0a89c57b790269acca8a9d1e6bc715a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0a89c57b790269acca8a9d1e6bc715a">&#9670;&#160;</a></span>mStream</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a> &amp; Assimp::LineSplitter::mStream</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00145">145</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+
+</div>
+</div>
+<a id="a5ca2516ae7da68064fe06b702d0c0e70" name="a5ca2516ae7da68064fe06b702d0c0e70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca2516ae7da68064fe06b702d0c0e70">&#9670;&#160;</a></span>mSwallow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Assimp::LineSplitter::mSwallow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00146">146</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
+
+</div>
+</div>
+<a id="a7058917cd5f7103fd9941509ef80fd0c" name="a7058917cd5f7103fd9941509ef80fd0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7058917cd5f7103fd9941509ef80fd0c">&#9670;&#160;</a></span>mTrim</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Assimp::LineSplitter::mTrim</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_line_splitter_8h_source.html#l00146">146</a> of file <a class="el" href="include_2assimp_2_line_splitter_8h_source.html">LineSplitter.h</a>.</p>
 
 </div>
 </div>

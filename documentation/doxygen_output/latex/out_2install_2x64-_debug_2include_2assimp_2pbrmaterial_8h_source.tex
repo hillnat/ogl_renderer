@@ -2,91 +2,91 @@
 \label{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/pbrmaterial.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/pbrmaterial.h}}
 \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{3 \textcolor{comment}{Open Asset Import Library (assimp)}}
-\DoxyCodeLine{4 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{5 \textcolor{comment}{}}
-\DoxyCodeLine{6 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
-\DoxyCodeLine{7 \textcolor{comment}{}}
-\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
-\DoxyCodeLine{9 \textcolor{comment}{}}
-\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
-\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the following}}
-\DoxyCodeLine{12 \textcolor{comment}{conditions are met:}}
-\DoxyCodeLine{13 \textcolor{comment}{}}
-\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
-\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
-\DoxyCodeLine{17 \textcolor{comment}{}}
-\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
-\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
-\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
-\DoxyCodeLine{22 \textcolor{comment}{}}
-\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
-\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
-\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
-\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
-\DoxyCodeLine{27 \textcolor{comment}{}}
-\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
-\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
-\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
-\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
-\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
-\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
-\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
-\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
-\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
-\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
-\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
-\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{40 \textcolor{comment}{*/}}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{45 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifndef AI\_PBRMATERIAL\_H\_INC}}
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#define AI\_PBRMATERIAL\_H\_INC}}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
-\DoxyCodeLine{50 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
-\DoxyCodeLine{51 \textcolor{preprocessor}{\#   warning pbrmaterial.h is deprecated. Please update to PBR materials in materials.h and glTF-\/specific items in GltfMaterial.h}}
-\DoxyCodeLine{52 \textcolor{preprocessor}{\#else if defined(\_MSC\_VER)}}
-\DoxyCodeLine{53 \textcolor{preprocessor}{\#   pragma message("{}pbrmaterial.h is deprecated. Please update to PBR materials in materials.h and glTF-\/specific items in GltfMaterial.h"{}})}
-\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <assimp/material.h>}}
-\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <assimp/GltfMaterial.h>}}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_PBRMETALLICROUGHNESS\_BASE\_COLOR\_FACTOR AI\_MATKEY\_BASE\_COLOR}}
-\DoxyCodeLine{60 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_PBRMETALLICROUGHNESS\_BASE\_COLOR\_TEXTURE AI\_MATKEY\_BASE\_COLOR\_TEXTURE}}
-\DoxyCodeLine{61 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_PBRMETALLICROUGHNESS\_METALLIC\_FACTOR AI\_MATKEY\_METALLIC\_FACTOR}}
-\DoxyCodeLine{62 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_PBRMETALLICROUGHNESS\_ROUGHNESS\_FACTOR AI\_MATKEY\_ROUGHNESS\_FACTOR}}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_PBRSPECULARGLOSSINESS AI\_MATKEY\_GLOSSINESS\_FACTOR}}
-\DoxyCodeLine{65 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_PBRSPECULARGLOSSINESS\_GLOSSINESS\_FACTOR AI\_MATKEY\_GLOSSINESS\_FACTOR}}
-\DoxyCodeLine{66 }
-\DoxyCodeLine{67 \textcolor{comment}{// Use AI\_MATKEY\_SHADING\_MODEL == aiShadingMode\_Unlit instead}}
-\DoxyCodeLine{68 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_UNLIT "{}\$mat.gltf.unlit"{}}, 0, 0}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{70 \textcolor{comment}{//AI\_MATKEY\_GLTF\_MATERIAL\_SHEEN}}
-\DoxyCodeLine{71 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_SHEEN\_COLOR\_FACTOR AI\_MATKEY\_SHEEN\_COLOR\_FACTOR}}
-\DoxyCodeLine{72 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_SHEEN\_ROUGHNESS\_FACTOR AI\_MATKEY\_SHEEN\_ROUGHNESS\_FACTOR}}
-\DoxyCodeLine{73 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_SHEEN\_COLOR\_TEXTURE AI\_MATKEY\_SHEEN\_COLOR\_TEXTURE}}
-\DoxyCodeLine{74 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_SHEEN\_ROUGHNESS\_TEXTURE AI\_MATKEY\_SHEEN\_ROUGHNESS\_TEXTURE}}
-\DoxyCodeLine{75 }
-\DoxyCodeLine{76 \textcolor{comment}{//AI\_MATKEY\_GLTF\_MATERIAL\_CLEARCOAT}}
-\DoxyCodeLine{77 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_CLEARCOAT\_FACTOR AI\_MATKEY\_CLEARCOAT\_FACTOR}}
-\DoxyCodeLine{78 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_CLEARCOAT\_ROUGHNESS\_FACTOR AI\_MATKEY\_CLEARCOAT\_ROUGHNESS\_FACTOR}}
-\DoxyCodeLine{79 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_CLEARCOAT\_TEXTURE AI\_MATKEY\_CLEARCOAT\_TEXTURE}}
-\DoxyCodeLine{80 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_CLEARCOAT\_ROUGHNESS\_TEXTURE AI\_MATKEY\_CLEARCOAT\_ROUGHNESS\_TEXTURE}}
-\DoxyCodeLine{81 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_CLEARCOAT\_NORMAL\_TEXTURE AI\_MATKEY\_CLEARCOAT\_NORMAL\_TEXTURE}}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{83 \textcolor{comment}{//AI\_MATKEY\_GLTF\_MATERIAL\_TRANSMISSION}}
-\DoxyCodeLine{84 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_TRANSMISSION\_FACTOR AI\_MATKEY\_TRANSMISSION\_FACTOR}}
-\DoxyCodeLine{85 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_TRANSMISSION\_TEXTURE AI\_MATKEY\_TRANSMISSION\_TEXTURE}}
-\DoxyCodeLine{86 }
-\DoxyCodeLine{87 \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_TEXTURE\_TEXCOORD(type, N) AI\_MATKEY\_UVWSRC(type, N)}}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00002}00002 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00003}00003 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00004}00004 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00005}00005 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00006}00006 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00007}00007 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00008}00008 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00009}00009 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00010}00010 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00011}00011 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00012}00012 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00013}00013 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00014}00014 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00015}00015 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00016}00016 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00017}00017 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00018}00018 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00019}00019 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00020}00020 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00021}00021 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00022}00022 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00023}00023 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00024}00024 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00025}00025 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00026}00026 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00027}00027 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00028}00028 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00029}00029 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00030}00030 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00031}00031 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00032}00032 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00033}00033 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00034}00034 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00035}00035 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00036}00036 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00037}00037 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00038}00038 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00039}00039 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00040}00040 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00045}00045 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00046}00046 \textcolor{preprocessor}{\#ifndef AI\_PBRMATERIAL\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00047}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_ad89dffc6b9479250b26d9ac72234c911}{00047}} \textcolor{preprocessor}{\#define AI\_PBRMATERIAL\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00049}00049 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00050}00050 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00051}00051 \textcolor{preprocessor}{\#   warning pbrmaterial.h is deprecated. Please update to PBR materials in materials.h and glTF-\/specific items in GltfMaterial.h}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00052}00052 \textcolor{preprocessor}{\#else if defined(\_MSC\_VER)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00053}00053 \textcolor{preprocessor}{\#   pragma message("{}pbrmaterial.h is deprecated. Please update to PBR materials in materials.h and glTF-\/specific items in GltfMaterial.h"{}})}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00054}00054 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00056}00056 \textcolor{preprocessor}{\#include <assimp/material.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00057}00057 \textcolor{preprocessor}{\#include <assimp/GltfMaterial.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00059}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_aaec742eb67a3722767d5b714a925e561}{00059}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_PBRMETALLICROUGHNESS\_BASE\_COLOR\_FACTOR AI\_MATKEY\_BASE\_COLOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00060}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_af706528d7fa67d9c0a13c4e2f4527be2}{00060}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_PBRMETALLICROUGHNESS\_BASE\_COLOR\_TEXTURE AI\_MATKEY\_BASE\_COLOR\_TEXTURE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00061}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_aabbda7c5ac4a16d6f5fe4b1964aa60da}{00061}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_PBRMETALLICROUGHNESS\_METALLIC\_FACTOR AI\_MATKEY\_METALLIC\_FACTOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00062}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_a5776c78d321a3e9cd1a8bcc0801c2356}{00062}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_PBRMETALLICROUGHNESS\_ROUGHNESS\_FACTOR AI\_MATKEY\_ROUGHNESS\_FACTOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00064}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_a7ccc8f73d6b0006c76a3136872995af8}{00064}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_PBRSPECULARGLOSSINESS AI\_MATKEY\_GLOSSINESS\_FACTOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00065}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_ae8dc7df86060706872228bf0f26a6d93}{00065}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_PBRSPECULARGLOSSINESS\_GLOSSINESS\_FACTOR AI\_MATKEY\_GLOSSINESS\_FACTOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00067}00067 \textcolor{comment}{// Use AI\_MATKEY\_SHADING\_MODEL == aiShadingMode\_Unlit instead}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00068}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_ab9118b0b3af90a8c14a9347217cb3b4c}{00068}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_UNLIT "{}\$mat.gltf.unlit"{}}, 0, 0}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00070}00070 \textcolor{comment}{//AI\_MATKEY\_GLTF\_MATERIAL\_SHEEN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00071}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_aa742ebe7b98e7ece018cad6c26a8e009}{00071}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_SHEEN\_COLOR\_FACTOR AI\_MATKEY\_SHEEN\_COLOR\_FACTOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00072}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_a0dcfe7ab9fad6727fb9bcfac06b51279}{00072}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_SHEEN\_ROUGHNESS\_FACTOR AI\_MATKEY\_SHEEN\_ROUGHNESS\_FACTOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00073}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_ac48cbe733498d54f7ed1d29841aac41a}{00073}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_SHEEN\_COLOR\_TEXTURE AI\_MATKEY\_SHEEN\_COLOR\_TEXTURE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00074}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_a73aa1c61670b30407210c706163db74b}{00074}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_SHEEN\_ROUGHNESS\_TEXTURE AI\_MATKEY\_SHEEN\_ROUGHNESS\_TEXTURE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00076}00076 \textcolor{comment}{//AI\_MATKEY\_GLTF\_MATERIAL\_CLEARCOAT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00077}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_a0fb83ba857f7edffccdcfd902c48df2d}{00077}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_CLEARCOAT\_FACTOR AI\_MATKEY\_CLEARCOAT\_FACTOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00078}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_ac1299272d3df9afbb8721b40ec32c898}{00078}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_CLEARCOAT\_ROUGHNESS\_FACTOR AI\_MATKEY\_CLEARCOAT\_ROUGHNESS\_FACTOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00079}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_a17a7993808fc1965cca9d43f1abdd576}{00079}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_CLEARCOAT\_TEXTURE AI\_MATKEY\_CLEARCOAT\_TEXTURE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00080}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_a287792e0ba57686215ee12aba49b6029}{00080}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_CLEARCOAT\_ROUGHNESS\_TEXTURE AI\_MATKEY\_CLEARCOAT\_ROUGHNESS\_TEXTURE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00081}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_a38f9188040fd98c5d5a93aaa72675894}{00081}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_CLEARCOAT\_NORMAL\_TEXTURE AI\_MATKEY\_CLEARCOAT\_NORMAL\_TEXTURE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00083}00083 \textcolor{comment}{//AI\_MATKEY\_GLTF\_MATERIAL\_TRANSMISSION}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00084}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_ac5c181cf716c946f461c9c7d4ba2ec03}{00084}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_TRANSMISSION\_FACTOR AI\_MATKEY\_TRANSMISSION\_FACTOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00085}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_a7509e17acf607a407705c6d512c01161}{00085}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_MATERIAL\_TRANSMISSION\_TEXTURE AI\_MATKEY\_TRANSMISSION\_TEXTURE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00087}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_a40f1cd00864f590a62811eb1e23e3dd1}{00087}} \textcolor{preprocessor}{\#define AI\_MATKEY\_GLTF\_TEXTURE\_TEXCOORD(type, N) AI\_MATKEY\_UVWSRC(type, N)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2pbrmaterial_8h_source_l00089}00089 \textcolor{preprocessor}{\#endif }}
 
 \end{DoxyCode}

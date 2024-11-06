@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -118,7 +121,7 @@ $(function() {
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#ifndef AI_IOSTREAM_H_INC</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#define AI_IOSTREAM_H_INC</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_i_o_stream_8hpp.html#ace19faed05e7a941220d5337528ddb9c">   47</a></span><span class="preprocessor">#define AI_IOSTREAM_H_INC</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#ifdef __GNUC__</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#   pragma GCC system_header</span></div>
@@ -134,13 +137,13 @@ $(function() {
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_assimp.html">Assimp</a> {</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">// ----------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"></span><span class="keyword">class </span>ASSIMP_API IOStream</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"></span><span class="keyword">class </span><a class="code hl_define" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> IOStream</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>#ifndef SWIG</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    : <span class="keyword">public</span> Intern::AllocateFromAssimpHeap</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_assimp_1_1_i_o_stream.html#a5bbd3d47eb659614e148e329bd5c3583">   76</a></span>    <a class="code hl_function" href="class_assimp_1_1_i_o_stream.html#a5bbd3d47eb659614e148e329bd5c3583">IOStream</a>() AI_NO_EXCEPT = default;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_assimp_1_1_i_o_stream.html#a5bbd3d47eb659614e148e329bd5c3583">   76</a></span>    <a class="code hl_function" href="class_assimp_1_1_i_o_stream.html#a5bbd3d47eb659614e148e329bd5c3583">IOStream</a>() <a class="code hl_define" href="include_2assimp_2defs_8h.html#ae032f18edd69bf6ba935ef9feb025a96">AI_NO_EXCEPT</a> = default;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>public:</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
@@ -152,7 +155,7 @@ $(function() {
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordtype">size_t</span> pCount) = 0;</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_assimp_1_1_i_o_stream.html#ad0ca4aae1b8c4d00db391ac3a4171f7b">   99</a></span><span class="comment"></span>    virtual <span class="keywordtype">size_t</span> Write(const <span class="keywordtype">void</span>* pvBuffer,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_assimp_1_1_i_o_stream.html#ad0ca4aae1b8c4d00db391ac3a4171f7b">   99</a></span><span class="comment"></span>    virtual <span class="keywordtype">size_t</span> Write(<a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <span class="keywordtype">void</span>* pvBuffer,</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordtype">size_t</span> pSize,</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordtype">size_t</span> pCount) = 0;</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
@@ -161,10 +164,10 @@ $(function() {
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <a class="code hl_enumeration" href="include_2assimp_2types_8h.html#ac50fbaa57d78776ca99e42104d9b2786">aiOrigin</a> pOrigin) = 0;</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_assimp_1_1_i_o_stream.html#a316ac6cd16b5a493d1313f792c806194">  115</a></span><span class="comment"></span>    virtual <span class="keywordtype">size_t</span> Tell() const = 0;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_assimp_1_1_i_o_stream.html#a316ac6cd16b5a493d1313f792c806194">  115</a></span><span class="comment"></span>    virtual <span class="keywordtype">size_t</span> Tell() <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> = 0;</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_assimp_1_1_i_o_stream.html#aaa01183d197fb714f28d6c611b6fa058">  120</a></span><span class="comment"></span>    virtual <span class="keywordtype">size_t</span> FileSize() const = 0;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_assimp_1_1_i_o_stream.html#aaa01183d197fb714f28d6c611b6fa058">  120</a></span><span class="comment"></span>    virtual <span class="keywordtype">size_t</span> FileSize() <a class="code hl_define" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> = 0;</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="comment">// -------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="class_assimp_1_1_i_o_stream.html#a7c19952446ece90924b246f087417899">  126</a></span><span class="comment"></span>    virtual <span class="keywordtype">void</span> Flush() = 0;</div>
@@ -173,11 +176,14 @@ $(function() {
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>} </div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">#endif </span></div>
-<div class="ttc" id="aclass_assimp_1_1_i_o_stream_html"><div class="ttname"><a href="class_assimp_1_1_i_o_stream.html">Assimp::IOStream</a></div><div class="ttdoc">CPP-API: Class to handle file I/O for C++.</div><div class="ttdef"><b>Definition:</b> IOStream.hpp:73</div></div>
+<div class="ttc" id="aclass_assimp_1_1_i_o_stream_html"><div class="ttname"><a href="class_assimp_1_1_i_o_stream.html">Assimp::IOStream</a></div><div class="ttdoc">CPP-API: Class to handle file I/O for C++.</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_i_o_stream_8hpp_source.html#l00069">IOStream.hpp:73</a></div></div>
 <div class="ttc" id="aclass_assimp_1_1_i_o_stream_html_a5bbd3d47eb659614e148e329bd5c3583"><div class="ttname"><a href="class_assimp_1_1_i_o_stream.html#a5bbd3d47eb659614e148e329bd5c3583">Assimp::IOStream::IOStream</a></div><div class="ttdeci">IOStream() AI_NO_EXCEPT=default</div></div>
-<div class="ttc" id="ainclude_2assimp_2types_8h_html_a1f78dfb65090aa930cabb984c8abe711"><div class="ttname"><a href="include_2assimp_2types_8h.html#a1f78dfb65090aa930cabb984c8abe711">aiReturn</a></div><div class="ttdeci">aiReturn</div><div class="ttdef"><b>Definition:</b> types.h:402</div></div>
-<div class="ttc" id="ainclude_2assimp_2types_8h_html_ac50fbaa57d78776ca99e42104d9b2786"><div class="ttname"><a href="include_2assimp_2types_8h.html#ac50fbaa57d78776ca99e42104d9b2786">aiOrigin</a></div><div class="ttdeci">aiOrigin</div><div class="ttdef"><b>Definition:</b> types.h:431</div></div>
-<div class="ttc" id="anamespace_assimp_html"><div class="ttname"><a href="namespace_assimp.html">Assimp</a></div><div class="ttdef"><b>Definition:</b> AssertHandler.h:50</div></div>
+<div class="ttc" id="ainclude_2assimp_2defs_8h_html_a7d617d307e656cb6ff315ba71ff958d4"><div class="ttname"><a href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a></div><div class="ttdeci">#define ASSIMP_API</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2defs_8h_source.html#l00163">defs.h:163</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2defs_8h_html_ae032f18edd69bf6ba935ef9feb025a96"><div class="ttname"><a href="include_2assimp_2defs_8h.html#ae032f18edd69bf6ba935ef9feb025a96">AI_NO_EXCEPT</a></div><div class="ttdeci">#define AI_NO_EXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2defs_8h_source.html#l00324">defs.h:324</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2types_8h_html_a1f78dfb65090aa930cabb984c8abe711"><div class="ttname"><a href="include_2assimp_2types_8h.html#a1f78dfb65090aa930cabb984c8abe711">aiReturn</a></div><div class="ttdeci">aiReturn</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2types_8h_source.html#l00402">types.h:402</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2types_8h_html_ac50fbaa57d78776ca99e42104d9b2786"><div class="ttname"><a href="include_2assimp_2types_8h.html#ac50fbaa57d78776ca99e42104d9b2786">aiOrigin</a></div><div class="ttdeci">aiOrigin</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2types_8h_source.html#l00431">types.h:431</a></div></div>
+<div class="ttc" id="anamespace_assimp_html"><div class="ttname"><a href="namespace_assimp.html">Assimp</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_assert_handler_8h_source.html#l00050">AssertHandler.h:50</a></div></div>
+<div class="ttc" id="ax64-_debug_2contrib_2zlib_2zconf_8h_html_a2c212835823e3c54a8ab6d95c652660e"><div class="ttname"><a href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></div><div class="ttdeci">#define const</div><div class="ttdef"><b>Definition:</b> <a href="x64-_debug_2contrib_2zlib_2zconf_8h_source.html#l00235">zconf.h:235</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

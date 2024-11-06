@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -96,26 +99,28 @@ $(function() {
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> genType&gt;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="group__gtx__common.html#ga74aa7c7462245d83bd5a9edf9c6c2d91">   41</a></span>    GLM_FUNC_DECL <span class="keyword">typename</span> genType::bool_type <a class="code hl_function" href="group__gtx__common.html#ga74aa7c7462245d83bd5a9edf9c6c2d91">isdenormal</a>(genType <span class="keyword">const</span>&amp; x);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="group__gtx__common.html#ga74aa7c7462245d83bd5a9edf9c6c2d91">   41</a></span>    <a class="code hl_define" href="setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <span class="keyword">typename</span> genType::bool_type <a class="code hl_function" href="group__gtx__common.html#ga74aa7c7462245d83bd5a9edf9c6c2d91">isdenormal</a>(genType <span class="keyword">const</span>&amp; x);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">template</span>&lt;length_t L, <span class="keyword">typename</span> T, qualifier Q&gt;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="group__gtx__common.html#ga22feecd4248d9ef34b079a091f273281">   49</a></span>    GLM_FUNC_DECL <a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <a class="code hl_function" href="group__gtx__common.html#ga22feecd4248d9ef34b079a091f273281">fmod</a>(<a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <span class="keyword">const</span>&amp; v);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="group__gtx__common.html#ga22feecd4248d9ef34b079a091f273281">   49</a></span>    <a class="code hl_define" href="setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <a class="code hl_function" href="group__gtx__common.html#ga22feecd4248d9ef34b079a091f273281">fmod</a>(<a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <span class="keyword">const</span>&amp; v);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">template</span> &lt;length_t L, <span class="keyword">typename</span> T, qualifier Q&gt;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    GLM_FUNC_DECL <a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, bool, Q&gt;</a> <a class="code hl_function" href="group__gtx__common.html#ga57a2d78fae57ab5483d49060044340f2">openBounded</a>(<a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <span class="keyword">const</span>&amp; Value, <a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <span class="keyword">const</span>&amp; Min, <a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <span class="keyword">const</span>&amp; Max);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_define" href="setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, bool, Q&gt;</a> <a class="code hl_function" href="group__gtx__common.html#ga57a2d78fae57ab5483d49060044340f2">openBounded</a>(<a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <span class="keyword">const</span>&amp; Value, <a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <span class="keyword">const</span>&amp; Min, <a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <span class="keyword">const</span>&amp; Max);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">template</span> &lt;length_t L, <span class="keyword">typename</span> T, qualifier Q&gt;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    GLM_FUNC_DECL <a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, bool, Q&gt;</a> <a class="code hl_function" href="group__gtx__common.html#ga90a5085f6b83d4a519b80cf977ed952a">closeBounded</a>(<a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <span class="keyword">const</span>&amp; Value, <a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <span class="keyword">const</span>&amp; Min, <a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <span class="keyword">const</span>&amp; Max);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_define" href="setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, bool, Q&gt;</a> <a class="code hl_function" href="group__gtx__common.html#ga90a5085f6b83d4a519b80cf977ed952a">closeBounded</a>(<a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <span class="keyword">const</span>&amp; Value, <a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <span class="keyword">const</span>&amp; Min, <a class="code hl_struct" href="structglm_1_1vec.html">vec&lt;L, T, Q&gt;</a> <span class="keyword">const</span>&amp; Max);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}<span class="comment">//namespace glm</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#include &quot;common.inl&quot;</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#include &quot;<a class="code" href="common_8inl.html">common.inl</a>&quot;</span></div>
+<div class="ttc" id="acommon_8inl_html"><div class="ttname"><a href="common_8inl.html">common.inl</a></div></div>
 <div class="ttc" id="agroup__gtx__common_html_ga22feecd4248d9ef34b079a091f273281"><div class="ttname"><a href="group__gtx__common.html#ga22feecd4248d9ef34b079a091f273281">glm::fmod</a></div><div class="ttdeci">GLM_FUNC_DECL vec&lt; L, T, Q &gt; fmod(vec&lt; L, T, Q &gt; const &amp;v)</div></div>
-<div class="ttc" id="agroup__gtx__common_html_ga57a2d78fae57ab5483d49060044340f2"><div class="ttname"><a href="group__gtx__common.html#ga57a2d78fae57ab5483d49060044340f2">glm::openBounded</a></div><div class="ttdeci">GLM_FUNC_DECL vec&lt; L, bool, Q &gt; openBounded(vec&lt; L, T, Q &gt; const &amp;Value, vec&lt; L, T, Q &gt; const &amp;Min, vec&lt; L, T, Q &gt; const &amp;Max)</div><div class="ttdef"><b>Definition:</b> common.inl:115</div></div>
+<div class="ttc" id="agroup__gtx__common_html_ga57a2d78fae57ab5483d49060044340f2"><div class="ttname"><a href="group__gtx__common.html#ga57a2d78fae57ab5483d49060044340f2">glm::openBounded</a></div><div class="ttdeci">GLM_FUNC_DECL vec&lt; L, bool, Q &gt; openBounded(vec&lt; L, T, Q &gt; const &amp;Value, vec&lt; L, T, Q &gt; const &amp;Min, vec&lt; L, T, Q &gt; const &amp;Max)</div><div class="ttdef"><b>Definition:</b> <a href="common_8inl_source.html#l00115">common.inl:115</a></div></div>
 <div class="ttc" id="agroup__gtx__common_html_ga74aa7c7462245d83bd5a9edf9c6c2d91"><div class="ttname"><a href="group__gtx__common.html#ga74aa7c7462245d83bd5a9edf9c6c2d91">glm::isdenormal</a></div><div class="ttdeci">GLM_FUNC_DECL genType::bool_type isdenormal(genType const &amp;x)</div></div>
-<div class="ttc" id="agroup__gtx__common_html_ga90a5085f6b83d4a519b80cf977ed952a"><div class="ttname"><a href="group__gtx__common.html#ga90a5085f6b83d4a519b80cf977ed952a">glm::closeBounded</a></div><div class="ttdeci">GLM_FUNC_DECL vec&lt; L, bool, Q &gt; closeBounded(vec&lt; L, T, Q &gt; const &amp;Value, vec&lt; L, T, Q &gt; const &amp;Min, vec&lt; L, T, Q &gt; const &amp;Max)</div><div class="ttdef"><b>Definition:</b> common.inl:121</div></div>
-<div class="ttc" id="anamespaceglm_html"><div class="ttname"><a href="namespaceglm.html">glm</a></div><div class="ttdoc">Core features</div><div class="ttdef"><b>Definition:</b> common.hpp:21</div></div>
-<div class="ttc" id="astructglm_1_1vec_html"><div class="ttname"><a href="structglm_1_1vec.html">glm::vec</a></div><div class="ttdef"><b>Definition:</b> qualifier.hpp:35</div></div>
+<div class="ttc" id="agroup__gtx__common_html_ga90a5085f6b83d4a519b80cf977ed952a"><div class="ttname"><a href="group__gtx__common.html#ga90a5085f6b83d4a519b80cf977ed952a">glm::closeBounded</a></div><div class="ttdeci">GLM_FUNC_DECL vec&lt; L, bool, Q &gt; closeBounded(vec&lt; L, T, Q &gt; const &amp;Value, vec&lt; L, T, Q &gt; const &amp;Min, vec&lt; L, T, Q &gt; const &amp;Max)</div><div class="ttdef"><b>Definition:</b> <a href="common_8inl_source.html#l00121">common.inl:121</a></div></div>
+<div class="ttc" id="anamespaceglm_html"><div class="ttname"><a href="namespaceglm.html">glm</a></div><div class="ttdoc">Core features</div><div class="ttdef"><b>Definition:</b> <a href="common_8hpp_source.html#l00020">common.hpp:21</a></div></div>
+<div class="ttc" id="asetup_8hpp_html_ab2d052de21a70539923e9bcbf6e83a51"><div class="ttname"><a href="setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a></div><div class="ttdeci">#define GLM_FUNC_DECL</div><div class="ttdef"><b>Definition:</b> <a href="setup_8hpp_source.html#l00498">setup.hpp:498</a></div></div>
+<div class="ttc" id="astructglm_1_1vec_html"><div class="ttname"><a href="structglm_1_1vec.html">glm::vec</a></div><div class="ttdef"><b>Definition:</b> <a href="qualifier_8hpp_source.html#l00035">qualifier.hpp:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

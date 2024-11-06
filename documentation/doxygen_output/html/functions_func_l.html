@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -74,11 +77,17 @@ $(function() {
 <h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
 <li>LCtrl_Pressed()&#160;:&#160;<a class="el" href="class_context.html#adfb4ef0a734d9bede47da6a50a4e02bf">Context</a></li>
 <li>LeftArrow_Pressed()&#160;:&#160;<a class="el" href="class_context.html#a58700ac52e74ce46a6e6ec32531e88f7">Context</a></li>
-<li>length()&#160;:&#160;<a class="el" href="structglm_1_1qua.html#a82d90e74a12348ae93fff26fe78b606a">glm::qua&lt; T, Q &gt;</a>, <a class="el" href="structglm_1_1tdualquat.html#a79fe24c72a3f26d906b080de34b92b4e">glm::tdualquat&lt; T, Q &gt;</a>, <a class="el" href="structglm_1_1vec_3_014_00_01_t_00_01_q_01_4.html#ac83fdb652378185c944b11f5cf35744d">glm::vec&lt; 4, T, Q &gt;</a></li>
+<li>length()&#160;:&#160;<a class="el" href="structglm_1_1mat_3_012_00_012_00_01_t_00_01_q_01_4.html#a7b681dcae80386d30308def77cd2646e">glm::mat&lt; 2, 2, T, Q &gt;</a>, <a class="el" href="structglm_1_1mat_3_012_00_013_00_01_t_00_01_q_01_4.html#a77bf3d190cef1bb5d40833ab5913c08f">glm::mat&lt; 2, 3, T, Q &gt;</a>, <a class="el" href="structglm_1_1mat_3_012_00_014_00_01_t_00_01_q_01_4.html#a52f7dc5b855a6dab6b479a3bcf29357b">glm::mat&lt; 2, 4, T, Q &gt;</a>, <a class="el" href="structglm_1_1mat_3_013_00_012_00_01_t_00_01_q_01_4.html#a0749f456a66fa818e3d8aa4db3eaea3b">glm::mat&lt; 3, 2, T, Q &gt;</a>, <a class="el" href="structglm_1_1mat_3_013_00_013_00_01_t_00_01_q_01_4.html#aa0e0966b5046ab9a88536683a901c589">glm::mat&lt; 3, 3, T, Q &gt;</a>, <a class="el" href="structglm_1_1mat_3_013_00_014_00_01_t_00_01_q_01_4.html#aee79c3b80a64a53f025f031a01280a35">glm::mat&lt; 3, 4, T, Q &gt;</a>, <a class="el" href="structglm_1_1mat_3_014_00_012_00_01_t_00_01_q_01_4.html#ab3b1d2d2d45c52698509f170c3e0d866">glm::mat&lt; 4, 2, T, Q &gt;</a>, <a class="el" href="structglm_1_1mat_3_014_00_013_00_01_t_00_01_q_01_4.html#a3f28efbb3e6be20443f461a6261ae631">glm::mat&lt; 4, 3, T, Q &gt;</a>, <a class="el" href="structglm_1_1mat_3_014_00_014_00_01_t_00_01_q_01_4.html#a345a0bcf281399c047cb15a6551232b0">glm::mat&lt; 4, 4, T, Q &gt;</a>, <a class="el" href="structglm_1_1qua.html#a82d90e74a12348ae93fff26fe78b606a">glm::qua&lt; T, Q &gt;</a>, <a class="el" href="structglm_1_1tdualquat.html#a79fe24c72a3f26d906b080de34b92b4e">glm::tdualquat&lt; T, Q &gt;</a>, <a class="el" href="structglm_1_1vec_3_011_00_01_t_00_01_q_01_4.html#a225b4ffa0391c3f0c64d1b43cf7a662d">glm::vec&lt; 1, T, Q &gt;</a>, <a class="el" href="structglm_1_1vec_3_012_00_01_t_00_01_q_01_4.html#a93fee4eb07a69842caff0d41acf83ddd">glm::vec&lt; 2, T, Q &gt;</a>, <a class="el" href="structglm_1_1vec_3_013_00_01_t_00_01_q_01_4.html#a0dc7ddc517098d4c8257187df6be4cef">glm::vec&lt; 3, T, Q &gt;</a>, <a class="el" href="structglm_1_1vec_3_014_00_01_t_00_01_q_01_4.html#ac83fdb652378185c944b11f5cf35744d">glm::vec&lt; 4, T, Q &gt;</a></li>
+<li>Light()&#160;:&#160;<a class="el" href="struct_light.html#a038f695cd06edd6a94796034daa84f56">Light</a></li>
 <li>LineSplitter()&#160;:&#160;<a class="el" href="class_assimp_1_1_line_splitter.html#a04e78a827cbd501d920a9bb8245b817f">Assimp::LineSplitter</a></li>
+<li>LogDebug()&#160;:&#160;<a class="el" href="class_assimp_1_1_log_functions.html#aab00c04699f94932eb8561a0cd2382e4">Assimp::LogFunctions&lt; TDeriving &gt;</a></li>
+<li>LogError()&#160;:&#160;<a class="el" href="class_assimp_1_1_log_functions.html#a4f0f372bc912ff87a7340b29e2d9dec0">Assimp::LogFunctions&lt; TDeriving &gt;</a></li>
 <li>Logger()&#160;:&#160;<a class="el" href="class_assimp_1_1_logger.html#a17f4cbc042c26935e16eb204ca77c2c1">Assimp::Logger</a></li>
+<li>LogInfo()&#160;:&#160;<a class="el" href="class_assimp_1_1_log_functions.html#ab66b363e82aade628aff56e7a05854c4">Assimp::LogFunctions&lt; TDeriving &gt;</a></li>
 <li>LogStream()&#160;:&#160;<a class="el" href="class_assimp_1_1_log_stream.html#aca07b1b2d95a8ffd4c3704e033facb26">Assimp::LogStream</a></li>
 <li>LogTransform()&#160;:&#160;<a class="el" href="class_transform.html#ac9c40f5472213803d5143a0fa0338c32">Transform</a></li>
+<li>LogVerboseDebug()&#160;:&#160;<a class="el" href="class_assimp_1_1_log_functions.html#a952b0df256d133fb4bf6ebfa6bc3203b">Assimp::LogFunctions&lt; TDeriving &gt;</a></li>
+<li>LogWarn()&#160;:&#160;<a class="el" href="class_assimp_1_1_log_functions.html#a077d37ba3a8303542248cccff3b3d332">Assimp::LogFunctions&lt; TDeriving &gt;</a></li>
 <li>LookAt()&#160;:&#160;<a class="el" href="class_transform.html#ac6fb2b3d5ac6c319fb1f66c2ecdbb8dc">Transform</a></li>
 </ul>
 </div><!-- contents -->

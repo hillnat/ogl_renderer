@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -80,19 +83,30 @@ $(function() {
  <a href="structai_file_i_o.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="include_2assimp_2cfileio_8h_source.html">cfileio.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for aiFileIO:</div>
+<div class="dyncontent">
+<div class="center"><img src="structai_file_i_o__coll__graph.png" border="0" usemap="#aai_file_i_o_coll__map" alt="Collaboration graph"/></div>
+<map name="aai_file_i_o_coll__map" id="aai_file_i_o_coll__map">
+<area shape="rect" title="C&#45;API: File system callbacks." alt="" coords="5,104,71,132"/>
+<area shape="rect" href="structai_file.html" title="C&#45;API: File callbacks." alt="" coords="12,8,64,36"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a819d9c7823039294125068d06949a6df"><td class="memItemLeft" align="right" valign="top">aiFileOpenProc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_file_i_o.html#a819d9c7823039294125068d06949a6df">OpenProc</a></td></tr>
+<tr class="memitem:a819d9c7823039294125068d06949a6df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2cfileio_8h.html#acf147febf5749700fdbca46189ef66c0">aiFileOpenProc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_file_i_o.html#a819d9c7823039294125068d06949a6df">OpenProc</a></td></tr>
 <tr class="separator:a819d9c7823039294125068d06949a6df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ec702672712b5a02dc49cb17f980a14"><td class="memItemLeft" align="right" valign="top">aiFileCloseProc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_file_i_o.html#a7ec702672712b5a02dc49cb17f980a14">CloseProc</a></td></tr>
+<tr class="memitem:a7ec702672712b5a02dc49cb17f980a14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2cfileio_8h.html#ab6e7f26b63f2d1ed9655e97bd4ebd38c">aiFileCloseProc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_file_i_o.html#a7ec702672712b5a02dc49cb17f980a14">CloseProc</a></td></tr>
 <tr class="separator:a7ec702672712b5a02dc49cb17f980a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c62b7f3d70fbb2f41e33ad0b9933139"><td class="memItemLeft" align="right" valign="top">aiUserData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_file_i_o.html#a9c62b7f3d70fbb2f41e33ad0b9933139">UserData</a></td></tr>
+<tr class="memitem:a9c62b7f3d70fbb2f41e33ad0b9933139"><td class="memItemLeft" align="right" valign="top"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2cfileio_8h.html#a176132d0cd51c96302089ff3f8a8ee1c">aiUserData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_file_i_o.html#a9c62b7f3d70fbb2f41e33ad0b9933139">UserData</a></td></tr>
 <tr class="separator:a9c62b7f3d70fbb2f41e33ad0b9933139"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >C-API: File system callbacks. </p>
 <p >Provided are functions to open and close files. Supply a custom structure to the import function. If you don't, a default implementation is used. Use custom file systems to enable reading from other sources, such as ZIPs or memory locations. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2cfileio_8h_source.html#l00083">83</a> of file <a class="el" href="include_2assimp_2cfileio_8h_source.html">cfileio.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a7ec702672712b5a02dc49cb17f980a14" name="a7ec702672712b5a02dc49cb17f980a14"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ec702672712b5a02dc49cb17f980a14">&#9670;&#160;</a></span>CloseProc</h2>
@@ -101,11 +115,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">aiFileCloseProc aiFileIO::CloseProc</td>
+          <td class="memname"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2cfileio_8h.html#ab6e7f26b63f2d1ed9655e97bd4ebd38c">aiFileCloseProc</a> aiFileIO::CloseProc</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Function used to close an existing file </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2cfileio_8h_source.html#l00091">91</a> of file <a class="el" href="include_2assimp_2cfileio_8h_source.html">cfileio.h</a>.</p>
 
 </div>
 </div>
@@ -116,11 +132,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">aiFileOpenProc aiFileIO::OpenProc</td>
+          <td class="memname"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2cfileio_8h.html#acf147febf5749700fdbca46189ef66c0">aiFileOpenProc</a> aiFileIO::OpenProc</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Function used to open a new file </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2cfileio_8h_source.html#l00087">87</a> of file <a class="el" href="include_2assimp_2cfileio_8h_source.html">cfileio.h</a>.</p>
 
 </div>
 </div>
@@ -131,11 +149,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">aiUserData aiFileIO::UserData</td>
+          <td class="memname"><a class="el" href="out_2install_2x64-_release_2include_2assimp_2cfileio_8h.html#a176132d0cd51c96302089ff3f8a8ee1c">aiUserData</a> aiFileIO::UserData</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >User-defined, opaque data </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2cfileio_8h_source.html#l00094">94</a> of file <a class="el" href="include_2assimp_2cfileio_8h_source.html">cfileio.h</a>.</p>
 
 </div>
 </div>

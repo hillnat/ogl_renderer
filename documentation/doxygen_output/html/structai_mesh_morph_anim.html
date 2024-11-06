@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -77,18 +80,30 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="include_2assimp_2anim_8h_source.html">anim.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for aiMeshMorphAnim:</div>
+<div class="dyncontent">
+<div class="center"><img src="structai_mesh_morph_anim__coll__graph.png" border="0" usemap="#aai_mesh_morph_anim_coll__map" alt="Collaboration graph"/></div>
+<map name="aai_mesh_morph_anim_coll__map" id="aai_mesh_morph_anim_coll__map">
+<area shape="rect" title=" " alt="" coords="32,98,158,126"/>
+<area shape="rect" href="structai_string.html" title="Represents an UTF&#45;8 string, zero byte terminated." alt="" coords="5,5,70,33"/>
+<area shape="rect" href="structai_mesh_morph_key.html" title=" " alt="" coords="94,5,213,33"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a21de91fb9c9fcf58a0bd0c761ea25cf5"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_string.html">aiString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh_morph_anim.html#a21de91fb9c9fcf58a0bd0c761ea25cf5">mName</a></td></tr>
+<tr class="memitem:a21de91fb9c9fcf58a0bd0c761ea25cf5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_string.html">aiString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh_morph_anim.html#a21de91fb9c9fcf58a0bd0c761ea25cf5">mName</a></td></tr>
 <tr class="separator:a21de91fb9c9fcf58a0bd0c761ea25cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9c8a3e37613a196ed33d2746cf6f0c8"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh_morph_anim.html#af9c8a3e37613a196ed33d2746cf6f0c8">mNumKeys</a></td></tr>
 <tr class="separator:af9c8a3e37613a196ed33d2746cf6f0c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6944cba8dfaceba46402ab6136bad520"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_mesh_morph_key.html">aiMeshMorphKey</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh_morph_anim.html#a6944cba8dfaceba46402ab6136bad520">mKeys</a></td></tr>
+<tr class="memitem:a6944cba8dfaceba46402ab6136bad520"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_mesh_morph_key.html">aiMeshMorphKey</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_mesh_morph_anim.html#a6944cba8dfaceba46402ab6136bad520">mKeys</a></td></tr>
 <tr class="separator:a6944cba8dfaceba46402ab6136bad520"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Describes a morphing animation of a given mesh. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2anim_8h_source.html#l00395">395</a> of file <a class="el" href="include_2assimp_2anim_8h_source.html">anim.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a6944cba8dfaceba46402ab6136bad520" name="a6944cba8dfaceba46402ab6136bad520"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6944cba8dfaceba46402ab6136bad520">&#9670;&#160;</a></span>mKeys</h2>
@@ -97,11 +112,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_mesh_morph_key.html">aiMeshMorphKey</a> * aiMeshMorphAnim::mKeys</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_mesh_morph_key.html">aiMeshMorphKey</a> * aiMeshMorphAnim::mKeys</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Key frames of the animation. May not be nullptr. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2anim_8h_source.html#l00406">406</a> of file <a class="el" href="include_2assimp_2anim_8h_source.html">anim.h</a>.</p>
 
 </div>
 </div>
@@ -112,11 +129,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_string.html">aiString</a> aiMeshMorphAnim::mName</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_string.html">aiString</a> aiMeshMorphAnim::mName</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Name of the mesh to be animated. An empty string is not allowed, animated meshes need to be named (not necessarily uniquely, the name can basically serve as wildcard to select a group of meshes with similar animation setup) </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2anim_8h_source.html#l00400">400</a> of file <a class="el" href="include_2assimp_2anim_8h_source.html">anim.h</a>.</p>
 
 </div>
 </div>
@@ -132,6 +151,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >Size of the <a class="el" href="structai_mesh_morph_anim.html#a6944cba8dfaceba46402ab6136bad520">mKeys</a> array. Must be 1, at least. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2anim_8h_source.html#l00403">403</a> of file <a class="el" href="include_2assimp_2anim_8h_source.html">anim.h</a>.</p>
 
 </div>
 </div>

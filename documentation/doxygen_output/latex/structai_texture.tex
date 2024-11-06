@@ -4,6 +4,10 @@
 
 {\ttfamily \#include $<$texture.\+h$>$}
 
+
+
+Collaboration diagram for ai\+Texture\+:
+% FIG 0
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -11,11 +15,11 @@ unsigned int \mbox{\hyperlink{structai_texture_aaa3ad8cfe44fdc4dea2db91977d92234
 \item 
 unsigned int \mbox{\hyperlink{structai_texture_ac1e2fa6f1f646e9c55e3985d4418a752}{m\+Height}}
 \item 
-char \mbox{\hyperlink{structai_texture_ab624f9c0f109a07bd8dea5a44fbed086}{ach\+Format\+Hint}} \mbox{[}HINTMAXTEXTURELEN\mbox{]}
+char \mbox{\hyperlink{structai_texture_ab624f9c0f109a07bd8dea5a44fbed086}{ach\+Format\+Hint}} \mbox{[}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2texture_8h_a45f24ec98ff3440bf8a1d781f8445379}{HINTMAXTEXTURELEN}}\mbox{]}
 \item 
-C\+\_\+\+STRUCT \mbox{\hyperlink{structai_texel}{ai\+Texel}} $\ast$ \mbox{\hyperlink{structai_texture_aecc4fc01914088557a4c361274e8e9a2}{pc\+Data}}
+\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_texel}{ai\+Texel}} $\ast$ \mbox{\hyperlink{structai_texture_aecc4fc01914088557a4c361274e8e9a2}{pc\+Data}}
 \item 
-C\+\_\+\+STRUCT \mbox{\hyperlink{structai_string}{ai\+String}} \mbox{\hyperlink{structai_texture_a59dc57f450aef6e2d54d052130ed0ec3}{m\+Filename}}
+\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_string}{ai\+String}} \mbox{\hyperlink{structai_texture_a59dc57f450aef6e2d54d052130ed0ec3}{m\+Filename}}
 \end{DoxyCompactItemize}
 
 
@@ -29,6 +33,10 @@ Normally textures are contained in external files but some file formats embed th
 \end{DoxyEnumerate}
 
 Embedded textures are referenced from materials using strings like \char`\"{}$\ast$0\char`\"{}, \char`\"{}$\ast$1\char`\"{}, etc. as the texture paths (a single asterisk character followed by the zero-\/based index of the texture in the \mbox{\hyperlink{structai_scene_afc4d9cb65b0df890ccdcfcce3e8c3c10}{ai\+Scene\+::m\+Textures}} array). 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2texture_8h_source_l00132}{132}} of file \mbox{\hyperlink{include_2assimp_2texture_8h_source}{texture.\+h}}.
+
+
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{structai_texture_ab624f9c0f109a07bd8dea5a44fbed086}\label{structai_texture_ab624f9c0f109a07bd8dea5a44fbed086}} 
@@ -45,15 +53,23 @@ If m\+Height != 0 this member is show how data is packed. Hint will consist of t
 \item Image contain ARGB and 8 bit per channel, ach\+Format\+Hint == \char`\"{}argb8888\char`\"{};
 \item Image contain RGB and 5 bit for R and B channels and 6 bit for G channel, ach\+Format\+Hint == \char`\"{}rgba5650\char`\"{};
 \item One color image with B channel and 1 bit for it, ach\+Format\+Hint == \char`\"{}rgba0010\char`\"{}; If m\+Height == 0 then ach\+Format\+Hint is set set to \textquotesingle{}\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textquotesingle{} if the loader has no additional information about the texture file format used OR the file extension of the format without a trailing dot. If there are multiple file extensions for a format, the shortest extension is chosen (JPEG maps to \textquotesingle{}jpg\textquotesingle{}, not to \textquotesingle{}jpeg\textquotesingle{}). E.\+g. \textquotesingle{}dds\textbackslash{}0\textquotesingle{}, \textquotesingle{}pcx\textbackslash{}0\textquotesingle{}, \textquotesingle{}jpg\textbackslash{}0\textquotesingle{}. All characters are lower-\/case. The fourth character will always be \textquotesingle{}\textbackslash{}0\textquotesingle{}. 
-\end{DoxyEnumerate}\mbox{\Hypertarget{structai_texture_a59dc57f450aef6e2d54d052130ed0ec3}\label{structai_texture_a59dc57f450aef6e2d54d052130ed0ec3}} 
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{include_2assimp_2texture_8h_source_l00167}{167}} of file \mbox{\hyperlink{include_2assimp_2texture_8h_source}{texture.\+h}}.
+
+\mbox{\Hypertarget{structai_texture_a59dc57f450aef6e2d54d052130ed0ec3}\label{structai_texture_a59dc57f450aef6e2d54d052130ed0ec3}} 
 \index{aiTexture@{aiTexture}!mFilename@{mFilename}}
 \index{mFilename@{mFilename}!aiTexture@{aiTexture}}
 \doxysubsubsection{\texorpdfstring{mFilename}{mFilename}}
-{\footnotesize\ttfamily C\+\_\+\+STRUCT \mbox{\hyperlink{structai_string}{ai\+String}} ai\+Texture\+::m\+Filename}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_string}{ai\+String}} ai\+Texture\+::m\+Filename}
 
 \mbox{\hyperlink{struct_texture}{Texture}} original filename
 
-Used to get the texture reference \mbox{\Hypertarget{structai_texture_ac1e2fa6f1f646e9c55e3985d4418a752}\label{structai_texture_ac1e2fa6f1f646e9c55e3985d4418a752}} 
+Used to get the texture reference 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2texture_8h_source_l00184}{184}} of file \mbox{\hyperlink{include_2assimp_2texture_8h_source}{texture.\+h}}.
+
+\mbox{\Hypertarget{structai_texture_ac1e2fa6f1f646e9c55e3985d4418a752}\label{structai_texture_ac1e2fa6f1f646e9c55e3985d4418a752}} 
 \index{aiTexture@{aiTexture}!mHeight@{mHeight}}
 \index{mHeight@{mHeight}!aiTexture@{aiTexture}}
 \doxysubsubsection{\texorpdfstring{mHeight}{mHeight}}
@@ -61,7 +77,11 @@ Used to get the texture reference \mbox{\Hypertarget{structai_texture_ac1e2fa6f1
 
 Height of the texture, in pixels
 
-If this value is zero, pc\+Data points to an compressed texture in any format (e.\+g. JPEG). \mbox{\Hypertarget{structai_texture_aaa3ad8cfe44fdc4dea2db91977d92234}\label{structai_texture_aaa3ad8cfe44fdc4dea2db91977d92234}} 
+If this value is zero, pc\+Data points to an compressed texture in any format (e.\+g. JPEG). 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2texture_8h_source_l00146}{146}} of file \mbox{\hyperlink{include_2assimp_2texture_8h_source}{texture.\+h}}.
+
+\mbox{\Hypertarget{structai_texture_aaa3ad8cfe44fdc4dea2db91977d92234}\label{structai_texture_aaa3ad8cfe44fdc4dea2db91977d92234}} 
 \index{aiTexture@{aiTexture}!mWidth@{mWidth}}
 \index{mWidth@{mWidth}!aiTexture@{aiTexture}}
 \doxysubsubsection{\texorpdfstring{mWidth}{mWidth}}
@@ -69,15 +89,23 @@ If this value is zero, pc\+Data points to an compressed texture in any format (e
 
 Width of the texture, in pixels
 
-If m\+Height is zero the texture is compressed in a format like JPEG. In this case m\+Width specifies the size of the memory area pc\+Data is pointing to, in bytes. \mbox{\Hypertarget{structai_texture_aecc4fc01914088557a4c361274e8e9a2}\label{structai_texture_aecc4fc01914088557a4c361274e8e9a2}} 
+If m\+Height is zero the texture is compressed in a format like JPEG. In this case m\+Width specifies the size of the memory area pc\+Data is pointing to, in bytes. 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2texture_8h_source_l00139}{139}} of file \mbox{\hyperlink{include_2assimp_2texture_8h_source}{texture.\+h}}.
+
+\mbox{\Hypertarget{structai_texture_aecc4fc01914088557a4c361274e8e9a2}\label{structai_texture_aecc4fc01914088557a4c361274e8e9a2}} 
 \index{aiTexture@{aiTexture}!pcData@{pcData}}
 \index{pcData@{pcData}!aiTexture@{aiTexture}}
 \doxysubsubsection{\texorpdfstring{pcData}{pcData}}
-{\footnotesize\ttfamily C\+\_\+\+STRUCT \mbox{\hyperlink{structai_texel}{ai\+Texel}} $\ast$ ai\+Texture\+::pc\+Data}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_texel}{ai\+Texel}} $\ast$ ai\+Texture\+::pc\+Data}
 
 Data of the texture.
 
 Points to an array of m\+Width $\ast$ m\+Height \mbox{\hyperlink{structai_texel}{ai\+Texel}}\textquotesingle{}s. The format of the texture data is always ARGB8888 to make the implementation for user of the library as easy as possible. If m\+Height = 0 this is a pointer to a memory buffer of size m\+Width containing the compressed texture data. Good luck, have fun! 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2texture_8h_source_l00178}{178}} of file \mbox{\hyperlink{include_2assimp_2texture_8h_source}{texture.\+h}}.
+
+
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

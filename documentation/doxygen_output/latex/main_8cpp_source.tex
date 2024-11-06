@@ -6,17 +6,17 @@
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_context_8h}{engine/Context.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_primitives_8h}{engine/Primitives.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_game_object_8h}{engine/GameObject.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_scene_8h}{engine/Scene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ogl__renderer_2engine_2_scene_8h}{engine/Scene.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_mesh_importer_8h}{renderer/MeshImporter.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_camera_8h}{renderer/Camera.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ogl__renderer_2renderer_2_camera_8h}{renderer/Camera.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_renderer_8h}{renderer/Renderer.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include "{}glm/ext.hpp"{}} \textcolor{comment}{//GLM provides us with matrices and math functions}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}glfw/glfw3.h"{}} \textcolor{comment}{//GLFW is a Windows API wrapper, allows us to handle window context easily}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ext_8hpp}{glm/ext.hpp}}"{}} \textcolor{comment}{//GLM provides us with matrices and math functions}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{glfw3_8h}{glfw/glfw3.h}}"{}} \textcolor{comment}{//GLFW is a Windows API wrapper, allows us to handle window context easily}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include <iostream>}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_physics_8h}{physics/Physics.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014 \textcolor{keyword}{using }glm::mat4;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015 \textcolor{keyword}{using }glm::vec3;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014 \textcolor{keyword}{using }\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015 \textcolor{keyword}{using }\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}};}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016 }
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}\mbox{\hyperlink{main_8cpp_ad9d7e043ba793109d100937cbfdbf408}{00017}} \textcolor{preprocessor}{\#define TESTGRAVITYSCALE 0.05}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018 }
@@ -60,7 +60,7 @@
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056     scene-\/>\mbox{\hyperlink{class_scene_a076c10df7e28c559db2dac955f22f3a0}{AddToScene}}(mainCamera);}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057     scene-\/>\mbox{\hyperlink{class_scene_a076c10df7e28c559db2dac955f22f3a0}{AddToScene}}(\&testDirLight);}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058     \textcolor{comment}{//Time setup}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059     \textcolor{keywordtype}{float} lastTime = glfwGetTime();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059     \textcolor{keywordtype}{float} lastTime = \mbox{\hyperlink{group__input_ga03d4a1039b8662c71eeb40beea8cb622}{glfwGetTime}}();}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060     \textcolor{keywordtype}{float} fixedDeltaTimeAccum = 0;}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061     \textcolor{keyword}{const} \textcolor{keywordtype}{float} fixedTimeStepsPerSec = 500;}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062     \textcolor{keyword}{const} \textcolor{keywordtype}{float} fixedDeltaTime = 1.f / fixedTimeStepsPerSec;}
@@ -74,7 +74,7 @@
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070     \textcolor{comment}{//Main Loop}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071     \textcolor{keywordflow}{while} (!context-\/>\mbox{\hyperlink{class_context_af8e3274e192dc42652d1f7b8ccd002e8}{ShouldClose}}()) \{}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072         \textcolor{comment}{//Get delta times}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073         \textcolor{keywordtype}{float} currentTime = glfwGetTime();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073         \textcolor{keywordtype}{float} currentTime = \mbox{\hyperlink{group__input_ga03d4a1039b8662c71eeb40beea8cb622}{glfwGetTime}}();}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074         \textcolor{keywordtype}{float} deltaTime = currentTime -\/ lastTime;}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075         fixedDeltaTimeAccum += deltaTime;}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076         lastTime = currentTime;}

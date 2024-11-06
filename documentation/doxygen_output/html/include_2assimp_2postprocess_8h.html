@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -83,13 +86,21 @@ $(function() {
 <p>Definitions for import post processing steps.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;assimp/types.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for postprocess.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="include_2assimp_2postprocess_8h__incl.png" border="0" usemap="#a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2include_2assimp_2postprocess_8h" alt=""/></div>
+<map name="a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2include_2assimp_2postprocess_8h" id="a_c_1_2_users_2s239074_2_documents_2ogl__renderer_2thirdparty_2assimp_2include_2assimp_2postprocess_8h">
+<area shape="rect" title="Definitions for import post processing steps." alt="" coords="5,5,246,67"/>
+<area shape="rect" title=" " alt="" coords="71,115,180,143"/>
+</map>
+</div>
 </div>
 <p><a href="include_2assimp_2postprocess_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a200ca079124fc0497c1fb811efe9479f"><td class="memItemLeft" align="right" valign="top"><a id="a200ca079124fc0497c1fb811efe9479f" name="a200ca079124fc0497c1fb811efe9479f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AI_POSTPROCESS_H_INC</b></td></tr>
+<tr class="memitem:a200ca079124fc0497c1fb811efe9479f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2assimp_2postprocess_8h.html#a200ca079124fc0497c1fb811efe9479f">AI_POSTPROCESS_H_INC</a></td></tr>
 <tr class="separator:a200ca079124fc0497c1fb811efe9479f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd2361a766665ce2dbfb3eae201b784d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2assimp_2postprocess_8h.html#acd2361a766665ce2dbfb3eae201b784d">aiProcess_ConvertToLeftHanded</a></td></tr>
 <tr class="memdesc:acd2361a766665ce2dbfb3eae201b784d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut flag for Direct3D-based applications.  <a href="include_2assimp_2postprocess_8h.html#acd2361a766665ce2dbfb3eae201b784d">More...</a><br /></td></tr>
@@ -143,9 +154,9 @@ Enumerations</h2></td></tr>
 , <a class="el" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a9290b1203f1cbe8883606fc09dc3e93e">aiProcess_GlobalScale</a> = 0x8000000
 , <br />
 &#160;&#160;<a class="el" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410ac8889361ff08f3da78792ace616c47e0">aiProcess_EmbedTextures</a> = 0x10000000
-, <b>aiProcess_ForceGenNormals</b> = 0x20000000
+, <a class="el" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a72367a4d49efd4a42394cc5c377c1353">aiProcess_ForceGenNormals</a> = 0x20000000
 , <a class="el" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a4d499b6b8ce7c1cdaf3ef3935ad17ce8">aiProcess_DropNormals</a> = 0x40000000
-, <b>aiProcess_GenBoundingBoxes</b> = 0x80000000
+, <a class="el" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a26bd09ed23ff03da0b2c3d64ee7018bf">aiProcess_GenBoundingBoxes</a> = 0x80000000
 , <br />
 &#160;&#160;<a class="el" href="out_2install_2x64-_debug_2include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a8857a0e30688127a82c7b8939958c6dc">aiProcess_CalcTangentSpace</a> = 0x1
 , <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a444a6c9d8b63e6dc9e1e2e1edd3cbcd4">aiProcess_JoinIdenticalVertices</a> = 0x2
@@ -183,9 +194,9 @@ Enumerations</h2></td></tr>
 , <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a9290b1203f1cbe8883606fc09dc3e93e">aiProcess_GlobalScale</a> = 0x8000000
 , <br />
 &#160;&#160;<a class="el" href="out_2install_2x64-_debug_2include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410ac8889361ff08f3da78792ace616c47e0">aiProcess_EmbedTextures</a> = 0x10000000
-, <b>aiProcess_ForceGenNormals</b> = 0x20000000
+, <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a72367a4d49efd4a42394cc5c377c1353">aiProcess_ForceGenNormals</a> = 0x20000000
 , <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a4d499b6b8ce7c1cdaf3ef3935ad17ce8">aiProcess_DropNormals</a> = 0x40000000
-, <b>aiProcess_GenBoundingBoxes</b> = 0x80000000
+, <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a26bd09ed23ff03da0b2c3d64ee7018bf">aiProcess_GenBoundingBoxes</a> = 0x80000000
 , <br />
 &#160;&#160;<a class="el" href="out_2install_2x64-_release_2include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a8857a0e30688127a82c7b8939958c6dc">aiProcess_CalcTangentSpace</a> = 0x1
 , <a class="el" href="out_2install_2x64-_release_2include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a444a6c9d8b63e6dc9e1e2e1edd3cbcd4">aiProcess_JoinIdenticalVertices</a> = 0x2
@@ -223,9 +234,9 @@ Enumerations</h2></td></tr>
 , <a class="el" href="out_2install_2x64-_release_2include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a9290b1203f1cbe8883606fc09dc3e93e">aiProcess_GlobalScale</a> = 0x8000000
 , <br />
 &#160;&#160;<a class="el" href="out_2install_2x64-_release_2include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410ac8889361ff08f3da78792ace616c47e0">aiProcess_EmbedTextures</a> = 0x10000000
-, <b>aiProcess_ForceGenNormals</b> = 0x20000000
+, <a class="el" href="out_2install_2x64-_release_2include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a72367a4d49efd4a42394cc5c377c1353">aiProcess_ForceGenNormals</a> = 0x20000000
 , <a class="el" href="out_2install_2x64-_release_2include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a4d499b6b8ce7c1cdaf3ef3935ad17ce8">aiProcess_DropNormals</a> = 0x40000000
-, <b>aiProcess_GenBoundingBoxes</b> = 0x80000000
+, <a class="el" href="out_2install_2x64-_release_2include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a26bd09ed23ff03da0b2c3d64ee7018bf">aiProcess_GenBoundingBoxes</a> = 0x80000000
 <br />
  }</td></tr>
 <tr class="memdesc:a64795260b95f5a4b3f3dc1be4f52e410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the flags for all possible post processing steps.  <a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410">More...</a><br /></td></tr>
@@ -233,7 +244,25 @@ Enumerations</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Definitions for import post processing steps. </p>
+
+<p class="definition">Definition in file <a class="el" href="include_2assimp_2postprocess_8h_source.html">postprocess.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a200ca079124fc0497c1fb811efe9479f" name="a200ca079124fc0497c1fb811efe9479f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a200ca079124fc0497c1fb811efe9479f">&#9670;&#160;</a></span>AI_POSTPROCESS_H_INC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AI_POSTPROCESS_H_INC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2postprocess_8h_source.html#l00048">48</a> of file <a class="el" href="include_2assimp_2postprocess_8h_source.html">postprocess.h</a>.</p>
+
+</div>
+</div>
 <a id="acd2361a766665ce2dbfb3eae201b784d" name="acd2361a766665ce2dbfb3eae201b784d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acd2361a766665ce2dbfb3eae201b784d">&#9670;&#160;</a></span>aiProcess_ConvertToLeftHanded</h2>
 
@@ -250,13 +279,15 @@ Enumerations</h2></td></tr>
 <div class="line">    <a class="code hl_enumvalue" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a06922b6a1f1cd8186f9fdafb471c813e">aiProcess_FlipUVs</a>            | \</div>
 <div class="line">    <a class="code hl_enumvalue" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a429a11bf7ace46f039f55de895505d4a">aiProcess_FlipWindingOrder</a>   | \</div>
 <div class="line">    0 )</div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a06922b6a1f1cd8186f9fdafb471c813e"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a06922b6a1f1cd8186f9fdafb471c813e">aiProcess_FlipUVs</a></div><div class="ttdeci">@ aiProcess_FlipUVs</div><div class="ttdef"><b>Definition:</b> postprocess.h:521</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a133fd1162674e68bf8cd17070898a936"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a133fd1162674e68bf8cd17070898a936">aiProcess_MakeLeftHanded</a></div><div class="ttdeci">@ aiProcess_MakeLeftHanded</div><div class="ttdef"><b>Definition:</b> postprocess.h:115</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a429a11bf7ace46f039f55de895505d4a"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a429a11bf7ace46f039f55de895505d4a">aiProcess_FlipWindingOrder</a></div><div class="ttdeci">@ aiProcess_FlipWindingOrder</div><div class="ttdef"><b>Definition:</b> postprocess.h:536</div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a06922b6a1f1cd8186f9fdafb471c813e"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a06922b6a1f1cd8186f9fdafb471c813e">aiProcess_FlipUVs</a></div><div class="ttdeci">@ aiProcess_FlipUVs</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00521">postprocess.h:521</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a133fd1162674e68bf8cd17070898a936"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a133fd1162674e68bf8cd17070898a936">aiProcess_MakeLeftHanded</a></div><div class="ttdeci">@ aiProcess_MakeLeftHanded</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00115">postprocess.h:115</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a429a11bf7ace46f039f55de895505d4a"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a429a11bf7ace46f039f55de895505d4a">aiProcess_FlipWindingOrder</a></div><div class="ttdeci">@ aiProcess_FlipWindingOrder</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00536">postprocess.h:536</a></div></div>
 </div><!-- fragment -->
 <p>Shortcut flag for Direct3D-based applications. </p>
 <p >Supersedes the <a class="el" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a133fd1162674e68bf8cd17070898a936">aiProcess_MakeLeftHanded</a> and <a class="el" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a06922b6a1f1cd8186f9fdafb471c813e">aiProcess_FlipUVs</a> and <a class="el" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a429a11bf7ace46f039f55de895505d4a">aiProcess_FlipWindingOrder</a> flags. The output data matches Direct3D's conventions: left-handed geometry, upper-left origin for UV coordinates and finally clockwise face order, suitable for CCW culling.</p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2postprocess_8h_source.html#l00621">621</a> of file <a class="el" href="include_2assimp_2postprocess_8h_source.html">postprocess.h</a>.</p>
 
 </div>
 </div>
@@ -279,16 +310,18 @@ Enumerations</h2></td></tr>
 <div class="line">    <a class="code hl_enumvalue" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410aa4ae05f45c5682ab245cf8e87986426f">aiProcess_GenUVCoords</a>           |  \</div>
 <div class="line">    <a class="code hl_enumvalue" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410ab4484f73635d633cd79973bac1431ed6">aiProcess_SortByPType</a>           |  \</div>
 <div class="line">    0 )</div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a444a6c9d8b63e6dc9e1e2e1edd3cbcd4"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a444a6c9d8b63e6dc9e1e2e1edd3cbcd4">aiProcess_JoinIdenticalVertices</a></div><div class="ttdeci">@ aiProcess_JoinIdenticalVertices</div><div class="ttdef"><b>Definition:</b> postprocess.h:99</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a4e0d60129724464915ebc5533a9bba78"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a4e0d60129724464915ebc5533a9bba78">aiProcess_GenNormals</a></div><div class="ttdeci">@ aiProcess_GenNormals</div><div class="ttdef"><b>Definition:</b> postprocess.h:171</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a8857a0e30688127a82c7b8939958c6dc"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a8857a0e30688127a82c7b8939958c6dc">aiProcess_CalcTangentSpace</a></div><div class="ttdeci">@ aiProcess_CalcTangentSpace</div><div class="ttdef"><b>Definition:</b> postprocess.h:85</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a9c3de834f0307f31fa2b1b6d05dd592b"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a9c3de834f0307f31fa2b1b6d05dd592b">aiProcess_Triangulate</a></div><div class="ttdeci">@ aiProcess_Triangulate</div><div class="ttdef"><b>Definition:</b> postprocess.h:131</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410aa4ae05f45c5682ab245cf8e87986426f"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410aa4ae05f45c5682ab245cf8e87986426f">aiProcess_GenUVCoords</a></div><div class="ttdeci">@ aiProcess_GenUVCoords</div><div class="ttdef"><b>Definition:</b> postprocess.h:429</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410ab4484f73635d633cd79973bac1431ed6"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410ab4484f73635d633cd79973bac1431ed6">aiProcess_SortByPType</a></div><div class="ttdeci">@ aiProcess_SortByPType</div><div class="ttdef"><b>Definition:</b> postprocess.h:354</div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a444a6c9d8b63e6dc9e1e2e1edd3cbcd4"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a444a6c9d8b63e6dc9e1e2e1edd3cbcd4">aiProcess_JoinIdenticalVertices</a></div><div class="ttdeci">@ aiProcess_JoinIdenticalVertices</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00099">postprocess.h:99</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a4e0d60129724464915ebc5533a9bba78"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a4e0d60129724464915ebc5533a9bba78">aiProcess_GenNormals</a></div><div class="ttdeci">@ aiProcess_GenNormals</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00171">postprocess.h:171</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a8857a0e30688127a82c7b8939958c6dc"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a8857a0e30688127a82c7b8939958c6dc">aiProcess_CalcTangentSpace</a></div><div class="ttdeci">@ aiProcess_CalcTangentSpace</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00085">postprocess.h:85</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a9c3de834f0307f31fa2b1b6d05dd592b"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a9c3de834f0307f31fa2b1b6d05dd592b">aiProcess_Triangulate</a></div><div class="ttdeci">@ aiProcess_Triangulate</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00131">postprocess.h:131</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410aa4ae05f45c5682ab245cf8e87986426f"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410aa4ae05f45c5682ab245cf8e87986426f">aiProcess_GenUVCoords</a></div><div class="ttdeci">@ aiProcess_GenUVCoords</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00429">postprocess.h:429</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410ab4484f73635d633cd79973bac1431ed6"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410ab4484f73635d633cd79973bac1431ed6">aiProcess_SortByPType</a></div><div class="ttdeci">@ aiProcess_SortByPType</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00354">postprocess.h:354</a></div></div>
 </div><!-- fragment -->
 <p>Default postprocess configuration optimizing the data for real-time rendering. </p>
 <p >Applications would want to use this preset to load models on end-user PCs, maybe for direct use in game.</p>
 <p >If you're using DirectX, don't forget to combine this value with the <a class="el" href="include_2assimp_2postprocess_8h.html#acd2361a766665ce2dbfb3eae201b784d" title="Shortcut flag for Direct3D-based applications.">aiProcess_ConvertToLeftHanded</a> step. If you don't support UV transformations in your application apply the <a class="el" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a87577c60885b193571a10237341b237f">aiProcess_TransformUVCoords</a> step, too. </p><dl class="section note"><dt>Note</dt><dd>Please take the time to read the docs for the steps enabled by this preset. Some of them offer further configurable properties, while some of them might not be of use for you so it might be better to not specify them. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2postprocess_8h_source.html#l00642">642</a> of file <a class="el" href="include_2assimp_2postprocess_8h_source.html">postprocess.h</a>.</p>
 
 </div>
 </div>
@@ -309,14 +342,16 @@ Enumerations</h2></td></tr>
 <div class="line">    <a class="code hl_enumvalue" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa">aiProcess_ValidateDataStructure</a>          |  \</div>
 <div class="line">    <a class="code hl_enumvalue" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410af5fe0d6ee720c91359dc61cb849f2ebf">aiProcess_OptimizeMeshes</a>                 |  \</div>
 <div class="line">    0 )</div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a450d38c62891ec72077a011098ee4412"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a450d38c62891ec72077a011098ee4412">aiProcessPreset_TargetRealtime_Quality</a></div><div class="ttdeci">#define aiProcessPreset_TargetRealtime_Quality</div><div class="ttdoc">Default postprocess configuration optimizing the data for real-time rendering.</div><div class="ttdef"><b>Definition:</b> postprocess.h:667</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a4982e6ac69991617b1481bce00d1fc0e"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a4982e6ac69991617b1481bce00d1fc0e">aiProcess_FindInstances</a></div><div class="ttdeci">@ aiProcess_FindInstances</div><div class="ttdef"><b>Definition:</b> postprocess.h:461</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa">aiProcess_ValidateDataStructure</a></div><div class="ttdeci">@ aiProcess_ValidateDataStructure</div><div class="ttdef"><b>Definition:</b> postprocess.h:277</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410af5fe0d6ee720c91359dc61cb849f2ebf"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410af5fe0d6ee720c91359dc61cb849f2ebf">aiProcess_OptimizeMeshes</a></div><div class="ttdeci">@ aiProcess_OptimizeMeshes</div><div class="ttdef"><b>Definition:</b> postprocess.h:472</div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a450d38c62891ec72077a011098ee4412"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a450d38c62891ec72077a011098ee4412">aiProcessPreset_TargetRealtime_Quality</a></div><div class="ttdeci">#define aiProcessPreset_TargetRealtime_Quality</div><div class="ttdoc">Default postprocess configuration optimizing the data for real-time rendering.</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00667">postprocess.h:667</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a4982e6ac69991617b1481bce00d1fc0e"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a4982e6ac69991617b1481bce00d1fc0e">aiProcess_FindInstances</a></div><div class="ttdeci">@ aiProcess_FindInstances</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00461">postprocess.h:461</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa">aiProcess_ValidateDataStructure</a></div><div class="ttdeci">@ aiProcess_ValidateDataStructure</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00277">postprocess.h:277</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410af5fe0d6ee720c91359dc61cb849f2ebf"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410af5fe0d6ee720c91359dc61cb849f2ebf">aiProcess_OptimizeMeshes</a></div><div class="ttdeci">@ aiProcess_OptimizeMeshes</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00472">postprocess.h:472</a></div></div>
 </div><!-- fragment -->
 <p>Default postprocess configuration optimizing the data for real-time rendering. </p>
 <p >This preset enables almost every optimization step to achieve perfectly optimized data. It's your choice for level editor environments where import speed is not important.</p>
 <p >If you're using DirectX, don't forget to combine this value with the <a class="el" href="include_2assimp_2postprocess_8h.html#acd2361a766665ce2dbfb3eae201b784d" title="Shortcut flag for Direct3D-based applications.">aiProcess_ConvertToLeftHanded</a> step. If you don't support UV transformations in your application, apply the <a class="el" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a87577c60885b193571a10237341b237f">aiProcess_TransformUVCoords</a> step, too. </p><dl class="section note"><dt>Note</dt><dd>Please take the time to read the docs for the steps enabled by this preset. Some of them offer further configurable properties, while some of them might not be of use for you so it might be better to not specify them. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2postprocess_8h_source.html#l00697">697</a> of file <a class="el" href="include_2assimp_2postprocess_8h_source.html">postprocess.h</a>.</p>
 
 </div>
 </div>
@@ -345,17 +380,19 @@ Enumerations</h2></td></tr>
 <div class="line">    <a class="code hl_enumvalue" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410ae1311236ea7a55b7355c5aa535586ad0">aiProcess_FindDegenerates</a>               |  \</div>
 <div class="line">    <a class="code hl_enumvalue" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a42a93fc16a7a3b6df509bab503945421">aiProcess_FindInvalidData</a>               |  \</div>
 <div class="line">    0 )</div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a052d2921c33cd21141480b8f25524bb1"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a052d2921c33cd21141480b8f25524bb1">aiProcess_RemoveRedundantMaterials</a></div><div class="ttdeci">@ aiProcess_RemoveRedundantMaterials</div><div class="ttdef"><b>Definition:</b> postprocess.h:313</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a16979c68f93d283c6886abf580d557b1"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a16979c68f93d283c6886abf580d557b1">aiProcess_ImproveCacheLocality</a></div><div class="ttdeci">@ aiProcess_ImproveCacheLocality</div><div class="ttdef"><b>Definition:</b> postprocess.h:292</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a42a93fc16a7a3b6df509bab503945421"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a42a93fc16a7a3b6df509bab503945421">aiProcess_FindInvalidData</a></div><div class="ttdeci">@ aiProcess_FindInvalidData</div><div class="ttdef"><b>Definition:</b> postprocess.h:412</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a6afb4fee42eca4482674859196cb8685"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a6afb4fee42eca4482674859196cb8685">aiProcess_GenSmoothNormals</a></div><div class="ttdeci">@ aiProcess_GenSmoothNormals</div><div class="ttdef"><b>Definition:</b> postprocess.h:188</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a7bb8f16468032a3ba9a23fa37df82174"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a7bb8f16468032a3ba9a23fa37df82174">aiProcess_SplitLargeMeshes</a></div><div class="ttdeci">@ aiProcess_SplitLargeMeshes</div><div class="ttdef"><b>Definition:</b> postprocess.h:207</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a9fc450a103aa2831c145c49bc56c9439"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a9fc450a103aa2831c145c49bc56c9439">aiProcess_LimitBoneWeights</a></div><div class="ttdeci">@ aiProcess_LimitBoneWeights</div><div class="ttdef"><b>Definition:</b> postprocess.h:249</div></div>
-<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410ae1311236ea7a55b7355c5aa535586ad0"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410ae1311236ea7a55b7355c5aa535586ad0">aiProcess_FindDegenerates</a></div><div class="ttdeci">@ aiProcess_FindDegenerates</div><div class="ttdef"><b>Definition:</b> postprocess.h:397</div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a052d2921c33cd21141480b8f25524bb1"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a052d2921c33cd21141480b8f25524bb1">aiProcess_RemoveRedundantMaterials</a></div><div class="ttdeci">@ aiProcess_RemoveRedundantMaterials</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00313">postprocess.h:313</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a16979c68f93d283c6886abf580d557b1"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a16979c68f93d283c6886abf580d557b1">aiProcess_ImproveCacheLocality</a></div><div class="ttdeci">@ aiProcess_ImproveCacheLocality</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00292">postprocess.h:292</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a42a93fc16a7a3b6df509bab503945421"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a42a93fc16a7a3b6df509bab503945421">aiProcess_FindInvalidData</a></div><div class="ttdeci">@ aiProcess_FindInvalidData</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00412">postprocess.h:412</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a6afb4fee42eca4482674859196cb8685"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a6afb4fee42eca4482674859196cb8685">aiProcess_GenSmoothNormals</a></div><div class="ttdeci">@ aiProcess_GenSmoothNormals</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00188">postprocess.h:188</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a7bb8f16468032a3ba9a23fa37df82174"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a7bb8f16468032a3ba9a23fa37df82174">aiProcess_SplitLargeMeshes</a></div><div class="ttdeci">@ aiProcess_SplitLargeMeshes</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00207">postprocess.h:207</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410a9fc450a103aa2831c145c49bc56c9439"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a9fc450a103aa2831c145c49bc56c9439">aiProcess_LimitBoneWeights</a></div><div class="ttdeci">@ aiProcess_LimitBoneWeights</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00249">postprocess.h:249</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2postprocess_8h_html_a64795260b95f5a4b3f3dc1be4f52e410ae1311236ea7a55b7355c5aa535586ad0"><div class="ttname"><a href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410ae1311236ea7a55b7355c5aa535586ad0">aiProcess_FindDegenerates</a></div><div class="ttdeci">@ aiProcess_FindDegenerates</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2postprocess_8h_source.html#l00397">postprocess.h:397</a></div></div>
 </div><!-- fragment -->
 <p>Default postprocess configuration optimizing the data for real-time rendering. </p>
 <p >Unlike <a class="el" href="include_2assimp_2postprocess_8h.html#ac72dfcb11eae3f0403430b2d9bd6aaac" title="Default postprocess configuration optimizing the data for real-time rendering.">aiProcessPreset_TargetRealtime_Fast</a>, this configuration performs some extra optimizations to improve rendering speed and to minimize memory usage. It could be a good choice for a level editor environment where import speed is not so important.</p>
 <p >If you're using DirectX, don't forget to combine this value with the <a class="el" href="include_2assimp_2postprocess_8h.html#acd2361a766665ce2dbfb3eae201b784d" title="Shortcut flag for Direct3D-based applications.">aiProcess_ConvertToLeftHanded</a> step. If you don't support UV transformations in your application apply the <a class="el" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a87577c60885b193571a10237341b237f">aiProcess_TransformUVCoords</a> step, too. </p><dl class="section note"><dt>Note</dt><dd>Please take the time to read the docs for the steps enabled by this preset. Some of them offer further configurable properties, while some of them might not be of use for you so it might be better to not specify them. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2postprocess_8h_source.html#l00667">667</a> of file <a class="el" href="include_2assimp_2postprocess_8h_source.html">postprocess.h</a>.</p>
 
 </div>
 </div>
@@ -422,7 +459,7 @@ Ignore all point and line meshes when you process assimp's output </li>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a7bb8f16468032a3ba9a23fa37df82174" name="a64795260b95f5a4b3f3dc1be4f52e410a7bb8f16468032a3ba9a23fa37df82174"></a>aiProcess_SplitLargeMeshes&#160;</td><td class="fielddoc"><hr  />
 <p>Splits large meshes into smaller sub-meshes.</p>
 <p >This is quite useful for real-time rendering, where the number of triangles which can be maximally processed in a single draw-call is limited by the video driver/hardware. The maximum vertex buffer is usually limited too. Both requirements can be met with this step: you may specify both a triangle and vertex limit for a single mesh.</p>
-<p >The split limits can (and should!) be set through the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a67d3e772a82c3bbb921ce4d8f2448f2f" title="Set the maximum number of vertices in a mesh.">AI_CONFIG_PP_SLM_VERTEX_LIMIT</a></code> and <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a28b904b69e6e5261aaae50b858316041" title="Set the maximum number of triangles in a mesh.">AI_CONFIG_PP_SLM_TRIANGLE_LIMIT</a></code> importer properties. The default values are <code>AI_SLM_DEFAULT_MAX_VERTICES</code> and <code>AI_SLM_DEFAULT_MAX_TRIANGLES</code>.</p>
+<p >The split limits can (and should!) be set through the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a67d3e772a82c3bbb921ce4d8f2448f2f" title="Set the maximum number of vertices in a mesh.">AI_CONFIG_PP_SLM_VERTEX_LIMIT</a></code> and <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a28b904b69e6e5261aaae50b858316041" title="Set the maximum number of triangles in a mesh.">AI_CONFIG_PP_SLM_TRIANGLE_LIMIT</a></code> importer properties. The default values are <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a3d82573abff7d733ec1f24456662a99d">AI_SLM_DEFAULT_MAX_VERTICES</a></code> and <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#abfe0ddcde0e04816e7bc9e429dcd8185">AI_SLM_DEFAULT_MAX_TRIANGLES</a></code>.</p>
 <p >Note that splitting is generally a time-consuming task, but only if there's something to split. The use of this step is recommended for most users. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a6e50fab95214a33996e28fae3efc7582" name="a64795260b95f5a4b3f3dc1be4f52e410a6e50fab95214a33996e28fae3efc7582"></a>aiProcess_PreTransformVertices&#160;</td><td class="fielddoc"><hr  />
@@ -432,7 +469,7 @@ Ignore all point and line meshes when you process assimp's output </li>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a9fc450a103aa2831c145c49bc56c9439" name="a64795260b95f5a4b3f3dc1be4f52e410a9fc450a103aa2831c145c49bc56c9439"></a>aiProcess_LimitBoneWeights&#160;</td><td class="fielddoc"><hr  />
 <p>Limits the number of bones simultaneously affecting a single vertex to a maximum value.</p>
-<p >If any vertex is affected by more than the maximum number of bones, the least important vertex weights are removed and the remaining vertex weights are renormalized so that the weights still sum up to 1. The default bone weight limit is 4 (defined as <code>AI_LMW_MAX_WEIGHTS</code> in config.h), but you can use the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a37c3ad7872523b615d42761f2dc1bdf5" title="Set the maximum number of bones affecting a single vertex.">AI_CONFIG_PP_LBW_MAX_WEIGHTS</a></code> importer property to supply your own limit to the post processing step.</p>
+<p >If any vertex is affected by more than the maximum number of bones, the least important vertex weights are removed and the remaining vertex weights are renormalized so that the weights still sum up to 1. The default bone weight limit is 4 (defined as <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#ab0dbe36911bd9df0661bdb69ecadb2e1">AI_LMW_MAX_WEIGHTS</a></code> in config.h), but you can use the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a37c3ad7872523b615d42761f2dc1bdf5" title="Set the maximum number of bones affecting a single vertex.">AI_CONFIG_PP_LBW_MAX_WEIGHTS</a></code> importer property to supply your own limit to the post processing step.</p>
 <p >If you intend to perform the skinning in hardware, this post processing step might be of interest to you. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa" name="a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa"></a>aiProcess_ValidateDataStructure&#160;</td><td class="fielddoc"><hr  />
@@ -500,11 +537,11 @@ Set the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410aa4ae05f45c5682ab245cf8e87986426f" name="a64795260b95f5a4b3f3dc1be4f52e410aa4ae05f45c5682ab245cf8e87986426f"></a>aiProcess_GenUVCoords&#160;</td><td class="fielddoc"><hr  />
 <p>This step converts non-UV mappings (such as spherical or cylindrical mapping) to proper texture coordinate channels.</p>
 <p >Most applications will support UV mapping only, so you will probably want to specify this step in every case. Note that <a class="el" href="namespace_assimp.html">Assimp</a> is not always able to match the original mapping implementation of the 3D app which produced a model perfectly. It's always better to let the modelling app compute the UV channels - 3ds max, Maya, Blender, LightWave, and Modo do this for example.</p>
-<dl class="section note"><dt>Note</dt><dd>If this step is not requested, you'll need to process the <code>AI_MATKEY_MAPPING</code> material property in order to display all assets properly. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If this step is not requested, you'll need to process the <code><a class="el" href="thirdparty_2assimp_2include_2assimp_2_material_8h.html#af72d0714d106aa52da2dbdf10d975c54">AI_MATKEY_MAPPING</a></code> material property in order to display all assets properly. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a87577c60885b193571a10237341b237f" name="a64795260b95f5a4b3f3dc1be4f52e410a87577c60885b193571a10237341b237f"></a>aiProcess_TransformUVCoords&#160;</td><td class="fielddoc"><hr  />
 <p>This step applies per-texture UV transformations and bakes them into stand-alone vtexture coordinate channels.</p>
-<p >UV transformations are specified per-texture - see the <code>AI_MATKEY_UVTRANSFORM</code> material key for more information. This step processes all textures with transformed input UV coordinates and generates a new (pre-transformed) UV channel which replaces the old channel. Most applications won't support UV transformations, so you will probably want to specify this step.</p>
+<p >UV transformations are specified per-texture - see the <code><a class="el" href="thirdparty_2assimp_2include_2assimp_2_material_8h.html#ab24f58c983cf26acc9389ed2530316a9">AI_MATKEY_UVTRANSFORM</a></code> material key for more information. This step processes all textures with transformed input UV coordinates and generates a new (pre-transformed) UV channel which replaces the old channel. Most applications won't support UV transformations, so you will probably want to specify this step.</p>
 <dl class="section note"><dt>Note</dt><dd>UV transformations are usually implemented in real-time apps by transforming texture coordinates at vertex shader stage with a 3x3 (homogeneous) transformation matrix. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a4982e6ac69991617b1481bce00d1fc0e" name="a64795260b95f5a4b3f3dc1be4f52e410a4982e6ac69991617b1481bce00d1fc0e"></a>aiProcess_FindInstances&#160;</td><td class="fielddoc"><hr  />
@@ -585,10 +622,12 @@ If a texture's file does not exist at the specified path
 it will check if a file with the same name exists at the root folder
 of the imported model. And if so, it uses that.
 </pre> </td></tr>
+<tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a72367a4d49efd4a42394cc5c377c1353" name="a64795260b95f5a4b3f3dc1be4f52e410a72367a4d49efd4a42394cc5c377c1353"></a>aiProcess_ForceGenNormals&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a4d499b6b8ce7c1cdaf3ef3935ad17ce8" name="a64795260b95f5a4b3f3dc1be4f52e410a4d499b6b8ce7c1cdaf3ef3935ad17ce8"></a>aiProcess_DropNormals&#160;</td><td class="fielddoc"><hr  />
 <p>Drops normals for all faces of all meshes.</p>
 <p >This is ignored if no normals are present. Face normals are shared between all points of a single face, so a single point can have multiple normals, which forces the library to duplicate vertices in some cases. <a class="el" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a444a6c9d8b63e6dc9e1e2e1edd3cbcd4">aiProcess_JoinIdenticalVertices</a> is <em>senseless</em> then. This process gives sense back to aiProcess_JoinIdenticalVertices </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a26bd09ed23ff03da0b2c3d64ee7018bf" name="a64795260b95f5a4b3f3dc1be4f52e410a26bd09ed23ff03da0b2c3d64ee7018bf"></a>aiProcess_GenBoundingBoxes&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a8857a0e30688127a82c7b8939958c6dc" name="a64795260b95f5a4b3f3dc1be4f52e410a8857a0e30688127a82c7b8939958c6dc"></a>aiProcess_CalcTangentSpace&#160;</td><td class="fielddoc"><hr  />
 <p>Calculates the tangents and bitangents for the imported meshes.</p>
 <p >Does nothing if a mesh does not have normals. You might want this post processing step to be executed if you plan to use tangent space calculations such as normal mapping applied to the meshes. There's an importer property, <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a17376a5a00287843581a4f668291f49d" title="Specifies the maximum angle that may be between two vertex tangents that their tangents and bi-tangen...">AI_CONFIG_PP_CT_MAX_SMOOTHING_ANGLE</a></code>, which allows you to specify a maximum smoothing angle for the algorithm. However, usually you'll want to leave it at the default value. </p>
@@ -629,7 +668,7 @@ Ignore all point and line meshes when you process assimp's output </li>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a7bb8f16468032a3ba9a23fa37df82174" name="a64795260b95f5a4b3f3dc1be4f52e410a7bb8f16468032a3ba9a23fa37df82174"></a>aiProcess_SplitLargeMeshes&#160;</td><td class="fielddoc"><hr  />
 <p>Splits large meshes into smaller sub-meshes.</p>
 <p >This is quite useful for real-time rendering, where the number of triangles which can be maximally processed in a single draw-call is limited by the video driver/hardware. The maximum vertex buffer is usually limited too. Both requirements can be met with this step: you may specify both a triangle and vertex limit for a single mesh.</p>
-<p >The split limits can (and should!) be set through the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a67d3e772a82c3bbb921ce4d8f2448f2f" title="Set the maximum number of vertices in a mesh.">AI_CONFIG_PP_SLM_VERTEX_LIMIT</a></code> and <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a28b904b69e6e5261aaae50b858316041" title="Set the maximum number of triangles in a mesh.">AI_CONFIG_PP_SLM_TRIANGLE_LIMIT</a></code> importer properties. The default values are <code>AI_SLM_DEFAULT_MAX_VERTICES</code> and <code>AI_SLM_DEFAULT_MAX_TRIANGLES</code>.</p>
+<p >The split limits can (and should!) be set through the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a67d3e772a82c3bbb921ce4d8f2448f2f" title="Set the maximum number of vertices in a mesh.">AI_CONFIG_PP_SLM_VERTEX_LIMIT</a></code> and <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a28b904b69e6e5261aaae50b858316041" title="Set the maximum number of triangles in a mesh.">AI_CONFIG_PP_SLM_TRIANGLE_LIMIT</a></code> importer properties. The default values are <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a3d82573abff7d733ec1f24456662a99d">AI_SLM_DEFAULT_MAX_VERTICES</a></code> and <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#abfe0ddcde0e04816e7bc9e429dcd8185">AI_SLM_DEFAULT_MAX_TRIANGLES</a></code>.</p>
 <p >Note that splitting is generally a time-consuming task, but only if there's something to split. The use of this step is recommended for most users. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a6e50fab95214a33996e28fae3efc7582" name="a64795260b95f5a4b3f3dc1be4f52e410a6e50fab95214a33996e28fae3efc7582"></a>aiProcess_PreTransformVertices&#160;</td><td class="fielddoc"><hr  />
@@ -639,7 +678,7 @@ Ignore all point and line meshes when you process assimp's output </li>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a9fc450a103aa2831c145c49bc56c9439" name="a64795260b95f5a4b3f3dc1be4f52e410a9fc450a103aa2831c145c49bc56c9439"></a>aiProcess_LimitBoneWeights&#160;</td><td class="fielddoc"><hr  />
 <p>Limits the number of bones simultaneously affecting a single vertex to a maximum value.</p>
-<p >If any vertex is affected by more than the maximum number of bones, the least important vertex weights are removed and the remaining vertex weights are renormalized so that the weights still sum up to 1. The default bone weight limit is 4 (defined as <code>AI_LMW_MAX_WEIGHTS</code> in config.h), but you can use the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a37c3ad7872523b615d42761f2dc1bdf5" title="Set the maximum number of bones affecting a single vertex.">AI_CONFIG_PP_LBW_MAX_WEIGHTS</a></code> importer property to supply your own limit to the post processing step.</p>
+<p >If any vertex is affected by more than the maximum number of bones, the least important vertex weights are removed and the remaining vertex weights are renormalized so that the weights still sum up to 1. The default bone weight limit is 4 (defined as <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#ab0dbe36911bd9df0661bdb69ecadb2e1">AI_LMW_MAX_WEIGHTS</a></code> in config.h), but you can use the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a37c3ad7872523b615d42761f2dc1bdf5" title="Set the maximum number of bones affecting a single vertex.">AI_CONFIG_PP_LBW_MAX_WEIGHTS</a></code> importer property to supply your own limit to the post processing step.</p>
 <p >If you intend to perform the skinning in hardware, this post processing step might be of interest to you. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa" name="a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa"></a>aiProcess_ValidateDataStructure&#160;</td><td class="fielddoc"><hr  />
@@ -707,11 +746,11 @@ Set the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410aa4ae05f45c5682ab245cf8e87986426f" name="a64795260b95f5a4b3f3dc1be4f52e410aa4ae05f45c5682ab245cf8e87986426f"></a>aiProcess_GenUVCoords&#160;</td><td class="fielddoc"><hr  />
 <p>This step converts non-UV mappings (such as spherical or cylindrical mapping) to proper texture coordinate channels.</p>
 <p >Most applications will support UV mapping only, so you will probably want to specify this step in every case. Note that <a class="el" href="namespace_assimp.html">Assimp</a> is not always able to match the original mapping implementation of the 3D app which produced a model perfectly. It's always better to let the modelling app compute the UV channels - 3ds max, Maya, Blender, LightWave, and Modo do this for example.</p>
-<dl class="section note"><dt>Note</dt><dd>If this step is not requested, you'll need to process the <code>AI_MATKEY_MAPPING</code> material property in order to display all assets properly. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If this step is not requested, you'll need to process the <code><a class="el" href="thirdparty_2assimp_2include_2assimp_2_material_8h.html#af72d0714d106aa52da2dbdf10d975c54">AI_MATKEY_MAPPING</a></code> material property in order to display all assets properly. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a87577c60885b193571a10237341b237f" name="a64795260b95f5a4b3f3dc1be4f52e410a87577c60885b193571a10237341b237f"></a>aiProcess_TransformUVCoords&#160;</td><td class="fielddoc"><hr  />
 <p>This step applies per-texture UV transformations and bakes them into stand-alone vtexture coordinate channels.</p>
-<p >UV transformations are specified per-texture - see the <code>AI_MATKEY_UVTRANSFORM</code> material key for more information. This step processes all textures with transformed input UV coordinates and generates a new (pre-transformed) UV channel which replaces the old channel. Most applications won't support UV transformations, so you will probably want to specify this step.</p>
+<p >UV transformations are specified per-texture - see the <code><a class="el" href="thirdparty_2assimp_2include_2assimp_2_material_8h.html#ab24f58c983cf26acc9389ed2530316a9">AI_MATKEY_UVTRANSFORM</a></code> material key for more information. This step processes all textures with transformed input UV coordinates and generates a new (pre-transformed) UV channel which replaces the old channel. Most applications won't support UV transformations, so you will probably want to specify this step.</p>
 <dl class="section note"><dt>Note</dt><dd>UV transformations are usually implemented in real-time apps by transforming texture coordinates at vertex shader stage with a 3x3 (homogeneous) transformation matrix. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a4982e6ac69991617b1481bce00d1fc0e" name="a64795260b95f5a4b3f3dc1be4f52e410a4982e6ac69991617b1481bce00d1fc0e"></a>aiProcess_FindInstances&#160;</td><td class="fielddoc"><hr  />
@@ -792,10 +831,12 @@ If a texture's file does not exist at the specified path
 it will check if a file with the same name exists at the root folder
 of the imported model. And if so, it uses that.
 </pre> </td></tr>
+<tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a72367a4d49efd4a42394cc5c377c1353" name="a64795260b95f5a4b3f3dc1be4f52e410a72367a4d49efd4a42394cc5c377c1353"></a>aiProcess_ForceGenNormals&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a4d499b6b8ce7c1cdaf3ef3935ad17ce8" name="a64795260b95f5a4b3f3dc1be4f52e410a4d499b6b8ce7c1cdaf3ef3935ad17ce8"></a>aiProcess_DropNormals&#160;</td><td class="fielddoc"><hr  />
 <p>Drops normals for all faces of all meshes.</p>
 <p >This is ignored if no normals are present. Face normals are shared between all points of a single face, so a single point can have multiple normals, which forces the library to duplicate vertices in some cases. <a class="el" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a444a6c9d8b63e6dc9e1e2e1edd3cbcd4">aiProcess_JoinIdenticalVertices</a> is <em>senseless</em> then. This process gives sense back to aiProcess_JoinIdenticalVertices </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a26bd09ed23ff03da0b2c3d64ee7018bf" name="a64795260b95f5a4b3f3dc1be4f52e410a26bd09ed23ff03da0b2c3d64ee7018bf"></a>aiProcess_GenBoundingBoxes&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a8857a0e30688127a82c7b8939958c6dc" name="a64795260b95f5a4b3f3dc1be4f52e410a8857a0e30688127a82c7b8939958c6dc"></a>aiProcess_CalcTangentSpace&#160;</td><td class="fielddoc"><hr  />
 <p>Calculates the tangents and bitangents for the imported meshes.</p>
 <p >Does nothing if a mesh does not have normals. You might want this post processing step to be executed if you plan to use tangent space calculations such as normal mapping applied to the meshes. There's an importer property, <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a17376a5a00287843581a4f668291f49d" title="Specifies the maximum angle that may be between two vertex tangents that their tangents and bi-tangen...">AI_CONFIG_PP_CT_MAX_SMOOTHING_ANGLE</a></code>, which allows you to specify a maximum smoothing angle for the algorithm. However, usually you'll want to leave it at the default value. </p>
@@ -836,7 +877,7 @@ Ignore all point and line meshes when you process assimp's output </li>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a7bb8f16468032a3ba9a23fa37df82174" name="a64795260b95f5a4b3f3dc1be4f52e410a7bb8f16468032a3ba9a23fa37df82174"></a>aiProcess_SplitLargeMeshes&#160;</td><td class="fielddoc"><hr  />
 <p>Splits large meshes into smaller sub-meshes.</p>
 <p >This is quite useful for real-time rendering, where the number of triangles which can be maximally processed in a single draw-call is limited by the video driver/hardware. The maximum vertex buffer is usually limited too. Both requirements can be met with this step: you may specify both a triangle and vertex limit for a single mesh.</p>
-<p >The split limits can (and should!) be set through the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a67d3e772a82c3bbb921ce4d8f2448f2f" title="Set the maximum number of vertices in a mesh.">AI_CONFIG_PP_SLM_VERTEX_LIMIT</a></code> and <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a28b904b69e6e5261aaae50b858316041" title="Set the maximum number of triangles in a mesh.">AI_CONFIG_PP_SLM_TRIANGLE_LIMIT</a></code> importer properties. The default values are <code>AI_SLM_DEFAULT_MAX_VERTICES</code> and <code>AI_SLM_DEFAULT_MAX_TRIANGLES</code>.</p>
+<p >The split limits can (and should!) be set through the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a67d3e772a82c3bbb921ce4d8f2448f2f" title="Set the maximum number of vertices in a mesh.">AI_CONFIG_PP_SLM_VERTEX_LIMIT</a></code> and <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a28b904b69e6e5261aaae50b858316041" title="Set the maximum number of triangles in a mesh.">AI_CONFIG_PP_SLM_TRIANGLE_LIMIT</a></code> importer properties. The default values are <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a3d82573abff7d733ec1f24456662a99d">AI_SLM_DEFAULT_MAX_VERTICES</a></code> and <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#abfe0ddcde0e04816e7bc9e429dcd8185">AI_SLM_DEFAULT_MAX_TRIANGLES</a></code>.</p>
 <p >Note that splitting is generally a time-consuming task, but only if there's something to split. The use of this step is recommended for most users. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a6e50fab95214a33996e28fae3efc7582" name="a64795260b95f5a4b3f3dc1be4f52e410a6e50fab95214a33996e28fae3efc7582"></a>aiProcess_PreTransformVertices&#160;</td><td class="fielddoc"><hr  />
@@ -846,7 +887,7 @@ Ignore all point and line meshes when you process assimp's output </li>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a9fc450a103aa2831c145c49bc56c9439" name="a64795260b95f5a4b3f3dc1be4f52e410a9fc450a103aa2831c145c49bc56c9439"></a>aiProcess_LimitBoneWeights&#160;</td><td class="fielddoc"><hr  />
 <p>Limits the number of bones simultaneously affecting a single vertex to a maximum value.</p>
-<p >If any vertex is affected by more than the maximum number of bones, the least important vertex weights are removed and the remaining vertex weights are renormalized so that the weights still sum up to 1. The default bone weight limit is 4 (defined as <code>AI_LMW_MAX_WEIGHTS</code> in config.h), but you can use the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a37c3ad7872523b615d42761f2dc1bdf5" title="Set the maximum number of bones affecting a single vertex.">AI_CONFIG_PP_LBW_MAX_WEIGHTS</a></code> importer property to supply your own limit to the post processing step.</p>
+<p >If any vertex is affected by more than the maximum number of bones, the least important vertex weights are removed and the remaining vertex weights are renormalized so that the weights still sum up to 1. The default bone weight limit is 4 (defined as <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#ab0dbe36911bd9df0661bdb69ecadb2e1">AI_LMW_MAX_WEIGHTS</a></code> in config.h), but you can use the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.html#a37c3ad7872523b615d42761f2dc1bdf5" title="Set the maximum number of bones affecting a single vertex.">AI_CONFIG_PP_LBW_MAX_WEIGHTS</a></code> importer property to supply your own limit to the post processing step.</p>
 <p >If you intend to perform the skinning in hardware, this post processing step might be of interest to you. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa" name="a64795260b95f5a4b3f3dc1be4f52e410ae420ce22fbbac9d0fd21fd92f2b630fa"></a>aiProcess_ValidateDataStructure&#160;</td><td class="fielddoc"><hr  />
@@ -914,11 +955,11 @@ Set the <code><a class="el" href="build_2x64-_debug_2include_2assimp_2config_8h.
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410aa4ae05f45c5682ab245cf8e87986426f" name="a64795260b95f5a4b3f3dc1be4f52e410aa4ae05f45c5682ab245cf8e87986426f"></a>aiProcess_GenUVCoords&#160;</td><td class="fielddoc"><hr  />
 <p>This step converts non-UV mappings (such as spherical or cylindrical mapping) to proper texture coordinate channels.</p>
 <p >Most applications will support UV mapping only, so you will probably want to specify this step in every case. Note that <a class="el" href="namespace_assimp.html">Assimp</a> is not always able to match the original mapping implementation of the 3D app which produced a model perfectly. It's always better to let the modelling app compute the UV channels - 3ds max, Maya, Blender, LightWave, and Modo do this for example.</p>
-<dl class="section note"><dt>Note</dt><dd>If this step is not requested, you'll need to process the <code>AI_MATKEY_MAPPING</code> material property in order to display all assets properly. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If this step is not requested, you'll need to process the <code><a class="el" href="thirdparty_2assimp_2include_2assimp_2_material_8h.html#af72d0714d106aa52da2dbdf10d975c54">AI_MATKEY_MAPPING</a></code> material property in order to display all assets properly. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a87577c60885b193571a10237341b237f" name="a64795260b95f5a4b3f3dc1be4f52e410a87577c60885b193571a10237341b237f"></a>aiProcess_TransformUVCoords&#160;</td><td class="fielddoc"><hr  />
 <p>This step applies per-texture UV transformations and bakes them into stand-alone vtexture coordinate channels.</p>
-<p >UV transformations are specified per-texture - see the <code>AI_MATKEY_UVTRANSFORM</code> material key for more information. This step processes all textures with transformed input UV coordinates and generates a new (pre-transformed) UV channel which replaces the old channel. Most applications won't support UV transformations, so you will probably want to specify this step.</p>
+<p >UV transformations are specified per-texture - see the <code><a class="el" href="thirdparty_2assimp_2include_2assimp_2_material_8h.html#ab24f58c983cf26acc9389ed2530316a9">AI_MATKEY_UVTRANSFORM</a></code> material key for more information. This step processes all textures with transformed input UV coordinates and generates a new (pre-transformed) UV channel which replaces the old channel. Most applications won't support UV transformations, so you will probably want to specify this step.</p>
 <dl class="section note"><dt>Note</dt><dd>UV transformations are usually implemented in real-time apps by transforming texture coordinates at vertex shader stage with a 3x3 (homogeneous) transformation matrix. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a4982e6ac69991617b1481bce00d1fc0e" name="a64795260b95f5a4b3f3dc1be4f52e410a4982e6ac69991617b1481bce00d1fc0e"></a>aiProcess_FindInstances&#160;</td><td class="fielddoc"><hr  />
@@ -999,11 +1040,15 @@ If a texture's file does not exist at the specified path
 it will check if a file with the same name exists at the root folder
 of the imported model. And if so, it uses that.
 </pre> </td></tr>
+<tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a72367a4d49efd4a42394cc5c377c1353" name="a64795260b95f5a4b3f3dc1be4f52e410a72367a4d49efd4a42394cc5c377c1353"></a>aiProcess_ForceGenNormals&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a4d499b6b8ce7c1cdaf3ef3935ad17ce8" name="a64795260b95f5a4b3f3dc1be4f52e410a4d499b6b8ce7c1cdaf3ef3935ad17ce8"></a>aiProcess_DropNormals&#160;</td><td class="fielddoc"><hr  />
 <p>Drops normals for all faces of all meshes.</p>
 <p >This is ignored if no normals are present. Face normals are shared between all points of a single face, so a single point can have multiple normals, which forces the library to duplicate vertices in some cases. <a class="el" href="include_2assimp_2postprocess_8h.html#a64795260b95f5a4b3f3dc1be4f52e410a444a6c9d8b63e6dc9e1e2e1edd3cbcd4">aiProcess_JoinIdenticalVertices</a> is <em>senseless</em> then. This process gives sense back to aiProcess_JoinIdenticalVertices </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a64795260b95f5a4b3f3dc1be4f52e410a26bd09ed23ff03da0b2c3d64ee7018bf" name="a64795260b95f5a4b3f3dc1be4f52e410a26bd09ed23ff03da0b2c3d64ee7018bf"></a>aiProcess_GenBoundingBoxes&#160;</td><td class="fielddoc"></td></tr>
 </table>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2postprocess_8h_source.html#l00072">72</a> of file <a class="el" href="include_2assimp_2postprocess_8h_source.html">postprocess.h</a>.</p>
 
 </div>
 </div>

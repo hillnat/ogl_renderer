@@ -2,172 +2,172 @@
 \label{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/TinyFormatter.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/TinyFormatter.h}}
 \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/*}}
-\DoxyCodeLine{2 \textcolor{comment}{Open Asset Import Library (assimp)}}
-\DoxyCodeLine{3 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{4 \textcolor{comment}{}}
-\DoxyCodeLine{5 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
-\DoxyCodeLine{6 \textcolor{comment}{}}
-\DoxyCodeLine{7 \textcolor{comment}{}}
-\DoxyCodeLine{8 \textcolor{comment}{All rights reserved.}}
-\DoxyCodeLine{9 \textcolor{comment}{}}
-\DoxyCodeLine{10 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
-\DoxyCodeLine{11 \textcolor{comment}{with or without modification, are permitted provided that the}}
-\DoxyCodeLine{12 \textcolor{comment}{following conditions are met:}}
-\DoxyCodeLine{13 \textcolor{comment}{}}
-\DoxyCodeLine{14 \textcolor{comment}{* Redistributions of source code must retain the above}}
-\DoxyCodeLine{15 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{16 \textcolor{comment}{  following disclaimer.}}
-\DoxyCodeLine{17 \textcolor{comment}{}}
-\DoxyCodeLine{18 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
-\DoxyCodeLine{19 \textcolor{comment}{  copyright notice, this list of conditions and the}}
-\DoxyCodeLine{20 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
-\DoxyCodeLine{21 \textcolor{comment}{  materials provided with the distribution.}}
-\DoxyCodeLine{22 \textcolor{comment}{}}
-\DoxyCodeLine{23 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
-\DoxyCodeLine{24 \textcolor{comment}{  contributors may be used to endorse or promote products}}
-\DoxyCodeLine{25 \textcolor{comment}{  derived from this software without specific prior}}
-\DoxyCodeLine{26 \textcolor{comment}{  written permission of the assimp team.}}
-\DoxyCodeLine{27 \textcolor{comment}{}}
-\DoxyCodeLine{28 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
-\DoxyCodeLine{29 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
-\DoxyCodeLine{30 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
-\DoxyCodeLine{31 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
-\DoxyCodeLine{32 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
-\DoxyCodeLine{33 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
-\DoxyCodeLine{34 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
-\DoxyCodeLine{35 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
-\DoxyCodeLine{36 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
-\DoxyCodeLine{37 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
-\DoxyCodeLine{38 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
-\DoxyCodeLine{39 \textcolor{comment}{}}
-\DoxyCodeLine{40 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{41 \textcolor{comment}{*/}}
-\DoxyCodeLine{42 }
-\DoxyCodeLine{48 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifndef INCLUDED\_TINY\_FORMATTER\_H}}
-\DoxyCodeLine{50 \textcolor{preprocessor}{\#define INCLUDED\_TINY\_FORMATTER\_H}}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
-\DoxyCodeLine{53 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
-\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56 \textcolor{preprocessor}{\#include <sstream>}}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{58 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
-\DoxyCodeLine{59 \textcolor{keyword}{namespace }Formatter \{}
-\DoxyCodeLine{60 }
-\DoxyCodeLine{61 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{71 \textcolor{comment}{}\textcolor{keyword}{template} < \textcolor{keyword}{typename} T,}
-\DoxyCodeLine{72     \textcolor{keyword}{typename} CharTraits = std::char\_traits<T>,}
-\DoxyCodeLine{73     \textcolor{keyword}{typename} Allocator  = std::allocator<T> >}
-\DoxyCodeLine{74 \textcolor{keyword}{class }basic\_formatter \{}
-\DoxyCodeLine{75 \textcolor{keyword}{public}:}
-\DoxyCodeLine{76     \textcolor{keyword}{typedef} \textcolor{keyword}{class }std::basic\_string<T,CharTraits,Allocator> string;}
-\DoxyCodeLine{77     \textcolor{keyword}{typedef} \textcolor{keyword}{class }std::basic\_ostringstream<T,CharTraits,Allocator> stringstream;}
-\DoxyCodeLine{78 }
-\DoxyCodeLine{79     basic\_formatter() \{}
-\DoxyCodeLine{80         \textcolor{comment}{// empty}}
-\DoxyCodeLine{81     \}}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{83     \textcolor{comment}{/* Allow basic\_formatter<T>'s to be used almost interchangeably}}
-\DoxyCodeLine{84 \textcolor{comment}{     * with std::(w)string or const (w)char* arguments because the}}
-\DoxyCodeLine{85 \textcolor{comment}{     * conversion c'tor is called implicitly. */}}
-\DoxyCodeLine{86     \textcolor{keyword}{template} <\textcolor{keyword}{typename} TT>}
-\DoxyCodeLine{87     basic\_formatter(\textcolor{keyword}{const} TT\& sin)  \{}
-\DoxyCodeLine{88         underlying << \mbox{\hyperlink{group__core__func__trigonometric_ga3fcdcfa2d2ac38de9ba1885cd1c79414}{sin}};}
-\DoxyCodeLine{89     \}}
-\DoxyCodeLine{90 }
-\DoxyCodeLine{91     \textcolor{comment}{// Same problem as the copy constructor below, but with root cause is that stream move}}
-\DoxyCodeLine{92     \textcolor{comment}{// is not permitted on older GCC versions. Small performance impact on those platforms.}}
-\DoxyCodeLine{93 \textcolor{preprocessor}{\#if defined(\_\_GNUC\_\_) \&\& (\_\_GNUC\_\_ == 4 \&\& \_\_GNUC\_MINOR\_\_ <= 9)}}
-\DoxyCodeLine{94     basic\_formatter(basic\_formatter\&\& other) \{}
-\DoxyCodeLine{95         underlying << (string)other;}
-\DoxyCodeLine{96     \}}
-\DoxyCodeLine{97 \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{98     basic\_formatter(basic\_formatter\&\& other)}
-\DoxyCodeLine{99         : underlying(std::move(other.underlying)) \{}
-\DoxyCodeLine{100     \}}
-\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{102 }
-\DoxyCodeLine{103     \textcolor{comment}{// The problem described here:}}
-\DoxyCodeLine{104     \textcolor{comment}{// https://sourceforge.net/tracker/?func=detail\&atid=1067632\&aid=3358562\&group\_id=226462}}
-\DoxyCodeLine{105     \textcolor{comment}{// can also cause trouble here. Apparently, older gcc versions sometimes copy temporaries}}
-\DoxyCodeLine{106     \textcolor{comment}{// being bound to const ref\& function parameters. Copying streams is not permitted, though.}}
-\DoxyCodeLine{107     \textcolor{comment}{// This workaround avoids this by manually specifying a copy ctor.}}
-\DoxyCodeLine{108 \textcolor{preprocessor}{\#if !defined(\_\_GNUC\_\_) || !defined(\_\_APPLE\_\_) || \_\_GNUC\_\_ > 4 || (\_\_GNUC\_\_ == 4 \&\& \_\_GNUC\_MINOR\_\_ >= 6)}}
-\DoxyCodeLine{109     \textcolor{keyword}{explicit} basic\_formatter(\textcolor{keyword}{const} basic\_formatter\& other) \{}
-\DoxyCodeLine{110         underlying << (string)other;}
-\DoxyCodeLine{111     \}}
-\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{113 }
-\DoxyCodeLine{114     \textcolor{keyword}{operator} string ()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{115         \textcolor{keywordflow}{return} underlying.str();}
-\DoxyCodeLine{116     \}}
-\DoxyCodeLine{117 }
-\DoxyCodeLine{118     \textcolor{comment}{/* note -\/ this is declared const because binding temporaries does only}}
-\DoxyCodeLine{119 \textcolor{comment}{     * work for const references, so many function prototypes will}}
-\DoxyCodeLine{120 \textcolor{comment}{     * include const basic\_formatter<T>\& s but might still want to}}
-\DoxyCodeLine{121 \textcolor{comment}{     * modify the formatted string without the need for a full copy.*/}}
-\DoxyCodeLine{122     template <typename TToken, typename std::enable\_if<!std::is\_base\_of<std::exception, TToken>::value>::type * = \textcolor{keyword}{nullptr}>}
-\DoxyCodeLine{123     \textcolor{keyword}{const} basic\_formatter \&operator<<(\textcolor{keyword}{const} TToken \&s)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{124         underlying << s;}
-\DoxyCodeLine{125         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{126     \}}
-\DoxyCodeLine{127 }
-\DoxyCodeLine{128     template <typename TToken, typename std::enable\_if<std::is\_base\_of<std::exception, TToken>::value>::type * = \textcolor{keyword}{nullptr}>}
-\DoxyCodeLine{129     \textcolor{keyword}{const} basic\_formatter \&operator<<(\textcolor{keyword}{const} TToken \&s)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{130         underlying << s.what();}
-\DoxyCodeLine{131         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{132     \}}
-\DoxyCodeLine{133 }
-\DoxyCodeLine{134     template <typename TToken, typename std::enable\_if<!std::is\_base\_of<std::exception, TToken>::value>::type * = \textcolor{keyword}{nullptr}>}
-\DoxyCodeLine{135     basic\_formatter \&operator<<(\textcolor{keyword}{const} TToken \&s) \{}
-\DoxyCodeLine{136         underlying << s;}
-\DoxyCodeLine{137         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{138     \}}
-\DoxyCodeLine{139 }
-\DoxyCodeLine{140     template <typename TToken, typename std::enable\_if<std::is\_base\_of<std::exception, TToken>::value>::type * = \textcolor{keyword}{nullptr}>}
-\DoxyCodeLine{141     basic\_formatter \&operator<<(\textcolor{keyword}{const} TToken \&s) \{}
-\DoxyCodeLine{142         underlying << s.what();}
-\DoxyCodeLine{143         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{144     \}}
-\DoxyCodeLine{145 }
-\DoxyCodeLine{146 }
-\DoxyCodeLine{147     \textcolor{comment}{// comma operator overloaded as well, choose your preferred way.}}
-\DoxyCodeLine{148     \textcolor{keyword}{template} <\textcolor{keyword}{typename} TToken>}
-\DoxyCodeLine{149     \textcolor{keyword}{const} basic\_formatter\& operator, (\textcolor{keyword}{const} TToken\& s)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{150         *\textcolor{keyword}{this} << s;}
-\DoxyCodeLine{151         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{152     \}}
-\DoxyCodeLine{153 }
-\DoxyCodeLine{154     \textcolor{keyword}{template} <\textcolor{keyword}{typename} TToken>}
-\DoxyCodeLine{155     basic\_formatter\& operator, (\textcolor{keyword}{const} TToken\& s) \{}
-\DoxyCodeLine{156         *\textcolor{keyword}{this} << s;}
-\DoxyCodeLine{157         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{158     \}}
-\DoxyCodeLine{159 }
-\DoxyCodeLine{160     \textcolor{comment}{// Fix for MSVC8}}
-\DoxyCodeLine{161     \textcolor{comment}{// See https://sourceforge.net/projects/assimp/forums/forum/817654/topic/4372824}}
-\DoxyCodeLine{162     \textcolor{keyword}{template} <\textcolor{keyword}{typename} TToken>}
-\DoxyCodeLine{163     basic\_formatter\& operator, (TToken\& s) \{}
-\DoxyCodeLine{164         *\textcolor{keyword}{this} << s;}
-\DoxyCodeLine{165         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{166     \}}
-\DoxyCodeLine{167 }
-\DoxyCodeLine{168 }
-\DoxyCodeLine{169 \textcolor{keyword}{private}:}
-\DoxyCodeLine{170     \textcolor{keyword}{mutable} stringstream underlying;}
-\DoxyCodeLine{171 \};}
-\DoxyCodeLine{172 }
-\DoxyCodeLine{173 }
-\DoxyCodeLine{174 \textcolor{keyword}{typedef} basic\_formatter< char > format;}
-\DoxyCodeLine{175 \textcolor{keyword}{typedef} basic\_formatter< wchar\_t > wformat;}
-\DoxyCodeLine{176 }
-\DoxyCodeLine{177 \} \textcolor{comment}{// ! namespace Formatter}}
-\DoxyCodeLine{178 }
-\DoxyCodeLine{179 \} \textcolor{comment}{// ! namespace Assimp}}
-\DoxyCodeLine{180 }
-\DoxyCodeLine{181 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00002}00002 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00003}00003 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00004}00004 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00005}00005 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00006}00006 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00007}00007 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00008}00008 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00009}00009 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00010}00010 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00011}00011 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00012}00012 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00013}00013 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00014}00014 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00015}00015 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00016}00016 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00017}00017 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00018}00018 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00019}00019 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00020}00020 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00021}00021 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00022}00022 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00023}00023 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00024}00024 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00025}00025 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00026}00026 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00027}00027 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00028}00028 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00029}00029 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00030}00030 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00031}00031 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00032}00032 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00033}00033 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00034}00034 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00035}00035 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00036}00036 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00037}00037 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00038}00038 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00039}00039 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00040}00040 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00041}00041 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00048}00048 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00049}00049 \textcolor{preprocessor}{\#ifndef INCLUDED\_TINY\_FORMATTER\_H}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00050}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_ad114d8b0747f8d53802f0b53db2f08ed}{00050}} \textcolor{preprocessor}{\#define INCLUDED\_TINY\_FORMATTER\_H}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00052}00052 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00053}00053 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00054}00054 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00056}00056 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00058}00058 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00059}00059 \textcolor{keyword}{namespace }Formatter \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00061}00061 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00071}00071 \textcolor{comment}{}\textcolor{keyword}{template} < \textcolor{keyword}{typename} T,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00072}00072     \textcolor{keyword}{typename} CharTraits = std::char\_traits<T>,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00073}00073     \textcolor{keyword}{typename} Allocator  = std::allocator<T> >}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00074}00074 \textcolor{keyword}{class }basic\_formatter \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00075}00075 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00076}\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a042b4efff58459458b9243054b9866cd}{00076}}     \textcolor{keyword}{typedef} \textcolor{keyword}{class }std::basic\_string<T,CharTraits,Allocator> \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a042b4efff58459458b9243054b9866cd}{string}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00077}\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a8a3c7f10d2b611930006a28d10d1d3ed}{00077}}     \textcolor{keyword}{typedef} \textcolor{keyword}{class }std::basic\_ostringstream<T,CharTraits,Allocator> \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a8a3c7f10d2b611930006a28d10d1d3ed}{stringstream}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00079}\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a776fa28fff95ff621757724c9bbe8882}{00079}}     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a776fa28fff95ff621757724c9bbe8882}{basic\_formatter}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00080}00080         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00081}00081     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00083}00083     \textcolor{comment}{/* Allow basic\_formatter<T>'s to be used almost interchangeably}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00084}00084 \textcolor{comment}{     * with std::(w)string or const (w)char* arguments because the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00085}00085 \textcolor{comment}{     * conversion c'tor is called implicitly. */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00086}00086     \textcolor{keyword}{template} <\textcolor{keyword}{typename} TT>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00087}\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a7d1da702030a65573f55998b82bbdfe6}{00087}}     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a7d1da702030a65573f55998b82bbdfe6}{basic\_formatter}}(\textcolor{keyword}{const} TT\& sin)  \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00088}00088         \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aa62813206cf972a5439d7e55114d8c0f}{underlying}} << sin;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00089}00089     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00091}00091     \textcolor{comment}{// Same problem as the copy constructor below, but with root cause is that stream move}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00092}00092     \textcolor{comment}{// is not permitted on older GCC versions. Small performance impact on those platforms.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00093}00093 \textcolor{preprocessor}{\#if defined(\_\_GNUC\_\_) \&\& (\_\_GNUC\_\_ == 4 \&\& \_\_GNUC\_MINOR\_\_ <= 9)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00094}00094     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a776fa28fff95ff621757724c9bbe8882}{basic\_formatter}}(\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}\&\& other) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00095}00095         \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aa62813206cf972a5439d7e55114d8c0f}{underlying}} << (\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a042b4efff58459458b9243054b9866cd}{string}})other;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00096}00096     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00097}00097 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00098}\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aba1a914c76cef73736a12739622991f2}{00098}}     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aba1a914c76cef73736a12739622991f2}{basic\_formatter}}(\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}\&\& other)}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00099}00099         : \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aa62813206cf972a5439d7e55114d8c0f}{underlying}}(\mbox{\hyperlink{namespacestd}{std}}::move(other.\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aa62813206cf972a5439d7e55114d8c0f}{underlying}})) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00100}00100     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00101}00101 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00103}00103     \textcolor{comment}{// The problem described here:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00104}00104     \textcolor{comment}{// https://sourceforge.net/tracker/?func=detail\&atid=1067632\&aid=3358562\&group\_id=226462}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00105}00105     \textcolor{comment}{// can also cause trouble here. Apparently, older gcc versions sometimes copy temporaries}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00106}00106     \textcolor{comment}{// being bound to const ref\& function parameters. Copying streams is not permitted, though.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00107}00107     \textcolor{comment}{// This workaround avoids this by manually specifying a copy ctor.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00108}00108 \textcolor{preprocessor}{\#if !defined(\_\_GNUC\_\_) || !defined(\_\_APPLE\_\_) || \_\_GNUC\_\_ > 4 || (\_\_GNUC\_\_ == 4 \&\& \_\_GNUC\_MINOR\_\_ >= 6)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00109}\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aba0675631724e150316de1457acc0395}{00109}}     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aba0675631724e150316de1457acc0395}{basic\_formatter}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}\& other) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00110}00110         \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aa62813206cf972a5439d7e55114d8c0f}{underlying}} << (\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a042b4efff58459458b9243054b9866cd}{string}})other;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00111}00111     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00112}00112 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00114}\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a99a87f515dbc7f453bff1f16cd7c504b}{00114}}     \textcolor{keyword}{operator} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a042b4efff58459458b9243054b9866cd}{string}} ()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00115}00115         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aa62813206cf972a5439d7e55114d8c0f}{underlying}}.str();}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00116}00116     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00118}00118     \textcolor{comment}{/* note -\/ this is declared const because binding temporaries does only}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00119}00119 \textcolor{comment}{     * work for const references, so many function prototypes will}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00120}00120 \textcolor{comment}{     * include const basic\_formatter<T>\& s but might still want to}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00121}00121 \textcolor{comment}{     * modify the formatted string without the need for a full copy.*/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00122}00122     template <typename TToken, typename std::enable\_if<!std::is\_base\_of<std::exception, TToken>::value>::type * = \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00123}\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a96fa00adcd8454f9f2bbd1fb3e0f0a8e}{00123}}     \textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}} \&\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a96fa00adcd8454f9f2bbd1fb3e0f0a8e}{operator<<}}(\textcolor{keyword}{const} TToken \&s)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00124}00124         \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aa62813206cf972a5439d7e55114d8c0f}{underlying}} << s;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00125}00125         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00126}00126     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00128}00128     template <typename TToken, typename std::enable\_if<std::is\_base\_of<std::exception, TToken>::value>::type * = \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00129}\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a96fa00adcd8454f9f2bbd1fb3e0f0a8e}{00129}}     \textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}} \&\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a96fa00adcd8454f9f2bbd1fb3e0f0a8e}{operator<<}}(\textcolor{keyword}{const} TToken \&s)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00130}00130         \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aa62813206cf972a5439d7e55114d8c0f}{underlying}} << s.what();}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00131}00131         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00132}00132     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00134}00134     template <typename TToken, typename std::enable\_if<!std::is\_base\_of<std::exception, TToken>::value>::type * = \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00135}\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_ace8f7076fa98e574db9659f16cdb253e}{00135}}     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}} \&\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_ace8f7076fa98e574db9659f16cdb253e}{operator<<}}(\textcolor{keyword}{const} TToken \&s) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00136}00136         \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aa62813206cf972a5439d7e55114d8c0f}{underlying}} << s;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00137}00137         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00138}00138     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00139}00139 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00140}00140     template <typename TToken, typename std::enable\_if<std::is\_base\_of<std::exception, TToken>::value>::type * = \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00141}\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_ace8f7076fa98e574db9659f16cdb253e}{00141}}     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}} \&\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_ace8f7076fa98e574db9659f16cdb253e}{operator<<}}(\textcolor{keyword}{const} TToken \&s) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00142}00142         \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aa62813206cf972a5439d7e55114d8c0f}{underlying}} << s.what();}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00143}00143         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00144}00144     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00146}00146 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00147}00147     \textcolor{comment}{// comma operator overloaded as well, choose your preferred way.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00148}00148     \textcolor{keyword}{template} <\textcolor{keyword}{typename} TToken>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00149}\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_ac5528ce96302c150f14df3a849ed392a}{00149}}     \textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}\& \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_ac5528ce96302c150f14df3a849ed392a}{operator, }}(\textcolor{keyword}{const} TToken\& s)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00150}00150         *\textcolor{keyword}{this} << s;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00151}00151         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00152}00152     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00153}00153 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00154}00154     \textcolor{keyword}{template} <\textcolor{keyword}{typename} TToken>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00155}\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_af38427c22c1fcd5f9d18886cfc6ad054}{00155}}     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}\& \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_ac5528ce96302c150f14df3a849ed392a}{operator, }}(\textcolor{keyword}{const} TToken\& s) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00156}00156         *\textcolor{keyword}{this} << s;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00157}00157         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00158}00158     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00160}00160     \textcolor{comment}{// Fix for MSVC8}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00161}00161     \textcolor{comment}{// See https://sourceforge.net/projects/assimp/forums/forum/817654/topic/4372824}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00162}00162     \textcolor{keyword}{template} <\textcolor{keyword}{typename} TToken>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00163}\mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a02a66b0a05f59f206133f9c15e4fcbdf}{00163}}     \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter}{basic\_formatter}}\& \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_ac5528ce96302c150f14df3a849ed392a}{operator, }}(TToken\& s) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00164}00164         *\textcolor{keyword}{this} << s;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00165}00165         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00166}00166     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00168}00168 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00169}00169 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00170}00170     \textcolor{keyword}{mutable} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_a8a3c7f10d2b611930006a28d10d1d3ed}{stringstream}} \mbox{\hyperlink{class_assimp_1_1_formatter_1_1basic__formatter_aa62813206cf972a5439d7e55114d8c0f}{underlying}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00171}00171 \};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00173}00173 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00174}00174 \textcolor{keyword}{typedef} basic\_formatter< char > \mbox{\hyperlink{namespace_assimp_1_1_formatter_a6cf94459cb125ad767209c268d4bbcd4}{format}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00175}00175 \textcolor{keyword}{typedef} basic\_formatter< wchar\_t > \mbox{\hyperlink{namespace_assimp_1_1_formatter_a666d0e2f6623b5531902a03a81d4e5d2}{wformat}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00177}00177 \} \textcolor{comment}{// ! namespace Formatter}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00178}00178 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00179}00179 \} \textcolor{comment}{// ! namespace Assimp}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00180}00180 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_tiny_formatter_8h_source_l00181}00181 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

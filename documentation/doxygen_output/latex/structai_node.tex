@@ -4,24 +4,28 @@
 
 {\ttfamily \#include $<$scene.\+h$>$}
 
+
+
+Collaboration diagram for ai\+Node\+:
+% FIG 0
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-C\+\_\+\+STRUCT \mbox{\hyperlink{structai_string}{ai\+String}} \mbox{\hyperlink{structai_node_afa528a7e43e15d92a920229b1ff094f6}{m\+Name}}
+\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_string}{ai\+String}} \mbox{\hyperlink{structai_node_afa528a7e43e15d92a920229b1ff094f6}{m\+Name}}
 \item 
-C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \mbox{\hyperlink{structai_node_aadb69c766c7658bba9d2195af16d6831}{m\+Transformation}}
+\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \mbox{\hyperlink{structai_node_aadb69c766c7658bba9d2195af16d6831}{m\+Transformation}}
 \item 
-C\+\_\+\+STRUCT \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$ \mbox{\hyperlink{structai_node_ae93603e9b7c4d3807a2762244f84f08d}{m\+Parent}}
+\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$ \mbox{\hyperlink{structai_node_ae93603e9b7c4d3807a2762244f84f08d}{m\+Parent}}
 \item 
 unsigned int \mbox{\hyperlink{structai_node_af5030494b156ec54632e6182a6e386ca}{m\+Num\+Children}}
 \item 
-C\+\_\+\+STRUCT \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$$\ast$ \mbox{\hyperlink{structai_node_a13c5e5690e8d160798ded988fa4bb5d3}{m\+Children}}
+\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$$\ast$ \mbox{\hyperlink{structai_node_a13c5e5690e8d160798ded988fa4bb5d3}{m\+Children}}
 \item 
 unsigned int \mbox{\hyperlink{structai_node_a7a411079096f86d1e96b6368d237d897}{m\+Num\+Meshes}}
 \item 
 unsigned int $\ast$ \mbox{\hyperlink{structai_node_acc9c1fb68be708c3a1f064689e21b073}{m\+Meshes}}
 \item 
-C\+\_\+\+STRUCT \mbox{\hyperlink{structai_metadata}{ai\+Metadata}} $\ast$ \mbox{\hyperlink{structai_node_a51e2ee56399020760129dc7982412637}{m\+Meta\+Data}}
+\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_metadata}{ai\+Metadata}} $\ast$ \mbox{\hyperlink{structai_node_a51e2ee56399020760129dc7982412637}{m\+Meta\+Data}}
 \end{DoxyCompactItemize}
 
 
@@ -30,30 +34,46 @@ A node in the imported hierarchy.
 
 Each node has name, a parent node (except for the root node), a transformation relative to its parent and possibly several child nodes. Simple file formats don\textquotesingle{}t support hierarchical structures -\/ for these formats the imported scene does consist of only a single root node without children. 
 
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00082}{82}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{structai_node_a13c5e5690e8d160798ded988fa4bb5d3}\label{structai_node_a13c5e5690e8d160798ded988fa4bb5d3}} 
 \index{aiNode@{aiNode}!mChildren@{mChildren}}
 \index{mChildren@{mChildren}!aiNode@{aiNode}}
 \doxysubsubsection{\texorpdfstring{mChildren}{mChildren}}
-{\footnotesize\ttfamily C\+\_\+\+STRUCT \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$$\ast$ ai\+Node\+::m\+Children}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$$\ast$ ai\+Node\+::m\+Children}
 
-The child nodes of this node. nullptr if m\+Num\+Children is 0. \mbox{\Hypertarget{structai_node_acc9c1fb68be708c3a1f064689e21b073}\label{structai_node_acc9c1fb68be708c3a1f064689e21b073}} 
+The child nodes of this node. nullptr if m\+Num\+Children is 0. 
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00117}{117}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+\mbox{\Hypertarget{structai_node_acc9c1fb68be708c3a1f064689e21b073}\label{structai_node_acc9c1fb68be708c3a1f064689e21b073}} 
 \index{aiNode@{aiNode}!mMeshes@{mMeshes}}
 \index{mMeshes@{mMeshes}!aiNode@{aiNode}}
 \doxysubsubsection{\texorpdfstring{mMeshes}{mMeshes}}
 {\footnotesize\ttfamily unsigned int $\ast$ ai\+Node\+::m\+Meshes}
 
-The meshes of this node. Each entry is an index into the mesh list of the \mbox{\hyperlink{structai_scene}{ai\+Scene}}. \mbox{\Hypertarget{structai_node_a51e2ee56399020760129dc7982412637}\label{structai_node_a51e2ee56399020760129dc7982412637}} 
+The meshes of this node. Each entry is an index into the mesh list of the \mbox{\hyperlink{structai_scene}{ai\+Scene}}. 
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00125}{125}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+\mbox{\Hypertarget{structai_node_a51e2ee56399020760129dc7982412637}\label{structai_node_a51e2ee56399020760129dc7982412637}} 
 \index{aiNode@{aiNode}!mMetaData@{mMetaData}}
 \index{mMetaData@{mMetaData}!aiNode@{aiNode}}
 \doxysubsubsection{\texorpdfstring{mMetaData}{mMetaData}}
-{\footnotesize\ttfamily C\+\_\+\+STRUCT \mbox{\hyperlink{structai_metadata}{ai\+Metadata}} $\ast$ ai\+Node\+::m\+Meta\+Data}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_metadata}{ai\+Metadata}} $\ast$ ai\+Node\+::m\+Meta\+Data}
 
-Metadata associated with this node or nullptr if there is no metadata. Whether any metadata is generated depends on the source file format. See the \mbox{\hyperlink{}{importer\+\_\+notes}} page for more information on every source file format. Importers that don\textquotesingle{}t document any metadata don\textquotesingle{}t write any. \mbox{\Hypertarget{structai_node_afa528a7e43e15d92a920229b1ff094f6}\label{structai_node_afa528a7e43e15d92a920229b1ff094f6}} 
+Metadata associated with this node or nullptr if there is no metadata. Whether any metadata is generated depends on the source file format. See the \mbox{\hyperlink{}{importer\+\_\+notes}} page for more information on every source file format. Importers that don\textquotesingle{}t document any metadata don\textquotesingle{}t write any. 
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00132}{132}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+\mbox{\Hypertarget{structai_node_afa528a7e43e15d92a920229b1ff094f6}\label{structai_node_afa528a7e43e15d92a920229b1ff094f6}} 
 \index{aiNode@{aiNode}!mName@{mName}}
 \index{mName@{mName}!aiNode@{aiNode}}
 \doxysubsubsection{\texorpdfstring{mName}{mName}}
-{\footnotesize\ttfamily C\+\_\+\+STRUCT \mbox{\hyperlink{structai_string}{ai\+String}} ai\+Node\+::m\+Name}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_string}{ai\+String}} ai\+Node\+::m\+Name}
 
 The name of the node.
 
@@ -66,31 +86,51 @@ Implementations should be able to handle tokens such as whitespace, tabs, line f
 
 Sometimes assimp introduces new nodes not present in the source file into the hierarchy (usually out of necessity because sometimes the source hierarchy format is simply not compatible). Their names are surrounded by \begin{DoxyVerb}<> \end{DoxyVerb}
  e.\+g. \begin{DoxyVerb}<DummyRootNode> \end{DoxyVerb}
-. \mbox{\Hypertarget{structai_node_af5030494b156ec54632e6182a6e386ca}\label{structai_node_af5030494b156ec54632e6182a6e386ca}} 
+. 
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00105}{105}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+\mbox{\Hypertarget{structai_node_af5030494b156ec54632e6182a6e386ca}\label{structai_node_af5030494b156ec54632e6182a6e386ca}} 
 \index{aiNode@{aiNode}!mNumChildren@{mNumChildren}}
 \index{mNumChildren@{mNumChildren}!aiNode@{aiNode}}
 \doxysubsubsection{\texorpdfstring{mNumChildren}{mNumChildren}}
 {\footnotesize\ttfamily unsigned int ai\+Node\+::m\+Num\+Children}
 
-The number of child nodes of this node. \mbox{\Hypertarget{structai_node_a7a411079096f86d1e96b6368d237d897}\label{structai_node_a7a411079096f86d1e96b6368d237d897}} 
+The number of child nodes of this node. 
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00114}{114}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+\mbox{\Hypertarget{structai_node_a7a411079096f86d1e96b6368d237d897}\label{structai_node_a7a411079096f86d1e96b6368d237d897}} 
 \index{aiNode@{aiNode}!mNumMeshes@{mNumMeshes}}
 \index{mNumMeshes@{mNumMeshes}!aiNode@{aiNode}}
 \doxysubsubsection{\texorpdfstring{mNumMeshes}{mNumMeshes}}
 {\footnotesize\ttfamily unsigned int ai\+Node\+::m\+Num\+Meshes}
 
-The number of meshes of this node. \mbox{\Hypertarget{structai_node_ae93603e9b7c4d3807a2762244f84f08d}\label{structai_node_ae93603e9b7c4d3807a2762244f84f08d}} 
+The number of meshes of this node. 
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00120}{120}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+\mbox{\Hypertarget{structai_node_ae93603e9b7c4d3807a2762244f84f08d}\label{structai_node_ae93603e9b7c4d3807a2762244f84f08d}} 
 \index{aiNode@{aiNode}!mParent@{mParent}}
 \index{mParent@{mParent}!aiNode@{aiNode}}
 \doxysubsubsection{\texorpdfstring{mParent}{mParent}}
-{\footnotesize\ttfamily C\+\_\+\+STRUCT \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$ ai\+Node\+::m\+Parent}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_node}{ai\+Node}} $\ast$ ai\+Node\+::m\+Parent}
 
-Parent node. nullptr if this node is the root node. \mbox{\Hypertarget{structai_node_aadb69c766c7658bba9d2195af16d6831}\label{structai_node_aadb69c766c7658bba9d2195af16d6831}} 
+Parent node. nullptr if this node is the root node. 
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00111}{111}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+\mbox{\Hypertarget{structai_node_aadb69c766c7658bba9d2195af16d6831}\label{structai_node_aadb69c766c7658bba9d2195af16d6831}} 
 \index{aiNode@{aiNode}!mTransformation@{mTransformation}}
 \index{mTransformation@{mTransformation}!aiNode@{aiNode}}
 \doxysubsubsection{\texorpdfstring{mTransformation}{mTransformation}}
-{\footnotesize\ttfamily C\+\_\+\+STRUCT \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} ai\+Node\+::m\+Transformation}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} ai\+Node\+::m\+Transformation}
 
 The transformation relative to the node\textquotesingle{}s parent. 
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00108}{108}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

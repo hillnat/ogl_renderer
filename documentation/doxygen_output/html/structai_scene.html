@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -77,47 +80,84 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for aiScene:</div>
+<div class="dyncontent">
+<div class="center"><img src="structai_scene__coll__graph.png" border="0" usemap="#aai_scene_coll__map" alt="Collaboration graph"/></div>
+<map name="aai_scene_coll__map" id="aai_scene_coll__map">
+<area shape="rect" title=" " alt="" coords="1619,791,1684,818"/>
+<area shape="rect" href="structai_node.html" title=" " alt="" coords="578,552,640,580"/>
+<area shape="rect" href="structai_bone.html" title="A single bone of a mesh." alt="" coords="825,789,885,817"/>
+<area shape="rect" href="structai_skeleton_bone.html" title="A skeleton bone represents a single bone is a skeleton structure." alt="" coords="1205,657,1315,685"/>
+<area shape="rect" href="structai_string.html" title="Represents an UTF&#45;8 string, zero byte terminated." alt="" coords="33,616,97,644"/>
+<area shape="rect" href="structai_metadata.html" title=" " alt="" coords="288,420,372,448"/>
+<area shape="rect" href="structai_mesh.html" title="enum aiMorphingMethod" alt="" coords="1021,947,1082,974"/>
+<area shape="rect" href="structai_anim_mesh.html" title="An AnimMesh is an attachment to an aiMesh stores per&#45;vertex animations for a particular frame." alt="" coords="285,956,375,984"/>
+<area shape="rect" href="structai_animation.html" title=" " alt="" coords="811,204,899,232"/>
+<area shape="rect" href="structai_node_anim.html" title=" " alt="" coords="564,277,654,305"/>
+<area shape="rect" href="structai_mesh_anim.html" title=" " alt="" coords="285,200,375,228"/>
+<area shape="rect" href="structai_mesh_morph_anim.html" title=" " alt="" coords="267,88,393,116"/>
+<area shape="rect" href="structai_texture.html" title=" " alt="" coords="293,1325,367,1353"/>
+<area shape="rect" href="structai_light.html" title=" " alt="" coords="300,1509,360,1537"/>
+<area shape="rect" href="structai_camera.html" title=" " alt="" coords="292,1260,368,1288"/>
+<area shape="rect" href="structai_skeleton.html" title="A skeleton represents the bone hierarchy of an animation." alt="" coords="1421,657,1501,685"/>
+<area shape="rect" href="structai_matrix4x4.html" title=" " alt="" coords="286,607,374,634"/>
+<area shape="rect" href="structai_metadata_entry.html" title=" " alt="" coords="8,283,122,310"/>
+<area shape="rect" href="structai_vector3_d.html" title=" " alt="" coords="23,1167,107,1194"/>
+<area shape="rect" href="structai_a_a_b_b.html" title=" " alt="" coords="436,1205,499,1233"/>
+<area shape="rect" href="structai_vector_key.html" title=" " alt="" coords="285,368,375,396"/>
+<area shape="rect" href="structai_color4_d.html" title=" " alt="" coords="26,1097,104,1125"/>
+<area shape="rect" href="structai_face.html" title="A single face in a mesh, referring to multiple vertices." alt="" coords="826,997,884,1025"/>
+<area shape="rect" href="structai_vertex_weight.html" title="A single influence of a bone on a vertex." alt="" coords="554,657,664,685"/>
+<area shape="rect" href="structai_material.html" title="Data structure for a material." alt="" coords="1422,1441,1500,1469"/>
+<area shape="rect" href="structai_quat_key.html" title=" " alt="" coords="290,252,370,280"/>
+<area shape="rect" href="structai_quaternion.html" title=" " alt="" coords="18,187,112,214"/>
+<area shape="rect" href="structai_mesh_key.html" title=" " alt="" coords="23,57,107,85"/>
+<area shape="rect" href="structai_mesh_morph_key.html" title=" " alt="" coords="5,5,125,33"/>
+<area shape="rect" href="structai_texel.html" title="Helper structure to represent a texel in a ARGB8888 format." alt="" coords="34,1428,96,1456"/>
+<area shape="rect" href="structai_color3_d.html" title=" " alt="" coords="26,1639,104,1666"/>
+<area shape="rect" href="structai_vector2_d.html" title=" " alt="" coords="23,1557,107,1585"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a4091f10bb81e05db00ebc34f40c48f38"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a4091f10bb81e05db00ebc34f40c48f38">mFlags</a></td></tr>
 <tr class="separator:a4091f10bb81e05db00ebc34f40c48f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c1e0f3c890c18fbb066857c7317e09a"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_node.html">aiNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a5c1e0f3c890c18fbb066857c7317e09a">mRootNode</a></td></tr>
+<tr class="memitem:a5c1e0f3c890c18fbb066857c7317e09a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_node.html">aiNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a5c1e0f3c890c18fbb066857c7317e09a">mRootNode</a></td></tr>
 <tr class="separator:a5c1e0f3c890c18fbb066857c7317e09a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a6c1abca994c54381a28cc151e5fa4f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a1a6c1abca994c54381a28cc151e5fa4f">mNumMeshes</a></td></tr>
 <tr class="separator:a1a6c1abca994c54381a28cc151e5fa4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97fadde0233542af536564a2be52ccba"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_mesh.html">aiMesh</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a97fadde0233542af536564a2be52ccba">mMeshes</a></td></tr>
+<tr class="memitem:a97fadde0233542af536564a2be52ccba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_mesh.html">aiMesh</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a97fadde0233542af536564a2be52ccba">mMeshes</a></td></tr>
 <tr class="separator:a97fadde0233542af536564a2be52ccba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4277d8bffe8b8f568098af6c31d042b7"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a4277d8bffe8b8f568098af6c31d042b7">mNumMaterials</a></td></tr>
 <tr class="separator:a4277d8bffe8b8f568098af6c31d042b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae48236fe04b11ac8690c94a09eff3f50"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_material.html">aiMaterial</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#ae48236fe04b11ac8690c94a09eff3f50">mMaterials</a></td></tr>
+<tr class="memitem:ae48236fe04b11ac8690c94a09eff3f50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_material.html">aiMaterial</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#ae48236fe04b11ac8690c94a09eff3f50">mMaterials</a></td></tr>
 <tr class="separator:ae48236fe04b11ac8690c94a09eff3f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2af030ec218ead0dc062b6a96a7471a"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#aa2af030ec218ead0dc062b6a96a7471a">mNumAnimations</a></td></tr>
 <tr class="separator:aa2af030ec218ead0dc062b6a96a7471a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a064656c7cd939b9d9974cd13868a6d"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_animation.html">aiAnimation</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a1a064656c7cd939b9d9974cd13868a6d">mAnimations</a></td></tr>
+<tr class="memitem:a1a064656c7cd939b9d9974cd13868a6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_animation.html">aiAnimation</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a1a064656c7cd939b9d9974cd13868a6d">mAnimations</a></td></tr>
 <tr class="separator:a1a064656c7cd939b9d9974cd13868a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d61a5439edd7223097b48aea57c47dd"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a0d61a5439edd7223097b48aea57c47dd">mNumTextures</a></td></tr>
 <tr class="separator:a0d61a5439edd7223097b48aea57c47dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc4d9cb65b0df890ccdcfcce3e8c3c10"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_texture.html">aiTexture</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#afc4d9cb65b0df890ccdcfcce3e8c3c10">mTextures</a></td></tr>
+<tr class="memitem:afc4d9cb65b0df890ccdcfcce3e8c3c10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_texture.html">aiTexture</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#afc4d9cb65b0df890ccdcfcce3e8c3c10">mTextures</a></td></tr>
 <tr class="separator:afc4d9cb65b0df890ccdcfcce3e8c3c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c90fc5f15b979e0bb0d3e8f1e246307"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a0c90fc5f15b979e0bb0d3e8f1e246307">mNumLights</a></td></tr>
 <tr class="separator:a0c90fc5f15b979e0bb0d3e8f1e246307"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44ffae83a4936a80152bce6cefdb3a0b"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_light.html">aiLight</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a44ffae83a4936a80152bce6cefdb3a0b">mLights</a></td></tr>
+<tr class="memitem:a44ffae83a4936a80152bce6cefdb3a0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_light.html">aiLight</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a44ffae83a4936a80152bce6cefdb3a0b">mLights</a></td></tr>
 <tr class="separator:a44ffae83a4936a80152bce6cefdb3a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4abc432e1b22a7e01553f33c79c0592f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a4abc432e1b22a7e01553f33c79c0592f">mNumCameras</a></td></tr>
 <tr class="separator:a4abc432e1b22a7e01553f33c79c0592f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e655ea783c27f3f298f631a3bc32f53"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_camera.html">aiCamera</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a9e655ea783c27f3f298f631a3bc32f53">mCameras</a></td></tr>
+<tr class="memitem:a9e655ea783c27f3f298f631a3bc32f53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_camera.html">aiCamera</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a9e655ea783c27f3f298f631a3bc32f53">mCameras</a></td></tr>
 <tr class="separator:a9e655ea783c27f3f298f631a3bc32f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55dd7993d5c08fafd1702219f35fb6bd"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_metadata.html">aiMetadata</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a55dd7993d5c08fafd1702219f35fb6bd">mMetaData</a></td></tr>
+<tr class="memitem:a55dd7993d5c08fafd1702219f35fb6bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_metadata.html">aiMetadata</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a55dd7993d5c08fafd1702219f35fb6bd">mMetaData</a></td></tr>
 <tr class="memdesc:a55dd7993d5c08fafd1702219f35fb6bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The global metadata assigned to the scene itself.  <a href="structai_scene.html#a55dd7993d5c08fafd1702219f35fb6bd">More...</a><br /></td></tr>
 <tr class="separator:a55dd7993d5c08fafd1702219f35fb6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a796c538ed754f8f33ba6fe7164cf05ca"><td class="memItemLeft" align="right" valign="top">C_STRUCT <a class="el" href="structai_string.html">aiString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a796c538ed754f8f33ba6fe7164cf05ca">mName</a></td></tr>
+<tr class="memitem:a796c538ed754f8f33ba6fe7164cf05ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_string.html">aiString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a796c538ed754f8f33ba6fe7164cf05ca">mName</a></td></tr>
 <tr class="separator:a796c538ed754f8f33ba6fe7164cf05ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2373ba423284c68b76b63076fa84cf16"><td class="memItemLeft" align="right" valign="top"><a id="a2373ba423284c68b76b63076fa84cf16" name="a2373ba423284c68b76b63076fa84cf16"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>mNumSkeletons</b></td></tr>
+<tr class="memitem:a2373ba423284c68b76b63076fa84cf16"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a2373ba423284c68b76b63076fa84cf16">mNumSkeletons</a></td></tr>
 <tr class="separator:a2373ba423284c68b76b63076fa84cf16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48673562828387f2e756f2a95598a434"><td class="memItemLeft" align="right" valign="top"><a id="a48673562828387f2e756f2a95598a434" name="a48673562828387f2e756f2a95598a434"></a>
-C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>mSkeletons</b></td></tr>
+<tr class="memitem:a48673562828387f2e756f2a95598a434"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#a48673562828387f2e756f2a95598a434">mSkeletons</a></td></tr>
 <tr class="separator:a48673562828387f2e756f2a95598a434"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf48a07b39c2cb4a20f0ca2885fa1930"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structai_scene.html#abf48a07b39c2cb4a20f0ca2885fa1930">mPrivate</a></td></tr>
 <tr class="separator:abf48a07b39c2cb4a20f0ca2885fa1930"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,6 +165,8 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >The root structure of the imported data.</p>
 <p >Everything that was imported from the given file can be accessed from here. Objects of this class are generally maintained and owned by <a class="el" href="namespace_assimp.html">Assimp</a>, not by the caller. You shouldn't want to instance it, nor should you ever try to delete a given scene on your own. </p>
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00246">246</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a1a064656c7cd939b9d9974cd13868a6d" name="a1a064656c7cd939b9d9974cd13868a6d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1a064656c7cd939b9d9974cd13868a6d">&#9670;&#160;</a></span>mAnimations</h2>
@@ -133,12 +175,14 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_animation.html">aiAnimation</a> ** aiScene::mAnimations</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_animation.html">aiAnimation</a> ** aiScene::mAnimations</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >The array of animations.</p>
 <p >All animations imported from the given file are listed here. The array is mNumAnimations in size. </p>
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00295">295</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
 
 </div>
 </div>
@@ -149,12 +193,14 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_camera.html">aiCamera</a> ** aiScene::mCameras</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_camera.html">aiCamera</a> ** aiScene::mCameras</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >The array of cameras.</p>
 <p >All cameras imported from the given file are listed here. The array is mNumCameras in size. The first camera in the array (if existing) is the default camera view into the scene. </p>
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00332">332</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
 
 </div>
 </div>
@@ -171,6 +217,8 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 </div><div class="memdoc">
 <p >Any combination of the AI_SCENE_FLAGS_XXX flags. By default this value is 0, no flags are set. Most applications will want to reject all scenes with the AI_SCENE_FLAGS_INCOMPLETE bit set. </p>
 
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00252">252</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
+
 </div>
 </div>
 <a id="a44ffae83a4936a80152bce6cefdb3a0b" name="a44ffae83a4936a80152bce6cefdb3a0b"></a>
@@ -180,12 +228,14 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_light.html">aiLight</a> ** aiScene::mLights</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_light.html">aiLight</a> ** aiScene::mLights</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >The array of light sources.</p>
 <p >All light sources imported from the given file are listed here. The array is mNumLights in size. </p>
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00318">318</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
 
 </div>
 </div>
@@ -196,12 +246,14 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_material.html">aiMaterial</a> ** aiScene::mMaterials</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_material.html">aiMaterial</a> ** aiScene::mMaterials</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >The array of materials.</p>
 <p >Use the index given in each <a class="el" href="structai_mesh.html" title="enum aiMorphingMethod">aiMesh</a> structure to access this array. The array is mNumMaterials in size. If the AI_SCENE_FLAGS_INCOMPLETE flag is not set there will always be at least ONE material. </p>
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00285">285</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
 
 </div>
 </div>
@@ -212,12 +264,14 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_mesh.html">aiMesh</a> ** aiScene::mMeshes</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_mesh.html">aiMesh</a> ** aiScene::mMeshes</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >The array of meshes.</p>
 <p >Use the indices given in the <a class="el" href="structai_node.html">aiNode</a> structure to access this array. The array is mNumMeshes in size. If the AI_SCENE_FLAGS_INCOMPLETE flag is not set there will always be at least ONE material. </p>
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00273">273</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
 
 </div>
 </div>
@@ -228,13 +282,15 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_metadata.html">aiMetadata</a> * aiScene::mMetaData</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_metadata.html">aiMetadata</a> * aiScene::mMetaData</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>The global metadata assigned to the scene itself. </p>
 <p >This data contains global metadata which belongs to the scene like unit-conversions, versions, vendors or other model-specific data. This can be used to store format-specific metadata as well. </p>
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00341">341</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
 
 </div>
 </div>
@@ -245,11 +301,13 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_string.html">aiString</a> aiScene::mName</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_string.html">aiString</a> aiScene::mName</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >The name of the scene itself. </p>
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00345">345</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
 
 </div>
 </div>
@@ -266,6 +324,8 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 </div><div class="memdoc">
 <p >The number of animations in the scene. </p>
 
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00288">288</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
+
 </div>
 </div>
 <a id="a4abc432e1b22a7e01553f33c79c0592f" name="a4abc432e1b22a7e01553f33c79c0592f"></a>
@@ -280,6 +340,8 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
       </table>
 </div><div class="memdoc">
 <p >The number of cameras in the scene. Cameras are fully optional, in most cases this attribute will be 0 </p>
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00323">323</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
 
 </div>
 </div>
@@ -296,6 +358,8 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 </div><div class="memdoc">
 <p >The number of light sources in the scene. <a class="el" href="struct_light.html">Light</a> sources are fully optional, in most cases this attribute will be 0 </p>
 
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00311">311</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
+
 </div>
 </div>
 <a id="a4277d8bffe8b8f568098af6c31d042b7" name="a4277d8bffe8b8f568098af6c31d042b7"></a>
@@ -310,6 +374,8 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
       </table>
 </div><div class="memdoc">
 <p >The number of materials in the scene. </p>
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00276">276</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
 
 </div>
 </div>
@@ -326,6 +392,24 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 </div><div class="memdoc">
 <p >The number of meshes in the scene. </p>
 
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00264">264</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
+
+</div>
+</div>
+<a id="a2373ba423284c68b76b63076fa84cf16" name="a2373ba423284c68b76b63076fa84cf16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2373ba423284c68b76b63076fa84cf16">&#9670;&#160;</a></span>mNumSkeletons</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int aiScene::mNumSkeletons</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00350">350</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
+
 </div>
 </div>
 <a id="a0d61a5439edd7223097b48aea57c47dd" name="a0d61a5439edd7223097b48aea57c47dd"></a>
@@ -340,6 +424,8 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
       </table>
 </div><div class="memdoc">
 <p >The number of textures embedded into the file </p>
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00298">298</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
 
 </div>
 </div>
@@ -356,6 +442,8 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 </div><div class="memdoc">
 <p >Internal data, do not touch </p>
 
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00450">450</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
+
 </div>
 </div>
 <a id="a5c1e0f3c890c18fbb066857c7317e09a" name="a5c1e0f3c890c18fbb066857c7317e09a"></a>
@@ -365,12 +453,30 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_node.html">aiNode</a> * aiScene::mRootNode</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_node.html">aiNode</a> * aiScene::mRootNode</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >The root node of the hierarchy.</p>
 <p >There will always be at least the root node if the import was successful (and no special flags have been set). Presence of further nodes depends on the format and content of the imported file. </p>
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00261">261</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
+
+</div>
+</div>
+<a id="a48673562828387f2e756f2a95598a434" name="a48673562828387f2e756f2a95598a434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48673562828387f2e756f2a95598a434">&#9670;&#160;</a></span>mSkeletons</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_skeleton.html">aiSkeleton</a> ** aiScene::mSkeletons</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00355">355</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
 
 </div>
 </div>
@@ -381,12 +487,14 @@ C_STRUCT <a class="el" href="structai_skeleton.html">aiSkeleton</a> **&#160;</td
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">C_STRUCT <a class="el" href="structai_texture.html">aiTexture</a> ** aiScene::mTextures</td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#ab51df4230ceb602bbc1bc109c432a6a0">C_STRUCT</a> <a class="el" href="structai_texture.html">aiTexture</a> ** aiScene::mTextures</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >The array of embedded textures.</p>
 <p >Not many file formats embed their textures into the file. An example is Quake's MDL format (which is also used by some GameStudio versions) </p>
+
+<p class="definition">Definition at line <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html#l00306">306</a> of file <a class="el" href="thirdparty_2assimp_2include_2assimp_2_scene_8h_source.html">scene.h</a>.</p>
 
 </div>
 </div>

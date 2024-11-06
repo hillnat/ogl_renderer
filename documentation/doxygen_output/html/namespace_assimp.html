@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -70,6 +73,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
@@ -78,6 +82,19 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespace_assimp_1_1_base64"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp_1_1_base64.html">Base64</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_assimp_1_1_formatter"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp_1_1_formatter.html">Formatter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_assimp_1_1_intern"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp_1_1_intern.html">Intern</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_assimp_1_1_math"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp_1_1_math.html">Math</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_assimp_1_1_profiling"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp_1_1_profiling.html">Profiling</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_assimp_1_1_attachment_info.html">AttachmentInfo</a></td></tr>
@@ -188,227 +205,469 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:acdd122cae88cee792338440e43d4f374"><td class="memItemLeft" align="right" valign="top"><a id="acdd122cae88cee792338440e43d4f374" name="acdd122cae88cee792338440e43d4f374"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>AiAssertHandler</b> = void(*)(const char *failedExpression, const char *file, int line)</td></tr>
-<tr class="memdesc:acdd122cae88cee792338440e43d4f374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signature of functions which handle assert violations. <br /></td></tr>
+<tr class="memitem:acdd122cae88cee792338440e43d4f374"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#acdd122cae88cee792338440e43d4f374">AiAssertHandler</a> = void(*)(<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *failedExpression, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *file, int line)</td></tr>
+<tr class="memdesc:acdd122cae88cee792338440e43d4f374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signature of functions which handle assert violations.  <a href="namespace_assimp.html#acdd122cae88cee792338440e43d4f374">More...</a><br /></td></tr>
 <tr class="separator:acdd122cae88cee792338440e43d4f374"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2eb4315da2826d0a25ee9fd2e45d1a59"><td class="memItemLeft" align="right" valign="top"><a id="a2eb4315da2826d0a25ee9fd2e45d1a59" name="a2eb4315da2826d0a25ee9fd2e45d1a59"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>UByteBuffer</b> = std::vector&lt; uint8_t &gt;</td></tr>
+<tr class="memitem:a2eb4315da2826d0a25ee9fd2e45d1a59"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a2eb4315da2826d0a25ee9fd2e45d1a59">UByteBuffer</a> = std::vector&lt; uint8_t &gt;</td></tr>
 <tr class="separator:a2eb4315da2826d0a25ee9fd2e45d1a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff2f770e8e73ef550d66f3674f66fdfb"><td class="memItemLeft" align="right" valign="top"><a id="aff2f770e8e73ef550d66f3674f66fdfb" name="aff2f770e8e73ef550d66f3674f66fdfb"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>ByteBuffer</b> = std::vector&lt; int8_t &gt;</td></tr>
+<tr class="memitem:aff2f770e8e73ef550d66f3674f66fdfb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#aff2f770e8e73ef550d66f3674f66fdfb">ByteBuffer</a> = std::vector&lt; int8_t &gt;</td></tr>
 <tr class="separator:aff2f770e8e73ef550d66f3674f66fdfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab47d29e283b76e1f746e5c7af78277a3"><td class="memItemLeft" align="right" valign="top"><a id="ab47d29e283b76e1f746e5c7af78277a3" name="ab47d29e283b76e1f746e5c7af78277a3"></a>
-typedef std::pair&lt; <a class="el" href="structai_bone.html">aiBone</a> *, unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>BoneSrcIndex</b></td></tr>
+<tr class="memitem:ab47d29e283b76e1f746e5c7af78277a3"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; <a class="el" href="structai_bone.html">aiBone</a> *, unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#ab47d29e283b76e1f746e5c7af78277a3">BoneSrcIndex</a></td></tr>
 <tr class="separator:ab47d29e283b76e1f746e5c7af78277a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a805919b898c0391a446495ee52067f42"><td class="memItemLeft" align="right" valign="top"><a id="a805919b898c0391a446495ee52067f42" name="a805919b898c0391a446495ee52067f42"></a>
-typedef <a class="el" href="class_assimp_1_1_stream_reader.html">StreamReader</a>&lt; true &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>StreamReaderBE</b></td></tr>
+<tr class="memitem:a805919b898c0391a446495ee52067f42"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="class_assimp_1_1_stream_reader.html">StreamReader</a>&lt; true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a805919b898c0391a446495ee52067f42">StreamReaderBE</a></td></tr>
 <tr class="separator:a805919b898c0391a446495ee52067f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1f004ccb8f551efc9c3249184f66eef"><td class="memItemLeft" align="right" valign="top"><a id="ae1f004ccb8f551efc9c3249184f66eef" name="ae1f004ccb8f551efc9c3249184f66eef"></a>
-typedef <a class="el" href="class_assimp_1_1_stream_reader.html">StreamReader</a>&lt; false &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>StreamReaderLE</b></td></tr>
+<tr class="memitem:ae1f004ccb8f551efc9c3249184f66eef"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="class_assimp_1_1_stream_reader.html">StreamReader</a>&lt; false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">StreamReaderLE</a></td></tr>
 <tr class="separator:ae1f004ccb8f551efc9c3249184f66eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66d01581400aeccb77b6523bb6f40bc9"><td class="memItemLeft" align="right" valign="top"><a id="a66d01581400aeccb77b6523bb6f40bc9" name="a66d01581400aeccb77b6523bb6f40bc9"></a>
-typedef <a class="el" href="class_assimp_1_1_stream_reader.html">StreamReader</a>&lt; true, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>StreamReaderAny</b></td></tr>
+<tr class="memitem:a66d01581400aeccb77b6523bb6f40bc9"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="class_assimp_1_1_stream_reader.html">StreamReader</a>&lt; true, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a66d01581400aeccb77b6523bb6f40bc9">StreamReaderAny</a></td></tr>
 <tr class="separator:a66d01581400aeccb77b6523bb6f40bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef34a2f32751e792f5e54bfa7deafd7b"><td class="memItemLeft" align="right" valign="top"><a id="aef34a2f32751e792f5e54bfa7deafd7b" name="aef34a2f32751e792f5e54bfa7deafd7b"></a>
-typedef <a class="el" href="class_assimp_1_1_stream_writer.html">StreamWriter</a>&lt; true &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>StreamWriterBE</b></td></tr>
+<tr class="memitem:aef34a2f32751e792f5e54bfa7deafd7b"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="class_assimp_1_1_stream_writer.html">StreamWriter</a>&lt; true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#aef34a2f32751e792f5e54bfa7deafd7b">StreamWriterBE</a></td></tr>
 <tr class="separator:aef34a2f32751e792f5e54bfa7deafd7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b7ad422930729dfb8c36a1e79407bf4"><td class="memItemLeft" align="right" valign="top"><a id="a5b7ad422930729dfb8c36a1e79407bf4" name="a5b7ad422930729dfb8c36a1e79407bf4"></a>
-typedef <a class="el" href="class_assimp_1_1_stream_writer.html">StreamWriter</a>&lt; false &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>StreamWriterLE</b></td></tr>
+<tr class="memitem:a5b7ad422930729dfb8c36a1e79407bf4"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="class_assimp_1_1_stream_writer.html">StreamWriter</a>&lt; false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a5b7ad422930729dfb8c36a1e79407bf4">StreamWriterLE</a></td></tr>
 <tr class="separator:a5b7ad422930729dfb8c36a1e79407bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31923ade59707b02bfe834479bf9acda"><td class="memItemLeft" align="right" valign="top"><a id="a31923ade59707b02bfe834479bf9acda" name="a31923ade59707b02bfe834479bf9acda"></a>
-typedef <a class="el" href="class_assimp_1_1_stream_writer.html">StreamWriter</a>&lt; true, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>StreamWriterAny</b></td></tr>
+<tr class="memitem:a31923ade59707b02bfe834479bf9acda"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="class_assimp_1_1_stream_writer.html">StreamWriter</a>&lt; true, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a31923ade59707b02bfe834479bf9acda">StreamWriterAny</a></td></tr>
 <tr class="separator:a31923ade59707b02bfe834479bf9acda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7fe906c227a19aea9aaf197846ee8fe"><td class="memItemLeft" align="right" valign="top"><a id="af7fe906c227a19aea9aaf197846ee8fe" name="af7fe906c227a19aea9aaf197846ee8fe"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>XmlNode</b> = pugi::xml_node</td></tr>
+<tr class="memitem:af7fe906c227a19aea9aaf197846ee8fe"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">XmlNode</a> = pugi::xml_node</td></tr>
 <tr class="separator:af7fe906c227a19aea9aaf197846ee8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39b031370e5aba8e0f587ee4b3c18214"><td class="memItemLeft" align="right" valign="top"><a id="a39b031370e5aba8e0f587ee4b3c18214" name="a39b031370e5aba8e0f587ee4b3c18214"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>XmlAttribute</b> = pugi::xml_attribute</td></tr>
+<tr class="memitem:a39b031370e5aba8e0f587ee4b3c18214"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a39b031370e5aba8e0f587ee4b3c18214">XmlAttribute</a> = pugi::xml_attribute</td></tr>
 <tr class="separator:a39b031370e5aba8e0f587ee4b3c18214"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1f9ddc766331a128a2d8b033b360a72"><td class="memItemLeft" align="right" valign="top"><a id="ac1f9ddc766331a128a2d8b033b360a72" name="ac1f9ddc766331a128a2d8b033b360a72"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>XmlParser</b> = <a class="el" href="class_assimp_1_1_t_xml_parser.html">TXmlParser</a>&lt; pugi::xml_node &gt;</td></tr>
+<tr class="memitem:ac1f9ddc766331a128a2d8b033b360a72"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#ac1f9ddc766331a128a2d8b033b360a72">XmlParser</a> = <a class="el" href="class_assimp_1_1_t_xml_parser.html">TXmlParser</a>&lt; pugi::xml_node &gt;</td></tr>
 <tr class="separator:ac1f9ddc766331a128a2d8b033b360a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a49ad38ed2d9749f155deb93f0a524df8"><td class="memItemLeft" align="right" valign="top"><a id="a49ad38ed2d9749f155deb93f0a524df8" name="a49ad38ed2d9749f155deb93f0a524df8"></a>
-ASSIMP_API void&#160;</td><td class="memItemRight" valign="bottom"><b>setAiAssertHandler</b> (<a class="el" href="namespace_assimp.html#acdd122cae88cee792338440e43d4f374">AiAssertHandler</a> handler)</td></tr>
-<tr class="memdesc:a49ad38ed2d9749f155deb93f0a524df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the assert handler. <br /></td></tr>
+<tr class="memitem:a49ad38ed2d9749f155deb93f0a524df8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a49ad38ed2d9749f155deb93f0a524df8">setAiAssertHandler</a> (<a class="el" href="namespace_assimp.html#acdd122cae88cee792338440e43d4f374">AiAssertHandler</a> handler)</td></tr>
+<tr class="memdesc:a49ad38ed2d9749f155deb93f0a524df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the assert handler.  <a href="namespace_assimp.html#a49ad38ed2d9749f155deb93f0a524df8">More...</a><br /></td></tr>
 <tr class="separator:a49ad38ed2d9749f155deb93f0a524df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a896afdcb6c8dc97c0b85edd74793d191"><td class="memItemLeft" align="right" valign="top">AI_WONT_RETURN ASSIMP_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a896afdcb6c8dc97c0b85edd74793d191">defaultAiAssertHandler</a> (const char *failedExpression, const char *file, int line) AI_WONT_RETURN_SUFFIX</td></tr>
+<tr class="memitem:a896afdcb6c8dc97c0b85edd74793d191"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a6ce513786318507600657cebc16e2d36">AI_WONT_RETURN</a> <a class="el" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a896afdcb6c8dc97c0b85edd74793d191">defaultAiAssertHandler</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *failedExpression, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *file, int line) <a class="el" href="include_2assimp_2defs_8h.html#a5f8ac64e167f5229d18a10636fbfdf94">AI_WONT_RETURN_SUFFIX</a></td></tr>
 <tr class="memdesc:a896afdcb6c8dc97c0b85edd74793d191"><td class="mdescLeft">&#160;</td><td class="mdescRight">This issues a message to stderr and calls abort.  <a href="namespace_assimp.html#a896afdcb6c8dc97c0b85edd74793d191">More...</a><br /></td></tr>
 <tr class="separator:a896afdcb6c8dc97c0b85edd74793d191"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee0be0a7697ffab9038d27ffc6cb5065"><td class="memItemLeft" align="right" valign="top"><a id="aee0be0a7697ffab9038d27ffc6cb5065" name="aee0be0a7697ffab9038d27ffc6cb5065"></a>
-ASSIMP_API void&#160;</td><td class="memItemRight" valign="bottom"><b>aiAssertViolation</b> (const char *failedExpression, const char *file, int line)</td></tr>
-<tr class="memdesc:aee0be0a7697ffab9038d27ffc6cb5065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatches an assert violation to the assert handler. <br /></td></tr>
+<tr class="memitem:aee0be0a7697ffab9038d27ffc6cb5065"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#aee0be0a7697ffab9038d27ffc6cb5065">aiAssertViolation</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *failedExpression, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *file, int line)</td></tr>
+<tr class="memdesc:aee0be0a7697ffab9038d27ffc6cb5065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatches an assert violation to the assert handler.  <a href="namespace_assimp.html#aee0be0a7697ffab9038d27ffc6cb5065">More...</a><br /></td></tr>
 <tr class="separator:aee0be0a7697ffab9038d27ffc6cb5065"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c3ea46ea110bbc5987def5503507112"><td class="memItemLeft" align="right" valign="top">ASSIMP_API <a class="el" href="structai_anim_mesh.html">aiAnimMesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a0c3ea46ea110bbc5987def5503507112">aiCreateAnimMesh</a> (const <a class="el" href="structai_mesh.html">aiMesh</a> *mesh, bool needPositions=true, bool needNormals=true, bool needTangents=true, bool needColors=true, bool needTexCoords=true)</td></tr>
+<tr class="memitem:a0c3ea46ea110bbc5987def5503507112"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> <a class="el" href="structai_anim_mesh.html">aiAnimMesh</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a0c3ea46ea110bbc5987def5503507112">aiCreateAnimMesh</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="structai_mesh.html">aiMesh</a> *mesh, bool needPositions=true, bool needNormals=true, bool needTangents=true, bool needColors=true, bool needTexCoords=true)</td></tr>
 <tr class="separator:a0c3ea46ea110bbc5987def5503507112"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b34bad3b9ad1b488391ede9b4f23c07"><td class="memItemLeft" align="right" valign="top"><a id="a0b34bad3b9ad1b488391ede9b4f23c07" name="a0b34bad3b9ad1b488391ede9b4f23c07"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>strtoul10</b> (const char *in, const char **out=0)</td></tr>
+<tr class="memitem:a0b34bad3b9ad1b488391ede9b4f23c07"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a0b34bad3b9ad1b488391ede9b4f23c07">strtoul10</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *in, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **out=0)</td></tr>
 <tr class="separator:a0b34bad3b9ad1b488391ede9b4f23c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c1db8ffa6363c57660b3d1d0dc8ed3f"><td class="memItemLeft" align="right" valign="top"><a id="a1c1db8ffa6363c57660b3d1d0dc8ed3f" name="a1c1db8ffa6363c57660b3d1d0dc8ed3f"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>strtoul8</b> (const char *in, const char **out=0)</td></tr>
+<tr class="memitem:a1c1db8ffa6363c57660b3d1d0dc8ed3f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a1c1db8ffa6363c57660b3d1d0dc8ed3f">strtoul8</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *in, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **out=0)</td></tr>
 <tr class="separator:a1c1db8ffa6363c57660b3d1d0dc8ed3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a358486ae5448785a4eeb0b6d9ebe929b"><td class="memItemLeft" align="right" valign="top"><a id="a358486ae5448785a4eeb0b6d9ebe929b" name="a358486ae5448785a4eeb0b6d9ebe929b"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>strtoul16</b> (const char *in, const char **out=0)</td></tr>
+<tr class="memitem:a358486ae5448785a4eeb0b6d9ebe929b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a358486ae5448785a4eeb0b6d9ebe929b">strtoul16</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *in, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **out=0)</td></tr>
 <tr class="separator:a358486ae5448785a4eeb0b6d9ebe929b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bb609222363ab9ba88298597056d65f"><td class="memItemLeft" align="right" valign="top"><a id="a6bb609222363ab9ba88298597056d65f" name="a6bb609222363ab9ba88298597056d65f"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>HexDigitToDecimal</b> (char in)</td></tr>
+<tr class="memitem:a6bb609222363ab9ba88298597056d65f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a6bb609222363ab9ba88298597056d65f">HexDigitToDecimal</a> (char in)</td></tr>
 <tr class="separator:a6bb609222363ab9ba88298597056d65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50f9e78be9d92b2140273c577d24ff47"><td class="memItemLeft" align="right" valign="top"><a id="a50f9e78be9d92b2140273c577d24ff47" name="a50f9e78be9d92b2140273c577d24ff47"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>HexOctetToDecimal</b> (const char *in)</td></tr>
+<tr class="memitem:a50f9e78be9d92b2140273c577d24ff47"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a50f9e78be9d92b2140273c577d24ff47">HexOctetToDecimal</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *in)</td></tr>
 <tr class="separator:a50f9e78be9d92b2140273c577d24ff47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6712580fbbfe4f27e13815abf8e2a0e0"><td class="memItemLeft" align="right" valign="top"><a id="a6712580fbbfe4f27e13815abf8e2a0e0" name="a6712580fbbfe4f27e13815abf8e2a0e0"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>strtol10</b> (const char *in, const char **out=0)</td></tr>
+<tr class="memitem:a6712580fbbfe4f27e13815abf8e2a0e0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a6712580fbbfe4f27e13815abf8e2a0e0">strtol10</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *in, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **out=0)</td></tr>
 <tr class="separator:a6712580fbbfe4f27e13815abf8e2a0e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90b8b671fcfb5f9c2c1be40056cdef27"><td class="memItemLeft" align="right" valign="top"><a id="a90b8b671fcfb5f9c2c1be40056cdef27" name="a90b8b671fcfb5f9c2c1be40056cdef27"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>strtoul_cppstyle</b> (const char *in, const char **out=0)</td></tr>
+<tr class="memitem:a90b8b671fcfb5f9c2c1be40056cdef27"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a90b8b671fcfb5f9c2c1be40056cdef27">strtoul_cppstyle</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *in, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **out=0)</td></tr>
 <tr class="separator:a90b8b671fcfb5f9c2c1be40056cdef27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ceec2f2e3cbdd050b3a44a9384f4d0f"><td class="memTemplParams" colspan="2"><a id="a0ceec2f2e3cbdd050b3a44a9384f4d0f" name="a0ceec2f2e3cbdd050b3a44a9384f4d0f"></a>
-template&lt;typename ExceptionType  = DeadlyImportError&gt; </td></tr>
-<tr class="memitem:a0ceec2f2e3cbdd050b3a44a9384f4d0f"><td class="memTemplItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><b>strtoul10_64</b> (const char *in, const char **out=0, unsigned int *max_inout=0)</td></tr>
+<tr class="memitem:a0ceec2f2e3cbdd050b3a44a9384f4d0f"><td class="memTemplParams" colspan="2">template&lt;typename ExceptionType  = DeadlyImportError&gt; </td></tr>
+<tr class="memitem:a0ceec2f2e3cbdd050b3a44a9384f4d0f"><td class="memTemplItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a0ceec2f2e3cbdd050b3a44a9384f4d0f">strtoul10_64</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *in, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **out=0, unsigned int *max_inout=0)</td></tr>
 <tr class="separator:a0ceec2f2e3cbdd050b3a44a9384f4d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa68dc5728b1b75a6010fc11e189a1f94"><td class="memTemplParams" colspan="2"><a id="aa68dc5728b1b75a6010fc11e189a1f94" name="aa68dc5728b1b75a6010fc11e189a1f94"></a>
-template&lt;typename ExceptionType  = DeadlyImportError&gt; </td></tr>
-<tr class="memitem:aa68dc5728b1b75a6010fc11e189a1f94"><td class="memTemplItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><b>strtol10_64</b> (const char *in, const char **out=0, unsigned int *max_inout=0)</td></tr>
+<tr class="memitem:aa68dc5728b1b75a6010fc11e189a1f94"><td class="memTemplParams" colspan="2">template&lt;typename ExceptionType  = DeadlyImportError&gt; </td></tr>
+<tr class="memitem:aa68dc5728b1b75a6010fc11e189a1f94"><td class="memTemplItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#aa68dc5728b1b75a6010fc11e189a1f94">strtol10_64</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *in, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **out=0, unsigned int *max_inout=0)</td></tr>
 <tr class="separator:aa68dc5728b1b75a6010fc11e189a1f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b486541edb9e5bdda47cb9e73f9e877"><td class="memTemplParams" colspan="2">template&lt;typename Real , typename ExceptionType  = DeadlyImportError&gt; </td></tr>
-<tr class="memitem:a4b486541edb9e5bdda47cb9e73f9e877"><td class="memTemplItemLeft" align="right" valign="top">const char *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a4b486541edb9e5bdda47cb9e73f9e877">fast_atoreal_move</a> (const char *c, Real &amp;out, bool check_comma=true)</td></tr>
+<tr class="memitem:a4b486541edb9e5bdda47cb9e73f9e877"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a4b486541edb9e5bdda47cb9e73f9e877">fast_atoreal_move</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *c, Real &amp;out, bool check_comma=true)</td></tr>
 <tr class="separator:a4b486541edb9e5bdda47cb9e73f9e877"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5528fa5dfe30cfbb445f48b469649ec8"><td class="memTemplParams" colspan="2"><a id="a5528fa5dfe30cfbb445f48b469649ec8" name="a5528fa5dfe30cfbb445f48b469649ec8"></a>
-template&lt;typename ExceptionType  = DeadlyImportError&gt; </td></tr>
-<tr class="memitem:a5528fa5dfe30cfbb445f48b469649ec8"><td class="memTemplItemLeft" align="right" valign="top">ai_real&#160;</td><td class="memTemplItemRight" valign="bottom"><b>fast_atof</b> (const char *c)</td></tr>
+<tr class="memitem:a5528fa5dfe30cfbb445f48b469649ec8"><td class="memTemplParams" colspan="2">template&lt;typename ExceptionType  = DeadlyImportError&gt; </td></tr>
+<tr class="memitem:a5528fa5dfe30cfbb445f48b469649ec8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a5528fa5dfe30cfbb445f48b469649ec8">fast_atof</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *c)</td></tr>
 <tr class="separator:a5528fa5dfe30cfbb445f48b469649ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94f5122c86d191932afa227e7a3fac30"><td class="memTemplParams" colspan="2"><a id="a94f5122c86d191932afa227e7a3fac30" name="a94f5122c86d191932afa227e7a3fac30"></a>
-template&lt;typename ExceptionType  = DeadlyImportError&gt; </td></tr>
-<tr class="memitem:a94f5122c86d191932afa227e7a3fac30"><td class="memTemplItemLeft" align="right" valign="top">ai_real&#160;</td><td class="memTemplItemRight" valign="bottom"><b>fast_atof</b> (const char *c, const char **cout)</td></tr>
+<tr class="memitem:a94f5122c86d191932afa227e7a3fac30"><td class="memTemplParams" colspan="2">template&lt;typename ExceptionType  = DeadlyImportError&gt; </td></tr>
+<tr class="memitem:a94f5122c86d191932afa227e7a3fac30"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a94f5122c86d191932afa227e7a3fac30">fast_atof</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *c, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **cout)</td></tr>
 <tr class="separator:a94f5122c86d191932afa227e7a3fac30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4cf660be5711cd91b09df17e5dcf5cc"><td class="memTemplParams" colspan="2"><a id="aa4cf660be5711cd91b09df17e5dcf5cc" name="aa4cf660be5711cd91b09df17e5dcf5cc"></a>
-template&lt;typename ExceptionType  = DeadlyImportError&gt; </td></tr>
-<tr class="memitem:aa4cf660be5711cd91b09df17e5dcf5cc"><td class="memTemplItemLeft" align="right" valign="top">ai_real&#160;</td><td class="memTemplItemRight" valign="bottom"><b>fast_atof</b> (const char **inout)</td></tr>
+<tr class="memitem:aa4cf660be5711cd91b09df17e5dcf5cc"><td class="memTemplParams" colspan="2">template&lt;typename ExceptionType  = DeadlyImportError&gt; </td></tr>
+<tr class="memitem:aa4cf660be5711cd91b09df17e5dcf5cc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#aa4cf660be5711cd91b09df17e5dcf5cc">fast_atof</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **inout)</td></tr>
 <tr class="separator:aa4cf660be5711cd91b09df17e5dcf5cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a704d02684243c28d97f16184ca7da160"><td class="memTemplParams" colspan="2"><a id="a704d02684243c28d97f16184ca7da160" name="a704d02684243c28d97f16184ca7da160"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:a704d02684243c28d97f16184ca7da160"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsUpper</b> (char_t in)</td></tr>
+<tr class="memitem:a35ef4d4a311ee5dfe8e0d4f0ebefab9c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a35ef4d4a311ee5dfe8e0d4f0ebefab9c">isEndOfCache</a> (size_t pos, size_t cacheSize)</td></tr>
+<tr class="separator:a35ef4d4a311ee5dfe8e0d4f0ebefab9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a704d02684243c28d97f16184ca7da160"><td class="memTemplParams" colspan="2">template&lt;class char_t &gt; </td></tr>
+<tr class="memitem:a704d02684243c28d97f16184ca7da160"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a704d02684243c28d97f16184ca7da160">IsUpper</a> (char_t in)</td></tr>
 <tr class="separator:a704d02684243c28d97f16184ca7da160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b1362fc8d49819d06aae521117255aa"><td class="memTemplParams" colspan="2"><a id="a9b1362fc8d49819d06aae521117255aa" name="a9b1362fc8d49819d06aae521117255aa"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:a9b1362fc8d49819d06aae521117255aa"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsLower</b> (char_t in)</td></tr>
+<tr class="memitem:a9b1362fc8d49819d06aae521117255aa"><td class="memTemplParams" colspan="2">template&lt;class char_t &gt; </td></tr>
+<tr class="memitem:a9b1362fc8d49819d06aae521117255aa"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a9b1362fc8d49819d06aae521117255aa">IsLower</a> (char_t in)</td></tr>
 <tr class="separator:a9b1362fc8d49819d06aae521117255aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dc3cfed4430c305908c17c403ced49c"><td class="memTemplParams" colspan="2"><a id="a2dc3cfed4430c305908c17c403ced49c" name="a2dc3cfed4430c305908c17c403ced49c"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:a2dc3cfed4430c305908c17c403ced49c"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsSpace</b> (char_t in)</td></tr>
+<tr class="memitem:a2dc3cfed4430c305908c17c403ced49c"><td class="memTemplParams" colspan="2">template&lt;class char_t &gt; </td></tr>
+<tr class="memitem:a2dc3cfed4430c305908c17c403ced49c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a2dc3cfed4430c305908c17c403ced49c">IsSpace</a> (char_t in)</td></tr>
 <tr class="separator:a2dc3cfed4430c305908c17c403ced49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99092e9b63e3e8bb88dc63e141d7157f"><td class="memTemplParams" colspan="2"><a id="a99092e9b63e3e8bb88dc63e141d7157f" name="a99092e9b63e3e8bb88dc63e141d7157f"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:a99092e9b63e3e8bb88dc63e141d7157f"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsLineEnd</b> (char_t in)</td></tr>
+<tr class="memitem:a99092e9b63e3e8bb88dc63e141d7157f"><td class="memTemplParams" colspan="2">template&lt;class char_t &gt; </td></tr>
+<tr class="memitem:a99092e9b63e3e8bb88dc63e141d7157f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a99092e9b63e3e8bb88dc63e141d7157f">IsLineEnd</a> (char_t in)</td></tr>
 <tr class="separator:a99092e9b63e3e8bb88dc63e141d7157f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3883df5611e6ba0bd986fd5694c47e35"><td class="memTemplParams" colspan="2"><a id="a3883df5611e6ba0bd986fd5694c47e35" name="a3883df5611e6ba0bd986fd5694c47e35"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:a3883df5611e6ba0bd986fd5694c47e35"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsSpaceOrNewLine</b> (char_t in)</td></tr>
+<tr class="memitem:a3883df5611e6ba0bd986fd5694c47e35"><td class="memTemplParams" colspan="2">template&lt;class char_t &gt; </td></tr>
+<tr class="memitem:a3883df5611e6ba0bd986fd5694c47e35"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a3883df5611e6ba0bd986fd5694c47e35">IsSpaceOrNewLine</a> (char_t in)</td></tr>
 <tr class="separator:a3883df5611e6ba0bd986fd5694c47e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77e1d122d82c1e0905f5dc37ca72c0dc"><td class="memTemplParams" colspan="2"><a id="a77e1d122d82c1e0905f5dc37ca72c0dc" name="a77e1d122d82c1e0905f5dc37ca72c0dc"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:a77e1d122d82c1e0905f5dc37ca72c0dc"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>SkipSpaces</b> (const char_t *in, const char_t **out, const char_t *end)</td></tr>
+<tr class="memitem:a77e1d122d82c1e0905f5dc37ca72c0dc"><td class="memTemplParams" colspan="2">template&lt;class char_t &gt; </td></tr>
+<tr class="memitem:a77e1d122d82c1e0905f5dc37ca72c0dc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a77e1d122d82c1e0905f5dc37ca72c0dc">SkipSpaces</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *in, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t **out, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *end)</td></tr>
 <tr class="separator:a77e1d122d82c1e0905f5dc37ca72c0dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82f178242e797717fcf7ad931cb3a7bf"><td class="memTemplParams" colspan="2"><a id="a82f178242e797717fcf7ad931cb3a7bf" name="a82f178242e797717fcf7ad931cb3a7bf"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:a82f178242e797717fcf7ad931cb3a7bf"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>SkipSpaces</b> (const char_t **inout, const char_t *end)</td></tr>
+<tr class="memitem:a82f178242e797717fcf7ad931cb3a7bf"><td class="memTemplParams" colspan="2">template&lt;class char_t &gt; </td></tr>
+<tr class="memitem:a82f178242e797717fcf7ad931cb3a7bf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a82f178242e797717fcf7ad931cb3a7bf">SkipSpaces</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t **inout, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *end)</td></tr>
 <tr class="separator:a82f178242e797717fcf7ad931cb3a7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a476258ae0b76954ccf1a95ab45305f58"><td class="memTemplParams" colspan="2"><a id="a476258ae0b76954ccf1a95ab45305f58" name="a476258ae0b76954ccf1a95ab45305f58"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:a476258ae0b76954ccf1a95ab45305f58"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>SkipLine</b> (const char_t *in, const char_t **out, const char_t *end)</td></tr>
+<tr class="memitem:a476258ae0b76954ccf1a95ab45305f58"><td class="memTemplParams" colspan="2">template&lt;class char_t &gt; </td></tr>
+<tr class="memitem:a476258ae0b76954ccf1a95ab45305f58"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a476258ae0b76954ccf1a95ab45305f58">SkipLine</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *in, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t **out, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *end)</td></tr>
 <tr class="separator:a476258ae0b76954ccf1a95ab45305f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3487f7abed0522ea2b5690247003694"><td class="memTemplParams" colspan="2"><a id="aa3487f7abed0522ea2b5690247003694" name="aa3487f7abed0522ea2b5690247003694"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:aa3487f7abed0522ea2b5690247003694"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>SkipLine</b> (const char_t **inout, const char_t *end)</td></tr>
+<tr class="memitem:aa3487f7abed0522ea2b5690247003694"><td class="memTemplParams" colspan="2">template&lt;class char_t &gt; </td></tr>
+<tr class="memitem:aa3487f7abed0522ea2b5690247003694"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#aa3487f7abed0522ea2b5690247003694">SkipLine</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t **inout, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *end)</td></tr>
 <tr class="separator:aa3487f7abed0522ea2b5690247003694"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fded9895754c979f0755aab49b97fd2"><td class="memTemplParams" colspan="2"><a id="a7fded9895754c979f0755aab49b97fd2" name="a7fded9895754c979f0755aab49b97fd2"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:a7fded9895754c979f0755aab49b97fd2"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>SkipSpacesAndLineEnd</b> (const char_t *in, const char_t **out, const char_t *end)</td></tr>
+<tr class="memitem:a7fded9895754c979f0755aab49b97fd2"><td class="memTemplParams" colspan="2">template&lt;class char_t &gt; </td></tr>
+<tr class="memitem:a7fded9895754c979f0755aab49b97fd2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a7fded9895754c979f0755aab49b97fd2">SkipSpacesAndLineEnd</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *in, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t **out, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *end)</td></tr>
 <tr class="separator:a7fded9895754c979f0755aab49b97fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65ab3786f2d0ea7485330a326537c88d"><td class="memTemplParams" colspan="2"><a id="a65ab3786f2d0ea7485330a326537c88d" name="a65ab3786f2d0ea7485330a326537c88d"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:a65ab3786f2d0ea7485330a326537c88d"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>SkipSpacesAndLineEnd</b> (const char_t **inout, const char_t *end)</td></tr>
+<tr class="memitem:a65ab3786f2d0ea7485330a326537c88d"><td class="memTemplParams" colspan="2">template&lt;class char_t &gt; </td></tr>
+<tr class="memitem:a65ab3786f2d0ea7485330a326537c88d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a65ab3786f2d0ea7485330a326537c88d">SkipSpacesAndLineEnd</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t **inout, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *end)</td></tr>
 <tr class="separator:a65ab3786f2d0ea7485330a326537c88d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe5a72a3537a830b13ce020af6dd3161"><td class="memTemplParams" colspan="2"><a id="afe5a72a3537a830b13ce020af6dd3161" name="afe5a72a3537a830b13ce020af6dd3161"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:afe5a72a3537a830b13ce020af6dd3161"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetNextLine</b> (const char_t *&amp;buffer, char_t out[BufferSize])</td></tr>
+<tr class="memitem:afe5a72a3537a830b13ce020af6dd3161"><td class="memTemplParams" colspan="2">template&lt;class char_t &gt; </td></tr>
+<tr class="memitem:afe5a72a3537a830b13ce020af6dd3161"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#afe5a72a3537a830b13ce020af6dd3161">GetNextLine</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *&amp;buffer, char_t out[<a class="el" href="namespace_assimp.html#a20dc8581fd6ec886730e4cb443066f87">BufferSize</a>])</td></tr>
 <tr class="separator:afe5a72a3537a830b13ce020af6dd3161"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66776110eb3e45aecf16baebd71ca713"><td class="memTemplParams" colspan="2"><a id="a66776110eb3e45aecf16baebd71ca713" name="a66776110eb3e45aecf16baebd71ca713"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:a66776110eb3e45aecf16baebd71ca713"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsNumeric</b> (char_t in)</td></tr>
+<tr class="memitem:a66776110eb3e45aecf16baebd71ca713"><td class="memTemplParams" colspan="2">template&lt;class char_t &gt; </td></tr>
+<tr class="memitem:a66776110eb3e45aecf16baebd71ca713"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a66776110eb3e45aecf16baebd71ca713">IsNumeric</a> (char_t in)</td></tr>
 <tr class="separator:a66776110eb3e45aecf16baebd71ca713"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4567ff539c9f9fc2b63598edbd3d4be"><td class="memTemplParams" colspan="2"><a id="ae4567ff539c9f9fc2b63598edbd3d4be" name="ae4567ff539c9f9fc2b63598edbd3d4be"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:ae4567ff539c9f9fc2b63598edbd3d4be"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>TokenMatch</b> (char_t *&amp;in, const char *token, unsigned int len)</td></tr>
+<tr class="memitem:ae4567ff539c9f9fc2b63598edbd3d4be"><td class="memTemplParams" colspan="2">template&lt;class char_t &gt; </td></tr>
+<tr class="memitem:ae4567ff539c9f9fc2b63598edbd3d4be"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#ae4567ff539c9f9fc2b63598edbd3d4be">TokenMatch</a> (char_t *&amp;in, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *token, unsigned int len)</td></tr>
 <tr class="separator:ae4567ff539c9f9fc2b63598edbd3d4be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bd333f65bd8da9590190ed27987e47f"><td class="memItemLeft" align="right" valign="top">AI_FORCE_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a3bd333f65bd8da9590190ed27987e47f">TokenMatchI</a> (const char *&amp;in, const char *token, unsigned int len)</td></tr>
+<tr class="memitem:a3bd333f65bd8da9590190ed27987e47f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a3bd333f65bd8da9590190ed27987e47f">TokenMatchI</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&amp;in, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *token, unsigned int len)</td></tr>
 <tr class="memdesc:a3bd333f65bd8da9590190ed27987e47f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Case-ignoring version of TokenMatch.  <a href="namespace_assimp.html#a3bd333f65bd8da9590190ed27987e47f">More...</a><br /></td></tr>
 <tr class="separator:a3bd333f65bd8da9590190ed27987e47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfc8bd80961fc1047f705a80a80f3536"><td class="memItemLeft" align="right" valign="top"><a id="adfc8bd80961fc1047f705a80a80f3536" name="adfc8bd80961fc1047f705a80a80f3536"></a>
-AI_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><b>SkipToken</b> (const char *&amp;in, const char *end)</td></tr>
+<tr class="memitem:adfc8bd80961fc1047f705a80a80f3536"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#adfc8bd80961fc1047f705a80a80f3536">SkipToken</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&amp;in, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *end)</td></tr>
 <tr class="separator:adfc8bd80961fc1047f705a80a80f3536"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17e1ae1e1c4b2e04771407f0ba0d205a"><td class="memItemLeft" align="right" valign="top"><a id="a17e1ae1e1c4b2e04771407f0ba0d205a" name="a17e1ae1e1c4b2e04771407f0ba0d205a"></a>
-AI_FORCE_INLINE std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetNextToken</b> (const char *&amp;in, const char *end)</td></tr>
+<tr class="memitem:a17e1ae1e1c4b2e04771407f0ba0d205a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a17e1ae1e1c4b2e04771407f0ba0d205a">GetNextToken</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&amp;in, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *end)</td></tr>
 <tr class="separator:a17e1ae1e1c4b2e04771407f0ba0d205a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e0c2d9e4239076705ccee261d0c2e70"><td class="memTemplParams" colspan="2">template&lt;class string_type &gt; </td></tr>
-<tr class="memitem:a0e0c2d9e4239076705ccee261d0c2e70"><td class="memTemplItemLeft" align="right" valign="top">AI_FORCE_INLINE unsigned int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a0e0c2d9e4239076705ccee261d0c2e70">tokenize</a> (const string_type &amp;str, std::vector&lt; string_type &gt; &amp;tokens, const string_type &amp;delimiters)</td></tr>
+<tr class="memitem:a0e0c2d9e4239076705ccee261d0c2e70"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> unsigned int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a0e0c2d9e4239076705ccee261d0c2e70">tokenize</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> string_type &amp;str, std::vector&lt; string_type &gt; &amp;tokens, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> string_type &amp;delimiters)</td></tr>
 <tr class="memdesc:a0e0c2d9e4239076705ccee261d0c2e70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will perform a simple tokenize.  <a href="namespace_assimp.html#a0e0c2d9e4239076705ccee261d0c2e70">More...</a><br /></td></tr>
 <tr class="separator:a0e0c2d9e4239076705ccee261d0c2e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a791c7116274a21bd2df15a70e3064676"><td class="memItemLeft" align="right" valign="top"><a id="a791c7116274a21bd2df15a70e3064676" name="a791c7116274a21bd2df15a70e3064676"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ai_stdStrToLower</b> (const std::string &amp;str)</td></tr>
+<tr class="memitem:a791c7116274a21bd2df15a70e3064676"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a791c7116274a21bd2df15a70e3064676">ai_stdStrToLower</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;str)</td></tr>
 <tr class="separator:a791c7116274a21bd2df15a70e3064676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95de3dd4de6a42bfed3eb0a9fcea48be"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a95de3dd4de6a42bfed3eb0a9fcea48be">ASSIMP_itoa10</a> (char *out, unsigned int max, int32_t number)</td></tr>
 <tr class="memdesc:a95de3dd4de6a42bfed3eb0a9fcea48be"><td class="mdescLeft">&#160;</td><td class="mdescRight">itoa with a fixed base 10 'itoa' is not consistently available on all platforms so it is quite useful to have a small replacement function here. No need to use a full sprintf() if we just want to print a number ...  <a href="namespace_assimp.html#a95de3dd4de6a42bfed3eb0a9fcea48be">More...</a><br /></td></tr>
 <tr class="separator:a95de3dd4de6a42bfed3eb0a9fcea48be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a780ce39f05ccc110f67a59dd76709112"><td class="memTemplParams" colspan="2"><a id="a780ce39f05ccc110f67a59dd76709112" name="a780ce39f05ccc110f67a59dd76709112"></a>
-template&lt;size_t length&gt; </td></tr>
-<tr class="memitem:a780ce39f05ccc110f67a59dd76709112"><td class="memTemplItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ASSIMP_itoa10</b> (char(&amp;out)[length], int32_t number)</td></tr>
-<tr class="memdesc:a780ce39f05ccc110f67a59dd76709112"><td class="mdescLeft">&#160;</td><td class="mdescRight">itoa with a fixed base 10 (Secure template overload) The compiler should choose this function if he or she is able to determine the size of the array automatically. <br /></td></tr>
+<tr class="memitem:a780ce39f05ccc110f67a59dd76709112"><td class="memTemplParams" colspan="2">template&lt;size_t length&gt; </td></tr>
+<tr class="memitem:a780ce39f05ccc110f67a59dd76709112"><td class="memTemplItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a780ce39f05ccc110f67a59dd76709112">ASSIMP_itoa10</a> (char(&amp;out)[length], int32_t number)</td></tr>
+<tr class="memdesc:a780ce39f05ccc110f67a59dd76709112"><td class="mdescLeft">&#160;</td><td class="mdescRight">itoa with a fixed base 10 (Secure template overload) The compiler should choose this function if he or she is able to determine the size of the array automatically.  <a href="namespace_assimp.html#a780ce39f05ccc110f67a59dd76709112">More...</a><br /></td></tr>
 <tr class="separator:a780ce39f05ccc110f67a59dd76709112"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72851b2740829d0e26ee31da7af20ce6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a72851b2740829d0e26ee31da7af20ce6">ASSIMP_stricmp</a> (const char *s1, const char *s2)</td></tr>
+<tr class="memitem:a72851b2740829d0e26ee31da7af20ce6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a72851b2740829d0e26ee31da7af20ce6">ASSIMP_stricmp</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *s1, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *s2)</td></tr>
 <tr class="memdesc:a72851b2740829d0e26ee31da7af20ce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to do platform independent string comparison.  <a href="namespace_assimp.html#a72851b2740829d0e26ee31da7af20ce6">More...</a><br /></td></tr>
 <tr class="separator:a72851b2740829d0e26ee31da7af20ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd7b0704eb33d941b05a778f916cf963"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#abd7b0704eb33d941b05a778f916cf963">ASSIMP_stricmp</a> (const std::string &amp;a, const std::string &amp;b)</td></tr>
+<tr class="memitem:abd7b0704eb33d941b05a778f916cf963"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#abd7b0704eb33d941b05a778f916cf963">ASSIMP_stricmp</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;a, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;b)</td></tr>
 <tr class="memdesc:abd7b0704eb33d941b05a778f916cf963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Case independent comparison of two std::strings.  <a href="namespace_assimp.html#abd7b0704eb33d941b05a778f916cf963">More...</a><br /></td></tr>
 <tr class="separator:abd7b0704eb33d941b05a778f916cf963"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5718d462fef0070afea1d4ac4e65d4d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a5718d462fef0070afea1d4ac4e65d4d8">ASSIMP_strincmp</a> (const char *s1, const char *s2, unsigned int n)</td></tr>
+<tr class="memitem:a5718d462fef0070afea1d4ac4e65d4d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a5718d462fef0070afea1d4ac4e65d4d8">ASSIMP_strincmp</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *s1, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *s2, unsigned int n)</td></tr>
 <tr class="memdesc:a5718d462fef0070afea1d4ac4e65d4d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to do platform independent string comparison.  <a href="namespace_assimp.html#a5718d462fef0070afea1d4ac4e65d4d8">More...</a><br /></td></tr>
 <tr class="separator:a5718d462fef0070afea1d4ac4e65d4d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f1165ac9e907c30dbbba7657c651b4e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a7f1165ac9e907c30dbbba7657c651b4e">integer_pow</a> (unsigned int base, unsigned int power)</td></tr>
 <tr class="memdesc:a7f1165ac9e907c30dbbba7657c651b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates an integer power.  <a href="namespace_assimp.html#a7f1165ac9e907c30dbbba7657c651b4e">More...</a><br /></td></tr>
 <tr class="separator:a7f1165ac9e907c30dbbba7657c651b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26ab9ab92b7b78ef60b4e63e0dbc2f75"><td class="memItemLeft" align="right" valign="top"><a id="a26ab9ab92b7b78ef60b4e63e0dbc2f75" name="a26ab9ab92b7b78ef60b4e63e0dbc2f75"></a>
-AI_FORCE_INLINE <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;v0, const <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;v1)</td></tr>
+<tr class="memitem:a26ab9ab92b7b78ef60b4e63e0dbc2f75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a26ab9ab92b7b78ef60b4e63e0dbc2f75">operator+</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;v0, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;v1)</td></tr>
 <tr class="separator:a26ab9ab92b7b78ef60b4e63e0dbc2f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b3364133e7a8b1b96d5839dcd53611c"><td class="memItemLeft" align="right" valign="top"><a id="a3b3364133e7a8b1b96d5839dcd53611c" name="a3b3364133e7a8b1b96d5839dcd53611c"></a>
-AI_FORCE_INLINE <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;v0, const <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;v1)</td></tr>
+<tr class="memitem:a3b3364133e7a8b1b96d5839dcd53611c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a3b3364133e7a8b1b96d5839dcd53611c">operator-</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;v0, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;v1)</td></tr>
 <tr class="separator:a3b3364133e7a8b1b96d5839dcd53611c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbfb0febd3f3ba7392e78ebd59f0c091"><td class="memItemLeft" align="right" valign="top"><a id="adbfb0febd3f3ba7392e78ebd59f0c091" name="adbfb0febd3f3ba7392e78ebd59f0c091"></a>
-AI_FORCE_INLINE <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;v0, ai_real f)</td></tr>
+<tr class="memitem:adbfb0febd3f3ba7392e78ebd59f0c091"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#adbfb0febd3f3ba7392e78ebd59f0c091">operator*</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;v0, <a class="el" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a> f)</td></tr>
 <tr class="separator:adbfb0febd3f3ba7392e78ebd59f0c091"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb258dfba56a50f59690dcae90e3db04"><td class="memItemLeft" align="right" valign="top"><a id="aeb258dfba56a50f59690dcae90e3db04" name="aeb258dfba56a50f59690dcae90e3db04"></a>
-AI_FORCE_INLINE <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator/</b> (const <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;v0, ai_real f)</td></tr>
+<tr class="memitem:aeb258dfba56a50f59690dcae90e3db04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#aeb258dfba56a50f59690dcae90e3db04">operator/</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;v0, <a class="el" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a> f)</td></tr>
 <tr class="separator:aeb258dfba56a50f59690dcae90e3db04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad44995399966da4737a2afbe30e5983d"><td class="memItemLeft" align="right" valign="top"><a id="ad44995399966da4737a2afbe30e5983d" name="ad44995399966da4737a2afbe30e5983d"></a>
-AI_FORCE_INLINE <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (ai_real f, const <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;v0)</td></tr>
+<tr class="memitem:ad44995399966da4737a2afbe30e5983d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#ad44995399966da4737a2afbe30e5983d">operator*</a> (<a class="el" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a> f, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;v0)</td></tr>
 <tr class="separator:ad44995399966da4737a2afbe30e5983d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76632b7a46dd8f86685b963dac085363"><td class="memItemLeft" align="right" valign="top"><a id="a76632b7a46dd8f86685b963dac085363" name="a76632b7a46dd8f86685b963dac085363"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>XMLEscape</b> (const std::string &amp;data)</td></tr>
+<tr class="memitem:a76632b7a46dd8f86685b963dac085363"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a76632b7a46dd8f86685b963dac085363">XMLEscape</a> (<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;data)</td></tr>
 <tr class="separator:a76632b7a46dd8f86685b963dac085363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35ef4d4a311ee5dfe8e0d4f0ebefab9c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a35ef4d4a311ee5dfe8e0d4f0ebefab9c">isEndOfCache</a> (size_t pos, size_t cacheSize)</td></tr>
+<tr class="separator:a35ef4d4a311ee5dfe8e0d4f0ebefab9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35ef4d4a311ee5dfe8e0d4f0ebefab9c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a35ef4d4a311ee5dfe8e0d4f0ebefab9c">isEndOfCache</a> (size_t pos, size_t cacheSize)</td></tr>
+<tr class="separator:a35ef4d4a311ee5dfe8e0d4f0ebefab9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a81d358b0d2907db3ffe185d60f41aa83"><td class="memItemLeft" align="right" valign="top">class ASSIMP_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a81d358b0d2907db3ffe185d60f41aa83">ExportProperties</a></td></tr>
+<tr class="memitem:a81d358b0d2907db3ffe185d60f41aa83"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a81d358b0d2907db3ffe185d60f41aa83">ExportProperties</a></td></tr>
 <tr class="separator:a81d358b0d2907db3ffe185d60f41aa83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abecb22a56df4788bcf7b994dfa67a218"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#abecb22a56df4788bcf7b994dfa67a218">fast_atof_table</a> [NumItems]</td></tr>
+<tr class="memitem:a0979743d5e0837d8c88593fb699ddeab"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a0979743d5e0837d8c88593fb699ddeab">NumItems</a> = 16</td></tr>
+<tr class="separator:a0979743d5e0837d8c88593fb699ddeab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abecb22a56df4788bcf7b994dfa67a218"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#abecb22a56df4788bcf7b994dfa67a218">fast_atof_table</a> [<a class="el" href="namespace_assimp.html#a0979743d5e0837d8c88593fb699ddeab">NumItems</a>]</td></tr>
 <tr class="separator:abecb22a56df4788bcf7b994dfa67a218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20dc8581fd6ec886730e4cb443066f87"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a20dc8581fd6ec886730e4cb443066f87">BufferSize</a> = 4096</td></tr>
+<tr class="separator:a20dc8581fd6ec886730e4cb443066f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0979743d5e0837d8c88593fb699ddeab"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a0979743d5e0837d8c88593fb699ddeab">NumItems</a> = 16</td></tr>
+<tr class="separator:a0979743d5e0837d8c88593fb699ddeab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20dc8581fd6ec886730e4cb443066f87"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a20dc8581fd6ec886730e4cb443066f87">BufferSize</a> = 4096</td></tr>
+<tr class="separator:a20dc8581fd6ec886730e4cb443066f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0979743d5e0837d8c88593fb699ddeab"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a0979743d5e0837d8c88593fb699ddeab">NumItems</a> = 16</td></tr>
+<tr class="separator:a0979743d5e0837d8c88593fb699ddeab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20dc8581fd6ec886730e4cb443066f87"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_assimp.html#a20dc8581fd6ec886730e4cb443066f87">BufferSize</a> = 4096</td></tr>
+<tr class="separator:a20dc8581fd6ec886730e4cb443066f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="namespace_assimp.html">Assimp</a>'s CPP-API and all internal APIs </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="acdd122cae88cee792338440e43d4f374" name="acdd122cae88cee792338440e43d4f374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdd122cae88cee792338440e43d4f374">&#9670;&#160;</a></span>AiAssertHandler</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="namespace_assimp.html#acdd122cae88cee792338440e43d4f374">Assimp::AiAssertHandler</a>)(<a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *failedExpression, <a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *file, int line)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Signature of functions which handle assert violations. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_assert_handler_8h_source.html#l00056">56</a> of file <a class="el" href="include_2assimp_2_assert_handler_8h_source.html">AssertHandler.h</a>.</p>
+
+</div>
+</div>
+<a id="ab47d29e283b76e1f746e5c7af78277a3" name="ab47d29e283b76e1f746e5c7af78277a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab47d29e283b76e1f746e5c7af78277a3">&#9670;&#160;</a></span>BoneSrcIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::pair&lt; <a class="el" href="structai_bone.html">aiBone</a> *, unsigned int &gt; <a class="el" href="namespace_assimp.html#ab47d29e283b76e1f746e5c7af78277a3">Assimp::BoneSrcIndex</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_scene_combiner_8h_source.html#l00143">143</a> of file <a class="el" href="include_2assimp_2_scene_combiner_8h_source.html">SceneCombiner.h</a>.</p>
+
+</div>
+</div>
+<a id="aff2f770e8e73ef550d66f3674f66fdfb" name="aff2f770e8e73ef550d66f3674f66fdfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff2f770e8e73ef550d66f3674f66fdfb">&#9670;&#160;</a></span>ByteBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; int8_t &gt; <a class="el" href="namespace_assimp.html#aff2f770e8e73ef550d66f3674f66fdfb">Assimp::ByteBuffer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00078">78</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
+</div>
+</div>
+<a id="a66d01581400aeccb77b6523bb6f40bc9" name="a66d01581400aeccb77b6523bb6f40bc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66d01581400aeccb77b6523bb6f40bc9">&#9670;&#160;</a></span>StreamReaderAny</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="class_assimp_1_1_stream_reader.html">StreamReader</a>&lt; true, true &gt; <a class="el" href="namespace_assimp.html#a66d01581400aeccb77b6523bb6f40bc9">Assimp::StreamReaderAny</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_stream_reader_8h_source.html#l00340">340</a> of file <a class="el" href="include_2assimp_2_stream_reader_8h_source.html">StreamReader.h</a>.</p>
+
+</div>
+</div>
+<a id="a805919b898c0391a446495ee52067f42" name="a805919b898c0391a446495ee52067f42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a805919b898c0391a446495ee52067f42">&#9670;&#160;</a></span>StreamReaderBE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="class_assimp_1_1_stream_reader.html">StreamReader</a>&lt; true &gt; <a class="el" href="namespace_assimp.html#a805919b898c0391a446495ee52067f42">Assimp::StreamReaderBE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_stream_reader_8h_source.html#l00334">334</a> of file <a class="el" href="include_2assimp_2_stream_reader_8h_source.html">StreamReader.h</a>.</p>
+
+</div>
+</div>
+<a id="ae1f004ccb8f551efc9c3249184f66eef" name="ae1f004ccb8f551efc9c3249184f66eef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1f004ccb8f551efc9c3249184f66eef">&#9670;&#160;</a></span>StreamReaderLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="class_assimp_1_1_stream_reader.html">StreamReader</a>&lt; false &gt; <a class="el" href="namespace_assimp.html#ae1f004ccb8f551efc9c3249184f66eef">Assimp::StreamReaderLE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_stream_reader_8h_source.html#l00335">335</a> of file <a class="el" href="include_2assimp_2_stream_reader_8h_source.html">StreamReader.h</a>.</p>
+
+</div>
+</div>
+<a id="a31923ade59707b02bfe834479bf9acda" name="a31923ade59707b02bfe834479bf9acda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31923ade59707b02bfe834479bf9acda">&#9670;&#160;</a></span>StreamWriterAny</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="class_assimp_1_1_stream_writer.html">StreamWriter</a>&lt; true, true &gt; <a class="el" href="namespace_assimp.html#a31923ade59707b02bfe834479bf9acda">Assimp::StreamWriterAny</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_stream_writer_8h_source.html#l00300">300</a> of file <a class="el" href="include_2assimp_2_stream_writer_8h_source.html">StreamWriter.h</a>.</p>
+
+</div>
+</div>
+<a id="aef34a2f32751e792f5e54bfa7deafd7b" name="aef34a2f32751e792f5e54bfa7deafd7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef34a2f32751e792f5e54bfa7deafd7b">&#9670;&#160;</a></span>StreamWriterBE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="class_assimp_1_1_stream_writer.html">StreamWriter</a>&lt; true &gt; <a class="el" href="namespace_assimp.html#aef34a2f32751e792f5e54bfa7deafd7b">Assimp::StreamWriterBE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_stream_writer_8h_source.html#l00294">294</a> of file <a class="el" href="include_2assimp_2_stream_writer_8h_source.html">StreamWriter.h</a>.</p>
+
+</div>
+</div>
+<a id="a5b7ad422930729dfb8c36a1e79407bf4" name="a5b7ad422930729dfb8c36a1e79407bf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b7ad422930729dfb8c36a1e79407bf4">&#9670;&#160;</a></span>StreamWriterLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="class_assimp_1_1_stream_writer.html">StreamWriter</a>&lt; false &gt; <a class="el" href="namespace_assimp.html#a5b7ad422930729dfb8c36a1e79407bf4">Assimp::StreamWriterLE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_stream_writer_8h_source.html#l00295">295</a> of file <a class="el" href="include_2assimp_2_stream_writer_8h_source.html">StreamWriter.h</a>.</p>
+
+</div>
+</div>
+<a id="a2eb4315da2826d0a25ee9fd2e45d1a59" name="a2eb4315da2826d0a25ee9fd2e45d1a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eb4315da2826d0a25ee9fd2e45d1a59">&#9670;&#160;</a></span>UByteBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; uint8_t &gt; <a class="el" href="namespace_assimp.html#a2eb4315da2826d0a25ee9fd2e45d1a59">Assimp::UByteBuffer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_base_importer_8h_source.html#l00077">77</a> of file <a class="el" href="include_2assimp_2_base_importer_8h_source.html">BaseImporter.h</a>.</p>
+
+</div>
+</div>
+<a id="a39b031370e5aba8e0f587ee4b3c18214" name="a39b031370e5aba8e0f587ee4b3c18214"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39b031370e5aba8e0f587ee4b3c18214">&#9670;&#160;</a></span>XmlAttribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef pugi::xml_attribute <a class="el" href="namespace_assimp.html#a39b031370e5aba8e0f587ee4b3c18214">Assimp::XmlAttribute</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00087">87</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+
+</div>
+</div>
+<a id="af7fe906c227a19aea9aaf197846ee8fe" name="af7fe906c227a19aea9aaf197846ee8fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7fe906c227a19aea9aaf197846ee8fe">&#9670;&#160;</a></span>XmlNode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef pugi::xml_node <a class="el" href="namespace_assimp.html#af7fe906c227a19aea9aaf197846ee8fe">Assimp::XmlNode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00086">86</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+
+</div>
+</div>
+<a id="ac1f9ddc766331a128a2d8b033b360a72" name="ac1f9ddc766331a128a2d8b033b360a72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1f9ddc766331a128a2d8b033b360a72">&#9670;&#160;</a></span>XmlParser</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="class_assimp_1_1_t_xml_parser.html">TXmlParser</a>&lt; pugi::xml_node &gt; <a class="el" href="namespace_assimp.html#ac1f9ddc766331a128a2d8b033b360a72">Assimp::XmlParser</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_xml_parser_8h_source.html#l00507">507</a> of file <a class="el" href="include_2assimp_2_xml_parser_8h_source.html">XmlParser.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a791c7116274a21bd2df15a70e3064676" name="a791c7116274a21bd2df15a70e3064676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a791c7116274a21bd2df15a70e3064676">&#9670;&#160;</a></span>ai_stdStrToLower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Assimp::ai_stdStrToLower </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00261">261</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+
+</div>
+</div>
+<a id="aee0be0a7697ffab9038d27ffc6cb5065" name="aee0be0a7697ffab9038d27ffc6cb5065"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee0be0a7697ffab9038d27ffc6cb5065">&#9670;&#160;</a></span>aiAssertViolation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> void Assimp::aiAssertViolation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>failedExpression</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dispatches an assert violation to the assert handler. </p>
+
+</div>
+</div>
 <a id="a0c3ea46ea110bbc5987def5503507112" name="a0c3ea46ea110bbc5987def5503507112"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0c3ea46ea110bbc5987def5503507112">&#9670;&#160;</a></span>aiCreateAnimMesh()</h2>
 
@@ -416,9 +675,9 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ASSIMP_API <a class="el" href="structai_anim_mesh.html">aiAnimMesh</a> * Assimp::aiCreateAnimMesh </td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> <a class="el" href="structai_anim_mesh.html">aiAnimMesh</a> * Assimp::aiCreateAnimMesh </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structai_mesh.html">aiMesh</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="structai_mesh.html">aiMesh</a> *&#160;</td>
           <td class="paramname"><em>mesh</em>, </td>
         </tr>
         <tr>
@@ -474,7 +733,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="a95de3dd4de6a42bfed3eb0a9fcea48be" name="a95de3dd4de6a42bfed3eb0a9fcea48be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95de3dd4de6a42bfed3eb0a9fcea48be">&#9670;&#160;</a></span>ASSIMP_itoa10()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a95de3dd4de6a42bfed3eb0a9fcea48be">&#9670;&#160;</a></span>ASSIMP_itoa10() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -524,6 +783,68 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Length of the output string, excluding the '\0' </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_string_comparison_8h_source.html#l00080">80</a> of file <a class="el" href="include_2assimp_2_string_comparison_8h_source.html">StringComparison.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a95de3dd4de6a42bfed3eb0a9fcea48be_icgraph.png" border="0" usemap="#anamespace_assimp_a95de3dd4de6a42bfed3eb0a9fcea48be_icgraph" alt=""/></div>
+<map name="anamespace_assimp_a95de3dd4de6a42bfed3eb0a9fcea48be_icgraph" id="anamespace_assimp_a95de3dd4de6a42bfed3eb0a9fcea48be_icgraph">
+<area shape="rect" title="itoa with a fixed base 10 &#39;itoa&#39; is not consistently available on all platforms so it is quite useful..." alt="" coords="212,5,370,33"/>
+<area shape="rect" href="namespace_assimp.html#a780ce39f05ccc110f67a59dd76709112" title="itoa with a fixed base 10 (Secure template overload) The compiler should choose this function if he o..." alt="" coords="5,5,164,33"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a780ce39f05ccc110f67a59dd76709112" name="a780ce39f05ccc110f67a59dd76709112"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a780ce39f05ccc110f67a59dd76709112">&#9670;&#160;</a></span>ASSIMP_itoa10() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t length&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Assimp::ASSIMP_itoa10 </td>
+          <td>(</td>
+          <td class="paramtype">char(&amp;)&#160;</td>
+          <td class="paramname"><em>out</em>[length], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>number</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>itoa with a fixed base 10 (Secure template overload) The compiler should choose this function if he or she is able to determine the size of the array automatically. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_string_comparison_8h_source.html#l00123">123</a> of file <a class="el" href="include_2assimp_2_string_comparison_8h_source.html">StringComparison.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a780ce39f05ccc110f67a59dd76709112_cgraph.png" border="0" usemap="#anamespace_assimp_a780ce39f05ccc110f67a59dd76709112_cgraph" alt=""/></div>
+<map name="anamespace_assimp_a780ce39f05ccc110f67a59dd76709112_cgraph" id="anamespace_assimp_a780ce39f05ccc110f67a59dd76709112_cgraph">
+<area shape="rect" title="itoa with a fixed base 10 (Secure template overload) The compiler should choose this function if he o..." alt="" coords="5,5,164,33"/>
+<area shape="rect" href="namespace_assimp.html#a95de3dd4de6a42bfed3eb0a9fcea48be" title="itoa with a fixed base 10 &#39;itoa&#39; is not consistently available on all platforms so it is quite useful..." alt="" coords="212,5,370,33"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a72851b2740829d0e26ee31da7af20ce6" name="a72851b2740829d0e26ee31da7af20ce6"></a>
@@ -538,13 +859,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">int Assimp::ASSIMP_stricmp </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>s1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>s2</em>&#160;</td>
         </tr>
         <tr>
@@ -571,6 +892,17 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if the given strings are identical </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_string_comparison_8h_source.html#l00138">138</a> of file <a class="el" href="include_2assimp_2_string_comparison_8h_source.html">StringComparison.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a72851b2740829d0e26ee31da7af20ce6_icgraph.png" border="0" usemap="#anamespace_assimp_a72851b2740829d0e26ee31da7af20ce6_icgraph" alt=""/></div>
+<map name="anamespace_assimp_a72851b2740829d0e26ee31da7af20ce6_icgraph" id="anamespace_assimp_a72851b2740829d0e26ee31da7af20ce6_icgraph">
+<area shape="rect" title="Helper function to do platform independent string comparison." alt="" coords="219,5,384,33"/>
+<area shape="rect" href="namespace_assimp.html#abd7b0704eb33d941b05a778f916cf963" title="Case independent comparison of two std::strings." alt="" coords="5,5,171,33"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="abd7b0704eb33d941b05a778f916cf963" name="abd7b0704eb33d941b05a778f916cf963"></a>
@@ -585,13 +917,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">int Assimp::ASSIMP_stricmp </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -617,6 +949,17 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if a == b </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_string_comparison_8h_source.html#l00162">162</a> of file <a class="el" href="include_2assimp_2_string_comparison_8h_source.html">StringComparison.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_abd7b0704eb33d941b05a778f916cf963_cgraph.png" border="0" usemap="#anamespace_assimp_abd7b0704eb33d941b05a778f916cf963_cgraph" alt=""/></div>
+<map name="anamespace_assimp_abd7b0704eb33d941b05a778f916cf963_cgraph" id="anamespace_assimp_abd7b0704eb33d941b05a778f916cf963_cgraph">
+<area shape="rect" title="Case independent comparison of two std::strings." alt="" coords="5,5,171,33"/>
+<area shape="rect" href="namespace_assimp.html#a72851b2740829d0e26ee31da7af20ce6" title="Helper function to do platform independent string comparison." alt="" coords="219,5,384,33"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a5718d462fef0070afea1d4ac4e65d4d8" name="a5718d462fef0070afea1d4ac4e65d4d8"></a>
@@ -631,13 +974,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">int Assimp::ASSIMP_strincmp </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>s1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>s2</em>, </td>
         </tr>
         <tr>
@@ -671,6 +1014,18 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if the given strings are identical </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_string_comparison_8h_source.html#l00179">179</a> of file <a class="el" href="include_2assimp_2_string_comparison_8h_source.html">StringComparison.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a5718d462fef0070afea1d4ac4e65d4d8_icgraph.png" border="0" usemap="#anamespace_assimp_a5718d462fef0070afea1d4ac4e65d4d8_icgraph" alt=""/></div>
+<map name="anamespace_assimp_a5718d462fef0070afea1d4ac4e65d4d8_icgraph" id="anamespace_assimp_a5718d462fef0070afea1d4ac4e65d4d8_icgraph">
+<area shape="rect" title="Helper function to do platform independent string comparison." alt="" coords="233,32,405,60"/>
+<area shape="rect" href="namespace_assimp.html#a4b486541edb9e5bdda47cb9e73f9e877" title=" " alt="" coords="5,5,185,33"/>
+<area shape="rect" href="namespace_assimp.html#a3bd333f65bd8da9590190ed27987e47f" title="Case&#45;ignoring version of TokenMatch." alt="" coords="22,57,168,85"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a896afdcb6c8dc97c0b85edd74793d191" name="a896afdcb6c8dc97c0b85edd74793d191"></a>
@@ -680,15 +1035,15 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AI_WONT_RETURN ASSIMP_API void Assimp::defaultAiAssertHandler </td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a6ce513786318507600657cebc16e2d36">AI_WONT_RETURN</a> <a class="el" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> void Assimp::defaultAiAssertHandler </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>failedExpression</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>file</em>, </td>
         </tr>
         <tr>
@@ -710,6 +1065,106 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="aa4cf660be5711cd91b09df17e5dcf5cc" name="aa4cf660be5711cd91b09df17e5dcf5cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4cf660be5711cd91b09df17e5dcf5cc">&#9670;&#160;</a></span>fast_atof() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ExceptionType  = DeadlyImportError&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a> Assimp::fast_atof </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **&#160;</td>
+          <td class="paramname"><em>inout</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00369">369</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+
+</div>
+</div>
+<a id="a5528fa5dfe30cfbb445f48b469649ec8" name="a5528fa5dfe30cfbb445f48b469649ec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5528fa5dfe30cfbb445f48b469649ec8">&#9670;&#160;</a></span>fast_atof() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ExceptionType  = DeadlyImportError&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a> Assimp::fast_atof </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00352">352</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+
+</div>
+</div>
+<a id="a94f5122c86d191932afa227e7a3fac30" name="a94f5122c86d191932afa227e7a3fac30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94f5122c86d191932afa227e7a3fac30">&#9670;&#160;</a></span>fast_atof() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ExceptionType  = DeadlyImportError&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a> Assimp::fast_atof </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **&#160;</td>
+          <td class="paramname"><em>cout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00361">361</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+
+</div>
+</div>
 <a id="a4b486541edb9e5bdda47cb9e73f9e877" name="a4b486541edb9e5bdda47cb9e73f9e877"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b486541edb9e5bdda47cb9e73f9e877">&#9670;&#160;</a></span>fast_atoreal_move()</h2>
 
@@ -722,9 +1177,9 @@ template&lt;typename Real , typename ExceptionType  = DeadlyImportError&gt; </di
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char * Assimp::fast_atoreal_move </td>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char * Assimp::fast_atoreal_move </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>c</em>, </td>
         </tr>
         <tr>
@@ -752,6 +1207,173 @@ template&lt;typename Real , typename ExceptionType  = DeadlyImportError&gt; </di
 </table>
 </div><div class="memdoc">
 <p >Provides a fast function for converting a string into a float, about 6 times faster than atof in win32. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00263">263</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a4b486541edb9e5bdda47cb9e73f9e877_cgraph.png" border="0" usemap="#anamespace_assimp_a4b486541edb9e5bdda47cb9e73f9e877_cgraph" alt=""/></div>
+<map name="anamespace_assimp_a4b486541edb9e5bdda47cb9e73f9e877_cgraph" id="anamespace_assimp_a4b486541edb9e5bdda47cb9e73f9e877_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,185,60"/>
+<area shape="rect" href="include_2assimp_2_string_utils_8h.html#ac93475a8288137104522606ff477c4db" title="Make a string printable by replacing all non&#45;printable characters with the specified placeholder char..." alt="" coords="258,5,380,33"/>
+<area shape="rect" href="namespace_assimp.html#a5718d462fef0070afea1d4ac4e65d4d8" title="Helper function to do platform independent string comparison." alt="" coords="233,57,405,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afe5a72a3537a830b13ce020af6dd3161" name="afe5a72a3537a830b13ce020af6dd3161"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe5a72a3537a830b13ce020af6dd3161">&#9670;&#160;</a></span>GetNextLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::GetNextLine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *&amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char_t&#160;</td>
+          <td class="paramname"><em>out</em>[BufferSize]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00158">158</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_afe5a72a3537a830b13ce020af6dd3161_cgraph.png" border="0" usemap="#anamespace_assimp_afe5a72a3537a830b13ce020af6dd3161_cgraph" alt=""/></div>
+<map name="anamespace_assimp_afe5a72a3537a830b13ce020af6dd3161_cgraph" id="anamespace_assimp_afe5a72a3537a830b13ce020af6dd3161_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,149,33"/>
+<area shape="rect" href="namespace_assimp.html#a99092e9b63e3e8bb88dc63e141d7157f" title=" " alt="" coords="197,5,325,33"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a17e1ae1e1c4b2e04771407f0ba0d205a" name="a17e1ae1e1c4b2e04771407f0ba0d205a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17e1ae1e1c4b2e04771407f0ba0d205a">&#9670;&#160;</a></span>GetNextToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> std::string Assimp::GetNextToken </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00221">221</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a17e1ae1e1c4b2e04771407f0ba0d205a_cgraph.png" border="0" usemap="#anamespace_assimp_a17e1ae1e1c4b2e04771407f0ba0d205a_cgraph" alt=""/></div>
+<map name="anamespace_assimp_a17e1ae1e1c4b2e04771407f0ba0d205a_cgraph" id="anamespace_assimp_a17e1ae1e1c4b2e04771407f0ba0d205a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,160,60"/>
+<area shape="rect" href="namespace_assimp.html#a3883df5611e6ba0bd986fd5694c47e35" title=" " alt="" coords="219,5,400,33"/>
+<area shape="rect" href="namespace_assimp.html#a7fded9895754c979f0755aab49b97fd2" title=" " alt="" coords="208,57,411,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6bb609222363ab9ba88298597056d65f" name="a6bb609222363ab9ba88298597056d65f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bb609222363ab9ba88298597056d65f">&#9670;&#160;</a></span>HexDigitToDecimal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Assimp::HexDigitToDecimal </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00129">129</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a6bb609222363ab9ba88298597056d65f_icgraph.png" border="0" usemap="#anamespace_assimp_a6bb609222363ab9ba88298597056d65f_icgraph" alt=""/></div>
+<map name="anamespace_assimp_a6bb609222363ab9ba88298597056d65f_icgraph" id="anamespace_assimp_a6bb609222363ab9ba88298597056d65f_icgraph">
+<area shape="rect" title=" " alt="" coords="239,5,420,33"/>
+<area shape="rect" href="namespace_assimp.html#a50f9e78be9d92b2140273c577d24ff47" title=" " alt="" coords="5,5,191,33"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a50f9e78be9d92b2140273c577d24ff47" name="a50f9e78be9d92b2140273c577d24ff47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50f9e78be9d92b2140273c577d24ff47">&#9670;&#160;</a></span>HexOctetToDecimal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Assimp::HexOctetToDecimal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00146">146</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a50f9e78be9d92b2140273c577d24ff47_cgraph.png" border="0" usemap="#anamespace_assimp_a50f9e78be9d92b2140273c577d24ff47_cgraph" alt=""/></div>
+<map name="anamespace_assimp_a50f9e78be9d92b2140273c577d24ff47_cgraph" id="anamespace_assimp_a50f9e78be9d92b2140273c577d24ff47_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,191,33"/>
+<area shape="rect" href="namespace_assimp.html#a6bb609222363ab9ba88298597056d65f" title=" " alt="" coords="239,5,420,33"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -792,6 +1414,1077 @@ template&lt;typename Real , typename ExceptionType  = DeadlyImportError&gt; </di
 <p>Evaluates an integer power. </p>
 <p >todo: move somewhere where it fits better in than here </p>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_string_comparison_8h_source.html#l00212">212</a> of file <a class="el" href="include_2assimp_2_string_comparison_8h_source.html">StringComparison.h</a>.</p>
+
+</div>
+</div>
+<a id="a35ef4d4a311ee5dfe8e0d4f0ebefab9c" name="a35ef4d4a311ee5dfe8e0d4f0ebefab9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35ef4d4a311ee5dfe8e0d4f0ebefab9c">&#9670;&#160;</a></span>isEndOfCache() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::isEndOfCache </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>cacheSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_i_o_stream_buffer_8h_source.html#l00280">280</a> of file <a class="el" href="include_2assimp_2_i_o_stream_buffer_8h_source.html">IOStreamBuffer.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a35ef4d4a311ee5dfe8e0d4f0ebefab9c_icgraph.png" border="0" usemap="#anamespace_assimp_a35ef4d4a311ee5dfe8e0d4f0ebefab9c_icgraph" alt=""/></div>
+<map name="anamespace_assimp_a35ef4d4a311ee5dfe8e0d4f0ebefab9c_icgraph" id="anamespace_assimp_a35ef4d4a311ee5dfe8e0d4f0ebefab9c_icgraph">
+<area shape="rect" title=" " alt="" coords="216,14,366,42"/>
+<area shape="rect" href="class_assimp_1_1_i_o_stream_buffer.html#ad25f465cec695363c75b218ab21d9d08" title="Will read the next line ascii or binary end line char." alt="" coords="5,5,168,50"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a35ef4d4a311ee5dfe8e0d4f0ebefab9c" name="a35ef4d4a311ee5dfe8e0d4f0ebefab9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35ef4d4a311ee5dfe8e0d4f0ebefab9c">&#9670;&#160;</a></span>isEndOfCache() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::isEndOfCache </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>cacheSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_i_o_stream_buffer_8h_source.html#l00280">280</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_i_o_stream_buffer_8h_source.html">IOStreamBuffer.h</a>.</p>
+
+</div>
+</div>
+<a id="a35ef4d4a311ee5dfe8e0d4f0ebefab9c" name="a35ef4d4a311ee5dfe8e0d4f0ebefab9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35ef4d4a311ee5dfe8e0d4f0ebefab9c">&#9670;&#160;</a></span>isEndOfCache() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::isEndOfCache </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>cacheSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_i_o_stream_buffer_8h_source.html#l00280">280</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_i_o_stream_buffer_8h_source.html">IOStreamBuffer.h</a>.</p>
+
+</div>
+</div>
+<a id="a99092e9b63e3e8bb88dc63e141d7157f" name="a99092e9b63e3e8bb88dc63e141d7157f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99092e9b63e3e8bb88dc63e141d7157f">&#9670;&#160;</a></span>IsLineEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::IsLineEnd </td>
+          <td>(</td>
+          <td class="paramtype">char_t&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00093">93</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a99092e9b63e3e8bb88dc63e141d7157f_icgraph.png" border="0" usemap="#anamespace_assimp_a99092e9b63e3e8bb88dc63e141d7157f_icgraph" alt=""/></div>
+<map name="anamespace_assimp_a99092e9b63e3e8bb88dc63e141d7157f_icgraph" id="anamespace_assimp_a99092e9b63e3e8bb88dc63e141d7157f_icgraph">
+<area shape="rect" title=" " alt="" coords="216,143,344,171"/>
+<area shape="rect" href="class_assimp_1_1_line_splitter.html#ae158d72bee4278a3cc78db1f92b58be6" title=" " alt="" coords="18,5,155,50"/>
+<area shape="rect" href="class_assimp_1_1_i_o_stream_buffer.html#adaa7761b2120cf17f8ac802bf732baf6" title="Will read the next line." alt="" coords="5,75,168,119"/>
+<area shape="rect" href="namespace_assimp.html#afe5a72a3537a830b13ce020af6dd3161" title=" " alt="" coords="15,143,158,171"/>
+<area shape="rect" href="class_assimp_1_1_i_o_stream_buffer.html#ad25f465cec695363c75b218ab21d9d08" title="Will read the next line ascii or binary end line char." alt="" coords="5,195,168,239"/>
+<area shape="rect" href="class_assimp_1_1_line_splitter.html#ac6ba3911a72d452fb8930a812fea6d7e" title=" " alt="" coords="18,264,155,309"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9b1362fc8d49819d06aae521117255aa" name="a9b1362fc8d49819d06aae521117255aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b1362fc8d49819d06aae521117255aa">&#9670;&#160;</a></span>IsLower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::IsLower </td>
+          <td>(</td>
+          <td class="paramtype">char_t&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00081">81</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+
+</div>
+</div>
+<a id="a66776110eb3e45aecf16baebd71ca713" name="a66776110eb3e45aecf16baebd71ca713"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66776110eb3e45aecf16baebd71ca713">&#9670;&#160;</a></span>IsNumeric()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::IsNumeric </td>
+          <td>(</td>
+          <td class="paramtype">char_t&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00179">179</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+
+</div>
+</div>
+<a id="a2dc3cfed4430c305908c17c403ced49c" name="a2dc3cfed4430c305908c17c403ced49c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc3cfed4430c305908c17c403ced49c">&#9670;&#160;</a></span>IsSpace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::IsSpace </td>
+          <td>(</td>
+          <td class="paramtype">char_t&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00087">87</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a2dc3cfed4430c305908c17c403ced49c_icgraph.png" border="0" usemap="#anamespace_assimp_a2dc3cfed4430c305908c17c403ced49c_icgraph" alt=""/></div>
+<map name="anamespace_assimp_a2dc3cfed4430c305908c17c403ced49c_icgraph" id="anamespace_assimp_a2dc3cfed4430c305908c17c403ced49c_icgraph">
+<area shape="rect" title=" " alt="" coords="190,48,307,76"/>
+<area shape="rect" href="class_assimp_1_1_line_splitter.html#ae158d72bee4278a3cc78db1f92b58be6" title=" " alt="" coords="5,5,142,50"/>
+<area shape="rect" href="class_assimp_1_1_line_splitter.html#ac6ba3911a72d452fb8930a812fea6d7e" title=" " alt="" coords="5,75,142,119"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3883df5611e6ba0bd986fd5694c47e35" name="a3883df5611e6ba0bd986fd5694c47e35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3883df5611e6ba0bd986fd5694c47e35">&#9670;&#160;</a></span>IsSpaceOrNewLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::IsSpaceOrNewLine </td>
+          <td>(</td>
+          <td class="paramtype">char_t&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00099">99</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a3883df5611e6ba0bd986fd5694c47e35_icgraph.png" border="0" usemap="#anamespace_assimp_a3883df5611e6ba0bd986fd5694c47e35_icgraph" alt=""/></div>
+<map name="anamespace_assimp_a3883df5611e6ba0bd986fd5694c47e35_icgraph" id="anamespace_assimp_a3883df5611e6ba0bd986fd5694c47e35_icgraph">
+<area shape="rect" title=" " alt="" coords="208,84,389,112"/>
+<area shape="rect" href="namespace_assimp.html#a17e1ae1e1c4b2e04771407f0ba0d205a" title=" " alt="" coords="5,5,160,33"/>
+<area shape="rect" href="namespace_assimp.html#adfc8bd80961fc1047f705a80a80f3536" title=" " alt="" coords="17,57,148,85"/>
+<area shape="rect" href="namespace_assimp.html#ae4567ff539c9f9fc2b63598edbd3d4be" title=" " alt="" coords="12,109,153,137"/>
+<area shape="rect" href="namespace_assimp.html#a3bd333f65bd8da9590190ed27987e47f" title="Case&#45;ignoring version of TokenMatch." alt="" coords="9,161,156,189"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a704d02684243c28d97f16184ca7da160" name="a704d02684243c28d97f16184ca7da160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a704d02684243c28d97f16184ca7da160">&#9670;&#160;</a></span>IsUpper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::IsUpper </td>
+          <td>(</td>
+          <td class="paramtype">char_t&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00075">75</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+
+</div>
+</div>
+<a id="ad44995399966da4737a2afbe30e5983d" name="ad44995399966da4737a2afbe30e5983d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad44995399966da4737a2afbe30e5983d">&#9670;&#160;</a></span>operator*() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> Assimp::operator* </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a>&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;&#160;</td>
+          <td class="paramname"><em>v0</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_vertex_8h_source.html#l00291">291</a> of file <a class="el" href="include_2assimp_2_vertex_8h_source.html">Vertex.h</a>.</p>
+
+</div>
+</div>
+<a id="adbfb0febd3f3ba7392e78ebd59f0c091" name="adbfb0febd3f3ba7392e78ebd59f0c091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbfb0febd3f3ba7392e78ebd59f0c091">&#9670;&#160;</a></span>operator*() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> Assimp::operator* </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;&#160;</td>
+          <td class="paramname"><em>v0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a>&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_vertex_8h_source.html#l00283">283</a> of file <a class="el" href="include_2assimp_2_vertex_8h_source.html">Vertex.h</a>.</p>
+
+</div>
+</div>
+<a id="a26ab9ab92b7b78ef60b4e63e0dbc2f75" name="a26ab9ab92b7b78ef60b4e63e0dbc2f75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26ab9ab92b7b78ef60b4e63e0dbc2f75">&#9670;&#160;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> Assimp::operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;&#160;</td>
+          <td class="paramname"><em>v0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;&#160;</td>
+          <td class="paramname"><em>v1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_vertex_8h_source.html#l00275">275</a> of file <a class="el" href="include_2assimp_2_vertex_8h_source.html">Vertex.h</a>.</p>
+
+</div>
+</div>
+<a id="a3b3364133e7a8b1b96d5839dcd53611c" name="a3b3364133e7a8b1b96d5839dcd53611c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b3364133e7a8b1b96d5839dcd53611c">&#9670;&#160;</a></span>operator-()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> Assimp::operator- </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;&#160;</td>
+          <td class="paramname"><em>v0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;&#160;</td>
+          <td class="paramname"><em>v1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_vertex_8h_source.html#l00279">279</a> of file <a class="el" href="include_2assimp_2_vertex_8h_source.html">Vertex.h</a>.</p>
+
+</div>
+</div>
+<a id="aeb258dfba56a50f59690dcae90e3db04" name="aeb258dfba56a50f59690dcae90e3db04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb258dfba56a50f59690dcae90e3db04">&#9670;&#160;</a></span>operator/()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> Assimp::operator/ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="struct_assimp_1_1_vertex.html">Vertex</a> &amp;&#160;</td>
+          <td class="paramname"><em>v0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="include_2assimp_2defs_8h.html#af221f9bbc3e0dc43a46efaaac6dab067">ai_real</a>&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_vertex_8h_source.html#l00287">287</a> of file <a class="el" href="include_2assimp_2_vertex_8h_source.html">Vertex.h</a>.</p>
+
+</div>
+</div>
+<a id="a49ad38ed2d9749f155deb93f0a524df8" name="a49ad38ed2d9749f155deb93f0a524df8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49ad38ed2d9749f155deb93f0a524df8">&#9670;&#160;</a></span>setAiAssertHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> void Assimp::setAiAssertHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_assimp.html#acdd122cae88cee792338440e43d4f374">AiAssertHandler</a>&#160;</td>
+          <td class="paramname"><em>handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the assert handler. </p>
+
+</div>
+</div>
+<a id="aa3487f7abed0522ea2b5690247003694" name="aa3487f7abed0522ea2b5690247003694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3487f7abed0522ea2b5690247003694">&#9670;&#160;</a></span>SkipLine() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::SkipLine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t **&#160;</td>
+          <td class="paramname"><em>inout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00136">136</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+
+</div>
+</div>
+<a id="a476258ae0b76954ccf1a95ab45305f58" name="a476258ae0b76954ccf1a95ab45305f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a476258ae0b76954ccf1a95ab45305f58">&#9670;&#160;</a></span>SkipLine() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::SkipLine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t **&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00121">121</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+
+</div>
+</div>
+<a id="a82f178242e797717fcf7ad931cb3a7bf" name="a82f178242e797717fcf7ad931cb3a7bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f178242e797717fcf7ad931cb3a7bf">&#9670;&#160;</a></span>SkipSpaces() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::SkipSpaces </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t **&#160;</td>
+          <td class="paramname"><em>inout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00115">115</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+
+</div>
+</div>
+<a id="a77e1d122d82c1e0905f5dc37ca72c0dc" name="a77e1d122d82c1e0905f5dc37ca72c0dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77e1d122d82c1e0905f5dc37ca72c0dc">&#9670;&#160;</a></span>SkipSpaces() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::SkipSpaces </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t **&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00105">105</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a77e1d122d82c1e0905f5dc37ca72c0dc_icgraph.png" border="0" usemap="#anamespace_assimp_a77e1d122d82c1e0905f5dc37ca72c0dc_icgraph" alt=""/></div>
+<map name="anamespace_assimp_a77e1d122d82c1e0905f5dc37ca72c0dc_icgraph" id="anamespace_assimp_a77e1d122d82c1e0905f5dc37ca72c0dc_icgraph">
+<area shape="rect" title=" " alt="" coords="190,83,326,111"/>
+<area shape="rect" href="class_assimp_1_1_line_splitter.html#ae158d72bee4278a3cc78db1f92b58be6" title=" " alt="" coords="5,5,142,50"/>
+<area shape="rect" href="class_assimp_1_1_line_splitter.html#ac6ba3911a72d452fb8930a812fea6d7e" title=" " alt="" coords="5,75,142,119"/>
+<area shape="rect" href="namespace_assimp.html#adfc8bd80961fc1047f705a80a80f3536" title=" " alt="" coords="8,143,139,171"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a65ab3786f2d0ea7485330a326537c88d" name="a65ab3786f2d0ea7485330a326537c88d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65ab3786f2d0ea7485330a326537c88d">&#9670;&#160;</a></span>SkipSpacesAndLineEnd() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::SkipSpacesAndLineEnd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t **&#160;</td>
+          <td class="paramname"><em>inout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00152">152</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+
+</div>
+</div>
+<a id="a7fded9895754c979f0755aab49b97fd2" name="a7fded9895754c979f0755aab49b97fd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fded9895754c979f0755aab49b97fd2">&#9670;&#160;</a></span>SkipSpacesAndLineEnd() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::SkipSpacesAndLineEnd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t **&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char_t *&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00142">142</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a7fded9895754c979f0755aab49b97fd2_icgraph.png" border="0" usemap="#anamespace_assimp_a7fded9895754c979f0755aab49b97fd2_icgraph" alt=""/></div>
+<map name="anamespace_assimp_a7fded9895754c979f0755aab49b97fd2_icgraph" id="anamespace_assimp_a7fded9895754c979f0755aab49b97fd2_icgraph">
+<area shape="rect" title=" " alt="" coords="208,5,411,33"/>
+<area shape="rect" href="namespace_assimp.html#a17e1ae1e1c4b2e04771407f0ba0d205a" title=" " alt="" coords="5,5,160,33"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adfc8bd80961fc1047f705a80a80f3536" name="adfc8bd80961fc1047f705a80a80f3536"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfc8bd80961fc1047f705a80a80f3536">&#9670;&#160;</a></span>SkipToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> void Assimp::SkipToken </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00213">213</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_adfc8bd80961fc1047f705a80a80f3536_cgraph.png" border="0" usemap="#anamespace_assimp_adfc8bd80961fc1047f705a80a80f3536_cgraph" alt=""/></div>
+<map name="anamespace_assimp_adfc8bd80961fc1047f705a80a80f3536_cgraph" id="anamespace_assimp_adfc8bd80961fc1047f705a80a80f3536_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,137,60"/>
+<area shape="rect" href="namespace_assimp.html#a3883df5611e6ba0bd986fd5694c47e35" title=" " alt="" coords="185,5,366,33"/>
+<area shape="rect" href="namespace_assimp.html#a77e1d122d82c1e0905f5dc37ca72c0dc" title=" " alt="" coords="207,57,344,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6712580fbbfe4f27e13815abf8e2a0e0" name="a6712580fbbfe4f27e13815abf8e2a0e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6712580fbbfe4f27e13815abf8e2a0e0">&#9670;&#160;</a></span>strtol10()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Assimp::strtol10 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **&#160;</td>
+          <td class="paramname"><em>out</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00153">153</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a6712580fbbfe4f27e13815abf8e2a0e0_cgraph.png" border="0" usemap="#anamespace_assimp_a6712580fbbfe4f27e13815abf8e2a0e0_cgraph" alt=""/></div>
+<map name="anamespace_assimp_a6712580fbbfe4f27e13815abf8e2a0e0_cgraph" id="anamespace_assimp_a6712580fbbfe4f27e13815abf8e2a0e0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,121,33"/>
+<area shape="rect" href="namespace_assimp.html#a0b34bad3b9ad1b488391ede9b4f23c07" title=" " alt="" coords="169,5,291,33"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa68dc5728b1b75a6010fc11e189a1f94" name="aa68dc5728b1b75a6010fc11e189a1f94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa68dc5728b1b75a6010fc11e189a1f94">&#9670;&#160;</a></span>strtol10_64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ExceptionType  = DeadlyImportError&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t Assimp::strtol10_64 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **&#160;</td>
+          <td class="paramname"><em>out</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>max_inout</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00241">241</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+
+</div>
+</div>
+<a id="a0b34bad3b9ad1b488391ede9b4f23c07" name="a0b34bad3b9ad1b488391ede9b4f23c07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b34bad3b9ad1b488391ede9b4f23c07">&#9670;&#160;</a></span>strtoul10()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Assimp::strtoul10 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **&#160;</td>
+          <td class="paramname"><em>out</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00066">66</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a0b34bad3b9ad1b488391ede9b4f23c07_icgraph.png" border="0" usemap="#anamespace_assimp_a0b34bad3b9ad1b488391ede9b4f23c07_icgraph" alt=""/></div>
+<map name="anamespace_assimp_a0b34bad3b9ad1b488391ede9b4f23c07_icgraph" id="anamespace_assimp_a0b34bad3b9ad1b488391ede9b4f23c07_icgraph">
+<area shape="rect" title=" " alt="" coords="216,32,338,60"/>
+<area shape="rect" href="namespace_assimp.html#a6712580fbbfe4f27e13815abf8e2a0e0" title=" " alt="" coords="29,5,144,33"/>
+<area shape="rect" href="namespace_assimp.html#a90b8b671fcfb5f9c2c1be40056cdef27" title=" " alt="" coords="5,57,168,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0ceec2f2e3cbdd050b3a44a9384f4d0f" name="a0ceec2f2e3cbdd050b3a44a9384f4d0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ceec2f2e3cbdd050b3a44a9384f4d0f">&#9670;&#160;</a></span>strtoul10_64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ExceptionType  = DeadlyImportError&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t Assimp::strtoul10_64 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **&#160;</td>
+          <td class="paramname"><em>out</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>max_inout</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00188">188</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a0ceec2f2e3cbdd050b3a44a9384f4d0f_cgraph.png" border="0" usemap="#anamespace_assimp_a0ceec2f2e3cbdd050b3a44a9384f4d0f_cgraph" alt=""/></div>
+<map name="anamespace_assimp_a0ceec2f2e3cbdd050b3a44a9384f4d0f_cgraph" id="anamespace_assimp_a0ceec2f2e3cbdd050b3a44a9384f4d0f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,149,33"/>
+<area shape="rect" href="include_2assimp_2_string_utils_8h.html#ac93475a8288137104522606ff477c4db" title="Make a string printable by replacing all non&#45;printable characters with the specified placeholder char..." alt="" coords="197,5,318,33"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a358486ae5448785a4eeb0b6d9ebe929b" name="a358486ae5448785a4eeb0b6d9ebe929b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a358486ae5448785a4eeb0b6d9ebe929b">&#9670;&#160;</a></span>strtoul16()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Assimp::strtoul16 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **&#160;</td>
+          <td class="paramname"><em>out</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00105">105</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a358486ae5448785a4eeb0b6d9ebe929b_icgraph.png" border="0" usemap="#anamespace_assimp_a358486ae5448785a4eeb0b6d9ebe929b_icgraph" alt=""/></div>
+<map name="anamespace_assimp_a358486ae5448785a4eeb0b6d9ebe929b_icgraph" id="anamespace_assimp_a358486ae5448785a4eeb0b6d9ebe929b_icgraph">
+<area shape="rect" title=" " alt="" coords="216,5,338,33"/>
+<area shape="rect" href="namespace_assimp.html#a90b8b671fcfb5f9c2c1be40056cdef27" title=" " alt="" coords="5,5,168,33"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1c1db8ffa6363c57660b3d1d0dc8ed3f" name="a1c1db8ffa6363c57660b3d1d0dc8ed3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1db8ffa6363c57660b3d1d0dc8ed3f">&#9670;&#160;</a></span>strtoul8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Assimp::strtoul8 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **&#160;</td>
+          <td class="paramname"><em>out</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00086">86</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a1c1db8ffa6363c57660b3d1d0dc8ed3f_icgraph.png" border="0" usemap="#anamespace_assimp_a1c1db8ffa6363c57660b3d1d0dc8ed3f_icgraph" alt=""/></div>
+<map name="anamespace_assimp_a1c1db8ffa6363c57660b3d1d0dc8ed3f_icgraph" id="anamespace_assimp_a1c1db8ffa6363c57660b3d1d0dc8ed3f_icgraph">
+<area shape="rect" title=" " alt="" coords="216,5,331,33"/>
+<area shape="rect" href="namespace_assimp.html#a90b8b671fcfb5f9c2c1be40056cdef27" title=" " alt="" coords="5,5,168,33"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a90b8b671fcfb5f9c2c1be40056cdef27" name="a90b8b671fcfb5f9c2c1be40056cdef27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90b8b671fcfb5f9c2c1be40056cdef27">&#9670;&#160;</a></span>strtoul_cppstyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Assimp::strtoul_cppstyle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char **&#160;</td>
+          <td class="paramname"><em>out</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00176">176</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a90b8b671fcfb5f9c2c1be40056cdef27_cgraph.png" border="0" usemap="#anamespace_assimp_a90b8b671fcfb5f9c2c1be40056cdef27_cgraph" alt=""/></div>
+<map name="anamespace_assimp_a90b8b671fcfb5f9c2c1be40056cdef27_cgraph" id="anamespace_assimp_a90b8b671fcfb5f9c2c1be40056cdef27_cgraph">
+<area shape="rect" title=" " alt="" coords="5,57,168,85"/>
+<area shape="rect" href="namespace_assimp.html#a0b34bad3b9ad1b488391ede9b4f23c07" title=" " alt="" coords="216,5,338,33"/>
+<area shape="rect" href="namespace_assimp.html#a358486ae5448785a4eeb0b6d9ebe929b" title=" " alt="" coords="216,57,338,85"/>
+<area shape="rect" href="namespace_assimp.html#a1c1db8ffa6363c57660b3d1d0dc8ed3f" title=" " alt="" coords="219,109,334,137"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a0e0c2d9e4239076705ccee261d0c2e70" name="a0e0c2d9e4239076705ccee261d0c2e70"></a>
@@ -803,9 +2496,9 @@ template&lt;typename Real , typename ExceptionType  = DeadlyImportError&gt; </di
 template&lt;class string_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">AI_FORCE_INLINE unsigned int Assimp::tokenize </td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> unsigned int Assimp::tokenize </td>
           <td>(</td>
-          <td class="paramtype">const string_type &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> string_type &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
         </tr>
         <tr>
@@ -817,7 +2510,7 @@ template&lt;class string_type &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const string_type &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> string_type &amp;&#160;</td>
           <td class="paramname"><em>delimiters</em>&#160;</td>
         </tr>
         <tr>
@@ -839,6 +2532,55 @@ template&lt;class string_type &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Number of found token. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00238">238</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+
+</div>
+</div>
+<a id="ae4567ff539c9f9fc2b63598edbd3d4be" name="ae4567ff539c9f9fc2b63598edbd3d4be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4567ff539c9f9fc2b63598edbd3d4be">&#9670;&#160;</a></span>TokenMatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::TokenMatch </td>
+          <td>(</td>
+          <td class="paramtype">char_t *&amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>token</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00185">185</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_ae4567ff539c9f9fc2b63598edbd3d4be_cgraph.png" border="0" usemap="#anamespace_assimp_ae4567ff539c9f9fc2b63598edbd3d4be_cgraph" alt=""/></div>
+<map name="anamespace_assimp_ae4567ff539c9f9fc2b63598edbd3d4be_cgraph" id="anamespace_assimp_ae4567ff539c9f9fc2b63598edbd3d4be_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,147,33"/>
+<area shape="rect" href="namespace_assimp.html#a3883df5611e6ba0bd986fd5694c47e35" title=" " alt="" coords="195,5,376,33"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a3bd333f65bd8da9590190ed27987e47f" name="a3bd333f65bd8da9590190ed27987e47f"></a>
@@ -848,15 +2590,15 @@ template&lt;class string_type &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AI_FORCE_INLINE bool Assimp::TokenMatchI </td>
+          <td class="memname"><a class="el" href="include_2assimp_2defs_8h.html#a61d239a320b58eca56bacc46fc2c79b8">AI_FORCE_INLINE</a> bool Assimp::TokenMatchI </td>
           <td>(</td>
-          <td class="paramtype">const char *&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&amp;&#160;</td>
           <td class="paramname"><em>in</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>token</em>, </td>
         </tr>
         <tr>
@@ -883,9 +2625,113 @@ template&lt;class string_type &gt; </div>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00204">204</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_assimp_a3bd333f65bd8da9590190ed27987e47f_cgraph.png" border="0" usemap="#anamespace_assimp_a3bd333f65bd8da9590190ed27987e47f_cgraph" alt=""/></div>
+<map name="anamespace_assimp_a3bd333f65bd8da9590190ed27987e47f_cgraph" id="anamespace_assimp_a3bd333f65bd8da9590190ed27987e47f_cgraph">
+<area shape="rect" title="Case&#45;ignoring version of TokenMatch." alt="" coords="5,32,152,60"/>
+<area shape="rect" href="namespace_assimp.html#a5718d462fef0070afea1d4ac4e65d4d8" title="Helper function to do platform independent string comparison." alt="" coords="204,5,376,33"/>
+<area shape="rect" href="namespace_assimp.html#a3883df5611e6ba0bd986fd5694c47e35" title=" " alt="" coords="200,57,381,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a76632b7a46dd8f86685b963dac085363" name="a76632b7a46dd8f86685b963dac085363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76632b7a46dd8f86685b963dac085363">&#9670;&#160;</a></span>XMLEscape()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Assimp::XMLEscape </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::string &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_x_m_l_tools_8h_source.html#l00056">56</a> of file <a class="el" href="include_2assimp_2_x_m_l_tools_8h_source.html">XMLTools.h</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a20dc8581fd6ec886730e4cb443066f87" name="a20dc8581fd6ec886730e4cb443066f87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20dc8581fd6ec886730e4cb443066f87">&#9670;&#160;</a></span>BufferSize <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> unsigned int Assimp::BufferSize = 4096</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html#l00071">71</a> of file <a class="el" href="include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+
+</div>
+</div>
+<a id="a20dc8581fd6ec886730e4cb443066f87" name="a20dc8581fd6ec886730e4cb443066f87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20dc8581fd6ec886730e4cb443066f87">&#9670;&#160;</a></span>BufferSize <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> unsigned int Assimp::BufferSize = 4096</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_parsing_utils_8h_source.html#l00071">71</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+
+</div>
+</div>
+<a id="a20dc8581fd6ec886730e4cb443066f87" name="a20dc8581fd6ec886730e4cb443066f87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20dc8581fd6ec886730e4cb443066f87">&#9670;&#160;</a></span>BufferSize <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="x64-_debug_2contrib_2zlib_2zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> unsigned int Assimp::BufferSize = 4096</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source.html#l00071">71</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2_parsing_utils_8h_source.html">ParsingUtils.h</a>.</p>
+
+</div>
+</div>
 <a id="a81d358b0d2907db3ffe185d60f41aa83" name="a81d358b0d2907db3ffe185d60f41aa83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81d358b0d2907db3ffe185d60f41aa83">&#9670;&#160;</a></span>ExportProperties</h2>
 
@@ -893,7 +2739,7 @@ template&lt;class string_type &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">class ASSIMP_API <a class="el" href="class_assimp_1_1_export_properties.html">Assimp::ExportProperties</a></td>
+          <td class="memname">class <a class="el" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> <a class="el" href="class_assimp_1_1_export_properties.html">Assimp::ExportProperties</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -901,6 +2747,8 @@ template&lt;class string_type &gt; </div>
 <p >The interface is modeled after the importer interface and mostly symmetric. The same rules for threading etc. apply.</p>
 <p >In a nutshell, there are two export interfaces: #Export, which writes the output file(s) either to the regular file system or to a user-supplied #IOSystem, and #ExportToBlob which returns a linked list of memory buffers (blob), each referring to one output file (in most cases there will be only one output file of course, but this extra complexity is needed since <a class="el" href="namespace_assimp.html">Assimp</a> aims at supporting a wide range of file formats).</p>
 <p >#ExportToBlob is especially useful if you intend to work with the data in-memory. </p>
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2_exporter_8hpp_source.html#l00083">83</a> of file <a class="el" href="include_2assimp_2_exporter_8hpp_source.html">Exporter.hpp</a>.</p>
 
 </div>
 </div>
@@ -942,6 +2790,80 @@ template&lt;class string_type &gt; </div>
 <div class="line">    0.000000000000001</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00044">44</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+
+</div>
+</div>
+<a id="a0979743d5e0837d8c88593fb699ddeab" name="a0979743d5e0837d8c88593fb699ddeab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0979743d5e0837d8c88593fb699ddeab">&#9670;&#160;</a></span>NumItems <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t Assimp::NumItems = 16</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2assimp_2fast__atof_8h_source.html#l00042">42</a> of file <a class="el" href="include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+
+</div>
+</div>
+<a id="a0979743d5e0837d8c88593fb699ddeab" name="a0979743d5e0837d8c88593fb699ddeab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0979743d5e0837d8c88593fb699ddeab">&#9670;&#160;</a></span>NumItems <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t Assimp::NumItems = 16</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2fast__atof_8h_source.html#l00042">42</a> of file <a class="el" href="out_2install_2x64-_debug_2include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+
+</div>
+</div>
+<a id="a0979743d5e0837d8c88593fb699ddeab" name="a0979743d5e0837d8c88593fb699ddeab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0979743d5e0837d8c88593fb699ddeab">&#9670;&#160;</a></span>NumItems <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t Assimp::NumItems = 16</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="out_2install_2x64-_release_2include_2assimp_2fast__atof_8h_source.html#l00042">42</a> of file <a class="el" href="out_2install_2x64-_release_2include_2assimp_2fast__atof_8h_source.html">fast_atof.h</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

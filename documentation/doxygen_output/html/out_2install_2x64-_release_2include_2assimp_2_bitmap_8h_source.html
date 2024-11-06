@@ -12,6 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,9 +21,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.PNG"/></td>
   <td id="projectalign">
-   <div id="projectname">ogl_renderer
+   <div id="projectname">ogl_renderer<span id="projectnumber">&#160;0.0.0</span>
    </div>
+   <div id="projectbrief">C++ Graphics &amp; Physics Engine</div>
   </td>
  </tr>
  </tbody>
@@ -119,7 +122,7 @@ $(function() {
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#ifndef AI_BITMAP_H_INC</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#define AI_BITMAP_H_INC</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="out_2install_2x64-_release_2include_2assimp_2_bitmap_8h.html#a6545db0507fc18d268cbad478ff249dd">   49</a></span><span class="preprocessor">#define AI_BITMAP_H_INC</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#ifdef __GNUC__</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#   pragma GCC system_header</span></div>
@@ -136,23 +139,23 @@ $(function() {
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">class </span>IOStream;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">// ---------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"></span><span class="keyword">class </span>ASSIMP_API Bitmap {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"></span><span class="keyword">class </span><a class="code hl_define" href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a> Bitmap {</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">protected</span>:</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">struct </span>Header {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <a class="code hl_typedef" href="group__gtc__type__precision.html#gac4eb4f43cae8129b00086dc234d3b8fc">uint16_t</a> type;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <a class="code hl_typedef" href="group__gtc__type__precision.html#ga822ca53a9ad412504532838906276a99">uint32_t</a> size;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <a class="code hl_typedef" href="group__gtc__type__precision.html#gac4eb4f43cae8129b00086dc234d3b8fc">uint16_t</a> reserved1;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <a class="code hl_typedef" href="group__gtc__type__precision.html#gac4eb4f43cae8129b00086dc234d3b8fc">uint16_t</a> reserved2;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <a class="code hl_typedef" href="group__gtc__type__precision.html#ga822ca53a9ad412504532838906276a99">uint32_t</a> offset;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        uint16_t type;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        uint32_t size;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        uint16_t reserved1;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        uint16_t reserved2;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        uint32_t offset;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="comment">// We define the struct size because sizeof(Header) might return a wrong result because of structure padding.</span></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> std::size_t header_size =</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="group__gtc__type__precision.html#gac4eb4f43cae8129b00086dc234d3b8fc">uint16_t</a>) +</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keyword">sizeof</span>(uint16_t) +</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keyword">sizeof</span>(uint32_t) +</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="group__gtc__type__precision.html#gac4eb4f43cae8129b00086dc234d3b8fc">uint16_t</a>) +</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keyword">sizeof</span>(uint16_t) +</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keyword">sizeof</span>(uint16_t) +</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="group__gtc__type__precision.html#ga822ca53a9ad412504532838906276a99">uint32_t</a>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keyword">sizeof</span>(uint32_t);</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    };</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">struct </span>DIB {</div>
@@ -189,24 +192,28 @@ $(function() {
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_assimp_1_1_bitmap.html#a34622ca38efff2926b77f82186e030ab">  123</a></span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_assimp_1_1_bitmap.html#a34622ca38efff2926b77f82186e030ab">Save</a>(<a class="code hl_struct" href="structai_texture.html">aiTexture</a>* texture, <a class="code hl_class" href="class_assimp_1_1_i_o_stream.html">IOStream</a>* file);</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> WriteHeader(<a class="code hl_struct" href="struct_assimp_1_1_bitmap_1_1_header.html">Header</a>&amp; header, <a class="code hl_class" href="class_assimp_1_1_i_o_stream.html">IOStream</a>* file);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> WriteDIB(<a class="code hl_struct" href="struct_assimp_1_1_bitmap_1_1_d_i_b.html">DIB</a>&amp; dib, <a class="code hl_class" href="class_assimp_1_1_i_o_stream.html">IOStream</a>* file);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> WriteData(<a class="code hl_struct" href="structai_texture.html">aiTexture</a>* texture, <a class="code hl_class" href="class_assimp_1_1_i_o_stream.html">IOStream</a>* file);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="class_assimp_1_1_bitmap.html#a62c5d3c091161ce0879538bb9a6bb25f">  126</a></span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_assimp_1_1_bitmap.html#a62c5d3c091161ce0879538bb9a6bb25f">WriteHeader</a>(<a class="code hl_struct" href="struct_assimp_1_1_bitmap_1_1_header.html">Header</a>&amp; header, <a class="code hl_class" href="class_assimp_1_1_i_o_stream.html">IOStream</a>* file);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="class_assimp_1_1_bitmap.html#aae94d6e293eb3cd30b351f85d8616a4f">  127</a></span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_assimp_1_1_bitmap.html#aae94d6e293eb3cd30b351f85d8616a4f">WriteDIB</a>(<a class="code hl_struct" href="struct_assimp_1_1_bitmap_1_1_d_i_b.html">DIB</a>&amp; dib, <a class="code hl_class" href="class_assimp_1_1_i_o_stream.html">IOStream</a>* file);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="class_assimp_1_1_bitmap.html#a6b5bfd6a8c3885686d9cdbeacdaf76c5">  128</a></span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_assimp_1_1_bitmap.html#a6b5bfd6a8c3885686d9cdbeacdaf76c5">WriteData</a>(<a class="code hl_struct" href="structai_texture.html">aiTexture</a>* texture, <a class="code hl_class" href="class_assimp_1_1_i_o_stream.html">IOStream</a>* file);</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>};</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#endif </span><span class="comment">// AI_BITMAP_H_INC</span></div>
 <div class="ttc" id="aclass_assimp_1_1_bitmap_html_a34622ca38efff2926b77f82186e030ab"><div class="ttname"><a href="class_assimp_1_1_bitmap.html#a34622ca38efff2926b77f82186e030ab">Assimp::Bitmap::Save</a></div><div class="ttdeci">static bool Save(aiTexture *texture, IOStream *file)</div><div class="ttdoc">Will save an aiTexture instance as a bitmap.</div></div>
-<div class="ttc" id="aclass_assimp_1_1_i_o_stream_html"><div class="ttname"><a href="class_assimp_1_1_i_o_stream.html">Assimp::IOStream</a></div><div class="ttdoc">CPP-API: Class to handle file I/O for C++.</div><div class="ttdef"><b>Definition:</b> IOStream.hpp:73</div></div>
-<div class="ttc" id="agroup__gtc__type__precision_html_ga822ca53a9ad412504532838906276a99"><div class="ttname"><a href="group__gtc__type__precision.html#ga822ca53a9ad412504532838906276a99">glm::uint32_t</a></div><div class="ttdeci">uint32 uint32_t</div><div class="ttdef"><b>Definition:</b> fwd.hpp:131</div></div>
-<div class="ttc" id="agroup__gtc__type__precision_html_gab870c0eb6f525b0c8c4716762e0fc3a8"><div class="ttname"><a href="group__gtc__type__precision.html#gab870c0eb6f525b0c8c4716762e0fc3a8">glm::int32_t</a></div><div class="ttdeci">int32 int32_t</div><div class="ttdef"><b>Definition:</b> fwd.hpp:71</div></div>
-<div class="ttc" id="agroup__gtc__type__precision_html_gac4eb4f43cae8129b00086dc234d3b8fc"><div class="ttname"><a href="group__gtc__type__precision.html#gac4eb4f43cae8129b00086dc234d3b8fc">glm::uint16_t</a></div><div class="ttdeci">uint16 uint16_t</div><div class="ttdef"><b>Definition:</b> fwd.hpp:117</div></div>
-<div class="ttc" id="anamespace_assimp_html"><div class="ttname"><a href="namespace_assimp.html">Assimp</a></div><div class="ttdef"><b>Definition:</b> AssertHandler.h:50</div></div>
+<div class="ttc" id="aclass_assimp_1_1_bitmap_html_a62c5d3c091161ce0879538bb9a6bb25f"><div class="ttname"><a href="class_assimp_1_1_bitmap.html#a62c5d3c091161ce0879538bb9a6bb25f">Assimp::Bitmap::WriteHeader</a></div><div class="ttdeci">static void WriteHeader(Header &amp;header, IOStream *file)</div></div>
+<div class="ttc" id="aclass_assimp_1_1_bitmap_html_a6b5bfd6a8c3885686d9cdbeacdaf76c5"><div class="ttname"><a href="class_assimp_1_1_bitmap.html#a6b5bfd6a8c3885686d9cdbeacdaf76c5">Assimp::Bitmap::WriteData</a></div><div class="ttdeci">static void WriteData(aiTexture *texture, IOStream *file)</div></div>
+<div class="ttc" id="aclass_assimp_1_1_bitmap_html_aae94d6e293eb3cd30b351f85d8616a4f"><div class="ttname"><a href="class_assimp_1_1_bitmap.html#aae94d6e293eb3cd30b351f85d8616a4f">Assimp::Bitmap::WriteDIB</a></div><div class="ttdeci">static void WriteDIB(DIB &amp;dib, IOStream *file)</div></div>
+<div class="ttc" id="aclass_assimp_1_1_i_o_stream_html"><div class="ttname"><a href="class_assimp_1_1_i_o_stream.html">Assimp::IOStream</a></div><div class="ttdoc">CPP-API: Class to handle file I/O for C++.</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_i_o_stream_8hpp_source.html#l00069">IOStream.hpp:73</a></div></div>
+<div class="ttc" id="agroup__gtc__type__precision_html_ga822ca53a9ad412504532838906276a99"><div class="ttname"><a href="group__gtc__type__precision.html#ga822ca53a9ad412504532838906276a99">glm::uint32_t</a></div><div class="ttdeci">uint32 uint32_t</div><div class="ttdef"><b>Definition:</b> <a href="fwd_8hpp_source.html#l00131">fwd.hpp:131</a></div></div>
+<div class="ttc" id="agroup__gtc__type__precision_html_gab870c0eb6f525b0c8c4716762e0fc3a8"><div class="ttname"><a href="group__gtc__type__precision.html#gab870c0eb6f525b0c8c4716762e0fc3a8">glm::int32_t</a></div><div class="ttdeci">int32 int32_t</div><div class="ttdef"><b>Definition:</b> <a href="fwd_8hpp_source.html#l00071">fwd.hpp:71</a></div></div>
+<div class="ttc" id="agroup__gtc__type__precision_html_gac4eb4f43cae8129b00086dc234d3b8fc"><div class="ttname"><a href="group__gtc__type__precision.html#gac4eb4f43cae8129b00086dc234d3b8fc">glm::uint16_t</a></div><div class="ttdeci">uint16 uint16_t</div><div class="ttdef"><b>Definition:</b> <a href="fwd_8hpp_source.html#l00117">fwd.hpp:117</a></div></div>
+<div class="ttc" id="ainclude_2assimp_2defs_8h_html_a7d617d307e656cb6ff315ba71ff958d4"><div class="ttname"><a href="include_2assimp_2defs_8h.html#a7d617d307e656cb6ff315ba71ff958d4">ASSIMP_API</a></div><div class="ttdeci">#define ASSIMP_API</div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2defs_8h_source.html#l00163">defs.h:163</a></div></div>
+<div class="ttc" id="anamespace_assimp_html"><div class="ttname"><a href="namespace_assimp.html">Assimp</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_assert_handler_8h_source.html#l00050">AssertHandler.h:50</a></div></div>
 <div class="ttc" id="aout_2install_2x64-_release_2include_2assimp_2defs_8h_html"><div class="ttname"><a href="out_2install_2x64-_release_2include_2assimp_2defs_8h.html">defs.h</a></div><div class="ttdoc">Assimp build configuration setup. See the notes in the comment blocks to find out how to customize yo...</div></div>
-<div class="ttc" id="astruct_assimp_1_1_bitmap_1_1_d_i_b_html"><div class="ttname"><a href="struct_assimp_1_1_bitmap_1_1_d_i_b.html">Assimp::Bitmap::DIB</a></div><div class="ttdef"><b>Definition:</b> Bitmap.h:88</div></div>
-<div class="ttc" id="astruct_assimp_1_1_bitmap_1_1_header_html"><div class="ttname"><a href="struct_assimp_1_1_bitmap_1_1_header.html">Assimp::Bitmap::Header</a></div><div class="ttdef"><b>Definition:</b> Bitmap.h:72</div></div>
-<div class="ttc" id="astructai_texture_html"><div class="ttname"><a href="structai_texture.html">aiTexture</a></div><div class="ttdef"><b>Definition:</b> texture.h:132</div></div>
+<div class="ttc" id="astruct_assimp_1_1_bitmap_1_1_d_i_b_html"><div class="ttname"><a href="struct_assimp_1_1_bitmap_1_1_d_i_b.html">Assimp::Bitmap::DIB</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_bitmap_8h_source.html#l00088">Bitmap.h:88</a></div></div>
+<div class="ttc" id="astruct_assimp_1_1_bitmap_1_1_header_html"><div class="ttname"><a href="struct_assimp_1_1_bitmap_1_1_header.html">Assimp::Bitmap::Header</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2_bitmap_8h_source.html#l00072">Bitmap.h:72</a></div></div>
+<div class="ttc" id="astructai_texture_html"><div class="ttname"><a href="structai_texture.html">aiTexture</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2assimp_2texture_8h_source.html#l00132">texture.h:132</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
