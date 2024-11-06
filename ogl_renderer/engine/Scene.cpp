@@ -13,7 +13,7 @@ void Scene::AddToScene(Light* light) {
 }
 void Scene::FreeAllMeshes() {
 	for (int i = 0; i < gameObjects.size(); i++) {
-		FreeMesh(gameObjects[i]->mesh);
+		FreeMesh(*(gameObjects[i]->mesh));
 	}
 }
 void Scene::RenderAll() {

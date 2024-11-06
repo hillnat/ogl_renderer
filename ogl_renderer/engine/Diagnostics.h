@@ -1,4 +1,6 @@
 #pragma once
+#include "glm/ext.hpp" //GLM provides us with matrices and math functions
+
 namespace Diagnostics
 {
 	/// <summary>
@@ -9,5 +11,7 @@ namespace Diagnostics
 	/// Checks for OpenGL error codes, and prints them
 	/// </summary>
 	void CheckGLError();
+
+	void LogVec3(glm::vec3 vector);
 };
 

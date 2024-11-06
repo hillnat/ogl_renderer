@@ -9,18 +9,18 @@ class GameObject
 public:
 	GameObject(const char* name, const char* meshPath, Material* material) {
 		this->name = name;
-		this->mesh = MeshImporter::ImportFromFile(meshPath);
+		this->mesh = &MeshImporter::ImportFromFile(meshPath);
 		this->transform = Transform();
 		this->material = material;
 	}
-	GameObject(const char* name, const Mesh mesh, Material* material)
+	GameObject(const char* name, Mesh* mesh, Material* material)
 	{
 		this->name = name;
 		this->mesh = mesh;
 		this->transform = Transform();
 		this->material = material;
 	}
-	GameObject(const Mesh mesh, Material* material)
+	GameObject(Mesh* mesh, Material* material)
 	{
 		this->name = "GameObject";
 		this->mesh = mesh;
@@ -30,7 +30,7 @@ public:
 	GameObject(const char* meshPath, Material* material)
 	{
 		this->name = "GameObject";
-		this->mesh = MeshImporter::ImportFromFile(meshPath);
+		this->mesh = &MeshImporter::ImportFromFile(meshPath);
 		this->transform = Transform();
 		this->material = material;
 	}
@@ -39,7 +39,7 @@ public:
 	}
 	const char* name;
 	Transform transform = Transform();
-	Mesh mesh;
+	Mesh* mesh;
 	Material* material;
 };
 

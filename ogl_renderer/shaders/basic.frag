@@ -18,5 +18,6 @@ layout (location = 7) uniform vec3 cameraPos;
 
 void main()
 {
-    fragColor = clamp(vPos * vCol, vec3(0,0,0,0), vec3(1,1,1,1));
+    //fragColor = clamp(vPos * vCol, vec3(0,0,0,0), vec3(1,1,1,1));
+    fragColor = vPos;
 }

@@ -1,6 +1,7 @@
 #include "diagnostics.h"
 #include <iostream>
 #include "glew/glew.h"
+#include "glm/ext.hpp" //GLM provides us with matrices and math functions
 using namespace std;
 namespace Diagnostics {
 	void LogHardware() {
@@ -15,5 +16,8 @@ namespace Diagnostics {
 		while ((err = glGetError()) != GL_NO_ERROR) {
 			std::cout << err << std::endl;
 		}
+	}
+	void LogVec3(glm::vec3 vector) {
+		cout  << " | X : " << vector.x << " Y : " << vector.y << " Z : " << vector.z << endl;
 	}
 }

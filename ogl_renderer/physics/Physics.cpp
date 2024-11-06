@@ -1,7 +1,7 @@
 #include "Physics.h"
-
+#include "../engine/Diagnostics.h"
 void Physics::AddColRbPair(ColRbPair* crp) {
-	colRbPairs.push_back(crp);
+ 	colRbPairs.push_back(crp);
 }
 void Physics::UpdateAllBodies(float fixedDeltaTime) {
 	//Tell RBs to apply their velocity
@@ -15,25 +15,46 @@ void Physics::UpdateAllBodies(float fixedDeltaTime) {
 	for (int i = 0; i < colRbPairs.size()-1; i++) {//Loop with logic to avoid double checking
 
 		Collider* colA = colRbPairs[i]->attachedCollider;
-		if (colA == nullptr) { continue; }
+		Rigidbody* rbA = colRbPairs[i]->attachedRigidbody;
+		if (colA == nullptr) { std::cout << "ColRbPair was missing Collider!" << std::endl; continue; }
+		if (rbA == nullptr) { std::cout << "ColRbPair was missing Rigidbody!" << std::endl; continue; }
 
 		for (int k = i+1; k < colRbPairs.size(); k++) {
 			if (i == k) { continue; }//Cant collide with self
 
 			Collider* colB = colRbPairs[k]->attachedCollider;
-			if (colB == nullptr) { continue; }
+			Rigidbody* rbB = colRbPairs[k]->attachedRigidbody;
+			if (colB == nullptr) { std::cout << "ColRbPair was missing Collider!" << std::endl; continue; }
+			if (rbB == nullptr) { std::cout << "ColRbPair was missing Rigidbody!" << std::endl; continue; }
 			
+
 			switch (colA->colliderShape) {
 				case ColliderShapes::Sphere:
 					switch (colB->colliderShape) {
 						case ColliderShapes::Sphere:
-							if (OverlapSphereSphere(colRbPairs[i]->attachedRigidbody->attachedTransform->GetPosition(), 0.5f, colRbPairs[k]->attachedRigidbody->attachedTransform->GetPosition(), 0.5f)) {
-								ResolveSphereSphere(colRbPairs[i]->attachedRigidbody, colRbPairs[k]->attachedRigidbody);
+							if (OverlapSphereSphere(rbA->attachedTransform->GetPosition(), 0.5f, rbB->attachedTransform->GetPosition(), 0.5f)) {
+								ResolveSphereSphere(rbA, rbB);
 							}
 							break;
 						case ColliderShapes::Plane:
-							if (OverlapSpherePlane(colRbPairs[i]->attachedRigidbody->attachedTransform->GetPosition(), 0.5f, colRbPairs[k]->attachedRigidbody->attachedTransform->GetPosition(), colRbPairs[k]->attachedRigidbody->attachedTransform->Up(), *colRbPairs[i]->attachedRigidbody)) {
-								ResolveSpherePlane(colRbPairs[i]->attachedRigidbody, colRbPairs[k]->attachedRigidbody);
+							if (OverlapSpherePlane(rbA->attachedTransform->GetPosition(), 0.5f, rbB->attachedTransform->GetPosition(), rbB->attachedTransform->Up(), *rbA)) {
+								ResolveSpherePlane(rbA, rbB);
+							}
+							break;
+						default:
+							break;
+					}
+					break;
+				case ColliderShapes::Plane:
+					switch (colB->colliderShape) {
+						case ColliderShapes::Sphere:
+							if (OverlapSphereSphere(rbB->attachedTransform->GetPosition(), 0.5f, rbA->attachedTransform->GetPosition(), 0.5f)) {
+								ResolveSphereSphere(rbB, rbA);
+							}
+							break;
+						case ColliderShapes::Plane:
+							if (OverlapSpherePlane(rbB->attachedTransform->GetPosition(), 0.5f, rbA->attachedTransform->GetPosition(), rbA->attachedTransform->Up(), *rbB)) {
+								ResolveSpherePlane(rbB, rbA);
 							}
 							break;
 						default:
@@ -81,7 +102,7 @@ bool Physics::OverlapSpherePlane(const vec3 spherePos, const float sphereRadius,
 		vec3 oldPos = rbToDepenetrate.attachedTransform->GetPosition();
 		rbToDepenetrate.attachedTransform->TranslateGlobal(planeNormal * penAmount);
 		vec3 newPos = rbToDepenetrate.attachedTransform->GetPosition();
-		std::cout << "Depenetrated | X : " << abs(oldPos.x - newPos.x) << " Y : " << abs(oldPos.y - newPos.y) << " Z : " << abs(oldPos.z - newPos.z) << std::endl;
+		//std::cout << "Depenetrated | X : " << abs(oldPos.x - newPos.x) << " Y : " << abs(oldPos.y - newPos.y) << " Z : " << abs(oldPos.z - newPos.z) << std::endl;
 	}
 	return isPenetrating;
 }
@@ -115,17 +136,32 @@ void Physics::ResolveSphereSphere(Rigidbody* sphereA, Rigidbody* sphereB) {
 }
 //Resolve collision between an assumed sphere RB, and a assumed plane RB
 void Physics::ResolveSpherePlane(Rigidbody* sphere, Rigidbody* plane) {
-	if (sphere->isStatic || plane->isStatic) {//If either are static, set flip vel of whichever is not static
+
+	vec3 spherePos = sphere->attachedTransform->GetPosition();
+	vec3 planeNormal = plane->attachedTransform->Up();
+	float spherePlaneDot = glm::dot(spherePos, planeNormal);
+	vec3 idealPlanePoint = spherePos - planeNormal * spherePlaneDot;
+	std::cout << "Sphere Pos" << std::endl;
+	Diagnostics::LogVec3(spherePos);
+	std::cout << "Ideal Plane Point" << std::endl;
+	Diagnostics::LogVec3(idealPlanePoint);
+	vec3 relVel = sphere->velocity - plane->velocity;
+	vec3 colNorm = normalize(spherePos-idealPlanePoint);
+	//If a value of the normal is 0 , we dont want to nullify velocity in that direction, rather leave it unchanged
+	if (colNorm.x == 0) { colNorm.x = 1; }
+	if (colNorm.y == 0) { colNorm.y = 1; }
+	if (colNorm.z == 0) { colNorm.z = 1; }
+	//Flip velocity along the normal
+	if (sphere->isStatic || plane->isStatic) {
 		if (!sphere->isStatic) {
-			sphere->velocity *= -1.F;
+			sphere->velocity *= colNorm;
 		}if (!plane->isStatic) {
-			plane->velocity *= -1.F;
+			plane->velocity *= colNorm;
 		}
+		std::cout << "Collision Normal" << std::endl;
+		Diagnostics::LogVec3(colNorm);
 		return;
 	}
-	vec3 relVel = sphere->velocity - plane->velocity;
-	vec3 colNorm = normalize(sphere->attachedTransform->GetPosition() - plane->attachedTransform->GetPosition());
-
 	float scaledMassSum = ((1.f / sphere->mass) + (1.f / plane->mass));
 	float joules = dot(2.f * relVel, colNorm) / dot(colNorm, colNorm * scaledMassSum);
 	sphere->AddForce(-joules * colNorm);

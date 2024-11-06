@@ -21,38 +21,39 @@ int main(){
 	Context* context = new Context();
 	context->Initialize();
 	// Shaders / Textures / Materials Setup
-	Mesh sphereMesh = Primitives::MakeSphere();
-	Shader mainShader = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
-	Texture mainTexture = LoadTexture("textures/marble.png");
-	Material mainMaterial = Material(&mainShader);
-	mainMaterial.SetTexture(&mainTexture);
+	Mesh* sphereMesh = &Primitives::MakeSphere();
+	Shader* mainShader = &LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
+	Texture* mainTexture = &LoadTexture("textures/marble.png");
+	Material* mainMaterial = new Material(mainShader);
+	mainMaterial->SetTexture(mainTexture);
 	// Object Setup
-	GameObject obj0(sphereMesh, &mainMaterial);
-	GameObject planeObj(Primitives::MakePlane(), &mainMaterial);
+	GameObject* obj0 = new GameObject(sphereMesh, mainMaterial);
+	GameObject* planeObj = new GameObject(&Primitives::MakePlane(), mainMaterial);
 	//Make our camera
 	Camera* mainCamera = new Camera;
 	//Move stuff around
 	mainCamera->cameraTransform.TranslateLocal(vec3(0, 3, -9));
-	obj0.transform.TranslateLocal(vec3(0,5,0));
-	planeObj.transform.TranslateLocal(vec3(0,-5,0));
-	planeObj.transform.ChangeScale(vec3(5, 1, 5));
+	obj0->transform.TranslateLocal(vec3(0,5,0));
+	//obj0.transform.Rotate(vec3(1,0,0),35);
+	planeObj->transform.TranslateLocal(vec3(0,-5,0));
+	planeObj->transform.ChangeScale(vec3(500, 1, 500));
 	//Light
 	Light testDirLight(vec3(1, 1, 1) / 2.f, vec3(-0.5f, 1, -0.5f));
 	//Physics Setup
 	Physics* phys = new Physics();
 	//Each phys object gets a collider, rigidbody, and a colRbPair containing info on both
-	Collider col0 = Collider(ColliderShapes::Sphere);
-	Rigidbody rb0 = Rigidbody(&obj0.transform, vec3(0, 0, 0), TESTGRAVITYSCALE, false, 1.f);
-	ColRbPair crp0 = ColRbPair(&col0, &rb0);
-	phys->AddColRbPair(&crp0);
-	Collider planeCol = Collider(ColliderShapes::Plane);
-	Rigidbody planeRb = Rigidbody(&planeObj.transform, vec3(0, 0, 0), 0.f, true, 1.f);
-	ColRbPair planeCrp = ColRbPair(&planeCol, &planeRb);
-	phys->AddColRbPair(&planeCrp);
+	Collider* col0 = new Collider(ColliderShapes::Sphere);
+	Rigidbody* rb0 = new Rigidbody(&obj0->transform, vec3(1, 0, 1), vec3(360,0,0), TESTGRAVITYSCALE, false, 1.f);
+	ColRbPair* crp0 = new ColRbPair(col0, rb0);
+	phys->AddColRbPair(crp0);
+	Collider* planeCol = new Collider(ColliderShapes::Plane);
+	Rigidbody* planeRb = new Rigidbody(&planeObj->transform, vec3(0, 0, 0), 0.f, true, 1.f);
+	ColRbPair* planeCrp = new ColRbPair(planeCol, planeRb);
+	phys->AddColRbPair(planeCrp);
 	//Scene setup
 	Scene* scene = new Scene();
-	scene->AddToScene(&obj0);
-	scene->AddToScene(&planeObj);
+	scene->AddToScene(obj0);
+	scene->AddToScene(planeObj);
 	scene->AddToScene(mainCamera);
 	scene->AddToScene(&testDirLight);
 	//Time setup
@@ -61,9 +62,9 @@ int main(){
 	const float fixedTimeStepsPerSec = 500;
 	const float fixedDeltaTime = 1.f / fixedTimeStepsPerSec;
 	//Testing stuff
-	float moveSpeed = 15.f;
+	float moveSpeed = 30.f;
 	float spinSpeed = 0;
-	float sensitivity = 30.f;
+	float sensitivity = 100.f;
 	float lastSpawnTime = 0;
 	Diagnostics::LogHardware();
 	std::cout << "PRESS SPACE TO SPAWN BALLS" << std::endl;
@@ -92,8 +93,8 @@ int main(){
 		else if (context->S_Pressed())	{ mainCamera->cameraTransform.TranslateLocal(vec3(0, 0, -1) * deltaTime * moveSpeed); }
 		if (context->D_Pressed())		{ mainCamera->cameraTransform.TranslateLocal(vec3(-1, 0, 0) * deltaTime * moveSpeed); }
 		else if (context->A_Pressed())	{ mainCamera->cameraTransform.TranslateLocal(vec3(1, 0, 0) * deltaTime * moveSpeed); }
-		if (context->E_Pressed()) { mainCamera->cameraTransform.TranslateLocal(vec3(0, -1, 0) * deltaTime * moveSpeed); }
-		else if (context->Q_Pressed()) { mainCamera->cameraTransform.TranslateLocal(vec3(0, 1, 0) * deltaTime * moveSpeed); }
+		if (context->E_Pressed()) { mainCamera->cameraTransform.TranslateLocal(vec3(0, 1, 0) * deltaTime * moveSpeed); }
+		else if (context->Q_Pressed()) { mainCamera->cameraTransform.TranslateLocal(vec3(0, -1, 0) * deltaTime * moveSpeed); }
 
 		if (context->UpArrow_Pressed()) { sensitivity += 10.f; }
 		else if (context->DownArrow_Pressed()) { sensitivity -= 10.f; }
@@ -103,11 +104,11 @@ int main(){
 		if (context->Space_Pressed() && (currentTime > lastSpawnTime + 0.1f)) {
 			lastSpawnTime = currentTime;
 
-			GameObject* newObj = new GameObject(sphereMesh, &mainMaterial);
+			GameObject* newObj = new GameObject(sphereMesh, mainMaterial);
 			newObj->transform.TranslateGlobal(mainCamera->cameraTransform.GetPosition());
 			//newObj->transform.ChangeScale(vec3(0.1f, 0.1f, 0.1f));
 			Collider* newCol = new Collider(ColliderShapes::Sphere);
-			Rigidbody* newRb = new Rigidbody(&newObj->transform, mainCamera->cameraTransform.Forward()*75.f, 0.01f, false, 1.f);
+			Rigidbody* newRb = new Rigidbody(&newObj->transform, mainCamera->cameraTransform.Forward()*75.f, vec3(0,0,0), 0.01f, false, 1.f);
 			ColRbPair* newCrp = new ColRbPair(newCol, newRb);
 			phys->AddColRbPair(newCrp);
 			scene->AddToScene(newObj);
@@ -123,7 +124,7 @@ int main(){
 	delete(phys);
 	delete(mainCamera);
 	//Refactor freeing of mats and textures
-	FreeTexture(mainTexture);
+	FreeTexture(*mainTexture);
 	context->Terminate();
 	delete(context);
 
