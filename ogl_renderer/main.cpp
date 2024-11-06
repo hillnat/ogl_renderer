@@ -104,12 +104,13 @@ int main(){
 			lastSpawnTime = currentTime;
 
 			GameObject* newObj = new GameObject(sphereMesh, &mainMaterial);
-			scene->AddToScene(newObj);
-			newObj->transform.TranslateLocal(vec3(0, 10, 0));
+			newObj->transform.TranslateGlobal(mainCamera->cameraTransform.GetPosition());
+			//newObj->transform.ChangeScale(vec3(0.1f, 0.1f, 0.1f));
 			Collider* newCol = new Collider(ColliderShapes::Sphere);
-			Rigidbody* newRb = new Rigidbody(&newObj->transform, vec3(0, 50, 0), TESTGRAVITYSCALE, false, 1.f);
+			Rigidbody* newRb = new Rigidbody(&newObj->transform, mainCamera->cameraTransform.Forward()*75.f, 0.01f, false, 1.f);
 			ColRbPair* newCrp = new ColRbPair(newCol, newRb);
 			phys->AddColRbPair(newCrp);
+			scene->AddToScene(newObj);
 		}
 
 		//Draw and error check
