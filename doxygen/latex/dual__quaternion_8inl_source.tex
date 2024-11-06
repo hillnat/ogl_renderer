@@ -1,0 +1,358 @@
+\hypertarget{dual__quaternion_8inl_source}{}\doxysection{dual\+\_\+quaternion.\+inl}
+\label{dual__quaternion_8inl_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/gtx/dual\_quaternion.inl@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/gtx/dual\_quaternion.inl}}
+\mbox{\hyperlink{dual__quaternion_8inl}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00003}00003 \textcolor{preprocessor}{\#include "{}../geometric.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00004}00004 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00006}00006 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00007}00007 \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00008}00008     \textcolor{comment}{// -\/-\/ Component accesses -\/-\/}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00010}00010     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00011}00011     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \textcolor{keyword}{typename} \mbox{\hyperlink{structglm_1_1tdualquat_a89c28385b7088792d4d975098ae972b5}{tdualquat<T, Q>::part\_type}} \& \mbox{\hyperlink{structglm_1_1tdualquat_a3ee9d16c280994cbf002e91a72985100}{tdualquat<T, Q>::operator[]}}(\textcolor{keyword}{typename} \mbox{\hyperlink{structglm_1_1tdualquat_ad9fa4fd7f84d17bebd3efed6b5455d80}{tdualquat<T, Q>::length\_type}} i)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00012}00012     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00013}00013         assert(i >= 0 \&\& i < this-\/>\mbox{\hyperlink{namespaceglm_abcd8538aa95a8963803ec42c2fd654cd}{length}}());}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00014}00014         \textcolor{keywordflow}{return} (\&real)[i];}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00015}00015     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00017}00017     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00018}00018     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \textcolor{keyword}{typename} \mbox{\hyperlink{structglm_1_1tdualquat_a89c28385b7088792d4d975098ae972b5}{tdualquat<T, Q>::part\_type}} \textcolor{keyword}{const}\& \mbox{\hyperlink{structglm_1_1tdualquat_a3ee9d16c280994cbf002e91a72985100}{tdualquat<T, Q>::operator[]}}(\textcolor{keyword}{typename} \mbox{\hyperlink{structglm_1_1tdualquat_ad9fa4fd7f84d17bebd3efed6b5455d80}{tdualquat<T, Q>::length\_type}} i)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00019}00019 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00020}00020         assert(i >= 0 \&\& i < this-\/>\mbox{\hyperlink{namespaceglm_abcd8538aa95a8963803ec42c2fd654cd}{length}}());}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00021}00021         \textcolor{keywordflow}{return} (\&real)[i];}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00022}00022     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00024}00024     \textcolor{comment}{// -\/-\/ Implicit basic constructors -\/-\/}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00026}00026 \textcolor{preprocessor}{\#   if GLM\_CONFIG\_DEFAULTED\_FUNCTIONS == GLM\_DISABLE}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00027}00027         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00028}\mbox{\hyperlink{structglm_1_1tdualquat_adecfa4721943c9ee05005cfb1c31534f}{00028}}         \mbox{\hyperlink{setup_8hpp_a8d46131aebdec5adbbb66521c86d3afe}{GLM\_DEFAULTED\_FUNC\_QUALIFIER}} \mbox{\hyperlink{setup_8hpp_a08b807947b47031d3a511f03f89645ad}{GLM\_CONSTEXPR}} \mbox{\hyperlink{structglm_1_1tdualquat_adecfa4721943c9ee05005cfb1c31534f}{tdualquat<T, Q>::tdualquat}}()}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00029}00029 \textcolor{preprocessor}{\#           if GLM\_CONFIG\_DEFAULTED\_FUNCTIONS != GLM\_DISABLE}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00030}00030             : real(\mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}}())}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00031}00031             , dual(\mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>::wxyz}}(0, 0, 0, 0))}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00032}00032 \textcolor{preprocessor}{\#           endif}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00033}00033         \{\}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00035}00035         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00036}\mbox{\hyperlink{structglm_1_1tdualquat_a979eb056f9f5502f837b2d5c1d0139fe}{00036}}         \mbox{\hyperlink{setup_8hpp_a8d46131aebdec5adbbb66521c86d3afe}{GLM\_DEFAULTED\_FUNC\_QUALIFIER}} \mbox{\hyperlink{setup_8hpp_a08b807947b47031d3a511f03f89645ad}{GLM\_CONSTEXPR}} \mbox{\hyperlink{structglm_1_1tdualquat_adecfa4721943c9ee05005cfb1c31534f}{tdualquat<T, Q>::tdualquat}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& d)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00037}00037             : real(d.real)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00038}00038             , dual(d.dual)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00039}00039         \{\}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00040}00040 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00042}00042     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00043}00043     \textcolor{keyword}{template}<qualifier P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00044}\mbox{\hyperlink{structglm_1_1tdualquat_a9dbf71289809c7b43527c0e881601fbb}{00044}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{setup_8hpp_a08b807947b47031d3a511f03f89645ad}{GLM\_CONSTEXPR}} \mbox{\hyperlink{structglm_1_1tdualquat_adecfa4721943c9ee05005cfb1c31534f}{tdualquat<T, Q>::tdualquat}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, P>}} \textcolor{keyword}{const}\& d)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00045}00045         : real(d.real)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00046}00046         , dual(d.dual)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00047}00047     \{\}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00049}00049     \textcolor{comment}{// -\/-\/ Explicit basic constructors -\/-\/}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00051}00051     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00052}\mbox{\hyperlink{structglm_1_1tdualquat_ae28e1738cccb33abd969f010d565a015}{00052}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{setup_8hpp_a08b807947b47031d3a511f03f89645ad}{GLM\_CONSTEXPR}} \mbox{\hyperlink{structglm_1_1tdualquat_adecfa4721943c9ee05005cfb1c31534f}{tdualquat<T, Q>::tdualquat}}(\mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}} \textcolor{keyword}{const}\& r)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00053}00053         : real(r), dual(\mbox{\hyperlink{structglm_1_1qua}{qua}}<T, Q>::\mbox{\hyperlink{group__gtx__vec__swizzle_ga7bf3e0a2cc148e392156051e1e365302}{wxyz}}(0, 0, 0, 0))}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00054}00054     \{\}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00056}00056     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00057}\mbox{\hyperlink{structglm_1_1tdualquat_af948cc33935613be6f020e60899fd0f0}{00057}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{setup_8hpp_a08b807947b47031d3a511f03f89645ad}{GLM\_CONSTEXPR}} \mbox{\hyperlink{structglm_1_1tdualquat_adecfa4721943c9ee05005cfb1c31534f}{tdualquat<T, Q>::tdualquat}}(\mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}} \textcolor{keyword}{const}\& q, \mbox{\hyperlink{structglm_1_1vec}{vec<3, T, Q>}} \textcolor{keyword}{const}\& p)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00058}00058         : real(q), dual(\mbox{\hyperlink{structglm_1_1qua}{qua}}<T, Q>::\mbox{\hyperlink{group__gtx__vec__swizzle_ga7bf3e0a2cc148e392156051e1e365302}{wxyz}}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00059}00059             T(-\/0.5) * ( p.x*q.x + p.y*q.y + p.z*q.z),}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00060}00060             T(+0.5) * ( p.x*q.w + p.y*q.z -\/ p.z*q.y),}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00061}00061             T(+0.5) * (-\/p.x*q.z + p.y*q.w + p.z*q.x),}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00062}00062             T(+0.5) * ( p.x*q.y -\/ p.y*q.x + p.z*q.w)))}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00063}00063     \{\}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00065}00065     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00066}\mbox{\hyperlink{structglm_1_1tdualquat_a4bedb9eb56d590e3cae67db9912dc1b4}{00066}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{setup_8hpp_a08b807947b47031d3a511f03f89645ad}{GLM\_CONSTEXPR}} \mbox{\hyperlink{structglm_1_1tdualquat_adecfa4721943c9ee05005cfb1c31534f}{tdualquat<T, Q>::tdualquat}}(\mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}} \textcolor{keyword}{const}\& r, \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}} \textcolor{keyword}{const}\& d)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00067}00067         : real(r), dual(d)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00068}00068     \{\}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00070}00070     \textcolor{comment}{// -\/-\/ Conversion constructors -\/-\/}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00072}00072     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00073}00073     \textcolor{keyword}{template}<\textcolor{keyword}{typename} U, qualifier P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00074}\mbox{\hyperlink{structglm_1_1tdualquat_a00f0899c1213aa991a65dfaf8d15fba5}{00074}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{setup_8hpp_a08b807947b47031d3a511f03f89645ad}{GLM\_CONSTEXPR}} \mbox{\hyperlink{structglm_1_1tdualquat_adecfa4721943c9ee05005cfb1c31534f}{tdualquat<T, Q>::tdualquat}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<U, P>}} \textcolor{keyword}{const}\& q)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00075}00075         : real(q.real)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00076}00076         , dual(q.dual)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00077}00077     \{\}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00079}00079     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00080}\mbox{\hyperlink{structglm_1_1tdualquat_a778d8e41f36aab01c85b6bcdbfb1ce85}{00080}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{setup_8hpp_a08b807947b47031d3a511f03f89645ad}{GLM\_CONSTEXPR}} \mbox{\hyperlink{structglm_1_1tdualquat_adecfa4721943c9ee05005cfb1c31534f}{tdualquat<T, Q>::tdualquat}}(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 4, T, Q>}} \textcolor{keyword}{const}\& m)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00081}00081     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00082}00082         *\textcolor{keyword}{this} = \mbox{\hyperlink{group__gtx__dual__quaternion_ga752ed38a7e05cea2cd8aa5936f7187dc}{dualquat\_cast}}(m);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00083}00083     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00085}00085     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00086}\mbox{\hyperlink{structglm_1_1tdualquat_aa884d0292d286e7cac54809c19c12a5f}{00086}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{setup_8hpp_a08b807947b47031d3a511f03f89645ad}{GLM\_CONSTEXPR}} \mbox{\hyperlink{structglm_1_1tdualquat_adecfa4721943c9ee05005cfb1c31534f}{tdualquat<T, Q>::tdualquat}}(\mbox{\hyperlink{structglm_1_1mat}{mat<3, 4, T, Q>}} \textcolor{keyword}{const}\& m)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00087}00087     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00088}00088         *\textcolor{keyword}{this} = \mbox{\hyperlink{group__gtx__dual__quaternion_ga752ed38a7e05cea2cd8aa5936f7187dc}{dualquat\_cast}}(m);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00089}00089     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00091}00091     \textcolor{comment}{// -\/-\/ Unary arithmetic operators -\/-\/}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00093}00093 \textcolor{preprocessor}{\#   if GLM\_CONFIG\_DEFAULTED\_FUNCTIONS == GLM\_DISABLE}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00094}00094         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00095}\mbox{\hyperlink{structglm_1_1tdualquat_ad99fa9a81828db1a9bc04702a2c1209c}{00095}}         \mbox{\hyperlink{setup_8hpp_a8d46131aebdec5adbbb66521c86d3afe}{GLM\_DEFAULTED\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \& \mbox{\hyperlink{structglm_1_1tdualquat_ad99fa9a81828db1a9bc04702a2c1209c}{tdualquat<T, Q>::operator=}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00096}00096         \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00097}00097             this-\/>real = q.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00098}00098             this-\/>dual = q.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00099}00099             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00100}00100         \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00101}00101 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00103}00103     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00104}00104     \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00105}\mbox{\hyperlink{structglm_1_1tdualquat_a62dc40b258f3bffcf8c183a64e1ed56a}{00105}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \& \mbox{\hyperlink{structglm_1_1tdualquat_ad99fa9a81828db1a9bc04702a2c1209c}{tdualquat<T, Q>::operator=}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<U, Q>}} \textcolor{keyword}{const}\& q)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00106}00106     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00107}00107         this-\/>real = q.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00108}00108         this-\/>dual = q.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00109}00109         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00110}00110     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00112}00112     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00113}00113     \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00114}\mbox{\hyperlink{structglm_1_1tdualquat_aece3d7993a997f0c063a410cc46de7e3}{00114}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \& \mbox{\hyperlink{structglm_1_1tdualquat_a45843faf481a26194383d771e3becd8d}{tdualquat<T, Q>::operator*=}}(U s)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00115}00115     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00116}00116         this-\/>real *= \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(s);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00117}00117         this-\/>dual *= \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(s);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00118}00118         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00119}00119     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00121}00121     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00122}00122     \textcolor{keyword}{template}<\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00123}\mbox{\hyperlink{structglm_1_1tdualquat_a72dbb0cbc46b5cc4c5d8824e14916eb8}{00123}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \& \mbox{\hyperlink{structglm_1_1tdualquat_aad7d359430e9aaaa67fb221ee48f9194}{tdualquat<T, Q>::operator/=}}(U s)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00124}00124     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00125}00125         this-\/>real /= \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(s);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00126}00126         this-\/>dual /= \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(s);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00127}00127         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00128}00128     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00130}00130     \textcolor{comment}{// -\/-\/ Unary bit operators -\/-\/}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00132}00132     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00133}\mbox{\hyperlink{group__gtx__dual__quaternion_gab46d6dc0b98dde7ae3b0435b4d3943bf}{00133}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \mbox{\hyperlink{namespaceglm_a809ba0dcacd43e527e0e61df2f5d1a30}{operator+}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00134}00134     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00135}00135         \textcolor{keywordflow}{return} q;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00136}00136     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00138}00138     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00139}\mbox{\hyperlink{group__gtx__dual__quaternion_gaee3fe69a30659803ee54ed25e9475e88}{00139}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \mbox{\hyperlink{namespaceglm_a1dfbbd88a1a43e04673684ab46d94534}{operator-\/}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00140}00140     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00141}00141         \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}}(-\/q.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}, -\/q.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00142}00142     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00144}00144     \textcolor{comment}{// -\/-\/ Binary operators -\/-\/}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00146}00146     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00147}\mbox{\hyperlink{group__gtx__dual__quaternion_ga52cdf9120c1d187f4e23e607e838d923}{00147}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \mbox{\hyperlink{namespaceglm_a809ba0dcacd43e527e0e61df2f5d1a30}{operator+}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& p)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00148}00148     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00149}00149         \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}}(q.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}} + p.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}},q.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}} + p.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00150}00150     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00151}00151 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00152}00152     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00153}\mbox{\hyperlink{group__gtx__dual__quaternion_gaa0d91bdb254fd8fe2df044129799cd09}{00153}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \mbox{\hyperlink{namespaceglm_a059eb05d5d67f9f3482d905a80899bc6}{operator*}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& p, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& o)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00154}00154     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00155}00155         \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}}(p.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}} * o.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}},p.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}} * o.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}} + p.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}} * o.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00156}00156     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00158}00158     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00159}\mbox{\hyperlink{group__gtx__dual__quaternion_ga0f9b810dd4632a6237bd0cf39ae4ebd6}{00159}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1vec}{vec<3, T, Q>}} \mbox{\hyperlink{namespaceglm_a059eb05d5d67f9f3482d905a80899bc6}{operator*}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q, \mbox{\hyperlink{structglm_1_1vec}{vec<3, T, Q>}} \textcolor{keyword}{const}\& v)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00160}00160     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00161}00161         \mbox{\hyperlink{structglm_1_1vec}{vec<3, T, Q>}} \textcolor{keyword}{const} real\_v3(q.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.x,q.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.y,q.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.z);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00162}00162         \mbox{\hyperlink{structglm_1_1vec}{vec<3, T, Q>}} \textcolor{keyword}{const} dual\_v3(q.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.x,q.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.y,q.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.z);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00163}00163         \textcolor{keywordflow}{return} (\mbox{\hyperlink{group__core__func__geometric_ga1882f52ee88a161ed86dea9905a6da91}{cross}}(real\_v3, \mbox{\hyperlink{group__core__func__geometric_ga1882f52ee88a161ed86dea9905a6da91}{cross}}(real\_v3,v) + v * q.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.w + dual\_v3) + dual\_v3 * q.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.w -\/ real\_v3 * q.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.w) * T(2) + v;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00164}00164     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00166}00166     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00167}\mbox{\hyperlink{group__gtx__dual__quaternion_gafbb8c7fbab45ab4b0ba834c4fec36899}{00167}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1vec}{vec<3, T, Q>}} \mbox{\hyperlink{namespaceglm_a059eb05d5d67f9f3482d905a80899bc6}{operator*}}(\mbox{\hyperlink{structglm_1_1vec}{vec<3, T, Q>}} \textcolor{keyword}{const}\& v, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00168}00168     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00169}00169         \textcolor{keywordflow}{return} \mbox{\hyperlink{group__core__func__matrix_gace61e11fc177491beeca0c6971e2f3fc}{glm::inverse}}(q) * v;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00170}00170     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00171}00171 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00172}00172     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00173}\mbox{\hyperlink{group__gtx__dual__quaternion_gaa86ce0c9df34f822fec9293fededc1d1}{00173}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1vec}{vec<4, T, Q>}} \mbox{\hyperlink{namespaceglm_a059eb05d5d67f9f3482d905a80899bc6}{operator*}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q, \mbox{\hyperlink{structglm_1_1vec}{vec<4, T, Q>}} \textcolor{keyword}{const}\& v)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00174}00174     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00175}00175         \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1vec}{vec<4, T, Q>}}(q * \mbox{\hyperlink{structglm_1_1vec}{vec<3, T, Q>}}(v), v.w);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00176}00176     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00177}00177 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00178}00178     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00179}\mbox{\hyperlink{group__gtx__dual__quaternion_gaae633eef518cdd7b110aa315df3a75eb}{00179}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1vec}{vec<4, T, Q>}} \mbox{\hyperlink{namespaceglm_a059eb05d5d67f9f3482d905a80899bc6}{operator*}}(\mbox{\hyperlink{structglm_1_1vec}{vec<4, T, Q>}} \textcolor{keyword}{const}\& v, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00180}00180     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00181}00181         \textcolor{keywordflow}{return} \mbox{\hyperlink{group__core__func__matrix_gace61e11fc177491beeca0c6971e2f3fc}{glm::inverse}}(q) * v;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00182}00182     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00183}00183 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00184}00184     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00185}\mbox{\hyperlink{group__gtx__dual__quaternion_ga48ecbaf8884199baf0780e59bbe67d83}{00185}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \mbox{\hyperlink{namespaceglm_a059eb05d5d67f9f3482d905a80899bc6}{operator*}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q, T \textcolor{keyword}{const}\& s)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00186}00186     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00187}00187         \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}}(q.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}} * s, q.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}} * s);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00188}00188     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00189}00189 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00190}00190     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00191}\mbox{\hyperlink{group__gtx__dual__quaternion_ga018fe9f1ad19040338c576260e7b7574}{00191}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \mbox{\hyperlink{namespaceglm_a059eb05d5d67f9f3482d905a80899bc6}{operator*}}(T \textcolor{keyword}{const}\& s, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00192}00192     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00193}00193         \textcolor{keywordflow}{return} q * s;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00194}00194     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00195}00195 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00196}00196     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00197}\mbox{\hyperlink{group__gtx__dual__quaternion_ga17ce17ed970043442772a579caa39476}{00197}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \mbox{\hyperlink{namespaceglm_ac9b148d6f97e69b28cad6be0cb041915}{operator/}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q, T \textcolor{keyword}{const}\& s)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00198}00198     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00199}00199         \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}}(q.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}} / s, q.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}} / s);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00200}00200     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00201}00201 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00202}00202     \textcolor{comment}{// -\/-\/ Boolean operators -\/-\/}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00203}00203 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00204}00204     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00205}\mbox{\hyperlink{group__gtx__dual__quaternion_ga82faf668287e9ca3c9751d873a85970d}{00205}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceglm_a3a1034521aa2b584602552cfde969df4}{operator==}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q1, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q2)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00206}00206     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00207}00207         \textcolor{keywordflow}{return} (q1.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}} == q2.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}) \&\& (q1.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}} == q2.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00208}00208     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00209}00209 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00210}00210     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00211}\mbox{\hyperlink{group__gtx__dual__quaternion_ga41964adca31c6e6b52f1367104d15646}{00211}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceglm_a48b18d1e2196ce32172d4ee26f02a502}{operator!=}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q1, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q2)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00212}00212     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00213}00213         \textcolor{keywordflow}{return} (q1.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}} != q2.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}) || (q1.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}} != q2.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00214}00214     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00215}00215 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00216}00216     \textcolor{comment}{// -\/-\/ Operations -\/-\/}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00217}00217 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00218}00218     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00219}\mbox{\hyperlink{group__gtx__dual__quaternion_ga41273c54a79788b6a4a5063f557921e4}{00219}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \mbox{\hyperlink{group__gtx__dual__quaternion_ga41273c54a79788b6a4a5063f557921e4}{dual\_quat\_identity}}()}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00220}00220     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00221}00221         \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00222}00222             \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>::wxyz}}(\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1), \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0), \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0), \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0)),}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00223}00223             \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>::wxyz}}(\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0), \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0), \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0), \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0)));}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00224}00224     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00225}00225 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00226}00226     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00227}\mbox{\hyperlink{group__gtx__dual__quaternion_gaa9b943e6c49ea62724777d61a8931718}{00227}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \mbox{\hyperlink{group__core__func__geometric_ga5c6c1379961d4589035a390856f2d66c}{normalize}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00228}00228     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00229}00229         \textcolor{keywordflow}{return} q / \mbox{\hyperlink{namespaceglm_abcd8538aa95a8963803ec42c2fd654cd}{length}}(q.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00230}00230     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00231}00231 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00232}00232     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00233}\mbox{\hyperlink{group__gtx__dual__quaternion_gaefdc712720645ce7c4fc837e37d902d2}{00233}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \mbox{\hyperlink{group__ext__quaternion__common_ga0c68ffc0d006bd3300865215dcf744c5}{lerp}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& x, \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& y, T \textcolor{keyword}{const}\& a)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00234}00234     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00235}00235         \textcolor{comment}{// Dual Quaternion Linear blend aka DLB:}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00236}00236         \textcolor{comment}{// Lerp is only defined in [0, 1]}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00237}00237         assert(a >= \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0));}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00238}00238         assert(a <= \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1));}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00239}00239         T \textcolor{keyword}{const} k = \mbox{\hyperlink{namespaceglm_aee4f67dd98afd5ecd486c06bbf72211d}{dot}}(x.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}},y.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}) < \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0) ? -\/a : a;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00240}00240         T \textcolor{keyword}{const} \mbox{\hyperlink{group__gtc__constants_ga39c2fb227631ca25894326529bdd1ee5}{one}}(1);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00241}00241         \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}}(x * (\mbox{\hyperlink{group__gtc__constants_ga39c2fb227631ca25894326529bdd1ee5}{one}} -\/ a) + y * k);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00242}00242     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00243}00243 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00244}00244     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00245}\mbox{\hyperlink{group__gtx__dual__quaternion_gaa1e464c3d5cbb905447d6e9bbd1dd808}{00245}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \mbox{\hyperlink{group__core__func__matrix_gace61e11fc177491beeca0c6971e2f3fc}{inverse}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& q)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00246}00246     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00247}00247         \textcolor{keyword}{const} \mbox{\hyperlink{structglm_1_1qua}{glm::qua<T, Q>}} real = \mbox{\hyperlink{group__ext__quaternion__common_ga7aed59d2ff2512afc860b65c80b5a8e0}{conjugate}}(q.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00248}00248         \textcolor{keyword}{const} \mbox{\hyperlink{structglm_1_1qua}{glm::qua<T, Q>}} dual = \mbox{\hyperlink{group__ext__quaternion__common_ga7aed59d2ff2512afc860b65c80b5a8e0}{conjugate}}(q.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00249}00249         \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}}(real, dual + (real * (-\/2.0f * \mbox{\hyperlink{namespaceglm_aee4f67dd98afd5ecd486c06bbf72211d}{dot}}(real,dual))));}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00250}00250     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00251}00251 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00252}00252     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00253}\mbox{\hyperlink{group__gtx__dual__quaternion_ga5a0b3bf8ca6d42e6fbfd590cea3b5795}{00253}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1mat}{mat<2, 4, T, Q>}} \mbox{\hyperlink{group__gtx__dual__quaternion_ga5a0b3bf8ca6d42e6fbfd590cea3b5795}{mat2x4\_cast}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& x)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00254}00254     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00255}00255         \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1mat}{mat<2, 4, T, Q>}}( x[0].x, x[0].y, x[0].z, x[0].w, x[1].x, x[1].y, x[1].z, x[1].w );}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00256}00256     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00257}00257 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00258}00258     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00259}\mbox{\hyperlink{group__gtx__dual__quaternion_gacd7c91027b92e07cc5596145b87027b5}{00259}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1mat}{mat<3, 4, T, Q>}} \mbox{\hyperlink{group__gtx__dual__quaternion_gacd7c91027b92e07cc5596145b87027b5}{mat3x4\_cast}}(\mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \textcolor{keyword}{const}\& x)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00260}00260     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00261}00261         \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}} r = x.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}} / \mbox{\hyperlink{group__gtx__norm_ga8d1789651050adb7024917984b41c3de}{length2}}(x.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00262}00262 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00263}00263         \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}} \textcolor{keyword}{const} rr(r.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} * x.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.w, r.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} * x.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.x, r.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}} * x.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.y, r.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}} * x.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.z);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00264}00264         r *= \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00265}00265 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00266}00266         T \textcolor{keyword}{const} \mbox{\hyperlink{group__gtx__vec__swizzle_ga20eb9ba341770f991e17b0c7b4e8c182}{xy}} = r.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} * x.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.y;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00267}00267         T \textcolor{keyword}{const} \mbox{\hyperlink{group__gtx__vec__swizzle_ga94eea03212ac4d29508f34ba453f4660}{xz}} = r.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} * x.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.z;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00268}00268         T \textcolor{keyword}{const} \mbox{\hyperlink{group__gtx__vec__swizzle_gaa14e7bc6252afd7cff43001facec9fc6}{yz}} = r.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}} * x.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.z;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00269}00269         T \textcolor{keyword}{const} \mbox{\hyperlink{group__gtx__vec__swizzle_gae47ad8a90ef5eeb339da5484a539aa3d}{wx}} = r.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} * x.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.x;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00270}00270         T \textcolor{keyword}{const} \mbox{\hyperlink{group__gtx__vec__swizzle_gae0b2a900228d6ad188ab06b09176e95d}{wy}} = r.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} * x.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.y;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00271}00271         T \textcolor{keyword}{const} \mbox{\hyperlink{group__gtx__vec__swizzle_ga268f049c0a26944a73cda70723003f98}{wz}} = r.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} * x.\mbox{\hyperlink{structglm_1_1tdualquat_a0ff8a104f6134db7fcd6765d6db31a50}{real}}.z;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00272}00272 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00273}00273         \mbox{\hyperlink{structglm_1_1vec}{vec<4, T, Q>}} \textcolor{keyword}{const} a(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00274}00274             rr.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} + rr.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} -\/ rr.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}} -\/ rr.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}},}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00275}00275             \mbox{\hyperlink{group__gtx__vec__swizzle_ga20eb9ba341770f991e17b0c7b4e8c182}{xy}} -\/ \mbox{\hyperlink{group__gtx__vec__swizzle_ga268f049c0a26944a73cda70723003f98}{wz}},}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00276}00276             \mbox{\hyperlink{group__gtx__vec__swizzle_ga94eea03212ac4d29508f34ba453f4660}{xz}} + \mbox{\hyperlink{group__gtx__vec__swizzle_gae0b2a900228d6ad188ab06b09176e95d}{wy}},}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00277}00277             -\/(x.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.w * r.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} -\/ x.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.x * r.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} + x.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.y * r.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}} -\/ x.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.z * r.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}}));}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00278}00278 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00279}00279         \mbox{\hyperlink{structglm_1_1vec}{vec<4, T, Q>}} \textcolor{keyword}{const} b(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00280}00280             \mbox{\hyperlink{group__gtx__vec__swizzle_ga20eb9ba341770f991e17b0c7b4e8c182}{xy}} + \mbox{\hyperlink{group__gtx__vec__swizzle_ga268f049c0a26944a73cda70723003f98}{wz}},}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00281}00281             rr.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} + rr.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}} -\/ rr.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} -\/ rr.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}},}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00282}00282             \mbox{\hyperlink{group__gtx__vec__swizzle_gaa14e7bc6252afd7cff43001facec9fc6}{yz}} -\/ \mbox{\hyperlink{group__gtx__vec__swizzle_gae47ad8a90ef5eeb339da5484a539aa3d}{wx}},}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00283}00283             -\/(x.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.w * r.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}} -\/ x.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.x * r.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}} -\/ x.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.y * r.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} + x.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.z * r.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}}));}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00284}00284 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00285}00285         \mbox{\hyperlink{structglm_1_1vec}{vec<4, T, Q>}} \textcolor{keyword}{const} c(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00286}00286             \mbox{\hyperlink{group__gtx__vec__swizzle_ga94eea03212ac4d29508f34ba453f4660}{xz}} -\/ \mbox{\hyperlink{group__gtx__vec__swizzle_gae0b2a900228d6ad188ab06b09176e95d}{wy}},}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00287}00287             \mbox{\hyperlink{group__gtx__vec__swizzle_gaa14e7bc6252afd7cff43001facec9fc6}{yz}} + \mbox{\hyperlink{group__gtx__vec__swizzle_gae47ad8a90ef5eeb339da5484a539aa3d}{wx}},}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00288}00288             rr.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} + rr.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}} -\/ rr.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} -\/ rr.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}},}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00289}00289             -\/(x.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.w * r.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}} + x.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.x * r.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}} -\/ x.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.y * r.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} -\/ x.\mbox{\hyperlink{structglm_1_1tdualquat_a575a0e3f07a666b7b59d956eb49b4efe}{dual}}.z * r.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}}));}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00290}00290 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00291}00291         \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1mat}{mat<3, 4, T, Q>}}(a, b, c);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00292}00292     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00293}00293 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00294}00294     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00295}\mbox{\hyperlink{group__gtx__dual__quaternion_ga752ed38a7e05cea2cd8aa5936f7187dc}{00295}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \mbox{\hyperlink{group__gtx__dual__quaternion_ga752ed38a7e05cea2cd8aa5936f7187dc}{dualquat\_cast}}(\mbox{\hyperlink{structglm_1_1mat}{mat<2, 4, T, Q>}} \textcolor{keyword}{const}\& x)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00296}00296     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00297}00297         \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00298}00298             \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>::wxyz}}( x[0].w, x[0].x, x[0].y, x[0].z ),}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00299}00299             \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>::wxyz}}( x[1].w, x[1].x, x[1].y, x[1].z ));}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00300}00300     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00301}00301 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00302}00302     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00303}\mbox{\hyperlink{group__gtx__dual__quaternion_gaf0936dbcf46ae51820ba445e2f097ee8}{00303}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}} \mbox{\hyperlink{group__gtx__dual__quaternion_ga752ed38a7e05cea2cd8aa5936f7187dc}{dualquat\_cast}}(\mbox{\hyperlink{structglm_1_1mat}{mat<3, 4, T, Q>}} \textcolor{keyword}{const}\& x)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00304}00304     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00305}00305         \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}} real;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00306}00306 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00307}00307         T \textcolor{keyword}{const} trace = x[0].x + x[1].y + x[2].z;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00308}00308         \textcolor{keywordflow}{if}(trace > \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0))}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00309}00309         \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00310}00310             T \textcolor{keyword}{const} r = \mbox{\hyperlink{group__core__func__exponential_ga1f904e09827e939a56e4158f45ca8ede}{sqrt}}(T(1) + trace);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00311}00311             T \textcolor{keyword}{const} invr = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5) / r;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00312}00312             real.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5) * r;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00313}00313             real.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} = (x[2].y -\/ x[1].z) * invr;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00314}00314             real.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}} = (x[0].z -\/ x[2].x) * invr;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00315}00315             real.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}} = (x[1].x -\/ x[0].y) * invr;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00316}00316         \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00317}00317         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(x[0].x > x[1].y \&\& x[0].x > x[2].z)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00318}00318         \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00319}00319             T \textcolor{keyword}{const} r = \mbox{\hyperlink{group__core__func__exponential_ga1f904e09827e939a56e4158f45ca8ede}{sqrt}}(T(1) + x[0].x -\/ x[1].y -\/ x[2].z);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00320}00320             T \textcolor{keyword}{const} invr = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5) / r;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00321}00321             real.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5)*r;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00322}00322             real.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}} = (x[1].x + x[0].y) * invr;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00323}00323             real.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}} = (x[0].z + x[2].x) * invr;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00324}00324             real.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} = (x[2].y -\/ x[1].z) * invr;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00325}00325         \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00326}00326         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(x[1].y > x[2].z)}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00327}00327         \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00328}00328             T \textcolor{keyword}{const} r = \mbox{\hyperlink{group__core__func__exponential_ga1f904e09827e939a56e4158f45ca8ede}{sqrt}}(T(1) + x[1].y -\/ x[0].x -\/ x[2].z);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00329}00329             T \textcolor{keyword}{const} invr = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5) / r;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00330}00330             real.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} = (x[1].x + x[0].y) * invr;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00331}00331             real.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}} = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5) * r;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00332}00332             real.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}} = (x[2].y + x[1].z) * invr;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00333}00333             real.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} = (x[0].z -\/ x[2].x) * invr;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00334}00334         \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00335}00335         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00336}00336         \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00337}00337             T \textcolor{keyword}{const} r = \mbox{\hyperlink{group__core__func__exponential_ga1f904e09827e939a56e4158f45ca8ede}{sqrt}}(T(1) + x[2].z -\/ x[0].x -\/ x[1].y);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00338}00338             T \textcolor{keyword}{const} invr = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5) / r;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00339}00339             real.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} = (x[0].z + x[2].x) * invr;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00340}00340             real.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}} = (x[2].y + x[1].z) * invr;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00341}00341             real.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}} = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5) * r;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00342}00342             real.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} = (x[1].x -\/ x[0].y) * invr;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00343}00343         \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00344}00344 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00345}00345         \mbox{\hyperlink{structglm_1_1qua}{qua<T, Q>}} dual;}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00346}00346         dual.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} =  \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5) * ( x[0].w * real.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} + x[1].w * real.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}} -\/ x[2].w * real.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00347}00347         dual.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}} =  \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5) * (-\/x[0].w * real.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}} + x[1].w * real.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} + x[2].w * real.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00348}00348         dual.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}} =  \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5) * ( x[0].w * real.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}} -\/ x[1].w * real.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} + x[2].w * real.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00349}00349         dual.\mbox{\hyperlink{structglm_1_1qua_ad8a7f933070e6e4382d9fce4a6efecd6}{w}} = -\/\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5) * ( x[0].w * real.\mbox{\hyperlink{structglm_1_1qua_ae0e0786cb5ef565606ecc3d4d8255fd3}{x}} + x[1].w * real.\mbox{\hyperlink{structglm_1_1qua_a3183bedd482933c6723e6ebcf409e178}{y}} + x[2].w * real.\mbox{\hyperlink{structglm_1_1qua_a751f58e48134d3bd65253a43708a552d}{z}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00350}00350         \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1tdualquat}{tdualquat<T, Q>}}(real, dual);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00351}00351     \}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8inl_source_l00352}00352 \}\textcolor{comment}{//namespace glm}}
+
+\end{DoxyCode}

@@ -1,0 +1,26 @@
+digraph "glm::convertLinearToSRGB"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Terminal,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Terminal,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="glm::convertLinearToSRGB",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="glm::detail::compute\l_rgbToSrgb::call",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structglm_1_1detail_1_1compute__rgb_to_srgb.html#afdd0ede6e9033fbb7bea07bd2291c0d5",tooltip=" "];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="glm::clamp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__core__func__common.html#ga7cd77683da6361e297c56443fc70806d",tooltip=" "];
+  Node3 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="glm::max",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__core__func__common.html#gae02d42887fc5570451f880e3c624b9ac",tooltip=" "];
+  Node3 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="glm::min",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__core__func__common.html#ga6cf8098827054a270ee36b18e30d471d",tooltip=" "];
+  Node2 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="glm::lessThan",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__core__func__vector__relational.html#gaedc3a837f960109afe22ea3f267b9a19",tooltip=" "];
+  Node2 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="glm::mix",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__core__func__common.html#ga6b6e0c7ecb4a5b78f929566355bb7416",tooltip=" "];
+  Node7 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="glm::detail::compute\l_mix::call",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structglm_1_1detail_1_1compute__mix.html#a89407e90d0ebcd4f94f7fb425f1e7668",tooltip=" "];
+  Node2 -> Node9 [color="steelblue1",style="solid"];
+  Node9 [label="glm::pow",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__core__func__exponential.html#ga717a43207fffc8b5e8e66cf56ded5ace",tooltip=" "];
+  Node9 -> Node9 [color="steelblue1",style="solid"];
+}

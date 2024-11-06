@@ -8,6 +8,10 @@ digraph "Rigidbody::UpdateBody"
   Node1 [label="Rigidbody::UpdateBody",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Executes a physics tick on this object"];
   Node1 -> Node2 [color="steelblue1",style="solid"];
   Node2 [label="Rigidbody::AddForcePure",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_rigidbody.html#ab633f234942f4142cb4128883c6c9aa6",tooltip="Adds force, ignoring mass"];
-  Node1 -> Node3 [color="steelblue1",style="solid"];
-  Node3 [label="Transform::TranslateGlobal",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transform.html#abd54bc9cc0def3dd94cce058b49082b8",tooltip="Translates our matrix, disregarding rotation"];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="glm::length",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceglm.html#abcd8538aa95a8963803ec42c2fd654cd",tooltip=" "];
+  Node3 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="glm::abs",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__core__func__common.html#ga439e60a72eadecfeda2df5449c613a64",tooltip=" "];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="Transform::TranslateGlobal",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_transform.html#abd54bc9cc0def3dd94cce058b49082b8",tooltip="Translates our matrix, disregarding rotation"];
 }

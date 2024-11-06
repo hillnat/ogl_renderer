@@ -1,0 +1,146 @@
+\hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source}{}\doxysection{Small\+Vector.\+h}
+\label{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/SmallVector.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/SmallVector.h}}
+\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00002}00002 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00003}00003 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00004}00004 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00005}00005 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00006}00006 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00007}00007 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00008}00008 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00009}00009 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00010}00010 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00011}00011 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00012}00012 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00013}00013 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00014}00014 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00015}00015 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00016}00016 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00017}00017 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00018}00018 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00019}00019 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00020}00020 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00021}00021 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00022}00022 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00023}00023 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00024}00024 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00025}00025 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00026}00026 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00027}00027 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00028}00028 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00029}00029 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00030}00030 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00031}00031 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00032}00032 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00033}00033 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00034}00034 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00035}00035 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00036}00036 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00037}00037 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00038}00038 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00039}00039 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00040}00040 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00045}00045 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00046}00046 \textcolor{preprocessor}{\#ifndef AI\_SMALLVECTOR\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00047}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_a52db88948834b0c2b19477357a94f41c}{00047}} \textcolor{preprocessor}{\#define AI\_SMALLVECTOR\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00049}00049 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00050}00050 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00051}00051 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00053}00053 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00055}00055 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00061}00061 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00062}00062 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} Capacity>}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00063}00063 \textcolor{keyword}{class }SmallVector \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00064}00064 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00066}\mbox{\hyperlink{class_assimp_1_1_small_vector_ab6b4d98296422f1b560058951a921026}{00066}}     \mbox{\hyperlink{class_assimp_1_1_small_vector_ab6b4d98296422f1b560058951a921026}{SmallVector}}() :}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00067}00067             \mbox{\hyperlink{class_assimp_1_1_small_vector_a30ee420176a96190a572483c54fa8fa5}{mStorage}}(\mbox{\hyperlink{class_assimp_1_1_small_vector_afb96a219224c06c3e819aeb11b481d60}{mInplaceStorage}}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00068}00068             \mbox{\hyperlink{class_assimp_1_1_small_vector_a0b386a0282d15d986273581a8b7049da}{mSize}}(0),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00069}00069             \mbox{\hyperlink{class_assimp_1_1_small_vector_acad4a4a43ad4076a317fec639292c9e8}{mCapacity}}(Capacity) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00070}00070         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00071}00071     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00074}\mbox{\hyperlink{class_assimp_1_1_small_vector_a5ed292445a3b5900534b964f720a01e1}{00074}}     \mbox{\hyperlink{class_assimp_1_1_small_vector_a5ed292445a3b5900534b964f720a01e1}{\string~SmallVector}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00075}00075         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_assimp_1_1_small_vector_a30ee420176a96190a572483c54fa8fa5}{mStorage}} != \mbox{\hyperlink{class_assimp_1_1_small_vector_afb96a219224c06c3e819aeb11b481d60}{mInplaceStorage}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00076}00076             \textcolor{keyword}{delete} [] \mbox{\hyperlink{class_assimp_1_1_small_vector_a30ee420176a96190a572483c54fa8fa5}{mStorage}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00077}00077         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00078}00078     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00082}\mbox{\hyperlink{class_assimp_1_1_small_vector_a1544011b738929bb369217f7e6e3df47}{00082}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_small_vector_a1544011b738929bb369217f7e6e3df47}{push\_back}}(\textcolor{keyword}{const} T\& item) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00083}00083         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_assimp_1_1_small_vector_a0b386a0282d15d986273581a8b7049da}{mSize}} < \mbox{\hyperlink{class_assimp_1_1_small_vector_acad4a4a43ad4076a317fec639292c9e8}{mCapacity}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00084}00084             \mbox{\hyperlink{class_assimp_1_1_small_vector_a30ee420176a96190a572483c54fa8fa5}{mStorage}}[\mbox{\hyperlink{class_assimp_1_1_small_vector_a0b386a0282d15d986273581a8b7049da}{mSize}}++] = item;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00085}00085             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00086}00086         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00088}00088         \mbox{\hyperlink{class_assimp_1_1_small_vector_af2061ae69594731a9499bac28b3dcbbb}{push\_back\_and\_grow}}(item);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00089}00089     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00093}\mbox{\hyperlink{class_assimp_1_1_small_vector_a1a659256b65ddde4bfef0723d9fbbafc}{00093}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_small_vector_a1a659256b65ddde4bfef0723d9fbbafc}{resize}}(\textcolor{keywordtype}{size\_t} newSize) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00094}00094         \textcolor{keywordflow}{if} (newSize > \mbox{\hyperlink{class_assimp_1_1_small_vector_acad4a4a43ad4076a317fec639292c9e8}{mCapacity}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00095}00095             \mbox{\hyperlink{class_assimp_1_1_small_vector_ad1c59d5742847b6629e5d96f162f543d}{grow}}(newSize);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00096}00096         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00097}00097         \mbox{\hyperlink{class_assimp_1_1_small_vector_a0b386a0282d15d986273581a8b7049da}{mSize}} = newSize;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00098}00098     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00102}\mbox{\hyperlink{class_assimp_1_1_small_vector_ac845a91db64e039ca0d1de37e71b6e51}{00102}}     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_small_vector_ac845a91db64e039ca0d1de37e71b6e51}{size}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00103}00103         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_assimp_1_1_small_vector_a0b386a0282d15d986273581a8b7049da}{mSize}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00104}00104     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00108}\mbox{\hyperlink{class_assimp_1_1_small_vector_a82b636cd2db30736c98517566aba1b35}{00108}}     T* \mbox{\hyperlink{class_assimp_1_1_small_vector_a82b636cd2db30736c98517566aba1b35}{begin}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00109}00109         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_assimp_1_1_small_vector_a30ee420176a96190a572483c54fa8fa5}{mStorage}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00110}00110     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00114}\mbox{\hyperlink{class_assimp_1_1_small_vector_a41e1cbef2651b76f690a4e398d41e7e0}{00114}}     T* \mbox{\hyperlink{class_assimp_1_1_small_vector_a41e1cbef2651b76f690a4e398d41e7e0}{end}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00115}00115         \textcolor{keywordflow}{return} \&\mbox{\hyperlink{class_assimp_1_1_small_vector_a30ee420176a96190a572483c54fa8fa5}{mStorage}}[\mbox{\hyperlink{class_assimp_1_1_small_vector_a0b386a0282d15d986273581a8b7049da}{mSize}}];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00116}00116     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00120}\mbox{\hyperlink{class_assimp_1_1_small_vector_ad38cd73cbfd5d104a597b9e74fdf18ab}{00120}}     T* \mbox{\hyperlink{class_assimp_1_1_small_vector_ad38cd73cbfd5d104a597b9e74fdf18ab}{begin}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00121}00121         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_assimp_1_1_small_vector_a30ee420176a96190a572483c54fa8fa5}{mStorage}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00122}00122     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00126}\mbox{\hyperlink{class_assimp_1_1_small_vector_a741a4af665d0119750b710ddd8b96b18}{00126}}     T* \mbox{\hyperlink{class_assimp_1_1_small_vector_a741a4af665d0119750b710ddd8b96b18}{end}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00127}00127         \textcolor{keywordflow}{return} \&\mbox{\hyperlink{class_assimp_1_1_small_vector_a30ee420176a96190a572483c54fa8fa5}{mStorage}}[\mbox{\hyperlink{class_assimp_1_1_small_vector_a0b386a0282d15d986273581a8b7049da}{mSize}}];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00128}00128     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00130}\mbox{\hyperlink{class_assimp_1_1_small_vector_aab3b7e9b56e7f458e8edc88b3d0f6a7d}{00130}}     \mbox{\hyperlink{class_assimp_1_1_small_vector_aab3b7e9b56e7f458e8edc88b3d0f6a7d}{SmallVector}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_small_vector}{SmallVector}} \&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00131}\mbox{\hyperlink{class_assimp_1_1_small_vector_aaaf0e894e1bc957b9d7701bf87e1ba11}{00131}}     \mbox{\hyperlink{class_assimp_1_1_small_vector_aaaf0e894e1bc957b9d7701bf87e1ba11}{SmallVector}}(\mbox{\hyperlink{class_assimp_1_1_small_vector}{SmallVector}} \&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00132}\mbox{\hyperlink{class_assimp_1_1_small_vector_a17f4504cbc5dcaa36b11f19faf53bd28}{00132}}     \mbox{\hyperlink{class_assimp_1_1_small_vector}{SmallVector}} \&\mbox{\hyperlink{class_assimp_1_1_small_vector_a17f4504cbc5dcaa36b11f19faf53bd28}{operator = }}(\textcolor{keyword}{const} \mbox{\hyperlink{class_assimp_1_1_small_vector}{SmallVector}} \&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00133}\mbox{\hyperlink{class_assimp_1_1_small_vector_a9cb3b06c100c9686384dfe15279a0b73}{00133}}     \mbox{\hyperlink{class_assimp_1_1_small_vector}{SmallVector}} \&\mbox{\hyperlink{class_assimp_1_1_small_vector_a17f4504cbc5dcaa36b11f19faf53bd28}{operator = }}(\mbox{\hyperlink{class_assimp_1_1_small_vector}{SmallVector}} \&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00134}00134 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00135}00135 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00136}\mbox{\hyperlink{class_assimp_1_1_small_vector_ad1c59d5742847b6629e5d96f162f543d}{00136}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_small_vector_ad1c59d5742847b6629e5d96f162f543d}{grow}}( \textcolor{keywordtype}{size\_t} newCapacity) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00137}00137         T* oldStorage = \mbox{\hyperlink{class_assimp_1_1_small_vector_a30ee420176a96190a572483c54fa8fa5}{mStorage}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00138}00138         T* newStorage = \textcolor{keyword}{new} T[newCapacity];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00139}00139 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00140}00140         std::memcpy(newStorage, oldStorage, \mbox{\hyperlink{class_assimp_1_1_small_vector_a0b386a0282d15d986273581a8b7049da}{mSize}} * \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00142}00142         \mbox{\hyperlink{class_assimp_1_1_small_vector_a30ee420176a96190a572483c54fa8fa5}{mStorage}} = newStorage;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00143}00143         \mbox{\hyperlink{class_assimp_1_1_small_vector_acad4a4a43ad4076a317fec639292c9e8}{mCapacity}} = newCapacity;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00145}00145         \textcolor{keywordflow}{if} (oldStorage != \mbox{\hyperlink{class_assimp_1_1_small_vector_afb96a219224c06c3e819aeb11b481d60}{mInplaceStorage}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00146}00146             \textcolor{keyword}{delete} [] oldStorage;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00147}00147         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00148}00148     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00150}\mbox{\hyperlink{class_assimp_1_1_small_vector_af2061ae69594731a9499bac28b3dcbbb}{00150}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_small_vector_af2061ae69594731a9499bac28b3dcbbb}{push\_back\_and\_grow}}(\textcolor{keyword}{const} T\& item) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00151}00151         \mbox{\hyperlink{class_assimp_1_1_small_vector_ad1c59d5742847b6629e5d96f162f543d}{grow}}(\mbox{\hyperlink{class_assimp_1_1_small_vector_acad4a4a43ad4076a317fec639292c9e8}{mCapacity}} + Capacity);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00153}00153         \mbox{\hyperlink{class_assimp_1_1_small_vector_a30ee420176a96190a572483c54fa8fa5}{mStorage}}[\mbox{\hyperlink{class_assimp_1_1_small_vector_a0b386a0282d15d986273581a8b7049da}{mSize}}++] = item;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00154}00154     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00156}00156     T* \mbox{\hyperlink{class_assimp_1_1_small_vector_a30ee420176a96190a572483c54fa8fa5}{mStorage}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00157}00157     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_small_vector_a0b386a0282d15d986273581a8b7049da}{mSize}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00158}00158     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_assimp_1_1_small_vector_acad4a4a43ad4076a317fec639292c9e8}{mCapacity}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00159}00159     T \mbox{\hyperlink{class_assimp_1_1_small_vector_afb96a219224c06c3e819aeb11b481d60}{mInplaceStorage}}[Capacity];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00160}00160 \};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00161}00161 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00162}00162 \} \textcolor{comment}{// end namespace Assimp}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2_small_vector_8h_source_l00164}00164 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_SMALLVECTOR\_H\_INC}}
+
+\end{DoxyCode}

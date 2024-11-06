@@ -1,0 +1,127 @@
+\hypertarget{include_2assimp_2_bitmap_8h_source}{}\doxysection{Bitmap.\+h}
+\label{include_2assimp_2_bitmap_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/Bitmap.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/Bitmap.h}}
+\mbox{\hyperlink{include_2assimp_2_bitmap_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00002}00002 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00003}00003 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00004}00004 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00005}00005 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00006}00006 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00007}00007 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00008}00008 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00009}00009 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00010}00010 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00011}00011 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00012}00012 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00013}00013 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00014}00014 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00015}00015 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00016}00016 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00017}00017 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00018}00018 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00019}00019 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00020}00020 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00021}00021 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00022}00022 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00023}00023 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00024}00024 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00025}00025 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00026}00026 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00027}00027 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00028}00028 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00029}00029 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00030}00030 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00031}00031 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00032}00032 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00033}00033 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00034}00034 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00035}00035 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00036}00036 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00037}00037 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00038}00038 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00039}00039 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00040}00040 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00047}00047 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00048}00048 \textcolor{preprocessor}{\#ifndef AI\_BITMAP\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00049}\mbox{\hyperlink{include_2assimp_2_bitmap_8h_a6545db0507fc18d268cbad478ff249dd}{00049}} \textcolor{preprocessor}{\#define AI\_BITMAP\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00051}00051 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00052}00052 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00053}00053 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00055}00055 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2defs_8h}{defs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00056}00056 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00057}00057 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00059}00059 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_texture}{aiTexture}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00061}00061 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00063}00063 \textcolor{keyword}{class }IOStream;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00065}00065 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00069}\mbox{\hyperlink{class_assimp_1_1_bitmap}{00069}} \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{include_2assimp_2defs_8h_a7d617d307e656cb6ff315ba71ff958d4}{ASSIMP\_API}} \mbox{\hyperlink{class_assimp_1_1_bitmap}{Bitmap}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00070}00070 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00072}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_header}{00072}}     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_header}{Header}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00073}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_header_a06473e47eb40838c66474e3b6155d5d1}{00073}}         uint16\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_header_a06473e47eb40838c66474e3b6155d5d1}{type}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00074}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_header_a1e75ec49a56dd7846bccaed9115a39d8}{00074}}         uint32\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_header_a1e75ec49a56dd7846bccaed9115a39d8}{size}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00075}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_header_a3c1c022bfff7d79d567ef9a2c70f9b7d}{00075}}         uint16\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_header_a3c1c022bfff7d79d567ef9a2c70f9b7d}{reserved1}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00076}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_header_a1df418b87a2ed1fd5c3661fbfbb4155c}{00076}}         uint16\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_header_a1df418b87a2ed1fd5c3661fbfbb4155c}{reserved2}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00077}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_header_a914920645985790cb0d3891f161160c1}{00077}}         uint32\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_header_a914920645985790cb0d3891f161160c1}{offset}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00079}00079         \textcolor{comment}{// We define the struct size because sizeof(Header) might return a wrong result because of structure padding.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00080}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_header_a8c6cb4fdd92d3502f3adde48c0f720f6}{00080}}         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} std::size\_t header\_size =}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00081}00081             \textcolor{keyword}{sizeof}(uint16\_t) +}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00082}00082             \textcolor{keyword}{sizeof}(uint32\_t) +}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00083}00083             \textcolor{keyword}{sizeof}(uint16\_t) +}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00084}00084             \textcolor{keyword}{sizeof}(uint16\_t) +}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00085}00085             \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00086}00086     \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00088}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b}{00088}}     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b}{DIB}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00089}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_a3f900bb044bf5acdb15df11b01d6d1fc}{00089}}         uint32\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_a3f900bb044bf5acdb15df11b01d6d1fc}{size}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00090}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_aaf07cdb2ea0ec2281c658dcf16d11fa1}{00090}}         int32\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_aaf07cdb2ea0ec2281c658dcf16d11fa1}{width}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00091}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_a574c072f98b3b3728ab6d2cd46c9510a}{00091}}         int32\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_a574c072f98b3b3728ab6d2cd46c9510a}{height}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00092}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_a94b97deb6d6cfa4453fd701055fc2c5b}{00092}}         uint16\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_a94b97deb6d6cfa4453fd701055fc2c5b}{planes}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00093}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_afb807e26fa867909098491735d7cbc86}{00093}}         uint16\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_afb807e26fa867909098491735d7cbc86}{bits\_per\_pixel}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00094}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_a8f44512e4507b2f2f574f5a75ed752a3}{00094}}         uint32\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_a8f44512e4507b2f2f574f5a75ed752a3}{compression}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00095}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_af7dd8666a096cd433e80b9a3ef6103f7}{00095}}         uint32\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_af7dd8666a096cd433e80b9a3ef6103f7}{image\_size}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00096}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_af6ea407698b3210b9cb20c2f9346d4e9}{00096}}         int32\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_af6ea407698b3210b9cb20c2f9346d4e9}{x\_resolution}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00097}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_a762d6e3c0911dd1aef2a6d0ceea0421f}{00097}}         int32\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_a762d6e3c0911dd1aef2a6d0ceea0421f}{y\_resolution}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00098}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_af440f5fced97b6be82466ecbf0402b0e}{00098}}         uint32\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_af440f5fced97b6be82466ecbf0402b0e}{nb\_colors}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00099}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_af1293883ac6b8e3d384e32a2a15fb5e5}{00099}}         uint32\_t \mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_af1293883ac6b8e3d384e32a2a15fb5e5}{nb\_important\_colors}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00101}00101         \textcolor{comment}{// We define the struct size because sizeof(DIB) might return a wrong result because of structure padding.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00102}\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b_adcd35a1a496c610183aa8d1477020a0a}{00102}}         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} std::size\_t dib\_size =}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00103}00103             \textcolor{keyword}{sizeof}(uint32\_t) +}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00104}00104             \textcolor{keyword}{sizeof}(int32\_t) +}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00105}00105             \textcolor{keyword}{sizeof}(int32\_t) +}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00106}00106             \textcolor{keyword}{sizeof}(uint16\_t) +}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00107}00107             \textcolor{keyword}{sizeof}(uint16\_t) +}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00108}00108             \textcolor{keyword}{sizeof}(uint32\_t) +}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00109}00109             \textcolor{keyword}{sizeof}(uint32\_t) +}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00110}00110             \textcolor{keyword}{sizeof}(int32\_t) +}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00111}00111             \textcolor{keyword}{sizeof}(int32\_t) +}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00112}00112             \textcolor{keyword}{sizeof}(uint32\_t) +}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00113}00113             \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00114}00114     \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00116}\mbox{\hyperlink{class_assimp_1_1_bitmap_a2e4dff483b5361e1b04019419b644784}{00116}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} std::size\_t mBytesPerPixel = 4;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00118}00118 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00123}\mbox{\hyperlink{class_assimp_1_1_bitmap_a34622ca38efff2926b77f82186e030ab}{00123}}     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_bitmap_a34622ca38efff2926b77f82186e030ab}{Save}}(\mbox{\hyperlink{structai_texture}{aiTexture}}* texture, \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}* file);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00125}00125 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00126}\mbox{\hyperlink{class_assimp_1_1_bitmap_a62c5d3c091161ce0879538bb9a6bb25f}{00126}}     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_bitmap_a62c5d3c091161ce0879538bb9a6bb25f}{WriteHeader}}(\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_header}{Header}}\& header, \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}* file);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00127}\mbox{\hyperlink{class_assimp_1_1_bitmap_aae94d6e293eb3cd30b351f85d8616a4f}{00127}}     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_bitmap_aae94d6e293eb3cd30b351f85d8616a4f}{WriteDIB}}(\mbox{\hyperlink{struct_assimp_1_1_bitmap_1_1_d_i_b}{DIB}}\& dib, \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}* file);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00128}\mbox{\hyperlink{class_assimp_1_1_bitmap_a6b5bfd6a8c3885686d9cdbeacdaf76c5}{00128}}     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_bitmap_a6b5bfd6a8c3885686d9cdbeacdaf76c5}{WriteData}}(\mbox{\hyperlink{structai_texture}{aiTexture}}* texture, \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}* file);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00129}00129 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00131}00131 \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_bitmap_8h_source_l00133}00133 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_BITMAP\_H\_INC}}
+
+\end{DoxyCode}

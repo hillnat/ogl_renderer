@@ -1,0 +1,1152 @@
+\hypertarget{class_assimp_1_1_i_o_system}{}\doxysection{Assimp\+::IOSystem Class Reference}
+\label{class_assimp_1_1_i_o_system}\index{Assimp::IOSystem@{Assimp::IOSystem}}
+
+
+CPP-\/\+API\+: Interface to the file system.  
+
+
+
+
+{\ttfamily \#include $<$IOSystem.\+hpp$>$}
+
+
+
+Inheritance diagram for Assimp\+::IOSystem\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_assimp_1_1_i_o_system_a023615aecc7a609a4d7743b743bb4c62}{IOSystem}} () \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\+\_\+\+NO\+\_\+\+EXCEPT}}=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_assimp_1_1_i_o_system_a7d09695c971f1e92f977c534a8a4b0c6}{$\sim$\+IOSystem}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a78821be348bf775ebfc9fdce07d622ac}{Exists}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&p\+File) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em For backward compatibility. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}{Exists}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+File) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} =0
+\begin{DoxyCompactList}\small\item\em Tests for the existence of a file at the given path. \end{DoxyCompactList}\item 
+virtual char \mbox{\hyperlink{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}{get\+Os\+Separator}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} =0
+\begin{DoxyCompactList}\small\item\em Returns the system specific directory separator. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Open}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+File, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Mode=\char`\"{}rb\char`\"{})=0
+\begin{DoxyCompactList}\small\item\em Open a new file with a given path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_i_o_system_aef35fabc9bd49fb83bfd4f12a94083c3}{Open}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&p\+File, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&p\+Mode=std\+::string(\char`\"{}rb\char`\"{}))
+\begin{DoxyCompactList}\small\item\em For backward compatibility. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}{Close}} (\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$p\+File)=0
+\begin{DoxyCompactList}\small\item\em Closes the given file and releases all resources associated with it. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a670ddf0f9ea5c8ee05dce03a89259077}{Compare\+Paths}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$one, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$second) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em Compares two paths and check whether the point to identical files. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a26a040ad173f498f4ba71df498a61001}{Compare\+Paths}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&one, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&second) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em For backward compatibility. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a07c2c93fac300df44c756174fcea71e8}{Push\+Directory}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Pushes a new directory onto the directory stack. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \& \mbox{\hyperlink{class_assimp_1_1_i_o_system_a9cfaf118a329da14726b33c4b5089740}{Current\+Directory}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the top directory from the stack. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \mbox{\hyperlink{class_assimp_1_1_i_o_system_a1f3180cefbb447b4b8c628dcaf95fc69}{Stack\+Size}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the number of directories stored on the stack. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_aa00f3ee1c44576364e8ce00206fb9dd2}{Pop\+Directory}} ()
+\begin{DoxyCompactList}\small\item\em Pops the top directory from the stack. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a3fc1316fdb4168cde052c95f96364d41}{Create\+Directory}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em CReates an new directory at the given path. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a93e80760bd5d5239ba8eab3bd31efa6b}{Change\+Directory}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Will change the current directory to the given path. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_abdfad399fdbdc9bbf2ffd193f4107bf2}{Delete\+File}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&file)
+\begin{DoxyCompactList}\small\item\em Will delete the given file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assimp_1_1_i_o_system_a023615aecc7a609a4d7743b743bb4c62}{IOSystem}} () \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\+\_\+\+NO\+\_\+\+EXCEPT}}=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_assimp_1_1_i_o_system_a7d09695c971f1e92f977c534a8a4b0c6}{$\sim$\+IOSystem}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a78821be348bf775ebfc9fdce07d622ac}{Exists}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&p\+File) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em For backward compatibility. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}{Exists}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+File) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} =0
+\begin{DoxyCompactList}\small\item\em Tests for the existence of a file at the given path. \end{DoxyCompactList}\item 
+virtual char \mbox{\hyperlink{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}{get\+Os\+Separator}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} =0
+\begin{DoxyCompactList}\small\item\em Returns the system specific directory separator. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Open}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+File, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Mode=\char`\"{}rb\char`\"{})=0
+\begin{DoxyCompactList}\small\item\em Open a new file with a given path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_i_o_system_a8969623e38205b7b8661dea0138ddfbe}{Open}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&p\+File, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&p\+Mode=std\+::string(\char`\"{}rb\char`\"{}))
+\begin{DoxyCompactList}\small\item\em For backward compatibility. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}{Close}} (\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$p\+File)=0
+\begin{DoxyCompactList}\small\item\em Closes the given file and releases all resources associated with it. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a670ddf0f9ea5c8ee05dce03a89259077}{Compare\+Paths}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$one, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$second) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em Compares two paths and check whether the point to identical files. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_aa72b9e8f1439e301551c29417951b2d6}{Compare\+Paths}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&one, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&second) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em For backward compatibility. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_ab2ba986c7ce02c38b318f33be181645c}{Push\+Directory}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Pushes a new directory onto the directory stack. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \& \mbox{\hyperlink{class_assimp_1_1_i_o_system_a9cfaf118a329da14726b33c4b5089740}{Current\+Directory}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the top directory from the stack. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \mbox{\hyperlink{class_assimp_1_1_i_o_system_adb69c7c385f976bb083b8c62ad3fb1b0}{Stack\+Size}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the number of directories stored on the stack. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a4564abb11d22b1e2087076f70922ca71}{Pop\+Directory}} ()
+\begin{DoxyCompactList}\small\item\em Pops the top directory from the stack. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a74b9fa546fed81ae12ef7248e3edba87}{Create\+Directory}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em CReates an new directory at the given path. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a6018893851faa171e5c258b057bce32d}{Change\+Directory}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Will change the current directory to the given path. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_ac1c6b52912394fa70c874be769f4715a}{Delete\+File}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&file)
+\begin{DoxyCompactList}\small\item\em Will delete the given file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assimp_1_1_i_o_system_a023615aecc7a609a4d7743b743bb4c62}{IOSystem}} () \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\+\_\+\+NO\+\_\+\+EXCEPT}}=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_assimp_1_1_i_o_system_a7d09695c971f1e92f977c534a8a4b0c6}{$\sim$\+IOSystem}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a78821be348bf775ebfc9fdce07d622ac}{Exists}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&p\+File) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em For backward compatibility. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}{Exists}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+File) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} =0
+\begin{DoxyCompactList}\small\item\em Tests for the existence of a file at the given path. \end{DoxyCompactList}\item 
+virtual char \mbox{\hyperlink{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}{get\+Os\+Separator}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} =0
+\begin{DoxyCompactList}\small\item\em Returns the system specific directory separator. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Open}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+File, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Mode=\char`\"{}rb\char`\"{})=0
+\begin{DoxyCompactList}\small\item\em Open a new file with a given path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_i_o_system_a8969623e38205b7b8661dea0138ddfbe}{Open}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&p\+File, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&p\+Mode=std\+::string(\char`\"{}rb\char`\"{}))
+\begin{DoxyCompactList}\small\item\em For backward compatibility. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}{Close}} (\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$p\+File)=0
+\begin{DoxyCompactList}\small\item\em Closes the given file and releases all resources associated with it. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a670ddf0f9ea5c8ee05dce03a89259077}{Compare\+Paths}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$one, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$second) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em Compares two paths and check whether the point to identical files. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_aa72b9e8f1439e301551c29417951b2d6}{Compare\+Paths}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&one, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&second) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em For backward compatibility. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_ab2ba986c7ce02c38b318f33be181645c}{Push\+Directory}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Pushes a new directory onto the directory stack. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \& \mbox{\hyperlink{class_assimp_1_1_i_o_system_a9cfaf118a329da14726b33c4b5089740}{Current\+Directory}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the top directory from the stack. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \mbox{\hyperlink{class_assimp_1_1_i_o_system_adb69c7c385f976bb083b8c62ad3fb1b0}{Stack\+Size}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the number of directories stored on the stack. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a4564abb11d22b1e2087076f70922ca71}{Pop\+Directory}} ()
+\begin{DoxyCompactList}\small\item\em Pops the top directory from the stack. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a74b9fa546fed81ae12ef7248e3edba87}{Create\+Directory}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em CReates an new directory at the given path. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_a6018893851faa171e5c258b057bce32d}{Change\+Directory}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Will change the current directory to the given path. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_assimp_1_1_i_o_system_ac1c6b52912394fa70c874be769f4715a}{Delete\+File}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&file)
+\begin{DoxyCompactList}\small\item\em Will delete the given file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_assimp_1_1_i_o_system_afb81db1f34642e684d90a0e180fbc4cf}{m\+\_\+path\+Stack}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+CPP-\/\+API\+: Interface to the file system. 
+
+Derive an own implementation from this interface to supply custom file handling to the importer library. If you implement this interface, you also want to supply a custom implementation for \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_importer_a1161f46318af18bb86dfe0fc3edea4df}{Importer\+::\+Set\+IOHandler()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source_l00087}{87}} of file \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source}{IOSystem.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a023615aecc7a609a4d7743b743bb4c62}\label{class_assimp_1_1_i_o_system_a023615aecc7a609a4d7743b743bb4c62}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!IOSystem@{IOSystem}}
+\index{IOSystem@{IOSystem}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{IOSystem()}{IOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Assimp\+::\+IOSystem\+::\+IOSystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+Create an instance of your derived class and assign it to an \mbox{\hyperlink{class_assimp_1_1_importer}{Assimp\+::\+Importer}} instance by calling \mbox{\hyperlink{class_assimp_1_1_importer_a1161f46318af18bb86dfe0fc3edea4df}{Importer\+::\+Set\+IOHandler()}}. \mbox{\Hypertarget{class_assimp_1_1_i_o_system_a7d09695c971f1e92f977c534a8a4b0c6}\label{class_assimp_1_1_i_o_system_a7d09695c971f1e92f977c534a8a4b0c6}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!````~IOSystem@{$\sim$IOSystem}}
+\index{````~IOSystem@{$\sim$IOSystem}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$IOSystem()}{~IOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual Assimp\+::\+IOSystem\+::$\sim$\+IOSystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+It is safe to be called from within DLL \mbox{\hyperlink{namespace_assimp}{Assimp}}, we\textquotesingle{}re constructed on \mbox{\hyperlink{namespace_assimp}{Assimp}}\textquotesingle{}s heap. \mbox{\Hypertarget{class_assimp_1_1_i_o_system_a023615aecc7a609a4d7743b743bb4c62}\label{class_assimp_1_1_i_o_system_a023615aecc7a609a4d7743b743bb4c62}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!IOSystem@{IOSystem}}
+\index{IOSystem@{IOSystem}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{IOSystem()}{IOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Assimp\+::\+IOSystem\+::\+IOSystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+Create an instance of your derived class and assign it to an \mbox{\hyperlink{class_assimp_1_1_importer}{Assimp\+::\+Importer}} instance by calling \mbox{\hyperlink{class_assimp_1_1_importer_a1161f46318af18bb86dfe0fc3edea4df}{Importer\+::\+Set\+IOHandler()}}. \mbox{\Hypertarget{class_assimp_1_1_i_o_system_a7d09695c971f1e92f977c534a8a4b0c6}\label{class_assimp_1_1_i_o_system_a7d09695c971f1e92f977c534a8a4b0c6}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!````~IOSystem@{$\sim$IOSystem}}
+\index{````~IOSystem@{$\sim$IOSystem}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$IOSystem()}{~IOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual Assimp\+::\+IOSystem\+::$\sim$\+IOSystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+It is safe to be called from within DLL \mbox{\hyperlink{namespace_assimp}{Assimp}}, we\textquotesingle{}re constructed on \mbox{\hyperlink{namespace_assimp}{Assimp}}\textquotesingle{}s heap. \mbox{\Hypertarget{class_assimp_1_1_i_o_system_a023615aecc7a609a4d7743b743bb4c62}\label{class_assimp_1_1_i_o_system_a023615aecc7a609a4d7743b743bb4c62}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!IOSystem@{IOSystem}}
+\index{IOSystem@{IOSystem}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{IOSystem()}{IOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Assimp\+::\+IOSystem\+::\+IOSystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+Create an instance of your derived class and assign it to an \mbox{\hyperlink{class_assimp_1_1_importer}{Assimp\+::\+Importer}} instance by calling \mbox{\hyperlink{class_assimp_1_1_importer_a1161f46318af18bb86dfe0fc3edea4df}{Importer\+::\+Set\+IOHandler()}}. \mbox{\Hypertarget{class_assimp_1_1_i_o_system_a7d09695c971f1e92f977c534a8a4b0c6}\label{class_assimp_1_1_i_o_system_a7d09695c971f1e92f977c534a8a4b0c6}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!````~IOSystem@{$\sim$IOSystem}}
+\index{````~IOSystem@{$\sim$IOSystem}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$IOSystem()}{~IOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual Assimp\+::\+IOSystem\+::$\sim$\+IOSystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+It is safe to be called from within DLL \mbox{\hyperlink{namespace_assimp}{Assimp}}, we\textquotesingle{}re constructed on \mbox{\hyperlink{namespace_assimp}{Assimp}}\textquotesingle{}s heap. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a93e80760bd5d5239ba8eab3bd31efa6b}\label{class_assimp_1_1_i_o_system_a93e80760bd5d5239ba8eab3bd31efa6b}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!ChangeDirectory@{ChangeDirectory}}
+\index{ChangeDirectory@{ChangeDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{ChangeDirectory()}{ChangeDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool Assimp\+::\+IOSystem\+::\+Change\+Directory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Will change the current directory to the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{[}in\mbox{]} The path to change to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, when the directory has changed successfully. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}{Assimp\+::\+Memory\+IOSystem}}.
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source_l00310}{310}} of file \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source}{IOSystem.\+hpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a6018893851faa171e5c258b057bce32d}\label{class_assimp_1_1_i_o_system_a6018893851faa171e5c258b057bce32d}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!ChangeDirectory@{ChangeDirectory}}
+\index{ChangeDirectory@{ChangeDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{ChangeDirectory()}{ChangeDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Change\+Directory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Will change the current directory to the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{[}in\mbox{]} The path to change to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, when the directory has changed successfully. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a6018893851faa171e5c258b057bce32d}\label{class_assimp_1_1_i_o_system_a6018893851faa171e5c258b057bce32d}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!ChangeDirectory@{ChangeDirectory}}
+\index{ChangeDirectory@{ChangeDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{ChangeDirectory()}{ChangeDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Change\+Directory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Will change the current directory to the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{[}in\mbox{]} The path to change to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, when the directory has changed successfully. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aaa4197b3cfa45b6351e806f1ee4aa3ec}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}\label{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Close@{Close}}
+\index{Close@{Close}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual void Assimp\+::\+IOSystem\+::\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$}]{p\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Closes the given file and releases all resources associated with it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & The file instance previously created by \mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Open()}}. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a76836272edbdfcdee7b196c0449dd270}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ac0f51d0c5ca23c6c6f08fe1fc993e5b1}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a76836272edbdfcdee7b196c0449dd270}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ac0f51d0c5ca23c6c6f08fe1fc993e5b1}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a76836272edbdfcdee7b196c0449dd270}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ac0f51d0c5ca23c6c6f08fe1fc993e5b1}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Assimp\+::\+Zip\+Archive\+IOSystem}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}\label{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Close@{Close}}
+\index{Close@{Close}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual void Assimp\+::\+IOSystem\+::\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$}]{p\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Closes the given file and releases all resources associated with it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & The file instance previously created by \mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Open()}}. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a76836272edbdfcdee7b196c0449dd270}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ac0f51d0c5ca23c6c6f08fe1fc993e5b1}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a76836272edbdfcdee7b196c0449dd270}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ac0f51d0c5ca23c6c6f08fe1fc993e5b1}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a76836272edbdfcdee7b196c0449dd270}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ac0f51d0c5ca23c6c6f08fe1fc993e5b1}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Assimp\+::\+Zip\+Archive\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}\label{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Close@{Close}}
+\index{Close@{Close}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual void Assimp\+::\+IOSystem\+::\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$}]{p\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Closes the given file and releases all resources associated with it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & The file instance previously created by \mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Open()}}. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a76836272edbdfcdee7b196c0449dd270}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ac0f51d0c5ca23c6c6f08fe1fc993e5b1}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a76836272edbdfcdee7b196c0449dd270}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ac0f51d0c5ca23c6c6f08fe1fc993e5b1}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a76836272edbdfcdee7b196c0449dd270}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ac0f51d0c5ca23c6c6f08fe1fc993e5b1}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33dedf49dab3b8d3dcb0aa944b6bd0c6}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Assimp\+::\+Zip\+Archive\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a670ddf0f9ea5c8ee05dce03a89259077}\label{class_assimp_1_1_i_o_system_a670ddf0f9ea5c8ee05dce03a89259077}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!ComparePaths@{ComparePaths}}
+\index{ComparePaths@{ComparePaths}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{ComparePaths()}{ComparePaths()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Compare\+Paths (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{one,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{second }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compares two paths and check whether the point to identical files. 
+
+The dummy implementation of this virtual member performs a case-\/insensitive comparison of the given strings. The default IO system implementation uses OS mechanisms to convert relative into absolute paths, so the result can be trusted. 
+\begin{DoxyParams}{Parameters}
+{\em one} & First file \\
+\hline
+{\em second} & Second file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the paths point to the same file. The file needn\textquotesingle{}t be existing, however. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_a2c78a14aa7485dab7a402cdb25a572c6}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_a2c78a14aa7485dab7a402cdb25a572c6}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_a2c78a14aa7485dab7a402cdb25a572c6}{Assimp\+::\+Default\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}{Assimp\+::\+Memory\+IOSystem}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a670ddf0f9ea5c8ee05dce03a89259077}\label{class_assimp_1_1_i_o_system_a670ddf0f9ea5c8ee05dce03a89259077}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!ComparePaths@{ComparePaths}}
+\index{ComparePaths@{ComparePaths}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{ComparePaths()}{ComparePaths()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Compare\+Paths (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{one,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{second }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compares two paths and check whether the point to identical files. 
+
+The dummy implementation of this virtual member performs a case-\/insensitive comparison of the given strings. The default IO system implementation uses OS mechanisms to convert relative into absolute paths, so the result can be trusted. 
+\begin{DoxyParams}{Parameters}
+{\em one} & First file \\
+\hline
+{\em second} & Second file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the paths point to the same file. The file needn\textquotesingle{}t be existing, however. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_a2c78a14aa7485dab7a402cdb25a572c6}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_a2c78a14aa7485dab7a402cdb25a572c6}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_a2c78a14aa7485dab7a402cdb25a572c6}{Assimp\+::\+Default\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a670ddf0f9ea5c8ee05dce03a89259077}\label{class_assimp_1_1_i_o_system_a670ddf0f9ea5c8ee05dce03a89259077}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!ComparePaths@{ComparePaths}}
+\index{ComparePaths@{ComparePaths}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{ComparePaths()}{ComparePaths()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Compare\+Paths (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{one,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{second }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compares two paths and check whether the point to identical files. 
+
+The dummy implementation of this virtual member performs a case-\/insensitive comparison of the given strings. The default IO system implementation uses OS mechanisms to convert relative into absolute paths, so the result can be trusted. 
+\begin{DoxyParams}{Parameters}
+{\em one} & First file \\
+\hline
+{\em second} & Second file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the paths point to the same file. The file needn\textquotesingle{}t be existing, however. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_a2c78a14aa7485dab7a402cdb25a572c6}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_a2c78a14aa7485dab7a402cdb25a572c6}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_a2c78a14aa7485dab7a402cdb25a572c6}{Assimp\+::\+Default\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a72e850bf09960223104fb764d582243d}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a26a040ad173f498f4ba71df498a61001}\label{class_assimp_1_1_i_o_system_a26a040ad173f498f4ba71df498a61001}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!ComparePaths@{ComparePaths}}
+\index{ComparePaths@{ComparePaths}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{ComparePaths()}{ComparePaths()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool Assimp\+::\+IOSystem\+::\+Compare\+Paths (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{one,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{second }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+For backward compatibility. 
+
+\begin{DoxySeeAlso}{See also}
+Compare\+Paths(const char$\ast$, const char$\ast$) 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source_l00262}{262}} of file \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source}{IOSystem.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_aa72b9e8f1439e301551c29417951b2d6}\label{class_assimp_1_1_i_o_system_aa72b9e8f1439e301551c29417951b2d6}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!ComparePaths@{ComparePaths}}
+\index{ComparePaths@{ComparePaths}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{ComparePaths()}{ComparePaths()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily bool Assimp\+::\+IOSystem\+::\+Compare\+Paths (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{one,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{second }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+For backward compatibility. 
+
+\begin{DoxySeeAlso}{See also}
+Compare\+Paths(const char$\ast$, const char$\ast$) 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_aa72b9e8f1439e301551c29417951b2d6}\label{class_assimp_1_1_i_o_system_aa72b9e8f1439e301551c29417951b2d6}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!ComparePaths@{ComparePaths}}
+\index{ComparePaths@{ComparePaths}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{ComparePaths()}{ComparePaths()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily bool Assimp\+::\+IOSystem\+::\+Compare\+Paths (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{one,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{second }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+For backward compatibility. 
+
+\begin{DoxySeeAlso}{See also}
+Compare\+Paths(const char$\ast$, const char$\ast$) 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a3fc1316fdb4168cde052c95f96364d41}\label{class_assimp_1_1_i_o_system_a3fc1316fdb4168cde052c95f96364d41}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!CreateDirectory@{CreateDirectory}}
+\index{CreateDirectory@{CreateDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{CreateDirectory()}{CreateDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool Assimp\+::\+IOSystem\+::\+Create\+Directory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+CReates an new directory at the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{[}in\mbox{]} The path to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, when a directory was created. False if the directory cannot be created. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}{Assimp\+::\+Memory\+IOSystem}}.
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source_l00297}{297}} of file \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source}{IOSystem.\+hpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a74b9fa546fed81ae12ef7248e3edba87}\label{class_assimp_1_1_i_o_system_a74b9fa546fed81ae12ef7248e3edba87}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!CreateDirectory@{CreateDirectory}}
+\index{CreateDirectory@{CreateDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{CreateDirectory()}{CreateDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Create\+Directory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+CReates an new directory at the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{[}in\mbox{]} The path to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, when a directory was created. False if the directory cannot be created. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a74b9fa546fed81ae12ef7248e3edba87}\label{class_assimp_1_1_i_o_system_a74b9fa546fed81ae12ef7248e3edba87}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!CreateDirectory@{CreateDirectory}}
+\index{CreateDirectory@{CreateDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{CreateDirectory()}{CreateDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Create\+Directory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+CReates an new directory at the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{[}in\mbox{]} The path to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, when a directory was created. False if the directory cannot be created. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_af30fb865586c39232028fdd01911b5f0}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a9cfaf118a329da14726b33c4b5089740}\label{class_assimp_1_1_i_o_system_a9cfaf118a329da14726b33c4b5089740}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!CurrentDirectory@{CurrentDirectory}}
+\index{CurrentDirectory@{CurrentDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{CurrentDirectory()}{CurrentDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \& Assimp\+::\+IOSystem\+::\+Current\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the top directory from the stack. 
+
+\begin{DoxyReturn}{Returns}
+The directory on the top of the stack. Returns empty when no directory was pushed to the stack. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}{Assimp\+::\+Memory\+IOSystem}}.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a9cfaf118a329da14726b33c4b5089740}\label{class_assimp_1_1_i_o_system_a9cfaf118a329da14726b33c4b5089740}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!CurrentDirectory@{CurrentDirectory}}
+\index{CurrentDirectory@{CurrentDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{CurrentDirectory()}{CurrentDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \& Assimp\+::\+IOSystem\+::\+Current\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the top directory from the stack. 
+
+\begin{DoxyReturn}{Returns}
+The directory on the top of the stack. Returns empty when no directory was pushed to the stack. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a9cfaf118a329da14726b33c4b5089740}\label{class_assimp_1_1_i_o_system_a9cfaf118a329da14726b33c4b5089740}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!CurrentDirectory@{CurrentDirectory}}
+\index{CurrentDirectory@{CurrentDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{CurrentDirectory()}{CurrentDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \& Assimp\+::\+IOSystem\+::\+Current\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the top directory from the stack. 
+
+\begin{DoxyReturn}{Returns}
+The directory on the top of the stack. Returns empty when no directory was pushed to the stack. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a93bf1b983f9f21bdef8d23c4bb67eff5}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_abdfad399fdbdc9bbf2ffd193f4107bf2}\label{class_assimp_1_1_i_o_system_abdfad399fdbdc9bbf2ffd193f4107bf2}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!DeleteFile@{DeleteFile}}
+\index{DeleteFile@{DeleteFile}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{DeleteFile()}{DeleteFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool Assimp\+::\+IOSystem\+::\+Delete\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Will delete the given file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \mbox{[}in\mbox{]} The filename \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if the file wase deleted, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}{Assimp\+::\+Memory\+IOSystem}}.
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source_l00324}{324}} of file \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source}{IOSystem.\+hpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_ac1c6b52912394fa70c874be769f4715a}\label{class_assimp_1_1_i_o_system_ac1c6b52912394fa70c874be769f4715a}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!DeleteFile@{DeleteFile}}
+\index{DeleteFile@{DeleteFile}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{DeleteFile()}{DeleteFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Delete\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Will delete the given file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \mbox{[}in\mbox{]} The filename \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if the file wase deleted, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_ac1c6b52912394fa70c874be769f4715a}\label{class_assimp_1_1_i_o_system_ac1c6b52912394fa70c874be769f4715a}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!DeleteFile@{DeleteFile}}
+\index{DeleteFile@{DeleteFile}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{DeleteFile()}{DeleteFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Delete\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Will delete the given file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \mbox{[}in\mbox{]} The filename \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if the file wase deleted, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a33ab4be233b42e36da124adb9d3b3a99}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}\label{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Exists@{Exists}}
+\index{Exists@{Exists}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Exists()}{Exists()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+File }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Tests for the existence of a file at the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is a file with this path, else false. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a4e524259954c01b89aa75f1fd0dab03c}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ae2515f70cd8cc7e7cf348a4d130a1e66}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a4e524259954c01b89aa75f1fd0dab03c}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ae2515f70cd8cc7e7cf348a4d130a1e66}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a4e524259954c01b89aa75f1fd0dab03c}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ae2515f70cd8cc7e7cf348a4d130a1e66}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}{Assimp\+::\+Zip\+Archive\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}{Assimp\+::\+Zip\+Archive\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}\label{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Exists@{Exists}}
+\index{Exists@{Exists}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Exists()}{Exists()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+File }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Tests for the existence of a file at the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is a file with this path, else false. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a4e524259954c01b89aa75f1fd0dab03c}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ae2515f70cd8cc7e7cf348a4d130a1e66}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a4e524259954c01b89aa75f1fd0dab03c}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ae2515f70cd8cc7e7cf348a4d130a1e66}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a4e524259954c01b89aa75f1fd0dab03c}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ae2515f70cd8cc7e7cf348a4d130a1e66}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}{Assimp\+::\+Zip\+Archive\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}{Assimp\+::\+Zip\+Archive\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}\label{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Exists@{Exists}}
+\index{Exists@{Exists}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Exists()}{Exists()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+File }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Tests for the existence of a file at the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is a file with this path, else false. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a4e524259954c01b89aa75f1fd0dab03c}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ae2515f70cd8cc7e7cf348a4d130a1e66}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a4e524259954c01b89aa75f1fd0dab03c}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ae2515f70cd8cc7e7cf348a4d130a1e66}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a4e524259954c01b89aa75f1fd0dab03c}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ae2515f70cd8cc7e7cf348a4d130a1e66}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_afd03643b1253dcfb8242193bf7678d3c}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}{Assimp\+::\+Zip\+Archive\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}{Assimp\+::\+Zip\+Archive\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a78821be348bf775ebfc9fdce07d622ac}\label{class_assimp_1_1_i_o_system_a78821be348bf775ebfc9fdce07d622ac}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Exists@{Exists}}
+\index{Exists@{Exists}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Exists()}{Exists()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool Assimp\+::\+IOSystem\+::\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{p\+File }\end{DoxyParamCaption}) const}
+
+
+
+For backward compatibility. 
+
+\begin{DoxySeeAlso}{See also}
+Exists(const char$\ast$) 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source_l00254}{254}} of file \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source}{IOSystem.\+hpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a78821be348bf775ebfc9fdce07d622ac}\label{class_assimp_1_1_i_o_system_a78821be348bf775ebfc9fdce07d622ac}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Exists@{Exists}}
+\index{Exists@{Exists}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Exists()}{Exists()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool Assimp\+::\+IOSystem\+::\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{p\+File }\end{DoxyParamCaption}) const}
+
+
+
+For backward compatibility. 
+
+\begin{DoxySeeAlso}{See also}
+Exists(const char$\ast$) 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a78821be348bf775ebfc9fdce07d622ac}\label{class_assimp_1_1_i_o_system_a78821be348bf775ebfc9fdce07d622ac}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Exists@{Exists}}
+\index{Exists@{Exists}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Exists()}{Exists()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool Assimp\+::\+IOSystem\+::\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{p\+File }\end{DoxyParamCaption}) const}
+
+
+
+For backward compatibility. 
+
+\begin{DoxySeeAlso}{See also}
+Exists(const char$\ast$) 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}\label{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!getOsSeparator@{getOsSeparator}}
+\index{getOsSeparator@{getOsSeparator}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{getOsSeparator()}{getOsSeparator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual char Assimp\+::\+IOSystem\+::get\+Os\+Separator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the system specific directory separator. 
+
+\begin{DoxyReturn}{Returns}
+System specific directory separator 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_aa3f6c9fa0e5a7a2f4dcae331a4060f73}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_af832c8ffceceac1a22a69e4d178086dd}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_aa3f6c9fa0e5a7a2f4dcae331a4060f73}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_af832c8ffceceac1a22a69e4d178086dd}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_aa3f6c9fa0e5a7a2f4dcae331a4060f73}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_af832c8ffceceac1a22a69e4d178086dd}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}{Assimp\+::\+Zip\+Archive\+IOSystem}}.
+
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}\label{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!getOsSeparator@{getOsSeparator}}
+\index{getOsSeparator@{getOsSeparator}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{getOsSeparator()}{getOsSeparator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual char Assimp\+::\+IOSystem\+::get\+Os\+Separator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the system specific directory separator. 
+
+\begin{DoxyReturn}{Returns}
+System specific directory separator 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_aa3f6c9fa0e5a7a2f4dcae331a4060f73}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_af832c8ffceceac1a22a69e4d178086dd}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_aa3f6c9fa0e5a7a2f4dcae331a4060f73}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_af832c8ffceceac1a22a69e4d178086dd}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_aa3f6c9fa0e5a7a2f4dcae331a4060f73}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_af832c8ffceceac1a22a69e4d178086dd}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}{Assimp\+::\+Zip\+Archive\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}\label{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!getOsSeparator@{getOsSeparator}}
+\index{getOsSeparator@{getOsSeparator}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{getOsSeparator()}{getOsSeparator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual char Assimp\+::\+IOSystem\+::get\+Os\+Separator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the system specific directory separator. 
+
+\begin{DoxyReturn}{Returns}
+System specific directory separator 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_aa3f6c9fa0e5a7a2f4dcae331a4060f73}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_af832c8ffceceac1a22a69e4d178086dd}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_aa3f6c9fa0e5a7a2f4dcae331a4060f73}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_af832c8ffceceac1a22a69e4d178086dd}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_aa3f6c9fa0e5a7a2f4dcae331a4060f73}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_af832c8ffceceac1a22a69e4d178086dd}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a991692d1cd95855d4ab950d3976a0a6e}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}{Assimp\+::\+Zip\+Archive\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}\label{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Open@{Open}}
+\index{Open@{Open}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ Assimp\+::\+IOSystem\+::\+Open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+File,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}rb\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Open a new file with a given path. 
+
+When the access to the file is finished, call \mbox{\hyperlink{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}{Close()}} to release all associated resources (or the virtual dtor of the \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path to the file \\
+\hline
+{\em p\+Mode} & Desired file I/O mode. Required are\+: \char`\"{}wb\char`\"{}, \char`\"{}w\char`\"{}, \char`\"{}wt\char`\"{}, \char`\"{}rb\char`\"{}, \char`\"{}r\char`\"{}, \char`\"{}rt\char`\"{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} interface allowing the lib to access the underlying file. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+When implementing this class to provide custom IO handling, you probably have to supply an own implementation of \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} as well. 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a93ef86ce5edfee4b9b4376f07f5b2407}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a93ef86ce5edfee4b9b4376f07f5b2407}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a93ef86ce5edfee4b9b4376f07f5b2407}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ad26d41f2fc89746a6861af8f82bc9ad2}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ad26d41f2fc89746a6861af8f82bc9ad2}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ad26d41f2fc89746a6861af8f82bc9ad2}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Assimp\+::\+Zip\+Archive\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Assimp\+::\+Zip\+Archive\+IOSystem}}.
+
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}\label{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Open@{Open}}
+\index{Open@{Open}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ Assimp\+::\+IOSystem\+::\+Open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+File,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}rb\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Open a new file with a given path. 
+
+When the access to the file is finished, call \mbox{\hyperlink{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}{Close()}} to release all associated resources (or the virtual dtor of the \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path to the file \\
+\hline
+{\em p\+Mode} & Desired file I/O mode. Required are\+: \char`\"{}wb\char`\"{}, \char`\"{}w\char`\"{}, \char`\"{}wt\char`\"{}, \char`\"{}rb\char`\"{}, \char`\"{}r\char`\"{}, \char`\"{}rt\char`\"{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} interface allowing the lib to access the underlying file. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+When implementing this class to provide custom IO handling, you probably have to supply an own implementation of \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} as well. 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a93ef86ce5edfee4b9b4376f07f5b2407}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a93ef86ce5edfee4b9b4376f07f5b2407}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a93ef86ce5edfee4b9b4376f07f5b2407}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ad26d41f2fc89746a6861af8f82bc9ad2}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ad26d41f2fc89746a6861af8f82bc9ad2}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ad26d41f2fc89746a6861af8f82bc9ad2}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Assimp\+::\+Zip\+Archive\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Assimp\+::\+Zip\+Archive\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}\label{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Open@{Open}}
+\index{Open@{Open}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ Assimp\+::\+IOSystem\+::\+Open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+File,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}rb\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Open a new file with a given path. 
+
+When the access to the file is finished, call \mbox{\hyperlink{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}{Close()}} to release all associated resources (or the virtual dtor of the \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path to the file \\
+\hline
+{\em p\+Mode} & Desired file I/O mode. Required are\+: \char`\"{}wb\char`\"{}, \char`\"{}w\char`\"{}, \char`\"{}wt\char`\"{}, \char`\"{}rb\char`\"{}, \char`\"{}r\char`\"{}, \char`\"{}rt\char`\"{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} interface allowing the lib to access the underlying file. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+When implementing this class to provide custom IO handling, you probably have to supply an own implementation of \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} as well. 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a93ef86ce5edfee4b9b4376f07f5b2407}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a93ef86ce5edfee4b9b4376f07f5b2407}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_blob_i_o_system_a93ef86ce5edfee4b9b4376f07f5b2407}{Assimp\+::\+Blob\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ad26d41f2fc89746a6861af8f82bc9ad2}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ad26d41f2fc89746a6861af8f82bc9ad2}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_default_i_o_system_ad26d41f2fc89746a6861af8f82bc9ad2}{Assimp\+::\+Default\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_aa7f1f8576f509adced186826fbc96890}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Assimp\+::\+Zip\+Archive\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Assimp\+::\+Zip\+Archive\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Assimp\+::\+Zip\+Archive\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_aef35fabc9bd49fb83bfd4f12a94083c3}\label{class_assimp_1_1_i_o_system_aef35fabc9bd49fb83bfd4f12a94083c3}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Open@{Open}}
+\index{Open@{Open}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ Assimp\+::\+IOSystem\+::\+Open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{p\+File,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{p\+Mode = {\ttfamily std\+:\+:string(\char`\"{}rb\char`\"{})} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+For backward compatibility. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Open(const char$\ast$, const char$\ast$)}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source_l00246}{246}} of file \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source}{IOSystem.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a8969623e38205b7b8661dea0138ddfbe}\label{class_assimp_1_1_i_o_system_a8969623e38205b7b8661dea0138ddfbe}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Open@{Open}}
+\index{Open@{Open}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ Assimp\+::\+IOSystem\+::\+Open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{p\+File,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{p\+Mode = {\ttfamily std\+:\+:string(\char`\"{}rb\char`\"{})} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+For backward compatibility. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Open(const char$\ast$, const char$\ast$)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a8969623e38205b7b8661dea0138ddfbe}\label{class_assimp_1_1_i_o_system_a8969623e38205b7b8661dea0138ddfbe}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!Open@{Open}}
+\index{Open@{Open}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ Assimp\+::\+IOSystem\+::\+Open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{p\+File,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{p\+Mode = {\ttfamily std\+:\+:string(\char`\"{}rb\char`\"{})} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+For backward compatibility. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Open(const char$\ast$, const char$\ast$)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_aa00f3ee1c44576364e8ce00206fb9dd2}\label{class_assimp_1_1_i_o_system_aa00f3ee1c44576364e8ce00206fb9dd2}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!PopDirectory@{PopDirectory}}
+\index{PopDirectory@{PopDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{PopDirectory()}{PopDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool Assimp\+::\+IOSystem\+::\+Pop\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pops the top directory from the stack. 
+
+\begin{DoxyReturn}{Returns}
+True, when a directory was on the stack. False if no directory was on the stack. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}{Assimp\+::\+Memory\+IOSystem}}.
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source_l00286}{286}} of file \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source}{IOSystem.\+hpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a4564abb11d22b1e2087076f70922ca71}\label{class_assimp_1_1_i_o_system_a4564abb11d22b1e2087076f70922ca71}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!PopDirectory@{PopDirectory}}
+\index{PopDirectory@{PopDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{PopDirectory()}{PopDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Pop\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pops the top directory from the stack. 
+
+\begin{DoxyReturn}{Returns}
+True, when a directory was on the stack. False if no directory was on the stack. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a4564abb11d22b1e2087076f70922ca71}\label{class_assimp_1_1_i_o_system_a4564abb11d22b1e2087076f70922ca71}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!PopDirectory@{PopDirectory}}
+\index{PopDirectory@{PopDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{PopDirectory()}{PopDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Pop\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pops the top directory from the stack. 
+
+\begin{DoxyReturn}{Returns}
+True, when a directory was on the stack. False if no directory was on the stack. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a5244c63bc32ca3954e7b12c6ab468554}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a07c2c93fac300df44c756174fcea71e8}\label{class_assimp_1_1_i_o_system_a07c2c93fac300df44c756174fcea71e8}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!PushDirectory@{PushDirectory}}
+\index{PushDirectory@{PushDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{PushDirectory()}{PushDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool Assimp\+::\+IOSystem\+::\+Push\+Directory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pushes a new directory onto the directory stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to push onto the stack. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, when push was successful, false if path is empty. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}{Assimp\+::\+Memory\+IOSystem}}.
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source_l00270}{270}} of file \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source}{IOSystem.\+hpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_ab2ba986c7ce02c38b318f33be181645c}\label{class_assimp_1_1_i_o_system_ab2ba986c7ce02c38b318f33be181645c}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!PushDirectory@{PushDirectory}}
+\index{PushDirectory@{PushDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{PushDirectory()}{PushDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Push\+Directory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pushes a new directory onto the directory stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to push onto the stack. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, when push was successful, false if path is empty. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_ab2ba986c7ce02c38b318f33be181645c}\label{class_assimp_1_1_i_o_system_ab2ba986c7ce02c38b318f33be181645c}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!PushDirectory@{PushDirectory}}
+\index{PushDirectory@{PushDirectory}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{PushDirectory()}{PushDirectory()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual bool Assimp\+::\+IOSystem\+::\+Push\+Directory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pushes a new directory onto the directory stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to push onto the stack. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, when push was successful, false if path is empty. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_a88510dccda5de12d12e767415df3ec4a}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_a1f3180cefbb447b4b8c628dcaf95fc69}\label{class_assimp_1_1_i_o_system_a1f3180cefbb447b4b8c628dcaf95fc69}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!StackSize@{StackSize}}
+\index{StackSize@{StackSize}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{StackSize()}{StackSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} size\+\_\+t Assimp\+::\+IOSystem\+::\+Stack\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the number of directories stored on the stack. 
+
+\begin{DoxyReturn}{Returns}
+The number of directories of the stack. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}{Assimp\+::\+Memory\+IOSystem}}.
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source_l00281}{281}} of file \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source}{IOSystem.\+hpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_adb69c7c385f976bb083b8c62ad3fb1b0}\label{class_assimp_1_1_i_o_system_adb69c7c385f976bb083b8c62ad3fb1b0}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!StackSize@{StackSize}}
+\index{StackSize@{StackSize}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{StackSize()}{StackSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual size\+\_\+t Assimp\+::\+IOSystem\+::\+Stack\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the number of directories stored on the stack. 
+
+\begin{DoxyReturn}{Returns}
+The number of directories of the stack. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}{Assimp\+::\+Memory\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_adb69c7c385f976bb083b8c62ad3fb1b0}\label{class_assimp_1_1_i_o_system_adb69c7c385f976bb083b8c62ad3fb1b0}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!StackSize@{StackSize}}
+\index{StackSize@{StackSize}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{StackSize()}{StackSize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual size\+\_\+t Assimp\+::\+IOSystem\+::\+Stack\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the number of directories stored on the stack. 
+
+\begin{DoxyReturn}{Returns}
+The number of directories of the stack. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}{Assimp\+::\+Memory\+IOSystem}}, \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}{Assimp\+::\+Memory\+IOSystem}}, and \mbox{\hyperlink{class_assimp_1_1_memory_i_o_system_ae78391f2a4e643eb7e228017caea5b78}{Assimp\+::\+Memory\+IOSystem}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_i_o_system_afb81db1f34642e684d90a0e180fbc4cf}\label{class_assimp_1_1_i_o_system_afb81db1f34642e684d90a0e180fbc4cf}} 
+\index{Assimp::IOSystem@{Assimp::IOSystem}!m\_pathStack@{m\_pathStack}}
+\index{m\_pathStack@{m\_pathStack}!Assimp::IOSystem@{Assimp::IOSystem}}
+\doxysubsubsection{\texorpdfstring{m\_pathStack}{m\_pathStack}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Assimp\+::\+IOSystem\+::m\+\_\+path\+Stack\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source_l00236}{236}} of file \mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp_source}{IOSystem.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/\mbox{\hyperlink{include_2assimp_2_i_o_system_8hpp}{IOSystem.\+hpp}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Debug/include/assimp/\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_i_o_system_8hpp}{IOSystem.\+hpp}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Release/include/assimp/\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_i_o_system_8hpp}{IOSystem.\+hpp}}\end{DoxyCompactItemize}

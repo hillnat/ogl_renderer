@@ -1,0 +1,146 @@
+\hypertarget{structai_importer_desc}{}\doxysection{ai\+Importer\+Desc Struct Reference}
+\label{structai_importer_desc}\index{aiImporterDesc@{aiImporterDesc}}
+
+
+{\ttfamily \#include $<$importerdesc.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$ \mbox{\hyperlink{structai_importer_desc_ab0ce0e430e2602fc495e800b955af2b8}{m\+Name}}
+\item 
+\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$ \mbox{\hyperlink{structai_importer_desc_a8eeab69c5066875af73f1a6ff6154b91}{m\+Author}}
+\item 
+\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$ \mbox{\hyperlink{structai_importer_desc_a7e107c1fdfc5f7fd59247142714222e6}{m\+Maintainer}}
+\item 
+\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$ \mbox{\hyperlink{structai_importer_desc_a524560baf544df7bfad728d40e7bba4a}{m\+Comments}}
+\item 
+unsigned int \mbox{\hyperlink{structai_importer_desc_a9939db58b9f95a537f9f5a749524b6b2}{m\+Flags}}
+\item 
+unsigned int \mbox{\hyperlink{structai_importer_desc_aee34d348f522807f0a36607664e92a57}{m\+Min\+Major}}
+\item 
+unsigned int \mbox{\hyperlink{structai_importer_desc_adb265dee32c6533234c45638df66ddab}{m\+Min\+Minor}}
+\item 
+unsigned int \mbox{\hyperlink{structai_importer_desc_a9d33eac3be20f7f4630f838a228ada63}{m\+Max\+Major}}
+\item 
+unsigned int \mbox{\hyperlink{structai_importer_desc_ae4c60eec7020af836b23537148f47f83}{m\+Max\+Minor}}
+\item 
+\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$ \mbox{\hyperlink{structai_importer_desc_aa93bb692319761c3bd2124c996b29135}{m\+File\+Extensions}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Meta information about a particular importer. Importers need to fill this structure, but they can freely decide how talkative they are. A common use case for loader meta info is a user interface in which the user can choose between various import/export file formats. Building such an UI by hand means a lot of maintenance as importers/exporters are added to \mbox{\hyperlink{namespace_assimp}{Assimp}}, so it might be useful to have a common mechanism to query some rough importer characteristics. 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source_l00095}{95}} of file \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source}{importerdesc.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structai_importer_desc_a8eeab69c5066875af73f1a6ff6154b91}\label{structai_importer_desc_a8eeab69c5066875af73f1a6ff6154b91}} 
+\index{aiImporterDesc@{aiImporterDesc}!mAuthor@{mAuthor}}
+\index{mAuthor@{mAuthor}!aiImporterDesc@{aiImporterDesc}}
+\doxysubsubsection{\texorpdfstring{mAuthor}{mAuthor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$ ai\+Importer\+Desc\+::m\+Author}
+
+Original author (left blank if unknown or whole assimp team) 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source_l00100}{100}} of file \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source}{importerdesc.\+h}}.
+
+\mbox{\Hypertarget{structai_importer_desc_a524560baf544df7bfad728d40e7bba4a}\label{structai_importer_desc_a524560baf544df7bfad728d40e7bba4a}} 
+\index{aiImporterDesc@{aiImporterDesc}!mComments@{mComments}}
+\index{mComments@{mComments}!aiImporterDesc@{aiImporterDesc}}
+\doxysubsubsection{\texorpdfstring{mComments}{mComments}}
+{\footnotesize\ttfamily \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$ ai\+Importer\+Desc\+::m\+Comments}
+
+Implementation comments, i.\+e. unimplemented features 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source_l00106}{106}} of file \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source}{importerdesc.\+h}}.
+
+\mbox{\Hypertarget{structai_importer_desc_aa93bb692319761c3bd2124c996b29135}\label{structai_importer_desc_aa93bb692319761c3bd2124c996b29135}} 
+\index{aiImporterDesc@{aiImporterDesc}!mFileExtensions@{mFileExtensions}}
+\index{mFileExtensions@{mFileExtensions}!aiImporterDesc@{aiImporterDesc}}
+\doxysubsubsection{\texorpdfstring{mFileExtensions}{mFileExtensions}}
+{\footnotesize\ttfamily \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$ ai\+Importer\+Desc\+::m\+File\+Extensions}
+
+List of file extensions this importer can handle. List entries are separated by space characters. All entries are lower case without a leading dot (i.\+e. \char`\"{}xml dae\char`\"{} would be a valid value. Note that multiple importers may respond to the same file extension -\/ assimp calls all importers in the order in which they are registered and each importer gets the opportunity to load the file until one importer \char`\"{}claims\char`\"{} the file. Apart from file extension checks, importers typically use other methods to quickly reject files (i.\+e. magic words) so this does not mean that common or generic file extensions such as XML would be tediously slow. 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source_l00139}{139}} of file \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source}{importerdesc.\+h}}.
+
+\mbox{\Hypertarget{structai_importer_desc_a9939db58b9f95a537f9f5a749524b6b2}\label{structai_importer_desc_a9939db58b9f95a537f9f5a749524b6b2}} 
+\index{aiImporterDesc@{aiImporterDesc}!mFlags@{mFlags}}
+\index{mFlags@{mFlags}!aiImporterDesc@{aiImporterDesc}}
+\doxysubsubsection{\texorpdfstring{mFlags}{mFlags}}
+{\footnotesize\ttfamily unsigned int ai\+Importer\+Desc\+::m\+Flags}
+
+These flags indicate some characteristics common to many importers. 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source_l00110}{110}} of file \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source}{importerdesc.\+h}}.
+
+\mbox{\Hypertarget{structai_importer_desc_a7e107c1fdfc5f7fd59247142714222e6}\label{structai_importer_desc_a7e107c1fdfc5f7fd59247142714222e6}} 
+\index{aiImporterDesc@{aiImporterDesc}!mMaintainer@{mMaintainer}}
+\index{mMaintainer@{mMaintainer}!aiImporterDesc@{aiImporterDesc}}
+\doxysubsubsection{\texorpdfstring{mMaintainer}{mMaintainer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$ ai\+Importer\+Desc\+::m\+Maintainer}
+
+Current maintainer, left blank if the author maintains 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source_l00103}{103}} of file \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source}{importerdesc.\+h}}.
+
+\mbox{\Hypertarget{structai_importer_desc_a9d33eac3be20f7f4630f838a228ada63}\label{structai_importer_desc_a9d33eac3be20f7f4630f838a228ada63}} 
+\index{aiImporterDesc@{aiImporterDesc}!mMaxMajor@{mMaxMajor}}
+\index{mMaxMajor@{mMaxMajor}!aiImporterDesc@{aiImporterDesc}}
+\doxysubsubsection{\texorpdfstring{mMaxMajor}{mMaxMajor}}
+{\footnotesize\ttfamily unsigned int ai\+Importer\+Desc\+::m\+Max\+Major}
+
+Maximum format version that can be loaded im major.\+minor format, both are set to 0 if there is either no version scheme or if the loader doesn\textquotesingle{}t care. Loaders that expect to be forward-\/compatible to potential future format versions should indicate zero, otherwise they should specify the current maximum version. 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source_l00124}{124}} of file \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source}{importerdesc.\+h}}.
+
+\mbox{\Hypertarget{structai_importer_desc_ae4c60eec7020af836b23537148f47f83}\label{structai_importer_desc_ae4c60eec7020af836b23537148f47f83}} 
+\index{aiImporterDesc@{aiImporterDesc}!mMaxMinor@{mMaxMinor}}
+\index{mMaxMinor@{mMaxMinor}!aiImporterDesc@{aiImporterDesc}}
+\doxysubsubsection{\texorpdfstring{mMaxMinor}{mMaxMinor}}
+{\footnotesize\ttfamily unsigned int ai\+Importer\+Desc\+::m\+Max\+Minor}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source_l00125}{125}} of file \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source}{importerdesc.\+h}}.
+
+\mbox{\Hypertarget{structai_importer_desc_aee34d348f522807f0a36607664e92a57}\label{structai_importer_desc_aee34d348f522807f0a36607664e92a57}} 
+\index{aiImporterDesc@{aiImporterDesc}!mMinMajor@{mMinMajor}}
+\index{mMinMajor@{mMinMajor}!aiImporterDesc@{aiImporterDesc}}
+\doxysubsubsection{\texorpdfstring{mMinMajor}{mMinMajor}}
+{\footnotesize\ttfamily unsigned int ai\+Importer\+Desc\+::m\+Min\+Major}
+
+Minimum format version that can be loaded im major.\+minor format, both are set to 0 if there is either no version scheme or if the loader doesn\textquotesingle{}t care. 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source_l00115}{115}} of file \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source}{importerdesc.\+h}}.
+
+\mbox{\Hypertarget{structai_importer_desc_adb265dee32c6533234c45638df66ddab}\label{structai_importer_desc_adb265dee32c6533234c45638df66ddab}} 
+\index{aiImporterDesc@{aiImporterDesc}!mMinMinor@{mMinMinor}}
+\index{mMinMinor@{mMinMinor}!aiImporterDesc@{aiImporterDesc}}
+\doxysubsubsection{\texorpdfstring{mMinMinor}{mMinMinor}}
+{\footnotesize\ttfamily unsigned int ai\+Importer\+Desc\+::m\+Min\+Minor}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source_l00116}{116}} of file \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source}{importerdesc.\+h}}.
+
+\mbox{\Hypertarget{structai_importer_desc_ab0ce0e430e2602fc495e800b955af2b8}\label{structai_importer_desc_ab0ce0e430e2602fc495e800b955af2b8}} 
+\index{aiImporterDesc@{aiImporterDesc}!mName@{mName}}
+\index{mName@{mName}!aiImporterDesc@{aiImporterDesc}}
+\doxysubsubsection{\texorpdfstring{mName}{mName}}
+{\footnotesize\ttfamily \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$ ai\+Importer\+Desc\+::m\+Name}
+
+Full name of the importer (i.\+e. Blender3D importer) 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source_l00097}{97}} of file \mbox{\hyperlink{include_2assimp_2importerdesc_8h_source}{importerdesc.\+h}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/\mbox{\hyperlink{include_2assimp_2importerdesc_8h}{importerdesc.\+h}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Debug/include/assimp/\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2importerdesc_8h}{importerdesc.\+h}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Release/include/assimp/\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2importerdesc_8h}{importerdesc.\+h}}\end{DoxyCompactItemize}

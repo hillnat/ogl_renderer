@@ -1,0 +1,114 @@
+\hypertarget{structai_texture}{}\doxysection{ai\+Texture Struct Reference}
+\label{structai_texture}\index{aiTexture@{aiTexture}}
+
+
+{\ttfamily \#include $<$texture.\+h$>$}
+
+
+
+Collaboration diagram for ai\+Texture\+:
+% FIG 0
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{structai_texture_aaa3ad8cfe44fdc4dea2db91977d92234}{m\+Width}}
+\item 
+unsigned int \mbox{\hyperlink{structai_texture_ac1e2fa6f1f646e9c55e3985d4418a752}{m\+Height}}
+\item 
+char \mbox{\hyperlink{structai_texture_ab624f9c0f109a07bd8dea5a44fbed086}{ach\+Format\+Hint}} \mbox{[}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2texture_8h_a45f24ec98ff3440bf8a1d781f8445379}{HINTMAXTEXTURELEN}}\mbox{]}
+\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_texel}{ai\+Texel}} $\ast$ \mbox{\hyperlink{structai_texture_aecc4fc01914088557a4c361274e8e9a2}{pc\+Data}}
+\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_string}{ai\+String}} \mbox{\hyperlink{structai_texture_a59dc57f450aef6e2d54d052130ed0ec3}{m\+Filename}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper structure to describe an embedded texture
+
+Normally textures are contained in external files but some file formats embed them directly in the model file. There are two types of embedded textures\+:
+\begin{DoxyEnumerate}
+\item Uncompressed textures. The color data is given in an uncompressed format.
+\item Compressed textures stored in a file format like png or jpg. The raw file bytes are given so the application must utilize an image decoder (e.\+g. Dev\+IL) to get access to the actual color data.
+\end{DoxyEnumerate}
+
+Embedded textures are referenced from materials using strings like \char`\"{}$\ast$0\char`\"{}, \char`\"{}$\ast$1\char`\"{}, etc. as the texture paths (a single asterisk character followed by the zero-\/based index of the texture in the \mbox{\hyperlink{structai_scene_afc4d9cb65b0df890ccdcfcce3e8c3c10}{ai\+Scene\+::m\+Textures}} array). 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2texture_8h_source_l00132}{132}} of file \mbox{\hyperlink{include_2assimp_2texture_8h_source}{texture.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structai_texture_ab624f9c0f109a07bd8dea5a44fbed086}\label{structai_texture_ab624f9c0f109a07bd8dea5a44fbed086}} 
+\index{aiTexture@{aiTexture}!achFormatHint@{achFormatHint}}
+\index{achFormatHint@{achFormatHint}!aiTexture@{aiTexture}}
+\doxysubsubsection{\texorpdfstring{achFormatHint}{achFormatHint}}
+{\footnotesize\ttfamily char ai\+Texture\+::ach\+Format\+Hint}
+
+A hint from the loader to make it easier for applications to determine the type of embedded textures.
+
+If m\+Height != 0 this member is show how data is packed. Hint will consist of two parts\+: channel order and channel bitness (count of the bits for every color channel). For simple parsing by the viewer it\textquotesingle{}s better to not omit absent color channel and just use 0 for bitness. For example\+:
+\begin{DoxyEnumerate}
+\item Image contain RGBA and 8 bit per channel, ach\+Format\+Hint == \char`\"{}rgba8888\char`\"{};
+\item Image contain ARGB and 8 bit per channel, ach\+Format\+Hint == \char`\"{}argb8888\char`\"{};
+\item Image contain RGB and 5 bit for R and B channels and 6 bit for G channel, ach\+Format\+Hint == \char`\"{}rgba5650\char`\"{};
+\item One color image with B channel and 1 bit for it, ach\+Format\+Hint == \char`\"{}rgba0010\char`\"{}; If m\+Height == 0 then ach\+Format\+Hint is set set to \textquotesingle{}\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0\textquotesingle{} if the loader has no additional information about the texture file format used OR the file extension of the format without a trailing dot. If there are multiple file extensions for a format, the shortest extension is chosen (JPEG maps to \textquotesingle{}jpg\textquotesingle{}, not to \textquotesingle{}jpeg\textquotesingle{}). E.\+g. \textquotesingle{}dds\textbackslash{}0\textquotesingle{}, \textquotesingle{}pcx\textbackslash{}0\textquotesingle{}, \textquotesingle{}jpg\textbackslash{}0\textquotesingle{}. All characters are lower-\/case. The fourth character will always be \textquotesingle{}\textbackslash{}0\textquotesingle{}. 
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{include_2assimp_2texture_8h_source_l00167}{167}} of file \mbox{\hyperlink{include_2assimp_2texture_8h_source}{texture.\+h}}.
+
+\mbox{\Hypertarget{structai_texture_a59dc57f450aef6e2d54d052130ed0ec3}\label{structai_texture_a59dc57f450aef6e2d54d052130ed0ec3}} 
+\index{aiTexture@{aiTexture}!mFilename@{mFilename}}
+\index{mFilename@{mFilename}!aiTexture@{aiTexture}}
+\doxysubsubsection{\texorpdfstring{mFilename}{mFilename}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_string}{ai\+String}} ai\+Texture\+::m\+Filename}
+
+\mbox{\hyperlink{struct_texture}{Texture}} original filename
+
+Used to get the texture reference 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2texture_8h_source_l00184}{184}} of file \mbox{\hyperlink{include_2assimp_2texture_8h_source}{texture.\+h}}.
+
+\mbox{\Hypertarget{structai_texture_ac1e2fa6f1f646e9c55e3985d4418a752}\label{structai_texture_ac1e2fa6f1f646e9c55e3985d4418a752}} 
+\index{aiTexture@{aiTexture}!mHeight@{mHeight}}
+\index{mHeight@{mHeight}!aiTexture@{aiTexture}}
+\doxysubsubsection{\texorpdfstring{mHeight}{mHeight}}
+{\footnotesize\ttfamily unsigned int ai\+Texture\+::m\+Height}
+
+Height of the texture, in pixels
+
+If this value is zero, pc\+Data points to an compressed texture in any format (e.\+g. JPEG). 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2texture_8h_source_l00146}{146}} of file \mbox{\hyperlink{include_2assimp_2texture_8h_source}{texture.\+h}}.
+
+\mbox{\Hypertarget{structai_texture_aaa3ad8cfe44fdc4dea2db91977d92234}\label{structai_texture_aaa3ad8cfe44fdc4dea2db91977d92234}} 
+\index{aiTexture@{aiTexture}!mWidth@{mWidth}}
+\index{mWidth@{mWidth}!aiTexture@{aiTexture}}
+\doxysubsubsection{\texorpdfstring{mWidth}{mWidth}}
+{\footnotesize\ttfamily unsigned int ai\+Texture\+::m\+Width}
+
+Width of the texture, in pixels
+
+If m\+Height is zero the texture is compressed in a format like JPEG. In this case m\+Width specifies the size of the memory area pc\+Data is pointing to, in bytes. 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2texture_8h_source_l00139}{139}} of file \mbox{\hyperlink{include_2assimp_2texture_8h_source}{texture.\+h}}.
+
+\mbox{\Hypertarget{structai_texture_aecc4fc01914088557a4c361274e8e9a2}\label{structai_texture_aecc4fc01914088557a4c361274e8e9a2}} 
+\index{aiTexture@{aiTexture}!pcData@{pcData}}
+\index{pcData@{pcData}!aiTexture@{aiTexture}}
+\doxysubsubsection{\texorpdfstring{pcData}{pcData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\+\_\+\+STRUCT}} \mbox{\hyperlink{structai_texel}{ai\+Texel}} $\ast$ ai\+Texture\+::pc\+Data}
+
+Data of the texture.
+
+Points to an array of m\+Width $\ast$ m\+Height \mbox{\hyperlink{structai_texel}{ai\+Texel}}\textquotesingle{}s. The format of the texture data is always ARGB8888 to make the implementation for user of the library as easy as possible. If m\+Height = 0 this is a pointer to a memory buffer of size m\+Width containing the compressed texture data. Good luck, have fun! 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2texture_8h_source_l00178}{178}} of file \mbox{\hyperlink{include_2assimp_2texture_8h_source}{texture.\+h}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/\mbox{\hyperlink{include_2assimp_2texture_8h}{texture.\+h}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Debug/include/assimp/\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2texture_8h}{texture.\+h}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Release/include/assimp/\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2texture_8h}{texture.\+h}}\end{DoxyCompactItemize}

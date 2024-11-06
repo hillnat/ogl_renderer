@@ -1,0 +1,76 @@
+\hypertarget{include_2assimp_2_base64_8hpp_source}{}\doxysection{Base64.\+hpp}
+\label{include_2assimp_2_base64_8hpp_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/Base64.hpp@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/Base64.hpp}}
+\mbox{\hyperlink{include_2assimp_2_base64_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00002}00002 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00003}00003 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00004}00004 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00005}00005 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00006}00006 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00007}00007 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00008}00008 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00009}00009 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00010}00010 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00011}00011 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00012}00012 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00013}00013 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00014}00014 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00015}00015 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00016}00016 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00017}00017 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00018}00018 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00019}00019 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00020}00020 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00021}00021 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00022}00022 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00023}00023 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00024}00024 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00025}00025 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00026}00026 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00027}00027 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00028}00028 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00029}00029 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00030}00030 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00031}00031 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00032}00032 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00033}00033 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00034}00034 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00035}00035 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00036}00036 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00037}00037 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00038}00038 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00039}00039 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00040}00040 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#ifndef AI\_BASE64\_HPP\_INC}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00044}\mbox{\hyperlink{include_2assimp_2_base64_8hpp_a7bfde16fc5dd8c1e42db91c81135549f}{00044}} \textcolor{preprocessor}{\#define AI\_BASE64\_HPP\_INC}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#include <assimp/defs.h>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00048}00048 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00049}00049 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00050}00050 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00052}00052 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00053}\mbox{\hyperlink{namespace_assimp_1_1_base64}{00053}} \textcolor{keyword}{namespace }Base64 \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00059}\mbox{\hyperlink{namespace_assimp_1_1_base64_a8430acdd49e1485acebd68addb44c88d}{00059}} \mbox{\hyperlink{include_2assimp_2defs_8h_a7d617d307e656cb6ff315ba71ff958d4}{ASSIMP\_API}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_assimp_1_1_base64_a8430acdd49e1485acebd68addb44c88d}{Encode}}(\textcolor{keyword}{const} uint8\_t *in, \textcolor{keywordtype}{size\_t} inLength, std::string \&out);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00064}\mbox{\hyperlink{namespace_assimp_1_1_base64_a6b4e1e56d9aa1e7f4e7ff4953615628e}{00064}} \mbox{\hyperlink{include_2assimp_2defs_8h_a7d617d307e656cb6ff315ba71ff958d4}{ASSIMP\_API}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_assimp_1_1_base64_a8430acdd49e1485acebd68addb44c88d}{Encode}}(\textcolor{keyword}{const} std::vector<uint8\_t> \&in, std::string \&out);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00069}\mbox{\hyperlink{namespace_assimp_1_1_base64_a3e28df1b3bef51fe0ca8df746a575c45}{00069}} \mbox{\hyperlink{include_2assimp_2defs_8h_a7d617d307e656cb6ff315ba71ff958d4}{ASSIMP\_API}} std::string \mbox{\hyperlink{namespace_assimp_1_1_base64_a8430acdd49e1485acebd68addb44c88d}{Encode}}(\textcolor{keyword}{const} std::vector<uint8\_t> \&in);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00076}\mbox{\hyperlink{namespace_assimp_1_1_base64_a2010870026463f4fd8d73b4e15d831ae}{00076}} \mbox{\hyperlink{include_2assimp_2defs_8h_a7d617d307e656cb6ff315ba71ff958d4}{ASSIMP\_API}} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{namespace_assimp_1_1_base64_a2010870026463f4fd8d73b4e15d831ae}{Decode}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *in, \textcolor{keywordtype}{size\_t} inLength, uint8\_t *\&out);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00082}\mbox{\hyperlink{namespace_assimp_1_1_base64_af3d87ad6b01a22c30c0ebdf8305574a2}{00082}} \mbox{\hyperlink{include_2assimp_2defs_8h_a7d617d307e656cb6ff315ba71ff958d4}{ASSIMP\_API}} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{namespace_assimp_1_1_base64_a2010870026463f4fd8d73b4e15d831ae}{Decode}}(\textcolor{keyword}{const} std::string \&in, std::vector<uint8\_t> \&out);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00087}\mbox{\hyperlink{namespace_assimp_1_1_base64_aa1b5c42c3229b0158be5f699a7a9bae2}{00087}} \mbox{\hyperlink{include_2assimp_2defs_8h_a7d617d307e656cb6ff315ba71ff958d4}{ASSIMP\_API}} std::vector<uint8\_t> \mbox{\hyperlink{namespace_assimp_1_1_base64_a2010870026463f4fd8d73b4e15d831ae}{Decode}}(\textcolor{keyword}{const} std::string \&in);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00089}00089 \} \textcolor{comment}{// namespace Base64}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00090}00090 \} \textcolor{comment}{// namespace Assimp}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_base64_8hpp_source_l00092}00092 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_BASE64\_HPP\_INC}}
+
+\end{DoxyCode}

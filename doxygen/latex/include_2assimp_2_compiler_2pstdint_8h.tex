@@ -1,0 +1,835 @@
+\hypertarget{include_2assimp_2_compiler_2pstdint_8h}{}\doxysection{C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/\+Compiler/pstdint.h File Reference}
+\label{include_2assimp_2_compiler_2pstdint_8h}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/Compiler/pstdint.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/Compiler/pstdint.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+Include dependency graph for pstdint.\+h\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a91cbfa927fe8e3fc657296bfe67849a6}{\+\_\+\+PSTDINT\+\_\+\+H\+\_\+\+INCLUDED}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a3c75bb398badb69c7577b21486f9963f}{SIZE\+\_\+\+MAX}}~($\sim$(size\+\_\+t)0)
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aeb4e270a084ee26fe73e799861bd0252}{UINT8\+\_\+\+MAX}}~0xff
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aaf7f29f45f1a513b4748a4e5014ddf6a}{INT8\+\_\+\+MAX}}~0x7f
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aadcf2a81af243df333b31efa6461ab8e}{INT8\+\_\+\+MIN}}~INT8\+\_\+C(0x80)
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a3ea490c9b3617d4479bd80ef93cd5602}{UINT16\+\_\+\+MAX}}~0xffff
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac58f2c111cc9989c86db2a7dc4fd84ca}{INT16\+\_\+\+MAX}}~0x7fff
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ad4e9955955b27624963643eac448118a}{INT16\+\_\+\+MIN}}~INT16\+\_\+C(0x8000)
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{UINT32\+\_\+\+MAX}}~(0xffffffff\+UL)
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a181807730d4a375f848ba139813ce04f}{INT32\+\_\+\+MAX}}~(0x7fffffffL)
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a688eb21a22db27c2b2bd5836943cdcbe}{INT32\+\_\+\+MIN}}~INT32\+\_\+C(0x80000000)
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a37ae7009688ff03a821794e036e3e458}{ULONG\+\_\+\+LONG\+\_\+\+MAX}}~UINT64\+\_\+C (18446744073709551615)
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a6b45386978db7d05efc9c5ce140ba27c}{PRINTF\+\_\+\+INT64\+\_\+\+HEX\+\_\+\+WIDTH}}~\char`\"{}16\char`\"{}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ae6f04461e1801eefd3b64f3b851abed8}{PRINTF\+\_\+\+INT32\+\_\+\+HEX\+\_\+\+WIDTH}}~\char`\"{}8\char`\"{}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ab330e7280ae15049599408e99c73273b}{PRINTF\+\_\+\+INT16\+\_\+\+HEX\+\_\+\+WIDTH}}~\char`\"{}4\char`\"{}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a32f0dce3fbd74aeeb4398ebc25abde7d}{PRINTF\+\_\+\+INT8\+\_\+\+HEX\+\_\+\+WIDTH}}~\char`\"{}2\char`\"{}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a9d70c86cd8202228d85db7aeed22497b}{PRINTF\+\_\+\+INT64\+\_\+\+DEC\+\_\+\+WIDTH}}~\char`\"{}19\char`\"{}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aa7207fcbdc05d7cf877066028543c28b}{PRINTF\+\_\+\+INT32\+\_\+\+DEC\+\_\+\+WIDTH}}~\char`\"{}10\char`\"{}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac1bfd0b6e49224d67657fe9e7502623c}{PRINTF\+\_\+\+INT16\+\_\+\+DEC\+\_\+\+WIDTH}}~\char`\"{}5\char`\"{}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a9b86583004a9dce380fe84b16de763b6}{PRINTF\+\_\+\+INT8\+\_\+\+DEC\+\_\+\+WIDTH}}~\char`\"{}3\char`\"{}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a580336588dd0e65aaa933f444d1a8a5c}{PRINTF\+\_\+\+UINT64\+\_\+\+DEC\+\_\+\+WIDTH}}~\char`\"{}20\char`\"{}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac11fdcf6c32e2509ee94472cc9575907}{PRINTF\+\_\+\+UINT32\+\_\+\+DEC\+\_\+\+WIDTH}}~\char`\"{}10\char`\"{}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a0e3b0c90dacdb57518332964a357c342}{PRINTF\+\_\+\+UINT16\+\_\+\+DEC\+\_\+\+WIDTH}}~\char`\"{}5\char`\"{}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_adb1add877aeea93408adf50729b0e6c9}{PRINTF\+\_\+\+UINT8\+\_\+\+DEC\+\_\+\+WIDTH}}~\char`\"{}3\char`\"{}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a022b9b0a3564d786244a4631847c37a3}{INTMAX\+\_\+\+MAX}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a181807730d4a375f848ba139813ce04f}{INT32\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aa54fd5210434219e9027bfa0f0e325c8}{UINTMAX\+\_\+\+MAX}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{UINT32\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a572bc4e8e4eae73a2e1e6a158d3837a4}{UINTMAX\+\_\+C}}(v)~UINT32\+\_\+C(v)
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a6b556b8b5f86e13f1c2a6e8f9b9b4966}{INTMAX\+\_\+C}}(v)~INT32\+\_\+C(v)
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ad53dd320ab0f0e9f4266bc225a3487df}{PRINTF\+\_\+\+INTMAX\+\_\+\+MODIFIER}}~PRINTF\+\_\+\+INT32\+\_\+\+MODIFIER
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_af88f43dbd7532680862099ef08421799}{PRINTF\+\_\+\+INTMAX\+\_\+\+HEX\+\_\+\+WIDTH}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ae6f04461e1801eefd3b64f3b851abed8}{PRINTF\+\_\+\+INT32\+\_\+\+HEX\+\_\+\+WIDTH}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a9c269e817611c8344b5d13cdedbd4465}{PRINTF\+\_\+\+INTMAX\+\_\+\+DEC\+\_\+\+WIDTH}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aa7207fcbdc05d7cf877066028543c28b}{PRINTF\+\_\+\+INT32\+\_\+\+DEC\+\_\+\+WIDTH}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a861aa5c171bcd4ac1438845bf9b183e1}{PRINTF\+\_\+\+LEAST32\+\_\+\+MODIFIER}}~PRINTF\+\_\+\+INT32\+\_\+\+MODIFIER
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ae050ead9591f8e4e8368fe01076e7da4}{PRINTF\+\_\+\+LEAST16\+\_\+\+MODIFIER}}~PRINTF\+\_\+\+INT16\+\_\+\+MODIFIER
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a2a80bde77ee1698d0f42f334adad4f2b}{UINT\+\_\+\+LEAST8\+\_\+\+MAX}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aeb4e270a084ee26fe73e799861bd0252}{UINT8\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aa05109908fb2770f632d2b646b9f85bf}{INT\+\_\+\+LEAST8\+\_\+\+MAX}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aaf7f29f45f1a513b4748a4e5014ddf6a}{INT8\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a6ef6a1a518bbf516ca8b0180b11c358f}{UINT\+\_\+\+LEAST16\+\_\+\+MAX}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a3ea490c9b3617d4479bd80ef93cd5602}{UINT16\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a7eb2a8e2a1c65d6c9ad0f86154890baa}{INT\+\_\+\+LEAST16\+\_\+\+MAX}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac58f2c111cc9989c86db2a7dc4fd84ca}{INT16\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a70cad8bacc9a6db301e1cdc86cc8d571}{UINT\+\_\+\+LEAST32\+\_\+\+MAX}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{UINT32\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a5618711a0a54f722190a3a1219e278c2}{INT\+\_\+\+LEAST32\+\_\+\+MAX}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a181807730d4a375f848ba139813ce04f}{INT32\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a3e986cad833f63f420962ff60eda87e5}{INT\+\_\+\+LEAST8\+\_\+\+MIN}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aadcf2a81af243df333b31efa6461ab8e}{INT8\+\_\+\+MIN}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a1f91bfd5820c2f27af3d260fc75813e1}{INT\+\_\+\+LEAST16\+\_\+\+MIN}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ad4e9955955b27624963643eac448118a}{INT16\+\_\+\+MIN}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a2360a536116dd734820a6b5b3d560ce7}{INT\+\_\+\+LEAST32\+\_\+\+MIN}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a688eb21a22db27c2b2bd5836943cdcbe}{INT32\+\_\+\+MIN}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a2c6f97ea2d76d0cf6260c84046cdb44e}{UINT\+\_\+\+FAST8\+\_\+\+MAX}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a2a80bde77ee1698d0f42f334adad4f2b}{UINT\+\_\+\+LEAST8\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_acbcdb3bee0f5f904da5df8de69a80ca3}{INT\+\_\+\+FAST8\+\_\+\+MAX}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aa05109908fb2770f632d2b646b9f85bf}{INT\+\_\+\+LEAST8\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aed28ca63d9b222f6f1377358fe73a183}{UINT\+\_\+\+FAST16\+\_\+\+MAX}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a6ef6a1a518bbf516ca8b0180b11c358f}{UINT\+\_\+\+LEAST16\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a2fd35d0ea091e04caec504ff0042cf00}{INT\+\_\+\+FAST16\+\_\+\+MAX}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a7eb2a8e2a1c65d6c9ad0f86154890baa}{INT\+\_\+\+LEAST16\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ad51246a178143208b2db3315efd21c45}{UINT\+\_\+\+FAST32\+\_\+\+MAX}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a70cad8bacc9a6db301e1cdc86cc8d571}{UINT\+\_\+\+LEAST32\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac96fa0f41b19e89f109e4f9913ca6635}{INT\+\_\+\+FAST32\+\_\+\+MAX}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a5618711a0a54f722190a3a1219e278c2}{INT\+\_\+\+LEAST32\+\_\+\+MAX}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aad8fb982cb19143efd5ee9a1a7a89390}{INT\+\_\+\+FAST8\+\_\+\+MIN}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a3e986cad833f63f420962ff60eda87e5}{INT\+\_\+\+LEAST8\+\_\+\+MIN}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a169460a4e2a79138723d68d99372d958}{INT\+\_\+\+FAST16\+\_\+\+MIN}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a1f91bfd5820c2f27af3d260fc75813e1}{INT\+\_\+\+LEAST16\+\_\+\+MIN}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ad93df1652ed0635513d5efe4f1219926}{INT\+\_\+\+FAST32\+\_\+\+MIN}}~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a2360a536116dd734820a6b5b3d560ce7}{INT\+\_\+\+LEAST32\+\_\+\+MIN}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a0c58c27c9332ac03e508bb0674f15ad6}{STDINT\+\_\+\+H\+\_\+\+UINTPTR\+\_\+\+T\+\_\+\+DEFINED}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a1f5fe9445d0ad0bee21bab1de4cc3e58}{SIG\+\_\+\+ATOMIC\+\_\+\+MAX}}~((((sig\+\_\+atomic\+\_\+t) 1) $<$$<$ (sizeof (sig\+\_\+atomic\+\_\+t)$\ast$CHAR\+\_\+\+BIT-\/1)) -\/ 1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int32\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a1a3f3321a0166a004bde0a1e72553f2b}{intmax\+\_\+t}}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a7643e68e022fde0d947e8dc252f716d6}{uintmax\+\_\+t}}
+\item 
+typedef int8\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aadfd725efbf565422ab13db91ccca53c}{int\+\_\+least8\+\_\+t}}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac76e2383debd5a3b100514044828961a}{uint\+\_\+least8\+\_\+t}}
+\item 
+typedef int16\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a17f379713bed2a28ac431760401253cd}{int\+\_\+least16\+\_\+t}}
+\item 
+typedef uint16\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a4f3f6e6631cb4aaeadf1c59ff597b2fb}{uint\+\_\+least16\+\_\+t}}
+\item 
+typedef int32\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a2676b57a778795e5d0598970f1407f38}{int\+\_\+least32\+\_\+t}}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac0af81082969e5e3f4d939b1de7002ac}{uint\+\_\+least32\+\_\+t}}
+\item 
+typedef \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aadfd725efbf565422ab13db91ccca53c}{int\+\_\+least8\+\_\+t}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a77eeea3cce53483bdce021415431c1b4}{int\+\_\+fast8\+\_\+t}}
+\item 
+typedef \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac76e2383debd5a3b100514044828961a}{uint\+\_\+least8\+\_\+t}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ae3a64b0efa0110e38359b34a0f265667}{uint\+\_\+fast8\+\_\+t}}
+\item 
+typedef \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a17f379713bed2a28ac431760401253cd}{int\+\_\+least16\+\_\+t}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a43505f8e7533c9a3b521288e927416ad}{int\+\_\+fast16\+\_\+t}}
+\item 
+typedef \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a4f3f6e6631cb4aaeadf1c59ff597b2fb}{uint\+\_\+least16\+\_\+t}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ad22db665b43dc5f23ed8a42e015373f3}{uint\+\_\+fast16\+\_\+t}}
+\item 
+typedef \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a2676b57a778795e5d0598970f1407f38}{int\+\_\+least32\+\_\+t}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_adf31545bab2a12c9d12347af275bff5d}{int\+\_\+fast32\+\_\+t}}
+\item 
+typedef \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac0af81082969e5e3f4d939b1de7002ac}{uint\+\_\+least32\+\_\+t}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a51c746994cab2a6465693f8746b7ab52}{uint\+\_\+fast32\+\_\+t}}
+\item 
+typedef ptrdiff\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac2abfb965e6a308c5912f9e749740d4a}{intptr\+\_\+t}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a91cbfa927fe8e3fc657296bfe67849a6}\label{include_2assimp_2_compiler_2pstdint_8h_a91cbfa927fe8e3fc657296bfe67849a6}} 
+\index{pstdint.h@{pstdint.h}!\_PSTDINT\_H\_INCLUDED@{\_PSTDINT\_H\_INCLUDED}}
+\index{\_PSTDINT\_H\_INCLUDED@{\_PSTDINT\_H\_INCLUDED}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{\_PSTDINT\_H\_INCLUDED}{\_PSTDINT\_H\_INCLUDED}}
+{\footnotesize\ttfamily \#define \+\_\+\+PSTDINT\+\_\+\+H\+\_\+\+INCLUDED}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00355}{355}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ac58f2c111cc9989c86db2a7dc4fd84ca}\label{include_2assimp_2_compiler_2pstdint_8h_ac58f2c111cc9989c86db2a7dc4fd84ca}} 
+\index{pstdint.h@{pstdint.h}!INT16\_MAX@{INT16\_MAX}}
+\index{INT16\_MAX@{INT16\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT16\_MAX}{INT16\_MAX}}
+{\footnotesize\ttfamily \#define INT16\+\_\+\+MAX~0x7fff}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00416}{416}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ad4e9955955b27624963643eac448118a}\label{include_2assimp_2_compiler_2pstdint_8h_ad4e9955955b27624963643eac448118a}} 
+\index{pstdint.h@{pstdint.h}!INT16\_MIN@{INT16\_MIN}}
+\index{INT16\_MIN@{INT16\_MIN}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT16\_MIN}{INT16\_MIN}}
+{\footnotesize\ttfamily \#define INT16\+\_\+\+MIN~INT16\+\_\+C(0x8000)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00419}{419}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a181807730d4a375f848ba139813ce04f}\label{include_2assimp_2_compiler_2pstdint_8h_a181807730d4a375f848ba139813ce04f}} 
+\index{pstdint.h@{pstdint.h}!INT32\_MAX@{INT32\_MAX}}
+\index{INT32\_MAX@{INT32\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT32\_MAX}{INT32\_MAX}}
+{\footnotesize\ttfamily \#define INT32\+\_\+\+MAX~(0x7fffffffL)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00467}{467}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a688eb21a22db27c2b2bd5836943cdcbe}\label{include_2assimp_2_compiler_2pstdint_8h_a688eb21a22db27c2b2bd5836943cdcbe}} 
+\index{pstdint.h@{pstdint.h}!INT32\_MIN@{INT32\_MIN}}
+\index{INT32\_MIN@{INT32\_MIN}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT32\_MIN}{INT32\_MIN}}
+{\footnotesize\ttfamily \#define INT32\+\_\+\+MIN~INT32\+\_\+C(0x80000000)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00470}{470}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_aaf7f29f45f1a513b4748a4e5014ddf6a}\label{include_2assimp_2_compiler_2pstdint_8h_aaf7f29f45f1a513b4748a4e5014ddf6a}} 
+\index{pstdint.h@{pstdint.h}!INT8\_MAX@{INT8\_MAX}}
+\index{INT8\_MAX@{INT8\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT8\_MAX}{INT8\_MAX}}
+{\footnotesize\ttfamily \#define INT8\+\_\+\+MAX~0x7f}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00380}{380}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_aadcf2a81af243df333b31efa6461ab8e}\label{include_2assimp_2_compiler_2pstdint_8h_aadcf2a81af243df333b31efa6461ab8e}} 
+\index{pstdint.h@{pstdint.h}!INT8\_MIN@{INT8\_MIN}}
+\index{INT8\_MIN@{INT8\_MIN}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT8\_MIN}{INT8\_MIN}}
+{\footnotesize\ttfamily \#define INT8\+\_\+\+MIN~INT8\+\_\+C(0x80)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00383}{383}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a2fd35d0ea091e04caec504ff0042cf00}\label{include_2assimp_2_compiler_2pstdint_8h_a2fd35d0ea091e04caec504ff0042cf00}} 
+\index{pstdint.h@{pstdint.h}!INT\_FAST16\_MAX@{INT\_FAST16\_MAX}}
+\index{INT\_FAST16\_MAX@{INT\_FAST16\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_FAST16\_MAX}{INT\_FAST16\_MAX}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+FAST16\+\_\+\+MAX~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a7eb2a8e2a1c65d6c9ad0f86154890baa}{INT\+\_\+\+LEAST16\+\_\+\+MAX}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00703}{703}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a169460a4e2a79138723d68d99372d958}\label{include_2assimp_2_compiler_2pstdint_8h_a169460a4e2a79138723d68d99372d958}} 
+\index{pstdint.h@{pstdint.h}!INT\_FAST16\_MIN@{INT\_FAST16\_MIN}}
+\index{INT\_FAST16\_MIN@{INT\_FAST16\_MIN}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_FAST16\_MIN}{INT\_FAST16\_MIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+FAST16\+\_\+\+MIN~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a1f91bfd5820c2f27af3d260fc75813e1}{INT\+\_\+\+LEAST16\+\_\+\+MIN}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00707}{707}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ac96fa0f41b19e89f109e4f9913ca6635}\label{include_2assimp_2_compiler_2pstdint_8h_ac96fa0f41b19e89f109e4f9913ca6635}} 
+\index{pstdint.h@{pstdint.h}!INT\_FAST32\_MAX@{INT\_FAST32\_MAX}}
+\index{INT\_FAST32\_MAX@{INT\_FAST32\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_FAST32\_MAX}{INT\_FAST32\_MAX}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+FAST32\+\_\+\+MAX~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a5618711a0a54f722190a3a1219e278c2}{INT\+\_\+\+LEAST32\+\_\+\+MAX}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00705}{705}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ad93df1652ed0635513d5efe4f1219926}\label{include_2assimp_2_compiler_2pstdint_8h_ad93df1652ed0635513d5efe4f1219926}} 
+\index{pstdint.h@{pstdint.h}!INT\_FAST32\_MIN@{INT\_FAST32\_MIN}}
+\index{INT\_FAST32\_MIN@{INT\_FAST32\_MIN}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_FAST32\_MIN}{INT\_FAST32\_MIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+FAST32\+\_\+\+MIN~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a2360a536116dd734820a6b5b3d560ce7}{INT\+\_\+\+LEAST32\+\_\+\+MIN}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00708}{708}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_acbcdb3bee0f5f904da5df8de69a80ca3}\label{include_2assimp_2_compiler_2pstdint_8h_acbcdb3bee0f5f904da5df8de69a80ca3}} 
+\index{pstdint.h@{pstdint.h}!INT\_FAST8\_MAX@{INT\_FAST8\_MAX}}
+\index{INT\_FAST8\_MAX@{INT\_FAST8\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_FAST8\_MAX}{INT\_FAST8\_MAX}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+FAST8\+\_\+\+MAX~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aa05109908fb2770f632d2b646b9f85bf}{INT\+\_\+\+LEAST8\+\_\+\+MAX}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00701}{701}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_aad8fb982cb19143efd5ee9a1a7a89390}\label{include_2assimp_2_compiler_2pstdint_8h_aad8fb982cb19143efd5ee9a1a7a89390}} 
+\index{pstdint.h@{pstdint.h}!INT\_FAST8\_MIN@{INT\_FAST8\_MIN}}
+\index{INT\_FAST8\_MIN@{INT\_FAST8\_MIN}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_FAST8\_MIN}{INT\_FAST8\_MIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+FAST8\+\_\+\+MIN~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a3e986cad833f63f420962ff60eda87e5}{INT\+\_\+\+LEAST8\+\_\+\+MIN}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00706}{706}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a7eb2a8e2a1c65d6c9ad0f86154890baa}\label{include_2assimp_2_compiler_2pstdint_8h_a7eb2a8e2a1c65d6c9ad0f86154890baa}} 
+\index{pstdint.h@{pstdint.h}!INT\_LEAST16\_MAX@{INT\_LEAST16\_MAX}}
+\index{INT\_LEAST16\_MAX@{INT\_LEAST16\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_LEAST16\_MAX}{INT\_LEAST16\_MAX}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+LEAST16\+\_\+\+MAX~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac58f2c111cc9989c86db2a7dc4fd84ca}{INT16\+\_\+\+MAX}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00666}{666}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a1f91bfd5820c2f27af3d260fc75813e1}\label{include_2assimp_2_compiler_2pstdint_8h_a1f91bfd5820c2f27af3d260fc75813e1}} 
+\index{pstdint.h@{pstdint.h}!INT\_LEAST16\_MIN@{INT\_LEAST16\_MIN}}
+\index{INT\_LEAST16\_MIN@{INT\_LEAST16\_MIN}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_LEAST16\_MIN}{INT\_LEAST16\_MIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+LEAST16\+\_\+\+MIN~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ad4e9955955b27624963643eac448118a}{INT16\+\_\+\+MIN}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00670}{670}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a5618711a0a54f722190a3a1219e278c2}\label{include_2assimp_2_compiler_2pstdint_8h_a5618711a0a54f722190a3a1219e278c2}} 
+\index{pstdint.h@{pstdint.h}!INT\_LEAST32\_MAX@{INT\_LEAST32\_MAX}}
+\index{INT\_LEAST32\_MAX@{INT\_LEAST32\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_LEAST32\_MAX}{INT\_LEAST32\_MAX}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+LEAST32\+\_\+\+MAX~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a181807730d4a375f848ba139813ce04f}{INT32\+\_\+\+MAX}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00668}{668}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a2360a536116dd734820a6b5b3d560ce7}\label{include_2assimp_2_compiler_2pstdint_8h_a2360a536116dd734820a6b5b3d560ce7}} 
+\index{pstdint.h@{pstdint.h}!INT\_LEAST32\_MIN@{INT\_LEAST32\_MIN}}
+\index{INT\_LEAST32\_MIN@{INT\_LEAST32\_MIN}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_LEAST32\_MIN}{INT\_LEAST32\_MIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+LEAST32\+\_\+\+MIN~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a688eb21a22db27c2b2bd5836943cdcbe}{INT32\+\_\+\+MIN}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00671}{671}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_aa05109908fb2770f632d2b646b9f85bf}\label{include_2assimp_2_compiler_2pstdint_8h_aa05109908fb2770f632d2b646b9f85bf}} 
+\index{pstdint.h@{pstdint.h}!INT\_LEAST8\_MAX@{INT\_LEAST8\_MAX}}
+\index{INT\_LEAST8\_MAX@{INT\_LEAST8\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_LEAST8\_MAX}{INT\_LEAST8\_MAX}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+LEAST8\+\_\+\+MAX~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aaf7f29f45f1a513b4748a4e5014ddf6a}{INT8\+\_\+\+MAX}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00664}{664}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a3e986cad833f63f420962ff60eda87e5}\label{include_2assimp_2_compiler_2pstdint_8h_a3e986cad833f63f420962ff60eda87e5}} 
+\index{pstdint.h@{pstdint.h}!INT\_LEAST8\_MIN@{INT\_LEAST8\_MIN}}
+\index{INT\_LEAST8\_MIN@{INT\_LEAST8\_MIN}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INT\_LEAST8\_MIN}{INT\_LEAST8\_MIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+LEAST8\+\_\+\+MIN~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aadcf2a81af243df333b31efa6461ab8e}{INT8\+\_\+\+MIN}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00669}{669}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a6b556b8b5f86e13f1c2a6e8f9b9b4966}\label{include_2assimp_2_compiler_2pstdint_8h_a6b556b8b5f86e13f1c2a6e8f9b9b4966}} 
+\index{pstdint.h@{pstdint.h}!INTMAX\_C@{INTMAX\_C}}
+\index{INTMAX\_C@{INTMAX\_C}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INTMAX\_C}{INTMAX\_C}}
+{\footnotesize\ttfamily \#define INTMAX\+\_\+C(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~INT32\+\_\+C(v)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00635}{635}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a022b9b0a3564d786244a4631847c37a3}\label{include_2assimp_2_compiler_2pstdint_8h_a022b9b0a3564d786244a4631847c37a3}} 
+\index{pstdint.h@{pstdint.h}!INTMAX\_MAX@{INTMAX\_MAX}}
+\index{INTMAX\_MAX@{INTMAX\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{INTMAX\_MAX}{INTMAX\_MAX}}
+{\footnotesize\ttfamily \#define INTMAX\+\_\+\+MAX~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a181807730d4a375f848ba139813ce04f}{INT32\+\_\+\+MAX}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00632}{632}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ac1bfd0b6e49224d67657fe9e7502623c}\label{include_2assimp_2_compiler_2pstdint_8h_ac1bfd0b6e49224d67657fe9e7502623c}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_INT16\_DEC\_WIDTH@{PRINTF\_INT16\_DEC\_WIDTH}}
+\index{PRINTF\_INT16\_DEC\_WIDTH@{PRINTF\_INT16\_DEC\_WIDTH}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_INT16\_DEC\_WIDTH}{PRINTF\_INT16\_DEC\_WIDTH}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+INT16\+\_\+\+DEC\+\_\+\+WIDTH~\char`\"{}5\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00588}{588}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ab330e7280ae15049599408e99c73273b}\label{include_2assimp_2_compiler_2pstdint_8h_ab330e7280ae15049599408e99c73273b}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_INT16\_HEX\_WIDTH@{PRINTF\_INT16\_HEX\_WIDTH}}
+\index{PRINTF\_INT16\_HEX\_WIDTH@{PRINTF\_INT16\_HEX\_WIDTH}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_INT16\_HEX\_WIDTH}{PRINTF\_INT16\_HEX\_WIDTH}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+INT16\+\_\+\+HEX\+\_\+\+WIDTH~\char`\"{}4\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00576}{576}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_aa7207fcbdc05d7cf877066028543c28b}\label{include_2assimp_2_compiler_2pstdint_8h_aa7207fcbdc05d7cf877066028543c28b}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_INT32\_DEC\_WIDTH@{PRINTF\_INT32\_DEC\_WIDTH}}
+\index{PRINTF\_INT32\_DEC\_WIDTH@{PRINTF\_INT32\_DEC\_WIDTH}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_INT32\_DEC\_WIDTH}{PRINTF\_INT32\_DEC\_WIDTH}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+INT32\+\_\+\+DEC\+\_\+\+WIDTH~\char`\"{}10\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00585}{585}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ae6f04461e1801eefd3b64f3b851abed8}\label{include_2assimp_2_compiler_2pstdint_8h_ae6f04461e1801eefd3b64f3b851abed8}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_INT32\_HEX\_WIDTH@{PRINTF\_INT32\_HEX\_WIDTH}}
+\index{PRINTF\_INT32\_HEX\_WIDTH@{PRINTF\_INT32\_HEX\_WIDTH}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_INT32\_HEX\_WIDTH}{PRINTF\_INT32\_HEX\_WIDTH}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+INT32\+\_\+\+HEX\+\_\+\+WIDTH~\char`\"{}8\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00573}{573}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a9d70c86cd8202228d85db7aeed22497b}\label{include_2assimp_2_compiler_2pstdint_8h_a9d70c86cd8202228d85db7aeed22497b}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_INT64\_DEC\_WIDTH@{PRINTF\_INT64\_DEC\_WIDTH}}
+\index{PRINTF\_INT64\_DEC\_WIDTH@{PRINTF\_INT64\_DEC\_WIDTH}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_INT64\_DEC\_WIDTH}{PRINTF\_INT64\_DEC\_WIDTH}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+INT64\+\_\+\+DEC\+\_\+\+WIDTH~\char`\"{}19\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00582}{582}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a6b45386978db7d05efc9c5ce140ba27c}\label{include_2assimp_2_compiler_2pstdint_8h_a6b45386978db7d05efc9c5ce140ba27c}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_INT64\_HEX\_WIDTH@{PRINTF\_INT64\_HEX\_WIDTH}}
+\index{PRINTF\_INT64\_HEX\_WIDTH@{PRINTF\_INT64\_HEX\_WIDTH}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_INT64\_HEX\_WIDTH}{PRINTF\_INT64\_HEX\_WIDTH}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+INT64\+\_\+\+HEX\+\_\+\+WIDTH~\char`\"{}16\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00570}{570}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a9b86583004a9dce380fe84b16de763b6}\label{include_2assimp_2_compiler_2pstdint_8h_a9b86583004a9dce380fe84b16de763b6}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_INT8\_DEC\_WIDTH@{PRINTF\_INT8\_DEC\_WIDTH}}
+\index{PRINTF\_INT8\_DEC\_WIDTH@{PRINTF\_INT8\_DEC\_WIDTH}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_INT8\_DEC\_WIDTH}{PRINTF\_INT8\_DEC\_WIDTH}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+INT8\+\_\+\+DEC\+\_\+\+WIDTH~\char`\"{}3\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00591}{591}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a32f0dce3fbd74aeeb4398ebc25abde7d}\label{include_2assimp_2_compiler_2pstdint_8h_a32f0dce3fbd74aeeb4398ebc25abde7d}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_INT8\_HEX\_WIDTH@{PRINTF\_INT8\_HEX\_WIDTH}}
+\index{PRINTF\_INT8\_HEX\_WIDTH@{PRINTF\_INT8\_HEX\_WIDTH}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_INT8\_HEX\_WIDTH}{PRINTF\_INT8\_HEX\_WIDTH}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+INT8\+\_\+\+HEX\+\_\+\+WIDTH~\char`\"{}2\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00579}{579}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a9c269e817611c8344b5d13cdedbd4465}\label{include_2assimp_2_compiler_2pstdint_8h_a9c269e817611c8344b5d13cdedbd4465}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_INTMAX\_DEC\_WIDTH@{PRINTF\_INTMAX\_DEC\_WIDTH}}
+\index{PRINTF\_INTMAX\_DEC\_WIDTH@{PRINTF\_INTMAX\_DEC\_WIDTH}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_INTMAX\_DEC\_WIDTH}{PRINTF\_INTMAX\_DEC\_WIDTH}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+INTMAX\+\_\+\+DEC\+\_\+\+WIDTH~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aa7207fcbdc05d7cf877066028543c28b}{PRINTF\+\_\+\+INT32\+\_\+\+DEC\+\_\+\+WIDTH}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00643}{643}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_af88f43dbd7532680862099ef08421799}\label{include_2assimp_2_compiler_2pstdint_8h_af88f43dbd7532680862099ef08421799}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_INTMAX\_HEX\_WIDTH@{PRINTF\_INTMAX\_HEX\_WIDTH}}
+\index{PRINTF\_INTMAX\_HEX\_WIDTH@{PRINTF\_INTMAX\_HEX\_WIDTH}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_INTMAX\_HEX\_WIDTH}{PRINTF\_INTMAX\_HEX\_WIDTH}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+INTMAX\+\_\+\+HEX\+\_\+\+WIDTH~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ae6f04461e1801eefd3b64f3b851abed8}{PRINTF\+\_\+\+INT32\+\_\+\+HEX\+\_\+\+WIDTH}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00640}{640}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ad53dd320ab0f0e9f4266bc225a3487df}\label{include_2assimp_2_compiler_2pstdint_8h_ad53dd320ab0f0e9f4266bc225a3487df}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_INTMAX\_MODIFIER@{PRINTF\_INTMAX\_MODIFIER}}
+\index{PRINTF\_INTMAX\_MODIFIER@{PRINTF\_INTMAX\_MODIFIER}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_INTMAX\_MODIFIER}{PRINTF\_INTMAX\_MODIFIER}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+INTMAX\+\_\+\+MODIFIER~PRINTF\+\_\+\+INT32\+\_\+\+MODIFIER}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00637}{637}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ae050ead9591f8e4e8368fe01076e7da4}\label{include_2assimp_2_compiler_2pstdint_8h_ae050ead9591f8e4e8368fe01076e7da4}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_LEAST16\_MODIFIER@{PRINTF\_LEAST16\_MODIFIER}}
+\index{PRINTF\_LEAST16\_MODIFIER@{PRINTF\_LEAST16\_MODIFIER}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_LEAST16\_MODIFIER}{PRINTF\_LEAST16\_MODIFIER}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+LEAST16\+\_\+\+MODIFIER~PRINTF\+\_\+\+INT16\+\_\+\+MODIFIER}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00662}{662}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a861aa5c171bcd4ac1438845bf9b183e1}\label{include_2assimp_2_compiler_2pstdint_8h_a861aa5c171bcd4ac1438845bf9b183e1}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_LEAST32\_MODIFIER@{PRINTF\_LEAST32\_MODIFIER}}
+\index{PRINTF\_LEAST32\_MODIFIER@{PRINTF\_LEAST32\_MODIFIER}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_LEAST32\_MODIFIER}{PRINTF\_LEAST32\_MODIFIER}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+LEAST32\+\_\+\+MODIFIER~PRINTF\+\_\+\+INT32\+\_\+\+MODIFIER}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00661}{661}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a0e3b0c90dacdb57518332964a357c342}\label{include_2assimp_2_compiler_2pstdint_8h_a0e3b0c90dacdb57518332964a357c342}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_UINT16\_DEC\_WIDTH@{PRINTF\_UINT16\_DEC\_WIDTH}}
+\index{PRINTF\_UINT16\_DEC\_WIDTH@{PRINTF\_UINT16\_DEC\_WIDTH}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_UINT16\_DEC\_WIDTH}{PRINTF\_UINT16\_DEC\_WIDTH}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+UINT16\+\_\+\+DEC\+\_\+\+WIDTH~\char`\"{}5\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00600}{600}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ac11fdcf6c32e2509ee94472cc9575907}\label{include_2assimp_2_compiler_2pstdint_8h_ac11fdcf6c32e2509ee94472cc9575907}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_UINT32\_DEC\_WIDTH@{PRINTF\_UINT32\_DEC\_WIDTH}}
+\index{PRINTF\_UINT32\_DEC\_WIDTH@{PRINTF\_UINT32\_DEC\_WIDTH}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_UINT32\_DEC\_WIDTH}{PRINTF\_UINT32\_DEC\_WIDTH}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+UINT32\+\_\+\+DEC\+\_\+\+WIDTH~\char`\"{}10\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00597}{597}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a580336588dd0e65aaa933f444d1a8a5c}\label{include_2assimp_2_compiler_2pstdint_8h_a580336588dd0e65aaa933f444d1a8a5c}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_UINT64\_DEC\_WIDTH@{PRINTF\_UINT64\_DEC\_WIDTH}}
+\index{PRINTF\_UINT64\_DEC\_WIDTH@{PRINTF\_UINT64\_DEC\_WIDTH}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_UINT64\_DEC\_WIDTH}{PRINTF\_UINT64\_DEC\_WIDTH}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+UINT64\+\_\+\+DEC\+\_\+\+WIDTH~\char`\"{}20\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00594}{594}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_adb1add877aeea93408adf50729b0e6c9}\label{include_2assimp_2_compiler_2pstdint_8h_adb1add877aeea93408adf50729b0e6c9}} 
+\index{pstdint.h@{pstdint.h}!PRINTF\_UINT8\_DEC\_WIDTH@{PRINTF\_UINT8\_DEC\_WIDTH}}
+\index{PRINTF\_UINT8\_DEC\_WIDTH@{PRINTF\_UINT8\_DEC\_WIDTH}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_UINT8\_DEC\_WIDTH}{PRINTF\_UINT8\_DEC\_WIDTH}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+UINT8\+\_\+\+DEC\+\_\+\+WIDTH~\char`\"{}3\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00603}{603}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a1f5fe9445d0ad0bee21bab1de4cc3e58}\label{include_2assimp_2_compiler_2pstdint_8h_a1f5fe9445d0ad0bee21bab1de4cc3e58}} 
+\index{pstdint.h@{pstdint.h}!SIG\_ATOMIC\_MAX@{SIG\_ATOMIC\_MAX}}
+\index{SIG\_ATOMIC\_MAX@{SIG\_ATOMIC\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{SIG\_ATOMIC\_MAX}{SIG\_ATOMIC\_MAX}}
+{\footnotesize\ttfamily \#define SIG\+\_\+\+ATOMIC\+\_\+\+MAX~((((sig\+\_\+atomic\+\_\+t) 1) $<$$<$ (sizeof (sig\+\_\+atomic\+\_\+t)$\ast$CHAR\+\_\+\+BIT-\/1)) -\/ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00802}{802}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a3c75bb398badb69c7577b21486f9963f}\label{include_2assimp_2_compiler_2pstdint_8h_a3c75bb398badb69c7577b21486f9963f}} 
+\index{pstdint.h@{pstdint.h}!SIZE\_MAX@{SIZE\_MAX}}
+\index{SIZE\_MAX@{SIZE\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{SIZE\_MAX}{SIZE\_MAX}}
+{\footnotesize\ttfamily \#define SIZE\+\_\+\+MAX~($\sim$(size\+\_\+t)0)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00358}{358}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a0c58c27c9332ac03e508bb0674f15ad6}\label{include_2assimp_2_compiler_2pstdint_8h_a0c58c27c9332ac03e508bb0674f15ad6}} 
+\index{pstdint.h@{pstdint.h}!STDINT\_H\_UINTPTR\_T\_DEFINED@{STDINT\_H\_UINTPTR\_T\_DEFINED}}
+\index{STDINT\_H\_UINTPTR\_T\_DEFINED@{STDINT\_H\_UINTPTR\_T\_DEFINED}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{STDINT\_H\_UINTPTR\_T\_DEFINED}{STDINT\_H\_UINTPTR\_T\_DEFINED}}
+{\footnotesize\ttfamily \#define STDINT\+\_\+\+H\+\_\+\+UINTPTR\+\_\+\+T\+\_\+\+DEFINED}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00794}{794}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a3ea490c9b3617d4479bd80ef93cd5602}\label{include_2assimp_2_compiler_2pstdint_8h_a3ea490c9b3617d4479bd80ef93cd5602}} 
+\index{pstdint.h@{pstdint.h}!UINT16\_MAX@{UINT16\_MAX}}
+\index{UINT16\_MAX@{UINT16\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT16\_MAX}{UINT16\_MAX}}
+{\footnotesize\ttfamily \#define UINT16\+\_\+\+MAX~0xffff}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00395}{395}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}\label{include_2assimp_2_compiler_2pstdint_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}} 
+\index{pstdint.h@{pstdint.h}!UINT32\_MAX@{UINT32\_MAX}}
+\index{UINT32\_MAX@{UINT32\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT32\_MAX}{UINT32\_MAX}}
+{\footnotesize\ttfamily \#define UINT32\+\_\+\+MAX~(0xffffffff\+UL)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00440}{440}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_aeb4e270a084ee26fe73e799861bd0252}\label{include_2assimp_2_compiler_2pstdint_8h_aeb4e270a084ee26fe73e799861bd0252}} 
+\index{pstdint.h@{pstdint.h}!UINT8\_MAX@{UINT8\_MAX}}
+\index{UINT8\_MAX@{UINT8\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT8\_MAX}{UINT8\_MAX}}
+{\footnotesize\ttfamily \#define UINT8\+\_\+\+MAX~0xff}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00368}{368}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_aed28ca63d9b222f6f1377358fe73a183}\label{include_2assimp_2_compiler_2pstdint_8h_aed28ca63d9b222f6f1377358fe73a183}} 
+\index{pstdint.h@{pstdint.h}!UINT\_FAST16\_MAX@{UINT\_FAST16\_MAX}}
+\index{UINT\_FAST16\_MAX@{UINT\_FAST16\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT\_FAST16\_MAX}{UINT\_FAST16\_MAX}}
+{\footnotesize\ttfamily \#define UINT\+\_\+\+FAST16\+\_\+\+MAX~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a6ef6a1a518bbf516ca8b0180b11c358f}{UINT\+\_\+\+LEAST16\+\_\+\+MAX}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00702}{702}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ad51246a178143208b2db3315efd21c45}\label{include_2assimp_2_compiler_2pstdint_8h_ad51246a178143208b2db3315efd21c45}} 
+\index{pstdint.h@{pstdint.h}!UINT\_FAST32\_MAX@{UINT\_FAST32\_MAX}}
+\index{UINT\_FAST32\_MAX@{UINT\_FAST32\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT\_FAST32\_MAX}{UINT\_FAST32\_MAX}}
+{\footnotesize\ttfamily \#define UINT\+\_\+\+FAST32\+\_\+\+MAX~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a70cad8bacc9a6db301e1cdc86cc8d571}{UINT\+\_\+\+LEAST32\+\_\+\+MAX}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00704}{704}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a2c6f97ea2d76d0cf6260c84046cdb44e}\label{include_2assimp_2_compiler_2pstdint_8h_a2c6f97ea2d76d0cf6260c84046cdb44e}} 
+\index{pstdint.h@{pstdint.h}!UINT\_FAST8\_MAX@{UINT\_FAST8\_MAX}}
+\index{UINT\_FAST8\_MAX@{UINT\_FAST8\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT\_FAST8\_MAX}{UINT\_FAST8\_MAX}}
+{\footnotesize\ttfamily \#define UINT\+\_\+\+FAST8\+\_\+\+MAX~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a2a80bde77ee1698d0f42f334adad4f2b}{UINT\+\_\+\+LEAST8\+\_\+\+MAX}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00700}{700}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a6ef6a1a518bbf516ca8b0180b11c358f}\label{include_2assimp_2_compiler_2pstdint_8h_a6ef6a1a518bbf516ca8b0180b11c358f}} 
+\index{pstdint.h@{pstdint.h}!UINT\_LEAST16\_MAX@{UINT\_LEAST16\_MAX}}
+\index{UINT\_LEAST16\_MAX@{UINT\_LEAST16\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT\_LEAST16\_MAX}{UINT\_LEAST16\_MAX}}
+{\footnotesize\ttfamily \#define UINT\+\_\+\+LEAST16\+\_\+\+MAX~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a3ea490c9b3617d4479bd80ef93cd5602}{UINT16\+\_\+\+MAX}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00665}{665}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a70cad8bacc9a6db301e1cdc86cc8d571}\label{include_2assimp_2_compiler_2pstdint_8h_a70cad8bacc9a6db301e1cdc86cc8d571}} 
+\index{pstdint.h@{pstdint.h}!UINT\_LEAST32\_MAX@{UINT\_LEAST32\_MAX}}
+\index{UINT\_LEAST32\_MAX@{UINT\_LEAST32\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT\_LEAST32\_MAX}{UINT\_LEAST32\_MAX}}
+{\footnotesize\ttfamily \#define UINT\+\_\+\+LEAST32\+\_\+\+MAX~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{UINT32\+\_\+\+MAX}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00667}{667}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a2a80bde77ee1698d0f42f334adad4f2b}\label{include_2assimp_2_compiler_2pstdint_8h_a2a80bde77ee1698d0f42f334adad4f2b}} 
+\index{pstdint.h@{pstdint.h}!UINT\_LEAST8\_MAX@{UINT\_LEAST8\_MAX}}
+\index{UINT\_LEAST8\_MAX@{UINT\_LEAST8\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{UINT\_LEAST8\_MAX}{UINT\_LEAST8\_MAX}}
+{\footnotesize\ttfamily \#define UINT\+\_\+\+LEAST8\+\_\+\+MAX~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aeb4e270a084ee26fe73e799861bd0252}{UINT8\+\_\+\+MAX}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00663}{663}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a572bc4e8e4eae73a2e1e6a158d3837a4}\label{include_2assimp_2_compiler_2pstdint_8h_a572bc4e8e4eae73a2e1e6a158d3837a4}} 
+\index{pstdint.h@{pstdint.h}!UINTMAX\_C@{UINTMAX\_C}}
+\index{UINTMAX\_C@{UINTMAX\_C}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{UINTMAX\_C}{UINTMAX\_C}}
+{\footnotesize\ttfamily \#define UINTMAX\+\_\+C(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~UINT32\+\_\+C(v)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00634}{634}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_aa54fd5210434219e9027bfa0f0e325c8}\label{include_2assimp_2_compiler_2pstdint_8h_aa54fd5210434219e9027bfa0f0e325c8}} 
+\index{pstdint.h@{pstdint.h}!UINTMAX\_MAX@{UINTMAX\_MAX}}
+\index{UINTMAX\_MAX@{UINTMAX\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{UINTMAX\_MAX}{UINTMAX\_MAX}}
+{\footnotesize\ttfamily \#define UINTMAX\+\_\+\+MAX~\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{UINT32\+\_\+\+MAX}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00633}{633}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a37ae7009688ff03a821794e036e3e458}\label{include_2assimp_2_compiler_2pstdint_8h_a37ae7009688ff03a821794e036e3e458}} 
+\index{pstdint.h@{pstdint.h}!ULONG\_LONG\_MAX@{ULONG\_LONG\_MAX}}
+\index{ULONG\_LONG\_MAX@{ULONG\_LONG\_MAX}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{ULONG\_LONG\_MAX}{ULONG\_LONG\_MAX}}
+{\footnotesize\ttfamily \#define ULONG\+\_\+\+LONG\+\_\+\+MAX~UINT64\+\_\+C (18446744073709551615)}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00552}{552}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a43505f8e7533c9a3b521288e927416ad}\label{include_2assimp_2_compiler_2pstdint_8h_a43505f8e7533c9a3b521288e927416ad}} 
+\index{pstdint.h@{pstdint.h}!int\_fast16\_t@{int\_fast16\_t}}
+\index{int\_fast16\_t@{int\_fast16\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{int\_fast16\_t}{int\_fast16\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a17f379713bed2a28ac431760401253cd}{int\+\_\+least16\+\_\+t}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a43505f8e7533c9a3b521288e927416ad}{int\+\_\+fast16\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00696}{696}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_adf31545bab2a12c9d12347af275bff5d}\label{include_2assimp_2_compiler_2pstdint_8h_adf31545bab2a12c9d12347af275bff5d}} 
+\index{pstdint.h@{pstdint.h}!int\_fast32\_t@{int\_fast32\_t}}
+\index{int\_fast32\_t@{int\_fast32\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{int\_fast32\_t}{int\_fast32\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a2676b57a778795e5d0598970f1407f38}{int\+\_\+least32\+\_\+t}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_adf31545bab2a12c9d12347af275bff5d}{int\+\_\+fast32\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00698}{698}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a77eeea3cce53483bdce021415431c1b4}\label{include_2assimp_2_compiler_2pstdint_8h_a77eeea3cce53483bdce021415431c1b4}} 
+\index{pstdint.h@{pstdint.h}!int\_fast8\_t@{int\_fast8\_t}}
+\index{int\_fast8\_t@{int\_fast8\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{int\_fast8\_t}{int\_fast8\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aadfd725efbf565422ab13db91ccca53c}{int\+\_\+least8\+\_\+t}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a77eeea3cce53483bdce021415431c1b4}{int\+\_\+fast8\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00694}{694}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a17f379713bed2a28ac431760401253cd}\label{include_2assimp_2_compiler_2pstdint_8h_a17f379713bed2a28ac431760401253cd}} 
+\index{pstdint.h@{pstdint.h}!int\_least16\_t@{int\_least16\_t}}
+\index{int\_least16\_t@{int\_least16\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{int\_least16\_t}{int\_least16\_t}}
+{\footnotesize\ttfamily typedef int16\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a17f379713bed2a28ac431760401253cd}{int\+\_\+least16\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00657}{657}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a2676b57a778795e5d0598970f1407f38}\label{include_2assimp_2_compiler_2pstdint_8h_a2676b57a778795e5d0598970f1407f38}} 
+\index{pstdint.h@{pstdint.h}!int\_least32\_t@{int\_least32\_t}}
+\index{int\_least32\_t@{int\_least32\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{int\_least32\_t}{int\_least32\_t}}
+{\footnotesize\ttfamily typedef int32\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a2676b57a778795e5d0598970f1407f38}{int\+\_\+least32\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00659}{659}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_aadfd725efbf565422ab13db91ccca53c}\label{include_2assimp_2_compiler_2pstdint_8h_aadfd725efbf565422ab13db91ccca53c}} 
+\index{pstdint.h@{pstdint.h}!int\_least8\_t@{int\_least8\_t}}
+\index{int\_least8\_t@{int\_least8\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{int\_least8\_t}{int\_least8\_t}}
+{\footnotesize\ttfamily typedef int8\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aadfd725efbf565422ab13db91ccca53c}{int\+\_\+least8\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00655}{655}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a1a3f3321a0166a004bde0a1e72553f2b}\label{include_2assimp_2_compiler_2pstdint_8h_a1a3f3321a0166a004bde0a1e72553f2b}} 
+\index{pstdint.h@{pstdint.h}!intmax\_t@{intmax\_t}}
+\index{intmax\_t@{intmax\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{intmax\_t}{intmax\_t}}
+{\footnotesize\ttfamily typedef int32\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a1a3f3321a0166a004bde0a1e72553f2b}{intmax\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00630}{630}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ac2abfb965e6a308c5912f9e749740d4a}\label{include_2assimp_2_compiler_2pstdint_8h_ac2abfb965e6a308c5912f9e749740d4a}} 
+\index{pstdint.h@{pstdint.h}!intptr\_t@{intptr\_t}}
+\index{intptr\_t@{intptr\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{intptr\_t}{intptr\_t}}
+{\footnotesize\ttfamily typedef ptrdiff\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac2abfb965e6a308c5912f9e749740d4a}{intptr\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00792}{792}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ad22db665b43dc5f23ed8a42e015373f3}\label{include_2assimp_2_compiler_2pstdint_8h_ad22db665b43dc5f23ed8a42e015373f3}} 
+\index{pstdint.h@{pstdint.h}!uint\_fast16\_t@{uint\_fast16\_t}}
+\index{uint\_fast16\_t@{uint\_fast16\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{uint\_fast16\_t}{uint\_fast16\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a4f3f6e6631cb4aaeadf1c59ff597b2fb}{uint\+\_\+least16\+\_\+t}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ad22db665b43dc5f23ed8a42e015373f3}{uint\+\_\+fast16\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00697}{697}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a51c746994cab2a6465693f8746b7ab52}\label{include_2assimp_2_compiler_2pstdint_8h_a51c746994cab2a6465693f8746b7ab52}} 
+\index{pstdint.h@{pstdint.h}!uint\_fast32\_t@{uint\_fast32\_t}}
+\index{uint\_fast32\_t@{uint\_fast32\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{uint\_fast32\_t}{uint\_fast32\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac0af81082969e5e3f4d939b1de7002ac}{uint\+\_\+least32\+\_\+t}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a51c746994cab2a6465693f8746b7ab52}{uint\+\_\+fast32\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00699}{699}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ae3a64b0efa0110e38359b34a0f265667}\label{include_2assimp_2_compiler_2pstdint_8h_ae3a64b0efa0110e38359b34a0f265667}} 
+\index{pstdint.h@{pstdint.h}!uint\_fast8\_t@{uint\_fast8\_t}}
+\index{uint\_fast8\_t@{uint\_fast8\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{uint\_fast8\_t}{uint\_fast8\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac76e2383debd5a3b100514044828961a}{uint\+\_\+least8\+\_\+t}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ae3a64b0efa0110e38359b34a0f265667}{uint\+\_\+fast8\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00695}{695}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a4f3f6e6631cb4aaeadf1c59ff597b2fb}\label{include_2assimp_2_compiler_2pstdint_8h_a4f3f6e6631cb4aaeadf1c59ff597b2fb}} 
+\index{pstdint.h@{pstdint.h}!uint\_least16\_t@{uint\_least16\_t}}
+\index{uint\_least16\_t@{uint\_least16\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{uint\_least16\_t}{uint\_least16\_t}}
+{\footnotesize\ttfamily typedef uint16\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a4f3f6e6631cb4aaeadf1c59ff597b2fb}{uint\+\_\+least16\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00658}{658}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ac0af81082969e5e3f4d939b1de7002ac}\label{include_2assimp_2_compiler_2pstdint_8h_ac0af81082969e5e3f4d939b1de7002ac}} 
+\index{pstdint.h@{pstdint.h}!uint\_least32\_t@{uint\_least32\_t}}
+\index{uint\_least32\_t@{uint\_least32\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{uint\_least32\_t}{uint\_least32\_t}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac0af81082969e5e3f4d939b1de7002ac}{uint\+\_\+least32\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00660}{660}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_ac76e2383debd5a3b100514044828961a}\label{include_2assimp_2_compiler_2pstdint_8h_ac76e2383debd5a3b100514044828961a}} 
+\index{pstdint.h@{pstdint.h}!uint\_least8\_t@{uint\_least8\_t}}
+\index{uint\_least8\_t@{uint\_least8\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{uint\_least8\_t}{uint\_least8\_t}}
+{\footnotesize\ttfamily typedef uint8\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac76e2383debd5a3b100514044828961a}{uint\+\_\+least8\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00656}{656}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_compiler_2pstdint_8h_a7643e68e022fde0d947e8dc252f716d6}\label{include_2assimp_2_compiler_2pstdint_8h_a7643e68e022fde0d947e8dc252f716d6}} 
+\index{pstdint.h@{pstdint.h}!uintmax\_t@{uintmax\_t}}
+\index{uintmax\_t@{uintmax\_t}!pstdint.h@{pstdint.h}}
+\doxysubsubsection{\texorpdfstring{uintmax\_t}{uintmax\_t}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a7643e68e022fde0d947e8dc252f716d6}{uintmax\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source_l00631}{631}} of file \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_source}{pstdint.\+h}}.
+

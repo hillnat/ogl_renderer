@@ -1,0 +1,171 @@
+\hypertarget{include_2assimp_2qnan_8h}{}\doxysection{C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/qnan.h File Reference}
+\label{include_2assimp_2qnan_8h}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/qnan.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/qnan.h}}
+
+
+Some utilities for our dealings with qnans.  
+
+
+{\ttfamily \#include $<$assimp/defs.\+h$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for qnan.\+h\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union___i_e_e_e_single}{\+\_\+\+IEEESingle}}
+\item 
+union \mbox{\hyperlink{union___i_e_e_e_double}{\+\_\+\+IEEEDouble}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2qnan_8h_af6b38ad2b40bc1f7f630a965dd70003b}{AI\+\_\+\+QNAN\+\_\+\+H\+\_\+\+INCLUDED}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool \mbox{\hyperlink{include_2assimp_2qnan_8h_aba07171feddf4c9513c2424a630b03a5}{is\+\_\+qnan}} (float in)
+\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool \mbox{\hyperlink{include_2assimp_2qnan_8h_a682b18f4d3112793d4f7dd5c1a117c67}{is\+\_\+qnan}} (double in)
+\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool \mbox{\hyperlink{include_2assimp_2qnan_8h_ae81ad0f99eba1f73bad78e48a16df827}{is\+\_\+special\+\_\+float}} (float in)
+\begin{DoxyCompactList}\small\item\em check whether a float is either NaN or (+/-\/) INF. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool \mbox{\hyperlink{include_2assimp_2qnan_8h_abefbb78762da57066abee01f541de2be}{is\+\_\+special\+\_\+float}} (double in)
+\begin{DoxyCompactList}\small\item\em check whether a double is either NaN or (+/-\/) INF. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class TReal $>$ }\\\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool \mbox{\hyperlink{include_2assimp_2qnan_8h_a4b93a2d042b065c5b0c068626dc54ed2}{is\+\_\+not\+\_\+qnan}} (TReal in)
+\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} \mbox{\hyperlink{include_2assimp_2qnan_8h_a1563bfa01954df98282cbaaf632dc95a}{get\+\_\+qnan}} ()
+\begin{DoxyCompactList}\small\item\em Get a fresh qnan. ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Some utilities for our dealings with qnans. 
+
+\begin{DoxyNote}{Note}
+Some loaders use qnans to mark invalid values tempoarily, also \mbox{\hyperlink{namespace_assimp}{Assimp}} explicitly enforces undefined normals to be set to qnan. qnan utilities are available in standard libraries (C99 for example) but last time I checked compiler coverage was so bad that I decided to reinvent the wheel. 
+\end{DoxyNote}
+
+
+Definition in file \mbox{\hyperlink{include_2assimp_2qnan_8h_source}{qnan.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{include_2assimp_2qnan_8h_af6b38ad2b40bc1f7f630a965dd70003b}\label{include_2assimp_2qnan_8h_af6b38ad2b40bc1f7f630a965dd70003b}} 
+\index{qnan.h@{qnan.h}!AI\_QNAN\_H\_INCLUDED@{AI\_QNAN\_H\_INCLUDED}}
+\index{AI\_QNAN\_H\_INCLUDED@{AI\_QNAN\_H\_INCLUDED}!qnan.h@{qnan.h}}
+\doxysubsubsection{\texorpdfstring{AI\_QNAN\_H\_INCLUDED}{AI\_QNAN\_H\_INCLUDED}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+QNAN\+\_\+\+H\+\_\+\+INCLUDED}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2qnan_8h_source_l00055}{55}} of file \mbox{\hyperlink{include_2assimp_2qnan_8h_source}{qnan.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{include_2assimp_2qnan_8h_a1563bfa01954df98282cbaaf632dc95a}\label{include_2assimp_2qnan_8h_a1563bfa01954df98282cbaaf632dc95a}} 
+\index{qnan.h@{qnan.h}!get\_qnan@{get\_qnan}}
+\index{get\_qnan@{get\_qnan}!qnan.h@{qnan.h}}
+\doxysubsubsection{\texorpdfstring{get\_qnan()}{get\_qnan()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} get\+\_\+qnan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get a fresh qnan. ~\newline
+ 
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2qnan_8h_source_l00158}{158}} of file \mbox{\hyperlink{include_2assimp_2qnan_8h_source}{qnan.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2qnan_8h_a4b93a2d042b065c5b0c068626dc54ed2}\label{include_2assimp_2qnan_8h_a4b93a2d042b065c5b0c068626dc54ed2}} 
+\index{qnan.h@{qnan.h}!is\_not\_qnan@{is\_not\_qnan}}
+\index{is\_not\_qnan@{is\_not\_qnan}!qnan.h@{qnan.h}}
+\doxysubsubsection{\texorpdfstring{is\_not\_qnan()}{is\_not\_qnan()}}
+{\footnotesize\ttfamily template$<$class TReal $>$ \\
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool is\+\_\+not\+\_\+qnan (\begin{DoxyParamCaption}\item[{TReal}]{in }\end{DoxyParamCaption})}
+
+Check whether a float is NOT q\+NaN. 
+\begin{DoxyParams}{Parameters}
+{\em in} & Input value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2qnan_8h_source_l00152}{152}} of file \mbox{\hyperlink{include_2assimp_2qnan_8h_source}{qnan.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{include_2assimp_2qnan_8h_a682b18f4d3112793d4f7dd5c1a117c67}\label{include_2assimp_2qnan_8h_a682b18f4d3112793d4f7dd5c1a117c67}} 
+\index{qnan.h@{qnan.h}!is\_qnan@{is\_qnan}}
+\index{is\_qnan@{is\_qnan}!qnan.h@{qnan.h}}
+\doxysubsubsection{\texorpdfstring{is\_qnan()}{is\_qnan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool is\+\_\+qnan (\begin{DoxyParamCaption}\item[{double}]{in }\end{DoxyParamCaption})}
+
+Check whether a given double is q\+NaN. 
+\begin{DoxyParams}{Parameters}
+{\em in} & Input value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2qnan_8h_source_l00112}{112}} of file \mbox{\hyperlink{include_2assimp_2qnan_8h_source}{qnan.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2qnan_8h_aba07171feddf4c9513c2424a630b03a5}\label{include_2assimp_2qnan_8h_aba07171feddf4c9513c2424a630b03a5}} 
+\index{qnan.h@{qnan.h}!is\_qnan@{is\_qnan}}
+\index{is\_qnan@{is\_qnan}!qnan.h@{qnan.h}}
+\doxysubsubsection{\texorpdfstring{is\_qnan()}{is\_qnan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool is\+\_\+qnan (\begin{DoxyParamCaption}\item[{float}]{in }\end{DoxyParamCaption})}
+
+Check whether a given float is q\+NaN. 
+\begin{DoxyParams}{Parameters}
+{\em in} & Input value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2qnan_8h_source_l00095}{95}} of file \mbox{\hyperlink{include_2assimp_2qnan_8h_source}{qnan.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{include_2assimp_2qnan_8h_abefbb78762da57066abee01f541de2be}\label{include_2assimp_2qnan_8h_abefbb78762da57066abee01f541de2be}} 
+\index{qnan.h@{qnan.h}!is\_special\_float@{is\_special\_float}}
+\index{is\_special\_float@{is\_special\_float}!qnan.h@{qnan.h}}
+\doxysubsubsection{\texorpdfstring{is\_special\_float()}{is\_special\_float()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool is\+\_\+special\+\_\+float (\begin{DoxyParamCaption}\item[{double}]{in }\end{DoxyParamCaption})}
+
+
+
+check whether a double is either NaN or (+/-\/) INF. 
+
+Denorms return false, they\textquotesingle{}re treated like normal values. 
+\begin{DoxyParams}{Parameters}
+{\em in} & Input value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2qnan_8h_source_l00142}{142}} of file \mbox{\hyperlink{include_2assimp_2qnan_8h_source}{qnan.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2qnan_8h_ae81ad0f99eba1f73bad78e48a16df827}\label{include_2assimp_2qnan_8h_ae81ad0f99eba1f73bad78e48a16df827}} 
+\index{qnan.h@{qnan.h}!is\_special\_float@{is\_special\_float}}
+\index{is\_special\_float@{is\_special\_float}!qnan.h@{qnan.h}}
+\doxysubsubsection{\texorpdfstring{is\_special\_float()}{is\_special\_float()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} bool is\+\_\+special\+\_\+float (\begin{DoxyParamCaption}\item[{float}]{in }\end{DoxyParamCaption})}
+
+
+
+check whether a float is either NaN or (+/-\/) INF. 
+
+Denorms return false, they\textquotesingle{}re treated like normal values. 
+\begin{DoxyParams}{Parameters}
+{\em in} & Input value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2qnan_8h_source_l00131}{131}} of file \mbox{\hyperlink{include_2assimp_2qnan_8h_source}{qnan.\+h}}.
+

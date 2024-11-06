@@ -1,0 +1,1052 @@
+\hypertarget{class_assimp_1_1_export_properties}{}\doxysection{Assimp\+::Export\+Properties Class Reference}
+\label{class_assimp_1_1_export_properties}\index{Assimp::ExportProperties@{Assimp::ExportProperties}}
+
+
+{\ttfamily \#include $<$Exporter.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, int $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a5eb68bd8289eb42e495a7ce4e93d8b70}{Int\+Property\+Map}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_acc1c8ad6e55de8f9da60b907a1434c6c}{Float\+Property\+Map}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, std\+::string $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a8a0ab4fafe00d7ffdffd7ad40782c218}{String\+Property\+Map}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_adc9f7b8ed897e43a287138feec6f3d64}{Matrix\+Property\+Map}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, std\+::function$<$ void $\ast$(void $\ast$)$>$ $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_ab06b379985083def27d41a9ba87c8d06}{Callback\+Property\+Map}}
+\item 
+typedef unsigned int \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, int $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a5eb68bd8289eb42e495a7ce4e93d8b70}{Int\+Property\+Map}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_acc1c8ad6e55de8f9da60b907a1434c6c}{Float\+Property\+Map}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, std\+::string $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a8a0ab4fafe00d7ffdffd7ad40782c218}{String\+Property\+Map}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_adc9f7b8ed897e43a287138feec6f3d64}{Matrix\+Property\+Map}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, std\+::function$<$ void $\ast$(void $\ast$)$>$ $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_ab06b379985083def27d41a9ba87c8d06}{Callback\+Property\+Map}}
+\item 
+typedef unsigned int \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, int $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a5eb68bd8289eb42e495a7ce4e93d8b70}{Int\+Property\+Map}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_acc1c8ad6e55de8f9da60b907a1434c6c}{Float\+Property\+Map}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, std\+::string $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a8a0ab4fafe00d7ffdffd7ad40782c218}{String\+Property\+Map}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_adc9f7b8ed897e43a287138feec6f3d64}{Matrix\+Property\+Map}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, std\+::function$<$ void $\ast$(void $\ast$)$>$ $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_ab06b379985083def27d41a9ba87c8d06}{Callback\+Property\+Map}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aedefab9bf14c50bcd319eda39030aa0e}{Export\+Properties}} ()
+\item 
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a5c91357f3ca4dcf7f7582abdb551534d}{Export\+Properties}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{class_assimp_1_1_export_properties}{Export\+Properties}} \&other)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, int i\+Value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}{Set\+Property\+Bool}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, bool value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aad233a63272730b466615feae09b9a1d}{Set\+Property\+Float}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} f\+Value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a2be9953a8f29595fc518e7ddb2fc481b}{Set\+Property\+String}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&s\+Value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_ac77448b65347c90a6baa65ac4e546dbe}{Set\+Property\+Matrix}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \&s\+Value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aba0ec052693ed39bda46af7e05f8d7d7}{Set\+Property\+Callback}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::function$<$ void $\ast$(void $\ast$)$>$ \&f)
+\item 
+int \mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, int i\+Error\+Return=0xffffffff) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}{Get\+Property\+Bool}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, bool b\+Error\+Return=false) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} \mbox{\hyperlink{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}{Get\+Property\+Float}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} f\+Error\+Return=10e10f) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \mbox{\hyperlink{class_assimp_1_1_export_properties_a9ce9cd54969c247232887195b3d54cd3}{Get\+Property\+String}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&s\+Error\+Return=\char`\"{}\char`\"{}) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \mbox{\hyperlink{class_assimp_1_1_export_properties_ac70802b25ae02ad866c753032ae4c859}{Get\+Property\+Matrix}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \&s\+Error\+Return=\mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}}()) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+std\+::function$<$ void $\ast$(void $\ast$)$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a7b02f4dee9e53ba6bd3435b4eafcf30a}{Get\+Property\+Callback}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aea0ef936553e641f172eb72379b5726c}{Has\+Property\+Integer}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_ae1a68e0839afac468f1e30b6df43ec81}{Has\+Property\+Bool}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a867560a77b1c00941c2d329a4e9219cf}{Has\+Property\+Float}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aa37ac3a66f91aa3e34a3894b0fbddccf}{Has\+Property\+String}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aa99262953ae9812ccfae65ca6c66fd4e}{Has\+Property\+Matrix}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a15f9b693709bedbc94e7088a679a077c}{Has\+Property\+Callback}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aedefab9bf14c50bcd319eda39030aa0e}{Export\+Properties}} ()
+\item 
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a5c91357f3ca4dcf7f7582abdb551534d}{Export\+Properties}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{class_assimp_1_1_export_properties}{Export\+Properties}} \&other)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, int i\+Value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}{Set\+Property\+Bool}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, bool value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aad233a63272730b466615feae09b9a1d}{Set\+Property\+Float}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} f\+Value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a2be9953a8f29595fc518e7ddb2fc481b}{Set\+Property\+String}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&s\+Value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_ac77448b65347c90a6baa65ac4e546dbe}{Set\+Property\+Matrix}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \&s\+Value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aba0ec052693ed39bda46af7e05f8d7d7}{Set\+Property\+Callback}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::function$<$ void $\ast$(void $\ast$)$>$ \&f)
+\item 
+int \mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, int i\+Error\+Return=0xffffffff) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}{Get\+Property\+Bool}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, bool b\+Error\+Return=false) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} \mbox{\hyperlink{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}{Get\+Property\+Float}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} f\+Error\+Return=10e10f) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \mbox{\hyperlink{class_assimp_1_1_export_properties_a9ce9cd54969c247232887195b3d54cd3}{Get\+Property\+String}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&s\+Error\+Return=\char`\"{}\char`\"{}) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \mbox{\hyperlink{class_assimp_1_1_export_properties_ac70802b25ae02ad866c753032ae4c859}{Get\+Property\+Matrix}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \&s\+Error\+Return=\mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}}()) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+std\+::function$<$ void $\ast$(void $\ast$)$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a7b02f4dee9e53ba6bd3435b4eafcf30a}{Get\+Property\+Callback}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aea0ef936553e641f172eb72379b5726c}{Has\+Property\+Integer}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_ae1a68e0839afac468f1e30b6df43ec81}{Has\+Property\+Bool}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a867560a77b1c00941c2d329a4e9219cf}{Has\+Property\+Float}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aa37ac3a66f91aa3e34a3894b0fbddccf}{Has\+Property\+String}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aa99262953ae9812ccfae65ca6c66fd4e}{Has\+Property\+Matrix}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a15f9b693709bedbc94e7088a679a077c}{Has\+Property\+Callback}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aedefab9bf14c50bcd319eda39030aa0e}{Export\+Properties}} ()
+\item 
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a5c91357f3ca4dcf7f7582abdb551534d}{Export\+Properties}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{class_assimp_1_1_export_properties}{Export\+Properties}} \&other)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, int i\+Value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}{Set\+Property\+Bool}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, bool value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aad233a63272730b466615feae09b9a1d}{Set\+Property\+Float}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} f\+Value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a2be9953a8f29595fc518e7ddb2fc481b}{Set\+Property\+String}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&s\+Value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_ac77448b65347c90a6baa65ac4e546dbe}{Set\+Property\+Matrix}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \&s\+Value)
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aba0ec052693ed39bda46af7e05f8d7d7}{Set\+Property\+Callback}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::function$<$ void $\ast$(void $\ast$)$>$ \&f)
+\item 
+int \mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, int i\+Error\+Return=0xffffffff) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}{Get\+Property\+Bool}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, bool b\+Error\+Return=false) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} \mbox{\hyperlink{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}{Get\+Property\+Float}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} f\+Error\+Return=10e10f) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \mbox{\hyperlink{class_assimp_1_1_export_properties_a9ce9cd54969c247232887195b3d54cd3}{Get\+Property\+String}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&s\+Error\+Return=\char`\"{}\char`\"{}) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \mbox{\hyperlink{class_assimp_1_1_export_properties_ac70802b25ae02ad866c753032ae4c859}{Get\+Property\+Matrix}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \&s\+Error\+Return=\mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}}()) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+std\+::function$<$ void $\ast$(void $\ast$)$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a7b02f4dee9e53ba6bd3435b4eafcf30a}{Get\+Property\+Callback}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aea0ef936553e641f172eb72379b5726c}{Has\+Property\+Integer}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_ae1a68e0839afac468f1e30b6df43ec81}{Has\+Property\+Bool}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a867560a77b1c00941c2d329a4e9219cf}{Has\+Property\+Float}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aa37ac3a66f91aa3e34a3894b0fbddccf}{Has\+Property\+String}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_aa99262953ae9812ccfae65ca6c66fd4e}{Has\+Property\+Matrix}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_export_properties_a15f9b693709bedbc94e7088a679a077c}{Has\+Property\+Callback}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$sz\+Name) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a5eb68bd8289eb42e495a7ce4e93d8b70}{Int\+Property\+Map}} \mbox{\hyperlink{class_assimp_1_1_export_properties_ad69c0546b1e7faf054240f228cf5f9b6}{m\+Int\+Properties}}
+\item 
+\mbox{\hyperlink{class_assimp_1_1_export_properties_acc1c8ad6e55de8f9da60b907a1434c6c}{Float\+Property\+Map}} \mbox{\hyperlink{class_assimp_1_1_export_properties_acf10a6aec3a1d5cb6f190bebc48ed4c7}{m\+Float\+Properties}}
+\item 
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a8a0ab4fafe00d7ffdffd7ad40782c218}{String\+Property\+Map}} \mbox{\hyperlink{class_assimp_1_1_export_properties_aa842acefe6a2b4eb8efff24030850a4f}{m\+String\+Properties}}
+\item 
+\mbox{\hyperlink{class_assimp_1_1_export_properties_adc9f7b8ed897e43a287138feec6f3d64}{Matrix\+Property\+Map}} \mbox{\hyperlink{class_assimp_1_1_export_properties_a1c7dc9cd6b7f34a98fdb1a16f37b260f}{m\+Matrix\+Properties}}
+\item 
+\mbox{\hyperlink{class_assimp_1_1_export_properties_ab06b379985083def27d41a9ba87c8d06}{Callback\+Property\+Map}} \mbox{\hyperlink{class_assimp_1_1_export_properties_ab731059370cb86ccb791cae8e13154dd}{m\+Callback\+Properties}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source_l00323}{323}} of file \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_ab06b379985083def27d41a9ba87c8d06}\label{class_assimp_1_1_export_properties_ab06b379985083def27d41a9ba87c8d06}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!CallbackPropertyMap@{CallbackPropertyMap}}
+\index{CallbackPropertyMap@{CallbackPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{CallbackPropertyMap}{CallbackPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, std\+::function$<$void $\ast$(void $\ast$)$>$ $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_ab06b379985083def27d41a9ba87c8d06}{Assimp\+::\+Export\+Properties\+::\+Callback\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source_l00334}{334}} of file \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_ab06b379985083def27d41a9ba87c8d06}\label{class_assimp_1_1_export_properties_ab06b379985083def27d41a9ba87c8d06}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!CallbackPropertyMap@{CallbackPropertyMap}}
+\index{CallbackPropertyMap@{CallbackPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{CallbackPropertyMap}{CallbackPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, std\+::function$<$void $\ast$(void $\ast$)$>$ $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_ab06b379985083def27d41a9ba87c8d06}{Assimp\+::\+Export\+Properties\+::\+Callback\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source_l00334}{334}} of file \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_ab06b379985083def27d41a9ba87c8d06}\label{class_assimp_1_1_export_properties_ab06b379985083def27d41a9ba87c8d06}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!CallbackPropertyMap@{CallbackPropertyMap}}
+\index{CallbackPropertyMap@{CallbackPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{CallbackPropertyMap}{CallbackPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, std\+::function$<$void $\ast$(void $\ast$)$>$ $>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_ab06b379985083def27d41a9ba87c8d06}{Assimp\+::\+Export\+Properties\+::\+Callback\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source_l00334}{334}} of file \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_acc1c8ad6e55de8f9da60b907a1434c6c}\label{class_assimp_1_1_export_properties_acc1c8ad6e55de8f9da60b907a1434c6c}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!FloatPropertyMap@{FloatPropertyMap}}
+\index{FloatPropertyMap@{FloatPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{FloatPropertyMap}{FloatPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}}$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_acc1c8ad6e55de8f9da60b907a1434c6c}{Assimp\+::\+Export\+Properties\+::\+Float\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source_l00331}{331}} of file \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_acc1c8ad6e55de8f9da60b907a1434c6c}\label{class_assimp_1_1_export_properties_acc1c8ad6e55de8f9da60b907a1434c6c}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!FloatPropertyMap@{FloatPropertyMap}}
+\index{FloatPropertyMap@{FloatPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{FloatPropertyMap}{FloatPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}}$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_acc1c8ad6e55de8f9da60b907a1434c6c}{Assimp\+::\+Export\+Properties\+::\+Float\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source_l00331}{331}} of file \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_acc1c8ad6e55de8f9da60b907a1434c6c}\label{class_assimp_1_1_export_properties_acc1c8ad6e55de8f9da60b907a1434c6c}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!FloatPropertyMap@{FloatPropertyMap}}
+\index{FloatPropertyMap@{FloatPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{FloatPropertyMap}{FloatPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}}$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_acc1c8ad6e55de8f9da60b907a1434c6c}{Assimp\+::\+Export\+Properties\+::\+Float\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source_l00331}{331}} of file \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a5eb68bd8289eb42e495a7ce4e93d8b70}\label{class_assimp_1_1_export_properties_a5eb68bd8289eb42e495a7ce4e93d8b70}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!IntPropertyMap@{IntPropertyMap}}
+\index{IntPropertyMap@{IntPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{IntPropertyMap}{IntPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, int$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a5eb68bd8289eb42e495a7ce4e93d8b70}{Assimp\+::\+Export\+Properties\+::\+Int\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source_l00330}{330}} of file \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a5eb68bd8289eb42e495a7ce4e93d8b70}\label{class_assimp_1_1_export_properties_a5eb68bd8289eb42e495a7ce4e93d8b70}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!IntPropertyMap@{IntPropertyMap}}
+\index{IntPropertyMap@{IntPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{IntPropertyMap}{IntPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, int$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a5eb68bd8289eb42e495a7ce4e93d8b70}{Assimp\+::\+Export\+Properties\+::\+Int\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source_l00330}{330}} of file \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a5eb68bd8289eb42e495a7ce4e93d8b70}\label{class_assimp_1_1_export_properties_a5eb68bd8289eb42e495a7ce4e93d8b70}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!IntPropertyMap@{IntPropertyMap}}
+\index{IntPropertyMap@{IntPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{IntPropertyMap}{IntPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, int$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a5eb68bd8289eb42e495a7ce4e93d8b70}{Assimp\+::\+Export\+Properties\+::\+Int\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source_l00330}{330}} of file \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}\label{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!KeyType@{KeyType}}
+\index{KeyType@{KeyType}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{KeyType}{KeyType}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Assimp\+::\+Export\+Properties\+::\+Key\+Type}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source_l00326}{326}} of file \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}\label{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!KeyType@{KeyType}}
+\index{KeyType@{KeyType}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{KeyType}{KeyType}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Assimp\+::\+Export\+Properties\+::\+Key\+Type}}}
+
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source_l00326}{326}} of file \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}\label{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!KeyType@{KeyType}}
+\index{KeyType@{KeyType}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{KeyType}{KeyType}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Assimp\+::\+Export\+Properties\+::\+Key\+Type}}}
+
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source_l00326}{326}} of file \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_adc9f7b8ed897e43a287138feec6f3d64}\label{class_assimp_1_1_export_properties_adc9f7b8ed897e43a287138feec6f3d64}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!MatrixPropertyMap@{MatrixPropertyMap}}
+\index{MatrixPropertyMap@{MatrixPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{MatrixPropertyMap}{MatrixPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}}$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_adc9f7b8ed897e43a287138feec6f3d64}{Assimp\+::\+Export\+Properties\+::\+Matrix\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source_l00333}{333}} of file \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_adc9f7b8ed897e43a287138feec6f3d64}\label{class_assimp_1_1_export_properties_adc9f7b8ed897e43a287138feec6f3d64}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!MatrixPropertyMap@{MatrixPropertyMap}}
+\index{MatrixPropertyMap@{MatrixPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{MatrixPropertyMap}{MatrixPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}}$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_adc9f7b8ed897e43a287138feec6f3d64}{Assimp\+::\+Export\+Properties\+::\+Matrix\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source_l00333}{333}} of file \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_adc9f7b8ed897e43a287138feec6f3d64}\label{class_assimp_1_1_export_properties_adc9f7b8ed897e43a287138feec6f3d64}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!MatrixPropertyMap@{MatrixPropertyMap}}
+\index{MatrixPropertyMap@{MatrixPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{MatrixPropertyMap}{MatrixPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}}$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_adc9f7b8ed897e43a287138feec6f3d64}{Assimp\+::\+Export\+Properties\+::\+Matrix\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source_l00333}{333}} of file \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a8a0ab4fafe00d7ffdffd7ad40782c218}\label{class_assimp_1_1_export_properties_a8a0ab4fafe00d7ffdffd7ad40782c218}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!StringPropertyMap@{StringPropertyMap}}
+\index{StringPropertyMap@{StringPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{StringPropertyMap}{StringPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, std\+::string$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a8a0ab4fafe00d7ffdffd7ad40782c218}{Assimp\+::\+Export\+Properties\+::\+String\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source_l00332}{332}} of file \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a8a0ab4fafe00d7ffdffd7ad40782c218}\label{class_assimp_1_1_export_properties_a8a0ab4fafe00d7ffdffd7ad40782c218}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!StringPropertyMap@{StringPropertyMap}}
+\index{StringPropertyMap@{StringPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{StringPropertyMap}{StringPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, std\+::string$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a8a0ab4fafe00d7ffdffd7ad40782c218}{Assimp\+::\+Export\+Properties\+::\+String\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source_l00332}{332}} of file \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a8a0ab4fafe00d7ffdffd7ad40782c218}\label{class_assimp_1_1_export_properties_a8a0ab4fafe00d7ffdffd7ad40782c218}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!StringPropertyMap@{StringPropertyMap}}
+\index{StringPropertyMap@{StringPropertyMap}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{StringPropertyMap}{StringPropertyMap}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{class_assimp_1_1_export_properties_aa04b43f5e76d5f3c5431be9a35e706e6}{Key\+Type}}, std\+::string$>$ \mbox{\hyperlink{class_assimp_1_1_export_properties_a8a0ab4fafe00d7ffdffd7ad40782c218}{Assimp\+::\+Export\+Properties\+::\+String\+Property\+Map}}}
+
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source_l00332}{332}} of file \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aedefab9bf14c50bcd319eda39030aa0e}\label{class_assimp_1_1_export_properties_aedefab9bf14c50bcd319eda39030aa0e}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!ExportProperties@{ExportProperties}}
+\index{ExportProperties@{ExportProperties}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{ExportProperties()}{ExportProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily Assimp\+::\+Export\+Properties\+::\+Export\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Standard constructor \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aedefab9bf14c50bcd319eda39030aa0e}{Export\+Properties()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a5c91357f3ca4dcf7f7582abdb551534d}\label{class_assimp_1_1_export_properties_a5c91357f3ca4dcf7f7582abdb551534d}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!ExportProperties@{ExportProperties}}
+\index{ExportProperties@{ExportProperties}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{ExportProperties()}{ExportProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily Assimp\+::\+Export\+Properties\+::\+Export\+Properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{class_assimp_1_1_export_properties}{Export\+Properties}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy constructor.
+
+This copies the configuration properties of another \mbox{\hyperlink{class_assimp_1_1_export_properties}{Export\+Properties}}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a5c91357f3ca4dcf7f7582abdb551534d}{Export\+Properties(const Export\+Properties\& other)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aedefab9bf14c50bcd319eda39030aa0e}\label{class_assimp_1_1_export_properties_aedefab9bf14c50bcd319eda39030aa0e}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!ExportProperties@{ExportProperties}}
+\index{ExportProperties@{ExportProperties}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{ExportProperties()}{ExportProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily Assimp\+::\+Export\+Properties\+::\+Export\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Standard constructor \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aedefab9bf14c50bcd319eda39030aa0e}{Export\+Properties()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a5c91357f3ca4dcf7f7582abdb551534d}\label{class_assimp_1_1_export_properties_a5c91357f3ca4dcf7f7582abdb551534d}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!ExportProperties@{ExportProperties}}
+\index{ExportProperties@{ExportProperties}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{ExportProperties()}{ExportProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily Assimp\+::\+Export\+Properties\+::\+Export\+Properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{class_assimp_1_1_export_properties}{Export\+Properties}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy constructor.
+
+This copies the configuration properties of another \mbox{\hyperlink{class_assimp_1_1_export_properties}{Export\+Properties}}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a5c91357f3ca4dcf7f7582abdb551534d}{Export\+Properties(const Export\+Properties\& other)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aedefab9bf14c50bcd319eda39030aa0e}\label{class_assimp_1_1_export_properties_aedefab9bf14c50bcd319eda39030aa0e}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!ExportProperties@{ExportProperties}}
+\index{ExportProperties@{ExportProperties}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{ExportProperties()}{ExportProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily Assimp\+::\+Export\+Properties\+::\+Export\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Standard constructor \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aedefab9bf14c50bcd319eda39030aa0e}{Export\+Properties()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a5c91357f3ca4dcf7f7582abdb551534d}\label{class_assimp_1_1_export_properties_a5c91357f3ca4dcf7f7582abdb551534d}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!ExportProperties@{ExportProperties}}
+\index{ExportProperties@{ExportProperties}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{ExportProperties()}{ExportProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily Assimp\+::\+Export\+Properties\+::\+Export\+Properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{class_assimp_1_1_export_properties}{Export\+Properties}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy constructor.
+
+This copies the configuration properties of another \mbox{\hyperlink{class_assimp_1_1_export_properties}{Export\+Properties}}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a5c91357f3ca4dcf7f7582abdb551534d}{Export\+Properties(const Export\+Properties\& other)}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}\label{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyBool@{GetPropertyBool}}
+\index{GetPropertyBool@{GetPropertyBool}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyBool()}{GetPropertyBool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Bool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{bool}]{b\+Error\+Return = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a boolean configuration property. Boolean properties are stored on the integer stack internally so it\textquotesingle{}s possible to set them via \mbox{\hyperlink{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}{Set\+Property\+Bool}} and query them with \mbox{\hyperlink{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}{Get\+Property\+Bool}} and vice versa. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source_l00419}{419}} of file \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}\label{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyBool@{GetPropertyBool}}
+\index{GetPropertyBool@{GetPropertyBool}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyBool()}{GetPropertyBool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Bool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{bool}]{b\+Error\+Return = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a boolean configuration property. Boolean properties are stored on the integer stack internally so it\textquotesingle{}s possible to set them via \mbox{\hyperlink{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}{Set\+Property\+Bool}} and query them with \mbox{\hyperlink{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}{Get\+Property\+Bool}} and vice versa. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source_l00419}{419}} of file \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}\label{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyBool@{GetPropertyBool}}
+\index{GetPropertyBool@{GetPropertyBool}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyBool()}{GetPropertyBool()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Bool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{bool}]{b\+Error\+Return = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a boolean configuration property. Boolean properties are stored on the integer stack internally so it\textquotesingle{}s possible to set them via \mbox{\hyperlink{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}{Set\+Property\+Bool}} and query them with \mbox{\hyperlink{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}{Get\+Property\+Bool}} and vice versa. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source_l00419}{419}} of file \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a7b02f4dee9e53ba6bd3435b4eafcf30a}\label{class_assimp_1_1_export_properties_a7b02f4dee9e53ba6bd3435b4eafcf30a}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyCallback@{GetPropertyCallback}}
+\index{GetPropertyCallback@{GetPropertyCallback}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyCallback()}{GetPropertyCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily std\+::function$<$ void $\ast$(void $\ast$)$>$ Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a7b02f4dee9e53ba6bd3435b4eafcf30a}\label{class_assimp_1_1_export_properties_a7b02f4dee9e53ba6bd3435b4eafcf30a}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyCallback@{GetPropertyCallback}}
+\index{GetPropertyCallback@{GetPropertyCallback}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyCallback()}{GetPropertyCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::function$<$ void $\ast$(void $\ast$)$>$ Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a7b02f4dee9e53ba6bd3435b4eafcf30a}\label{class_assimp_1_1_export_properties_a7b02f4dee9e53ba6bd3435b4eafcf30a}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyCallback@{GetPropertyCallback}}
+\index{GetPropertyCallback@{GetPropertyCallback}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyCallback()}{GetPropertyCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::function$<$ void $\ast$(void $\ast$)$>$ Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}\label{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyFloat@{GetPropertyFloat}}
+\index{GetPropertyFloat@{GetPropertyFloat}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyFloat()}{GetPropertyFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}}}]{f\+Error\+Return = {\ttfamily 10e10f} }\end{DoxyParamCaption}) const}
+
+Get a floating-\/point configuration property \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}\label{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyFloat@{GetPropertyFloat}}
+\index{GetPropertyFloat@{GetPropertyFloat}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyFloat()}{GetPropertyFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}}}]{f\+Error\+Return = {\ttfamily 10e10f} }\end{DoxyParamCaption}) const}
+
+Get a floating-\/point configuration property \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}\label{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyFloat@{GetPropertyFloat}}
+\index{GetPropertyFloat@{GetPropertyFloat}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyFloat()}{GetPropertyFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}} Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}}}]{f\+Error\+Return = {\ttfamily 10e10f} }\end{DoxyParamCaption}) const}
+
+Get a floating-\/point configuration property \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}\label{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyInteger@{GetPropertyInteger}}
+\index{GetPropertyInteger@{GetPropertyInteger}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyInteger()}{GetPropertyInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily int Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Integer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{int}]{i\+Error\+Return = {\ttfamily 0xffffffff} }\end{DoxyParamCaption}) const}
+
+Get a configuration property. 
+\begin{DoxyParams}{Parameters}
+{\em sz\+Name} & Name of the property. All supported properties are defined in the ai\+Config.\+g header (all constants share the prefix AI\+\_\+\+CONFIG\+\_\+\+XXX). \\
+\hline
+{\em i\+Error\+Return} & Value that is returned if the property is not found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current value of the property 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Property of different types (float, int, string ..) are kept on different lists, so calling \mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} for a floating-\/point property has no effect -\/ the loader will call \mbox{\hyperlink{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}{Get\+Property\+Float()}} to read the property, but it won\textquotesingle{}t be there. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}\label{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyInteger@{GetPropertyInteger}}
+\index{GetPropertyInteger@{GetPropertyInteger}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyInteger()}{GetPropertyInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily int Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Integer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{int}]{i\+Error\+Return = {\ttfamily 0xffffffff} }\end{DoxyParamCaption}) const}
+
+Get a configuration property. 
+\begin{DoxyParams}{Parameters}
+{\em sz\+Name} & Name of the property. All supported properties are defined in the ai\+Config.\+g header (all constants share the prefix AI\+\_\+\+CONFIG\+\_\+\+XXX). \\
+\hline
+{\em i\+Error\+Return} & Value that is returned if the property is not found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current value of the property 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Property of different types (float, int, string ..) are kept on different lists, so calling \mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} for a floating-\/point property has no effect -\/ the loader will call \mbox{\hyperlink{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}{Get\+Property\+Float()}} to read the property, but it won\textquotesingle{}t be there. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}\label{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyInteger@{GetPropertyInteger}}
+\index{GetPropertyInteger@{GetPropertyInteger}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyInteger()}{GetPropertyInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily int Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Integer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{int}]{i\+Error\+Return = {\ttfamily 0xffffffff} }\end{DoxyParamCaption}) const}
+
+Get a configuration property. 
+\begin{DoxyParams}{Parameters}
+{\em sz\+Name} & Name of the property. All supported properties are defined in the ai\+Config.\+g header (all constants share the prefix AI\+\_\+\+CONFIG\+\_\+\+XXX). \\
+\hline
+{\em i\+Error\+Return} & Value that is returned if the property is not found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current value of the property 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Property of different types (float, int, string ..) are kept on different lists, so calling \mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} for a floating-\/point property has no effect -\/ the loader will call \mbox{\hyperlink{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}{Get\+Property\+Float()}} to read the property, but it won\textquotesingle{}t be there. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_ac70802b25ae02ad866c753032ae4c859}\label{class_assimp_1_1_export_properties_ac70802b25ae02ad866c753032ae4c859}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyMatrix@{GetPropertyMatrix}}
+\index{GetPropertyMatrix@{GetPropertyMatrix}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyMatrix()}{GetPropertyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \&}]{s\+Error\+Return = {\ttfamily \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}}()} }\end{DoxyParamCaption}) const}
+
+Get a matrix configuration property
+
+The return value remains valid until the property is modified. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_ac70802b25ae02ad866c753032ae4c859}\label{class_assimp_1_1_export_properties_ac70802b25ae02ad866c753032ae4c859}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyMatrix@{GetPropertyMatrix}}
+\index{GetPropertyMatrix@{GetPropertyMatrix}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyMatrix()}{GetPropertyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \&}]{s\+Error\+Return = {\ttfamily \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}}()} }\end{DoxyParamCaption}) const}
+
+Get a matrix configuration property
+
+The return value remains valid until the property is modified. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_ac70802b25ae02ad866c753032ae4c859}\label{class_assimp_1_1_export_properties_ac70802b25ae02ad866c753032ae4c859}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyMatrix@{GetPropertyMatrix}}
+\index{GetPropertyMatrix@{GetPropertyMatrix}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyMatrix()}{GetPropertyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} Assimp\+::\+Export\+Properties\+::\+Get\+Property\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \&}]{s\+Error\+Return = {\ttfamily \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}}()} }\end{DoxyParamCaption}) const}
+
+Get a matrix configuration property
+
+The return value remains valid until the property is modified. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a9ce9cd54969c247232887195b3d54cd3}\label{class_assimp_1_1_export_properties_a9ce9cd54969c247232887195b3d54cd3}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyString@{GetPropertyString}}
+\index{GetPropertyString@{GetPropertyString}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyString()}{GetPropertyString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string Assimp\+::\+Export\+Properties\+::\+Get\+Property\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{s\+Error\+Return = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const}
+
+Get a string configuration property
+
+The return value remains valid until the property is modified. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a9ce9cd54969c247232887195b3d54cd3}\label{class_assimp_1_1_export_properties_a9ce9cd54969c247232887195b3d54cd3}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyString@{GetPropertyString}}
+\index{GetPropertyString@{GetPropertyString}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyString()}{GetPropertyString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string Assimp\+::\+Export\+Properties\+::\+Get\+Property\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{s\+Error\+Return = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const}
+
+Get a string configuration property
+
+The return value remains valid until the property is modified. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a9ce9cd54969c247232887195b3d54cd3}\label{class_assimp_1_1_export_properties_a9ce9cd54969c247232887195b3d54cd3}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!GetPropertyString@{GetPropertyString}}
+\index{GetPropertyString@{GetPropertyString}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{GetPropertyString()}{GetPropertyString()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string Assimp\+::\+Export\+Properties\+::\+Get\+Property\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{s\+Error\+Return = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const}
+
+Get a string configuration property
+
+The return value remains valid until the property is modified. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a24257a57419d1f143cde1221c2300ecb}{Get\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_ae1a68e0839afac468f1e30b6df43ec81}\label{class_assimp_1_1_export_properties_ae1a68e0839afac468f1e30b6df43ec81}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyBool@{HasPropertyBool}}
+\index{HasPropertyBool@{HasPropertyBool}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyBool()}{HasPropertyBool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Bool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a boolean configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_ae1a68e0839afac468f1e30b6df43ec81}{Has\+Property\+Bool()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_ae1a68e0839afac468f1e30b6df43ec81}\label{class_assimp_1_1_export_properties_ae1a68e0839afac468f1e30b6df43ec81}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyBool@{HasPropertyBool}}
+\index{HasPropertyBool@{HasPropertyBool}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyBool()}{HasPropertyBool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Bool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a boolean configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_ae1a68e0839afac468f1e30b6df43ec81}{Has\+Property\+Bool()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_ae1a68e0839afac468f1e30b6df43ec81}\label{class_assimp_1_1_export_properties_ae1a68e0839afac468f1e30b6df43ec81}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyBool@{HasPropertyBool}}
+\index{HasPropertyBool@{HasPropertyBool}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyBool()}{HasPropertyBool()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Bool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a boolean configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_ae1a68e0839afac468f1e30b6df43ec81}{Has\+Property\+Bool()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a15f9b693709bedbc94e7088a679a077c}\label{class_assimp_1_1_export_properties_a15f9b693709bedbc94e7088a679a077c}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyCallback@{HasPropertyCallback}}
+\index{HasPropertyCallback@{HasPropertyCallback}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyCallback()}{HasPropertyCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a15f9b693709bedbc94e7088a679a077c}\label{class_assimp_1_1_export_properties_a15f9b693709bedbc94e7088a679a077c}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyCallback@{HasPropertyCallback}}
+\index{HasPropertyCallback@{HasPropertyCallback}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyCallback()}{HasPropertyCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a15f9b693709bedbc94e7088a679a077c}\label{class_assimp_1_1_export_properties_a15f9b693709bedbc94e7088a679a077c}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyCallback@{HasPropertyCallback}}
+\index{HasPropertyCallback@{HasPropertyCallback}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyCallback()}{HasPropertyCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a867560a77b1c00941c2d329a4e9219cf}\label{class_assimp_1_1_export_properties_a867560a77b1c00941c2d329a4e9219cf}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyFloat@{HasPropertyFloat}}
+\index{HasPropertyFloat@{HasPropertyFloat}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyFloat()}{HasPropertyFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a boolean configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a867560a77b1c00941c2d329a4e9219cf}{Has\+Property\+Float()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a867560a77b1c00941c2d329a4e9219cf}\label{class_assimp_1_1_export_properties_a867560a77b1c00941c2d329a4e9219cf}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyFloat@{HasPropertyFloat}}
+\index{HasPropertyFloat@{HasPropertyFloat}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyFloat()}{HasPropertyFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a boolean configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a867560a77b1c00941c2d329a4e9219cf}{Has\+Property\+Float()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a867560a77b1c00941c2d329a4e9219cf}\label{class_assimp_1_1_export_properties_a867560a77b1c00941c2d329a4e9219cf}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyFloat@{HasPropertyFloat}}
+\index{HasPropertyFloat@{HasPropertyFloat}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyFloat()}{HasPropertyFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a boolean configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a867560a77b1c00941c2d329a4e9219cf}{Has\+Property\+Float()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aea0ef936553e641f172eb72379b5726c}\label{class_assimp_1_1_export_properties_aea0ef936553e641f172eb72379b5726c}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyInteger@{HasPropertyInteger}}
+\index{HasPropertyInteger@{HasPropertyInteger}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyInteger()}{HasPropertyInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Integer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a integer configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aea0ef936553e641f172eb72379b5726c}{Has\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aea0ef936553e641f172eb72379b5726c}\label{class_assimp_1_1_export_properties_aea0ef936553e641f172eb72379b5726c}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyInteger@{HasPropertyInteger}}
+\index{HasPropertyInteger@{HasPropertyInteger}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyInteger()}{HasPropertyInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Integer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a integer configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aea0ef936553e641f172eb72379b5726c}{Has\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aea0ef936553e641f172eb72379b5726c}\label{class_assimp_1_1_export_properties_aea0ef936553e641f172eb72379b5726c}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyInteger@{HasPropertyInteger}}
+\index{HasPropertyInteger@{HasPropertyInteger}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyInteger()}{HasPropertyInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Integer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a integer configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aea0ef936553e641f172eb72379b5726c}{Has\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aa99262953ae9812ccfae65ca6c66fd4e}\label{class_assimp_1_1_export_properties_aa99262953ae9812ccfae65ca6c66fd4e}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyMatrix@{HasPropertyMatrix}}
+\index{HasPropertyMatrix@{HasPropertyMatrix}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyMatrix()}{HasPropertyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a Matrix configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aa99262953ae9812ccfae65ca6c66fd4e}{Has\+Property\+Matrix()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aa99262953ae9812ccfae65ca6c66fd4e}\label{class_assimp_1_1_export_properties_aa99262953ae9812ccfae65ca6c66fd4e}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyMatrix@{HasPropertyMatrix}}
+\index{HasPropertyMatrix@{HasPropertyMatrix}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyMatrix()}{HasPropertyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a Matrix configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aa99262953ae9812ccfae65ca6c66fd4e}{Has\+Property\+Matrix()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aa99262953ae9812ccfae65ca6c66fd4e}\label{class_assimp_1_1_export_properties_aa99262953ae9812ccfae65ca6c66fd4e}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyMatrix@{HasPropertyMatrix}}
+\index{HasPropertyMatrix@{HasPropertyMatrix}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyMatrix()}{HasPropertyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a Matrix configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aa99262953ae9812ccfae65ca6c66fd4e}{Has\+Property\+Matrix()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aa37ac3a66f91aa3e34a3894b0fbddccf}\label{class_assimp_1_1_export_properties_aa37ac3a66f91aa3e34a3894b0fbddccf}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyString@{HasPropertyString}}
+\index{HasPropertyString@{HasPropertyString}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyString()}{HasPropertyString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a String configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aa37ac3a66f91aa3e34a3894b0fbddccf}{Has\+Property\+String()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aa37ac3a66f91aa3e34a3894b0fbddccf}\label{class_assimp_1_1_export_properties_aa37ac3a66f91aa3e34a3894b0fbddccf}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyString@{HasPropertyString}}
+\index{HasPropertyString@{HasPropertyString}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyString()}{HasPropertyString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a String configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aa37ac3a66f91aa3e34a3894b0fbddccf}{Has\+Property\+String()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aa37ac3a66f91aa3e34a3894b0fbddccf}\label{class_assimp_1_1_export_properties_aa37ac3a66f91aa3e34a3894b0fbddccf}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!HasPropertyString@{HasPropertyString}}
+\index{HasPropertyString@{HasPropertyString}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{HasPropertyString()}{HasPropertyString()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Has\+Property\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name }\end{DoxyParamCaption}) const}
+
+Determine a String configuration property has been set. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_aa37ac3a66f91aa3e34a3894b0fbddccf}{Has\+Property\+String()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}\label{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyBool@{SetPropertyBool}}
+\index{SetPropertyBool@{SetPropertyBool}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyBool()}{SetPropertyBool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Bool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set a boolean configuration property. Boolean properties are stored on the integer stack internally so it\textquotesingle{}s possible to set them via \mbox{\hyperlink{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}{Set\+Property\+Bool}} and query them with \mbox{\hyperlink{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}{Get\+Property\+Bool}} and vice versa. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source_l00372}{372}} of file \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}\label{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyBool@{SetPropertyBool}}
+\index{SetPropertyBool@{SetPropertyBool}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyBool()}{SetPropertyBool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Bool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set a boolean configuration property. Boolean properties are stored on the integer stack internally so it\textquotesingle{}s possible to set them via \mbox{\hyperlink{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}{Set\+Property\+Bool}} and query them with \mbox{\hyperlink{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}{Get\+Property\+Bool}} and vice versa. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source_l00372}{372}} of file \mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}\label{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyBool@{SetPropertyBool}}
+\index{SetPropertyBool@{SetPropertyBool}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyBool()}{SetPropertyBool()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Bool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set a boolean configuration property. Boolean properties are stored on the integer stack internally so it\textquotesingle{}s possible to set them via \mbox{\hyperlink{class_assimp_1_1_export_properties_a3eb3aea4da6b94da06b7dd118c864c38}{Set\+Property\+Bool}} and query them with \mbox{\hyperlink{class_assimp_1_1_export_properties_abcb151b5c3da6c759b13b6f25abe65c9}{Get\+Property\+Bool}} and vice versa. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source_l00372}{372}} of file \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aba0ec052693ed39bda46af7e05f8d7d7}\label{class_assimp_1_1_export_properties_aba0ec052693ed39bda46af7e05f8d7d7}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyCallback@{SetPropertyCallback}}
+\index{SetPropertyCallback@{SetPropertyCallback}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyCallback()}{SetPropertyCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::function$<$ void $\ast$(void $\ast$)$>$ \&}]{f }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aba0ec052693ed39bda46af7e05f8d7d7}\label{class_assimp_1_1_export_properties_aba0ec052693ed39bda46af7e05f8d7d7}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyCallback@{SetPropertyCallback}}
+\index{SetPropertyCallback@{SetPropertyCallback}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyCallback()}{SetPropertyCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::function$<$ void $\ast$(void $\ast$)$>$ \&}]{f }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aba0ec052693ed39bda46af7e05f8d7d7}\label{class_assimp_1_1_export_properties_aba0ec052693ed39bda46af7e05f8d7d7}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyCallback@{SetPropertyCallback}}
+\index{SetPropertyCallback@{SetPropertyCallback}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyCallback()}{SetPropertyCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::function$<$ void $\ast$(void $\ast$)$>$ \&}]{f }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aad233a63272730b466615feae09b9a1d}\label{class_assimp_1_1_export_properties_aad233a63272730b466615feae09b9a1d}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyFloat@{SetPropertyFloat}}
+\index{SetPropertyFloat@{SetPropertyFloat}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyFloat()}{SetPropertyFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}}}]{f\+Value }\end{DoxyParamCaption})}
+
+Set a floating-\/point configuration property. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aad233a63272730b466615feae09b9a1d}\label{class_assimp_1_1_export_properties_aad233a63272730b466615feae09b9a1d}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyFloat@{SetPropertyFloat}}
+\index{SetPropertyFloat@{SetPropertyFloat}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyFloat()}{SetPropertyFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}}}]{f\+Value }\end{DoxyParamCaption})}
+
+Set a floating-\/point configuration property. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aad233a63272730b466615feae09b9a1d}\label{class_assimp_1_1_export_properties_aad233a63272730b466615feae09b9a1d}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyFloat@{SetPropertyFloat}}
+\index{SetPropertyFloat@{SetPropertyFloat}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyFloat()}{SetPropertyFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\+\_\+real}}}]{f\+Value }\end{DoxyParamCaption})}
+
+Set a floating-\/point configuration property. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}\label{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyInteger@{SetPropertyInteger}}
+\index{SetPropertyInteger@{SetPropertyInteger}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyInteger()}{SetPropertyInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Integer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{int}]{i\+Value }\end{DoxyParamCaption})}
+
+Set an integer configuration property. 
+\begin{DoxyParams}{Parameters}
+{\em sz\+Name} & Name of the property. All supported properties are defined in the ai\+Config.\+g header (all constants share the prefix AI\+\_\+\+CONFIG\+\_\+\+XXX and are simple strings). \\
+\hline
+{\em i\+Value} & New value of the property \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the property was set before. The new value replaces the previous value in this case. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Property of different types (float, int, string ..) are kept on different stacks, so calling \mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} for a floating-\/point property has no effect -\/ the loader will call \mbox{\hyperlink{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}{Get\+Property\+Float()}} to read the property, but it won\textquotesingle{}t be there. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}\label{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyInteger@{SetPropertyInteger}}
+\index{SetPropertyInteger@{SetPropertyInteger}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyInteger()}{SetPropertyInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Integer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{int}]{i\+Value }\end{DoxyParamCaption})}
+
+Set an integer configuration property. 
+\begin{DoxyParams}{Parameters}
+{\em sz\+Name} & Name of the property. All supported properties are defined in the ai\+Config.\+g header (all constants share the prefix AI\+\_\+\+CONFIG\+\_\+\+XXX and are simple strings). \\
+\hline
+{\em i\+Value} & New value of the property \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the property was set before. The new value replaces the previous value in this case. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Property of different types (float, int, string ..) are kept on different stacks, so calling \mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} for a floating-\/point property has no effect -\/ the loader will call \mbox{\hyperlink{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}{Get\+Property\+Float()}} to read the property, but it won\textquotesingle{}t be there. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}\label{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyInteger@{SetPropertyInteger}}
+\index{SetPropertyInteger@{SetPropertyInteger}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyInteger()}{SetPropertyInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Integer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{int}]{i\+Value }\end{DoxyParamCaption})}
+
+Set an integer configuration property. 
+\begin{DoxyParams}{Parameters}
+{\em sz\+Name} & Name of the property. All supported properties are defined in the ai\+Config.\+g header (all constants share the prefix AI\+\_\+\+CONFIG\+\_\+\+XXX and are simple strings). \\
+\hline
+{\em i\+Value} & New value of the property \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the property was set before. The new value replaces the previous value in this case. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Property of different types (float, int, string ..) are kept on different stacks, so calling \mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} for a floating-\/point property has no effect -\/ the loader will call \mbox{\hyperlink{class_assimp_1_1_export_properties_a315d21aa9d9b78f2b5280e6216565234}{Get\+Property\+Float()}} to read the property, but it won\textquotesingle{}t be there. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_ac77448b65347c90a6baa65ac4e546dbe}\label{class_assimp_1_1_export_properties_ac77448b65347c90a6baa65ac4e546dbe}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyMatrix@{SetPropertyMatrix}}
+\index{SetPropertyMatrix@{SetPropertyMatrix}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyMatrix()}{SetPropertyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \&}]{s\+Value }\end{DoxyParamCaption})}
+
+Set a matrix configuration property. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_ac77448b65347c90a6baa65ac4e546dbe}\label{class_assimp_1_1_export_properties_ac77448b65347c90a6baa65ac4e546dbe}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyMatrix@{SetPropertyMatrix}}
+\index{SetPropertyMatrix@{SetPropertyMatrix}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyMatrix()}{SetPropertyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \&}]{s\+Value }\end{DoxyParamCaption})}
+
+Set a matrix configuration property. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_ac77448b65347c90a6baa65ac4e546dbe}\label{class_assimp_1_1_export_properties_ac77448b65347c90a6baa65ac4e546dbe}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyMatrix@{SetPropertyMatrix}}
+\index{SetPropertyMatrix@{SetPropertyMatrix}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyMatrix()}{SetPropertyMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} \mbox{\hyperlink{structai_matrix4x4}{ai\+Matrix4x4}} \&}]{s\+Value }\end{DoxyParamCaption})}
+
+Set a matrix configuration property. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a2be9953a8f29595fc518e7ddb2fc481b}\label{class_assimp_1_1_export_properties_a2be9953a8f29595fc518e7ddb2fc481b}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyString@{SetPropertyString}}
+\index{SetPropertyString@{SetPropertyString}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyString()}{SetPropertyString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{s\+Value }\end{DoxyParamCaption})}
+
+Set a string configuration property. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a2be9953a8f29595fc518e7ddb2fc481b}\label{class_assimp_1_1_export_properties_a2be9953a8f29595fc518e7ddb2fc481b}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyString@{SetPropertyString}}
+\index{SetPropertyString@{SetPropertyString}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyString()}{SetPropertyString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{s\+Value }\end{DoxyParamCaption})}
+
+Set a string configuration property. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a2be9953a8f29595fc518e7ddb2fc481b}\label{class_assimp_1_1_export_properties_a2be9953a8f29595fc518e7ddb2fc481b}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!SetPropertyString@{SetPropertyString}}
+\index{SetPropertyString@{SetPropertyString}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{SetPropertyString()}{SetPropertyString()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Export\+Properties\+::\+Set\+Property\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{sz\+Name,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{s\+Value }\end{DoxyParamCaption})}
+
+Set a string configuration property. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_assimp_1_1_export_properties_a3b5953dfef79567d672c81a58b51090c}{Set\+Property\+Integer()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_ab731059370cb86ccb791cae8e13154dd}\label{class_assimp_1_1_export_properties_ab731059370cb86ccb791cae8e13154dd}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!mCallbackProperties@{mCallbackProperties}}
+\index{mCallbackProperties@{mCallbackProperties}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{mCallbackProperties}{mCallbackProperties}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assimp_1_1_export_properties_ab06b379985083def27d41a9ba87c8d06}{Callback\+Property\+Map}} Assimp\+::\+Export\+Properties\+::m\+Callback\+Properties}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source_l00490}{490}} of file \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_acf10a6aec3a1d5cb6f190bebc48ed4c7}\label{class_assimp_1_1_export_properties_acf10a6aec3a1d5cb6f190bebc48ed4c7}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!mFloatProperties@{mFloatProperties}}
+\index{mFloatProperties@{mFloatProperties}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{mFloatProperties}{mFloatProperties}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assimp_1_1_export_properties_acc1c8ad6e55de8f9da60b907a1434c6c}{Float\+Property\+Map}} Assimp\+::\+Export\+Properties\+::m\+Float\+Properties}
+
+List of floating-\/point properties 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source_l00482}{482}} of file \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_ad69c0546b1e7faf054240f228cf5f9b6}\label{class_assimp_1_1_export_properties_ad69c0546b1e7faf054240f228cf5f9b6}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!mIntProperties@{mIntProperties}}
+\index{mIntProperties@{mIntProperties}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{mIntProperties}{mIntProperties}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assimp_1_1_export_properties_a5eb68bd8289eb42e495a7ce4e93d8b70}{Int\+Property\+Map}} Assimp\+::\+Export\+Properties\+::m\+Int\+Properties}
+
+List of integer properties 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source_l00479}{479}} of file \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_a1c7dc9cd6b7f34a98fdb1a16f37b260f}\label{class_assimp_1_1_export_properties_a1c7dc9cd6b7f34a98fdb1a16f37b260f}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!mMatrixProperties@{mMatrixProperties}}
+\index{mMatrixProperties@{mMatrixProperties}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{mMatrixProperties}{mMatrixProperties}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assimp_1_1_export_properties_adc9f7b8ed897e43a287138feec6f3d64}{Matrix\+Property\+Map}} Assimp\+::\+Export\+Properties\+::m\+Matrix\+Properties}
+
+List of Matrix properties 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source_l00488}{488}} of file \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_export_properties_aa842acefe6a2b4eb8efff24030850a4f}\label{class_assimp_1_1_export_properties_aa842acefe6a2b4eb8efff24030850a4f}} 
+\index{Assimp::ExportProperties@{Assimp::ExportProperties}!mStringProperties@{mStringProperties}}
+\index{mStringProperties@{mStringProperties}!Assimp::ExportProperties@{Assimp::ExportProperties}}
+\doxysubsubsection{\texorpdfstring{mStringProperties}{mStringProperties}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assimp_1_1_export_properties_a8a0ab4fafe00d7ffdffd7ad40782c218}{String\+Property\+Map}} Assimp\+::\+Export\+Properties\+::m\+String\+Properties}
+
+List of string properties 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source_l00485}{485}} of file \mbox{\hyperlink{include_2assimp_2_exporter_8hpp_source}{Exporter.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/\mbox{\hyperlink{include_2assimp_2_exporter_8hpp}{Exporter.\+hpp}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Debug/include/assimp/\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_exporter_8hpp}{Exporter.\+hpp}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Release/include/assimp/\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_exporter_8hpp}{Exporter.\+hpp}}\end{DoxyCompactItemize}

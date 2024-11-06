@@ -1,0 +1,918 @@
+\hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source}{}\doxysection{pstdint.\+h}
+\label{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/Compiler/pstdint.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Release/include/assimp/Compiler/pstdint.h}}
+\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00001}00001 \textcolor{comment}{/*  A portable stdint.h}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00002}00002 \textcolor{comment}{ ****************************************************************************}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00003}00003 \textcolor{comment}{ *  BSD License:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00004}00004 \textcolor{comment}{ ****************************************************************************}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00005}00005 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00006}00006 \textcolor{comment}{ *  Copyright (c) 2005-\/2016 Paul Hsieh}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00007}00007 \textcolor{comment}{ *  All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00008}00008 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00009}00009 \textcolor{comment}{ *  Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00010}00010 \textcolor{comment}{ *  modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00011}00011 \textcolor{comment}{ *  are met:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00013}00013 \textcolor{comment}{ *  1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00014}00014 \textcolor{comment}{ *     notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00015}00015 \textcolor{comment}{ *  2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00016}00016 \textcolor{comment}{ *     notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00017}00017 \textcolor{comment}{ *     documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00018}00018 \textcolor{comment}{ *  3. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00019}00019 \textcolor{comment}{ *     derived from this software without specific prior written permission.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00020}00020 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00021}00021 \textcolor{comment}{ *  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00022}00022 \textcolor{comment}{ *  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00023}00023 \textcolor{comment}{ *  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00024}00024 \textcolor{comment}{ *  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00025}00025 \textcolor{comment}{ *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00026}00026 \textcolor{comment}{ *  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00027}00027 \textcolor{comment}{ *  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00028}00028 \textcolor{comment}{ *  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00029}00029 \textcolor{comment}{ *  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00030}00030 \textcolor{comment}{ *  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00031}00031 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00032}00032 \textcolor{comment}{ ****************************************************************************}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00033}00033 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00034}00034 \textcolor{comment}{ *  Version 0.1.15.4}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00035}00035 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00036}00036 \textcolor{comment}{ *  The ANSI C standard committee, for the C99 standard, specified the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00037}00037 \textcolor{comment}{ *  inclusion of a new standard include file called stdint.h.  This is}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00038}00038 \textcolor{comment}{ *  a very useful and long desired include file which contains several}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00039}00039 \textcolor{comment}{ *  very precise definitions for integer scalar types that is}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00040}00040 \textcolor{comment}{ *  critically important for making portable several classes of}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00041}00041 \textcolor{comment}{ *  applications including cryptography, hashing, variable length}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00042}00042 \textcolor{comment}{ *  integer libraries and so on.  But for most developers its likely}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00043}00043 \textcolor{comment}{ *  useful just for programming sanity.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00044}00044 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00045}00045 \textcolor{comment}{ *  The problem is that some compiler vendors chose to ignore the C99}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00046}00046 \textcolor{comment}{ *  standard and some older compilers have no opportunity to be updated.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00047}00047 \textcolor{comment}{ *  Because of this situation, simply including stdint.h in your code}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00048}00048 \textcolor{comment}{ *  makes it unportable.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00049}00049 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00050}00050 \textcolor{comment}{ *  So that's what this file is all about.  Its an attempt to build a}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00051}00051 \textcolor{comment}{ *  single universal include file that works on as many platforms as}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00052}00052 \textcolor{comment}{ *  possible to deliver what stdint.h is supposed to.  Even compilers}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00053}00053 \textcolor{comment}{ *  that already come with stdint.h can use this file instead without}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00054}00054 \textcolor{comment}{ *  any loss of functionality.  A few things that should be noted about}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00055}00055 \textcolor{comment}{ *  this file:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00056}00056 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00057}00057 \textcolor{comment}{ *    1) It is not guaranteed to be portable and/or present an identical}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00058}00058 \textcolor{comment}{ *       interface on all platforms.  The extreme variability of the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00059}00059 \textcolor{comment}{ *       ANSI C standard makes this an impossibility right from the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00060}00060 \textcolor{comment}{ *       very get go. Its really only meant to be useful for the vast}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00061}00061 \textcolor{comment}{ *       majority of platforms that possess the capability of}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00062}00062 \textcolor{comment}{ *       implementing usefully and precisely defined, standard sized}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00063}00063 \textcolor{comment}{ *       integer scalars.  Systems which are not intrinsically 2s}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00064}00064 \textcolor{comment}{ *       complement may produce invalid constants.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00065}00065 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00066}00066 \textcolor{comment}{ *    2) There is an unavoidable use of non-\/reserved symbols.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00067}00067 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00068}00068 \textcolor{comment}{ *    3) Other standard include files are invoked.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00069}00069 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00070}00070 \textcolor{comment}{ *    4) This file may come in conflict with future platforms that do}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00071}00071 \textcolor{comment}{ *       include stdint.h.  The hope is that one or the other can be}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00072}00072 \textcolor{comment}{ *       used with no real difference.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00073}00073 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00074}00074 \textcolor{comment}{ *    5) In the current version, if your platform can't represent}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00075}00075 \textcolor{comment}{ *       int32\_t, int16\_t and int8\_t, it just dumps out with a compiler}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00076}00076 \textcolor{comment}{ *       error.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00077}00077 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00078}00078 \textcolor{comment}{ *    6) 64 bit integers may or may not be defined.  Test for their}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00079}00079 \textcolor{comment}{ *       presence with the test: \#ifdef INT64\_MAX or \#ifdef UINT64\_MAX.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00080}00080 \textcolor{comment}{ *       Note that this is different from the C99 specification which}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00081}00081 \textcolor{comment}{ *       requires the existence of 64 bit support in the compiler.  If}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00082}00082 \textcolor{comment}{ *       this is not defined for your platform, yet it is capable of}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00083}00083 \textcolor{comment}{ *       dealing with 64 bits then it is because this file has not yet}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00084}00084 \textcolor{comment}{ *       been extended to cover all of your system's capabilities.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00085}00085 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00086}00086 \textcolor{comment}{ *    7) (u)intptr\_t may or may not be defined.  Test for its presence}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00087}00087 \textcolor{comment}{ *       with the test: \#ifdef PTRDIFF\_MAX.  If this is not defined}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00088}00088 \textcolor{comment}{ *       for your platform, then it is because this file has not yet}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00089}00089 \textcolor{comment}{ *       been extended to cover all of your system's capabilities, not}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00090}00090 \textcolor{comment}{ *       because its optional.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00091}00091 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00092}00092 \textcolor{comment}{ *    8) The following might not been defined even if your platform is}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00093}00093 \textcolor{comment}{ *       capable of defining it:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00094}00094 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00095}00095 \textcolor{comment}{ *       WCHAR\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00096}00096 \textcolor{comment}{ *       WCHAR\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00097}00097 \textcolor{comment}{ *       (u)int64\_t}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00098}00098 \textcolor{comment}{ *       PTRDIFF\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00099}00099 \textcolor{comment}{ *       PTRDIFF\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00100}00100 \textcolor{comment}{ *       (u)intptr\_t}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00101}00101 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00102}00102 \textcolor{comment}{ *    9) The following have not been defined:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00103}00103 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00104}00104 \textcolor{comment}{ *       WINT\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00105}00105 \textcolor{comment}{ *       WINT\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00106}00106 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00107}00107 \textcolor{comment}{ *   10) The criteria for defining (u)int\_least(*)\_t isn't clear,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00108}00108 \textcolor{comment}{ *       except for systems which don't have a type that precisely}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00109}00109 \textcolor{comment}{ *       defined 8, 16, or 32 bit types (which this include file does}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00110}00110 \textcolor{comment}{ *       not support anyways). Default definitions have been given.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00111}00111 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00112}00112 \textcolor{comment}{ *   11) The criteria for defining (u)int\_fast(*)\_t isn't something I}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00113}00113 \textcolor{comment}{ *       would trust to any particular compiler vendor or the ANSI C}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00114}00114 \textcolor{comment}{ *       committee.  It is well known that "{}compatible systems"{} are}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00115}00115 \textcolor{comment}{ *       commonly created that have very different performance}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00116}00116 \textcolor{comment}{ *       characteristics from the systems they are compatible with,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00117}00117 \textcolor{comment}{ *       especially those whose vendors make both the compiler and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00118}00118 \textcolor{comment}{ *       system.  Default definitions have been given, but its strongly}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00119}00119 \textcolor{comment}{ *       recommended that users never use these definitions for any}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00120}00120 \textcolor{comment}{ *       reason (they do *NOT* deliver any serious guarantee of}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00121}00121 \textcolor{comment}{ *       improved performance -\/-\/ not in this file, nor any vendor's}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00122}00122 \textcolor{comment}{ *       stdint.h).}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00123}00123 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00124}00124 \textcolor{comment}{ *   12) The following macros:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00125}00125 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00126}00126 \textcolor{comment}{ *       PRINTF\_INTMAX\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00127}00127 \textcolor{comment}{ *       PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00128}00128 \textcolor{comment}{ *       PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00129}00129 \textcolor{comment}{ *       PRINTF\_INT16\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00130}00130 \textcolor{comment}{ *       PRINTF\_LEAST64\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00131}00131 \textcolor{comment}{ *       PRINTF\_LEAST32\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00132}00132 \textcolor{comment}{ *       PRINTF\_LEAST16\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00133}00133 \textcolor{comment}{ *       PRINTF\_INTPTR\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00134}00134 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00135}00135 \textcolor{comment}{ *       are strings which have been defined as the modifiers required}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00136}00136 \textcolor{comment}{ *       for the "{}d"{}, "{}u"{} and "{}x"{} printf formats to correctly output}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00137}00137 \textcolor{comment}{ *       (u)intmax\_t, (u)int64\_t, (u)int32\_t, (u)int16\_t, (u)least64\_t,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00138}00138 \textcolor{comment}{ *       (u)least32\_t, (u)least16\_t and (u)intptr\_t types respectively.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00139}00139 \textcolor{comment}{ *       PRINTF\_INTPTR\_MODIFIER is not defined for some systems which}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00140}00140 \textcolor{comment}{ *       provide their own stdint.h.  PRINTF\_INT64\_MODIFIER is not}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00141}00141 \textcolor{comment}{ *       defined if INT64\_MAX is not defined.  These are an extension}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00142}00142 \textcolor{comment}{ *       beyond what C99 specifies must be in stdint.h.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00143}00143 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00144}00144 \textcolor{comment}{ *       In addition, the following macros are defined:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00145}00145 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00146}00146 \textcolor{comment}{ *       PRINTF\_INTMAX\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00147}00147 \textcolor{comment}{ *       PRINTF\_INT64\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00148}00148 \textcolor{comment}{ *       PRINTF\_INT32\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00149}00149 \textcolor{comment}{ *       PRINTF\_INT16\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00150}00150 \textcolor{comment}{ *       PRINTF\_INT8\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00151}00151 \textcolor{comment}{ *       PRINTF\_INTMAX\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00152}00152 \textcolor{comment}{ *       PRINTF\_INT64\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00153}00153 \textcolor{comment}{ *       PRINTF\_INT32\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00154}00154 \textcolor{comment}{ *       PRINTF\_INT16\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00155}00155 \textcolor{comment}{ *       PRINTF\_UINT8\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00156}00156 \textcolor{comment}{ *       PRINTF\_UINTMAX\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00157}00157 \textcolor{comment}{ *       PRINTF\_UINT64\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00158}00158 \textcolor{comment}{ *       PRINTF\_UINT32\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00159}00159 \textcolor{comment}{ *       PRINTF\_UINT16\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00160}00160 \textcolor{comment}{ *       PRINTF\_UINT8\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00161}00161 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00162}00162 \textcolor{comment}{ *       Which specifies the maximum number of characters required to}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00163}00163 \textcolor{comment}{ *       print the number of that type in either hexadecimal or decimal.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00164}00164 \textcolor{comment}{ *       These are an extension beyond what C99 specifies must be in}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00165}00165 \textcolor{comment}{ *       stdint.h.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00166}00166 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00167}00167 \textcolor{comment}{ *  Compilers tested (all with 0 warnings at their highest respective}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00168}00168 \textcolor{comment}{ *  settings): Borland Turbo C 2.0, WATCOM C/C++ 11.0 (16 bits and 32}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00169}00169 \textcolor{comment}{ *  bits), Microsoft Visual C++ 6.0 (32 bit), Microsoft Visual Studio}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00170}00170 \textcolor{comment}{ *  .net (VC7), Intel C++ 4.0, GNU gcc v3.3.3}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00171}00171 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00172}00172 \textcolor{comment}{ *  This file should be considered a work in progress.  Suggestions for}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00173}00173 \textcolor{comment}{ *  improvements, especially those which increase coverage are strongly}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00174}00174 \textcolor{comment}{ *  encouraged.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00175}00175 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00176}00176 \textcolor{comment}{ *  Acknowledgements}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00177}00177 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00178}00178 \textcolor{comment}{ *  The following people have made significant contributions to the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00179}00179 \textcolor{comment}{ *  development and testing of this file:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00180}00180 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00181}00181 \textcolor{comment}{ *  Chris Howie}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00182}00182 \textcolor{comment}{ *  John Steele Scott}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00183}00183 \textcolor{comment}{ *  Dave Thorup}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00184}00184 \textcolor{comment}{ *  John Dill}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00185}00185 \textcolor{comment}{ *  Florian Wobbe}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00186}00186 \textcolor{comment}{ *  Christopher Sean Morrison}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00187}00187 \textcolor{comment}{ *  Mikkel Fahnoe Jorgensen}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00188}00188 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00189}00189 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00191}00191 \textcolor{preprocessor}{\#include <stddef.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00192}00192 \textcolor{preprocessor}{\#include <limits.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00193}00193 \textcolor{preprocessor}{\#include <signal.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00194}00194 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00195}00195 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00196}00196 \textcolor{comment}{ *  For gcc with \_STDINT\_H, fill in the PRINTF\_INT*\_MODIFIER macros, and}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00197}00197 \textcolor{comment}{ *  do nothing else.  On the Mac OS X version of gcc this is \_STDINT\_H\_.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00198}00198 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00199}00199 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00200}00200 \textcolor{preprocessor}{\#if ((defined(\_\_SUNPRO\_C) \&\& \_\_SUNPRO\_C >= 0x570) || (defined(\_MSC\_VER) \&\& \_MSC\_VER >= 1600) || (defined(\_\_STDC\_\_) \&\& \_\_STDC\_\_ \&\& defined(\_\_STDC\_VERSION\_\_) \&\& \_\_STDC\_VERSION\_\_ >= 199901L) || (defined (\_\_WATCOMC\_\_) \&\& (defined (\_STDINT\_H\_INCLUDED) || \_\_WATCOMC\_\_ >= 1250)) || (defined(\_\_GNUC\_\_) \&\& (\_\_GNUC\_\_ > 3 || defined(\_STDINT\_H) || defined(\_STDINT\_H\_) || defined (\_\_UINT\_FAST64\_TYPE\_\_)) )) \&\& !defined (\_PSTDINT\_H\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00201}00201 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00202}00202 \textcolor{preprocessor}{\#define \_PSTDINT\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00203}00203 \textcolor{preprocessor}{\# if defined(\_\_GNUC\_\_) \&\& (defined(\_\_x86\_64\_\_) || defined(\_\_ppc64\_\_)) \&\& !(defined(\_\_APPLE\_\_) \&\& defined(\_\_MACH\_\_))}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00204}00204 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00205}00205 \textcolor{preprocessor}{\#   define PRINTF\_INT64\_MODIFIER "{}l"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00206}00206 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00207}00207 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00208}00208 \textcolor{preprocessor}{\#   define PRINTF\_INT32\_MODIFIER "{}"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00209}00209 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00210}00210 \textcolor{preprocessor}{\# else}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00211}00211 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00212}00212 \textcolor{preprocessor}{\#   define PRINTF\_INT64\_MODIFIER "{}ll"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00213}00213 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00214}00214 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00215}00215 \textcolor{preprocessor}{\#   if (UINT\_MAX == UINT32\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00216}00216 \textcolor{preprocessor}{\#    define PRINTF\_INT32\_MODIFIER "{}"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00217}00217 \textcolor{preprocessor}{\#   else}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00218}00218 \textcolor{preprocessor}{\#    define PRINTF\_INT32\_MODIFIER "{}l"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00219}00219 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00220}00220 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00221}00221 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00222}00222 \textcolor{preprocessor}{\# ifndef PRINTF\_INT16\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00223}00223 \textcolor{preprocessor}{\#  define PRINTF\_INT16\_MODIFIER "{}h"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00224}00224 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00225}00225 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00226}00226 \textcolor{preprocessor}{\#  define PRINTF\_INTMAX\_MODIFIER PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00227}00227 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00228}00228 \textcolor{preprocessor}{\# ifndef PRINTF\_INT64\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00229}00229 \textcolor{preprocessor}{\#  define PRINTF\_INT64\_HEX\_WIDTH "{}16"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00230}00230 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00231}00231 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT64\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00232}00232 \textcolor{preprocessor}{\#  define PRINTF\_UINT64\_HEX\_WIDTH "{}16"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00233}00233 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00234}00234 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00235}00235 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_HEX\_WIDTH "{}8"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00236}00236 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00237}00237 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT32\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00238}00238 \textcolor{preprocessor}{\#  define PRINTF\_UINT32\_HEX\_WIDTH "{}8"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00239}00239 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00240}00240 \textcolor{preprocessor}{\# ifndef PRINTF\_INT16\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00241}00241 \textcolor{preprocessor}{\#  define PRINTF\_INT16\_HEX\_WIDTH "{}4"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00242}00242 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00243}00243 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT16\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00244}00244 \textcolor{preprocessor}{\#  define PRINTF\_UINT16\_HEX\_WIDTH "{}4"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00245}00245 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00246}00246 \textcolor{preprocessor}{\# ifndef PRINTF\_INT8\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00247}00247 \textcolor{preprocessor}{\#  define PRINTF\_INT8\_HEX\_WIDTH "{}2"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00248}00248 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00249}00249 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT8\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00250}00250 \textcolor{preprocessor}{\#  define PRINTF\_UINT8\_HEX\_WIDTH "{}2"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00251}00251 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00252}00252 \textcolor{preprocessor}{\# ifndef PRINTF\_INT64\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00253}00253 \textcolor{preprocessor}{\#  define PRINTF\_INT64\_DEC\_WIDTH "{}19"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00254}00254 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00255}00255 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT64\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00256}00256 \textcolor{preprocessor}{\#  define PRINTF\_UINT64\_DEC\_WIDTH "{}20"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00257}00257 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00258}00258 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00259}00259 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_DEC\_WIDTH "{}10"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00260}00260 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00261}00261 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT32\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00262}00262 \textcolor{preprocessor}{\#  define PRINTF\_UINT32\_DEC\_WIDTH "{}10"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00263}00263 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00264}00264 \textcolor{preprocessor}{\# ifndef PRINTF\_INT16\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00265}00265 \textcolor{preprocessor}{\#  define PRINTF\_INT16\_DEC\_WIDTH "{}5"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00266}00266 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00267}00267 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT16\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00268}00268 \textcolor{preprocessor}{\#  define PRINTF\_UINT16\_DEC\_WIDTH "{}5"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00269}00269 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00270}00270 \textcolor{preprocessor}{\# ifndef PRINTF\_INT8\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00271}00271 \textcolor{preprocessor}{\#  define PRINTF\_INT8\_DEC\_WIDTH "{}3"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00272}00272 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00273}00273 \textcolor{preprocessor}{\# ifndef PRINTF\_UINT8\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00274}00274 \textcolor{preprocessor}{\#  define PRINTF\_UINT8\_DEC\_WIDTH "{}3"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00275}00275 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00276}00276 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00277}00277 \textcolor{preprocessor}{\#  define PRINTF\_INTMAX\_HEX\_WIDTH PRINTF\_UINT64\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00278}00278 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00279}00279 \textcolor{preprocessor}{\# ifndef PRINTF\_UINTMAX\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00280}00280 \textcolor{preprocessor}{\#  define PRINTF\_UINTMAX\_HEX\_WIDTH PRINTF\_UINT64\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00281}00281 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00282}00282 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00283}00283 \textcolor{preprocessor}{\#  define PRINTF\_INTMAX\_DEC\_WIDTH PRINTF\_UINT64\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00284}00284 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00285}00285 \textcolor{preprocessor}{\# ifndef PRINTF\_UINTMAX\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00286}00286 \textcolor{preprocessor}{\#  define PRINTF\_UINTMAX\_DEC\_WIDTH PRINTF\_UINT64\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00287}00287 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00288}00288 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00289}00289 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00290}00290 \textcolor{comment}{ *  Something really weird is going on with Open Watcom.  Just pull some of}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00291}00291 \textcolor{comment}{ *  these duplicated definitions from Open Watcom's stdint.h file for now.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00292}00292 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00293}00293 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00294}00294 \textcolor{preprocessor}{\# if defined (\_\_WATCOMC\_\_) \&\& \_\_WATCOMC\_\_ >= 1250}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00295}00295 \textcolor{preprocessor}{\#  if !defined (INT64\_C)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00296}00296 \textcolor{preprocessor}{\#   define INT64\_C(x)   (x + (INT64\_MAX -\/ INT64\_MAX))}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00297}00297 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00298}00298 \textcolor{preprocessor}{\#  if !defined (UINT64\_C)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00299}00299 \textcolor{preprocessor}{\#   define UINT64\_C(x)  (x + (UINT64\_MAX -\/ UINT64\_MAX))}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00300}00300 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00301}00301 \textcolor{preprocessor}{\#  if !defined (INT32\_C)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00302}00302 \textcolor{preprocessor}{\#   define INT32\_C(x)   (x + (INT32\_MAX -\/ INT32\_MAX))}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00303}00303 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00304}00304 \textcolor{preprocessor}{\#  if !defined (UINT32\_C)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00305}00305 \textcolor{preprocessor}{\#   define UINT32\_C(x)  (x + (UINT32\_MAX -\/ UINT32\_MAX))}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00306}00306 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00307}00307 \textcolor{preprocessor}{\#  if !defined (INT16\_C)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00308}00308 \textcolor{preprocessor}{\#   define INT16\_C(x)   (x)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00309}00309 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00310}00310 \textcolor{preprocessor}{\#  if !defined (UINT16\_C)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00311}00311 \textcolor{preprocessor}{\#   define UINT16\_C(x)  (x)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00312}00312 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00313}00313 \textcolor{preprocessor}{\#  if !defined (INT8\_C)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00314}00314 \textcolor{preprocessor}{\#   define INT8\_C(x)   (x)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00315}00315 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00316}00316 \textcolor{preprocessor}{\#  if !defined (UINT8\_C)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00317}00317 \textcolor{preprocessor}{\#   define UINT8\_C(x)  (x)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00318}00318 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00319}00319 \textcolor{preprocessor}{\#  if !defined (UINT64\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00320}00320 \textcolor{preprocessor}{\#   define UINT64\_MAX  18446744073709551615ULL}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00321}00321 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00322}00322 \textcolor{preprocessor}{\#  if !defined (INT64\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00323}00323 \textcolor{preprocessor}{\#   define INT64\_MAX  9223372036854775807LL}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00324}00324 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00325}00325 \textcolor{preprocessor}{\#  if !defined (UINT32\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00326}00326 \textcolor{preprocessor}{\#   define UINT32\_MAX  4294967295UL}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00327}00327 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00328}00328 \textcolor{preprocessor}{\#  if !defined (INT32\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00329}00329 \textcolor{preprocessor}{\#   define INT32\_MAX  2147483647L}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00330}00330 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00331}00331 \textcolor{preprocessor}{\#  if !defined (INTMAX\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00332}00332 \textcolor{preprocessor}{\#   define INTMAX\_MAX INT64\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00333}00333 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00334}00334 \textcolor{preprocessor}{\#  if !defined (INTMAX\_MIN)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00335}00335 \textcolor{preprocessor}{\#   define INTMAX\_MIN INT64\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00336}00336 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00337}00337 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00338}00338 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00339}00339 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00340}00340 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00341}00341 \textcolor{comment}{ *  I have no idea what is the truly correct thing to do on older Solaris.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00342}00342 \textcolor{comment}{ *  From some online discussions, this seems to be what is being}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00343}00343 \textcolor{comment}{ *  recommended.  For people who actually are developing on older Solaris,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00344}00344 \textcolor{comment}{ *  what I would like to know is, does this define all of the relevant}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00345}00345 \textcolor{comment}{ *  macros of a complete stdint.h?  Remember, in pstdint.h 64 bit is}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00346}00346 \textcolor{comment}{ *  considered optional.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00347}00347 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00348}00348 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00349}00349 \textcolor{preprocessor}{\#if (defined(\_\_SUNPRO\_C) \&\& \_\_SUNPRO\_C >= 0x420) \&\& !defined(\_PSTDINT\_H\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00350}00350 \textcolor{preprocessor}{\#include <sys/inttypes.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00351}00351 \textcolor{preprocessor}{\#define \_PSTDINT\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00352}00352 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00353}00353 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00354}00354 \textcolor{preprocessor}{\#ifndef \_PSTDINT\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00355}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a91cbfa927fe8e3fc657296bfe67849a6}{00355}} \textcolor{preprocessor}{\#define \_PSTDINT\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00356}00356 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00357}00357 \textcolor{preprocessor}{\#ifndef SIZE\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00358}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a3c75bb398badb69c7577b21486f9963f}{00358}} \textcolor{preprocessor}{\# define SIZE\_MAX (\string~(size\_t)0)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00359}00359 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00360}00360 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00361}00361 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00362}00362 \textcolor{comment}{ *  Deduce the type assignments from limits.h under the assumption that}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00363}00363 \textcolor{comment}{ *  integer sizes in bits are powers of 2, and follow the ANSI}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00364}00364 \textcolor{comment}{ *  definitions.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00365}00365 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00366}00366 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00367}00367 \textcolor{preprocessor}{\#ifndef UINT8\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00368}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_aeb4e270a084ee26fe73e799861bd0252}{00368}} \textcolor{preprocessor}{\# define UINT8\_MAX 0xff}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00369}00369 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00370}00370 \textcolor{preprocessor}{\#if !defined(uint8\_t) \&\& !defined(\_UINT8\_T) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00371}00371 \textcolor{preprocessor}{\# if (UCHAR\_MAX == UINT8\_MAX) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00372}00372     \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} uint8\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00373}00373 \textcolor{preprocessor}{\#   define UINT8\_C(v) ((uint8\_t) v)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00374}00374 \textcolor{preprocessor}{\# else}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00375}00375 \textcolor{preprocessor}{\#   error "{}Platform not supported"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00376}00376 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00377}00377 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00378}00378 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00379}00379 \textcolor{preprocessor}{\#ifndef INT8\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00380}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_aaf7f29f45f1a513b4748a4e5014ddf6a}{00380}} \textcolor{preprocessor}{\# define INT8\_MAX 0x7f}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00381}00381 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00382}00382 \textcolor{preprocessor}{\#ifndef INT8\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00383}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_aadcf2a81af243df333b31efa6461ab8e}{00383}} \textcolor{preprocessor}{\# define INT8\_MIN INT8\_C(0x80)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00384}00384 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00385}00385 \textcolor{preprocessor}{\#if !defined(int8\_t) \&\& !defined(\_INT8\_T) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00386}00386 \textcolor{preprocessor}{\# if (SCHAR\_MAX == INT8\_MAX) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00387}00387     \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{char} int8\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00388}00388 \textcolor{preprocessor}{\#   define INT8\_C(v) ((int8\_t) v)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00389}00389 \textcolor{preprocessor}{\# else}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00390}00390 \textcolor{preprocessor}{\#   error "{}Platform not supported"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00391}00391 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00392}00392 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00393}00393 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00394}00394 \textcolor{preprocessor}{\#ifndef UINT16\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00395}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a3ea490c9b3617d4479bd80ef93cd5602}{00395}} \textcolor{preprocessor}{\# define UINT16\_MAX 0xffff}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00396}00396 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00397}00397 \textcolor{preprocessor}{\#if !defined(uint16\_t) \&\& !defined(\_UINT16\_T) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00398}00398 \textcolor{preprocessor}{\#if (UINT\_MAX == UINT16\_MAX) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00399}00399   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} uint16\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00400}00400 \textcolor{preprocessor}{\# ifndef PRINTF\_INT16\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00401}00401 \textcolor{preprocessor}{\#  define PRINTF\_INT16\_MODIFIER "{}"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00402}00402 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00403}00403 \textcolor{preprocessor}{\# define UINT16\_C(v) ((uint16\_t) (v))}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00404}00404 \textcolor{preprocessor}{\#elif (USHRT\_MAX == UINT16\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00405}00405   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} uint16\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00406}00406 \textcolor{preprocessor}{\# define UINT16\_C(v) ((uint16\_t) (v))}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00407}00407 \textcolor{preprocessor}{\# ifndef PRINTF\_INT16\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00408}00408 \textcolor{preprocessor}{\#  define PRINTF\_INT16\_MODIFIER "{}h"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00409}00409 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00410}00410 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00411}00411 \textcolor{preprocessor}{\#error "{}Platform not supported"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00412}00412 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00413}00413 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00414}00414 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00415}00415 \textcolor{preprocessor}{\#ifndef INT16\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00416}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ac58f2c111cc9989c86db2a7dc4fd84ca}{00416}} \textcolor{preprocessor}{\# define INT16\_MAX 0x7fff}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00417}00417 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00418}00418 \textcolor{preprocessor}{\#ifndef INT16\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00419}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ad4e9955955b27624963643eac448118a}{00419}} \textcolor{preprocessor}{\# define INT16\_MIN INT16\_C(0x8000)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00420}00420 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00421}00421 \textcolor{preprocessor}{\#if !defined(int16\_t) \&\& !defined(\_INT16\_T) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00422}00422 \textcolor{preprocessor}{\#if (INT\_MAX == INT16\_MAX) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00423}00423   \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{int} int16\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00424}00424 \textcolor{preprocessor}{\# define INT16\_C(v) ((int16\_t) (v))}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00425}00425 \textcolor{preprocessor}{\# ifndef PRINTF\_INT16\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00426}00426 \textcolor{preprocessor}{\#  define PRINTF\_INT16\_MODIFIER "{}"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00427}00427 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00428}00428 \textcolor{preprocessor}{\#elif (SHRT\_MAX == INT16\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00429}00429   \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{short} int16\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00430}00430 \textcolor{preprocessor}{\# define INT16\_C(v) ((int16\_t) (v))}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00431}00431 \textcolor{preprocessor}{\# ifndef PRINTF\_INT16\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00432}00432 \textcolor{preprocessor}{\#  define PRINTF\_INT16\_MODIFIER "{}h"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00433}00433 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00434}00434 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00435}00435 \textcolor{preprocessor}{\#error "{}Platform not supported"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00436}00436 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00437}00437 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00438}00438 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00439}00439 \textcolor{preprocessor}{\#ifndef UINT32\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00440}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ab5eb23180f7cc12b7d6c04a8ec067fdd}{00440}} \textcolor{preprocessor}{\# define UINT32\_MAX (0xffffffffUL)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00441}00441 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00442}00442 \textcolor{preprocessor}{\#if !defined(uint32\_t) \&\& !defined(\_UINT32\_T) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00443}00443 \textcolor{preprocessor}{\#if (ULONG\_MAX == UINT32\_MAX) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00444}00444   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} uint32\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00445}00445 \textcolor{preprocessor}{\# define UINT32\_C(v) v \#\# UL}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00446}00446 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00447}00447 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_MODIFIER "{}l"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00448}00448 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00449}00449 \textcolor{preprocessor}{\#elif (UINT\_MAX == UINT32\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00450}00450   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} uint32\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00451}00451 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00452}00452 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_MODIFIER "{}"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00453}00453 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00454}00454 \textcolor{preprocessor}{\# define UINT32\_C(v) v \#\# U}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00455}00455 \textcolor{preprocessor}{\#elif (USHRT\_MAX == UINT32\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00456}00456   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} uint32\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00457}00457 \textcolor{preprocessor}{\# define UINT32\_C(v) ((unsigned short) (v))}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00458}00458 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00459}00459 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_MODIFIER "{}"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00460}00460 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00461}00461 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00462}00462 \textcolor{preprocessor}{\#error "{}Platform not supported"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00463}00463 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00464}00464 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00465}00465 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00466}00466 \textcolor{preprocessor}{\#ifndef INT32\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00467}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a181807730d4a375f848ba139813ce04f}{00467}} \textcolor{preprocessor}{\# define INT32\_MAX (0x7fffffffL)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00468}00468 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00469}00469 \textcolor{preprocessor}{\#ifndef INT32\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00470}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a688eb21a22db27c2b2bd5836943cdcbe}{00470}} \textcolor{preprocessor}{\# define INT32\_MIN INT32\_C(0x80000000)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00471}00471 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00472}00472 \textcolor{preprocessor}{\#if !defined(int32\_t) \&\& !defined(\_INT32\_T) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00473}00473 \textcolor{preprocessor}{\#if (LONG\_MAX == INT32\_MAX) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00474}00474   \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{long} int32\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00475}00475 \textcolor{preprocessor}{\# define INT32\_C(v) v \#\# L}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00476}00476 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00477}00477 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_MODIFIER "{}l"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00478}00478 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00479}00479 \textcolor{preprocessor}{\#elif (INT\_MAX == INT32\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00480}00480   \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{int} int32\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00481}00481 \textcolor{preprocessor}{\# define INT32\_C(v) v}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00482}00482 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00483}00483 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_MODIFIER "{}"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00484}00484 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00485}00485 \textcolor{preprocessor}{\#elif (SHRT\_MAX == INT32\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00486}00486   \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{short} int32\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00487}00487 \textcolor{preprocessor}{\# define INT32\_C(v) ((short) (v))}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00488}00488 \textcolor{preprocessor}{\# ifndef PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00489}00489 \textcolor{preprocessor}{\#  define PRINTF\_INT32\_MODIFIER "{}"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00490}00490 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00491}00491 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00492}00492 \textcolor{preprocessor}{\#error "{}Platform not supported"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00493}00493 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00494}00494 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00495}00495 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00496}00496 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00497}00497 \textcolor{comment}{ *  The macro stdint\_int64\_defined is temporarily used to record}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00498}00498 \textcolor{comment}{ *  whether or not 64 integer support is available.  It must be}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00499}00499 \textcolor{comment}{ *  defined for any 64 integer extensions for new platforms that are}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00500}00500 \textcolor{comment}{ *  added.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00501}00501 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00502}00502 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00503}00503 \textcolor{preprocessor}{\#undef stdint\_int64\_defined}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00504}00504 \textcolor{preprocessor}{\#if (defined(\_\_STDC\_\_) \&\& defined(\_\_STDC\_VERSION\_\_)) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00505}00505 \textcolor{preprocessor}{\# if (\_\_STDC\_\_ \&\& \_\_STDC\_VERSION\_\_ >= 199901L) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00506}00506 \textcolor{preprocessor}{\#  define stdint\_int64\_defined}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00507}00507    \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} int64\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00508}00508    \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} uint64\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00509}00509 \textcolor{preprocessor}{\#  define UINT64\_C(v) v \#\# ULL}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00510}00510 \textcolor{preprocessor}{\#  define  INT64\_C(v) v \#\# LL}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00511}00511 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00512}00512 \textcolor{preprocessor}{\#   define PRINTF\_INT64\_MODIFIER "{}ll"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00513}00513 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00514}00514 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00515}00515 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00516}00516 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00517}00517 \textcolor{preprocessor}{\#if !defined (stdint\_int64\_defined)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00518}00518 \textcolor{preprocessor}{\# if defined(\_\_GNUC\_\_) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00519}00519 \textcolor{preprocessor}{\#  define stdint\_int64\_defined}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00520}00520    \_\_extension\_\_ \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} int64\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00521}00521    \_\_extension\_\_ \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} uint64\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00522}00522 \textcolor{preprocessor}{\#  define UINT64\_C(v) v \#\# ULL}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00523}00523 \textcolor{preprocessor}{\#  define  INT64\_C(v) v \#\# LL}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00524}00524 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00525}00525 \textcolor{preprocessor}{\#   define PRINTF\_INT64\_MODIFIER "{}ll"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00526}00526 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00527}00527 \textcolor{preprocessor}{\# elif defined(\_\_MWERKS\_\_) || defined (\_\_SUNPRO\_C) || defined (\_\_SUNPRO\_CC) || defined (\_\_APPLE\_CC\_\_) || defined (\_LONG\_LONG) || defined (\_CRAYC) || defined (S\_SPLINT\_S)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00528}00528 \textcolor{preprocessor}{\#  define stdint\_int64\_defined}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00529}00529    \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} int64\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00530}00530    \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} uint64\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00531}00531 \textcolor{preprocessor}{\#  define UINT64\_C(v) v \#\# ULL}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00532}00532 \textcolor{preprocessor}{\#  define  INT64\_C(v) v \#\# LL}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00533}00533 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00534}00534 \textcolor{preprocessor}{\#   define PRINTF\_INT64\_MODIFIER "{}ll"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00535}00535 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00536}00536 \textcolor{preprocessor}{\# elif (defined(\_\_WATCOMC\_\_) \&\& defined(\_\_WATCOM\_INT64\_\_)) || (defined(\_MSC\_VER) \&\& \_INTEGRAL\_MAX\_BITS >= 64) || (defined (\_\_BORLANDC\_\_) \&\& \_\_BORLANDC\_\_ > 0x460) || defined (\_\_alpha) || defined (\_\_DECC)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00537}00537 \textcolor{preprocessor}{\#  define stdint\_int64\_defined}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00538}00538    \textcolor{keyword}{typedef} \_\_int64 int64\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00539}00539    \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \_\_int64 uint64\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00540}00540 \textcolor{preprocessor}{\#  define UINT64\_C(v) v \#\# UI64}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00541}00541 \textcolor{preprocessor}{\#  define  INT64\_C(v) v \#\# I64}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00542}00542 \textcolor{preprocessor}{\#  ifndef PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00543}00543 \textcolor{preprocessor}{\#   define PRINTF\_INT64\_MODIFIER "{}I64"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00544}00544 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00545}00545 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00546}00546 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00547}00547 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00548}00548 \textcolor{preprocessor}{\#if !defined (LONG\_LONG\_MAX) \&\& defined (INT64\_C)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00549}00549 \textcolor{preprocessor}{\# define LONG\_LONG\_MAX INT64\_C (9223372036854775807)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00550}00550 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00551}00551 \textcolor{preprocessor}{\#ifndef ULONG\_LONG\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00552}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a37ae7009688ff03a821794e036e3e458}{00552}} \textcolor{preprocessor}{\# define ULONG\_LONG\_MAX UINT64\_C (18446744073709551615)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00553}00553 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00554}00554 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00555}00555 \textcolor{preprocessor}{\#if !defined (INT64\_MAX) \&\& defined (INT64\_C)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00556}00556 \textcolor{preprocessor}{\# define INT64\_MAX INT64\_C (9223372036854775807)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00557}00557 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00558}00558 \textcolor{preprocessor}{\#if !defined (INT64\_MIN) \&\& defined (INT64\_C)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00559}00559 \textcolor{preprocessor}{\# define INT64\_MIN INT64\_C (-\/9223372036854775808)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00560}00560 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00561}00561 \textcolor{preprocessor}{\#if !defined (UINT64\_MAX) \&\& defined (INT64\_C)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00562}00562 \textcolor{preprocessor}{\# define UINT64\_MAX UINT64\_C (18446744073709551615)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00563}00563 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00564}00564 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00565}00565 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00566}00566 \textcolor{comment}{ *  Width of hexadecimal for number field.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00567}00567 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00568}00568 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00569}00569 \textcolor{preprocessor}{\#ifndef PRINTF\_INT64\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00570}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a6b45386978db7d05efc9c5ce140ba27c}{00570}} \textcolor{preprocessor}{\# define PRINTF\_INT64\_HEX\_WIDTH "{}16"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00571}00571 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00572}00572 \textcolor{preprocessor}{\#ifndef PRINTF\_INT32\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00573}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ae6f04461e1801eefd3b64f3b851abed8}{00573}} \textcolor{preprocessor}{\# define PRINTF\_INT32\_HEX\_WIDTH "{}8"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00574}00574 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00575}00575 \textcolor{preprocessor}{\#ifndef PRINTF\_INT16\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00576}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ab330e7280ae15049599408e99c73273b}{00576}} \textcolor{preprocessor}{\# define PRINTF\_INT16\_HEX\_WIDTH "{}4"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00577}00577 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00578}00578 \textcolor{preprocessor}{\#ifndef PRINTF\_INT8\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00579}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a32f0dce3fbd74aeeb4398ebc25abde7d}{00579}} \textcolor{preprocessor}{\# define PRINTF\_INT8\_HEX\_WIDTH "{}2"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00580}00580 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00581}00581 \textcolor{preprocessor}{\#ifndef PRINTF\_INT64\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00582}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a9d70c86cd8202228d85db7aeed22497b}{00582}} \textcolor{preprocessor}{\# define PRINTF\_INT64\_DEC\_WIDTH "{}19"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00583}00583 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00584}00584 \textcolor{preprocessor}{\#ifndef PRINTF\_INT32\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00585}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_aa7207fcbdc05d7cf877066028543c28b}{00585}} \textcolor{preprocessor}{\# define PRINTF\_INT32\_DEC\_WIDTH "{}10"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00586}00586 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00587}00587 \textcolor{preprocessor}{\#ifndef PRINTF\_INT16\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00588}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ac1bfd0b6e49224d67657fe9e7502623c}{00588}} \textcolor{preprocessor}{\# define PRINTF\_INT16\_DEC\_WIDTH "{}5"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00589}00589 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00590}00590 \textcolor{preprocessor}{\#ifndef PRINTF\_INT8\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00591}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a9b86583004a9dce380fe84b16de763b6}{00591}} \textcolor{preprocessor}{\# define PRINTF\_INT8\_DEC\_WIDTH "{}3"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00592}00592 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00593}00593 \textcolor{preprocessor}{\#ifndef PRINTF\_UINT64\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00594}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a580336588dd0e65aaa933f444d1a8a5c}{00594}} \textcolor{preprocessor}{\# define PRINTF\_UINT64\_DEC\_WIDTH "{}20"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00595}00595 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00596}00596 \textcolor{preprocessor}{\#ifndef PRINTF\_UINT32\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00597}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ac11fdcf6c32e2509ee94472cc9575907}{00597}} \textcolor{preprocessor}{\# define PRINTF\_UINT32\_DEC\_WIDTH "{}10"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00598}00598 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00599}00599 \textcolor{preprocessor}{\#ifndef PRINTF\_UINT16\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00600}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a0e3b0c90dacdb57518332964a357c342}{00600}} \textcolor{preprocessor}{\# define PRINTF\_UINT16\_DEC\_WIDTH "{}5"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00601}00601 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00602}00602 \textcolor{preprocessor}{\#ifndef PRINTF\_UINT8\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00603}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_adb1add877aeea93408adf50729b0e6c9}{00603}} \textcolor{preprocessor}{\# define PRINTF\_UINT8\_DEC\_WIDTH "{}3"{}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00604}00604 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00605}00605 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00606}00606 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00607}00607 \textcolor{comment}{ *  Ok, lets not worry about 128 bit integers for now.  Moore's law says}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00608}00608 \textcolor{comment}{ *  we don't need to worry about that until about 2040 at which point}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00609}00609 \textcolor{comment}{ *  we'll have bigger things to worry about.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00610}00610 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00611}00611 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00612}00612 \textcolor{preprocessor}{\#ifdef stdint\_int64\_defined}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00613}00613   \textcolor{keyword}{typedef} int64\_t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a1a3f3321a0166a004bde0a1e72553f2b}{intmax\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00614}00614   \textcolor{keyword}{typedef} uint64\_t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a7643e68e022fde0d947e8dc252f716d6}{uintmax\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00615}00615 \textcolor{preprocessor}{\# define  INTMAX\_MAX   INT64\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00616}00616 \textcolor{preprocessor}{\# define  INTMAX\_MIN   INT64\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00617}00617 \textcolor{preprocessor}{\# define UINTMAX\_MAX  UINT64\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00618}00618 \textcolor{preprocessor}{\# define UINTMAX\_C(v) UINT64\_C(v)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00619}00619 \textcolor{preprocessor}{\# define  INTMAX\_C(v)  INT64\_C(v)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00620}00620 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00621}00621 \textcolor{preprocessor}{\#   define PRINTF\_INTMAX\_MODIFIER PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00622}00622 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00623}00623 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00624}00624 \textcolor{preprocessor}{\#  define PRINTF\_INTMAX\_HEX\_WIDTH PRINTF\_INT64\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00625}00625 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00626}00626 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00627}00627 \textcolor{preprocessor}{\#  define PRINTF\_INTMAX\_DEC\_WIDTH PRINTF\_INT64\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00628}00628 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00629}00629 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00630}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a1a3f3321a0166a004bde0a1e72553f2b}{00630}}   \textcolor{keyword}{typedef} int32\_t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a1a3f3321a0166a004bde0a1e72553f2b}{intmax\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00631}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a7643e68e022fde0d947e8dc252f716d6}{00631}}   \textcolor{keyword}{typedef} uint32\_t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a7643e68e022fde0d947e8dc252f716d6}{uintmax\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00632}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a022b9b0a3564d786244a4631847c37a3}{00632}} \textcolor{preprocessor}{\# define  INTMAX\_MAX   INT32\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00633}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_aa54fd5210434219e9027bfa0f0e325c8}{00633}} \textcolor{preprocessor}{\# define UINTMAX\_MAX  UINT32\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00634}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a572bc4e8e4eae73a2e1e6a158d3837a4}{00634}} \textcolor{preprocessor}{\# define UINTMAX\_C(v) UINT32\_C(v)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00635}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a6b556b8b5f86e13f1c2a6e8f9b9b4966}{00635}} \textcolor{preprocessor}{\# define  INTMAX\_C(v)  INT32\_C(v)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00636}00636 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00637}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ad53dd320ab0f0e9f4266bc225a3487df}{00637}} \textcolor{preprocessor}{\#   define PRINTF\_INTMAX\_MODIFIER PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00638}00638 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00639}00639 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00640}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_af88f43dbd7532680862099ef08421799}{00640}} \textcolor{preprocessor}{\#  define PRINTF\_INTMAX\_HEX\_WIDTH PRINTF\_INT32\_HEX\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00641}00641 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00642}00642 \textcolor{preprocessor}{\# ifndef PRINTF\_INTMAX\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00643}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a9c269e817611c8344b5d13cdedbd4465}{00643}} \textcolor{preprocessor}{\#  define PRINTF\_INTMAX\_DEC\_WIDTH PRINTF\_INT32\_DEC\_WIDTH}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00644}00644 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00645}00645 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00646}00646 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00647}00647 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00648}00648 \textcolor{comment}{ *  Because this file currently only supports platforms which have}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00649}00649 \textcolor{comment}{ *  precise powers of 2 as bit sizes for the default integers, the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00650}00650 \textcolor{comment}{ *  least definitions are all trivial.  Its possible that a future}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00651}00651 \textcolor{comment}{ *  version of this file could have different definitions.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00652}00652 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00653}00653 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00654}00654 \textcolor{preprocessor}{\#ifndef stdint\_least\_defined}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00655}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_aadfd725efbf565422ab13db91ccca53c}{00655}}   \textcolor{keyword}{typedef}   int8\_t   \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aadfd725efbf565422ab13db91ccca53c}{int\_least8\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00656}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ac76e2383debd5a3b100514044828961a}{00656}}   \textcolor{keyword}{typedef}  uint8\_t  \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac76e2383debd5a3b100514044828961a}{uint\_least8\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00657}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a17f379713bed2a28ac431760401253cd}{00657}}   \textcolor{keyword}{typedef}  int16\_t  \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a17f379713bed2a28ac431760401253cd}{int\_least16\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00658}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a4f3f6e6631cb4aaeadf1c59ff597b2fb}{00658}}   \textcolor{keyword}{typedef} uint16\_t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a4f3f6e6631cb4aaeadf1c59ff597b2fb}{uint\_least16\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00659}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a2676b57a778795e5d0598970f1407f38}{00659}}   \textcolor{keyword}{typedef}  int32\_t  \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a2676b57a778795e5d0598970f1407f38}{int\_least32\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00660}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ac0af81082969e5e3f4d939b1de7002ac}{00660}}   \textcolor{keyword}{typedef} uint32\_t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac0af81082969e5e3f4d939b1de7002ac}{uint\_least32\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00661}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a861aa5c171bcd4ac1438845bf9b183e1}{00661}} \textcolor{preprocessor}{\# define PRINTF\_LEAST32\_MODIFIER PRINTF\_INT32\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00662}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ae050ead9591f8e4e8368fe01076e7da4}{00662}} \textcolor{preprocessor}{\# define PRINTF\_LEAST16\_MODIFIER PRINTF\_INT16\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00663}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a2a80bde77ee1698d0f42f334adad4f2b}{00663}} \textcolor{preprocessor}{\# define  UINT\_LEAST8\_MAX  UINT8\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00664}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_aa05109908fb2770f632d2b646b9f85bf}{00664}} \textcolor{preprocessor}{\# define   INT\_LEAST8\_MAX   INT8\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00665}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a6ef6a1a518bbf516ca8b0180b11c358f}{00665}} \textcolor{preprocessor}{\# define UINT\_LEAST16\_MAX UINT16\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00666}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a7eb2a8e2a1c65d6c9ad0f86154890baa}{00666}} \textcolor{preprocessor}{\# define  INT\_LEAST16\_MAX  INT16\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00667}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a70cad8bacc9a6db301e1cdc86cc8d571}{00667}} \textcolor{preprocessor}{\# define UINT\_LEAST32\_MAX UINT32\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00668}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a5618711a0a54f722190a3a1219e278c2}{00668}} \textcolor{preprocessor}{\# define  INT\_LEAST32\_MAX  INT32\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00669}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a3e986cad833f63f420962ff60eda87e5}{00669}} \textcolor{preprocessor}{\# define   INT\_LEAST8\_MIN   INT8\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00670}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a1f91bfd5820c2f27af3d260fc75813e1}{00670}} \textcolor{preprocessor}{\# define  INT\_LEAST16\_MIN  INT16\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00671}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a2360a536116dd734820a6b5b3d560ce7}{00671}} \textcolor{preprocessor}{\# define  INT\_LEAST32\_MIN  INT32\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00672}00672 \textcolor{preprocessor}{\# ifdef stdint\_int64\_defined}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00673}00673     \textcolor{keyword}{typedef}  int64\_t  int\_least64\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00674}00674     \textcolor{keyword}{typedef} uint64\_t uint\_least64\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00675}00675 \textcolor{preprocessor}{\#   define PRINTF\_LEAST64\_MODIFIER PRINTF\_INT64\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00676}00676 \textcolor{preprocessor}{\#   define UINT\_LEAST64\_MAX UINT64\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00677}00677 \textcolor{preprocessor}{\#   define  INT\_LEAST64\_MAX  INT64\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00678}00678 \textcolor{preprocessor}{\#   define  INT\_LEAST64\_MIN  INT64\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00679}00679 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00680}00680 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00681}00681 \textcolor{preprocessor}{\#undef stdint\_least\_defined}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00682}00682 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00683}00683 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00684}00684 \textcolor{comment}{ *  The ANSI C committee pretending to know or specify anything about}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00685}00685 \textcolor{comment}{ *  performance is the epitome of misguided arrogance.  The mandate of}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00686}00686 \textcolor{comment}{ *  this file is to *ONLY* ever support that absolute minimum}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00687}00687 \textcolor{comment}{ *  definition of the fast integer types, for compatibility purposes.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00688}00688 \textcolor{comment}{ *  No extensions, and no attempt to suggest what may or may not be a}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00689}00689 \textcolor{comment}{ *  faster integer type will ever be made in this file.  Developers are}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00690}00690 \textcolor{comment}{ *  warned to stay away from these types when using this or any other}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00691}00691 \textcolor{comment}{ *  stdint.h.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00692}00692 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00693}00693 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00694}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a77eeea3cce53483bdce021415431c1b4}{00694}} \textcolor{keyword}{typedef}   \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aadfd725efbf565422ab13db91ccca53c}{int\_least8\_t}}   \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a77eeea3cce53483bdce021415431c1b4}{int\_fast8\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00695}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ae3a64b0efa0110e38359b34a0f265667}{00695}} \textcolor{keyword}{typedef}  \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac76e2383debd5a3b100514044828961a}{uint\_least8\_t}}  \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ae3a64b0efa0110e38359b34a0f265667}{uint\_fast8\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00696}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a43505f8e7533c9a3b521288e927416ad}{00696}} \textcolor{keyword}{typedef}  \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a17f379713bed2a28ac431760401253cd}{int\_least16\_t}}  \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a43505f8e7533c9a3b521288e927416ad}{int\_fast16\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00697}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ad22db665b43dc5f23ed8a42e015373f3}{00697}} \textcolor{keyword}{typedef} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a4f3f6e6631cb4aaeadf1c59ff597b2fb}{uint\_least16\_t}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ad22db665b43dc5f23ed8a42e015373f3}{uint\_fast16\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00698}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_adf31545bab2a12c9d12347af275bff5d}{00698}} \textcolor{keyword}{typedef}  \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a2676b57a778795e5d0598970f1407f38}{int\_least32\_t}}  \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_adf31545bab2a12c9d12347af275bff5d}{int\_fast32\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00699}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a51c746994cab2a6465693f8746b7ab52}{00699}} \textcolor{keyword}{typedef} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac0af81082969e5e3f4d939b1de7002ac}{uint\_least32\_t}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a51c746994cab2a6465693f8746b7ab52}{uint\_fast32\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00700}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a2c6f97ea2d76d0cf6260c84046cdb44e}{00700}} \textcolor{preprocessor}{\#define  UINT\_FAST8\_MAX  UINT\_LEAST8\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00701}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_acbcdb3bee0f5f904da5df8de69a80ca3}{00701}} \textcolor{preprocessor}{\#define   INT\_FAST8\_MAX   INT\_LEAST8\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00702}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_aed28ca63d9b222f6f1377358fe73a183}{00702}} \textcolor{preprocessor}{\#define UINT\_FAST16\_MAX UINT\_LEAST16\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00703}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a2fd35d0ea091e04caec504ff0042cf00}{00703}} \textcolor{preprocessor}{\#define  INT\_FAST16\_MAX  INT\_LEAST16\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00704}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ad51246a178143208b2db3315efd21c45}{00704}} \textcolor{preprocessor}{\#define UINT\_FAST32\_MAX UINT\_LEAST32\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00705}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ac96fa0f41b19e89f109e4f9913ca6635}{00705}} \textcolor{preprocessor}{\#define  INT\_FAST32\_MAX  INT\_LEAST32\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00706}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_aad8fb982cb19143efd5ee9a1a7a89390}{00706}} \textcolor{preprocessor}{\#define   INT\_FAST8\_MIN   INT\_LEAST8\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00707}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a169460a4e2a79138723d68d99372d958}{00707}} \textcolor{preprocessor}{\#define  INT\_FAST16\_MIN  INT\_LEAST16\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00708}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ad93df1652ed0635513d5efe4f1219926}{00708}} \textcolor{preprocessor}{\#define  INT\_FAST32\_MIN  INT\_LEAST32\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00709}00709 \textcolor{preprocessor}{\#ifdef stdint\_int64\_defined}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00710}00710   \textcolor{keyword}{typedef}  int\_least64\_t  int\_fast64\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00711}00711   \textcolor{keyword}{typedef} uint\_least64\_t uint\_fast64\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00712}00712 \textcolor{preprocessor}{\# define UINT\_FAST64\_MAX UINT\_LEAST64\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00713}00713 \textcolor{preprocessor}{\# define  INT\_FAST64\_MAX  INT\_LEAST64\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00714}00714 \textcolor{preprocessor}{\# define  INT\_FAST64\_MIN  INT\_LEAST64\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00715}00715 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00716}00716 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00717}00717 \textcolor{preprocessor}{\#undef stdint\_int64\_defined}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00718}00718 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00719}00719 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00720}00720 \textcolor{comment}{ *  Whatever piecemeal, per compiler thing we can do about the wchar\_t}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00721}00721 \textcolor{comment}{ *  type limits.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00722}00722 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00723}00723 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00724}00724 \textcolor{preprocessor}{\#if defined(\_\_WATCOMC\_\_) || defined(\_MSC\_VER) || defined (\_\_GNUC\_\_) \&\& !defined(vxWorks)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00725}00725 \textcolor{preprocessor}{\# include <wchar.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00726}00726 \textcolor{preprocessor}{\# ifndef WCHAR\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00727}00727 \textcolor{preprocessor}{\#  define WCHAR\_MIN 0}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00728}00728 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00729}00729 \textcolor{preprocessor}{\# ifndef WCHAR\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00730}00730 \textcolor{preprocessor}{\#  define WCHAR\_MAX ((wchar\_t)-\/1)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00731}00731 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00732}00732 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00733}00733 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00734}00734 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00735}00735 \textcolor{comment}{ *  Whatever piecemeal, per compiler/platform thing we can do about the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00736}00736 \textcolor{comment}{ *  (u)intptr\_t types and limits.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00737}00737 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00738}00738 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00739}00739 \textcolor{preprocessor}{\#if (defined (\_MSC\_VER) \&\& defined (\_UINTPTR\_T\_DEFINED)) || defined (\_UINTPTR\_T)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00740}00740 \textcolor{preprocessor}{\# define STDINT\_H\_UINTPTR\_T\_DEFINED}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00741}00741 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00742}00742 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00743}00743 \textcolor{preprocessor}{\#ifndef STDINT\_H\_UINTPTR\_T\_DEFINED}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00744}00744 \textcolor{preprocessor}{\# if defined (\_\_alpha\_\_) || defined (\_\_ia64\_\_) || defined (\_\_x86\_64\_\_) || defined (\_WIN64) || defined (\_\_ppc64\_\_)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00745}00745 \textcolor{preprocessor}{\#  define stdint\_intptr\_bits 64}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00746}00746 \textcolor{preprocessor}{\# elif defined (\_\_WATCOMC\_\_) || defined (\_\_TURBOC\_\_)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00747}00747 \textcolor{preprocessor}{\#  if defined(\_\_TINY\_\_) || defined(\_\_SMALL\_\_) || defined(\_\_MEDIUM\_\_)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00748}00748 \textcolor{preprocessor}{\#    define stdint\_intptr\_bits 16}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00749}00749 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00750}00750 \textcolor{preprocessor}{\#    define stdint\_intptr\_bits 32}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00751}00751 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00752}00752 \textcolor{preprocessor}{\# elif defined (\_\_i386\_\_) || defined (\_WIN32) || defined (WIN32) || defined (\_\_ppc64\_\_)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00753}00753 \textcolor{preprocessor}{\#  define stdint\_intptr\_bits 32}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00754}00754 \textcolor{preprocessor}{\# elif defined (\_\_INTEL\_COMPILER)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00755}00755 \textcolor{comment}{/* TODO -\/-\/ what did Intel do about x86-\/64? */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00756}00756 \textcolor{preprocessor}{\# else}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00757}00757 \textcolor{comment}{/* \#error "{}This platform might not be supported yet"{} */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00758}00758 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00759}00759 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00760}00760 \textcolor{preprocessor}{\# ifdef stdint\_intptr\_bits}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00761}00761 \textcolor{preprocessor}{\#  define stdint\_intptr\_glue3\_i(a,b,c)  a\#\#b\#\#c}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00762}00762 \textcolor{preprocessor}{\#  define stdint\_intptr\_glue3(a,b,c)    stdint\_intptr\_glue3\_i(a,b,c)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00763}00763 \textcolor{preprocessor}{\#  ifndef PRINTF\_INTPTR\_MODIFIER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00764}00764 \textcolor{preprocessor}{\#    define PRINTF\_INTPTR\_MODIFIER      stdint\_intptr\_glue3(PRINTF\_INT,stdint\_intptr\_bits,\_MODIFIER)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00765}00765 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00766}00766 \textcolor{preprocessor}{\#  ifndef PTRDIFF\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00767}00767 \textcolor{preprocessor}{\#    define PTRDIFF\_MAX                 stdint\_intptr\_glue3(INT,stdint\_intptr\_bits,\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00768}00768 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00769}00769 \textcolor{preprocessor}{\#  ifndef PTRDIFF\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00770}00770 \textcolor{preprocessor}{\#    define PTRDIFF\_MIN                 stdint\_intptr\_glue3(INT,stdint\_intptr\_bits,\_MIN)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00771}00771 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00772}00772 \textcolor{preprocessor}{\#  ifndef UINTPTR\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00773}00773 \textcolor{preprocessor}{\#    define UINTPTR\_MAX                 stdint\_intptr\_glue3(UINT,stdint\_intptr\_bits,\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00774}00774 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00775}00775 \textcolor{preprocessor}{\#  ifndef INTPTR\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00776}00776 \textcolor{preprocessor}{\#    define INTPTR\_MAX                  stdint\_intptr\_glue3(INT,stdint\_intptr\_bits,\_MAX)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00777}00777 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00778}00778 \textcolor{preprocessor}{\#  ifndef INTPTR\_MIN}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00779}00779 \textcolor{preprocessor}{\#    define INTPTR\_MIN                  stdint\_intptr\_glue3(INT,stdint\_intptr\_bits,\_MIN)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00780}00780 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00781}00781 \textcolor{preprocessor}{\#  ifndef INTPTR\_C}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00782}00782 \textcolor{preprocessor}{\#    define INTPTR\_C(x)                 stdint\_intptr\_glue3(INT,stdint\_intptr\_bits,\_C)(x)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00783}00783 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00784}00784 \textcolor{preprocessor}{\#  ifndef UINTPTR\_C}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00785}00785 \textcolor{preprocessor}{\#    define UINTPTR\_C(x)                stdint\_intptr\_glue3(UINT,stdint\_intptr\_bits,\_C)(x)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00786}00786 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00787}00787   \textcolor{keyword}{typedef} stdint\_intptr\_glue3(uint,stdint\_intptr\_bits,\_t) uintptr\_t;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00788}00788   \textcolor{keyword}{typedef} stdint\_intptr\_glue3( \textcolor{keywordtype}{int},stdint\_intptr\_bits,\_t)  \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac2abfb965e6a308c5912f9e749740d4a}{intptr\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00789}00789 \textcolor{preprocessor}{\# else}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00790}00790 \textcolor{comment}{/* TODO -\/-\/ This following is likely wrong for some platforms, and does}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00791}00791 \textcolor{comment}{   nothing for the definition of uintptr\_t. */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00792}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_ac2abfb965e6a308c5912f9e749740d4a}{00792}}   \textcolor{keyword}{typedef} ptrdiff\_t \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac2abfb965e6a308c5912f9e749740d4a}{intptr\_t}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00793}00793 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00794}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a0c58c27c9332ac03e508bb0674f15ad6}{00794}} \textcolor{preprocessor}{\# define STDINT\_H\_UINTPTR\_T\_DEFINED}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00795}00795 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00796}00796 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00797}00797 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00798}00798 \textcolor{comment}{ *  Assumes sig\_atomic\_t is signed and we have a 2s complement machine.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00799}00799 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00800}00800 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00801}00801 \textcolor{preprocessor}{\#ifndef SIG\_ATOMIC\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00802}\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_a1f5fe9445d0ad0bee21bab1de4cc3e58}{00802}} \textcolor{preprocessor}{\# define SIG\_ATOMIC\_MAX ((((sig\_atomic\_t) 1) << (sizeof (sig\_atomic\_t)*CHAR\_BIT-\/1)) -\/ 1)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00803}00803 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00804}00804 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00805}00805 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00806}00806 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00807}00807 \textcolor{preprocessor}{\#if defined (\_\_TEST\_PSTDINT\_FOR\_CORRECTNESS)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00808}00808 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00809}00809 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00810}00810 \textcolor{comment}{ *  Please compile with the maximum warning settings to make sure macros are}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00811}00811 \textcolor{comment}{ *  not defined more than once.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00812}00812 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00813}00813 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00814}00814 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00815}00815 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00816}00816 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00817}00817 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00818}00818 \textcolor{preprocessor}{\#define glue3\_aux(x,y,z) x \#\# y \#\# z}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00819}00819 \textcolor{preprocessor}{\#define glue3(x,y,z) glue3\_aux(x,y,z)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00820}00820 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00821}00821 \textcolor{preprocessor}{\#define DECLU(bits) glue3(uint,bits,\_t) glue3(u,bits,) = glue3(UINT,bits,\_C) (0);}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00822}00822 \textcolor{preprocessor}{\#define DECLI(bits) glue3(int,bits,\_t) glue3(i,bits,) = glue3(INT,bits,\_C) (0);}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00823}00823 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00824}00824 \textcolor{preprocessor}{\#define DECL(us,bits) glue3(DECL,us,) (bits)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00825}00825 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00826}00826 \textcolor{preprocessor}{\#define TESTUMAX(bits) glue3(u,bits,) = \string~glue3(u,bits,); if (glue3(UINT,bits,\_MAX) != glue3(u,bits,)) printf ("{}Something wrong with UINT\%d\_MAX\(\backslash\)n"{}}, bits)}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00827}00827 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00828}00828 \textcolor{preprocessor}{\#define REPORTERROR(msg) \{ err\_n++; if (err\_first <= 0) err\_first = \_\_LINE\_\_; printf msg; \}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00829}00829 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00830}00830 \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} () \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00831}00831     \textcolor{keywordtype}{int} err\_n = 0;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00832}00832     \textcolor{keywordtype}{int} err\_first = 0;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00833}00833     DECL(I,8)}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00834}00834     DECL(U,8)}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00835}00835     DECL(I,16)}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00836}00836     DECL(U,16)}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00837}00837     DECL(I,32)}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00838}00838     DECL(U,32)}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00839}00839 \textcolor{preprocessor}{\#ifdef INT64\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00840}00840     DECL(I,64)}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00841}00841     DECL(U,64)}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00842}00842 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00843}00843     \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a1a3f3321a0166a004bde0a1e72553f2b}{intmax\_t}} imax = \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a6b556b8b5f86e13f1c2a6e8f9b9b4966}{INTMAX\_C}}(0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00844}00844     \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a7643e68e022fde0d947e8dc252f716d6}{uintmax\_t}} umax = \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a572bc4e8e4eae73a2e1e6a158d3837a4}{UINTMAX\_C}}(0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00845}00845     \textcolor{keywordtype}{char} str0[256], str1[256];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00846}00846 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00847}00847     sprintf (str0, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INT32\_MODIFIER \textcolor{stringliteral}{"{}d"{}}, INT32\_C(2147483647));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00848}00848     \textcolor{keywordflow}{if} (0 != strcmp (str0, \textcolor{stringliteral}{"{}2147483647"{}})) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_INT32\_MODIFIER : \%s\(\backslash\)n"{}}, str0));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00849}00849     \textcolor{keywordflow}{if} (atoi(\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aa7207fcbdc05d7cf877066028543c28b}{PRINTF\_INT32\_DEC\_WIDTH}}) != (\textcolor{keywordtype}{int}) strlen(str0)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_INT32\_DEC\_WIDTH : \%s\(\backslash\)n"{}}, \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_aa7207fcbdc05d7cf877066028543c28b}{PRINTF\_INT32\_DEC\_WIDTH}}));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00850}00850     sprintf (str0, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INT32\_MODIFIER \textcolor{stringliteral}{"{}u"{}}, UINT32\_C(4294967295));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00851}00851     \textcolor{keywordflow}{if} (0 != strcmp (str0, \textcolor{stringliteral}{"{}4294967295"{}})) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_INT32\_MODIFIER : \%s\(\backslash\)n"{}}, str0));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00852}00852     \textcolor{keywordflow}{if} (atoi(\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac11fdcf6c32e2509ee94472cc9575907}{PRINTF\_UINT32\_DEC\_WIDTH}}) != (\textcolor{keywordtype}{int}) strlen(str0)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_UINT32\_DEC\_WIDTH : \%s\(\backslash\)n"{}}, \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ac11fdcf6c32e2509ee94472cc9575907}{PRINTF\_UINT32\_DEC\_WIDTH}}));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00853}00853 \textcolor{preprocessor}{\#ifdef INT64\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00854}00854     sprintf (str1, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INT64\_MODIFIER \textcolor{stringliteral}{"{}d"{}}, INT64\_C(9223372036854775807));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00855}00855     \textcolor{keywordflow}{if} (0 != strcmp (str1, \textcolor{stringliteral}{"{}9223372036854775807"{}})) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_INT32\_MODIFIER : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00856}00856     \textcolor{keywordflow}{if} (atoi(\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a9d70c86cd8202228d85db7aeed22497b}{PRINTF\_INT64\_DEC\_WIDTH}}) != (\textcolor{keywordtype}{int}) strlen(str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_INT64\_DEC\_WIDTH : \%s, \%d\(\backslash\)n"{}}, \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a9d70c86cd8202228d85db7aeed22497b}{PRINTF\_INT64\_DEC\_WIDTH}}, (\textcolor{keywordtype}{int}) strlen(str1)));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00857}00857     sprintf (str1, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INT64\_MODIFIER \textcolor{stringliteral}{"{}u"{}}, UINT64\_C(18446744073709550591));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00858}00858     \textcolor{keywordflow}{if} (0 != strcmp (str1, \textcolor{stringliteral}{"{}18446744073709550591"{}})) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_INT32\_MODIFIER : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00859}00859     \textcolor{keywordflow}{if} (atoi(\mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a580336588dd0e65aaa933f444d1a8a5c}{PRINTF\_UINT64\_DEC\_WIDTH}}) != (\textcolor{keywordtype}{int}) strlen(str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with PRINTF\_UINT64\_DEC\_WIDTH : \%s, \%d\(\backslash\)n"{}}, \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_a580336588dd0e65aaa933f444d1a8a5c}{PRINTF\_UINT64\_DEC\_WIDTH}}, (\textcolor{keywordtype}{int}) strlen(str1)));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00860}00860 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00861}00861 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00862}00862     sprintf (str0, \textcolor{stringliteral}{"{}\%d \%x\(\backslash\)n"{}}, 0, \string~0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00863}00863 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00864}00864     sprintf (str1, \textcolor{stringliteral}{"{}\%d \%x\(\backslash\)n"{}},  i8, \string~0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00865}00865     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with i8 : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00866}00866     sprintf (str1, \textcolor{stringliteral}{"{}\%u \%x\(\backslash\)n"{}},  u8, \string~0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00867}00867     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with u8 : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00868}00868     sprintf (str1, \textcolor{stringliteral}{"{}\%d \%x\(\backslash\)n"{}},  i16, \string~0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00869}00869     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with i16 : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00870}00870     sprintf (str1, \textcolor{stringliteral}{"{}\%u \%x\(\backslash\)n"{}},  u16, \string~0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00871}00871     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with u16 : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00872}00872     sprintf (str1, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INT32\_MODIFIER \textcolor{stringliteral}{"{}d \%x\(\backslash\)n"{}},  i32, \string~0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00873}00873     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with i32 : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00874}00874     sprintf (str1, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INT32\_MODIFIER \textcolor{stringliteral}{"{}u \%x\(\backslash\)n"{}},  u32, \string~0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00875}00875     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with u32 : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00876}00876 \textcolor{preprocessor}{\#ifdef INT64\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00877}00877     sprintf (str1, \textcolor{stringliteral}{"{}\%"{}} PRINTF\_INT64\_MODIFIER \textcolor{stringliteral}{"{}d \%x\(\backslash\)n"{}},  i64, \string~0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00878}00878     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with i64 : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00879}00879 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00880}00880     sprintf (str1, \textcolor{stringliteral}{"{}\%"{}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ad53dd320ab0f0e9f4266bc225a3487df}{PRINTF\_INTMAX\_MODIFIER}} \textcolor{stringliteral}{"{}d \%x\(\backslash\)n"{}},  imax, \string~0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00881}00881     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with imax : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00882}00882     sprintf (str1, \textcolor{stringliteral}{"{}\%"{}} \mbox{\hyperlink{include_2assimp_2_compiler_2pstdint_8h_ad53dd320ab0f0e9f4266bc225a3487df}{PRINTF\_INTMAX\_MODIFIER}} \textcolor{stringliteral}{"{}u \%x\(\backslash\)n"{}},  umax, \string~0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00883}00883     \textcolor{keywordflow}{if} (0 != strcmp (str0, str1)) REPORTERROR ((\textcolor{stringliteral}{"{}Something wrong with umax : \%s\(\backslash\)n"{}}, str1));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00884}00884 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00885}00885     TESTUMAX(8);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00886}00886     TESTUMAX(16);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00887}00887     TESTUMAX(32);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00888}00888 \textcolor{preprocessor}{\#ifdef INT64\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00889}00889     TESTUMAX(64);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00890}00890 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00891}00891 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00892}00892 \textcolor{preprocessor}{\#define STR(v) \#v}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00893}00893 \textcolor{preprocessor}{\#define Q(v) printf ("{}sizeof "{}} STR(v) "{} = \%u\(\backslash\)n"{}, (unsigned) sizeof (v));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00894}00894     \textcolor{keywordflow}{if} (err\_n) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00895}00895         printf (\textcolor{stringliteral}{"{}pstdint.h is not correct.  Please use sizes below to correct it:\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00896}00896     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00897}00897 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00898}00898     Q(\textcolor{keywordtype}{int})}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00899}00899     Q(\textcolor{keywordtype}{unsigned})}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00900}00900     Q(\textcolor{keywordtype}{long} \textcolor{keywordtype}{int})}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00901}00901     Q(\textcolor{keywordtype}{short} \textcolor{keywordtype}{int})}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00902}00902     Q(int8\_t)}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00903}00903     Q(int16\_t)}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00904}00904     Q(int32\_t)}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00905}00905 \textcolor{preprocessor}{\#ifdef INT64\_MAX}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00906}00906     Q(int64\_t)}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00907}00907 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00908}00908 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00909}00909     \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00910}00910 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00911}00911 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_release_2include_2assimp_2_compiler_2pstdint_8h_source_l00912}00912 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

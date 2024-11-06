@@ -1,0 +1,680 @@
+\hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source}{}\doxysection{mesh.\+h}
+\label{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/mesh.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/out/install/x64-\/Debug/include/assimp/mesh.h}}
+\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00002}00002 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00003}00003 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00004}00004 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00005}00005 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00006}00006 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00007}00007 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00008}00008 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00009}00009 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00010}00010 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00011}00011 \textcolor{comment}{with or without modification, are permitted provided that the following}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00012}00012 \textcolor{comment}{conditions are met:}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00013}00013 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00014}00014 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00015}00015 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00016}00016 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00017}00017 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00018}00018 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00019}00019 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00020}00020 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00021}00021 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00022}00022 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00023}00023 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00024}00024 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00025}00025 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00026}00026 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00027}00027 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00028}00028 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00029}00029 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00030}00030 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00031}00031 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00032}00032 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00033}00033 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00034}00034 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00035}00035 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00036}00036 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00037}00037 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00038}00038 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00039}00039 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00040}00040 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00046}00046 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00047}00047 \textcolor{preprocessor}{\#ifndef AI\_MESH\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00048}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_a36a6bf06f217a4c962f1ec24b1633482}{00048}} \textcolor{preprocessor}{\#define AI\_MESH\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00050}00050 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00051}00051 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00052}00052 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00054}00054 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00055}00055 \textcolor{preprocessor}{\#pragma warning(disable : 4351)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00056}00056 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_MSC\_VER}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00058}00058 \textcolor{preprocessor}{\#include <assimp/aabb.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00059}00059 \textcolor{preprocessor}{\#include <assimp/types.h>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00061}00061 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00062}00062 \textcolor{preprocessor}{\#include <unordered\_set>}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00064}00064 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00065}00065 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00067}00067 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00068}00068 \textcolor{comment}{// Limits. These values are required to match the settings Assimp was}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00069}00069 \textcolor{comment}{// compiled against. Therefore, do not redefine them unless you build the}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00070}00070 \textcolor{comment}{// library from source using the same definitions.}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00071}00071 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00076}00076 \textcolor{preprocessor}{\#ifndef AI\_MAX\_FACE\_INDICES}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00077}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_a380f3ab069e89b3a1ed975577600438b}{00077}} \textcolor{preprocessor}{\#define AI\_MAX\_FACE\_INDICES 0x7fff}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00078}00078 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00083}00083 \textcolor{preprocessor}{\#ifndef AI\_MAX\_BONE\_WEIGHTS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00084}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_a565e88bbf36ef4957f1229609e51b7f6}{00084}} \textcolor{preprocessor}{\#define AI\_MAX\_BONE\_WEIGHTS 0x7fffffff}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00085}00085 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00090}00090 \textcolor{preprocessor}{\#ifndef AI\_MAX\_VERTICES}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00091}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_aa3997d5751b93f15e4c9d86ced093b56}{00091}} \textcolor{preprocessor}{\#define AI\_MAX\_VERTICES 0x7fffffff}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00092}00092 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00097}00097 \textcolor{preprocessor}{\#ifndef AI\_MAX\_FACES}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00098}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_aef69217e80411f3fee5aae3dc06b68ba}{00098}} \textcolor{preprocessor}{\#define AI\_MAX\_FACES 0x7fffffff}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00099}00099 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00104}00104 \textcolor{preprocessor}{\#ifndef AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00105}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{00105}} \textcolor{preprocessor}{\#define AI\_MAX\_NUMBER\_OF\_COLOR\_SETS 0x8}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00106}00106 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00111}00111 \textcolor{preprocessor}{\#ifndef AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00112}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{00112}} \textcolor{preprocessor}{\#define AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS 0x8}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00113}00113 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !! AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00115}00115 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00138}00138 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_face}{aiFace}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00141}00141     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00144}00144     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *\mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00146}00146 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00149}00149     \mbox{\hyperlink{structai_face}{aiFace}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00150}00150             : \mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}}(0),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00151}00151               \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}(\textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00152}00152         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00153}00153     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00154}00154 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00156}00156     \mbox{\hyperlink{structai_face}{\string~aiFace}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00157}00157         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00158}00158     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00161}00161     \mbox{\hyperlink{structai_face}{aiFace}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_face}{aiFace}} \&o) :}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00162}00162             \mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}}(0), \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}(\textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00163}00163         *\textcolor{keyword}{this} = o;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00164}00164     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00167}00167     \mbox{\hyperlink{structai_face}{aiFace}} \&operator=(\textcolor{keyword}{const} \mbox{\hyperlink{structai_face}{aiFace}} \&o) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00168}00168         \textcolor{keywordflow}{if} (\&o == \textcolor{keyword}{this}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00169}00169             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00170}00170         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00171}00171 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00172}00172         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00173}00173         \mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}} = o.\mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00174}00174         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00175}00175             \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}} = \textcolor{keyword}{new} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}[\mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}}];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00176}00176             ::memcpy(\mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}, o.\mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}, \mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}} * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00177}00177         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00178}00178             \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00179}00179         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00180}00180 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00181}00181         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00182}00182     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00183}00183 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00185}00185     \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{structai_face}{aiFace}} \&o)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00186}00186         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}} == o.\mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00187}00187             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00188}00188         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00189}00189 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00190}00190         \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} != \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}} \&\& \mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}} != o.\mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00191}00191             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00192}00192         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00194}00194         \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == \mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00195}00195             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00196}00196         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00197}00197 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00198}00198         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < this-\/>\mbox{\hyperlink{structai_face_adda2698cec0ebfe651572f4a5701360b}{mNumIndices}}; ++i) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00199}00199             \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}[i] != o.\mbox{\hyperlink{structai_face_aea7a836c315ba0b3fd4cb482306a3691}{mIndices}}[i]) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00200}00200                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00201}00201             \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00202}00202         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00203}00203 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00204}00204         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00205}00205     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00206}00206 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00209}00209     \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{structai_face}{aiFace}} \&o)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00210}00210         \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} == o);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00211}00211     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00212}00212 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00213}00213 \}; \textcolor{comment}{// struct aiFace}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00214}00214 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00215}00215 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00218}00218 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00220}00220     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_vertex_weight_af6269cf6a0f02e5ae870a72046d58f4f}{mVertexId}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00221}00221 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00224}00224     \mbox{\hyperlink{include_2assimp_2defs_8h_af221f9bbc3e0dc43a46efaaac6dab067}{ai\_real}} \mbox{\hyperlink{structai_vertex_weight_a9a11636b76b90fccb204296aa2db07a7}{mWeight}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00225}00225 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00226}00226 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00227}00227 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00229}00229     \mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00230}00230             : \mbox{\hyperlink{structai_vertex_weight_af6269cf6a0f02e5ae870a72046d58f4f}{mVertexId}}(0),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00231}00231               \mbox{\hyperlink{structai_vertex_weight_a9a11636b76b90fccb204296aa2db07a7}{mWeight}}(0.0f) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00232}00232         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00233}00233     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00234}00234 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00238}00238     \mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pID, \textcolor{keywordtype}{float} pWeight) :}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00239}00239             \mbox{\hyperlink{structai_vertex_weight_af6269cf6a0f02e5ae870a72046d58f4f}{mVertexId}}(pID), \mbox{\hyperlink{structai_vertex_weight_a9a11636b76b90fccb204296aa2db07a7}{mWeight}}(pWeight) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00240}00240         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00241}00241     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00242}00242 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00243}00243     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceglm_a3a1034521aa2b584602552cfde969df4}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}} \&rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00244}00244         \textcolor{keywordflow}{return} (\mbox{\hyperlink{structai_vertex_weight_af6269cf6a0f02e5ae870a72046d58f4f}{mVertexId}} == rhs.\mbox{\hyperlink{structai_vertex_weight_af6269cf6a0f02e5ae870a72046d58f4f}{mVertexId}} \&\& \mbox{\hyperlink{structai_vertex_weight_a9a11636b76b90fccb204296aa2db07a7}{mWeight}} == rhs.\mbox{\hyperlink{structai_vertex_weight_a9a11636b76b90fccb204296aa2db07a7}{mWeight}});}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00245}00245     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00246}00246 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00247}00247     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceglm_a48b18d1e2196ce32172d4ee26f02a502}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}} \&rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00248}00248         \textcolor{keywordflow}{return} (*\textcolor{keyword}{this} == rhs);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00249}00249     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00250}00250 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00251}00251 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00252}00252 \};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00253}00253 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00254}00254 \textcolor{comment}{// Forward declare aiNode (pointer use only)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00255}00255 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_node}{aiNode}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00256}00256 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00257}00257 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00265}00265 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_bone}{aiBone}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00269}00269     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00270}00270 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00275}00275     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00276}00276 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00277}00277 \textcolor{preprocessor}{\#ifndef ASSIMP\_BUILD\_NO\_ARMATUREPOPULATE\_PROCESS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00282}00282     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_node}{aiNode}} *\mbox{\hyperlink{structai_bone_a8f89bbec0bcd4b3e548a356b981d70df}{mArmature}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00283}00283 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00288}00288     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_node}{aiNode}} *\mbox{\hyperlink{structai_bone_aaa81bb10b66fdbe620b3d1a5e6be04b1}{mNode}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00289}00289 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00290}00290 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00294}00294     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}} *\mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00295}00295 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00308}00308     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} \mbox{\hyperlink{structai_bone_a1dd6c4f24a1384c05da281692be3e78d}{mOffsetMatrix}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00309}00309 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00310}00310 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00311}00311 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00313}00313     \mbox{\hyperlink{structai_bone}{aiBone}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00314}00314             : \mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}}(),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00315}00315               \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}}(0),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00316}00316 \textcolor{preprocessor}{\#ifndef ASSIMP\_BUILD\_NO\_ARMATUREPOPULATE\_PROCESS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00317}00317               \mbox{\hyperlink{structai_bone_a8f89bbec0bcd4b3e548a356b981d70df}{mArmature}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00318}00318               \mbox{\hyperlink{structai_bone_aaa81bb10b66fdbe620b3d1a5e6be04b1}{mNode}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00319}00319 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00320}00320               \mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00321}00321               \mbox{\hyperlink{structai_bone_a1dd6c4f24a1384c05da281692be3e78d}{mOffsetMatrix}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00322}00322         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00323}00323     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00324}00324 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00326}00326     \mbox{\hyperlink{structai_bone}{aiBone}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_bone}{aiBone}} \&other) :}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00327}00327             \mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}}(other.\mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00328}00328             \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}}(other.\mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00329}00329 \#ifndef ASSIMP\_BUILD\_NO\_ARMATUREPOPULATE\_PROCESS}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00330}00330               \mbox{\hyperlink{structai_bone_a8f89bbec0bcd4b3e548a356b981d70df}{mArmature}}(nullptr),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00331}00331               \mbox{\hyperlink{structai_bone_aaa81bb10b66fdbe620b3d1a5e6be04b1}{mNode}}(nullptr),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00332}00332 \#endif}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00333}00333             \mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}}(nullptr),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00334}00334             \mbox{\hyperlink{structai_bone_a1dd6c4f24a1384c05da281692be3e78d}{mOffsetMatrix}}(other.\mbox{\hyperlink{structai_bone_a1dd6c4f24a1384c05da281692be3e78d}{mOffsetMatrix}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00335}00335         copyVertexWeights(other);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00336}00336     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00337}00337 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00338}00338     \textcolor{keywordtype}{void} copyVertexWeights( \textcolor{keyword}{const} \mbox{\hyperlink{structai_bone}{aiBone}} \&other ) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00339}00339         \textcolor{keywordflow}{if} (other.\mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}} == \textcolor{keyword}{nullptr} || other.\mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}} == 0) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00340}00340             \mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00341}00341             \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}} = 0;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00342}00342             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00343}00343         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00344}00344 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00345}00345         \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}} = other.\mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00346}00346         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00347}00347             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00348}00348         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00349}00349 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00350}00350         \mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}} = \textcolor{keyword}{new} \mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}}[\mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}}];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00351}00351         ::memcpy(\mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}}, other.\mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}}, \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}} * \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}}));}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00352}00352     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00353}00353 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00355}00355     \mbox{\hyperlink{structai_bone}{aiBone}} \&operator = (\textcolor{keyword}{const} \mbox{\hyperlink{structai_bone}{aiBone}} \&other) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00356}00356         \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&other) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00357}00357             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00358}00358         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00359}00359 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00360}00360         \mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}} = other.\mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00361}00361         \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}} = other.\mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00362}00362         \mbox{\hyperlink{structai_bone_a1dd6c4f24a1384c05da281692be3e78d}{mOffsetMatrix}} = other.\mbox{\hyperlink{structai_bone_a1dd6c4f24a1384c05da281692be3e78d}{mOffsetMatrix}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00363}00363         copyVertexWeights(other);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00364}00364 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00365}00365         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00366}00366     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00367}00367 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00369}00369     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceglm_a3a1034521aa2b584602552cfde969df4}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_bone}{aiBone}} \&rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00370}00370         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}} != rhs.\mbox{\hyperlink{structai_bone_acfb9bfd2a2c6302181d7c3cc1bb8bbf0}{mName}} || \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}} != rhs.\mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}} ) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00371}00371             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00372}00372         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00373}00373 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00374}00374         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \mbox{\hyperlink{structai_bone_a87a79d42a0132753aac66397ad6f9b71}{mNumWeights}}; ++i) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00375}00375             \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}}[i] != rhs.\mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}}[i]) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00376}00376                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00377}00377             \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00378}00378         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00379}00379 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00380}00380         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00381}00381     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00383}00383     \mbox{\hyperlink{structai_bone}{\string~aiBone}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00384}00384         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_bone_ab2b4d8f17172f71654660c4724e685a9}{mWeights}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00385}00385     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00386}00386 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00387}00387 \};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00388}00388 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00389}00389 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00397}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03f}{00397}} \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03f}{aiPrimitiveType}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00404}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fafb9158b4924ec9457647c759aa961053}{00404}}     \mbox{\hyperlink{include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fafb9158b4924ec9457647c759aa961053}{aiPrimitiveType\_POINT}} = 0x1,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00405}00405 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00412}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fa724184f90f0e408b903d07aed39914b4}{00412}}     \mbox{\hyperlink{include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fa724184f90f0e408b903d07aed39914b4}{aiPrimitiveType\_LINE}} = 0x2,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00413}00413 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00419}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fae1875196046a6139abb8734fe97d67f5}{00419}}     \mbox{\hyperlink{include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fae1875196046a6139abb8734fe97d67f5}{aiPrimitiveType\_TRIANGLE}} = 0x4,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00420}00420 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00429}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03faea762261e9efd0313baa0b3193b43253}{00429}}     \mbox{\hyperlink{include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03faea762261e9efd0313baa0b3193b43253}{aiPrimitiveType\_POLYGON}} = 0x8,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00430}00430 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00447}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fa9936ab10ebebd878a5cd6521b5bdc003}{00447}}     \mbox{\hyperlink{include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fa9936ab10ebebd878a5cd6521b5bdc003}{aiPrimitiveType\_NGONEncodingFlag}} = 0x10,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00448}00448 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00453}00453 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00454}00454     \mbox{\hyperlink{include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fa6cc0d20689875344a59dc56d8baf08f8}{\_aiPrimitiveType\_Force32Bit}} = INT\_MAX}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00455}00455 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00456}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_ac352902280db7c3bd8ba64c133b7f03fa6cc0d20689875344a59dc56d8baf08f8}{00456}} \}; }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00457}00457 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00458}00458 \textcolor{comment}{// Get the \#aiPrimitiveType flag for a specific number of face indices}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00459}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_a2ec9a1223f48501cb972e3d2866c344c}{00459}} \textcolor{preprocessor}{\#define AI\_PRIMITIVE\_TYPE\_FOR\_N\_INDICES(n) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00460}00460 \textcolor{preprocessor}{    ((n) > 3 ? aiPrimitiveType\_POLYGON : (aiPrimitiveType)(1u << ((n)-\/1)))}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00461}00461 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00462}00462 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00473}00473 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_anim_mesh}{aiAnimMesh}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00475}00475     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_anim_mesh_a09f0047d802db8b996b1a168eab0a533}{mName}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00476}00476 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00483}00483     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_anim_mesh_ab7f2b12fe402d6083bb1750d287d5cee}{mVertices}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00484}00484 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00486}00486     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_anim_mesh_a9d9f5c8bc9309af7b3c91bf3172d1237}{mNormals}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00487}00487 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00489}00489     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_anim_mesh_a6f16d6c0f33d9ea8673a50b6b485fd42}{mTangents}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00490}00490 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00492}00492     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_anim_mesh_a8a5aa66caf35facc9c5ec783f1572f78}{mBitangents}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00493}00493 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00495}00495     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_color4_d}{aiColor4D}} *\mbox{\hyperlink{structai_anim_mesh_a475255bf7dbc970646a8481ddf3f6981}{mColors}}[\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00496}00496 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00498}00498     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_anim_mesh_a05d0d11863b91fc35b69e7bce5970701}{mTextureCoords}}[\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00499}00499 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00508}00508     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_anim_mesh_a6bb0d45317a1bbea7f2b7f8191d0c436}{mNumVertices}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00509}00509 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00513}00513     \textcolor{keywordtype}{float} \mbox{\hyperlink{structai_anim_mesh_a3554843cf6bb042369be1e75a2eff88a}{mWeight}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00514}00514 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00515}00515 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00517}00517     \mbox{\hyperlink{structai_anim_mesh}{aiAnimMesh}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}} :}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00518}00518             \mbox{\hyperlink{structai_anim_mesh_ab7f2b12fe402d6083bb1750d287d5cee}{mVertices}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00519}00519             \mbox{\hyperlink{structai_anim_mesh_a9d9f5c8bc9309af7b3c91bf3172d1237}{mNormals}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00520}00520             \mbox{\hyperlink{structai_anim_mesh_a6f16d6c0f33d9ea8673a50b6b485fd42}{mTangents}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00521}00521             \mbox{\hyperlink{structai_anim_mesh_a8a5aa66caf35facc9c5ec783f1572f78}{mBitangents}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00522}00522             \mbox{\hyperlink{structai_anim_mesh_a475255bf7dbc970646a8481ddf3f6981}{mColors}} \{\textcolor{keyword}{nullptr}\},}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00523}00523             \mbox{\hyperlink{structai_anim_mesh_a05d0d11863b91fc35b69e7bce5970701}{mTextureCoords}}\{\textcolor{keyword}{nullptr}\},}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00524}00524             \mbox{\hyperlink{structai_anim_mesh_a6bb0d45317a1bbea7f2b7f8191d0c436}{mNumVertices}}(0),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00525}00525             \mbox{\hyperlink{structai_anim_mesh_a3554843cf6bb042369be1e75a2eff88a}{mWeight}}(0.0f) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00526}00526         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00527}00527     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00528}00528 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00530}00530     \mbox{\hyperlink{structai_anim_mesh}{\string~aiAnimMesh}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00531}00531         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_anim_mesh_ab7f2b12fe402d6083bb1750d287d5cee}{mVertices}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00532}00532         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_anim_mesh_a9d9f5c8bc9309af7b3c91bf3172d1237}{mNormals}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00533}00533         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_anim_mesh_a6f16d6c0f33d9ea8673a50b6b485fd42}{mTangents}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00534}00534         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_anim_mesh_a8a5aa66caf35facc9c5ec783f1572f78}{mBitangents}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00535}00535         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}; a++) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00536}00536             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_anim_mesh_a05d0d11863b91fc35b69e7bce5970701}{mTextureCoords}}[a];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00537}00537         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00538}00538         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}; a++) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00539}00539             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_anim_mesh_a475255bf7dbc970646a8481ddf3f6981}{mColors}}[a];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00540}00540         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00541}00541     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00542}00542 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00548}00548     \textcolor{keywordtype}{bool} HasPositions()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00549}00549         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_anim_mesh_ab7f2b12fe402d6083bb1750d287d5cee}{mVertices}} != \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00550}00550     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00551}00551 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00557}00557     \textcolor{keywordtype}{bool} HasNormals()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00558}00558         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_anim_mesh_a9d9f5c8bc9309af7b3c91bf3172d1237}{mNormals}} != \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00559}00559     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00560}00560 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00567}00567     \textcolor{keywordtype}{bool} HasTangentsAndBitangents()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00568}00568         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_anim_mesh_a6f16d6c0f33d9ea8673a50b6b485fd42}{mTangents}} != \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00569}00569     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00570}00570 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00578}00578     \textcolor{keywordtype}{bool} HasVertexColors(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pIndex)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00579}00579         \textcolor{keywordflow}{return} pIndex >= \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}} ? false : \mbox{\hyperlink{structai_anim_mesh_a475255bf7dbc970646a8481ddf3f6981}{mColors}}[pIndex] != \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00580}00580     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00581}00581 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00588}00588     \textcolor{keywordtype}{bool} HasTextureCoords(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pIndex)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00589}00589         \textcolor{keywordflow}{return} pIndex >= \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}} ? false : \mbox{\hyperlink{structai_anim_mesh_a05d0d11863b91fc35b69e7bce5970701}{mTextureCoords}}[pIndex] != \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00590}00590     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00591}00591 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00592}00592 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00593}00593 \};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00594}00594 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00595}00595 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00598}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70e}{00598}} \textcolor{comment}{}\textcolor{keyword}{enum} \mbox{\hyperlink{include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70e}{aiMorphingMethod}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00600}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea2fa91a7bd2146df7f49a718c8ae8ab4b}{00600}}     \mbox{\hyperlink{include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea2fa91a7bd2146df7f49a718c8ae8ab4b}{aiMorphingMethod\_UNKNOWN}} = 0x0,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00601}00601 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00603}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea8a0a244056339ce87af17325ae0d6560}{00603}}     \mbox{\hyperlink{include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea8a0a244056339ce87af17325ae0d6560}{aiMorphingMethod\_VERTEX\_BLEND}} = 0x1,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00604}00604 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00606}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea0e82e32a9452da1726eab9d4a582088e}{00606}}     \mbox{\hyperlink{include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea0e82e32a9452da1726eab9d4a582088e}{aiMorphingMethod\_MORPH\_NORMALIZED}} = 0x2,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00607}00607 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00609}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea1ae15d6a0e67d51fed037179bbfccf96}{00609}}     \mbox{\hyperlink{include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea1ae15d6a0e67d51fed037179bbfccf96}{aiMorphingMethod\_MORPH\_RELATIVE}} = 0x3,}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00610}00610 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00614}00614 \textcolor{preprocessor}{\#ifndef SWIG}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00615}00615     \mbox{\hyperlink{include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea07c9fe9d673b15bb3a798860f330b124}{\_aiMorphingMethod\_Force32Bit}} = INT\_MAX}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00616}00616 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00617}\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea07c9fe9d673b15bb3a798860f330b124}{00617}} \}; }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00618}00618 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00619}00619 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00638}00638 \textcolor{comment}{}\textcolor{keyword}{struct }\mbox{\hyperlink{structai_mesh}{aiMesh}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00645}00645     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_a99d66ac0a444068c1b252b30265cbf53}{mPrimitiveTypes}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00646}00646 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00652}00652     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_ab34b7b5941e6636f1c08f615cbb072ef}{mNumVertices}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00653}00653 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00659}00659     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_aeed22ee6963b79548f3877b3c905518e}{mNumFaces}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00660}00660 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00667}00667     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_mesh_a5abd50282e39563a14734820378b1690}{mVertices}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00668}00668 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00691}00691     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_mesh_ac7d23a5c9caf8f647ce96e2abf3da3ef}{mNormals}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00692}00692 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00707}00707     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_mesh_a37be52ca5c293ef46c1ee10bf7410d86}{mTangents}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00708}00708 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00718}00718     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_mesh_a4d2b15fe360d7c6f45c28dced096510a}{mBitangents}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00719}00719 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00727}00727     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_color4_d}{aiColor4D}} *\mbox{\hyperlink{structai_mesh_a387fa89e34f4b13f03cfd15c9be1e787}{mColors}}[\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00728}00728 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00736}00736     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} *\mbox{\hyperlink{structai_mesh_a35055266863d76681d371bf3bb4ccd72}{mTextureCoords}}[\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00737}00737 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00747}00747     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_acdee8e023301b261dd3850cbd46fdda5}{mNumUVComponents}}[\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00748}00748 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00757}00757     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_face}{aiFace}} *\mbox{\hyperlink{structai_mesh_afdeda8b60a83dcf4cefef8b02c11f360}{mFaces}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00758}00758 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00762}00762     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_a0f9d5425b6300e32a842a94f943fd79e}{mNumBones}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00763}00763 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00770}00770     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_bone}{aiBone}} **\mbox{\hyperlink{structai_mesh_ad0388784814d4534ec011abf9b57e3a8}{mBones}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00771}00771 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00779}00779     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_aa2807c7ba172115203ed16047ad65f9e}{mMaterialIndex}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00780}00780 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00793}00793     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_mesh_a8dd9433e0c5b008e3e5aee6c801d3b74}{mName}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00794}00794 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00801}00801     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_mesh_a1692a300222b32348ae51779df4a697e}{mNumAnimMeshes}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00802}00802 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00811}00811     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_anim_mesh}{aiAnimMesh}} **\mbox{\hyperlink{structai_mesh_aac9ab8395ffe59078bce9def74065a99}{mAnimMeshes}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00812}00812 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00817}00817     \textcolor{keyword}{enum} \mbox{\hyperlink{include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70e}{aiMorphingMethod}} \mbox{\hyperlink{structai_mesh_ac1d0b703e2e39ed364252db0daafd733}{mMethod}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00818}00818 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00822}00822     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_a_a_b_b}{aiAABB}} \mbox{\hyperlink{structai_mesh_ade5815b8f019a930e31b3824e867010d}{mAABB}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00823}00823 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00827}00827     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_string}{aiString}} **\mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00828}00828 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00829}00829 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00830}00830 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00832}00832     \mbox{\hyperlink{structai_mesh}{aiMesh}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00833}00833             : \mbox{\hyperlink{structai_mesh_a99d66ac0a444068c1b252b30265cbf53}{mPrimitiveTypes}}(0),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00834}00834               \mbox{\hyperlink{structai_mesh_ab34b7b5941e6636f1c08f615cbb072ef}{mNumVertices}}(0),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00835}00835               \mbox{\hyperlink{structai_mesh_aeed22ee6963b79548f3877b3c905518e}{mNumFaces}}(0),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00836}00836               \mbox{\hyperlink{structai_mesh_a5abd50282e39563a14734820378b1690}{mVertices}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00837}00837               \mbox{\hyperlink{structai_mesh_ac7d23a5c9caf8f647ce96e2abf3da3ef}{mNormals}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00838}00838               \mbox{\hyperlink{structai_mesh_a37be52ca5c293ef46c1ee10bf7410d86}{mTangents}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00839}00839               \mbox{\hyperlink{structai_mesh_a4d2b15fe360d7c6f45c28dced096510a}{mBitangents}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00840}00840               \mbox{\hyperlink{structai_mesh_a387fa89e34f4b13f03cfd15c9be1e787}{mColors}}\{\textcolor{keyword}{nullptr}\},}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00841}00841               \mbox{\hyperlink{structai_mesh_a35055266863d76681d371bf3bb4ccd72}{mTextureCoords}}\{\textcolor{keyword}{nullptr}\},}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00842}00842               \mbox{\hyperlink{structai_mesh_acdee8e023301b261dd3850cbd46fdda5}{mNumUVComponents}}\{0\},}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00843}00843               \mbox{\hyperlink{structai_mesh_afdeda8b60a83dcf4cefef8b02c11f360}{mFaces}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00844}00844               \mbox{\hyperlink{structai_mesh_a0f9d5425b6300e32a842a94f943fd79e}{mNumBones}}(0),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00845}00845               \mbox{\hyperlink{structai_mesh_ad0388784814d4534ec011abf9b57e3a8}{mBones}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00846}00846               \mbox{\hyperlink{structai_mesh_aa2807c7ba172115203ed16047ad65f9e}{mMaterialIndex}}(0),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00847}00847               \mbox{\hyperlink{structai_mesh_a1692a300222b32348ae51779df4a697e}{mNumAnimMeshes}}(0),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00848}00848               \mbox{\hyperlink{structai_mesh_aac9ab8395ffe59078bce9def74065a99}{mAnimMeshes}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00849}00849               \mbox{\hyperlink{structai_mesh_ac1d0b703e2e39ed364252db0daafd733}{mMethod}}(\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a76b77976372959451a455a148901e70ea2fa91a7bd2146df7f49a718c8ae8ab4b}{aiMorphingMethod\_UNKNOWN}}),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00850}00850               \mbox{\hyperlink{structai_mesh_ade5815b8f019a930e31b3824e867010d}{mAABB}}(),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00851}00851               \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}(\textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00852}00852         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00853}00853     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00854}00854 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00856}00856     \mbox{\hyperlink{structai_mesh}{\string~aiMesh}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00857}00857         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_a5abd50282e39563a14734820378b1690}{mVertices}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00858}00858         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_ac7d23a5c9caf8f647ce96e2abf3da3ef}{mNormals}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00859}00859         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_a37be52ca5c293ef46c1ee10bf7410d86}{mTangents}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00860}00860         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_a4d2b15fe360d7c6f45c28dced096510a}{mBitangents}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00861}00861         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}; a++) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00862}00862             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_a35055266863d76681d371bf3bb4ccd72}{mTextureCoords}}[a];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00863}00863         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00864}00864 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00865}00865         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00866}00866             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}; a++) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00867}00867                 \textcolor{keyword}{delete} \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[a];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00868}00868             \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00869}00869             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00870}00870         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00871}00871 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00872}00872         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}; a++) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00873}00873             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_a387fa89e34f4b13f03cfd15c9be1e787}{mColors}}[a];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00874}00874         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00875}00875 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00876}00876         \textcolor{comment}{// DO NOT REMOVE THIS ADDITIONAL CHECK}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00877}00877         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_a0f9d5425b6300e32a842a94f943fd79e}{mNumBones}} \&\& \mbox{\hyperlink{structai_mesh_ad0388784814d4534ec011abf9b57e3a8}{mBones}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00878}00878             std::unordered\_set<const aiBone *> bones;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00879}00879             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{structai_mesh_a0f9d5425b6300e32a842a94f943fd79e}{mNumBones}}; a++) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00880}00880                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_ad0388784814d4534ec011abf9b57e3a8}{mBones}}[a]) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00881}00881                     bones.insert(\mbox{\hyperlink{structai_mesh_ad0388784814d4534ec011abf9b57e3a8}{mBones}}[a]);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00882}00882                 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00883}00883             \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00884}00884             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \mbox{\hyperlink{structai_bone}{aiBone}} *bone: bones) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00885}00885                 \textcolor{keyword}{delete} bone;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00886}00886             \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00887}00887             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_ad0388784814d4534ec011abf9b57e3a8}{mBones}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00888}00888         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00889}00889 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00890}00890         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_a1692a300222b32348ae51779df4a697e}{mNumAnimMeshes}} \&\& \mbox{\hyperlink{structai_mesh_aac9ab8395ffe59078bce9def74065a99}{mAnimMeshes}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00891}00891             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} a = 0; a < \mbox{\hyperlink{structai_mesh_a1692a300222b32348ae51779df4a697e}{mNumAnimMeshes}}; a++) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00892}00892                 \textcolor{keyword}{delete} \mbox{\hyperlink{structai_mesh_aac9ab8395ffe59078bce9def74065a99}{mAnimMeshes}}[a];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00893}00893             \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00894}00894             \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_aac9ab8395ffe59078bce9def74065a99}{mAnimMeshes}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00895}00895         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00896}00896 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00897}00897         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_mesh_afdeda8b60a83dcf4cefef8b02c11f360}{mFaces}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00898}00898     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00899}00899 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00903}00903     \textcolor{keywordtype}{bool} HasPositions()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00904}00904         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_a5abd50282e39563a14734820378b1690}{mVertices}} != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_ab34b7b5941e6636f1c08f615cbb072ef}{mNumVertices}} > 0;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00905}00905     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00906}00906 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00910}00910     \textcolor{keywordtype}{bool} HasFaces()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00911}00911         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_afdeda8b60a83dcf4cefef8b02c11f360}{mFaces}} != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_aeed22ee6963b79548f3877b3c905518e}{mNumFaces}} > 0;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00912}00912     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00913}00913 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00916}00916     \textcolor{keywordtype}{bool} HasNormals()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00917}00917         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_ac7d23a5c9caf8f647ce96e2abf3da3ef}{mNormals}} != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_ab34b7b5941e6636f1c08f615cbb072ef}{mNumVertices}} > 0;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00918}00918     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00919}00919 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00926}00926     \textcolor{keywordtype}{bool} HasTangentsAndBitangents()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00927}00927         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_a37be52ca5c293ef46c1ee10bf7410d86}{mTangents}} != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_a4d2b15fe360d7c6f45c28dced096510a}{mBitangents}} != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_ab34b7b5941e6636f1c08f615cbb072ef}{mNumVertices}} > 0;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00928}00928     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00929}00929 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00933}00933     \textcolor{keywordtype}{bool} HasVertexColors(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00934}00934         \textcolor{keywordflow}{if} (index >= \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00935}00935             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00936}00936         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00937}00937         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_a387fa89e34f4b13f03cfd15c9be1e787}{mColors}}[index] != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_ab34b7b5941e6636f1c08f615cbb072ef}{mNumVertices}} > 0;        }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00938}00938     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00939}00939 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00943}00943     \textcolor{keywordtype}{bool} HasTextureCoords(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00944}00944         \textcolor{keywordflow}{if} (index >= \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00945}00945             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00946}00946         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00947}00947         \textcolor{keywordflow}{return} (\mbox{\hyperlink{structai_mesh_a35055266863d76681d371bf3bb4ccd72}{mTextureCoords}}[index] != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_ab34b7b5941e6636f1c08f615cbb072ef}{mNumVertices}} > 0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00948}00948     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00949}00949 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00952}00952     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetNumUVChannels()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00953}00953         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n(0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00954}00954         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0; i < \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}; i++) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00955}00955             \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_a35055266863d76681d371bf3bb4ccd72}{mTextureCoords}}[i]) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00956}00956                 ++n;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00957}00957             \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00958}00958         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00959}00959 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00960}00960         \textcolor{keywordflow}{return} n;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00961}00961     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00962}00962 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00965}00965     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetNumColorChannels()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00966}00966         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n(0);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00967}00967         \textcolor{keywordflow}{while} (n < \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a74ea1282873ac4b111b48d2380c26bdc}{AI\_MAX\_NUMBER\_OF\_COLOR\_SETS}} \&\& \mbox{\hyperlink{structai_mesh_a387fa89e34f4b13f03cfd15c9be1e787}{mColors}}[n]) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00968}00968             ++n;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00969}00969         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00970}00970         \textcolor{keywordflow}{return} n;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00971}00971     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00972}00972 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00975}00975     \textcolor{keywordtype}{bool} HasBones()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00976}00976         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_ad0388784814d4534ec011abf9b57e3a8}{mBones}} != \textcolor{keyword}{nullptr} \&\& \mbox{\hyperlink{structai_mesh_a0f9d5425b6300e32a842a94f943fd79e}{mNumBones}} > 0;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00977}00977     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00978}00978 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00982}00982     \textcolor{keywordtype}{bool} HasTextureCoordsName(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pIndex)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00983}00983         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}} == \textcolor{keyword}{nullptr} || pIndex >= \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00984}00984             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00985}00985         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00986}00986         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[pIndex] != \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00987}00987     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00988}00988 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00992}00992     \textcolor{keywordtype}{void} SetTextureCoordsName(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pIndex, \textcolor{keyword}{const} \mbox{\hyperlink{structai_string}{aiString}} \&texCoordsName) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00993}00993         \textcolor{keywordflow}{if} (pIndex >= \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00994}00994             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00995}00995         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00996}00996 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00997}00997         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}} == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00998}00998             \textcolor{comment}{// Construct and null-\/init array}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l00999}00999             \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}} = \textcolor{keyword}{new} \mbox{\hyperlink{structai_string}{aiString}} *[\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01000}01000             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}; ++i) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01001}01001                 \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[i] = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01002}01002             \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01003}01003         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01004}01004 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01005}01005         \textcolor{keywordflow}{if} (texCoordsName.\mbox{\hyperlink{structai_string_aed051e2996a96ca3a53e069f9b93da0c}{length}} == 0) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01006}01006             \textcolor{keyword}{delete} \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[pIndex];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01007}01007             \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[pIndex] = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01008}01008             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01009}01009         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01010}01010 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01011}01011         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[pIndex] == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01012}01012             \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[pIndex] = \textcolor{keyword}{new} \mbox{\hyperlink{structai_string}{aiString}}(texCoordsName);}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01013}01013             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01014}01014         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01015}01015 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01016}01016         *\mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[pIndex] = texCoordsName;}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01017}01017     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01018}01018 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01022}01022     \textcolor{keyword}{const} \mbox{\hyperlink{structai_string}{aiString}} *GetTextureCoordsName(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01023}01023         \textcolor{keywordflow}{if} (\mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}} == \textcolor{keyword}{nullptr} || index >= \mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2mesh_8h_a335874c5058c7f1e866eb953bf192258}{AI\_MAX\_NUMBER\_OF\_TEXTURECOORDS}}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01024}01024             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01025}01025         \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01026}01026 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01027}01027         \textcolor{keywordflow}{return} \mbox{\hyperlink{structai_mesh_ace435bda0a8fea1377057f9880a99419}{mTextureCoordsNames}}[index];}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01028}01028     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01029}01029 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01030}01030 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01031}01031 \};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01032}01032 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01048}01048 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_skeleton_bone}{aiSkeletonBone}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01050}01050     \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_skeleton_bone_a467da082576fa3d0851085b4c1a910b1}{mParent}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01051}01051 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01052}01052 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01053}01053 \textcolor{preprocessor}{\#ifndef ASSIMP\_BUILD\_NO\_ARMATUREPOPULATE\_PROCESS}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01056}01056     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_node}{aiNode}} *\mbox{\hyperlink{structai_skeleton_bone_ad38b4ebf3afd0ea996681f589729af8c}{mArmature}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01057}01057 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01060}01060     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_node}{aiNode}} *\mbox{\hyperlink{structai_skeleton_bone_a9ff833c452cc8190d1f2c8caf87a5a4b}{mNode}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01061}01061 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01062}01062 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01064}01064     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_skeleton_bone_a108acad41fcfadcadce1f511d7f2dc67}{mNumnWeights}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01065}01065 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01067}01067     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_mesh}{aiMesh}} *\mbox{\hyperlink{structai_skeleton_bone_a64424398138b28d531da4a6cb1381446}{mMeshId}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01068}01068 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01070}01070     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_vertex_weight}{aiVertexWeight}} *\mbox{\hyperlink{structai_skeleton_bone_aa7eba6914ace32d1e393955c2fd669a6}{mWeights}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01071}01071 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01083}01083     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} \mbox{\hyperlink{structai_skeleton_bone_a699e4965860b358dc210deb1bf143305}{mOffsetMatrix}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01084}01084 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01086}01086     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_matrix4x4}{aiMatrix4x4}} \mbox{\hyperlink{structai_skeleton_bone_a1ebcbfc261a776d437a2289f1401bf13}{mLocalMatrix}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01087}01087 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01088}01088 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01090}01090     \mbox{\hyperlink{structai_skeleton_bone}{aiSkeletonBone}}() :}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01091}01091             \mbox{\hyperlink{structai_skeleton_bone_a467da082576fa3d0851085b4c1a910b1}{mParent}}(-\/1),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01092}01092 \#ifndef ASSIMP\_BUILD\_NO\_ARMATUREPOPULATE\_PROCESS}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01093}01093             \mbox{\hyperlink{structai_skeleton_bone_ad38b4ebf3afd0ea996681f589729af8c}{mArmature}}(nullptr),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01094}01094             \mbox{\hyperlink{structai_skeleton_bone_a9ff833c452cc8190d1f2c8caf87a5a4b}{mNode}}(nullptr),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01095}01095 \#endif}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01096}01096             \mbox{\hyperlink{structai_skeleton_bone_a108acad41fcfadcadce1f511d7f2dc67}{mNumnWeights}}(0),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01097}01097             \mbox{\hyperlink{structai_skeleton_bone_a64424398138b28d531da4a6cb1381446}{mMeshId}}(nullptr),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01098}01098             \mbox{\hyperlink{structai_skeleton_bone_aa7eba6914ace32d1e393955c2fd669a6}{mWeights}}(nullptr),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01099}01099             \mbox{\hyperlink{structai_skeleton_bone_a699e4965860b358dc210deb1bf143305}{mOffsetMatrix}}(),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01100}01100             \mbox{\hyperlink{structai_skeleton_bone_a1ebcbfc261a776d437a2289f1401bf13}{mLocalMatrix}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01101}01101         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01102}01102     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01103}01103 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01106}01106     \mbox{\hyperlink{structai_skeleton_bone}{aiSkeletonBone}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} parent) :}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01107}01107             \mbox{\hyperlink{structai_skeleton_bone_a467da082576fa3d0851085b4c1a910b1}{mParent}}(parent),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01108}01108 \#ifndef ASSIMP\_BUILD\_NO\_ARMATUREPOPULATE\_PROCESS}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01109}01109             \mbox{\hyperlink{structai_skeleton_bone_ad38b4ebf3afd0ea996681f589729af8c}{mArmature}}(nullptr),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01110}01110             \mbox{\hyperlink{structai_skeleton_bone_a9ff833c452cc8190d1f2c8caf87a5a4b}{mNode}}(nullptr),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01111}01111 \#endif}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01112}01112             \mbox{\hyperlink{structai_skeleton_bone_a108acad41fcfadcadce1f511d7f2dc67}{mNumnWeights}}(0),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01113}01113             \mbox{\hyperlink{structai_skeleton_bone_a64424398138b28d531da4a6cb1381446}{mMeshId}}(nullptr),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01114}01114             \mbox{\hyperlink{structai_skeleton_bone_aa7eba6914ace32d1e393955c2fd669a6}{mWeights}}(nullptr),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01115}01115             \mbox{\hyperlink{structai_skeleton_bone_a699e4965860b358dc210deb1bf143305}{mOffsetMatrix}}(),}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01116}01116             \mbox{\hyperlink{structai_skeleton_bone_a1ebcbfc261a776d437a2289f1401bf13}{mLocalMatrix}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01117}01117         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01118}01118     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01120}01120     \mbox{\hyperlink{structai_skeleton_bone}{\string~aiSkeletonBone}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01121}01121         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_skeleton_bone_aa7eba6914ace32d1e393955c2fd669a6}{mWeights}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01122}01122         \mbox{\hyperlink{structai_skeleton_bone_aa7eba6914ace32d1e393955c2fd669a6}{mWeights}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01123}01123     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01124}01124 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01125}01125 \};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01140}01140 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_skeleton}{aiSkeleton}} \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01144}01144     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_string}{aiString}} \mbox{\hyperlink{structai_skeleton_afe4c5509eb4536590e0fb0a7d74567a6}{mName}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01145}01145 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01149}01149     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structai_skeleton_a4cb4733bf1487caf474875030e1bc3db}{mNumBones}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01150}01150 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01154}01154     \mbox{\hyperlink{include_2assimp_2defs_8h_ab51df4230ceb602bbc1bc109c432a6a0}{C\_STRUCT}} \mbox{\hyperlink{structai_skeleton_bone}{aiSkeletonBone}} **\mbox{\hyperlink{structai_skeleton_a768e2b1140681e31a9773a3e545fa0ef}{mBones}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01155}01155 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01156}01156 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01160}01160     \mbox{\hyperlink{structai_skeleton}{aiSkeleton}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}} : \mbox{\hyperlink{structai_skeleton_afe4c5509eb4536590e0fb0a7d74567a6}{mName}}(), \mbox{\hyperlink{structai_skeleton_a4cb4733bf1487caf474875030e1bc3db}{mNumBones}}(0), \mbox{\hyperlink{structai_skeleton_a768e2b1140681e31a9773a3e545fa0ef}{mBones}}(\textcolor{keywordtype}{nullptr}) \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01161}01161         \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01162}01162     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01163}01163 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01167}01167     \mbox{\hyperlink{structai_skeleton}{\string~aiSkeleton}}() \{}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01168}01168         \textcolor{keyword}{delete}[] \mbox{\hyperlink{structai_skeleton_a768e2b1140681e31a9773a3e545fa0ef}{mBones}};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01169}01169     \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01170}01170 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01171}01171 \};}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01172}01172 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01173}01173 \}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01174}01174 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01175}01175 }
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01176}01176 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_MESH\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{out_2install_2x64-_debug_2include_2assimp_2mesh_8h_source_l01177}01177 }
+
+\end{DoxyCode}

@@ -1,0 +1,104 @@
+\hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source}{}\doxysection{Skeleton\+Mesh\+Builder.\+h}
+\label{include_2assimp_2_skeleton_mesh_builder_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/SkeletonMeshBuilder.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/SkeletonMeshBuilder.h}}
+\mbox{\hyperlink{include_2assimp_2_skeleton_mesh_builder_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00003}00003 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00004}00004 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00005}00005 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00006}00006 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00007}00007 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00008}00008 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00009}00009 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00010}00010 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00011}00011 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00012}00012 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00013}00013 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00014}00014 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00015}00015 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00016}00016 \textcolor{comment}{copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00017}00017 \textcolor{comment}{following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00018}00018 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00019}00019 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00020}00020 \textcolor{comment}{copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00021}00021 \textcolor{comment}{following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00022}00022 \textcolor{comment}{materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00023}00023 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00024}00024 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00025}00025 \textcolor{comment}{contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00026}00026 \textcolor{comment}{derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00027}00027 \textcolor{comment}{written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00028}00028 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00029}00029 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00030}00030 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00031}00031 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00032}00032 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00033}00033 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00034}00034 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00035}00035 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00036}00036 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00037}00037 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00038}00038 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00039}00039 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00040}00040 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00041}00041 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00042}00042 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00049}00049 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00050}00050 \textcolor{preprocessor}{\#ifndef AI\_SKELETONMESHBUILDER\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00051}\mbox{\hyperlink{include_2assimp_2_skeleton_mesh_builder_8h_a5a78fd0b76f9509d8551319b0c2471fc}{00051}} \textcolor{preprocessor}{\#define AI\_SKELETONMESHBUILDER\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00053}00053 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00054}00054 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00055}00055 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00057}00057 \textcolor{preprocessor}{\#include <assimp/mesh.h>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00058}00058 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00060}00060 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_material}{aiMaterial}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00061}00061 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_scene}{aiScene}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00062}00062 \textcolor{keyword}{struct }\mbox{\hyperlink{structai_node}{aiNode}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00064}00064 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00066}00066 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00072}\mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder}{00072}} \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{include_2assimp_2defs_8h_a7d617d307e656cb6ff315ba71ff958d4}{ASSIMP\_API}} \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder}{SkeletonMeshBuilder}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00073}00073 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00074}00074     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00083}\mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a4b10beaafb523e6b5e838f8a979a9759}{00083}} \textcolor{comment}{}    \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a4b10beaafb523e6b5e838f8a979a9759}{SkeletonMeshBuilder}}(\mbox{\hyperlink{structai_scene}{aiScene}} *pScene, \mbox{\hyperlink{structai_node}{aiNode}} *root = \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00084}00084             \textcolor{keywordtype}{bool} bKnobsOnly = \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00086}00086 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00087}00087     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00093}\mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_acd4f082475e9fe7c0d6f76025d961908}{00093}} \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_acd4f082475e9fe7c0d6f76025d961908}{CreateGeometry}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_node}{aiNode}} *pNode);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00095}00095     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00098}\mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a25f00032c6427bbb5045d0791ed03ddb}{00098}} \textcolor{comment}{}    \mbox{\hyperlink{structai_mesh}{aiMesh}} *\mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a25f00032c6427bbb5045d0791ed03ddb}{CreateMesh}}();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00100}00100     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00102}\mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a4f3b0826232d2ae440c1fe3b278a4466}{00102}} \textcolor{comment}{}    \mbox{\hyperlink{structai_material}{aiMaterial}} *\mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a4f3b0826232d2ae440c1fe3b278a4466}{CreateMaterial}}();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00104}00104 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00106}\mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a6904020cc6f2ed55a2cc8c50aa61c14d}{00106}}     std::vector<aiVector3D> \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a6904020cc6f2ed55a2cc8c50aa61c14d}{mVertices}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00109}\mbox{\hyperlink{struct_assimp_1_1_skeleton_mesh_builder_1_1_face}{00109}}     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_assimp_1_1_skeleton_mesh_builder_1_1_face}{Face}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00110}\mbox{\hyperlink{struct_assimp_1_1_skeleton_mesh_builder_1_1_face_ad68b2f18ec6d46ce154894a82431da09}{00110}}         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mIndices[3];}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00111}\mbox{\hyperlink{struct_assimp_1_1_skeleton_mesh_builder_1_1_face_a298da8f02cfd0b838bd1087fd90dd456}{00111}}         \mbox{\hyperlink{struct_assimp_1_1_skeleton_mesh_builder_1_1_face_a298da8f02cfd0b838bd1087fd90dd456}{Face}}();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00112}\mbox{\hyperlink{struct_assimp_1_1_skeleton_mesh_builder_1_1_face_a7fc75208520cf77334eef02bc3d437f1}{00112}}         \mbox{\hyperlink{struct_assimp_1_1_skeleton_mesh_builder_1_1_face_a7fc75208520cf77334eef02bc3d437f1}{Face}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} p0, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} p1, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} p2) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00113}00113             mIndices[0] = p0;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00114}00114             mIndices[1] = p1;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00115}00115             mIndices[2] = p2;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00116}00116         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00117}00117     \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00118}\mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a87fc8b2507f50787fd79ea3dc22a6c83}{00118}}     std::vector<Face> \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a87fc8b2507f50787fd79ea3dc22a6c83}{mFaces}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00121}\mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a560dba87de245555651c60666bc61508}{00121}}     std::vector<aiBone *> \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a560dba87de245555651c60666bc61508}{mBones}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00123}\mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a7c11e753afce4016fdb94d70b9b32ec9}{00123}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_assimp_1_1_skeleton_mesh_builder_a7c11e753afce4016fdb94d70b9b32ec9}{mKnobsOnly}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00124}00124 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00126}00126 \} \textcolor{comment}{// end of namespace Assimp}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_skeleton_mesh_builder_8h_source_l00128}00128 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_SKELETONMESHBUILDER\_H\_INC}}
+
+\end{DoxyCode}

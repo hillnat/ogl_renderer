@@ -1,0 +1,44 @@
+\hypertarget{matrix__integer_8inl_source}{}\doxysection{matrix\+\_\+integer.\+inl}
+\label{matrix__integer_8inl_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/ext/matrix\_integer.inl@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/glm/ext/matrix\_integer.inl}}
+\mbox{\hyperlink{matrix__integer_8inl}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00001}00001 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00002}00002 \textcolor{keyword}{namespace }detail}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00003}00003 \{}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00004}00004     \textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q, \textcolor{keywordtype}{bool} Aligned>}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00005}\mbox{\hyperlink{structglm_1_1detail_1_1compute__matrix_comp_mult__type_3_01_c_00_01_r_00_01_t_00_01_q_00_01false_00_01_aligned_01_4}{00005}}     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1compute__matrix_comp_mult__type}{compute\_matrixCompMult\_type}}<C, R, T, Q, false, Aligned> \{}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00006}\mbox{\hyperlink{structglm_1_1detail_1_1compute__matrix_comp_mult__type_3_01_c_00_01_r_00_01_t_00_01_q_00_01false_00_01_aligned_01_4_a73f83ae2ce31d24e760b9518818550a3}{00006}}         \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \textcolor{keyword}{static} \mbox{\hyperlink{structglm_1_1mat}{mat<C, R, T, Q>}} \mbox{\hyperlink{structglm_1_1detail_1_1compute__matrix_comp_mult__type_3_01_c_00_01_r_00_01_t_00_01_q_00_01false_00_01_aligned_01_4_a73f83ae2ce31d24e760b9518818550a3}{call}}(\mbox{\hyperlink{structglm_1_1mat}{mat<C, R, T, Q>}} \textcolor{keyword}{const}\& x, \mbox{\hyperlink{structglm_1_1mat}{mat<C, R, T, Q>}} \textcolor{keyword}{const}\& y)}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00007}00007         \{}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00008}00008             \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1detail_1_1compute__matrix_comp_mult}{detail::compute\_matrixCompMult<C, R, T, Q, detail::is\_aligned<Q>::value}}>\mbox{\hyperlink{structglm_1_1detail_1_1compute__matrix_comp_mult__type_a069bc87df04d14d60c16ad06c909878c}{::call}}(x, y);}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00009}00009         \}}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00010}00010     \};}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00012}00012     \textcolor{keyword}{template}<length\_t DA, length\_t DB, \textcolor{keyword}{typename} T, qualifier Q>}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00013}\mbox{\hyperlink{structglm_1_1detail_1_1compute__outer_product__type_3_01_d_a_00_01_d_b_00_01_t_00_01_q_00_01false_01_4}{00013}}     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1compute__outer_product__type}{compute\_outerProduct\_type}}<DA, DB, T, Q, false> \{}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00014}\mbox{\hyperlink{structglm_1_1detail_1_1compute__outer_product__type_3_01_d_a_00_01_d_b_00_01_t_00_01_q_00_01false_01_4_a7308458559185d08ef14b9b60c270016}{00014}}         \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \textcolor{keyword}{static} \textcolor{keyword}{typename} \mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait}{detail::outerProduct\_trait<DA, DB, T, Q>::type}} \mbox{\hyperlink{structglm_1_1detail_1_1compute__outer_product__type_3_01_d_a_00_01_d_b_00_01_t_00_01_q_00_01false_01_4_a7308458559185d08ef14b9b60c270016}{call}}(\mbox{\hyperlink{structglm_1_1vec}{vec<DA, T, Q>}} \textcolor{keyword}{const}\& c, \mbox{\hyperlink{structglm_1_1vec}{vec<DB, T, Q>}} \textcolor{keyword}{const}\& r)}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00015}00015         \{}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00016}00016             \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1detail_1_1compute__outer_product_afe39032b1bcc380470450f7dac3df1ec}{detail::compute\_outerProduct<DA, DB, T, Q>::call}}(c, r);}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00017}00017         \}}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00018}00018     \};}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00020}00020     \textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q, \textcolor{keywordtype}{bool} Aligned>}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00021}\mbox{\hyperlink{structglm_1_1detail_1_1compute__transpose__type_3_01_c_00_01_r_00_01_t_00_01_q_00_01false_00_01_aligned_01_4}{00021}}     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1compute__transpose__type}{compute\_transpose\_type}}<C, R, T, Q, false, Aligned>}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00022}00022     \{}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00023}\mbox{\hyperlink{structglm_1_1detail_1_1compute__transpose__type_3_01_c_00_01_r_00_01_t_00_01_q_00_01false_00_01_aligned_01_4_af2d1743f78f57a575ce69e4c32b72955}{00023}}         \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \textcolor{keyword}{static} \mbox{\hyperlink{structglm_1_1mat}{mat<R, C, T, Q>}} \mbox{\hyperlink{structglm_1_1detail_1_1compute__transpose__type_3_01_c_00_01_r_00_01_t_00_01_q_00_01false_00_01_aligned_01_4_af2d1743f78f57a575ce69e4c32b72955}{call}}(\mbox{\hyperlink{structglm_1_1mat}{mat<C, R, T, Q>}} \textcolor{keyword}{const}\& m)}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00024}00024         \{}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00025}00025             \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1detail_1_1compute__transpose}{detail::compute\_transpose<C, R, T, Q, detail::is\_aligned<Q>::value}}>\mbox{\hyperlink{structglm_1_1detail_1_1compute__transpose__type_a5dcd456047fd93cc5852c017f29017e7}{::call}}(m);}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00026}00026         \}}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00027}00027     \};}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00029}00029     \textcolor{keyword}{template}<length\_t C, length\_t R, \textcolor{keyword}{typename} T, qualifier Q, \textcolor{keywordtype}{bool} Aligned>}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00030}\mbox{\hyperlink{structglm_1_1detail_1_1compute__determinant__type_3_01_c_00_01_r_00_01_t_00_01_q_00_01false_00_01_aligned_01_4}{00030}}     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1compute__determinant__type}{compute\_determinant\_type}}<C, R, T, Q, false, Aligned>\{}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00031}00031     }
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00032}\mbox{\hyperlink{structglm_1_1detail_1_1compute__determinant__type_3_01_c_00_01_r_00_01_t_00_01_q_00_01false_00_01_aligned_01_4_a2526495d09fd1211ac5a9b82346267ed}{00032}}         \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \textcolor{keyword}{static} T \mbox{\hyperlink{structglm_1_1detail_1_1compute__determinant__type_3_01_c_00_01_r_00_01_t_00_01_q_00_01false_00_01_aligned_01_4_a2526495d09fd1211ac5a9b82346267ed}{call}}(\mbox{\hyperlink{structglm_1_1mat}{mat<C, R, T, Q>}} \textcolor{keyword}{const}\& m)}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00033}00033         \{}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00034}00034             \textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1detail_1_1compute__determinant}{detail::compute\_determinant<C, R, T, Q, detail::is\_aligned<Q>::value}}>\mbox{\hyperlink{structglm_1_1detail_1_1compute__determinant__type_ac05dceb3544acf8147eb6c010ea073ba}{::call}}(m);}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00035}00035         \}}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00036}00036     \};}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00037}00037 \}\textcolor{comment}{//namespace detail}}
+\DoxyCodeLine{\Hypertarget{matrix__integer_8inl_source_l00038}00038 \}\textcolor{comment}{//namespace glm}}
+
+\end{DoxyCode}

@@ -1,0 +1,124 @@
+\hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source}{}\doxysection{SGSpatial\+Sort.\+h}
+\label{include_2assimp_2_s_g_spatial_sort_8h_source}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/SGSpatialSort.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/SGSpatialSort.h}}
+\mbox{\hyperlink{include_2assimp_2_s_g_spatial_sort_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00002}00002 \textcolor{comment}{Open Asset Import Library (assimp)}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00003}00003 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00004}00004 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00005}00005 \textcolor{comment}{Copyright (c) 2006-\/2024, assimp team}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00006}00006 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00007}00007 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00008}00008 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00009}00009 \textcolor{comment}{Redistribution and use of this software in source and binary forms,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00010}00010 \textcolor{comment}{with or without modification, are permitted provided that the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00011}00011 \textcolor{comment}{following conditions are met:}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00012}00012 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00013}00013 \textcolor{comment}{* Redistributions of source code must retain the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00014}00014 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00015}00015 \textcolor{comment}{  following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00016}00016 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00017}00017 \textcolor{comment}{* Redistributions in binary form must reproduce the above}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00018}00018 \textcolor{comment}{  copyright notice, this list of conditions and the}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00019}00019 \textcolor{comment}{  following disclaimer in the documentation and/or other}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00020}00020 \textcolor{comment}{  materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00021}00021 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00022}00022 \textcolor{comment}{* Neither the name of the assimp team, nor the names of its}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00023}00023 \textcolor{comment}{  contributors may be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00024}00024 \textcolor{comment}{  derived from this software without specific prior}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00025}00025 \textcolor{comment}{  written permission of the assimp team.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00026}00026 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00027}00027 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00028}00028 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00029}00029 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00030}00030 \textcolor{comment}{A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00031}00031 \textcolor{comment}{OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00032}00032 \textcolor{comment}{SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00033}00033 \textcolor{comment}{LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00034}00034 \textcolor{comment}{DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00035}00035 \textcolor{comment}{THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00036}00036 \textcolor{comment}{(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00037}00037 \textcolor{comment}{OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00038}00038 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00039}00039 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00040}00040 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00044}00044 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00045}00045 \textcolor{preprocessor}{\#ifndef AI\_D3DSSPATIALSORT\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00046}\mbox{\hyperlink{include_2assimp_2_s_g_spatial_sort_8h_aacba25e50a69341a40f7b804d5d21f68}{00046}} \textcolor{preprocessor}{\#define AI\_D3DSSPATIALSORT\_H\_INC}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00048}00048 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00049}00049 \textcolor{preprocessor}{\#   pragma GCC system\_header}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00050}00050 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00052}00052 \textcolor{preprocessor}{\#include <assimp/types.h>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00053}00053 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00054}00054 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00056}00056 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_assimp}{Assimp}}    \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00058}00058 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00064}00064 \textcolor{comment}{}\textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00065}\mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort}{00065}} \textcolor{keyword}{class }\mbox{\hyperlink{include_2assimp_2defs_8h_a7d617d307e656cb6ff315ba71ff958d4}{ASSIMP\_API}} \mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort}{SGSpatialSort}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00066}00066 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00067}\mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_a8d4df2d8225cb74e6cd6342fa10da2ed}{00067}}     \mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_a8d4df2d8225cb74e6cd6342fa10da2ed}{SGSpatialSort}}();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00069}00069     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00073}\mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_a03c330e8cdf61d8b33e6de8893e235e6}{00073}} \textcolor{comment}{}    \textcolor{keyword}{explicit} \mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_a03c330e8cdf61d8b33e6de8893e235e6}{SGSpatialSort}}(\textcolor{keyword}{const} std::vector<aiVector3D>\& vPositions);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00075}00075     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00081}\mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_adfe82e1689fc782166019d8f7f9b35a5}{00081}} \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_adfe82e1689fc782166019d8f7f9b35a5}{Add}}(\textcolor{keyword}{const} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}}\& vPosition, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index,}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00082}00082         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} smoothingGroup);}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00084}00084     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00087}\mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_aeccf2ea7b7b5b0e2b3d22ff366c5fc59}{00087}} \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_aeccf2ea7b7b5b0e2b3d22ff366c5fc59}{Prepare}}();}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00090}\mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_a66c432d51e9f027df1ee04d52ca1f5ad}{00090}}     \mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_a66c432d51e9f027df1ee04d52ca1f5ad}{\string~SGSpatialSort}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00092}00092     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00105}00105 \textcolor{comment}{}    \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00106}\mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_ab06ebf9fdf866149666dbb5206111e87}{00106}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_ab06ebf9fdf866149666dbb5206111e87}{FindPositions}}( \textcolor{keyword}{const} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}}\& pPosition, uint32\_t pSG,}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00107}00107         \textcolor{keywordtype}{float} pRadius, std::vector<unsigned int>\& poResults,}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00108}00108         \textcolor{keywordtype}{bool} exactMatch = \textcolor{keyword}{false}) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00110}00110 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00112}\mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_a8b804cf9b91af01eedebca7d878cd3df}{00112}}     \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} \mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_a8b804cf9b91af01eedebca7d878cd3df}{mPlaneNormal}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00114}00114     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00118}00118 \textcolor{comment}{}    \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00119}\mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry}{00119}}     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry}{Entry}} \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00120}\mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry_a897b84069035cee0a813a679ae375815}{00120}}         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry_a897b84069035cee0a813a679ae375815}{mIndex}};    }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00121}\mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry_a0980fe98fe23dfeb99ab9ca1c568ca48}{00121}}         \mbox{\hyperlink{structai_vector3_d}{aiVector3D}} \mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry_a0980fe98fe23dfeb99ab9ca1c568ca48}{mPosition}};   }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00122}\mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry_ad5347532e8daf914342579793fa08dbb}{00122}}         uint32\_t \mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry_ad5347532e8daf914342579793fa08dbb}{mSmoothGroups}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00123}\mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry_aa416457a5f2e109fd35bd9b86fdc5697}{00123}}         \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry_aa416457a5f2e109fd35bd9b86fdc5697}{mDistance}};        }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00125}\mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry_a6d1ef3b109852cdf2d8af1a3bb56de6c}{00125}}         \mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry_a6d1ef3b109852cdf2d8af1a3bb56de6c}{Entry}}() \mbox{\hyperlink{include_2assimp_2defs_8h_ae032f18edd69bf6ba935ef9feb025a96}{AI\_NO\_EXCEPT}}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00126}00126         : mIndex(0)}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00127}00127         , mPosition()}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00128}00128         , mSmoothGroups(0)}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00129}00129         , mDistance(0.0f) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00130}00130             \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00131}00131         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00133}\mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry_a9df0a8d9d8744ac95d829269531b44ad}{00133}}         \mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry_a9df0a8d9d8744ac95d829269531b44ad}{Entry}}( \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pIndex, \textcolor{keyword}{const} \mbox{\hyperlink{structai_vector3_d}{aiVector3D}}\& pPosition, \textcolor{keywordtype}{float} pDistance,uint32\_t pSG)}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00134}00134         : mIndex( pIndex)}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00135}00135         , mPosition( pPosition)}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00136}00136         , mSmoothGroups(pSG)}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00137}00137         , mDistance( pDistance) \{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00138}00138             \textcolor{comment}{// empty}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00139}00139         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00141}\mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry_a888b45a50c1cab0568279f90c3c29813}{00141}}         \textcolor{keywordtype}{bool} operator < (\textcolor{keyword}{const} \mbox{\hyperlink{struct_assimp_1_1_s_g_spatial_sort_1_1_entry}{Entry}}\& e)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00142}00142             \textcolor{keywordflow}{return} mDistance < e.mDistance;}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00143}00143         \}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00144}00144     \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00146}00146     \textcolor{comment}{// all positions, sorted by distance to the sorting plane}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00147}\mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_ac8daf0bf7d3b06b36344b8d72fa94162}{00147}}     std::vector<Entry> \mbox{\hyperlink{class_assimp_1_1_s_g_spatial_sort_ac8daf0bf7d3b06b36344b8d72fa94162}{mPositions}};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00148}00148 \};}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00150}00150 \} \textcolor{comment}{// end of namespace Assimp}}
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00151}00151 }
+\DoxyCodeLine{\Hypertarget{include_2assimp_2_s_g_spatial_sort_8h_source_l00152}00152 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AI\_SPATIALSORT\_H\_INC}}
+
+\end{DoxyCode}

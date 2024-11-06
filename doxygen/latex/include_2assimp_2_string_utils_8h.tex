@@ -1,0 +1,377 @@
+\hypertarget{include_2assimp_2_string_utils_8h}{}\doxysection{C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/\+String\+Utils.h File Reference}
+\label{include_2assimp_2_string_utils_8h}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/StringUtils.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/StringUtils.h}}
+{\ttfamily \#include $<$assimp/defs.\+h$>$}\newline
+{\ttfamily \#include $<$cstdarg$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$locale$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+Include dependency graph for String\+Utils.\+h\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_string_utils_8h_ace4a7a1a2ebe575cee232be26e1e4c1f}{INCLUDED\+\_\+\+AI\+\_\+\+STRINGUTILS\+\_\+H}}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_string_utils_8h_a601991d1ef362fc516bb5a9198e7a46f}{AI\+\_\+\+SIZEFMT}}~\char`\"{}\%zu\char`\"{}
+\item 
+\#define \mbox{\hyperlink{include_2assimp_2_string_utils_8h_a8e0764864f0da88a7ac0b2c2d14b3cd9}{ai\+\_\+snprintf}}~snprintf
+\begin{DoxyCompactList}\small\item\em The portable version of the function snprintf ( C99 standard ), which works on visual studio compilers 2013 and earlier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string \mbox{\hyperlink{include_2assimp_2_string_utils_8h_a0621e8ddd291d29d765a02b4575a3ee5}{ai\+\_\+to\+\_\+string}} (T value)
+\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} float \mbox{\hyperlink{include_2assimp_2_string_utils_8h_afada1be4479aa7b430ef96fc09e08c2b}{ai\+\_\+strtof}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$begin, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$end)
+\item 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string \mbox{\hyperlink{include_2assimp_2_string_utils_8h_abc745719efe55cad81e28875d786266e}{ai\+\_\+decimal\+\_\+to\+\_\+hexa}} (T to\+Convert)
+\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string \mbox{\hyperlink{include_2assimp_2_string_utils_8h_a1a7d2fc0b3a1a184dea7f928c84beeb5}{ai\+\_\+rgba2hex}} (int r, int g, int b, int a, bool with\+\_\+head)
+\begin{DoxyCompactList}\small\item\em translate RGBA to String \end{DoxyCompactList}\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} void \mbox{\hyperlink{include_2assimp_2_string_utils_8h_a1c448d6dce27b49ba113901a29fae63b}{ai\+\_\+trim\+\_\+left}} (std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Performs a trim from start (in place) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} void \mbox{\hyperlink{include_2assimp_2_string_utils_8h_a58d10ea84557848ee4838066f6c4290b}{ai\+\_\+trim\+\_\+right}} (std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Performs a trim from end (in place). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string \mbox{\hyperlink{include_2assimp_2_string_utils_8h_a52f95a4fa5310644e58c4ad1e7037caf}{ai\+\_\+trim}} (std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Performs a trim from both ends (in place). \end{DoxyCompactList}\item 
+{\footnotesize template$<$class char\+\_\+t $>$ }\\\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} char\+\_\+t \mbox{\hyperlink{include_2assimp_2_string_utils_8h_a6c4a4aa407107771391f4a48cc330efa}{ai\+\_\+tolower}} (char\+\_\+t in)
+\begin{DoxyCompactList}\small\item\em Performs a to lower operation onto on single character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string \mbox{\hyperlink{include_2assimp_2_string_utils_8h_a910ac2392f3a9c5b3747945f7a8347ef}{ai\+\_\+tolower}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&in)
+\begin{DoxyCompactList}\small\item\em Performs a To\+Lower-\/operation and return the lower-\/case string. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class char\+\_\+t $>$ }\\\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} char\+\_\+t \mbox{\hyperlink{include_2assimp_2_string_utils_8h_a55b439ee54bde741cac2be774e3e8f9d}{ai\+\_\+toupper}} (char\+\_\+t in)
+\begin{DoxyCompactList}\small\item\em Performs a to upper operation onto on single character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string \mbox{\hyperlink{include_2assimp_2_string_utils_8h_a018a0a035f5a46155edc499f03100131}{ai\+\_\+str\+\_\+toupper}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&in)
+\begin{DoxyCompactList}\small\item\em Performs a To\+Lower-\/operation and return the upper-\/case string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string \mbox{\hyperlink{include_2assimp_2_string_utils_8h_ac93475a8288137104522606ff477c4db}{ai\+\_\+str\+\_\+toprintable}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&in, char placeholder=\textquotesingle{}?\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Make a string printable by replacing all non-\/printable characters with the specified placeholder character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string \mbox{\hyperlink{include_2assimp_2_string_utils_8h_a5a087ce7a4d31c70223ddf59fe3edec1}{ai\+\_\+str\+\_\+toprintable}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$in, int len, char placeholder=\textquotesingle{}?\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Make a string printable by replacing all non-\/printable characters with the specified placeholder character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_a601991d1ef362fc516bb5a9198e7a46f}\label{include_2assimp_2_string_utils_8h_a601991d1ef362fc516bb5a9198e7a46f}} 
+\index{StringUtils.h@{StringUtils.h}!AI\_SIZEFMT@{AI\_SIZEFMT}}
+\index{AI\_SIZEFMT@{AI\_SIZEFMT}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{AI\_SIZEFMT}{AI\_SIZEFMT}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+SIZEFMT~\char`\"{}\%zu\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00062}{62}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_a8e0764864f0da88a7ac0b2c2d14b3cd9}\label{include_2assimp_2_string_utils_8h_a8e0764864f0da88a7ac0b2c2d14b3cd9}} 
+\index{StringUtils.h@{StringUtils.h}!ai\_snprintf@{ai\_snprintf}}
+\index{ai\_snprintf@{ai\_snprintf}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{ai\_snprintf}{ai\_snprintf}}
+{\footnotesize\ttfamily ai\+\_\+snprintf~snprintf}
+
+
+
+The portable version of the function snprintf ( C99 standard ), which works on visual studio compilers 2013 and earlier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+Buf} & The buffer to write in \\
+\hline
+{\em size} & The buffer size \\
+\hline
+{\em format} & The format string \\
+\hline
+{\em ap} & The additional arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of written characters if the buffer size was big enough. If an encoding error occurs, a negative number is returned. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00104}{104}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_ace4a7a1a2ebe575cee232be26e1e4c1f}\label{include_2assimp_2_string_utils_8h_ace4a7a1a2ebe575cee232be26e1e4c1f}} 
+\index{StringUtils.h@{StringUtils.h}!INCLUDED\_AI\_STRINGUTILS\_H@{INCLUDED\_AI\_STRINGUTILS\_H}}
+\index{INCLUDED\_AI\_STRINGUTILS\_H@{INCLUDED\_AI\_STRINGUTILS\_H}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{INCLUDED\_AI\_STRINGUTILS\_H}{INCLUDED\_AI\_STRINGUTILS\_H}}
+{\footnotesize\ttfamily \#define INCLUDED\+\_\+\+AI\+\_\+\+STRINGUTILS\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00043}{43}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_abc745719efe55cad81e28875d786266e}\label{include_2assimp_2_string_utils_8h_abc745719efe55cad81e28875d786266e}} 
+\index{StringUtils.h@{StringUtils.h}!ai\_decimal\_to\_hexa@{ai\_decimal\_to\_hexa}}
+\index{ai\_decimal\_to\_hexa@{ai\_decimal\_to\_hexa}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{ai\_decimal\_to\_hexa()}{ai\_decimal\_to\_hexa()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string ai\+\_\+decimal\+\_\+to\+\_\+hexa (\begin{DoxyParamCaption}\item[{T}]{to\+Convert }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00153}{153}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_a1a7d2fc0b3a1a184dea7f928c84beeb5}\label{include_2assimp_2_string_utils_8h_a1a7d2fc0b3a1a184dea7f928c84beeb5}} 
+\index{StringUtils.h@{StringUtils.h}!ai\_rgba2hex@{ai\_rgba2hex}}
+\index{ai\_rgba2hex@{ai\_rgba2hex}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{ai\_rgba2hex()}{ai\_rgba2hex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string ai\+\_\+rgba2hex (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{g,  }\item[{int}]{b,  }\item[{int}]{a,  }\item[{bool}]{with\+\_\+head }\end{DoxyParamCaption})}
+
+
+
+translate RGBA to String 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & ai\+Color.\+r \\
+\hline
+{\em g} & ai\+Color.\+g \\
+\hline
+{\em b} & ai\+Color.\+b \\
+\hline
+{\em a} & ai\+Color.\+a \\
+\hline
+{\em with\+\_\+head} & \# \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The hexadecimal string, is empty in case of an error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00175}{175}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_a5a087ce7a4d31c70223ddf59fe3edec1}\label{include_2assimp_2_string_utils_8h_a5a087ce7a4d31c70223ddf59fe3edec1}} 
+\index{StringUtils.h@{StringUtils.h}!ai\_str\_toprintable@{ai\_str\_toprintable}}
+\index{ai\_str\_toprintable@{ai\_str\_toprintable}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{ai\_str\_toprintable()}{ai\_str\_toprintable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string ai\+\_\+str\+\_\+toprintable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{in,  }\item[{int}]{len,  }\item[{char}]{placeholder = {\ttfamily \textquotesingle{}?\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Make a string printable by replacing all non-\/printable characters with the specified placeholder character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The incoming string. \\
+\hline
+{\em len} & The length of the incoming string. \\
+\hline
+{\em placeholder} & Placeholder character, default is a question mark. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string, with all non-\/printable characters replaced. Will return an empty string if in is null or len is \texorpdfstring{$<$}{<}= 0. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00285}{285}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_ac93475a8288137104522606ff477c4db}\label{include_2assimp_2_string_utils_8h_ac93475a8288137104522606ff477c4db}} 
+\index{StringUtils.h@{StringUtils.h}!ai\_str\_toprintable@{ai\_str\_toprintable}}
+\index{ai\_str\_toprintable@{ai\_str\_toprintable}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{ai\_str\_toprintable()}{ai\_str\_toprintable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string ai\+\_\+str\+\_\+toprintable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{in,  }\item[{char}]{placeholder = {\ttfamily \textquotesingle{}?\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Make a string printable by replacing all non-\/printable characters with the specified placeholder character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The incoming string. \\
+\hline
+{\em placeholder} & Placeholder character, default is a question mark. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string, with all non-\/printable characters replaced. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00268}{268}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_a018a0a035f5a46155edc499f03100131}\label{include_2assimp_2_string_utils_8h_a018a0a035f5a46155edc499f03100131}} 
+\index{StringUtils.h@{StringUtils.h}!ai\_str\_toupper@{ai\_str\_toupper}}
+\index{ai\_str\_toupper@{ai\_str\_toupper}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{ai\_str\_toupper()}{ai\_str\_toupper()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string ai\+\_\+str\+\_\+toupper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{in }\end{DoxyParamCaption})}
+
+
+
+Performs a To\+Lower-\/operation and return the upper-\/case string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The incoming string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string as uppercase. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00255}{255}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_afada1be4479aa7b430ef96fc09e08c2b}\label{include_2assimp_2_string_utils_8h_afada1be4479aa7b430ef96fc09e08c2b}} 
+\index{StringUtils.h@{StringUtils.h}!ai\_strtof@{ai\_strtof}}
+\index{ai\_strtof@{ai\_strtof}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{ai\_strtof()}{ai\_strtof()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} float ai\+\_\+strtof (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{begin,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{end }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00130}{130}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_a0621e8ddd291d29d765a02b4575a3ee5}\label{include_2assimp_2_string_utils_8h_a0621e8ddd291d29d765a02b4575a3ee5}} 
+\index{StringUtils.h@{StringUtils.h}!ai\_to\_string@{ai\_to\_string}}
+\index{ai\_to\_string@{ai\_to\_string}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{ai\_to\_string()}{ai\_to\_string()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string ai\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00115}{115}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_a6c4a4aa407107771391f4a48cc330efa}\label{include_2assimp_2_string_utils_8h_a6c4a4aa407107771391f4a48cc330efa}} 
+\index{StringUtils.h@{StringUtils.h}!ai\_tolower@{ai\_tolower}}
+\index{ai\_tolower@{ai\_tolower}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{ai\_tolower()}{ai\_tolower()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class char\+\_\+t $>$ \\
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} char\+\_\+t ai\+\_\+tolower (\begin{DoxyParamCaption}\item[{char\+\_\+t}]{in }\end{DoxyParamCaption})}
+
+
+
+Performs a to lower operation onto on single character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the character as lower-\/case. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00223}{223}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_a910ac2392f3a9c5b3747945f7a8347ef}\label{include_2assimp_2_string_utils_8h_a910ac2392f3a9c5b3747945f7a8347ef}} 
+\index{StringUtils.h@{StringUtils.h}!ai\_tolower@{ai\_tolower}}
+\index{ai\_tolower@{ai\_tolower}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{ai\_tolower()}{ai\_tolower()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string ai\+\_\+tolower (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{in }\end{DoxyParamCaption})}
+
+
+
+Performs a To\+Lower-\/operation and return the lower-\/case string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The incoming string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string as lowercase. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00232}{232}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_a55b439ee54bde741cac2be774e3e8f9d}\label{include_2assimp_2_string_utils_8h_a55b439ee54bde741cac2be774e3e8f9d}} 
+\index{StringUtils.h@{StringUtils.h}!ai\_toupper@{ai\_toupper}}
+\index{ai\_toupper@{ai\_toupper}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{ai\_toupper()}{ai\_toupper()}}
+{\footnotesize\ttfamily template$<$class char\+\_\+t $>$ \\
+\mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} char\+\_\+t ai\+\_\+toupper (\begin{DoxyParamCaption}\item[{char\+\_\+t}]{in }\end{DoxyParamCaption})}
+
+
+
+Performs a to upper operation onto on single character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the character as upper-\/case. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00246}{246}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_a52f95a4fa5310644e58c4ad1e7037caf}\label{include_2assimp_2_string_utils_8h_a52f95a4fa5310644e58c4ad1e7037caf}} 
+\index{StringUtils.h@{StringUtils.h}!ai\_trim@{ai\_trim}}
+\index{ai\_trim@{ai\_trim}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{ai\_trim()}{ai\_trim()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} std\+::string ai\+\_\+trim (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Performs a trim from both ends (in place). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & string to trim. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00209}{209}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_a1c448d6dce27b49ba113901a29fae63b}\label{include_2assimp_2_string_utils_8h_a1c448d6dce27b49ba113901a29fae63b}} 
+\index{StringUtils.h@{StringUtils.h}!ai\_trim\_left@{ai\_trim\_left}}
+\index{ai\_trim\_left@{ai\_trim\_left}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{ai\_trim\_left()}{ai\_trim\_left()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} void ai\+\_\+trim\+\_\+left (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Performs a trim from start (in place) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & string to trim. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00189}{189}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{include_2assimp_2_string_utils_8h_a58d10ea84557848ee4838066f6c4290b}\label{include_2assimp_2_string_utils_8h_a58d10ea84557848ee4838066f6c4290b}} 
+\index{StringUtils.h@{StringUtils.h}!ai\_trim\_right@{ai\_trim\_right}}
+\index{ai\_trim\_right@{ai\_trim\_right}!StringUtils.h@{StringUtils.h}}
+\doxysubsubsection{\texorpdfstring{ai\_trim\_right()}{ai\_trim\_right()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{include_2assimp_2defs_8h_a61d239a320b58eca56bacc46fc2c79b8}{AI\+\_\+\+FORCE\+\_\+\+INLINE}} void ai\+\_\+trim\+\_\+right (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Performs a trim from end (in place). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & string to trim. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source_l00199}{199}} of file \mbox{\hyperlink{include_2assimp_2_string_utils_8h_source}{String\+Utils.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 7

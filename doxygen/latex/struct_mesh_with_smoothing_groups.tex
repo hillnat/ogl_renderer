@@ -1,0 +1,79 @@
+\hypertarget{struct_mesh_with_smoothing_groups}{}\doxysection{Mesh\+With\+Smoothing\+Groups\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{struct_mesh_with_smoothing_groups}\index{MeshWithSmoothingGroups$<$ T $>$@{MeshWithSmoothingGroups$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Smoothing\+Groups.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $>$ \mbox{\hyperlink{struct_mesh_with_smoothing_groups_a2822289fb74abf4302647eb64e529e48}{m\+Positions}}
+\begin{DoxyCompactList}\small\item\em Vertex positions. \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{struct_mesh_with_smoothing_groups_a5c8831f449ec37f44a7fd167da2131bc}{m\+Faces}}
+\begin{DoxyCompactList}\small\item\em Face lists. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $>$ \mbox{\hyperlink{struct_mesh_with_smoothing_groups_a985606352d665c47dadbc80dd1ebb6f4}{m\+Normals}}
+\begin{DoxyCompactList}\small\item\em List of normal vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+struct Mesh\+With\+Smoothing\+Groups$<$ T $>$}
+Helper structure representing a mesh whose faces have smoothing groups assigned. This allows us to reuse the code for normal computations from smoothings groups for several loaders (3DS, ASE). All of them use face structures which inherit from \mbox{\hyperlink{struct_face_with_smoothing_group}{Face\+With\+Smoothing\+Group}}, but as they add extra members and need to be copied by value we need to use a template here. 
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_smoothing_groups_8h_source_l00092}{92}} of file \mbox{\hyperlink{include_2assimp_2_smoothing_groups_8h_source}{Smoothing\+Groups.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_mesh_with_smoothing_groups_a5c8831f449ec37f44a7fd167da2131bc}\label{struct_mesh_with_smoothing_groups_a5c8831f449ec37f44a7fd167da2131bc}} 
+\index{MeshWithSmoothingGroups$<$ T $>$@{MeshWithSmoothingGroups$<$ T $>$}!mFaces@{mFaces}}
+\index{mFaces@{mFaces}!MeshWithSmoothingGroups$<$ T $>$@{MeshWithSmoothingGroups$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mFaces}{mFaces}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{struct_mesh_with_smoothing_groups}{Mesh\+With\+Smoothing\+Groups}}$<$ T $>$\+::m\+Faces}
+
+
+
+Face lists. 
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_smoothing_groups_8h_source_l00098}{98}} of file \mbox{\hyperlink{include_2assimp_2_smoothing_groups_8h_source}{Smoothing\+Groups.\+h}}.
+
+\mbox{\Hypertarget{struct_mesh_with_smoothing_groups_a985606352d665c47dadbc80dd1ebb6f4}\label{struct_mesh_with_smoothing_groups_a985606352d665c47dadbc80dd1ebb6f4}} 
+\index{MeshWithSmoothingGroups$<$ T $>$@{MeshWithSmoothingGroups$<$ T $>$}!mNormals@{mNormals}}
+\index{mNormals@{mNormals}!MeshWithSmoothingGroups$<$ T $>$@{MeshWithSmoothingGroups$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mNormals}{mNormals}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::vector$<$ \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $>$ \mbox{\hyperlink{struct_mesh_with_smoothing_groups}{Mesh\+With\+Smoothing\+Groups}}$<$ T $>$\+::m\+Normals}
+
+
+
+List of normal vectors. 
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_smoothing_groups_8h_source_l00101}{101}} of file \mbox{\hyperlink{include_2assimp_2_smoothing_groups_8h_source}{Smoothing\+Groups.\+h}}.
+
+\mbox{\Hypertarget{struct_mesh_with_smoothing_groups_a2822289fb74abf4302647eb64e529e48}\label{struct_mesh_with_smoothing_groups_a2822289fb74abf4302647eb64e529e48}} 
+\index{MeshWithSmoothingGroups$<$ T $>$@{MeshWithSmoothingGroups$<$ T $>$}!mPositions@{mPositions}}
+\index{mPositions@{mPositions}!MeshWithSmoothingGroups$<$ T $>$@{MeshWithSmoothingGroups$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mPositions}{mPositions}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::vector$<$ \mbox{\hyperlink{structai_vector3_d}{ai\+Vector3D}} $>$ \mbox{\hyperlink{struct_mesh_with_smoothing_groups}{Mesh\+With\+Smoothing\+Groups}}$<$ T $>$\+::m\+Positions}
+
+
+
+Vertex positions. 
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_smoothing_groups_8h_source_l00095}{95}} of file \mbox{\hyperlink{include_2assimp_2_smoothing_groups_8h_source}{Smoothing\+Groups.\+h}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/\mbox{\hyperlink{include_2assimp_2_smoothing_groups_8h}{Smoothing\+Groups.\+h}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Debug/include/assimp/\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_smoothing_groups_8h}{Smoothing\+Groups.\+h}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Release/include/assimp/\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_smoothing_groups_8h}{Smoothing\+Groups.\+h}}\end{DoxyCompactItemize}

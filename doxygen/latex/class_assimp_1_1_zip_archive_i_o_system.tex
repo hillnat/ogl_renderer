@@ -1,0 +1,559 @@
+\hypertarget{class_assimp_1_1_zip_archive_i_o_system}{}\doxysection{Assimp\+::Zip\+Archive\+IOSystem Class Reference}
+\label{class_assimp_1_1_zip_archive_i_o_system}\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+
+
+{\ttfamily \#include $<$Zip\+Archive\+IOSystem.\+h$>$}
+
+
+
+Inheritance diagram for Assimp\+::Zip\+Archive\+IOSystem\+:
+% FIG 0
+
+
+Collaboration diagram for Assimp\+::Zip\+Archive\+IOSystem\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a18d906305d6d694db6b2f560e94c8169}{Zip\+Archive\+IOSystem}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Filename, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Mode=\char`\"{}r\char`\"{})
+\begin{DoxyCompactList}\small\item\em Open a Zip using the proffered \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_aa4b863c13e508203fb602786577d9afe}{Zip\+Archive\+IOSystem}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&r\+Filename, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Mode=\char`\"{}r\char`\"{})
+\item 
+virtual \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_aaf198115a00072a6310decac40f2b748}{$\sim$\+Zip\+Archive\+IOSystem}} () override
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}{Exists}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Filename) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} override
+\begin{DoxyCompactList}\small\item\em Tests for the existence of a file at the given path. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}{get\+Os\+Separator}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} override
+\begin{DoxyCompactList}\small\item\em Returns the system specific directory separator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Open}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Filename, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Mode=\char`\"{}rb\char`\"{}) override
+\begin{DoxyCompactList}\small\item\em Open a new file with a given path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Close}} (\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$p\+File) override
+\begin{DoxyCompactList}\small\item\em Closes the given file and releases all resources associated with it. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a164dbcbdb69cf237d525927567c78616}{is\+Open}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em The file was opened and is a ZIP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac53c5af190c993280c0f90aadc002594}{get\+File\+List}} (std\+::vector$<$ std\+::string $>$ \&r\+File\+List) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+void \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a03bf74a161ba5585746a6d0c5c75887d}{get\+File\+List\+Extension}} (std\+::vector$<$ std\+::string $>$ \&r\+File\+List, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&extension) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+\mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a18d906305d6d694db6b2f560e94c8169}{Zip\+Archive\+IOSystem}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Filename, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Mode=\char`\"{}r\char`\"{})
+\begin{DoxyCompactList}\small\item\em Open a Zip using the proffered \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_aa4b863c13e508203fb602786577d9afe}{Zip\+Archive\+IOSystem}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&r\+Filename, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Mode=\char`\"{}r\char`\"{})
+\item 
+virtual \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_aaf198115a00072a6310decac40f2b748}{$\sim$\+Zip\+Archive\+IOSystem}} () override
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}{Exists}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Filename) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} override
+\begin{DoxyCompactList}\small\item\em Tests for the existence of a file at the given path. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}{get\+Os\+Separator}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} override
+\begin{DoxyCompactList}\small\item\em Returns the system specific directory separator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Open}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Filename, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Mode=\char`\"{}rb\char`\"{}) override
+\begin{DoxyCompactList}\small\item\em Open a new file with a given path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Close}} (\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$p\+File) override
+\begin{DoxyCompactList}\small\item\em Closes the given file and releases all resources associated with it. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a164dbcbdb69cf237d525927567c78616}{is\+Open}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em The file was opened and is a ZIP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac53c5af190c993280c0f90aadc002594}{get\+File\+List}} (std\+::vector$<$ std\+::string $>$ \&r\+File\+List) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+void \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a03bf74a161ba5585746a6d0c5c75887d}{get\+File\+List\+Extension}} (std\+::vector$<$ std\+::string $>$ \&r\+File\+List, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&extension) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+\mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a18d906305d6d694db6b2f560e94c8169}{Zip\+Archive\+IOSystem}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Filename, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Mode=\char`\"{}r\char`\"{})
+\begin{DoxyCompactList}\small\item\em Open a Zip using the proffered \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_aa4b863c13e508203fb602786577d9afe}{Zip\+Archive\+IOSystem}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&r\+Filename, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Mode=\char`\"{}r\char`\"{})
+\item 
+virtual \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_aaf198115a00072a6310decac40f2b748}{$\sim$\+Zip\+Archive\+IOSystem}} () override
+\item 
+bool \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}{Exists}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Filename) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} override
+\begin{DoxyCompactList}\small\item\em Tests for the existence of a file at the given path. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}{get\+Os\+Separator}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} override
+\begin{DoxyCompactList}\small\item\em Returns the system specific directory separator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Open}} (\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Filename, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Mode=\char`\"{}rb\char`\"{}) override
+\begin{DoxyCompactList}\small\item\em Open a new file with a given path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Close}} (\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$p\+File) override
+\begin{DoxyCompactList}\small\item\em Closes the given file and releases all resources associated with it. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a164dbcbdb69cf237d525927567c78616}{is\+Open}} () \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\begin{DoxyCompactList}\small\item\em The file was opened and is a ZIP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac53c5af190c993280c0f90aadc002594}{get\+File\+List}} (std\+::vector$<$ std\+::string $>$ \&r\+File\+List) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\item 
+void \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a03bf74a161ba5585746a6d0c5c75887d}{get\+File\+List\+Extension}} (std\+::vector$<$ std\+::string $>$ \&r\+File\+List, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&extension) \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a59290480213db84b102a7d978e4f0784}{is\+Zip\+Archive}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Filename)
+\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_aa80c6dc4a1ac9a5e2e50889e9def68d9}{is\+Zip\+Archive}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&r\+Filename)
+\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a59290480213db84b102a7d978e4f0784}{is\+Zip\+Archive}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Filename)
+\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_aa80c6dc4a1ac9a5e2e50889e9def68d9}{is\+Zip\+Archive}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&r\+Filename)
+\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a59290480213db84b102a7d978e4f0784}{is\+Zip\+Archive}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$p\+Filename)
+\item 
+static bool \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_aa80c6dc4a1ac9a5e2e50889e9def68d9}{is\+Zip\+Archive}} (\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$p\+IOHandler, \mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&r\+Filename)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Implement $\ast$ \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a4647ce559873889045eefbffc380b0e4}{p\+Impl}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_zip_archive_i_o_system_8h_source_l00060}{60}} of file \mbox{\hyperlink{include_2assimp_2_zip_archive_i_o_system_8h_source}{Zip\+Archive\+IOSystem.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a18d906305d6d694db6b2f560e94c8169}\label{class_assimp_1_1_zip_archive_i_o_system_a18d906305d6d694db6b2f560e94c8169}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!ZipArchiveIOSystem@{ZipArchiveIOSystem}}
+\index{ZipArchiveIOSystem@{ZipArchiveIOSystem}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{ZipArchiveIOSystem()}{ZipArchiveIOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Zip\+Archive\+IOSystem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Filename,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}r\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Open a Zip using the proffered \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}}. 
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_aa4b863c13e508203fb602786577d9afe}\label{class_assimp_1_1_zip_archive_i_o_system_aa4b863c13e508203fb602786577d9afe}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!ZipArchiveIOSystem@{ZipArchiveIOSystem}}
+\index{ZipArchiveIOSystem@{ZipArchiveIOSystem}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{ZipArchiveIOSystem()}{ZipArchiveIOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Zip\+Archive\+IOSystem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{r\+Filename,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}r\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_aaf198115a00072a6310decac40f2b748}\label{class_assimp_1_1_zip_archive_i_o_system_aaf198115a00072a6310decac40f2b748}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!````~ZipArchiveIOSystem@{$\sim$ZipArchiveIOSystem}}
+\index{````~ZipArchiveIOSystem@{$\sim$ZipArchiveIOSystem}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$ZipArchiveIOSystem()}{~ZipArchiveIOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual Assimp\+::\+Zip\+Archive\+IOSystem\+::$\sim$\+Zip\+Archive\+IOSystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a18d906305d6d694db6b2f560e94c8169}\label{class_assimp_1_1_zip_archive_i_o_system_a18d906305d6d694db6b2f560e94c8169}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!ZipArchiveIOSystem@{ZipArchiveIOSystem}}
+\index{ZipArchiveIOSystem@{ZipArchiveIOSystem}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{ZipArchiveIOSystem()}{ZipArchiveIOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Zip\+Archive\+IOSystem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Filename,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}r\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Open a Zip using the proffered \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}}. 
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_aa4b863c13e508203fb602786577d9afe}\label{class_assimp_1_1_zip_archive_i_o_system_aa4b863c13e508203fb602786577d9afe}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!ZipArchiveIOSystem@{ZipArchiveIOSystem}}
+\index{ZipArchiveIOSystem@{ZipArchiveIOSystem}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{ZipArchiveIOSystem()}{ZipArchiveIOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Zip\+Archive\+IOSystem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{r\+Filename,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}r\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_aaf198115a00072a6310decac40f2b748}\label{class_assimp_1_1_zip_archive_i_o_system_aaf198115a00072a6310decac40f2b748}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!````~ZipArchiveIOSystem@{$\sim$ZipArchiveIOSystem}}
+\index{````~ZipArchiveIOSystem@{$\sim$ZipArchiveIOSystem}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$ZipArchiveIOSystem()}{~ZipArchiveIOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual Assimp\+::\+Zip\+Archive\+IOSystem\+::$\sim$\+Zip\+Archive\+IOSystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a18d906305d6d694db6b2f560e94c8169}\label{class_assimp_1_1_zip_archive_i_o_system_a18d906305d6d694db6b2f560e94c8169}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!ZipArchiveIOSystem@{ZipArchiveIOSystem}}
+\index{ZipArchiveIOSystem@{ZipArchiveIOSystem}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{ZipArchiveIOSystem()}{ZipArchiveIOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Zip\+Archive\+IOSystem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Filename,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}r\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Open a Zip using the proffered \mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}}. 
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_aa4b863c13e508203fb602786577d9afe}\label{class_assimp_1_1_zip_archive_i_o_system_aa4b863c13e508203fb602786577d9afe}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!ZipArchiveIOSystem@{ZipArchiveIOSystem}}
+\index{ZipArchiveIOSystem@{ZipArchiveIOSystem}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{ZipArchiveIOSystem()}{ZipArchiveIOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Zip\+Archive\+IOSystem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{r\+Filename,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}r\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_aaf198115a00072a6310decac40f2b748}\label{class_assimp_1_1_zip_archive_i_o_system_aaf198115a00072a6310decac40f2b748}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!````~ZipArchiveIOSystem@{$\sim$ZipArchiveIOSystem}}
+\index{````~ZipArchiveIOSystem@{$\sim$ZipArchiveIOSystem}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$ZipArchiveIOSystem()}{~ZipArchiveIOSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual Assimp\+::\+Zip\+Archive\+IOSystem\+::$\sim$\+Zip\+Archive\+IOSystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}\label{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!Close@{Close}}
+\index{Close@{Close}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$}]{p\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Closes the given file and releases all resources associated with it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & The file instance previously created by \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Open()}}. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}\label{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!Close@{Close}}
+\index{Close@{Close}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$}]{p\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Closes the given file and releases all resources associated with it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & The file instance previously created by \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Open()}}. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}\label{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!Close@{Close}}
+\index{Close@{Close}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$}]{p\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Closes the given file and releases all resources associated with it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & The file instance previously created by \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}{Open()}}. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a8c334d60f04bceeb6bd0157d21723f3e}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}\label{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!Exists@{Exists}}
+\index{Exists@{Exists}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{Exists()}{Exists()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+File }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Tests for the existence of a file at the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is a file with this path, else false. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}\label{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!Exists@{Exists}}
+\index{Exists@{Exists}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{Exists()}{Exists()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+File }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Tests for the existence of a file at the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is a file with this path, else false. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}\label{class_assimp_1_1_zip_archive_i_o_system_a4a9c4014f6cd118fd2b4c14fe1285291}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!Exists@{Exists}}
+\index{Exists@{Exists}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{Exists()}{Exists()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+File }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Tests for the existence of a file at the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is a file with this path, else false. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a79f5fe8d2dbe1056c9418f7de9a72445}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_ac53c5af190c993280c0f90aadc002594}\label{class_assimp_1_1_zip_archive_i_o_system_ac53c5af190c993280c0f90aadc002594}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!getFileList@{getFileList}}
+\index{getFileList@{getFileList}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{getFileList()}{getFileList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Zip\+Archive\+IOSystem\+::get\+File\+List (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{r\+File\+List }\end{DoxyParamCaption}) const}
+
+Get the list of all files with their simplified paths Intended for use within \mbox{\hyperlink{namespace_assimp}{Assimp}} library boundaries \mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_ac53c5af190c993280c0f90aadc002594}\label{class_assimp_1_1_zip_archive_i_o_system_ac53c5af190c993280c0f90aadc002594}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!getFileList@{getFileList}}
+\index{getFileList@{getFileList}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{getFileList()}{getFileList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Zip\+Archive\+IOSystem\+::get\+File\+List (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{r\+File\+List }\end{DoxyParamCaption}) const}
+
+Get the list of all files with their simplified paths Intended for use within \mbox{\hyperlink{namespace_assimp}{Assimp}} library boundaries \mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_ac53c5af190c993280c0f90aadc002594}\label{class_assimp_1_1_zip_archive_i_o_system_ac53c5af190c993280c0f90aadc002594}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!getFileList@{getFileList}}
+\index{getFileList@{getFileList}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{getFileList()}{getFileList()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Zip\+Archive\+IOSystem\+::get\+File\+List (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{r\+File\+List }\end{DoxyParamCaption}) const}
+
+Get the list of all files with their simplified paths Intended for use within \mbox{\hyperlink{namespace_assimp}{Assimp}} library boundaries \mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a03bf74a161ba5585746a6d0c5c75887d}\label{class_assimp_1_1_zip_archive_i_o_system_a03bf74a161ba5585746a6d0c5c75887d}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!getFileListExtension@{getFileListExtension}}
+\index{getFileListExtension@{getFileListExtension}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{getFileListExtension()}{getFileListExtension()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Zip\+Archive\+IOSystem\+::get\+File\+List\+Extension (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{r\+File\+List,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{extension }\end{DoxyParamCaption}) const}
+
+Get the list of all files with extension (must be lowercase) Intended for use within \mbox{\hyperlink{namespace_assimp}{Assimp}} library boundaries \mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a03bf74a161ba5585746a6d0c5c75887d}\label{class_assimp_1_1_zip_archive_i_o_system_a03bf74a161ba5585746a6d0c5c75887d}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!getFileListExtension@{getFileListExtension}}
+\index{getFileListExtension@{getFileListExtension}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{getFileListExtension()}{getFileListExtension()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Zip\+Archive\+IOSystem\+::get\+File\+List\+Extension (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{r\+File\+List,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{extension }\end{DoxyParamCaption}) const}
+
+Get the list of all files with extension (must be lowercase) Intended for use within \mbox{\hyperlink{namespace_assimp}{Assimp}} library boundaries \mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a03bf74a161ba5585746a6d0c5c75887d}\label{class_assimp_1_1_zip_archive_i_o_system_a03bf74a161ba5585746a6d0c5c75887d}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!getFileListExtension@{getFileListExtension}}
+\index{getFileListExtension@{getFileListExtension}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{getFileListExtension()}{getFileListExtension()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Assimp\+::\+Zip\+Archive\+IOSystem\+::get\+File\+List\+Extension (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{r\+File\+List,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{extension }\end{DoxyParamCaption}) const}
+
+Get the list of all files with extension (must be lowercase) Intended for use within \mbox{\hyperlink{namespace_assimp}{Assimp}} library boundaries \mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}\label{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!getOsSeparator@{getOsSeparator}}
+\index{getOsSeparator@{getOsSeparator}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{getOsSeparator()}{getOsSeparator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily char Assimp\+::\+Zip\+Archive\+IOSystem\+::get\+Os\+Separator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the system specific directory separator. 
+
+\begin{DoxyReturn}{Returns}
+System specific directory separator 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}\label{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!getOsSeparator@{getOsSeparator}}
+\index{getOsSeparator@{getOsSeparator}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{getOsSeparator()}{getOsSeparator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily char Assimp\+::\+Zip\+Archive\+IOSystem\+::get\+Os\+Separator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the system specific directory separator. 
+
+\begin{DoxyReturn}{Returns}
+System specific directory separator 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}\label{class_assimp_1_1_zip_archive_i_o_system_a84647786480a0704ce0acaf891724e99}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!getOsSeparator@{getOsSeparator}}
+\index{getOsSeparator@{getOsSeparator}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{getOsSeparator()}{getOsSeparator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily char Assimp\+::\+Zip\+Archive\+IOSystem\+::get\+Os\+Separator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the system specific directory separator. 
+
+\begin{DoxyReturn}{Returns}
+System specific directory separator 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a40e412875b985bdb638f00ef0f20fff6}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a164dbcbdb69cf237d525927567c78616}\label{class_assimp_1_1_zip_archive_i_o_system_a164dbcbdb69cf237d525927567c78616}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Zip\+Archive\+IOSystem\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The file was opened and is a ZIP. 
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a164dbcbdb69cf237d525927567c78616}\label{class_assimp_1_1_zip_archive_i_o_system_a164dbcbdb69cf237d525927567c78616}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Zip\+Archive\+IOSystem\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The file was opened and is a ZIP. 
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a164dbcbdb69cf237d525927567c78616}\label{class_assimp_1_1_zip_archive_i_o_system_a164dbcbdb69cf237d525927567c78616}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Assimp\+::\+Zip\+Archive\+IOSystem\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The file was opened and is a ZIP. 
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a59290480213db84b102a7d978e4f0784}\label{class_assimp_1_1_zip_archive_i_o_system_a59290480213db84b102a7d978e4f0784}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!isZipArchive@{isZipArchive}}
+\index{isZipArchive@{isZipArchive}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{isZipArchive()}{isZipArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Zip\+Archive\+IOSystem\+::is\+Zip\+Archive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a59290480213db84b102a7d978e4f0784}\label{class_assimp_1_1_zip_archive_i_o_system_a59290480213db84b102a7d978e4f0784}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!isZipArchive@{isZipArchive}}
+\index{isZipArchive@{isZipArchive}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{isZipArchive()}{isZipArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Zip\+Archive\+IOSystem\+::is\+Zip\+Archive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a59290480213db84b102a7d978e4f0784}\label{class_assimp_1_1_zip_archive_i_o_system_a59290480213db84b102a7d978e4f0784}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!isZipArchive@{isZipArchive}}
+\index{isZipArchive@{isZipArchive}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{isZipArchive()}{isZipArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Zip\+Archive\+IOSystem\+::is\+Zip\+Archive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_aa80c6dc4a1ac9a5e2e50889e9def68d9}\label{class_assimp_1_1_zip_archive_i_o_system_aa80c6dc4a1ac9a5e2e50889e9def68d9}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!isZipArchive@{isZipArchive}}
+\index{isZipArchive@{isZipArchive}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{isZipArchive()}{isZipArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Zip\+Archive\+IOSystem\+::is\+Zip\+Archive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{r\+Filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_aa80c6dc4a1ac9a5e2e50889e9def68d9}\label{class_assimp_1_1_zip_archive_i_o_system_aa80c6dc4a1ac9a5e2e50889e9def68d9}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!isZipArchive@{isZipArchive}}
+\index{isZipArchive@{isZipArchive}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{isZipArchive()}{isZipArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Zip\+Archive\+IOSystem\+::is\+Zip\+Archive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{r\+Filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_aa80c6dc4a1ac9a5e2e50889e9def68d9}\label{class_assimp_1_1_zip_archive_i_o_system_aa80c6dc4a1ac9a5e2e50889e9def68d9}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!isZipArchive@{isZipArchive}}
+\index{isZipArchive@{isZipArchive}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{isZipArchive()}{isZipArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily static bool Assimp\+::\+Zip\+Archive\+IOSystem\+::is\+Zip\+Archive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assimp_1_1_i_o_system}{IOSystem}} $\ast$}]{p\+IOHandler,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} std\+::string \&}]{r\+Filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}\label{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!Open@{Open}}
+\index{Open@{Open}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+File,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}rb\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Open a new file with a given path. 
+
+When the access to the file is finished, call \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Close()}} to release all associated resources (or the virtual dtor of the \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path to the file \\
+\hline
+{\em p\+Mode} & Desired file I/O mode. Required are\+: \char`\"{}wb\char`\"{}, \char`\"{}w\char`\"{}, \char`\"{}wt\char`\"{}, \char`\"{}rb\char`\"{}, \char`\"{}r\char`\"{}, \char`\"{}rt\char`\"{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} interface allowing the lib to access the underlying file. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+When implementing this class to provide custom IO handling, you probably have to supply an own implementation of \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} as well. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}\label{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!Open@{Open}}
+\index{Open@{Open}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+File,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}rb\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Open a new file with a given path. 
+
+When the access to the file is finished, call \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Close()}} to release all associated resources (or the virtual dtor of the \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path to the file \\
+\hline
+{\em p\+Mode} & Desired file I/O mode. Required are\+: \char`\"{}wb\char`\"{}, \char`\"{}w\char`\"{}, \char`\"{}wt\char`\"{}, \char`\"{}rb\char`\"{}, \char`\"{}r\char`\"{}, \char`\"{}rt\char`\"{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} interface allowing the lib to access the underlying file. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+When implementing this class to provide custom IO handling, you probably have to supply an own implementation of \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} as well. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Assimp\+::\+IOSystem}}.
+
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}\label{class_assimp_1_1_zip_archive_i_o_system_ac37cf5c8b6231a489e256e291dc4a5d7}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!Open@{Open}}
+\index{Open@{Open}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} $\ast$ Assimp\+::\+Zip\+Archive\+IOSystem\+::\+Open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+File,  }\item[{\mbox{\hyperlink{x64-_debug_2contrib_2zlib_2zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}} char $\ast$}]{p\+Mode = {\ttfamily \char`\"{}rb\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Open a new file with a given path. 
+
+When the access to the file is finished, call \mbox{\hyperlink{class_assimp_1_1_zip_archive_i_o_system_a134e61d232dfb82b0c21063dc0fbdff8}{Close()}} to release all associated resources (or the virtual dtor of the \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+File} & Path to the file \\
+\hline
+{\em p\+Mode} & Desired file I/O mode. Required are\+: \char`\"{}wb\char`\"{}, \char`\"{}w\char`\"{}, \char`\"{}wt\char`\"{}, \char`\"{}rb\char`\"{}, \char`\"{}r\char`\"{}, \char`\"{}rt\char`\"{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} interface allowing the lib to access the underlying file. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+When implementing this class to provide custom IO handling, you probably have to supply an own implementation of \mbox{\hyperlink{class_assimp_1_1_i_o_stream}{IOStream}} as well. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{class_assimp_1_1_i_o_system_a6722df4211437fec00f7e52fc4fd2491}{Assimp\+::\+IOSystem}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_assimp_1_1_zip_archive_i_o_system_a4647ce559873889045eefbffc380b0e4}\label{class_assimp_1_1_zip_archive_i_o_system_a4647ce559873889045eefbffc380b0e4}} 
+\index{Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}!pImpl@{pImpl}}
+\index{pImpl@{pImpl}!Assimp::ZipArchiveIOSystem@{Assimp::ZipArchiveIOSystem}}
+\doxysubsubsection{\texorpdfstring{pImpl}{pImpl}}
+{\footnotesize\ttfamily Implement $\ast$ Assimp\+::\+Zip\+Archive\+IOSystem\+::p\+Impl = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2assimp_2_zip_archive_i_o_system_8h_source_l00088}{88}} of file \mbox{\hyperlink{include_2assimp_2_zip_archive_i_o_system_8h_source}{Zip\+Archive\+IOSystem.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/\mbox{\hyperlink{include_2assimp_2_zip_archive_i_o_system_8h}{Zip\+Archive\+IOSystem.\+h}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Debug/include/assimp/\mbox{\hyperlink{out_2install_2x64-_debug_2include_2assimp_2_zip_archive_i_o_system_8h}{Zip\+Archive\+IOSystem.\+h}}\item 
+C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/out/install/x64-\/\+Release/include/assimp/\mbox{\hyperlink{out_2install_2x64-_release_2include_2assimp_2_zip_archive_i_o_system_8h}{Zip\+Archive\+IOSystem.\+h}}\end{DoxyCompactItemize}

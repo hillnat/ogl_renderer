@@ -1,0 +1,128 @@
+\hypertarget{thirdparty_2assimp_2include_2assimp_2_scene_8h}{}\doxysection{C\+:/\+Users/s239074/\+Documents/ogl\+\_\+renderer/thirdparty/assimp/include/assimp/scene.h File Reference}
+\label{thirdparty_2assimp_2include_2assimp_2_scene_8h}\index{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/scene.h@{C:/Users/s239074/Documents/ogl\_renderer/thirdparty/assimp/include/assimp/scene.h}}
+
+
+Defines the data structures in which the imported scene is returned.  
+
+
+{\ttfamily \#include $<$assimp/types.\+h$>$}\newline
+{\ttfamily \#include $<$assimp/texture.\+h$>$}\newline
+{\ttfamily \#include $<$assimp/mesh.\+h$>$}\newline
+{\ttfamily \#include $<$assimp/light.\+h$>$}\newline
+{\ttfamily \#include $<$assimp/camera.\+h$>$}\newline
+{\ttfamily \#include $<$assimp/material.\+h$>$}\newline
+{\ttfamily \#include $<$assimp/anim.\+h$>$}\newline
+{\ttfamily \#include $<$assimp/metadata.\+h$>$}\newline
+Include dependency graph for scene.\+h\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structai_node}{ai\+Node}}
+\item 
+struct \mbox{\hyperlink{structai_scene}{ai\+Scene}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_a056ad49744f1123b1d21e008612e2fc8}{AI\+\_\+\+SCENE\+\_\+\+H\+\_\+\+INC}}
+\item 
+\#define \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_a64c3b662e066126207bb842fc406a745}{AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+INCOMPLETE}}~0x1
+\item 
+\#define \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_a7a1bb84d14b26be1b1455b050559ec73}{AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+VALIDATED}}~0x2
+\item 
+\#define \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_a0a1ef5c25053dbc47106e84cd737ca86}{AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+VALIDATION\+\_\+\+WARNING}}~0x4
+\item 
+\#define \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_ae17f4a0adb51e554db9575cc4e1126f9}{AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+NON\+\_\+\+VERBOSE\+\_\+\+FORMAT}}~0x8
+\item 
+\#define \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_aedee2bca78ed19d64877da98448d2b82}{AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+TERRAIN}}~0x10
+\item 
+\#define \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_a612c9ba4674d5d376dffd204755738d0}{AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+ALLOW\+\_\+\+SHARED}}~0x20
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the data structures in which the imported scene is returned. 
+
+
+
+Definition in file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{thirdparty_2assimp_2include_2assimp_2_scene_8h_a612c9ba4674d5d376dffd204755738d0}\label{thirdparty_2assimp_2include_2assimp_2_scene_8h_a612c9ba4674d5d376dffd204755738d0}} 
+\index{scene.h@{scene.h}!AI\_SCENE\_FLAGS\_ALLOW\_SHARED@{AI\_SCENE\_FLAGS\_ALLOW\_SHARED}}
+\index{AI\_SCENE\_FLAGS\_ALLOW\_SHARED@{AI\_SCENE\_FLAGS\_ALLOW\_SHARED}!scene.h@{scene.h}}
+\doxysubsubsection{\texorpdfstring{AI\_SCENE\_FLAGS\_ALLOW\_SHARED}{AI\_SCENE\_FLAGS\_ALLOW\_SHARED}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+ALLOW\+\_\+\+SHARED~0x20}
+
+Specifies that the scene data can be shared between structures. For example\+: one vertex in few faces. \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_ae17f4a0adb51e554db9575cc4e1126f9}{AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+NON\+\_\+\+VERBOSE\+\_\+\+FORMAT}} can not be used for this because \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_ae17f4a0adb51e554db9575cc4e1126f9}{AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+NON\+\_\+\+VERBOSE\+\_\+\+FORMAT}} has internal meaning about postprocessing steps. 
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00235}{235}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+\mbox{\Hypertarget{thirdparty_2assimp_2include_2assimp_2_scene_8h_a64c3b662e066126207bb842fc406a745}\label{thirdparty_2assimp_2include_2assimp_2_scene_8h_a64c3b662e066126207bb842fc406a745}} 
+\index{scene.h@{scene.h}!AI\_SCENE\_FLAGS\_INCOMPLETE@{AI\_SCENE\_FLAGS\_INCOMPLETE}}
+\index{AI\_SCENE\_FLAGS\_INCOMPLETE@{AI\_SCENE\_FLAGS\_INCOMPLETE}!scene.h@{scene.h}}
+\doxysubsubsection{\texorpdfstring{AI\_SCENE\_FLAGS\_INCOMPLETE}{AI\_SCENE\_FLAGS\_INCOMPLETE}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+INCOMPLETE~0x1}
+
+Specifies that the scene data structure that was imported is not complete. This flag bypasses some internal validations and allows the import of animation skeletons, material libraries or camera animation paths using \mbox{\hyperlink{namespace_assimp}{Assimp}}. Most applications won\textquotesingle{}t support such data. 
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00188}{188}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+\mbox{\Hypertarget{thirdparty_2assimp_2include_2assimp_2_scene_8h_ae17f4a0adb51e554db9575cc4e1126f9}\label{thirdparty_2assimp_2include_2assimp_2_scene_8h_ae17f4a0adb51e554db9575cc4e1126f9}} 
+\index{scene.h@{scene.h}!AI\_SCENE\_FLAGS\_NON\_VERBOSE\_FORMAT@{AI\_SCENE\_FLAGS\_NON\_VERBOSE\_FORMAT}}
+\index{AI\_SCENE\_FLAGS\_NON\_VERBOSE\_FORMAT@{AI\_SCENE\_FLAGS\_NON\_VERBOSE\_FORMAT}!scene.h@{scene.h}}
+\doxysubsubsection{\texorpdfstring{AI\_SCENE\_FLAGS\_NON\_VERBOSE\_FORMAT}{AI\_SCENE\_FLAGS\_NON\_VERBOSE\_FORMAT}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+NON\+\_\+\+VERBOSE\+\_\+\+FORMAT~0x8}
+
+This flag is currently only set by the ai\+Process\+\_\+\+Join\+Identical\+Vertices step. It indicates that the vertices of the output meshes aren\textquotesingle{}t in the internal verbose format anymore. In the verbose format all vertices are unique, no vertex is ever referenced by more than one face. 
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00213}{213}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+\mbox{\Hypertarget{thirdparty_2assimp_2include_2assimp_2_scene_8h_aedee2bca78ed19d64877da98448d2b82}\label{thirdparty_2assimp_2include_2assimp_2_scene_8h_aedee2bca78ed19d64877da98448d2b82}} 
+\index{scene.h@{scene.h}!AI\_SCENE\_FLAGS\_TERRAIN@{AI\_SCENE\_FLAGS\_TERRAIN}}
+\index{AI\_SCENE\_FLAGS\_TERRAIN@{AI\_SCENE\_FLAGS\_TERRAIN}!scene.h@{scene.h}}
+\doxysubsubsection{\texorpdfstring{AI\_SCENE\_FLAGS\_TERRAIN}{AI\_SCENE\_FLAGS\_TERRAIN}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+TERRAIN~0x10}
+
+Denotes pure height-\/map terrain data. Pure terrains usually consist of quads, sometimes triangles, in a regular grid. The x,y coordinates of all vertex positions refer to the x,y coordinates on the terrain height map, the z-\/axis stores the elevation at a specific point.
+
+TER (Terragen) and HMP (3D Game Studio) are height map formats. \begin{DoxyNote}{Note}
+\mbox{\hyperlink{namespace_assimp}{Assimp}} is probably not the best choice for loading {\itshape huge} terrains -\/ fully triangulated data takes extremely much free store and should be avoided as long as possible (typically you\textquotesingle{}ll do the triangulation when you actually need to render it). 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00227}{227}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+\mbox{\Hypertarget{thirdparty_2assimp_2include_2assimp_2_scene_8h_a7a1bb84d14b26be1b1455b050559ec73}\label{thirdparty_2assimp_2include_2assimp_2_scene_8h_a7a1bb84d14b26be1b1455b050559ec73}} 
+\index{scene.h@{scene.h}!AI\_SCENE\_FLAGS\_VALIDATED@{AI\_SCENE\_FLAGS\_VALIDATED}}
+\index{AI\_SCENE\_FLAGS\_VALIDATED@{AI\_SCENE\_FLAGS\_VALIDATED}!scene.h@{scene.h}}
+\doxysubsubsection{\texorpdfstring{AI\_SCENE\_FLAGS\_VALIDATED}{AI\_SCENE\_FLAGS\_VALIDATED}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+VALIDATED~0x2}
+
+This flag is set by the validation postprocess-\/step (ai\+Post\+Process\+\_\+\+Validate\+DS) if the validation is successful. In a validated scene you can be sure that any cross references in the data structure (e.\+g. vertex indices) are valid. 
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00195}{195}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+\mbox{\Hypertarget{thirdparty_2assimp_2include_2assimp_2_scene_8h_a0a1ef5c25053dbc47106e84cd737ca86}\label{thirdparty_2assimp_2include_2assimp_2_scene_8h_a0a1ef5c25053dbc47106e84cd737ca86}} 
+\index{scene.h@{scene.h}!AI\_SCENE\_FLAGS\_VALIDATION\_WARNING@{AI\_SCENE\_FLAGS\_VALIDATION\_WARNING}}
+\index{AI\_SCENE\_FLAGS\_VALIDATION\_WARNING@{AI\_SCENE\_FLAGS\_VALIDATION\_WARNING}!scene.h@{scene.h}}
+\doxysubsubsection{\texorpdfstring{AI\_SCENE\_FLAGS\_VALIDATION\_WARNING}{AI\_SCENE\_FLAGS\_VALIDATION\_WARNING}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+SCENE\+\_\+\+FLAGS\+\_\+\+VALIDATION\+\_\+\+WARNING~0x4}
+
+This flag is set by the validation postprocess-\/step (ai\+Post\+Process\+\_\+\+Validate\+DS) if the validation is successful but some issues have been found. This can for example mean that a texture that does not exist is referenced by a material or that the bone weights for a vertex don\textquotesingle{}t sum to 1.\+0 ... . In most cases you should still be able to use the import. This flag could be useful for applications which don\textquotesingle{}t capture \mbox{\hyperlink{namespace_assimp}{Assimp}}\textquotesingle{}s log output. 
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00205}{205}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+
+\mbox{\Hypertarget{thirdparty_2assimp_2include_2assimp_2_scene_8h_a056ad49744f1123b1d21e008612e2fc8}\label{thirdparty_2assimp_2include_2assimp_2_scene_8h_a056ad49744f1123b1d21e008612e2fc8}} 
+\index{scene.h@{scene.h}!AI\_SCENE\_H\_INC@{AI\_SCENE\_H\_INC}}
+\index{AI\_SCENE\_H\_INC@{AI\_SCENE\_H\_INC}!scene.h@{scene.h}}
+\doxysubsubsection{\texorpdfstring{AI\_SCENE\_H\_INC}{AI\_SCENE\_H\_INC}}
+{\footnotesize\ttfamily \#define AI\+\_\+\+SCENE\+\_\+\+H\+\_\+\+INC}
+
+
+
+Definition at line \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source_l00047}{47}} of file \mbox{\hyperlink{thirdparty_2assimp_2include_2assimp_2_scene_8h_source}{scene.\+h}}.
+

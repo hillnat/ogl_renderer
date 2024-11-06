@@ -1,0 +1,69 @@
+\hypertarget{group__gtx__scalar__multiplication}{}\doxysection{GLM\+\_\+\+GTX\+\_\+scalar\+\_\+multiplication}
+\label{group__gtx__scalar__multiplication}\index{GLM\_GTX\_scalar\_multiplication@{GLM\_GTX\_scalar\_multiplication}}
+Collaboration diagram for GLM\+\_\+\+GTX\+\_\+scalar\+\_\+multiplication\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__gtx__scalar__multiplication_gaa1e74ac9f6e034680f02523fb962bd0c}{GLM\+\_\+\+IMPLEMENT\+\_\+\+SCAL\+\_\+\+MULT}}(Vec)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename Vec $>$ }\\using \mbox{\hyperlink{group__gtx__scalar__multiplication_ga68a5dc6ff1dbac4fda02c3b177afa4aa}{glm\+::return\+\_\+type\+\_\+scalar\+\_\+multiplication}} = typename std\+::enable\+\_\+if$<$ !std\+::is\+\_\+same$<$ T, float $>$\+::value \&\&std\+::is\+\_\+arithmetic$<$ T $>$\+::value, Vec $>$\+::type
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include \texorpdfstring{$<$}{<}\mbox{\hyperlink{scalar__multiplication_8hpp}{glm/gtx/scalar\+\_\+multiplication.\+hpp}}\texorpdfstring{$>$}{>} to use the features of this extension.
+
+Enables scalar multiplication for all types
+
+Since GLSL is very strict about types, the following (often used) combinations do not work\+: double $\ast$ vec4 int $\ast$ vec4 vec4 / int So we\textquotesingle{}ll fix that! Of course \char`\"{}float $\ast$ vec4\char`\"{} should remain the same (hence the enable\+\_\+if magic) 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__gtx__scalar__multiplication_gaa1e74ac9f6e034680f02523fb962bd0c}\label{group__gtx__scalar__multiplication_gaa1e74ac9f6e034680f02523fb962bd0c}} 
+\index{GLM\_GTX\_scalar\_multiplication@{GLM\_GTX\_scalar\_multiplication}!GLM\_IMPLEMENT\_SCAL\_MULT@{GLM\_IMPLEMENT\_SCAL\_MULT}}
+\index{GLM\_IMPLEMENT\_SCAL\_MULT@{GLM\_IMPLEMENT\_SCAL\_MULT}!GLM\_GTX\_scalar\_multiplication@{GLM\_GTX\_scalar\_multiplication}}
+\doxysubsubsection{\texorpdfstring{GLM\_IMPLEMENT\_SCAL\_MULT}{GLM\_IMPLEMENT\_SCAL\_MULT}}
+{\footnotesize\ttfamily \#define GLM\+\_\+\+IMPLEMENT\+\_\+\+SCAL\+\_\+\+MULT(\begin{DoxyParamCaption}\item[{}]{Vec }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    template<typename T> \(\backslash\)}
+\DoxyCodeLine{    return\_type\_scalar\_multiplication<T, Vec> \(\backslash\)}
+\DoxyCodeLine{    operator*(T \textcolor{keyword}{const}\& s, Vec rh)\{ \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} rh *= \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(s); \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{     \(\backslash\)}
+\DoxyCodeLine{    template<typename T> \(\backslash\)}
+\DoxyCodeLine{    return\_type\_scalar\_multiplication<T, Vec> \(\backslash\)}
+\DoxyCodeLine{    operator*(Vec lh, T \textcolor{keyword}{const}\& s)\{ \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} lh *= \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(s); \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{     \(\backslash\)}
+\DoxyCodeLine{    template<typename T> \(\backslash\)}
+\DoxyCodeLine{    return\_type\_scalar\_multiplication<T, Vec> \(\backslash\)}
+\DoxyCodeLine{    operator/(Vec lh, T \textcolor{keyword}{const}\& s)\{ \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} lh *= 1.0f / \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(s); \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{scalar__multiplication_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{scalar__multiplication_8hpp_source}{scalar\+\_\+multiplication.\+hpp}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__gtx__scalar__multiplication_ga68a5dc6ff1dbac4fda02c3b177afa4aa}\label{group__gtx__scalar__multiplication_ga68a5dc6ff1dbac4fda02c3b177afa4aa}} 
+\index{GLM\_GTX\_scalar\_multiplication@{GLM\_GTX\_scalar\_multiplication}!return\_type\_scalar\_multiplication@{return\_type\_scalar\_multiplication}}
+\index{return\_type\_scalar\_multiplication@{return\_type\_scalar\_multiplication}!GLM\_GTX\_scalar\_multiplication@{GLM\_GTX\_scalar\_multiplication}}
+\doxysubsubsection{\texorpdfstring{return\_type\_scalar\_multiplication}{return\_type\_scalar\_multiplication}}
+{\footnotesize\ttfamily template$<$typename T , typename Vec $>$ \\
+using \mbox{\hyperlink{group__gtx__scalar__multiplication_ga68a5dc6ff1dbac4fda02c3b177afa4aa}{glm\+::return\+\_\+type\+\_\+scalar\+\_\+multiplication}} = typedef typename std\+::enable\+\_\+if$<$ !std\+::is\+\_\+same$<$T, float$>$\+::value \&\& std\+::is\+\_\+arithmetic$<$T$>$\+::value, Vec $>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{scalar__multiplication_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{scalar__multiplication_8hpp_source}{scalar\+\_\+multiplication.\+hpp}}.
+

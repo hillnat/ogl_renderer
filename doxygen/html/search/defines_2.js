@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stb_5fimage_5fimplementation_0',['STB_IMAGE_IMPLEMENTATION',['../_renderer_8cpp.html#a18372412ad2fc3ce1e3240b3cf0efe78',1,'Renderer.cpp']]]
+  ['be_5fnconst_0',['BE_NCONST',['../include_2assimp_2_byte_swapper_8h.html#acda7d8f86c01643e2e5390c495111c62',1,'BE_NCONST():&#160;ByteSwapper.h'],['../out_2install_2x64-_debug_2include_2assimp_2_byte_swapper_8h.html#acda7d8f86c01643e2e5390c495111c62',1,'BE_NCONST():&#160;ByteSwapper.h'],['../out_2install_2x64-_release_2include_2assimp_2_byte_swapper_8h.html#acda7d8f86c01643e2e5390c495111c62',1,'BE_NCONST():&#160;ByteSwapper.h']]]
 ];

@@ -1,0 +1,20 @@
+digraph "Assimp::NodeAttachmentInfo"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Terminal,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Terminal,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="Assimp::NodeAttachmentInfo",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" attachToNode\nnode" ];
+  Node2 [label="aiNode",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structai_node.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" mName" ];
+  Node3 [label="aiString",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structai_string.html",tooltip="Represents an UTF-8 string, zero byte terminated."];
+  Node4 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" mTransformation" ];
+  Node4 [label="aiMatrix4x4",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structai_matrix4x4.html",tooltip=" "];
+  Node2 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" mChildren\nmParent" ];
+  Node5 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" mMetaData" ];
+  Node5 [label="aiMetadata",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structai_metadata.html",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="darkorchid3",style="dashed",label=" mKeys" ];
+  Node6 -> Node5 [dir="back",color="darkorchid3",style="dashed",label=" mValues" ];
+  Node6 [label="aiMetadataEntry",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structai_metadata_entry.html",tooltip=" "];
+}
