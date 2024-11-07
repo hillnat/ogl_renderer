@@ -40,9 +40,11 @@ void Transform::LookAt(vec3 pos) {
 	//Rotate(vec3(0, 1, 0), 180);
 }
 void Transform::LogTransform() {
-	std::cout << "Forward : " << Forward().x << " | " << Forward().y << " | " << Forward().z << " | " << std::endl;
-	std::cout << "Up      : " << Up().x      << " | " << Up().y      << " | " << Up().z      << " | " << std::endl;
-	std::cout << "Right   : " << Right().x   << " | " << Right().y   << " | " << Right().z   << " | " << std::endl;
+	vec3 pos = GetPosition();
+	std::cout << "Position : " << pos.x << " | " << pos.y << " | " << pos.z << " | " << std::endl;
+	//std::cout << "Forward : " << Forward().x << " | " << Forward().y << " | " << Forward().z << " | " << std::endl;
+	//std::cout << "Up      : " << Up().x      << " | " << Up().y      << " | " << Up().z      << " | " << std::endl;
+	//std::cout << "Right   : " << Right().x   << " | " << Right().y   << " | " << Right().z   << " | " << std::endl;
 	std::cout << "-----------------------------------------------------------------" << std::endl;
 }
 vec3 Transform::GetAccumParentPosition(Transform* transform) {

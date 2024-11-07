@@ -54,9 +54,11 @@ void Scene::RenderAll() {
 	
 	//Draw all objects, setting object based uniforms for their respective shader
 	for (int i = 0; i < gameObjects.size(); i++) {
-		SetUniform(gameObjects[i]->material->shader, 2,(&gameObjects[i]->transform.matrix));
+		SetUniform(gameObjects[i]->material->shader, 2, gameObjects[i]->transform->matrix);
 		if (gameObjects[i]->mesh->size !=0) {
 			DrawMesh(gameObjects[i]->material->shader, gameObjects[i]->mesh);
 		}		
 	}	
+
+	//std::cout << "Draw All | GameObject Count : " << gameObjects.size() << " Unique Material Count : " << uniqueMaterials.size() << " Unique Shader Coount : " << uniqueShaders.size()<<std::endl;
 }

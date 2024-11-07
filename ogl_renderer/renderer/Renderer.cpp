@@ -84,11 +84,11 @@ Mesh* MakeMesh(const vertex* const verts, GLsizei vertCount, const GLuint* indic
 Mesh* MakeMesh(const vector<vertex> verts, const vector<GLuint> indices) {//Overload just calls the same func above with different data
 	return MakeMesh(verts.data(), verts.size(), indices.data(), indices.size());
 }
-void FreeMesh(Mesh& mesh) {
+void FreeMesh(Mesh* mesh) {
 	//DELETE BUFFERS IN REVERSE ORDER THEY WERE GENERATED
-	glDeleteBuffers(1, &mesh.ibo);
-	glDeleteBuffers(1, &mesh.vbo);
-	glDeleteVertexArrays(1, &mesh.vao);
+	glDeleteBuffers(1, &(mesh->ibo));
+	glDeleteBuffers(1, &(mesh->vbo));
+	glDeleteVertexArrays(1,&(mesh->vao));
 	//Zero out the geo so its gone from gpu memory
 	mesh = {};
 }
@@ -98,7 +98,7 @@ void DrawMesh(const Shader* shader, const Mesh* mesh) {
 	//Specify which geometry
 	glBindVertexArray(mesh->vao);
 	glDrawElements(
-		GL_TRIANGLES,//GL_LINES
+		GL_TRIANGLES,//GL_LINES , GL_TRIANGLES
 		mesh->size,
 		GL_UNSIGNED_INT,
 		nullptr

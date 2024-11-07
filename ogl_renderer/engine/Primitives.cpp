@@ -5,7 +5,7 @@ namespace Primitives {
 	Mesh* Primitives::MakeSphere() {
 
 		const float radius = 0.5f;
-		const int longCount = 100;
+		const int longCount = 15;
 		const int latCount = longCount * 0.5f;
 		const int vertCount = (latCount + 1) + (longCount + 1);
 		std::vector<vertex> verts;

@@ -34,21 +34,21 @@ int main(){
 	Camera* mainCamera = new Camera;
 	//Move stuff around
 	mainCamera->cameraTransform.TranslateLocal(vec3(0, 3, -9));
-	obj0->transform.TranslateLocal(vec3(0,5,0));
+	obj0->transform->TranslateLocal(vec3(0,5,0));
 	//obj0.transform.Rotate(vec3(1,0,0),35);
-	planeObj->transform.TranslateLocal(vec3(0,-5,0));
-	planeObj->transform.ChangeScale(vec3(500, 1, 500));
+	planeObj->transform->TranslateLocal(vec3(0,-5,0));
+	planeObj->transform->ChangeScale(vec3(500, 1, 500));
 	//Light
 	Light testDirLight(vec3(1, 1, 1) / 2.f, vec3(-0.5f, 1, -0.5f));
 	//Physics Setup
 	Physics* phys = new Physics();
 	//Each phys object gets a collider, rigidbody, and a colRbPair containing info on both
 	Collider* col0 = new Collider(ColliderShapes::Sphere);
-	Rigidbody* rb0 = new Rigidbody(&obj0->transform, vec3(1, 0, 1), vec3(360,0,0), TESTGRAVITYSCALE, false, 1.f);
+	Rigidbody* rb0 = new Rigidbody(obj0->transform, vec3(1, 0, 1), vec3(360,0,0), TESTGRAVITYSCALE, false, 1.f);
 	ColRbPair* crp0 = new ColRbPair(col0, rb0);
 	phys->AddColRbPair(crp0);
 	Collider* planeCol = new Collider(ColliderShapes::Plane);
-	Rigidbody* planeRb = new Rigidbody(&planeObj->transform, vec3(0, 0, 0), 0.f, true, 1.f);
+	Rigidbody* planeRb = new Rigidbody(planeObj->transform, vec3(0, 0, 0), 0.f, true, 1.f);
 	ColRbPair* planeCrp = new ColRbPair(planeCol, planeRb);
 	phys->AddColRbPair(planeCrp);
 	//Scene setup
@@ -60,7 +60,7 @@ int main(){
 	//Time setup
 	float lastTime = glfwGetTime();
 	float fixedDeltaTimeAccum = 0;
-	const float fixedTimeStepsPerSec = 500;
+	const float fixedTimeStepsPerSec = 200;
 	const float fixedDeltaTime = 1.f / fixedTimeStepsPerSec;
 	//Testing stuff
 	float moveSpeed = 30.f;
@@ -105,11 +105,11 @@ int main(){
 		if (context->Space_Pressed() && (currentTime > lastSpawnTime + 0.1f)) {
 			lastSpawnTime = currentTime;
 
-			GameObject* newObj = new GameObject(sphereMesh, mainMaterial);
-			newObj->transform.TranslateGlobal(mainCamera->cameraTransform.GetPosition());
-			//newObj->transform.ChangeScale(vec3(0.1f, 0.1f, 0.1f));
+			GameObject* newObj = new GameObject(sphereMesh, mainMaterial );
+			newObj->transform->TranslateGlobal(mainCamera->cameraTransform.GetPosition());
+			newObj->transform->ChangeScale(vec3(0.1f, 0.1f, 0.1f));
 			Collider* newCol = new Collider(ColliderShapes::Sphere);
-			Rigidbody* newRb = new Rigidbody(&newObj->transform, mainCamera->cameraTransform.Forward()*75.f, vec3(0,0,0), 0.01f, false, 1.f);
+			Rigidbody* newRb = new Rigidbody(newObj->transform, mainCamera->cameraTransform.Forward()*75.f, vec3(0,0,0), 0.01f, false, 1.f);
 			ColRbPair* newCrp = new ColRbPair(newCol, newRb);
 			phys->AddColRbPair(newCrp);
 			scene->AddToScene(newObj);

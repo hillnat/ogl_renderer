@@ -14,8 +14,11 @@ void Rigidbody::UpdateBody(float fixedDeltaTime) {
 		if (gravityScale != 0) {
 			AddForcePure(vec3(0, -4.9035f * gravityScale, 0));
 		}
+		//attachedTransform->LogTransform();
 		attachedTransform->TranslateGlobal(velocity * fixedDeltaTime);
-		attachedTransform->Rotate(torque, fixedDeltaTime*glm::length(torque));//Multiply by the magnitude of the torque, because the torque axis gets normalized
+		if (torque != vec3(0, 0, 0)) {
+			attachedTransform->Rotate(torque, fixedDeltaTime * glm::length(torque));//Multiply by the magnitude of the torque, because the torque axis gets normalized
+		}
 	}	
 }
 void Rigidbody::AddForce(vec3 force) {

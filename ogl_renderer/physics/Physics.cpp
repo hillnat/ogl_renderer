@@ -4,13 +4,9 @@ void Physics::AddColRbPair(ColRbPair* crp) {
  	colRbPairs.push_back(crp);
 }
 void Physics::UpdateAllBodies(float fixedDeltaTime) {
-	//Tell RBs to apply their velocity
+	
 	if (colRbPairs.size() == 0) { return; }
-	for (int i = 0; i < colRbPairs.size(); i++) {
-		if ((*colRbPairs[i]).attachedRigidbody==nullptr) { continue; }
-		if ((*colRbPairs[i]).attachedRigidbody->isStatic) { continue; }
-		(*colRbPairs[i]).attachedRigidbody->UpdateBody(fixedDeltaTime);
-	}
+	
 	//Collision checks
 	for (int i = 0; i < colRbPairs.size()-1; i++) {//Loop with logic to avoid double checking
 
@@ -65,6 +61,13 @@ void Physics::UpdateAllBodies(float fixedDeltaTime) {
 					break;
 			}	
 		}
+	}
+
+	//Tell RBs to apply their velocity
+	for (int i = 0; i < colRbPairs.size(); i++) {
+		if ((*colRbPairs[i]).attachedRigidbody == nullptr) { continue; }
+		if ((*colRbPairs[i]).attachedRigidbody->isStatic) { continue; }
+		(*colRbPairs[i]).attachedRigidbody->UpdateBody(fixedDeltaTime);
 	}
 }
 #pragma region Collision Detection
