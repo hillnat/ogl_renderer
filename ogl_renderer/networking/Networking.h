@@ -4,6 +4,7 @@
 #include <fstream> //File stream
 #include <sstream> //String stream for reading entire files
 #include <../engine/Transform.h> //String stream for reading entire files
+#include <../engine/Scene.h> //String stream for reading entire files
 #include <string>
 #include <vector>
 #include <ctime> //For time functions

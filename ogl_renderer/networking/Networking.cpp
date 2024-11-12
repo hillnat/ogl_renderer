@@ -10,7 +10,7 @@ const int PORT = 8888;//Port of the server
 const int BUFFER_SIZE = 1024;
 
 vector<SOCKET> clientArray;
-vector<Transform*> syncedTransforms;
+Scene* sycnedScene;
 WSADATA wsaData;
 SOCKET serverSocket;
 SOCKET clientSocket;
@@ -61,9 +61,9 @@ void Networking::ServerTick(){
 }
 void Networking::SendSyncedTransforms() {
     string message = "";
-    message += syncedTransforms.size();
-    for (int i = 0; i < syncedTransforms.size(); i++) {
-        Transform* transform = syncedTransforms[i];
+    message += sycnedScene->gameObjects.size();
+    for (int i = 0; i < sycnedScene->gameObjects.size(); i++) {
+        Transform* transform = sycnedScene->gameObjects[i]->transform;
         vec3 pos = transform->GetPosition();
         message += "X" + std::to_string(pos.x) + "Y" + std::to_string(pos.y) + "Z" + std::to_string(pos.z);
 
