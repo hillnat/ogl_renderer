@@ -38,7 +38,9 @@ public:
 	/// <returns> If the Down Arrrow key is currently held </returns>
 	bool DownArrow_Pressed();
 	/// <returns> If the Mouse 1 button is currently held </returns>
-	bool Mouse1_Pressed();
+	bool Mouse1_Pressed();	
+	/// <returns> If the Number 1 button is currently held </returns>
+	bool Alpha1_Pressed();
 	/// <returns> Mouse movement </returns>
 	glm::dvec2 GetMouseDelta();
 	glm::vec2 TargetWindowSize{ 1600,900 };

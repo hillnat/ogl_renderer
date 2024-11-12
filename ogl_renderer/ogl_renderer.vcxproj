@@ -128,6 +128,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -159,6 +160,7 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="networking\Networking.cpp" />
     <ClCompile Include="physics\Collider.cpp" />
     <ClCompile Include="physics\Physics.cpp" />
     <ClCompile Include="engine\Context.cpp" />
@@ -166,7 +168,6 @@
     <ClCompile Include="engine\GameObject.cpp" />
     <ClCompile Include="physics\Rigidbody.cpp" />
     <ClCompile Include="engine\Primitives.cpp" />
-    <ClCompile Include="renderer\Camera.cpp" />
     <ClCompile Include="renderer\Material.cpp" />
     <ClCompile Include="renderer\MeshImporter.cpp" />
     <ClCompile Include="renderer\Renderer.cpp" />
@@ -179,6 +180,7 @@
     <ClInclude Include="engine\Context.h" />
     <ClInclude Include="engine\Diagnostics.h" />
     <ClInclude Include="engine\GameObject.h" />
+    <ClInclude Include="networking\Networking.h" />
     <ClInclude Include="physics\AABB.h" />
     <ClInclude Include="physics\Collider.h" />
     <ClInclude Include="physics\ColliderShapes.h" />

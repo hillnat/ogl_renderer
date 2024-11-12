@@ -13,7 +13,7 @@ class Transform
 {
 public:
 	Transform() {
-		this->matrix = identity<mat4>();
+		this->matrix = glm::identity<mat4>();
 		this->parent = nullptr;
 	}
 	/// <summary>
@@ -23,7 +23,7 @@ public:
 	/// <summary>
 	/// This transforms matrix
 	/// </summary>
-	mat4 matrix = identity<mat4>();
+	mat4 matrix = glm::identity<mat4>();
 	/// <returns> Our local right vector </returns>
 	vec3 Right() { return vec3(matrix[0]); }
 	/// <returns> Our local up vector </returns>

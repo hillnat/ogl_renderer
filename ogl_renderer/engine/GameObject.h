@@ -8,7 +8,7 @@ class GameObject
 {
 public:
 	GameObject(const char* name, const char* meshPath, Material* material) {
-		std::cout << "Constructing GameObject" << std::endl;
+		//std::cout << "Constructing GameObject" << std::endl;
 		this->name = name;
 		this->mesh = (MeshImporter::ImportFromFile(meshPath));
 		this->transform = new Transform();
@@ -16,7 +16,7 @@ public:
 	}
 	GameObject(const char* name, Mesh* mesh, Material* material)
 	{
-		std::cout << "Constructing GameObject" << std::endl;
+		//std::cout << "Constructing GameObject" << std::endl;
 
 		this->name = name;
 		this->mesh = mesh;
@@ -25,7 +25,7 @@ public:
 	}
 	GameObject(Mesh* mesh, Material* material)
 	{
-		std::cout << "Constructing GameObject" << std::endl;
+		//std::cout << "Constructing GameObject" << std::endl;
 
 		this->name = "GameObject";
 		this->mesh = mesh;
@@ -34,7 +34,7 @@ public:
 	}
 	GameObject(const char* meshPath, Material* material)
 	{
-		std::cout << "Constructing GameObject" << std::endl;
+		//std::cout << "Constructing GameObject" << std::endl;
 
 		this->name = "GameObject";
 		this->mesh = MeshImporter::ImportFromFile(meshPath);
