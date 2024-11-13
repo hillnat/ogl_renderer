@@ -30,7 +30,6 @@ namespace Diagnostics
 	void SetColor(int color);
 	void SetColorDefault();
 	void ClearLine(int count);
-	string GetTimeAsString();
 	void LogBlockLine(int count);
 	void Log(char* message);
 	void Log(string message);

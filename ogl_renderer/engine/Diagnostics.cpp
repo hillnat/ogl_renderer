@@ -38,15 +38,6 @@ void Diagnostics::ClearLine(int count) {
 		cout << "\033[K";//Clear the line
 	}
 }
-string Diagnostics::GetTimeAsString() {
-	string output = "[";
-	auto end = chrono::system_clock::now();
-	std::time_t end_time = chrono::system_clock::to_time_t(end);
-	//output += ctime(&end_time);
-	output[output.length() - 1] = ']';//Setting last char removes the \n which is automatically added by ctime()
-	output += " ";
-	return output;
-}
 
 void Diagnostics::Log(char* message) {
 	cout << message << endl;

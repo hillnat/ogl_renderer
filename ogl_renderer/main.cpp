@@ -1,5 +1,4 @@
-#include "networking/Networking.h"
-
+#include "networking/NetworkManager.h"
 #include "engine/Context.h"
 #include "engine/Primitives.h"
 #include "engine/GameObject.h"
@@ -21,14 +20,13 @@ using namespace std;
 #define TESTGRAVITYSCALE 1
 
 int main(){
-
-	Log("Start Server ?", FOREGROUND_BLUE);
+	Log("Start Server ? (Yy / Nn)", FOREGROUND_BLUE);
 	char responce;
 	cin >> responce;
 	if (responce == 'y' || responce == 'Y') {
-		Networking::SetupServer();
+		NetworkManager::SetupServer();
 	}
-	else { Networking::SetupClient(); }
+	else { NetworkManager::SetupClient(); }
 	//Window init
 	Context* context = new Context();
 	context->Initialize();
@@ -37,16 +35,12 @@ int main(){
 	Mesh* sphereMesh = Primitives::MakeSphere();
 	Mesh* planeMesh = Primitives::MakePlane();
 	Shader* mainShader = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
-	Shader* mainShader2 = LoadShader("shaders/basic.vert", "shaders/diffuse.frag");
 	Texture* mainTexture = LoadTexture("textures/marble.png");
-	Texture* mainTexture2 = LoadTexture("textures/metal.png");
 	Material* mainMaterial = new Material(mainShader);
-	Material* mainMaterial2 = new Material(mainShader2);
 	mainMaterial->SetTexture(mainTexture);
-	mainMaterial2->SetTexture(mainTexture2);
 	// Object Setup
 	GameObject* obj0 = new GameObject(sphereMesh, mainMaterial);
-	GameObject* planeObj = new GameObject(planeMesh, mainMaterial2);
+	GameObject* planeObj = new GameObject(planeMesh, mainMaterial);
 	//Make our camera
 	Camera* mainCamera = new Camera;
 	//Move stuff around
@@ -87,6 +81,7 @@ int main(){
 	bool pause = false;
 
 
+	NetworkManager::syncedScene = scene;
 	
 	//Main Loop
 	while (!context->ShouldClose()) {
@@ -137,7 +132,6 @@ int main(){
 			phys->AddColRbPair(newCrp);
 			scene->AddToScene(newObj);
 		}
-		Networking::NetworkingTick();
 		//Draw and error check
 		scene->RenderAll();
 		Diagnostics::CheckGLError();
