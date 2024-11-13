@@ -17,7 +17,7 @@ namespace NetworkManager
     sockaddr_in clientAddr;
     sockaddr_in serverAddr;
     NetAuthority netAuth;
-
+    string incomingMessage="";
 
     //A thread is created running this function per socket connected
     //This function recieves incoming packets from clients, and redistributes them to all other clients.
@@ -66,10 +66,11 @@ namespace NetworkManager
             if (syncedScene != nullptr) {
                 //Send out synced transforms
                 string message = "t";
-                message += syncedScene->gameObjects.size();
+                
                 for (int i = 0; i < syncedScene->gameObjects.size(); i++) {
                     Transform* transform = syncedScene->gameObjects[i]->transform;
                     vec3 pos = transform->GetGlobalPosition();
+                    message += to_string(i);
                     message += "X";
                     message += std::to_string(pos.x);
                     message += "Y";
@@ -78,7 +79,7 @@ namespace NetworkManager
                     message += std::to_string(pos.z);
                     message += "|";//END OF OBJ
                 }
-                message += "]";//END LINE
+                message += "]";//END MESSAGE
                 const char* buff = message.c_str();
                 for (int i = 0; i < clientArray.size(); i++) {
                     send(clientArray[i], buff, sizeof(&buff), 0);
@@ -90,39 +91,42 @@ namespace NetworkManager
         Log("Leaving out of ServerTick", FOREGROUND_RED);
     }
 
-    void NetworkManager::SetSyncedTransforms(string message) {
+    void NetworkManager::EvaluateIncomingMessage() {
 
-        Log("Syncing " + to_string(message[1]) + " Transforms", FOREGROUND_INTENSITY);
-        for (int i = 0; i < message[1]; i++) {
-            int xStart = 0;
-            int yStart = 0;
-            int zStart = 0;
-            int end = 0;
-            for (int i = 0; i < message.length(); i++) {
-                if (message[i] == 'X') { xStart = i; }
-                else if (message[i] == 'Y') { yStart = i; }
-                else if (message[i] == 'Z') { zStart = i; }
-                else if (message[i] == '|') { end = i; }
-            }
-            vec3 vec;
-            string x;
-            for (int i = xStart; i < yStart; i++) {
-                x[i - xStart] = message[i];
-            }
-            string y;
-            for (int i = yStart; i < zStart; i++) {
-                y[i - yStart] = message[i];
-            }
-            string z;
-            for (int i = zStart; i < end; i++) {
-                z[i - zStart] = message[i];
-            }
-            vec.x = stoi(x);
-            vec.y = stoi(y);
-            vec.z = stoi(z);
-            Log("Synced Obj : " + to_string(message[1]) + " : ", FOREGROUND_INTENSITY);
-            LogVec3(vec);
+        int xStart = 0;
+        int yStart = 0;
+        int zStart = 0;
+        int end = 0;
+
+        for (int i = 0; i < incomingMessage.length(); i++) {
+            if (incomingMessage[i] == 'X') { xStart = i; }
+            else if (incomingMessage[i] == 'Y') { yStart = i; }
+            else if (incomingMessage[i] == 'Z') { zStart = i; }
+            else if (incomingMessage[i] == '|') { end = i; }
         }
+        if (xStart == 0 || yStart == 0 || zStart == 0 || end == 0) {
+            Log("IncomingMessage did not meet reqs", FOREGROUND_RED);
+            return;
+        }
+        else { Log("Found X at " + to_string(xStart) + "Found Y at " + to_string(yStart) + "Found Z at " + to_string(zStart)); }
+        vec3 vec;
+        string x;
+        for (int i = xStart; i < yStart; i++) {
+            x[i - xStart] = incomingMessage[i];
+        }
+        string y;
+        for (int i = yStart; i < zStart; i++) {
+            y[i - yStart] = incomingMessage[i];
+        }
+        string z;
+        for (int i = zStart; i < end; i++) {
+            z[i - zStart] = incomingMessage[i];
+        }
+        vec.x = stoi(x);
+        vec.y = stoi(y);
+        vec.z = stoi(z);
+        Log("Recieved vector : ", FOREGROUND_INTENSITY);
+        LogVec3(vec);
     }
     void NetworkManager::SetupServer() {
 
@@ -187,11 +191,8 @@ namespace NetworkManager
             int bytesRead = recv(clientSocket, recvBuffer, sizeof(recvBuffer), 0);
             if (bytesRead > 0) {
                 recvBuffer[bytesRead] = '\0';
+                incomingMessage += string(recvBuffer);
                 Log("[CLIENTTICK THREAD] : Received : " + string(recvBuffer), FOREGROUND_GREEN);
-            }
-            if (recvBuffer[0] == 't') {
-                Log("Woudlve set synced transforms here", FOREGROUND_BLUE);
-                //SetSyncedTransforms(recvBuffer);
             }
         }
         Log("Breaking out of client tick", FOREGROUND_RED);

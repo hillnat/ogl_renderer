@@ -29,6 +29,7 @@ namespace NetworkManager
 	//extern const int PORT = 8888;//Port of the server
 	//extern const int BUFFER_SIZE = 1024;
 
+	//Honestly idk how extern works, but this allows the vars to be defined in header and declared in cpp for namespaces
 	extern vector<SOCKET> clientArray;
 	extern Scene* syncedScene;
 	extern WSADATA wsaData;
@@ -37,6 +38,7 @@ namespace NetworkManager
 	extern sockaddr_in clientAddr;
 	extern sockaddr_in serverAddr;
 	extern NetAuthority netAuth;
+	extern string incomingMessage;
 
 
 
@@ -51,7 +53,5 @@ namespace NetworkManager
 	void ClientTick();
 	void SetupClient();
 	void CloseClient();
-	void SetSyncedTransforms(string message);
-
-
+	void EvaluateIncomingMessage();
 };
