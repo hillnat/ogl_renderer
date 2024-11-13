@@ -13,6 +13,6 @@ public:
 	/// </summary>
 	/// <returns> The view matrix of this camera</returns>
 	mat4 viewMatrix() {
-		return glm::lookAt(cameraTransform.GetPosition(), cameraTransform.GetPosition() + cameraTransform.Forward(), cameraTransform.Up());//Generate rotation matrix representing looking forward
+		return glm::lookAt(cameraTransform.GetGlobalPosition(), cameraTransform.GetGlobalPosition() + cameraTransform.Forward(), cameraTransform.Up());//Generate rotation matrix representing looking forward
 	}
 };

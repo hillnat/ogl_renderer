@@ -18,6 +18,10 @@ void Transform::TranslateGlobal(const vec3 axis)
 
 	//LogTransform();
 }
+void Transform::SetGlobalPosition(const vec3 position) {
+	TranslateGlobal(-GetGlobalPosition());//Set to 0,0,0
+	TranslateGlobal(position);//Set position
+}
 void Transform::ChangeScale(const vec3 scalar) {
 	matrix = glm::scale(matrix, scalar);
 	//LogTransform();
@@ -30,21 +34,26 @@ void Transform::SetRotation(const vec3 axis, const float angleDegrees) {
 	matrix = glm::rotate(glm::identity<mat4>(), glm::radians(angleDegrees), glm::normalize(axis));
 	//LogTransform();
 }
-vec3 Transform::GetPosition() {
-	vec3 pos = vec3(matrix[3]);
-	if (parent != nullptr) {pos += GetAccumParentPosition(this); }
-	return pos;
+
+vec3 Transform::GetLocalPosition() {
+	if (parent != nullptr) { vec3(matrix[3]) + parent->GetGlobalPosition(); }
+	else { return vec3(matrix[3]); }
+}
+vec3 Transform::GetGlobalPosition() {
+	return vec3(matrix[3]);
 }
 void Transform::LookAt(vec3 pos) {
-	matrix = glm::lookAt(GetPosition(), pos, vec3(0, 1, 0));
+	matrix = glm::lookAt(GetGlobalPosition(), pos, vec3(0, 1, 0));
 	//Rotate(vec3(0, 1, 0), 180);
 }
 void Transform::LogTransform() {
-	vec3 pos = GetPosition();
-	std::cout << "Position : " << pos.x << " | " << pos.y << " | " << pos.z << " | " << std::endl;
-	//std::cout << "Forward : " << Forward().x << " | " << Forward().y << " | " << Forward().z << " | " << std::endl;
-	//std::cout << "Up      : " << Up().x      << " | " << Up().y      << " | " << Up().z      << " | " << std::endl;
-	//std::cout << "Right   : " << Right().x   << " | " << Right().y   << " | " << Right().z   << " | " << std::endl;
+	vec3 gpos = GetGlobalPosition();
+	vec3 lpos = GetLocalPosition();
+	std::cout << "Global Position : " << gpos.x << " | " << gpos.y << " | " << gpos.z << " | " << std::endl;
+	std::cout << "Local Position : " << lpos.x << " | " << lpos.y << " | " << lpos.z << " | " << std::endl;
+	std::cout << "Forward : " << Forward().x << " | " << Forward().y << " | " << Forward().z << " | " << std::endl;
+	std::cout << "Up      : " << Up().x      << " | " << Up().y      << " | " << Up().z      << " | " << std::endl;
+	std::cout << "Right   : " << Right().x   << " | " << Right().y   << " | " << Right().z   << " | " << std::endl;
 	std::cout << "-----------------------------------------------------------------" << std::endl;
 }
 vec3 Transform::GetAccumParentPosition(Transform* transform) {

@@ -45,7 +45,7 @@ void Scene::RenderAll() {
 			Camera mainCamera = *cameras[0];
 			SetUniform(shader, 1, mainCamera.viewMatrix());
 			SetUniform(shader, 0, mainCamera.projectionMatrix);
-			SetUniform(shader, 7, (vec3(mainCamera.cameraTransform.GetPosition())));//Cam position for specular. Mat4 to vec3 conversion
+			SetUniform(shader, 7, (vec3(mainCamera.cameraTransform.GetGlobalPosition())));//Cam position for specular. Mat4 to vec3 conversion
 		}
 		SetUniform(shader, 4, vec3(0.1f, 0.1f, 0.1));//Set ambient
 		SetUniform(shader, 5, lights[0]->color);

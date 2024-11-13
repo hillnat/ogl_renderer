@@ -124,7 +124,7 @@ int main(){
 			lastSpawnTime = currentTime;
 
 			GameObject* newObj = new GameObject(sphereMesh, mainMaterial );
-			newObj->transform->TranslateGlobal(mainCamera->cameraTransform.GetPosition());
+			newObj->transform->TranslateGlobal(mainCamera->cameraTransform.GetGlobalPosition());
 			//newObj->transform->ChangeScale(vec3(0.1f, 0.1f, 0.1f));
 			Collider* newCol = new Collider(ColliderShapes::Sphere);
 			Rigidbody* newRb = new Rigidbody(newObj->transform, mainCamera->cameraTransform.Forward()*75.f, vec3(0,0,0), TESTGRAVITYSCALE, false, 1.f);

@@ -25,19 +25,19 @@ void Physics::UpdateAllBodies(float fixedDeltaTime) {
 
 			if (colA->colliderShape == ColliderShapes::Sphere) {
 				if (colB->colliderShape == ColliderShapes::Sphere) {
-					if (OverlapSphereSphere(rbA->attachedTransform->GetPosition(), 0.5f, rbB->attachedTransform->GetPosition(), 0.5f)) {
+					if (OverlapSphereSphere(rbA->attachedTransform->GetGlobalPosition(), 0.5f, rbB->attachedTransform->GetGlobalPosition(), 0.5f)) {
 						ResolveSphereSphere(rbA, rbB);
 					}
 				}
 				else if (colB->colliderShape == ColliderShapes::Plane) {
-					if (OverlapSpherePlane(rbA->attachedTransform->GetPosition(), 0.5f, rbB->attachedTransform->GetPosition(), rbB->attachedTransform->Up(), *rbA)) {
+					if (OverlapSpherePlane(rbA->attachedTransform->GetGlobalPosition(), 0.5f, rbB->attachedTransform->GetGlobalPosition(), rbB->attachedTransform->Up(), *rbA)) {
 						ResolveSpherePlane(rbA, rbB);
 					}
 				}
 			}
 			else if (colA->colliderShape == ColliderShapes::Plane) {
 				if (colB->colliderShape == ColliderShapes::Sphere) {
-					if (OverlapSpherePlane(rbB->attachedTransform->GetPosition(), 0.5f, rbA->attachedTransform->GetPosition(), rbA->attachedTransform->Up(), *rbB)) {
+					if (OverlapSpherePlane(rbB->attachedTransform->GetGlobalPosition(), 0.5f, rbA->attachedTransform->GetGlobalPosition(), rbA->attachedTransform->Up(), *rbB)) {
 						ResolveSpherePlane(rbB, rbA);
 					}
 				}
@@ -84,9 +84,9 @@ bool Physics::OverlapSpherePlane(const vec3 spherePos, const float sphereRadius,
 	bool isPenetrating = (mag < sphereRadius);
 	if (isPenetrating) {
 		float penAmount = sphereRadius - mag;
-		vec3 oldPos = rbToDepenetrate.attachedTransform->GetPosition();
+		vec3 oldPos = rbToDepenetrate.attachedTransform->GetGlobalPosition();
 		rbToDepenetrate.attachedTransform->TranslateGlobal(planeNormal * penAmount);
-		vec3 newPos = rbToDepenetrate.attachedTransform->GetPosition();
+		vec3 newPos = rbToDepenetrate.attachedTransform->GetGlobalPosition();
 		//std::cout << "Depenetrated | X : " << abs(oldPos.x - newPos.x) << " Y : " << abs(oldPos.y - newPos.y) << " Z : " << abs(oldPos.z - newPos.z) << std::endl;
 	}
 	return isPenetrating;
@@ -111,7 +111,7 @@ void Physics::ResolveSphereSphere(Rigidbody* sphereA, Rigidbody* sphereB) {
 		return;
 	}
 	vec3 relVel = sphereA->velocity - sphereB->velocity;
-	vec3 colNorm = normalize(sphereA->attachedTransform->GetPosition() - sphereB->attachedTransform->GetPosition());
+	vec3 colNorm = normalize(sphereA->attachedTransform->GetGlobalPosition() - sphereB->attachedTransform->GetGlobalPosition());
 
 	float scaledMassSum = ((1.f / sphereA->mass) + (1.f / sphereB->mass));
 	float joules = dot(2.f * relVel, colNorm) / dot(colNorm, colNorm * scaledMassSum);
@@ -122,7 +122,7 @@ void Physics::ResolveSphereSphere(Rigidbody* sphereA, Rigidbody* sphereB) {
 //Resolve collision between an assumed sphere RB, and a assumed plane RB
 void Physics::ResolveSpherePlane(Rigidbody* sphere, Rigidbody* plane) {
 
-	vec3 spherePos = sphere->attachedTransform->GetPosition();
+	vec3 spherePos = sphere->attachedTransform->GetGlobalPosition();
 	vec3 planeNormal = plane->attachedTransform->Up();
 	float spherePlaneDot = glm::dot(spherePos, planeNormal);
 	vec3 idealPlanePoint = spherePos - planeNormal * spherePlaneDot;

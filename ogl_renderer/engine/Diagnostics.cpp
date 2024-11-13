@@ -47,7 +47,7 @@ void Diagnostics::Log(string message) {
 }
 void Diagnostics::Log(string message, int color) {
 	SetColor(color);
-	cout << message << endl;
+	cout << endl << message << endl;
 	SetColorDefault();
 }
 void Diagnostics::LogBlockLine(int count) {

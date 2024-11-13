@@ -61,25 +61,33 @@ namespace NetworkManager
         return 0;
     }
     void NetworkManager::ServerTick() {
-        if (syncedScene != nullptr) {
-            //Send out synced transforms
-            string message = "t";
-            message += syncedScene->gameObjects.size();
-            for (int i = 0; i < syncedScene->gameObjects.size(); i++) {
-                Transform* transform = syncedScene->gameObjects[i]->transform;
-                vec3 pos = transform->GetPosition();
-                message += "X" + std::to_string(pos.x) + "Y" + std::to_string(pos.y) + "Z" + std::to_string(pos.z);
-
+        Log("Starting ServerTick", FOREGROUND_GREEN);
+        while (netAuth == NetAuthority::Server) {
+            if (syncedScene != nullptr) {
+                //Send out synced transforms
+                string message = "t";
+                message += syncedScene->gameObjects.size();
+                for (int i = 0; i < syncedScene->gameObjects.size(); i++) {
+                    Transform* transform = syncedScene->gameObjects[i]->transform;
+                    vec3 pos = transform->GetGlobalPosition();
+                    message += "X";
+                    message += std::to_string(pos.x);
+                    message += "Y";
+                    message += std::to_string(pos.y);
+                    message += "Z";
+                    message += std::to_string(pos.z);
+                    message += "|";//END OF OBJ
+                }
+                message += "]";//END LINE
+                const char* buff = message.c_str();
+                for (int i = 0; i < clientArray.size(); i++) {
+                    send(clientArray[i], buff, sizeof(&buff), 0);
+                }
+                Log("[SERVERTICK THREAD] : Sending message : " + message, FOREGROUND_GREEN);
+                //Output : "t1X1.00000Y1.00000Z1.00000"
             }
-            message += "|";
-            const char* buff = message.c_str();
-            for (int i = 0; i < clientArray.size(); i++) {
-                send(clientArray[i], buff, sizeof(&buff), 0);
-            }
-            Log("Sent " + *buff, FOREGROUND_GREEN);
-            //Output : "t1X1.00000Y1.00000Z1.00000"
         }
-        
+        Log("Leaving out of ServerTick", FOREGROUND_RED);
     }
 
     void NetworkManager::SetSyncedTransforms(string message) {
@@ -149,7 +157,7 @@ namespace NetworkManager
             WSACleanup();
             return;
         }
-        Log("Server started!", FOREGROUND_GREEN);
+        Log("Server started, netAuth set to Server", FOREGROUND_GREEN);
 
         netAuth = NetAuthority::Server;
         //while (true) {//Server loop for listening for clients trying to join, then creating a thread to handle messsages recieved
@@ -169,20 +177,24 @@ namespace NetworkManager
     }
 
     void NetworkManager::ClientTick() {
-        //Send stuff
+        while (netAuth == NetAuthority::Client) {
+            //Send stuff
         //send(clientSocket, message.c_str(), message.length(), 0);//Send to server
 
         //Recieve stuff
         //If we recieved, print to console
-        char recvBuffer[1024];
-        int bytesRead = recv(clientSocket, recvBuffer, sizeof(recvBuffer), 0);
-        if (bytesRead > 0) {
-            recvBuffer[bytesRead] = '\0';
-            Log("ClientTick recieved information", FOREGROUND_GREEN);
+            char recvBuffer[1024];
+            int bytesRead = recv(clientSocket, recvBuffer, sizeof(recvBuffer), 0);
+            if (bytesRead > 0) {
+                recvBuffer[bytesRead] = '\0';
+                Log("[CLIENTTICK THREAD] : Received : " + string(recvBuffer), FOREGROUND_GREEN);
+            }
+            if (recvBuffer[0] == 't') {
+                Log("Woudlve set synced transforms here", FOREGROUND_BLUE);
+                //SetSyncedTransforms(recvBuffer);
+            }
         }
-        if (recvBuffer[0] == 't') {
-            SetSyncedTransforms(recvBuffer);
-        }
+        Log("Breaking out of client tick", FOREGROUND_RED);
     }
     //Initialize a client
     void NetworkManager::SetupClient() {
