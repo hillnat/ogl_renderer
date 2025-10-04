@@ -1,0 +1,58 @@
+\hypertarget{_rigidbody_8h_source}{}\doxysection{Rigidbody.\+h}
+\label{_rigidbody_8h_source}\index{ogl\_renderer/physics/Rigidbody.h@{ogl\_renderer/physics/Rigidbody.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}../engine/Transform.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}ColliderShapes.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_rigidbody}{Rigidbody}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 \textcolor{keyword}{private}:}
+\DoxyCodeLine{8     \textcolor{keyword}{const} \textcolor{keywordtype}{float} restingVelThreshold = 0.5f;}
+\DoxyCodeLine{9 \textcolor{keyword}{public}:}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#pragma region Constructors}}
+\DoxyCodeLine{11     \mbox{\hyperlink{class_rigidbody}{Rigidbody}}(\mbox{\hyperlink{class_transform}{Transform}}* attachedBody) \{}
+\DoxyCodeLine{12         this-\/>attachedTransform = attachedBody;}
+\DoxyCodeLine{13         this-\/>velocity = vec3(0, 0, 0);}
+\DoxyCodeLine{14         this-\/>torque = vec3(0, 0, 0);}
+\DoxyCodeLine{15         this-\/>gravityScale = 1;}
+\DoxyCodeLine{16         this-\/>mass = 1;}
+\DoxyCodeLine{17         this-\/>isStatic = \textcolor{keyword}{false};}
+\DoxyCodeLine{18         this-\/>isResting = \textcolor{keyword}{false};}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_rigidbody}{Rigidbody}}(\mbox{\hyperlink{class_transform}{Transform}}* attachedBody, vec3 vel, \textcolor{keywordtype}{float} gravityScale, \textcolor{keywordtype}{bool} isStatic,\textcolor{keywordtype}{float} mass) \{}
+\DoxyCodeLine{21         this-\/>attachedTransform = attachedBody;}
+\DoxyCodeLine{22         this-\/>velocity = vel;}
+\DoxyCodeLine{23         this-\/>torque = vec3(0, 0, 0);}
+\DoxyCodeLine{24         this-\/>gravityScale = gravityScale;}
+\DoxyCodeLine{25         this-\/>mass = mass;}
+\DoxyCodeLine{26         this-\/>isStatic = isStatic;}
+\DoxyCodeLine{27         this-\/>isResting = \textcolor{keyword}{false};}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_rigidbody}{Rigidbody}}(\mbox{\hyperlink{class_transform}{Transform}}* attachedBody, vec3 vel, vec3 torque, \textcolor{keywordtype}{float} gravityScale, \textcolor{keywordtype}{bool} isStatic, \textcolor{keywordtype}{float} mass) \{}
+\DoxyCodeLine{30         this-\/>attachedTransform = attachedBody;}
+\DoxyCodeLine{31         this-\/>velocity = vel;}
+\DoxyCodeLine{32         this-\/>torque = torque;}
+\DoxyCodeLine{33         this-\/>gravityScale = gravityScale;}
+\DoxyCodeLine{34         this-\/>mass = mass;}
+\DoxyCodeLine{35         this-\/>isStatic = isStatic;}
+\DoxyCodeLine{36         this-\/>isResting = \textcolor{keyword}{false};}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{39     \mbox{\hyperlink{class_transform}{Transform}}* attachedTransform;}
+\DoxyCodeLine{40     \textcolor{keywordtype}{float} gravityScale = 0;}
+\DoxyCodeLine{41     vec3 velocity = vec3(0, 0, 0);}
+\DoxyCodeLine{42     vec3 torque = vec3(0, 0, 0);}
+\DoxyCodeLine{43     \textcolor{keywordtype}{float} mass=1;}
+\DoxyCodeLine{44     \textcolor{keywordtype}{bool} isStatic = \textcolor{keyword}{false};}
+\DoxyCodeLine{45     \textcolor{keywordtype}{bool} isResting = \textcolor{keyword}{false};}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rigidbody_a3489a4d160049331712e71179e7ecebd}{UpdateBody}}(\textcolor{keywordtype}{float} fixedDeltaTime);}
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rigidbody_ad968aba72e2d80dc282ce7a2f2639ca2}{AddForce}}(vec3 force);}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rigidbody_ab633f234942f4142cb4128883c6c9aa6}{AddForcePure}}(vec3 pureForce);}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rigidbody_a3d0c1261b8b18b94843a83c4bd115318}{AddTorque}}(vec3 torque);}
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rigidbody_af40d0c2d99d07590c80cb331f4d4a536}{AddTorquePure}}(vec3 pureTorque);}
+\DoxyCodeLine{61 \};}
+\DoxyCodeLine{62 }
+
+\end{DoxyCode}

@@ -1,0 +1,34 @@
+\hypertarget{_physics_8h_source}{}\doxysection{Physics.\+h}
+\label{_physics_8h_source}\index{ogl\_renderer/physics/Physics.h@{ogl\_renderer/physics/Physics.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}Rigidbody.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}ColRbPair.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}../engine/Transform.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}glm/ext.hpp"{}} \textcolor{comment}{//GLM provides us with matrices and math functions}}
+\DoxyCodeLine{7 \textcolor{comment}{//const vec3 gravity = vec3(0, -\/9.807f, 0);//Earth gravity}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_physics}{Physics}} \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11     \mbox{\hyperlink{class_physics}{Physics}}() \{}
+\DoxyCodeLine{12         colRbPairs.clear();}
+\DoxyCodeLine{13     \}}
+\DoxyCodeLine{14     std::vector<ColRbPair*> colRbPairs\{\};}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_physics_a7a0fea62b1d2a36f3fbf9d09901da0c6}{AddColRbPair}}(\mbox{\hyperlink{struct_col_rb_pair}{ColRbPair}}* crp);}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_physics_a5dcd928dfbdca3feaefc1d9ca070683a}{UpdateAllBodies}}(\textcolor{keywordtype}{float} fixedDeltaTime);}
+\DoxyCodeLine{33     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_physics_aa662da4d0f96ee8fd41d526cc2ef2c40}{OverlapSphereSphere}}(vec3 posA, \textcolor{keywordtype}{float} radA, vec3 posB, \textcolor{keywordtype}{float} radB);}
+\DoxyCodeLine{42     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_physics_a5e74480371f8f0d42774b882c231006f}{OverlapSpherePlane}}(vec3 spherePos, \textcolor{keywordtype}{float} sphereRadius, vec3 planePos, vec3 planeNormal);}
+\DoxyCodeLine{52     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_physics_a5e74480371f8f0d42774b882c231006f}{OverlapSpherePlane}}(vec3 spherePos, \textcolor{keywordtype}{float} sphereRadius, vec3 planePos, vec3 planeNormal, \mbox{\hyperlink{class_rigidbody}{Rigidbody}} rbToDepenetrate);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{comment}{//bool OverlapSphereBox(const vec3 spherePos, const float sphereRadius, const vec3 boxPos, const vec3 boxSize);}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{63     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_physics_a3c5e85a55bbff533b9b4016da4389eb3}{OverlapSphereAABB}}(\textcolor{keyword}{const} vec3 spherePos, \textcolor{keyword}{const} \textcolor{keywordtype}{float} sphereRadius, \textcolor{keyword}{const} \mbox{\hyperlink{struct_a_a_b_b}{AABB}} aabb);}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_physics_aa343c30848ec0030d0c73719cbcabc05}{ResolveSphereSphere}}(\mbox{\hyperlink{class_rigidbody}{Rigidbody}}* rba, \mbox{\hyperlink{class_rigidbody}{Rigidbody}}* rbb);}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_physics_a736d261010f60931a23fb0ce91700225}{ResolveSpherePlane}}(\mbox{\hyperlink{class_rigidbody}{Rigidbody}}* sphere, \mbox{\hyperlink{class_rigidbody}{Rigidbody}}* plane);}
+\DoxyCodeLine{83     vec3 \mbox{\hyperlink{class_physics_a43a34c220d1557ea1ead38fff9599f60}{GetClosestPointToSphere}}(vec3 spherePos, \textcolor{keywordtype}{float} sphereRadius, vec3 targetPoint);}
+\DoxyCodeLine{90     vec3 \mbox{\hyperlink{class_physics_aefefcb8706ba7e6178ae14c7dfe3e9cc}{GetClosestPointToAABB}}(vec3 targetPoint, \mbox{\hyperlink{struct_a_a_b_b}{AABB}} aabb);}
+\DoxyCodeLine{91 \};}
+
+\end{DoxyCode}

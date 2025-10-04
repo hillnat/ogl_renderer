@@ -1,0 +1,202 @@
+\hypertarget{class_transform}{}\doxysection{Transform Class Reference}
+\label{class_transform}\index{Transform@{Transform}}
+
+
+Collaboration diagram for Transform\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_transform_a5406bf5c56d303d9e13dc825032293e1}\label{class_transform_a5406bf5c56d303d9e13dc825032293e1}} 
+vec3 {\bfseries Right} ()
+\begin{DoxyCompactList}\small\item\em \begin{DoxyReturn}{Returns}
+Our local right vector 
+\end{DoxyReturn}
+\end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_transform_ae0ce3a189b726c18e21c2eb1990f4464}\label{class_transform_ae0ce3a189b726c18e21c2eb1990f4464}} 
+vec3 {\bfseries Up} ()
+\begin{DoxyCompactList}\small\item\em \begin{DoxyReturn}{Returns}
+Our local up vector 
+\end{DoxyReturn}
+\end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_transform_a3fbf814bbd069c57d1b3579a56893b3e}\label{class_transform_a3fbf814bbd069c57d1b3579a56893b3e}} 
+vec3 {\bfseries Forward} ()
+\begin{DoxyCompactList}\small\item\em \begin{DoxyReturn}{Returns}
+Our local forward vector 
+\end{DoxyReturn}
+\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_a9ad1b47d91bbdc9266e71690e5ddcd56}{Translate\+Local}} (vec3)
+\begin{DoxyCompactList}\small\item\em Translates our matrix, factoring in our rotation  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_abd54bc9cc0def3dd94cce058b49082b8}{Translate\+Global}} (vec3 translation)
+\begin{DoxyCompactList}\small\item\em Translates our matrix, disregarding rotation  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_a84f405e90c451a5bba7625446aa4c17b}{Set\+Global\+Position}} (vec3 position)
+\begin{DoxyCompactList}\small\item\em Sets the position of our matrix, disregarding rotation and parents  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_ac8dbabcac850603bac784cd464eaf3bf}{Rotate}} (vec3 axis, float degrees)
+\begin{DoxyCompactList}\small\item\em Rotates our matrix \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_a1733e406f53752ef367d7bfa15713a75}{Set\+Rotation}} (vec3 axis, float degrees)
+\begin{DoxyCompactList}\small\item\em Set the rotation of our matrix  \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_transform_aba8324ad67aa2e8f93b1b133ffd3b966}{Get\+Global\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the global position of this transform  \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_transform_a33af40ed4be147c94673ce1b6f445c76}{Get\+Local\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the position of this transform relative to its parent \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_transform_a7bdfd5cf2cac6fc06216e0c93e469e67}\label{class_transform_a7bdfd5cf2cac6fc06216e0c93e469e67}} 
+void {\bfseries Change\+Scale} (vec3 scalar)
+\begin{DoxyCompactList}\small\item\em Applis a scalar to our matrix  \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_transform_ac6fb2b3d5ac6c319fb1f66c2ecdbb8dc}\label{class_transform_ac6fb2b3d5ac6c319fb1f66c2ecdbb8dc}} 
+void {\bfseries Look\+At} (vec3 pos)
+\begin{DoxyCompactList}\small\item\em Points this transform at a given point  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_ac9c40f5472213803d5143a0fa0338c32}{Log\+Transform}} ()
+\begin{DoxyCompactList}\small\item\em Output the values of matrix  \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_transform_aa12429358147b70bdfd11af25a99f660}\label{class_transform_aa12429358147b70bdfd11af25a99f660}} 
+vec3 {\bfseries Get\+Accum\+Parent\+Position} (\mbox{\hyperlink{class_transform}{Transform}} $\ast$transform)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_transform_aa1e92491c9905869a108ec09a08e5eb4}\label{class_transform_aa1e92491c9905869a108ec09a08e5eb4}} 
+\mbox{\hyperlink{class_transform}{Transform}} $\ast$ {\bfseries parent} = nullptr
+\begin{DoxyCompactList}\small\item\em This transforms parent transform  \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_transform_af9379d72988e3270f942168efeff1239}\label{class_transform_af9379d72988e3270f942168efeff1239}} 
+mat4 {\bfseries matrix} = glm\+::identity$<$mat4$>$()
+\begin{DoxyCompactList}\small\item\em This transforms matrix  \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_transform_aba8324ad67aa2e8f93b1b133ffd3b966}\label{class_transform_aba8324ad67aa2e8f93b1b133ffd3b966}} 
+\index{Transform@{Transform}!GetGlobalPosition@{GetGlobalPosition}}
+\index{GetGlobalPosition@{GetGlobalPosition}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{GetGlobalPosition()}{GetGlobalPosition()}}
+{\footnotesize\ttfamily vec3 Transform\+::\+Get\+Global\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the global position of this transform  
+
+\begin{DoxyReturn}{Returns}
+Position global of transform
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_transform_a33af40ed4be147c94673ce1b6f445c76}\label{class_transform_a33af40ed4be147c94673ce1b6f445c76}} 
+\index{Transform@{Transform}!GetLocalPosition@{GetLocalPosition}}
+\index{GetLocalPosition@{GetLocalPosition}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{GetLocalPosition()}{GetLocalPosition()}}
+{\footnotesize\ttfamily vec3 Transform\+::\+Get\+Local\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the position of this transform relative to its parent 
+
+\begin{DoxyReturn}{Returns}
+Position of transform relative to its parent
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_transform_ac9c40f5472213803d5143a0fa0338c32}\label{class_transform_ac9c40f5472213803d5143a0fa0338c32}} 
+\index{Transform@{Transform}!LogTransform@{LogTransform}}
+\index{LogTransform@{LogTransform}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{LogTransform()}{LogTransform()}}
+{\footnotesize\ttfamily void Transform\+::\+Log\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Output the values of matrix  
+
+summary\texorpdfstring{$>$}{>} Recursivley grabs the position of all parents and returns the sum  \begin{DoxyReturn}{Returns}
+The combined positions of all our parents 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_transform_ac8dbabcac850603bac784cd464eaf3bf}\label{class_transform_ac8dbabcac850603bac784cd464eaf3bf}} 
+\index{Transform@{Transform}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily void Transform\+::\+Rotate (\begin{DoxyParamCaption}\item[{vec3}]{axis,  }\item[{float}]{degrees }\end{DoxyParamCaption})}
+
+
+
+Rotates our matrix 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis to rotate about\\
+\hline
+{\em degrees} & Amount to rotate in degrees\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_transform_a84f405e90c451a5bba7625446aa4c17b}\label{class_transform_a84f405e90c451a5bba7625446aa4c17b}} 
+\index{Transform@{Transform}!SetGlobalPosition@{SetGlobalPosition}}
+\index{SetGlobalPosition@{SetGlobalPosition}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetGlobalPosition()}{SetGlobalPosition()}}
+{\footnotesize\ttfamily void Transform\+::\+Set\+Global\+Position (\begin{DoxyParamCaption}\item[{vec3}]{position }\end{DoxyParamCaption})}
+
+
+
+Sets the position of our matrix, disregarding rotation and parents  
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position our object will go to \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_transform_a1733e406f53752ef367d7bfa15713a75}\label{class_transform_a1733e406f53752ef367d7bfa15713a75}} 
+\index{Transform@{Transform}!SetRotation@{SetRotation}}
+\index{SetRotation@{SetRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetRotation()}{SetRotation()}}
+{\footnotesize\ttfamily void Transform\+::\+Set\+Rotation (\begin{DoxyParamCaption}\item[{vec3}]{axis,  }\item[{float}]{degrees }\end{DoxyParamCaption})}
+
+
+
+Set the rotation of our matrix  
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis to rotate about\\
+\hline
+{\em degrees} & Amount to rotate in degrees\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_transform_abd54bc9cc0def3dd94cce058b49082b8}\label{class_transform_abd54bc9cc0def3dd94cce058b49082b8}} 
+\index{Transform@{Transform}!TranslateGlobal@{TranslateGlobal}}
+\index{TranslateGlobal@{TranslateGlobal}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{TranslateGlobal()}{TranslateGlobal()}}
+{\footnotesize\ttfamily void Transform\+::\+Translate\+Global (\begin{DoxyParamCaption}\item[{vec3}]{translation }\end{DoxyParamCaption})}
+
+
+
+Translates our matrix, disregarding rotation  
+
+
+\begin{DoxyParams}{Parameters}
+{\em translation} & The vector which our matrix will be translated by\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{class_transform_a9ad1b47d91bbdc9266e71690e5ddcd56}\label{class_transform_a9ad1b47d91bbdc9266e71690e5ddcd56}} 
+\index{Transform@{Transform}!TranslateLocal@{TranslateLocal}}
+\index{TranslateLocal@{TranslateLocal}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{TranslateLocal()}{TranslateLocal()}}
+{\footnotesize\ttfamily void Transform\+::\+Translate\+Local (\begin{DoxyParamCaption}\item[{vec3}]{axis }\end{DoxyParamCaption})}
+
+
+
+Translates our matrix, factoring in our rotation  
+
+
+\begin{DoxyParams}{Parameters}
+{\em translation} & The vector which our matrix will be translated by\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ogl\+\_\+renderer/engine/Transform.\+h\item 
+ogl\+\_\+renderer/engine/Transform.\+cpp\end{DoxyCompactItemize}

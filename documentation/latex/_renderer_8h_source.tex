@@ -1,0 +1,89 @@
+\hypertarget{_renderer_8h_source}{}\doxysection{Renderer.\+h}
+\label{_renderer_8h_source}\index{ogl\_renderer/renderer/Renderer.h@{ogl\_renderer/renderer/Renderer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}glew/glew.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}glm/glm.hpp"{}}\textcolor{comment}{//Math lib}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{keyword}{using }std::string;}
+\DoxyCodeLine{7 \textcolor{keyword}{using }std::vector;}
+\DoxyCodeLine{8 \textcolor{keyword}{using }glm::mat4;}
+\DoxyCodeLine{9 \textcolor{keyword}{using }glm::vec4;}
+\DoxyCodeLine{10 \textcolor{keyword}{using }glm::vec3;}
+\DoxyCodeLine{11 \textcolor{keyword}{using }glm::vec2;}
+\DoxyCodeLine{12    }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#pragma region Struct Definitions}}
+\DoxyCodeLine{14 \textcolor{keyword}{struct }\mbox{\hyperlink{structvertex}{vertex}} \{}
+\DoxyCodeLine{15     \mbox{\hyperlink{structvertex}{\string~vertex}}()\{\}}
+\DoxyCodeLine{16     \mbox{\hyperlink{structvertex}{vertex}}() \{}
+\DoxyCodeLine{17         this-\/>pos = vec4(0, 0, 0, 1);}
+\DoxyCodeLine{18         this-\/>color = vec4(1, 1, 1, 1);}
+\DoxyCodeLine{19         this-\/>normal = vec3(0, 0, 0);}
+\DoxyCodeLine{20         this-\/>uv = vec2(0, 0);}
+\DoxyCodeLine{21     \}}
+\DoxyCodeLine{22     \mbox{\hyperlink{structvertex}{vertex}}(vec4 pos, vec4 color, vec3 normal, vec2 uv) \{}
+\DoxyCodeLine{23         this-\/>pos = pos;}
+\DoxyCodeLine{24         this-\/>color = color;}
+\DoxyCodeLine{25         this-\/>normal = normal;}
+\DoxyCodeLine{26         this-\/>uv = uv;}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28     vec4 pos = vec4(0, 0, 0, 1);}
+\DoxyCodeLine{29     vec4 color = vec4(1, 1, 1, 1);\textcolor{comment}{//vertex color, usually unused or used for something else}}
+\DoxyCodeLine{30     vec3 normal = vec3(0, 0, 0);}
+\DoxyCodeLine{31     vec2 uv = vec2(0, 0);}
+\DoxyCodeLine{32 \};}
+\DoxyCodeLine{33 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_mesh}{Mesh}} \{}
+\DoxyCodeLine{34     GLuint vao, vbo, ibo;\textcolor{comment}{//vertex Array Object (This is made of the VBO and IBO), vertex Buffer Object (All the vertices), Index Buffer Object (Index buffer holds the orders for vertices to be turned into tris)}}
+\DoxyCodeLine{35     GLuint size = 0;\textcolor{comment}{//Length of the obj}}
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_shader}{Shader}} \{}
+\DoxyCodeLine{38     GLuint program;}
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_texture}{Texture}} \{}
+\DoxyCodeLine{41     GLuint handle;\textcolor{comment}{//OpenGL texture name}}
+\DoxyCodeLine{42     \textcolor{keywordtype}{unsigned} width, height, channels;\textcolor{comment}{//image metadata}}
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_light}{Light}} \{}
+\DoxyCodeLine{45     \mbox{\hyperlink{struct_light}{Light}}(vec3 color, vec3 direction) \{}
+\DoxyCodeLine{46         this-\/>color = color;}
+\DoxyCodeLine{47         this-\/>direction = direction;}
+\DoxyCodeLine{48     \}}
+\DoxyCodeLine{49     vec3 color = vec3(1.f, 1.f, 1.f);}
+\DoxyCodeLine{50     vec3 direction = vec3(1.f, 1.f, 1.f);}
+\DoxyCodeLine{51 \};}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#pragma region Meshes}}
+\DoxyCodeLine{62 \mbox{\hyperlink{struct_mesh}{Mesh}}* MakeMesh(\textcolor{keyword}{const} \mbox{\hyperlink{structvertex}{vertex}}* \textcolor{keyword}{const} verts, GLsizei vertCount, \textcolor{keyword}{const} GLuint* indices, \textcolor{keyword}{const} GLsizei indexCount);\textcolor{comment}{//GLsizei = GL Size Index}}
+\DoxyCodeLine{69 \textcolor{comment}{}\mbox{\hyperlink{struct_mesh}{Mesh}}* MakeMesh(\textcolor{keyword}{const} vector<vertex> verts, \textcolor{keyword}{const} vector<GLuint> indices);}
+\DoxyCodeLine{70 \textcolor{comment}{//Geometry MakeGeometry(const vector<vertex> verts, const vector<GLuint> indices);}}
+\DoxyCodeLine{75 \textcolor{comment}{}\textcolor{keywordtype}{void} FreeMesh(\mbox{\hyperlink{struct_mesh}{Mesh}}* geo);}
+\DoxyCodeLine{81 \textcolor{keywordtype}{void} DrawMesh(\textcolor{keyword}{const} \mbox{\hyperlink{struct_shader}{Shader}}* shader, \textcolor{keyword}{const} \mbox{\hyperlink{struct_mesh}{Mesh}}* mesh);}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#pragma region Shader Functions}}
+\DoxyCodeLine{90 \mbox{\hyperlink{struct_shader}{Shader}}* MakeShader(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* vertShader, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* fragShader);}
+\DoxyCodeLine{97 \mbox{\hyperlink{struct_shader}{Shader}}* MakeShader(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& vertShader, \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& fragShader);}
+\DoxyCodeLine{104 \mbox{\hyperlink{struct_shader}{Shader}}* LoadShader(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* vertPath, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* fragPath);}
+\DoxyCodeLine{109 \textcolor{keywordtype}{void} FreeShader(\mbox{\hyperlink{struct_shader}{Shader}}\& shader);}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#pragma region Uniform Functions}}
+\DoxyCodeLine{118 \textcolor{keywordtype}{void} SetUniform(\textcolor{keyword}{const} \mbox{\hyperlink{struct_shader}{Shader}}* shader, GLuint location, \textcolor{keyword}{const} mat4* value);}
+\DoxyCodeLine{126 \textcolor{keywordtype}{void} SetUniform(\textcolor{keyword}{const} \mbox{\hyperlink{struct_shader}{Shader}}* shader, GLuint location, \textcolor{keyword}{const} \mbox{\hyperlink{struct_texture}{Texture}}* value, \textcolor{keywordtype}{int} textureSlot);}
+\DoxyCodeLine{133 \textcolor{keywordtype}{void} SetUniform(\textcolor{keyword}{const} \mbox{\hyperlink{struct_shader}{Shader}}* shader, GLuint location, \textcolor{keyword}{const} vec4* value);}
+\DoxyCodeLine{140 \textcolor{keywordtype}{void} SetUniform(\textcolor{keyword}{const} \mbox{\hyperlink{struct_shader}{Shader}}* shader, GLuint location, \textcolor{keyword}{const} vec3* value);}
+\DoxyCodeLine{148 \textcolor{keywordtype}{void} SetUniform(\textcolor{keyword}{const} \mbox{\hyperlink{struct_shader}{Shader}}* shader, GLuint location, \textcolor{keywordtype}{int} count, \textcolor{keyword}{const} vec3* values);}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{156 \textcolor{keywordtype}{void} SetUniform(\textcolor{keyword}{const} \mbox{\hyperlink{struct_shader}{Shader}}* shader, GLuint location, \textcolor{keyword}{const} mat4 value);}
+\DoxyCodeLine{163 \textcolor{keywordtype}{void} SetUniform(\textcolor{keyword}{const} \mbox{\hyperlink{struct_shader}{Shader}}* shader, GLuint location, \textcolor{keyword}{const} vec4 value);}
+\DoxyCodeLine{170 \textcolor{keywordtype}{void} SetUniform(\textcolor{keyword}{const} \mbox{\hyperlink{struct_shader}{Shader}}* shader, GLuint location, \textcolor{keyword}{const} vec3 value);}
+\DoxyCodeLine{178 \textcolor{keywordtype}{void} SetUniform(\textcolor{keyword}{const} \mbox{\hyperlink{struct_shader}{Shader}}* shader, GLuint location, \textcolor{keywordtype}{int} count, \textcolor{keyword}{const} vec3* values);}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#pragma region Texture Functions}}
+\DoxyCodeLine{189 \mbox{\hyperlink{struct_texture}{Texture}}* MakeTexture(\textcolor{keywordtype}{unsigned} width, \textcolor{keywordtype}{unsigned} height, \textcolor{keywordtype}{unsigned} channels, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* pixels);}
+\DoxyCodeLine{194 \textcolor{keywordtype}{void} FreeTexture(\mbox{\hyperlink{struct_texture}{Texture}}* tex);}
+\DoxyCodeLine{200 \mbox{\hyperlink{struct_texture}{Texture}}* LoadTexture(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* imagePath);}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{207 \textcolor{keywordtype}{string} ReadFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* path);}
+
+\end{DoxyCode}

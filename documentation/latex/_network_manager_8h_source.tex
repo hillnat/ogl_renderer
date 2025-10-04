@@ -1,0 +1,61 @@
+\hypertarget{_network_manager_8h_source}{}\doxysection{Network\+Manager.\+h}
+\label{_network_manager_8h_source}\index{ogl\_renderer/networking/NetworkManager.h@{ogl\_renderer/networking/NetworkManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_CRT\_SECURE\_NO\_WARNINGS }\textcolor{comment}{//Allow old time functions}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <fstream>} \textcolor{comment}{//File stream}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <sstream>} \textcolor{comment}{//String stream for reading entire files}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <../engine/Transform.h>} \textcolor{comment}{//String stream for reading entire files}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <../engine/Scene.h>} \textcolor{comment}{//String stream for reading entire files}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <ctime>} \textcolor{comment}{//For time functions}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <winsock2.h>} \textcolor{comment}{//Provides functions and definitions for network programming using Winsock}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <ws2tcpip.h>} \textcolor{comment}{//Contains additional functions for TCP/IP networking, for InetPtonW and other functions}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#pragma comment(lib, "{}ws2\_32.lib"{}}) \textcolor{comment}{//Links against the Winsock library}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}../engine/Diagnostics.h"{}}}
+\DoxyCodeLine{16 \textcolor{keyword}{using namespace }Diagnostics;}
+\DoxyCodeLine{17 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{namespace }NetworkManager}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     \textcolor{keyword}{enum} NetAuthority \{ Offline, Server, Client \};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{comment}{//extern const PCWSTR IP = L"{}127.0.0.1"{};//Public IP of the server}}
+\DoxyCodeLine{28 \textcolor{comment}{}}
+\DoxyCodeLine{29     \textcolor{comment}{//extern const int PORT = 8888;//Port of the server}}
+\DoxyCodeLine{30     \textcolor{comment}{//extern const int BUFFER\_SIZE = 1024;}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{comment}{//Honestly idk how extern works, but this allows the vars to be defined in header and declared in cpp for namespaces}}
+\DoxyCodeLine{33     \textcolor{keyword}{extern} vector<SOCKET> clientArray;}
+\DoxyCodeLine{34     \textcolor{keyword}{extern} \mbox{\hyperlink{class_scene}{Scene}}* syncedScene;}
+\DoxyCodeLine{35     \textcolor{keyword}{extern} WSADATA wsaData;}
+\DoxyCodeLine{36     \textcolor{keyword}{extern} SOCKET serverSocket;}
+\DoxyCodeLine{37     \textcolor{keyword}{extern} SOCKET clientSocket;}
+\DoxyCodeLine{38     \textcolor{keyword}{extern} sockaddr\_in clientAddr;}
+\DoxyCodeLine{39     \textcolor{keyword}{extern} sockaddr\_in serverAddr;}
+\DoxyCodeLine{40     \textcolor{keyword}{extern} NetAuthority netAuth;}
+\DoxyCodeLine{41     \textcolor{keyword}{extern} \textcolor{keywordtype}{string} incomingMessage;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{comment}{//Server}}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} ServerWaitNewClients();}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} SetupServer();}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} CloseServer();}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} ServerTick();}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} ServerClientListener();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{comment}{//Client}}
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} ClientTick();}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} SetupClient();}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} CloseClient();}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} EvaluateIncomingMessage();}
+\DoxyCodeLine{57 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,55 @@
+\hypertarget{_transform_8h_source}{}\doxysection{Transform.\+h}
+\label{_transform_8h_source}\index{ogl\_renderer/engine/Transform.h@{ogl\_renderer/engine/Transform.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}glm/ext.hpp"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}../physics/AABB.h"{}}}
+\DoxyCodeLine{4 \textcolor{keyword}{using }glm::mat4;}
+\DoxyCodeLine{5 \textcolor{keyword}{using }glm::mat3;}
+\DoxyCodeLine{6 \textcolor{keyword}{using }glm::vec3;}
+\DoxyCodeLine{7 \textcolor{keyword}{using }glm::vec2;}
+\DoxyCodeLine{8 \textcolor{keyword}{using }glm::vec4;}
+\DoxyCodeLine{9 \textcolor{keyword}{using }glm::quat;}
+\DoxyCodeLine{10 \textcolor{keyword}{using }glm::identity;}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_transform}{Transform}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_transform}{Transform}}() \{}
+\DoxyCodeLine{16         this-\/>\mbox{\hyperlink{class_transform_af9379d72988e3270f942168efeff1239}{matrix}} = glm::identity<mat4>();}
+\DoxyCodeLine{17         this-\/>\mbox{\hyperlink{class_transform_aa1e92491c9905869a108ec09a08e5eb4}{parent}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_transform}{Transform}}* \mbox{\hyperlink{class_transform_aa1e92491c9905869a108ec09a08e5eb4}{parent}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{26     mat4 \mbox{\hyperlink{class_transform_af9379d72988e3270f942168efeff1239}{matrix}} = glm::identity<mat4>();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{29     vec3 \mbox{\hyperlink{class_transform_a5406bf5c56d303d9e13dc825032293e1}{Right}}() \{ \textcolor{keywordflow}{return} vec3(\mbox{\hyperlink{class_transform_af9379d72988e3270f942168efeff1239}{matrix}}[0]); \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{32     vec3 \mbox{\hyperlink{class_transform_ae0ce3a189b726c18e21c2eb1990f4464}{Up}}() \{ \textcolor{keywordflow}{return} vec3(\mbox{\hyperlink{class_transform_af9379d72988e3270f942168efeff1239}{matrix}}[1]); \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35     vec3 \mbox{\hyperlink{class_transform_a3fbf814bbd069c57d1b3579a56893b3e}{Forward}}() \{ \textcolor{keywordflow}{return} vec3(\mbox{\hyperlink{class_transform_af9379d72988e3270f942168efeff1239}{matrix}}[2]); \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_transform_a9ad1b47d91bbdc9266e71690e5ddcd56}{TranslateLocal}}(vec3);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_transform_abd54bc9cc0def3dd94cce058b49082b8}{TranslateGlobal}}(vec3 translation);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_transform_a84f405e90c451a5bba7625446aa4c17b}{SetGlobalPosition}}(vec3 position);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_transform_ac8dbabcac850603bac784cd464eaf3bf}{Rotate}}(vec3 axis,\textcolor{keywordtype}{float} degrees);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_transform_a1733e406f53752ef367d7bfa15713a75}{SetRotation}}(vec3 axis,\textcolor{keywordtype}{float} degrees);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{61     vec3 \mbox{\hyperlink{class_transform_aba8324ad67aa2e8f93b1b133ffd3b966}{GetGlobalPosition}}();}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{65     vec3 \mbox{\hyperlink{class_transform_a33af40ed4be147c94673ce1b6f445c76}{GetLocalPosition}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_transform_a7bdfd5cf2cac6fc06216e0c93e469e67}{ChangeScale}}(vec3 scalar);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_transform_ac6fb2b3d5ac6c319fb1f66c2ecdbb8dc}{LookAt}}(vec3 pos);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_transform_ac9c40f5472213803d5143a0fa0338c32}{LogTransform}}();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{80     vec3 GetAccumParentPosition(\mbox{\hyperlink{class_transform}{Transform}}* transform);}
+\DoxyCodeLine{81 \};}
+
+\end{DoxyCode}
