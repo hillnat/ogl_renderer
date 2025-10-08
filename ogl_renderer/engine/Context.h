@@ -43,7 +43,7 @@ public:
 	bool Alpha1_Pressed();
 	/// <returns> Mouse movement </returns>
 	glm::dvec2 GetMouseDelta();
-	glm::vec2 TargetWindowSize{ 1600,900 };
+	glm::vec2 TargetWindowSize{ 1920,1080 };
 	glm::dvec2 lastMousePos = glm::vec2(0.f, 0.f);
 };
 

@@ -1,16 +1,15 @@
 #pragma once
 #include "Transform.h"
-#include "../renderer/Renderer.h"
 #include "../renderer/Material.h"
 #include "../renderer/MeshImporter.h"
-#include "../physics/AABB.h"
+
 class GameObject
 {
 public:
 	GameObject(const char* name, const char* meshPath, Material* material) {
 		//std::cout << "Constructing GameObject" << std::endl;
 		this->name = name;
-		this->mesh = (MeshImporter::ImportFromFile(meshPath));
+		this->mesh = (MeshImporter::ImportFromFileGlb(meshPath));
 		this->transform = new Transform();
 		this->material = material;
 	}
@@ -37,7 +36,7 @@ public:
 		//std::cout << "Constructing GameObject" << std::endl;
 
 		this->name = "GameObject";
-		this->mesh = MeshImporter::ImportFromFile(meshPath);
+		this->mesh = MeshImporter::ImportFromFileGlb(meshPath);
 		this->transform = new Transform();
 		this->material = material;
 	}

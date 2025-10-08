@@ -2,7 +2,6 @@
 #include <iostream>
 #include "glew/glew.h"
 #include "glm/ext.hpp" //GLM provides us with matrices and math functions
-#include <iostream>
 #include <fstream> //File stream
 #include <sstream> //String stream for reading entire files
 #include <string>

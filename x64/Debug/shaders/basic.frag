@@ -5,7 +5,7 @@ layout (location = 3) uniform sampler2D mainTex;
 
 
 in vec4 vPos;
-in vec4 vCol;    // Not used; consider removing if unnecessary
+in vec4 vCol;    
 in vec2 vUV;
 in vec3 vNorm;
 
@@ -18,26 +18,6 @@ layout (location = 7) uniform vec3 cameraPos;
 
 void main()
 {
-    //lighting parameters
-    float specularPower = 64.0;
-    vec3 normal = normalize(vNorm);
-    vec3 lightDir = normalize(dirlightDirection);
-    vec3 viewDir = normalize(cameraPos - vPos.xyz);
-    vec3 reflectDir = reflect(-lightDir, normal);
-
-    //Calculate the specular term
-    float specularTerm = pow(max(0.0, dot(reflectDir, viewDir)), specularPower);
-
-    //Calculate Lambertian diffuse term
-    float lambertTerm = max(0.0, dot(normal, lightDir));
-    vec4 diffuselight = vec4(lambertTerm * dirlightColor, 1.0);
-
-    //Combine ambient light
-    vec4 ambientlight = vec4(ambient.rgb, 1.0);
-
-    //Calculate the final color
-    fragColor = (vPos * diffuselight + ambientlight + vec4(dirlightColor * specularTerm, 1.0));
-    //fragColor = clamp(fragColor, 0.0, 1.0);
-    
-    //fragColor = texColor;
+    //fragColor = clamp(vPos * vCol, vec3(0,0,0,0), vec3(1,1,1,1));
+    fragColor = vPos;
 }

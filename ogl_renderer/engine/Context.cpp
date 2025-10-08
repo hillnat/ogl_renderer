@@ -8,10 +8,13 @@
 
 bool Context::Initialize(){
 	glfwInit();
-	window = glfwCreateWindow((int)TargetWindowSize.x, (int)TargetWindowSize.y, "Newton's Blender", NULL, NULL);
+	glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);           // Borderless
+	glfwWindowHint(GLFW_TRANSPARENT_FRAMEBUFFER, GLFW_TRUE);
+	window = glfwCreateWindow((int)TargetWindowSize.x, (int)TargetWindowSize.y, "Zoo", NULL, NULL);
 	glfwMakeContextCurrent(window);
-	//glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-
+	//glfwSetWindowPos(window, 100, 100); // x=100, y=100 on screen
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	
 	glewInit();
 
 	//Set flags for opengl featues! OpenGL checks ifdef on these flags
@@ -20,9 +23,9 @@ bool Context::Initialize(){
 	glEnable(GL_CULL_FACE);//Optimazation to only render 1 face
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);//Selected blending function
 	glDepthFunc(GL_LEQUAL);//Decide which objects are in front
-	glFrontFace(GL_CCW);//Algorithm for normal. Winding direction for determining normal direction on triangle
+	glFrontFace(GL_CW);//Algorithm for normal. Winding direction for determining normal direction on triangle
 	glCullFace(GL_BACK);//Which side should we hide? NOTE : THIS SHOULD BE CULLING BACKFACE (GL_BACK)
-	glClearColor(0.757F, 0.714F, 0.91F, 1);
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	std::srand(time(nullptr));
 	return true;
 }

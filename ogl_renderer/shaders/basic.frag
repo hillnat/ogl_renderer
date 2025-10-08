@@ -1,23 +1,35 @@
 #version 430 core
+in vec4 vCol;
+in vec2 vUV;        // original UVs (ignored for scaling)
+in float vTexLayer;
+out vec4 FragColor;
 
+uniform sampler2DArray diffuseTex;
+uniform float fadeStart = 0.999;
+uniform float fadeEnd = 1.0;
 
-layout (location = 3) uniform sampler2D mainTex;
+// Controls how many world units per texture repeat
+uniform float texScale = 1.0;
 
+// Object bounding box (set per model in CPU code)
+uniform vec3 objMin;
+uniform vec3 objMax;
 
-in vec4 vPos;
-in vec4 vCol;    
-in vec2 vUV;
-in vec3 vNorm;
+void main() {
+    // Compute object-space position from normalized UV
+    vec3 objPos = objMin + vec3(vUV, 0.0) * (objMax - objMin);
 
-out vec4 fragColor;
+    // Use XZ plane for texture mapping
+    vec2 worldUV = objPos.xz * texScale;
 
-layout (location = 4) uniform vec3 ambient;
-layout (location = 5) uniform vec3 dirlightColor;
-layout (location = 6) uniform vec3 dirlightDirection;
-layout (location = 7) uniform vec3 cameraPos;
+    vec4 texColor = texture(diffuseTex, vec3(worldUV, vTexLayer));
+    FragColor = texColor * vCol;
 
-void main()
-{
-    //fragColor = clamp(vPos * vCol, vec3(0,0,0,0), vec3(1,1,1,1));
-    fragColor = vPos;
+    if (FragColor.a < 0.01)
+        discard;
+
+    // Depth-based fade
+    float depth = gl_FragCoord.z;
+    float fade = clamp((fadeEnd - depth) / (fadeEnd - fadeStart), 0.0, 1.0);
+    FragColor.a *= fade;
 }

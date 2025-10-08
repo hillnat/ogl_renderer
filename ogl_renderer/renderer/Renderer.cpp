@@ -1,112 +1,175 @@
 #include <fstream> //For file reading
+#include <iostream> //For file reading
 #include "glm/ext.hpp"
 #include "Renderer.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h" //For image loading
 using std::fstream;
-#pragma region Meshes
-Mesh* MakeMesh(const vertex* const verts, GLsizei vertCount, const GLuint* indices, GLsizei indexCount)
-{
-	Mesh* mesh = new Mesh();//Zero-initialize
-	mesh->size = indexCount;//vertex count
-	//Make bufers
-	glGenVertexArrays(1, &mesh->vao);//Make a vertex Array Object at this Geo's point in memory on the GPU
-	glGenBuffers(1, &mesh->vbo);//Generate the buffer of vertices
-	glGenBuffers(1, &mesh->ibo);//Generate the buffer of vertex indecies
-	//Note this is generating the buffers "into" the geometry object
-	//Bind the buffers for the task which we want them to do, like an angry spirit - Rob
-	glBindVertexArray(mesh->vao);
-	glBindBuffer(GL_ARRAY_BUFFER, mesh->vbo);//Bind the buffers
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh->ibo);
 
-	//Use vertex data if using vectors... the GPU Manufacterer determines how to draw it
-	glBufferData(GL_ARRAY_BUFFER, vertCount * sizeof(vertex), verts, GL_STATIC_DRAW);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexCount * sizeof(GLuint), indices, GL_STATIC_DRAW);
+class Scene;
+class GameObject;
+class Camera;
 
-#pragma region Enable vertex Attributes
-	//Describe the buffer
-	//vertex position, index 0
-	glEnableVertexAttribArray(0);//Attribute of index for enabling position
-	glVertexAttribPointer(
-		0,//Attribute index
-		4,//Component count (4 because Vec4 for position)
-		GL_FLOAT,//Component type, float
-		GL_FALSE,//False for dont normalize. You'd want to normalize if you were treating this as a direction
-		sizeof(vertex),//Byte size of each vertex position, need to know because its a stream
-		(void*)0//Pass in 0 bytes because we dont need to offset the stream yet.
-	);
-	//vertex color blending, index 1
-	glEnableVertexAttribArray(1);//Attribute of index for enabling vertex color
-	glVertexAttribPointer(
-		1,//Attribute index
-		4,//Component count (4 because Vec4 for color)
-		GL_FLOAT,//Component type, also float
-		GL_FALSE,//False for dont normalize.
-		sizeof(vertex),//Byte size of each vertex position, need to know because its a stream
-		(void*)offsetof(vertex, color)//Pass in the bye offset between start of vertex struct and color vec4 within that struct, because we are futher down the stream
-	);
-	//UV maps, index 2
-	glEnableVertexAttribArray(2);//Attribute of index for enabling UV maps to Vertices
-	glVertexAttribPointer(
-		2,//Attribute index
-		2,//Component count (2 because Vec2 for UV)
-		GL_FLOAT,//Component type, also float
-		GL_FALSE,//False for dont normalize. UV maps are conventially between 0 and 1, however they can be used past those values, so we arent going to normalize
-		sizeof(vertex),//Byte size of each vertex position, need to know because its a stream
-		(void*)offsetof(vertex, uv)//Pass in the bye offset between vertex and uv, because we are futher down the stream
-	);
-	//Normal maps, index 3
-	glEnableVertexAttribArray(3);//Attribute of index for enabling UV maps to Vertices
-	glVertexAttribPointer(
-		3,//Attribute index
-		3,//Component count (3 because Vec3 for normal)
-		GL_FLOAT,//Component type, also float
-		GL_FALSE,//False for dont normalize. UV maps are conventially between 0 and 1, however they can be used past those values, so we arent going to normalize
-		sizeof(vertex),//Byte size of each vertex position, need to know because its a stream
-		(void*)offsetof(vertex, normal)//Pass in the bye offset between vertex and uv, because we are futher down the stream
-	);
-#pragma endregion
-	//Unbind the angry spirit, aka bind it to nothing
-	glBindVertexArray(0);
-	glBindBuffer(GL_ARRAY_BUFFER, 0);//Bind the buffers to nothing
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-	return mesh;	//Fuck yeah
-	// |	 |
-	// \(o.o)/
-	//	  |
-	//    |
-	//	  ^
-	//	 | |
-	//  d   b
+
+
+void Renderer::FreeMesh(Mesh* mesh) {
+	if (!mesh) return;
+	glDeleteBuffers(1, &mesh->ibo);
+	glDeleteBuffers(1, &mesh->vbo);
+	glDeleteVertexArrays(1, &mesh->vao);
+	delete mesh;
 }
-//Overload, if you dare.
-Mesh* MakeMesh(const vector<vertex> verts, const vector<GLuint> indices) {//Overload just calls the same func above with different data
-	return MakeMesh(verts.data(), verts.size(), indices.data(), indices.size());
+
+
+void Renderer::DrawObjects(Scene* scene) {
+	if (scene->gameObjects.empty()) return;
+	// Collect unique materials
+	std::vector<Material*> uniqueMaterials;
+	for (auto& go : scene->gameObjects) {
+		if (!go || !go->material) continue;
+		if (std::find(uniqueMaterials.begin(), uniqueMaterials.end(), go->material) == uniqueMaterials.end())
+			uniqueMaterials.push_back(go->material);
+	}
+
+	// Collect unique shaders from materials
+	std::vector<Shader*> uniqueShaders;
+	for (auto& mat : uniqueMaterials) {
+		if (!mat || !mat->shader) continue;
+		if (std::find(uniqueShaders.begin(), uniqueShaders.end(), mat->shader) == uniqueShaders.end())
+			uniqueShaders.push_back(mat->shader);
+	}
+
+	// Write scene-wide uniforms to all shaders
+	for (auto& shader : uniqueShaders) {
+		if (!shader) continue;
+
+		// Camera
+		if (!scene->cameras.empty() && scene->cameras[0]) {
+			Camera& mainCamera = *scene->cameras[0];
+			Renderer::SetUniform(shader, 1, mainCamera.viewMatrix());
+			Renderer::SetUniform(shader, 0, mainCamera.projectionMatrix);
+			Renderer::SetUniform(shader, 7, vec3(mainCamera.cameraTransform.GetGlobalPosition()));
+		}
+
+		// Lights
+		if (!scene->lights.empty() && scene->lights[0]) {
+			Renderer::SetUniform(shader, 4, vec3(0.3f));                 // Ambient
+			Renderer::SetUniform(shader, 5, scene->lights[0]->color);           // Light color
+			Renderer::SetUniform(shader, 6, scene->lights[0]->direction);       // Light direction
+		}
+	}
+
+	// Draw all game objects
+	for (auto& go : scene->gameObjects) {
+		if (!go || !go->mesh || !go->material || !go->material->shader) continue;
+		if (go->mesh->indexCount == 0) continue;
+
+		Shader* shader = go->material->shader;
+
+		for (int i = 0; i < go->material->textures.size(); i++) {
+			Renderer::SetUniform(shader, (GLuint)3, go->material->texArr, (int)i); // Use texture handle and slot i
+		}
+
+		// Clear any existing GL errors
+		while (glGetError() != GL_NO_ERROR);
+
+		// Handle animations
+		if (go->mesh->hasAnimations()) {
+
+
+			// Check shader program validity
+			GLint isProgram = glIsProgram(shader->program);
+
+
+			// Bind the shader
+			glUseProgram(shader->program);
+
+
+			// Check if bones uniform exists
+			GLint bonesLocation = glGetUniformLocation(shader->program, "bones");
+
+
+
+			// Update animation
+			std::vector<glm::mat4> boneTransforms;
+			MeshImporter::UpdateAnimation(go->mesh, (double)glfwGetTime(), boneTransforms);
+
+
+			if (!boneTransforms.empty()) {
+				int boneCount = std::min((int)boneTransforms.size(), 1000);
+
+
+				// Upload using the correct location
+				if (bonesLocation != -1) {
+					// Use the actual location from glGetUniformLocation
+					glUniformMatrix4fv(bonesLocation, boneCount, GL_FALSE, glm::value_ptr(boneTransforms[0]));
+
+
+				}
+
+			}
+
+
+		}
+		else if (go->mesh->hasSkinning()) {
+
+			glUseProgram(shader->program);
+			GLint bonesLocation = glGetUniformLocation(shader->program, "bones");
+
+			if (bonesLocation != -1) {
+				std::vector<glm::mat4> identityBones(go->mesh->bones.size(), glm::mat4(1.0f));
+				int boneCount = std::min((int)identityBones.size(), 100);
+				glUniformMatrix4fv(bonesLocation, boneCount, GL_FALSE, glm::value_ptr(identityBones[0]));
+			}
+		}
+
+		// Set model transform
+		Renderer::SetUniform(shader, 2, go->transform->matrix);
+
+		// Draw
+		Renderer::DrawMesh(shader, go->mesh);
+
+		// Check for errors after drawing
+		GLenum finalErr = glGetError();
+		if (finalErr != GL_NO_ERROR) {
+			std::cout << "ERROR after DrawMesh: " << finalErr << "\n";
+		}
+	}
 }
-void FreeMesh(Mesh* mesh) {
-	//DELETE BUFFERS IN REVERSE ORDER THEY WERE GENERATED
-	glDeleteBuffers(1, &(mesh->ibo));
-	glDeleteBuffers(1, &(mesh->vbo));
-	glDeleteVertexArrays(1,&(mesh->vao));
-	//Zero out the geo so its gone from gpu memory
-	mesh = {};
+
+
+void Renderer::DrawMesh(const Shader* shader, const Mesh* mesh) {
+    if (!shader || !mesh) {
+        std::cout << "DrawMesh: NULL shader or mesh\n";
+        return;
+    }
+    
+    
+    
+    // Clear errors
+    while (glGetError() != GL_NO_ERROR);
+    
+    glUseProgram(shader->program);
+    GLenum err1 = glGetError();
+    if (err1 != GL_NO_ERROR) {
+        std::cout << "  ERROR after glUseProgram: " << err1 << "\n";
+    }
+    
+    glBindVertexArray(mesh->vao);
+    GLenum err2 = glGetError();
+    if (err2 != GL_NO_ERROR) {
+        std::cout << "  ERROR after glBindVertexArray: " << err2 << "\n";
+    }
+    
+    glDrawElements(GL_TRIANGLES, mesh->indexCount, GL_UNSIGNED_INT, nullptr);
+    GLenum err3 = glGetError();
+    if (err3 != GL_NO_ERROR) {
+        std::cout << "  ERROR after glDrawElements: " << err3 << "\n";
+    }
 }
-void DrawMesh(const Shader* shader, const Mesh* mesh) {
-	//Specify which shader to use
-	glUseProgram(shader->program);
-	//Specify which geometry
-	glBindVertexArray(mesh->vao);
-	glDrawElements(
-		GL_TRIANGLES,//GL_LINES , GL_TRIANGLES
-		mesh->size,
-		GL_UNSIGNED_INT,
-		nullptr
-	);
-}
-#pragma endregion
-#pragma region Shader
-void ReportCompileStatus(GLuint& shaderToReport) {
+
+void Renderer::ReportShaderCompileStatus(GLuint& shaderToReport) {
 	GLint compileStatus = 0;
 	glGetShaderiv(shaderToReport, GL_COMPILE_STATUS, &compileStatus);
 	if (compileStatus != GL_TRUE) {
@@ -114,7 +177,7 @@ void ReportCompileStatus(GLuint& shaderToReport) {
 	}
 }
 
-Shader* MakeShader(const char* vertshader, const char* fragshader) {
+Shader* Renderer::MakeShader(const char* vertshader, const char* fragshader) {
 	//TODO: Add error handling/checking logic to shader process
 	//Make instance of the shader
 	Shader* shader = new Shader();
@@ -133,109 +196,98 @@ Shader* MakeShader(const char* vertshader, const char* fragshader) {
 	glAttachShader(shader->program, fragPortion);
 	//Combine the shaders we attached and compiled into this final nice thingy
 	glLinkProgram(shader->program);
-	//TODO: Error check the link
+
 	glDeleteShader(vertexPortion);//Delete the data we used to make our copy
 	glDeleteShader(fragPortion);
 
+
+	// Check shader link status
+	GLint linkStatus = 0;
+	glGetProgramiv(shader->program, GL_LINK_STATUS, &linkStatus);
+	if (linkStatus != GL_TRUE) {
+		std::cout << "ERROR: Shader failed to link!\n";
+
+		// Get error log
+		GLint logLength = 0;
+		glGetProgramiv(shader->program, GL_INFO_LOG_LENGTH, &logLength);
+		if (logLength > 0) {
+			char* log = new char[logLength];
+			glGetProgramInfoLog(shader->program, logLength, nullptr, log);
+			std::cout << "Shader link error: " << log << "\n";
+			delete[] log;
+		}
+	}
+	else {
+		std::cout << "Shader linked successfully\n";
+	}
+
+
 	return shader;
 }
-Shader* MakeShader(const string& vertshader, const string& fragshader) {//Overload just coverts params
+Shader* Renderer::MakeShader(const string& vertshader, const string& fragshader) {//Overload just coverts params
 	return MakeShader(vertshader.c_str(), fragshader.c_str());
 }
-Shader* LoadShader(const char* vertPath, const char* fragPath) {
+Shader* Renderer::LoadShader(const char* vertPath, const char* fragPath) {
 	string vertSource = ReadFile(vertPath);
 	string fragSource = ReadFile(fragPath);
+
+
+
 	return MakeShader(vertSource, fragSource);
 }
-void FreeShader(Shader* shader) {
+void Renderer::FreeShader(Shader* shader) {
 	glDeleteProgram(shader->program);
 	delete shader;//Zero out shader struct
 }
-#pragma endregion
-#pragma region Uniforms
-void SetUniform(const Shader* shader, GLuint location, const mat4* value) {
+
+void Renderer::SetUniform(const Shader* shader, GLuint location, const mat4* value) {
 	glProgramUniformMatrix4fv(shader->program, location,1,GL_FALSE, glm::value_ptr(*value));
 }
-void SetUniform(const Shader* shader, GLuint location, const Texture* value, int textureSlot) {
+void Renderer::SetUniform(const Shader* shader, GLuint location, const Texture* value, int textureSlot) {
 	glActiveTexture(GL_TEXTURE0 + textureSlot);
 	glBindTexture(GL_TEXTURE_2D, value->handle);
 	glProgramUniform1i(shader->program, location, textureSlot);
 }
-void SetUniform(const Shader* shader, GLuint location, const vec4* value) {
+void Renderer::SetUniform(const Shader* shader, GLuint location, const GLuint textureArrayHandle, int textureSlot) {
+    glActiveTexture(GL_TEXTURE0 + textureSlot);
+    glBindTexture(GL_TEXTURE_2D_ARRAY, textureArrayHandle);
+    glUniform1i(location, textureSlot); // Changed: use glUniform1i instead
+}
+
+void Renderer::SetUniform(const Shader* shader, GLuint location, const vec4* value) {
 	glProgramUniform4fv(shader->program, location, 1, glm::value_ptr(*value));
 }
-void SetUniform(const Shader* shader, GLuint location, const vec3* value) {
+void Renderer::SetUniform(const Shader* shader, GLuint location, const vec3* value) {
 	glProgramUniform3fv(shader->program, location, 1, glm::value_ptr(*value));
 }
 
-void SetUniform(const Shader* shader, GLuint location, int count,const vec3* value) {
+void Renderer::SetUniform(const Shader* shader, GLuint location, int count,const vec3* value) {
 	glProgramUniform3fv(shader->program, location, ((GLsizei)count), glm::value_ptr(*value));
 }
-void SetUniform(const Shader* shader, GLuint location, const mat4 value) {
+void Renderer::SetUniform(const Shader* shader, GLuint location, const mat4 value) {
 	glProgramUniformMatrix4fv(shader->program, location, 1, GL_FALSE, glm::value_ptr(value));
 }
-void SetUniform(const Shader* shader, GLuint location, const vec4 value) {
+void Renderer::SetUniform(const Shader* shader, GLuint location, const vec4 value) {
 	glProgramUniform4fv(shader->program, location, 1, glm::value_ptr(value));
 }
-void SetUniform(const Shader* shader, GLuint location, const vec3 value) {
+void Renderer::SetUniform(const Shader* shader, GLuint location, const vec3 value) {
 	glProgramUniform3fv(shader->program, location, 1, glm::value_ptr(value));
 }
-void SetUniform(const Shader* shader, GLuint location, int count, const vec3 value) {
+void Renderer::SetUniform(const Shader* shader, GLuint location, int count, const vec3 value) {
 	glProgramUniform3fv(shader->program, location, ((GLsizei)count), glm::value_ptr(value));
 }
-#pragma endregion
-#pragma region Texture
-Texture* MakeTexture(unsigned width, unsigned height, unsigned channels, const unsigned char* pixels) {
-	GLenum oglFormat = GL_RGBA;
-	switch (channels) {
-	case 1:
-		oglFormat = GL_RED;
-		break;
-	case 2:
-		oglFormat = GL_RG;
-		break;
-	case 3:
-		oglFormat = GL_RGB;
-		break;
-	default:
-		oglFormat = GL_RGBA;
-		break;
+void Renderer::SetUniform(const Shader* shader, GLuint location, int count, const mat4* values) {
+	if (!shader || count <= 0 || !values) {
+		return;
 	}
-	Texture* texObj = new Texture{ 0, width, height, channels };
-	glGenTextures(1, &(texObj->handle));
-	//bind and buffer texture
-	glBindTexture(GL_TEXTURE_2D, (texObj->handle));
-	glTexImage2D(GL_TEXTURE_2D, 0, oglFormat, width, height, 0, oglFormat, GL_UNSIGNED_BYTE, pixels);
-	//Configure texture settings
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	//Unbind and return the object
-	glBindTexture(GL_TEXTURE_2D, 0);
-	return texObj;
+
+	glUseProgram(shader->program);  // MUST bind program first
+	glUniformMatrix4fv(location, count, GL_FALSE, glm::value_ptr(values[0]));
 }
 
-void FreeTexture(Texture* tex) {
-	glDeleteTextures(1, &(tex->handle));
-	tex = {};
-}
-Texture* LoadTexture(const char* imagePath) {
-	//Setup varaibles to store texture data
-	int imageWidth = -1;//-1 for error handling
-	int imageHeight = -1;
-	int imageFormat = -1;
-	unsigned char* imagePixels = nullptr; 
-	Texture* newtexture = new Texture();
-	stbi_set_flip_vertically_on_load(true);//Load using OpenGLConventions
-	imagePixels = stbi_load(imagePath, &imageWidth, &imageHeight, &imageFormat, STBI_default);
-	//Note : stdi_load will return a nullptr if it failed to load
-	//Pass the data to OpenGL
-	newtexture = MakeTexture(imageWidth, imageHeight, imageFormat, imagePixels);
-	stbi_image_free(imagePixels);
-	imagePixels = nullptr;
-	return newtexture;
-}
-#pragma endregion
-string ReadFile(const char* path) {//Allows us to load our shaders from files, poorly.
+
+
+string Renderer::ReadFile(const char* path) {//Allows us to load our shaders from files, poorly.
 	fstream stream(path, std::ios_base::in);//Open the freakstream
 	string source;
 	//TODO: Add error checking and validation if you are reading from a text file
